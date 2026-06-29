@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="robots" content="noindex">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ライフデンタル｜治療と費用のご案内</title>
 <style>
   :root{
@@ -17,7 +17,6 @@
     --sage-2:#6E9C8E;
     --line:#D8E0DD;
     --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
-    --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
@@ -29,244 +28,264 @@
     letter-spacing:.02em;
     -webkit-font-smoothing:antialiased;
   }
-  img{max-width:100%;height:auto;display:block;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
 
-  .wrap{max-width:680px;margin:0 auto;padding:0 22px;}
-  .section{padding:46px 0;}
-  .section.soft{background:var(--soft);}
-
-  .eyebrow{
-    font-size:11px;letter-spacing:.32em;color:var(--sage);
-    font-weight:700;margin:0 0 10px;
-  }
-  h2.title{
-    font-size:23px;line-height:1.5;color:var(--ink);
-    margin:0 0 6px;letter-spacing:.04em;font-weight:700;
-  }
-  .lead{font-size:15px;color:var(--ink-soft);margin:14px 0 0;}
-
-  /* ヒーロー */
-  .hero{
-    background:linear-gradient(180deg,var(--card) 0%,var(--soft) 100%);
-    padding:64px 0 54px;text-align:center;
-  }
-  .hero .leaf{width:44px;height:44px;margin:0 auto 18px;color:var(--sage);}
+  /* hero */
+  .hero{padding:56px 0 34px;text-align:center;}
   .hero .eyebrow{margin-bottom:14px;}
   .hero h1{
-    font-size:30px;line-height:1.45;margin:0;letter-spacing:.06em;
-    color:var(--ink);font-weight:700;
+    font-size:26px;line-height:1.5;margin:0 0 16px;
+    font-weight:700;letter-spacing:.06em;color:var(--ink);
   }
-  .hero .sub{font-size:15px;color:var(--ink-soft);margin:18px auto 0;max-width:30em;}
+  .hero .lead{margin:0 auto;max-width:560px;}
 
-  /* ハブ（治療カード一覧） */
-  .hub{display:grid;grid-template-columns:1fr;gap:14px;margin-top:30px;}
+  /* sections */
+  .section{padding:40px 0;border-top:1px solid var(--line);}
+  .section.soft{background:var(--soft);border-top:none;}
+  .eyebrow{
+    font-size:11px;letter-spacing:.28em;color:var(--sage);
+    font-weight:700;margin:0 0 9px;
+  }
+  h2.title{
+    font-size:20px;line-height:1.5;margin:0 0 12px;
+    font-weight:700;letter-spacing:.03em;color:var(--ink);
+  }
+  .lead{font-size:15px;color:var(--ink-soft);margin:0 0 6px;}
+
+  /* treatment hub */
+  .hub{display:grid;gap:13px;margin-top:20px;}
+  @media (min-width:760px){.hub{grid-template-columns:1fr 1fr;}}
   .hub-card{
-    position:relative;display:block;text-decoration:none;color:inherit;
+    display:flex;gap:14px;align-items:center;
     background:var(--paper);border:1px solid var(--line);border-radius:16px;
-    padding:22px 22px;transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;
+    padding:17px 18px;text-decoration:none;color:inherit;
+    transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease;
   }
-  a.hub-card:hover,a.hub-card:focus-visible{
-    border-color:var(--sage-2);
-    box-shadow:0 6px 20px rgba(79,122,108,.10);
-    transform:translateY(-2px);
+  .hub-card:hover{
+    border-color:var(--sage-2);transform:translateY(-2px);
+    box-shadow:0 6px 20px rgba(79,122,108,.09);
   }
-  a.hub-card:focus-visible{outline:2px solid var(--sage);outline-offset:3px;}
-  .hc-ic{width:34px;height:34px;color:var(--sage);margin-bottom:12px;}
-  .hc-name{font-size:18px;font-weight:700;color:var(--ink);letter-spacing:.04em;margin:0;}
-  .hc-desc{font-size:13.5px;color:var(--ink-soft);margin:6px 0 0;padding-right:28px;}
-  .hc-arrow{
-    position:absolute;right:18px;bottom:18px;width:26px;height:26px;
-    border-radius:50%;border:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;color:var(--sage);
-    transition:background .25s ease,border-color .25s ease,color .25s ease;
-  }
-  a.hub-card:hover .hc-arrow,a.hub-card:focus-visible .hc-arrow{
-    background:var(--sage);border-color:var(--sage);color:#fff;
-  }
-  .hc-arrow svg{width:14px;height:14px;}
+  .hub-card .ic{flex:0 0 auto;width:34px;height:34px;color:var(--sage);}
+  .hc-body{flex:1 1 auto;min-width:0;}
+  .hc-title{display:block;font-size:15.5px;font-weight:700;color:var(--ink);letter-spacing:.02em;}
+  .hc-desc{display:block;font-size:13px;color:var(--ink-soft);line-height:1.65;margin-top:3px;}
+  .hc-arrow{flex:0 0 auto;width:20px;height:20px;color:var(--sage-2);}
 
-  /* 準備中カード */
-  .hub-card.soon{
-    background:var(--soft);border-style:dashed;border-color:var(--line);
-    cursor:default;
+  /* feature card (別セクション・保険治療) */
+  .feature{
+    display:flex;gap:16px;align-items:flex-start;
+    background:var(--paper);border:1px solid var(--line);border-radius:18px;
+    padding:22px 22px;text-decoration:none;color:inherit;margin-top:18px;
+    transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease;
   }
-  .hub-card.soon .hc-ic{color:var(--sage-2);opacity:.55;}
-  .hub-card.soon .hc-name{color:var(--muted);}
-  .hub-card.soon .hc-desc{color:var(--muted);}
-  .soon-chip{
-    position:absolute;right:18px;bottom:18px;
-    font-size:11px;letter-spacing:.14em;color:var(--muted);
-    background:var(--card);border:1px solid var(--line);border-radius:20px;
-    padding:3px 12px;
+  .feature:hover{
+    border-color:var(--sage-2);transform:translateY(-2px);
+    box-shadow:0 6px 20px rgba(79,122,108,.09);
   }
+  .feature .ic{flex:0 0 auto;width:38px;height:38px;color:var(--sage);margin-top:2px;}
+  .feature .fb{flex:1 1 auto;min-width:0;}
+  .feature h3{margin:0 0 5px;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:.02em;}
+  .feature p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.7;}
+  .feature .hc-arrow{align-self:center;margin-top:0;}
 
-  /* 補足帯 */
-  .infonote{
-    background:var(--card);border-radius:16px;padding:22px 22px;margin-top:30px;
+  /* costs note */
+  .note{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;margin-top:18px;
   }
-  .infonote p{margin:0;font-size:13.5px;color:var(--ink-soft);}
-  .infonote p + p{margin-top:8px;}
+  .note p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.8;}
 
-  /* スクロール表示アニメ */
-  .reveal{opacity:0;transform:translateY(18px);
-    transition:opacity .7s ease,transform .7s ease;}
-  .reveal.visible{opacity:1;transform:none;}
-  @media (prefers-reduced-motion:reduce){
-    .reveal{opacity:1;transform:none;transition:none;}
-  }
+  /* footer */
+  footer .fl{font-size:14px;color:var(--ink);letter-spacing:.08em;margin-top:2px;}
+  footer .ft{font-size:12.5px;color:var(--muted);letter-spacing:.1em;margin-top:4px;}
 
-  /* フッター */
-  footer{
-    background:#fff;border-top:1px solid var(--line);
-    padding:36px 22px 40px;text-align:center;
-  }
-  footer img{width:112px;height:auto;margin:0 auto 13px;display:block;}
-  .fl{font-size:14px;color:var(--ink);letter-spacing:.08em;}
-  .ft{font-family:var(--mincho);font-size:14px;color:var(--sage);margin-top:6px;letter-spacing:.1em;}
-
-  @media (min-width:760px){
-    .wrap{max-width:780px;padding:0 28px;}
-    .section{padding:60px 0;}
-    .hero{padding:88px 0 66px;}
-    .hero h1{font-size:37px;}
-    .hub{grid-template-columns:1fr 1fr;gap:18px;}
-  }
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.show{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
 </style>
 </head>
 <body>
 
-<!-- アイコン定義 -->
+<!-- icon definitions -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M5 19c0-7 5-13 14-14 0 9-6 14-14 14Z"/><path d="M5 19c3-4 6-6 10-8"/>
+  <symbol id="i-tooth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 3.2c-1.9 0-3.1 1.5-3.1 3.5 0 1.7.5 3.1 1 4.7.4 1.3.6 3 .8 4.5.15 1.05.9 1.7 1.7 1.7.65 0 1.05-.55 1.15-1.3l.5-3.1c.06-.45.45-.45.5 0l.5 3.1c.1.75.55 1.3 1.2 1.3.8 0 1.55-.65 1.7-1.7.2-1.5.4-3.2.8-4.5.5-1.6 1-3 1-4.7 0-2-1.2-3.5-3.1-3.5-1.05 0-1.8.45-2.3.85-.3.25-.7.25-1 0-.5-.4-1.25-.85-2.3-.85z"/>
   </symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>
+  <symbol id="i-crown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 4.2c-1.9 0-3.1 1.5-3.1 3.5 0 1.7.5 3.1 1 4.7.4 1.3.6 3 .8 4.5.15 1.05.9 1.7 1.7 1.7.65 0 1.05-.55 1.15-1.3l.5-3.1c.06-.45.45-.45.5 0l.5 3.1c.1.75.55 1.3 1.2 1.3.8 0 1.55-.65 1.7-1.7.2-1.5.4-3.2.8-4.5.5-1.6 1-3 1-4.7 0-2-1.2-3.5-3.1-3.5-1.05 0-1.8.45-2.3.85-.3.25-.7.25-1 0-.5-.4-1.25-.85-2.3-.85z"/>
+    <path d="M5.4 8.6c2.2 1 9 1 13.2 0"/>
   </symbol>
-  <symbol id="i-resin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 3s5 5.5 5 9.5A5 5 0 0 1 7 12.5C7 8.5 12 3 12 3Z"/><path d="M10 12.5a2 2 0 0 0 2 2"/>
+  <symbol id="i-root" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5c-3.2 0-5.5 1.7-5.5 4 0 1.2.6 2 1.1 3.2.6 1.5.9 4 1.2 6.4.12 1 .7 1.6 1.3 1.6.55 0 .9-.5 1-1.3l.6-4.4c.05-.4.55-.4.6 0l.6 4.4c.1.8.45 1.3 1 1.3.6 0 1.18-.6 1.3-1.6.3-2.4.6-4.9 1.2-6.4.5-1.2 1.1-2 1.1-3.2 0-2.3-2.3-4-5.5-4z"/>
   </symbol>
-  <symbol id="i-crown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 10l3 3 5-6 5 6 3-3-1.5 9h-13L4 10Z"/>
+  <symbol id="i-bridge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="7" width="5" height="10" rx="2.2"/><rect x="9.5" y="7" width="5" height="10" rx="2.2"/><rect x="16" y="7" width="5" height="10" rx="2.2"/>
+    <path d="M3 9.4h18"/>
   </symbol>
-  <symbol id="i-root" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M8 3c-2 0-3.5 1.6-3.5 3.8 0 1.4.5 2.6.9 4.4.6 2.6 1 6 1.6 8.4.2.9 1.4.9 1.6 0 .3-1.6.6-3.6 1.4-3.6s1.1 2 1.4 3.6c.2.9 1.4.9 1.6 0 .6-2.4 1-5.8 1.6-8.4.4-1.8.9-3 .9-4.4C16.5 4.6 15 3 13 3c-1 0-1.6.5-2.5.5S9 3 8 3Z"/>
+  <symbol id="i-denture" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 7c0 6 2 11 8 11s8-5 8-11"/>
+    <path d="M4 7c2.7-1.4 13.3-1.4 16 0"/>
+    <path d="M8 8v2.4M12 8.2v2.6M16 8v2.4"/>
   </symbol>
-  <symbol id="i-bridge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 14v-2c0-1 .8-1.6 1.6-1.2C6 11.5 7 12 9 12s3-.5 4.4-1.2C14.2 10.4 15 11 15 12"/>
-    <path d="M3 12V8M9 12v-2M15 12V8M21 14v-2c0-1-.8-1.6-1.6-1.2"/>
-    <path d="M3 14h18"/>
+  <symbol id="i-implant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 6.5c2.6-1.4 7.4-1.4 10 0"/>
+    <path d="M12 8.5v11"/>
+    <path d="M9.4 11h5.2M9.7 13.5h4.6M10 16h4M10.6 18.5h2.8"/>
   </symbol>
-  <symbol id="i-denture" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 9c2-2 14-2 16 0 1 1 0 4-1 6-1 1.6-2 1-2.5-.5C16 13 15 12 12 12s-4 1-4.5 2.5C7 16 6 16.6 5 15c-1-2-2-5-1-6Z"/>
+  <symbol id="i-align" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.5" y="9" width="3.6" height="6" rx="1.4"/><rect x="10.2" y="9" width="3.6" height="6" rx="1.4"/><rect x="16.9" y="9" width="3.6" height="6" rx="1.4"/>
+    <path d="M3.5 6.5h17"/>
   </symbol>
-  <symbol id="i-implant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M9 3h6l-1.2 3H10.2L9 3Z"/><path d="M12 6v3"/>
-    <path d="M9.5 9h5l-.5 2h-4l-.5-2Z"/><path d="M10 11l.6 4M14 11l-.6 4"/><path d="M11 18h2"/>
+  <symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5l1.7 4.8L18.5 10l-4.8 1.7L12 16.5l-1.7-4.8L5.5 10l4.8-1.7z"/>
+    <path d="M18.5 15.5l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6z"/>
   </symbol>
-  <symbol id="i-ortho" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 10h16"/><rect x="6" y="8" width="3" height="4" rx="1"/><rect x="10.5" y="8" width="3" height="4" rx="1"/><rect x="15" y="8" width="3" height="4" rx="1"/>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 18c0-7 6-12 13-12 0 7-6 12-13 12z"/><path d="M5 18c3-4 6-6 9-7"/>
   </symbol>
-  <symbol id="i-aesthetic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="9"/><path d="M8 14c1 1.4 2.4 2 4 2s3-.6 4-2"/><path d="M16 5.5l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7.7-1.6Z"/>
+  <symbol id="i-goal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 5l7 7-7 7"/>
   </symbol>
 </svg>
 
-<!-- ヒーロー -->
 <header class="hero">
   <div class="wrap reveal">
-    <svg class="leaf" aria-hidden="true"><use href="#i-leaf"/></svg>
     <p class="eyebrow">LIFE DENTAL CLINIC</p>
     <h1>治療と費用のご案内</h1>
-    <p class="sub">当院で行う治療の内容と費用を、ご覧いただけます。気になる治療をお選びください。</p>
+    <p class="lead">
+      当院で受けられる治療の内容と、おおよその費用をまとめています。
+      気になるところから、どうぞごゆっくりご覧ください。
+    </p>
   </div>
 </header>
 
-<!-- 治療一覧 -->
+<!-- 別セクション：知っておきたいお話（保険治療） -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <p class="eyebrow">知っておきたいお話</p>
+    <h2 class="title">治療を選ぶ前に</h2>
+    <p class="lead">
+      保険治療と自由診療は、どちらが良い・悪いではなく、目的と組み立て方が違います。
+      まずは、それぞれでできること・できないことを知っておいていただくと、選びやすくなります。
+    </p>
+
+    <a class="feature" href="insurance.html">
+      <svg class="ic"><use href="#i-leaf"/></svg>
+      <div class="fb">
+        <h3>保険治療でできること</h3>
+        <p>保険でできること・できないこと、そして3割負担のおおよその費用を、中立的にまとめています。「今を整えたい方」「今の費用を抑えたい方」へ。</p>
+      </div>
+      <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+    </a>
+
+    <a class="feature" href="self-pay.html">
+      <svg class="ic"><use href="#i-goal"/></svg>
+      <div class="fb">
+        <h3>自由診療でできること</h3>
+        <p>ゴールから逆算して組み立てる進め方、できること、おおよその費用をまとめています。「気になる歯を残したい方」「全体で守りたい方」へ。</p>
+      </div>
+      <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- 治療のご案内（ハブ） -->
 <section class="section">
   <div class="wrap reveal">
-    <p class="eyebrow">TREATMENTS</p>
-    <h2 class="title">治療のご案内</h2>
-    <p class="lead">それぞれの治療の内容・つくり・費用を、ページごとにまとめています。</p>
+    <p class="eyebrow">治療のご案内</p>
+    <h2 class="title">受けられる治療</h2>
+    <p class="lead">それぞれの治療について、内容とおおよその費用をご覧いただけます。</p>
 
     <div class="hub">
-
-      <!-- レジン修復（公開・活性） -->
       <a class="hub-card" href="resin.html">
-        <svg class="hc-ic" aria-hidden="true"><use href="#i-resin"/></svg>
-        <p class="hc-name">レジン修復</p>
-        <p class="hc-desc">小さな虫歯を、削る量を抑えて白く整えます。</p>
-        <span class="hc-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+        <svg class="ic"><use href="#i-tooth"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">レジン修復</span>
+          <span class="hc-desc">むし歯を削って、白いプラスチックで自然に詰める</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
       </a>
 
-      <!-- インレー・クラウン治療（公開中） -->
       <a class="hub-card" href="inlay-crown.html">
-        <svg class="hc-ic" aria-hidden="true"><use href="#i-crown"/></svg>
-        <p class="hc-name">インレー・クラウン治療</p>
-        <p class="hc-desc">詰め物・被せ物で、しっかり噛める歯に整えます。</p>
-        <span class="hc-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+        <svg class="ic"><use href="#i-crown"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">インレー・クラウン治療</span>
+          <span class="hc-desc">削ったところを、詰め物・被せ物で補う</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
       </a>
 
-      <!-- 根管治療（公開・活性） -->
       <a class="hub-card" href="root-canal.html">
-        <svg class="hc-ic" aria-hidden="true"><use href="#i-root"/></svg>
-        <p class="hc-name">根管治療</p>
-        <p class="hc-desc">歯の根を治して、ご自分の歯を残します。</p>
-        <span class="hc-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+        <svg class="ic"><use href="#i-root"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">根管治療</span>
+          <span class="hc-desc">痛みの出た歯の根を治して、歯を残す</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
       </a>
 
-      <!-- ブリッジ治療（公開・活性） -->
       <a class="hub-card" href="bridge.html">
-        <svg class="hc-ic" aria-hidden="true"><use href="#i-bridge"/></svg>
-        <p class="hc-name">ブリッジ治療</p>
-        <p class="hc-desc">抜けたところを、両隣の歯で支えて補います。</p>
-        <span class="hc-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+        <svg class="ic"><use href="#i-bridge"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">ブリッジ治療</span>
+          <span class="hc-desc">失った歯を、両隣の歯で支えて補う</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
       </a>
 
-      <!-- 入れ歯（義歯）治療（公開・活性） -->
       <a class="hub-card" href="denture.html">
-        <svg class="hc-ic" aria-hidden="true"><use href="#i-denture"/></svg>
-        <p class="hc-name">入れ歯（義歯）治療</p>
-        <p class="hc-desc">失った歯を、また噛める形に。お口になじむ入れ歯を。</p>
-        <span class="hc-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+        <svg class="ic"><use href="#i-denture"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">入れ歯（義歯）治療</span>
+          <span class="hc-desc">取り外しできる形で、噛む力を取り戻す</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
       </a>
 
-      <!-- インプラント治療（公開・活性） -->
       <a class="hub-card" href="implant.html">
-        <svg class="hc-ic" aria-hidden="true"><use href="#i-implant"/></svg>
-        <p class="hc-name">インプラント治療</p>
-        <p class="hc-desc">あごの土台から、しっかり噛める歯をつくります。</p>
-        <span class="hc-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+        <svg class="ic"><use href="#i-implant"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">インプラント治療</span>
+          <span class="hc-desc">あごの骨に土台を入れ、噛み心地を取り戻す</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
       </a>
 
-      <!-- 矯正治療（公開・活性） -->
       <a class="hub-card" href="ortho.html">
-        <svg class="hc-ic" aria-hidden="true"><use href="#i-ortho"/></svg>
-        <p class="hc-name">矯正治療</p>
-        <p class="hc-desc">歯並び・かみ合わせを、無理なく整えます。</p>
-        <span class="hc-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+        <svg class="ic"><use href="#i-align"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">矯正治療</span>
+          <span class="hc-desc">歯並びとかみ合わせを、時間をかけて整える</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
       </a>
 
-      <!-- 審美治療（公開・活性） -->
       <a class="hub-card" href="aesthetic.html">
-        <svg class="hc-ic" aria-hidden="true"><use href="#i-aesthetic"/></svg>
-        <p class="hc-name">審美治療</p>
-        <p class="hc-desc">白さや見た目を、自然に整えます。</p>
-        <span class="hc-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+        <svg class="ic"><use href="#i-sparkle"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">審美治療</span>
+          <span class="hc-desc">白さや形を、自然に美しく整える</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
       </a>
-
     </div>
 
-    <div class="infonote">
-      <p>費用はすべて税込・総額で表示しています。自由診療の補綴は、着手時とお渡し時の2回に分けてお支払いいただけます。</p>
-      <p>このご案内は、診察やご相談の内容を確かめていただくためのものです。今すぐすべてを決めていただく必要はありません。</p>
+    <div class="note">
+      <p>
+        費用は隠さず、おおよその目安をそれぞれのページに載せています。
+        どの治療を選ばれても、定期的なメインテナンス（お口の健康を保つための通院）は、ご一緒に続けていきます。
+        気になることは、どうぞお気軽にお尋ねください。
+      </p>
     </div>
   </div>
 </section>
 
-<!-- フッター -->
-<footer>
-  <img src="life-logo.png" alt="ライフデンタルクリニック">
+<footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
+  <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
   <div class="fl">ライフデンタルクリニック</div>
   <div class="ft">いい歯で、いい人生を。</div>
 </footer>
@@ -275,15 +294,15 @@
   (function(){
     var els = document.querySelectorAll('.reveal');
     if(!('IntersectionObserver' in window)){
-      els.forEach(function(el){ el.classList.add('visible'); });
+      els.forEach(function(el){el.classList.add('show');});
       return;
     }
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
-        if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+        if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
       });
-    },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
-    els.forEach(function(el){ io.observe(el); });
+    },{threshold:0.12});
+    els.forEach(function(el){io.observe(el);});
   })();
 </script>
 

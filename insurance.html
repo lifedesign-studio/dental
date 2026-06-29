@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>保険治療でできること｜ライフデンタルクリニック</title>
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --soft:#F4F7F5;
+    --card:#EEF3F1;
+    --ink:#2E3A3F;
+    --ink-soft:#54636A;
+    --muted:#6E7B80;
+    --sage:#4F7A6C;
+    --sage-2:#6E9C8E;
+    --line:#D8E0DD;
+    --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:var(--gothic);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.8;
+    letter-spacing:.02em;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  /* hero */
+  .hero{padding:54px 0 30px;}
+  .hero .eyebrow{margin-bottom:14px;}
+  .hero h1{
+    font-size:25px;line-height:1.5;margin:0 0 14px;
+    font-weight:700;letter-spacing:.04em;color:var(--ink);
+  }
+  .hero .lead{margin:0;}
+
+  /* sections */
+  .section{padding:38px 0;border-top:1px solid var(--line);}
+  .section.soft{background:var(--soft);border-top:none;}
+  .section:first-of-type{border-top:none;}
+  .eyebrow{
+    font-size:11px;letter-spacing:.28em;color:var(--sage);
+    font-weight:700;margin:0 0 9px;
+  }
+  h2.title{
+    font-size:20px;line-height:1.5;margin:0 0 14px;
+    font-weight:700;letter-spacing:.03em;color:var(--ink);
+  }
+  h3.sub{
+    font-size:15.5px;margin:26px 0 8px;font-weight:700;
+    color:var(--sage);letter-spacing:.03em;
+  }
+  .lead{font-size:15px;color:var(--ink-soft);margin:0 0 6px;}
+  p{font-size:15px;margin:0 0 14px;}
+  p.small{font-size:13.5px;color:var(--muted);line-height:1.85;}
+  strong{color:var(--sage);font-weight:700;}
+
+  /* fit cards (どんな方に向いているか) */
+  .fit{display:grid;gap:14px;margin:18px 0 4px;}
+  @media (min-width:760px){.fit{grid-template-columns:1fr 1fr;}}
+  .fit .item{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 18px 16px;display:flex;gap:13px;align-items:flex-start;
+  }
+  .fit .ic{flex:0 0 auto;width:30px;height:30px;color:var(--sage);}
+  .fit .item h4{margin:1px 0 4px;font-size:15px;font-weight:700;color:var(--ink);letter-spacing:.02em;}
+  .fit .item p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.75;}
+
+  /* can / cannot lists */
+  .list{margin:16px 0 6px;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+  .list .row{
+    display:flex;gap:13px;align-items:flex-start;
+    padding:15px 17px;border-top:1px solid var(--line);
+  }
+  .list .row:first-child{border-top:none;}
+  .list.can .row{background:var(--paper);}
+  .list .mk{flex:0 0 auto;width:22px;height:22px;margin-top:2px;color:var(--sage);}
+  .list .mk.no{color:var(--muted);}
+  .list .tx h4{margin:0 0 3px;font-size:14.5px;font-weight:700;color:var(--ink);letter-spacing:.02em;}
+  .list .tx p{margin:0;font-size:13px;color:var(--ink-soft);line-height:1.7;}
+
+  /* notice block (限界・将来の負担) */
+  .notice{
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--sage);
+    border-radius:12px;padding:18px 20px;margin:18px 0;
+  }
+  .notice h4{margin:0 0 6px;font-size:15px;font-weight:700;color:var(--ink);letter-spacing:.02em;}
+  .notice p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.78;}
+  .notice + .notice{margin-top:14px;}
+
+  /* price table */
+  .price{
+    width:100%;border-collapse:collapse;margin:16px 0 10px;
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px;
+  }
+  .price caption{
+    text-align:left;font-size:13.5px;color:var(--muted);
+    padding:0 2px 10px;line-height:1.7;
+  }
+  .price th,.price td{padding:13px 15px;text-align:left;border-top:1px solid var(--line);vertical-align:top;}
+  .price thead th{
+    background:var(--card);color:var(--sage);font-weight:700;font-size:13px;
+    letter-spacing:.04em;border-top:none;
+  }
+  .price tbody th{font-weight:600;color:var(--ink);width:58%;}
+  .price td{color:var(--ink-soft);white-space:nowrap;}
+  .price tbody tr:nth-child(even) th,
+  .price tbody tr:nth-child(even) td{background:var(--soft);}
+
+  /* footnote / disclaimer */
+  .disclaimer{
+    background:var(--soft);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;margin:14px 0 4px;
+  }
+  .disclaimer p{margin:0;font-size:13px;color:var(--muted);line-height:1.8;}
+
+  /* gentle bridge */
+  .bridge{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:24px 22px;margin:8px 0 2px;
+  }
+  .bridge h3{margin:0 0 10px;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:.03em;}
+  .bridge p{font-size:14.5px;color:var(--ink-soft);}
+  .bridge p:last-child{margin-bottom:0;}
+
+  /* back link */
+  .backrow{padding:30px 0 6px;}
+  .back{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--sage);font-size:14px;font-weight:600;text-decoration:none;
+    border:1px solid var(--line);border-radius:999px;padding:10px 18px;background:var(--paper);
+  }
+  .back svg{width:16px;height:16px;}
+
+  /* footer */
+  footer .fl{font-size:14px;color:var(--ink);letter-spacing:.08em;margin-top:2px;}
+  footer .ft{font-size:12.5px;color:var(--muted);letter-spacing:.1em;margin-top:4px;}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.show{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+<body>
+
+<!-- icon definitions -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 18c0-7 6-12 13-12 0 7-6 12-13 12z"/><path d="M5 18c3-4 6-6 9-7"/>
+  </symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 9h18"/><circle cx="16.5" cy="13" r="1.1" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 12.5l5 5 11-12"/>
+  </symbol>
+  <symbol id="i-dash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <path d="M5 12h14"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 5l-7 7 7 7"/>
+  </symbol>
+</svg>
+
+<header class="hero">
+  <div class="wrap reveal">
+    <p class="eyebrow">保険治療について</p>
+    <h1>保険治療でできること</h1>
+    <p class="lead">
+      保険治療で「できること」と「できないこと」を、中立的にご案内します。
+      おおよその費用（3割負担の目安）も載せています。
+      まずは、どんな方にこの治療が向いているかからお伝えします。
+    </p>
+  </div>
+</header>
+
+<!-- 1. どんな方に向いているか -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <p class="eyebrow">はじめに</p>
+    <h2 class="title">こんな方に、保険治療は合っています</h2>
+    <p>
+      保険治療は、けっして「劣った治療」ではありません。
+      自由診療とは<strong>目的と組み立て方が違う</strong>、別の役割を持った治療です。
+      次のようなお気持ちの方には、保険治療がコンセプト的によく合います。
+    </p>
+
+    <div class="fit">
+      <div class="item">
+        <svg class="ic"><use href="#i-leaf"/></svg>
+        <div>
+          <h4>今を整えたい方</h4>
+          <p>今ある痛みや不具合を、その都度こたえて整えていきたい。まずは目の前の困りごとを解決したい方。</p>
+        </div>
+      </div>
+      <div class="item">
+        <svg class="ic"><use href="#i-wallet"/></svg>
+        <div>
+          <h4>今の費用を抑えたい方</h4>
+          <p>必要なところを、必要な分だけ。今の暮らしを大切にしながら、費用を抑えて治していきたい方。</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="small" style="margin-top:16px;">
+      当院の「通い方の方針」でいう <strong>今を整える</strong> 方針に近いお気持ちです。
+      どの方針を選ばれても、定期的なメインテナンス（お口の健康を保つための通院）は、ご一緒に続けていきます。
+    </p>
+  </div>
+</section>
+
+<!-- 2. 保険治療とは -->
+<section class="section">
+  <div class="wrap reveal">
+    <p class="eyebrow">保険治療とは</p>
+    <h2 class="title">今ある困りごとに、その都度こたえる治療</h2>
+    <p>
+      保険治療は、国の制度にもとづいた治療です。
+      むし歯・歯周病・痛み・取れた・しみる・噛めないといった、
+      <strong>今ある困りごとを解消する</strong>ことを役割にしています（対処療法）。
+      今の不具合を整えるうえで、とても大切な治療です。
+    </p>
+    <p>
+      進め方は、自然と「気になる歯を1本ずつ、順番に治していく形」になります。
+      また、どなたでも受けられるように、
+      費用を抑えた材料・方法を使うことが前もって決められています。
+      このしくみ上、一度にまとめてではなく、
+      何回かに分けて少しずつ進めていく形になります。
+    </p>
+  </div>
+</section>
+
+<!-- 3. できること -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <p class="eyebrow">適応となる治療</p>
+    <h2 class="title">保険でできること</h2>
+    <p>今ある困りごとを整えるための、次のような治療が受けられます。</p>
+
+    <div class="list can">
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>むし歯を削って詰める</h4><p>白いプラスチック（レジン）や、銀の詰め物（インレー）で、削ったところを補います。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>歯の神経の治療（根の治療）</h4><p>深いむし歯で傷んだ神経を取り、根の中をきれいにして、痛みや腫れを抑えます。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>被せ物（銀歯・白い被せ物）</h4><p>銀の被せ物のほか、条件が合えば白い被せ物（CAD/CAM冠）も保険で選べます。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>抜歯</h4><p>残すことがむずかしい歯を抜きます。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>歯を失ったところを補う（保険のブリッジ・入れ歯）</h4><p>抜けたところを、保険の範囲のブリッジや入れ歯で補い、噛めるようにします。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>歯ぐきの基本的な治療</h4><p>歯石を取る、歯ぐきの炎症を抑えるなど、歯周病の基本的な治療を行います。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>定期的なメインテナンス</h4><p>治療のあとも、お口の健康を保つための定期的な通院を、保険で続けられます。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. できない・苦手なこと -->
+<section class="section">
+  <div class="wrap reveal">
+    <p class="eyebrow">適応とならないこと</p>
+    <h2 class="title">保険ではできない・苦手なこと</h2>
+    <p>
+      制度の範囲が決まっているため、次のようなことは保険の対象になりません。
+      これは「保険が悪い」のではなく、<strong>制度の役割の外にある</strong>、という意味です。
+    </p>
+
+    <div class="list">
+      <div class="row">
+        <svg class="mk no"><use href="#i-dash"/></svg>
+        <div class="tx"><h4>より自然で長持ちする材料</h4><p>セラミックやジルコニア、ゴールドなどの材料を使った詰め物・被せ物は、保険の対象外です。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk no"><use href="#i-dash"/></svg>
+        <div class="tx"><h4>歯を失ったところにインプラント</h4><p>あごの骨に土台を入れて歯を取り戻すインプラントは、保険の対象外です。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk no"><use href="#i-dash"/></svg>
+        <div class="tx"><h4>歯並びを整える矯正</h4><p>かみ合わせや歯並びを整える矯正は、原則として保険の対象外です。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk no"><use href="#i-dash"/></svg>
+        <div class="tx"><h4>見た目を細かく整えること</h4><p>白さや形を細かく合わせる、ホワイトニングで明るくするなど、見た目を整える治療は対象外です。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk no"><use href="#i-dash"/></svg>
+        <div class="tx"><h4>お口全体の設計図から治すこと</h4><p>かみ合わせや力のかかり方まで含めて、全体を設計してから治していく進め方は、保険のしくみでは行いにくいものです。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk no"><use href="#i-dash"/></svg>
+        <div class="tx"><h4>一度に、まとめて多くを治すこと</h4><p>しくみ上、何回かに分けて少しずつ進める形になり、短期間でまとめて治すことはむずかしくなります。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 知っておいてほしいこと（限界と将来の負担） -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <p class="eyebrow">知っておいてほしいこと</p>
+    <h2 class="title">「保険で十分」と思う前に、知っておいてほしいこと</h2>
+    <p>
+      保険治療は、今の困りごとを整える大切な治療です。
+      いっぽうで、目的によっては届きにくいところもあります。
+      <strong>そこを知らないまま「保険で十分」と思ってしまうと、あとで気持ちとずれてしまう</strong>ことがあります。
+      だからこそ、選ぶ前に次のことを知っておいていただきたいのです。
+    </p>
+
+    <div class="notice">
+      <h4>材料や方法に、範囲があります</h4>
+      <p>費用を抑えた材料が前提のため、年月とともにすり減ったり、欠けたり、変色したり、汚れが付きやすかったりすることがあります。自然な見た目や長持ちを、細かく追い求めることはむずかしくなります。</p>
+    </div>
+    <div class="notice">
+      <h4>1本ずつの積み上げになりやすい</h4>
+      <p>気になる歯を順番に治していく形になるため、かみ合わせや力のかかり方といった「お口全体の課題」が、計画に入りにくくなります。全体の課題が残ったままだと、ていねいに治した1本も、早く傷みやすくなることがあります。</p>
+    </div>
+    <div class="notice">
+      <h4>治した歯は、元の健康な歯には戻りません</h4>
+      <p>一度削った歯やかぶせた歯は、元どおりにはなりません。むし歯や歯周病がまた進むと、やり直しが必要になります。やり直しを重ねるほど、歯そのものへの負担も大きくなっていきます。</p>
+    </div>
+
+    <p style="margin-top:18px;">
+      これらを知ったうえで、<strong>「今の費用を抑えたい」という目的で保険治療を選ぶことは、尊重される選択</strong>です。
+      ただ、もしご本心が「長く持たせたい」「繰り返したくない」「見た目も整えたい」であれば、
+      保険治療だけでは、その願いに届ききらないことがあります。
+      そのときは、進め方そのものを変える選択肢もあります。
+    </p>
+  </div>
+</section>
+
+<!-- 6. おおよその費用 -->
+<section class="section">
+  <div class="wrap reveal">
+    <p class="eyebrow">おおよその費用</p>
+    <h2 class="title">保険治療の費用の目安（3割負担）</h2>
+    <p>あくまで目安です。実際の金額は、お口の状態・歯の場所・本数・通う回数などによって変わります。</p>
+
+    <table class="price">
+      <caption>※ 3割負担の方の、おおよその窓口でのお支払いの目安です。</caption>
+      <thead>
+        <tr><th>治療の内容</th><th>目安（3割）</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>初診時の検査（診察・レントゲンなど）</th><td>約 1,500〜3,000円</td></tr>
+        <tr><th>むし歯を白いプラスチック（レジン）で詰める／1歯</th><td>約 1,500〜3,000円</td></tr>
+        <tr><th>銀の詰め物（インレー）／1歯</th><td>約 1,500〜2,500円</td></tr>
+        <tr><th>歯の神経の治療（根の治療）※数回・被せ物代は別</th><td>約 3,000〜6,000円</td></tr>
+        <tr><th>銀の被せ物／1歯</th><td>約 3,000〜4,000円</td></tr>
+        <tr><th>白い被せ物（CAD/CAM冠・条件あり）／1歯</th><td>約 6,000〜7,000円</td></tr>
+        <tr><th>抜歯／1歯</th><td>約 1,500〜5,000円</td></tr>
+        <tr><th>保険のブリッジ（3本連結の例）</th><td>約 10,000〜20,000円</td></tr>
+        <tr><th>保険の部分入れ歯（本数による）</th><td>約 5,000〜15,000円</td></tr>
+        <tr><th>保険の総入れ歯</th><td>約 10,000〜15,000円</td></tr>
+        <tr><th>歯ぐきの基本的な治療（歯石取りなど）／1回</th><td>約 数百〜1,500円</td></tr>
+        <tr><th>定期的なメインテナンス／1回</th><td>約 2,000〜3,500円</td></tr>
+      </tbody>
+    </table>
+
+    <div class="disclaimer">
+      <p>
+        ・上の金額は <strong>3割負担の方の目安</strong>です。1割・2割負担の方は、お支払いがこれより少なくなります。<br>
+        ・保険治療は、初診時とそれ以降で計算のしかたが変わるほか、お口の状態や追加の処置によって前後します。<br>
+        ・正確な金額は、診察のうえでご案内します。気になる場合は、治療を始める前にお気軽にお尋ねください。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. 今は保険で整えたい方へ -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <p class="eyebrow">それでも、今は保険で</p>
+    <h2 class="title">納得して選んでいただくことを、大切にしています</h2>
+    <p>
+      限界や将来の負担を知ったうえで、「今は費用を抑えて、必要なところを整えたい」。
+      そう選んでいただくのは、まったく自然なことです。
+      当院は、その選択を尊重します。
+    </p>
+    <p>
+      大切なのは、<strong>よく分からないまま「とりあえず保険で」と進めてしまわないこと</strong>。
+      役割と範囲を知ったうえで選べば、それは納得のいく選択になります。
+      そして保険治療を選ばれた方とも、メインテナンスを通じて、ご一緒に長くお付き合いしていきます。
+    </p>
+  </div>
+</section>
+
+<!-- 8. やさしいブリッジ（自費の選択肢） -->
+<section class="section">
+  <div class="wrap reveal">
+    <p class="eyebrow">もし、お気持ちが変わってきたら</p>
+    <h2 class="title">目的が変わったときの、もうひとつの選択肢</h2>
+    <p>
+      通ううちに、「やっぱり長く持たせたい」「もう繰り返したくない」「見た目も整えたい」
+      という気持ちが出てくることがあります。
+      そのときは、<strong>気になる歯を残す</strong>、あるいは<strong>全体で守る</strong>といった、
+      別の進め方（自由診療）という選択肢もあります。
+    </p>
+
+    <div class="bridge">
+      <h3>1本ずつ治す進め方と、全体の設計図から決める進め方</h3>
+      <p>
+        保険治療が「気になる歯を1本ずつ、順番に治していく進め方」だとすれば、
+        自由診療は「お口全体の設計図を先に描いて、ゴールから逆算して治していく進め方」です。
+        どちらが偉いということではなく、組み立て方が違います。
+      </p>
+      <p>
+        全体の設計図から治していくと、やり直しを減らし、将来にわたる負担を抑えやすくなります。
+        ご興味が出たときに、費用や内容をゆっくり見比べていただけます。
+        <strong>今すぐ決めていただく必要はありません。いつでも、ご一緒に見直せます。</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap backrow reveal">
+  <a class="back" href="index.html">
+    <svg><use href="#i-arrow"/></svg>
+    治療と費用のご案内トップへ
+  </a>
+</div>
+
+<footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;margin-top:24px;">
+  <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(el){el.classList.add('show');});
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+      });
+    },{threshold:0.12});
+    els.forEach(function(el){io.observe(el);});
+  })();
+</script>
+
+</body>
+</html>

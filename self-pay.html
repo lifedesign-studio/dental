@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自由診療でできること｜ライフデンタルクリニック</title>
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --soft:#F4F7F5;
+    --card:#EEF3F1;
+    --ink:#2E3A3F;
+    --ink-soft:#54636A;
+    --muted:#6E7B80;
+    --sage:#4F7A6C;
+    --sage-2:#6E9C8E;
+    --line:#D8E0DD;
+    --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:var(--gothic);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.8;
+    letter-spacing:.02em;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  /* hero */
+  .hero{padding:54px 0 30px;}
+  .hero .eyebrow{margin-bottom:14px;}
+  .hero h1{
+    font-size:25px;line-height:1.5;margin:0 0 14px;
+    font-weight:700;letter-spacing:.04em;color:var(--ink);
+  }
+  .hero .lead{margin:0;}
+
+  /* sections */
+  .section{padding:38px 0;border-top:1px solid var(--line);}
+  .section.soft{background:var(--soft);border-top:none;}
+  .section:first-of-type{border-top:none;}
+  .eyebrow{
+    font-size:11px;letter-spacing:.28em;color:var(--sage);
+    font-weight:700;margin:0 0 9px;
+  }
+  h2.title{
+    font-size:20px;line-height:1.5;margin:0 0 14px;
+    font-weight:700;letter-spacing:.03em;color:var(--ink);
+  }
+  .lead{font-size:15px;color:var(--ink-soft);margin:0 0 6px;}
+  p{font-size:15px;margin:0 0 14px;}
+  p.small{font-size:13.5px;color:var(--muted);line-height:1.85;}
+  strong{color:var(--sage);font-weight:700;}
+
+  /* fit cards */
+  .fit{display:grid;gap:14px;margin:18px 0 4px;}
+  @media (min-width:760px){.fit{grid-template-columns:1fr 1fr;}}
+  .fit .item{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 18px 16px;display:flex;gap:13px;align-items:flex-start;
+  }
+  .fit .ic{flex:0 0 auto;width:30px;height:30px;color:var(--sage);}
+  .fit .item h4{margin:1px 0 4px;font-size:15px;font-weight:700;color:var(--ink);letter-spacing:.02em;}
+  .fit .item p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.75;}
+
+  /* can list */
+  .list{margin:16px 0 6px;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+  .list .row{
+    display:flex;gap:13px;align-items:flex-start;
+    padding:15px 17px;border-top:1px solid var(--line);background:var(--paper);
+  }
+  .list .row:first-child{border-top:none;}
+  .list .mk{flex:0 0 auto;width:22px;height:22px;margin-top:2px;color:var(--sage);}
+  .list .tx h4{margin:0 0 3px;font-size:14.5px;font-weight:700;color:var(--ink);letter-spacing:.02em;}
+  .list .tx p{margin:0;font-size:13px;color:var(--ink-soft);line-height:1.7;}
+
+  /* notice block */
+  .notice{
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--sage);
+    border-radius:12px;padding:18px 20px;margin:18px 0;
+  }
+  .notice h4{margin:0 0 6px;font-size:15px;font-weight:700;color:var(--ink);letter-spacing:.02em;}
+  .notice p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.78;}
+  .notice + .notice{margin-top:14px;}
+
+  /* price guide */
+  .price{
+    width:100%;border-collapse:collapse;margin:16px 0 10px;
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px;
+  }
+  .price caption{
+    text-align:left;font-size:13.5px;color:var(--muted);
+    padding:0 2px 10px;line-height:1.7;
+  }
+  .price th,.price td{padding:13px 15px;text-align:left;border-top:1px solid var(--line);vertical-align:top;}
+  .price thead th{
+    background:var(--card);color:var(--sage);font-weight:700;font-size:13px;
+    letter-spacing:.04em;border-top:none;
+  }
+  .price tbody th{font-weight:600;color:var(--ink);width:58%;}
+  .price td{color:var(--ink-soft);white-space:nowrap;}
+  .price tbody tr:nth-child(even) th,
+  .price tbody tr:nth-child(even) td{background:var(--soft);}
+
+  .disclaimer{
+    background:var(--soft);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;margin:14px 0 4px;
+  }
+  .disclaimer p{margin:0;font-size:13px;color:var(--muted);line-height:1.8;}
+
+  /* gentle blocks */
+  .bridge{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:24px 22px;margin:8px 0 2px;
+  }
+  .bridge h3{margin:0 0 10px;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:.03em;}
+  .bridge p{font-size:14.5px;color:var(--ink-soft);}
+  .bridge p:last-child{margin-bottom:0;}
+
+  /* cross link card */
+  .cross{
+    display:flex;gap:14px;align-items:center;
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:18px 18px;text-decoration:none;color:inherit;margin-top:6px;
+    transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease;
+  }
+  .cross:hover{border-color:var(--sage-2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(79,122,108,.09);}
+  .cross .ic{flex:0 0 auto;width:30px;height:30px;color:var(--sage);}
+  .cross .cb{flex:1 1 auto;min-width:0;}
+  .cross .cb b{display:block;font-size:15px;color:var(--ink);font-weight:700;letter-spacing:.02em;}
+  .cross .cb span{display:block;font-size:13px;color:var(--ink-soft);line-height:1.6;margin-top:2px;}
+  .cross .ar{flex:0 0 auto;width:20px;height:20px;color:var(--sage-2);}
+
+  /* back link */
+  .backrow{padding:30px 0 6px;}
+  .back{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--sage);font-size:14px;font-weight:600;text-decoration:none;
+    border:1px solid var(--line);border-radius:999px;padding:10px 18px;background:var(--paper);
+  }
+  .back svg{width:16px;height:16px;}
+
+  footer .fl{font-size:14px;color:var(--ink);letter-spacing:.08em;margin-top:2px;}
+  footer .ft{font-size:12.5px;color:var(--muted);letter-spacing:.1em;margin-top:4px;}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.show{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-crown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 4.2c-1.9 0-3.1 1.5-3.1 3.5 0 1.7.5 3.1 1 4.7.4 1.3.6 3 .8 4.5.15 1.05.9 1.7 1.7 1.7.65 0 1.05-.55 1.15-1.3l.5-3.1c.06-.45.45-.45.5 0l.5 3.1c.1.75.55 1.3 1.2 1.3.8 0 1.55-.65 1.7-1.7.2-1.5.4-3.2.8-4.5.5-1.6 1-3 1-4.7 0-2-1.2-3.5-3.1-3.5-1.05 0-1.8.45-2.3.85-.3.25-.7.25-1 0-.5-.4-1.25-.85-2.3-.85z"/>
+    <path d="M5.4 8.6c2.2 1 9 1 13.2 0"/>
+  </symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M4 9.5h16M4 14.5h16M9.5 4v16M14.5 4v16"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 12.5l5 5 11-12"/>
+  </symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 9h18"/><circle cx="16.5" cy="13" r="1.1" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 5l7 7-7 7"/>
+  </symbol>
+  <symbol id="i-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 5l-7 7 7 7"/>
+  </symbol>
+</svg>
+
+<header class="hero">
+  <div class="wrap reveal">
+    <p class="eyebrow">自由診療について</p>
+    <h1>自由診療でできること</h1>
+    <p class="lead">
+      自由診療は、保険の範囲にとらわれず、お一人おひとりのゴールから治療を組み立てる進め方です。
+      何ができるのか、何を大切にしているのか、そしておおよその費用までご案内します。
+      まずは、どんな方に向いているかからお伝えします。
+    </p>
+  </div>
+</header>
+
+<!-- 1. どんな方に向いているか -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <p class="eyebrow">はじめに</p>
+    <h2 class="title">こんな方に、自由診療は合っています</h2>
+    <p>
+      自由診療は、保険治療より「上」の治療ではありません。
+      <strong>目的が違う</strong>のです。
+      次のようなお気持ちが出てきたとき、自由診療がその願いにこたえられます。
+    </p>
+
+    <div class="fit">
+      <div class="item">
+        <svg class="ic"><use href="#i-crown"/></svg>
+        <div>
+          <h4>気になる歯を、良い形で残したい方</h4>
+          <p>今ある気になる歯を、良い材料・良い治療で、しっかり治して長く残したい。見た目も整えたい方。</p>
+        </div>
+      </div>
+      <div class="item">
+        <svg class="ic"><use href="#i-grid"/></svg>
+        <div>
+          <h4>お口全体を、根本から守りたい方</h4>
+          <p>1本ずつではなく全体を診て、繰り返す原因から治したい。将来の負担を抑えて、長く守りたい方。</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="small" style="margin-top:16px;">
+      当院の「通い方の方針」でいう <strong>気になる歯を残す</strong>・<strong>全体で守る</strong> 方針に近いお気持ちです。
+      「今は費用を抑えたい」という方には、保険治療のご案内のほうが合っています。
+    </p>
+  </div>
+</section>
+
+<!-- 2. 自由診療とは -->
+<section class="section">
+  <div class="wrap reveal">
+    <p class="eyebrow">自由診療とは</p>
+    <h2 class="title">ゴールから逆算して、組み立てる治療</h2>
+    <p>
+      自由診療は、「どうなりたいか」というゴールを起点に、
+      材料・方法・時間・順番を選んで治療を組み立てます。
+      今ある困りごとを整えるだけでなく、
+      <strong>その先の「長く保つ」「繰り返さない」「整える」まで</strong>を見据えて進めます。
+    </p>
+    <p>
+      保険治療が「気になる歯を1本ずつ、順番に治していく進め方」だとすれば、
+      自由診療は「お口全体の設計図を先に描いて、ゴールから逆算して治していく進め方」です。
+      どちらが偉いということではなく、<strong>組み立て方が違います</strong>。
+      全体の設計図から治していく進め方は、保険のしくみでは行いにくいため、自由診療として行います。
+    </p>
+  </div>
+</section>
+
+<!-- 3. 自由診療でできること -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <p class="eyebrow">広げられること</p>
+    <h2 class="title">自由診療でできること</h2>
+    <p>保険の範囲では届きにくい、次のようなことができます。</p>
+
+    <div class="list">
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>材料を選べる（セラミック・ジルコニア・ゴールドなど）</h4><p>自然な見た目と、長く保ちやすい材料から、歯に合ったものを選べます。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>失った歯にインプラント</h4><p>あごの骨に土台を入れ、自分の歯のような噛み心地を取り戻します。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>歯並び・かみ合わせを整える矯正</h4><p>見た目だけでなく、噛み合わせや力のかかり方まで整えます。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>見た目を細かく整える</h4><p>白さや形を自然に整える、ホワイトニングや前歯の見た目改善ができます。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>お口全体の設計図から治す</h4><p>かみ合わせ・力・奥歯の支え・欠損まで含めて、全体を設計してから治していきます。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>一度に、まとめて集中して治す</h4><p>1回にしっかり時間をとり、何本かをまとめて治すことで、通院回数を抑えられます。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>精密な治療で歯を残す</h4><p>神経の治療や歯ぐきの治療を、より精密に行い、抜かずに残す可能性を広げます。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-check"/></svg>
+        <div class="tx"><h4>長く保ち、やり直しを減らす</h4><p>保証と定期的なメインテナンスで、入れて終わりにせず、長く守ります。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. 材料だけではない価値 -->
+<section class="section">
+  <div class="wrap reveal">
+    <p class="eyebrow">大切にしていること</p>
+    <h2 class="title">自由診療の価値は、材料や費用だけではありません</h2>
+    <p>
+      自由診療というと「高い材料を使う治療」と思われがちですが、本当の価値はそれだけではありません。
+    </p>
+
+    <div class="notice">
+      <h4>必要な時間を、確保できます</h4>
+      <p>1回にしっかり時間をとり、集中して治療を進められます。何本かをまとめて治すことで、通院の回数を抑えられます。忙しい方ほど、この時間の価値は大きくなります。</p>
+    </div>
+    <div class="notice">
+      <h4>お口全体から、設計できます</h4>
+      <p>1本ずつでは見えにくい、かみ合わせや力のかかり方、奥歯の支えまで考えて治せます。全体を整えることで、せっかく治した歯も傷みにくくなります。</p>
+    </div>
+    <div class="notice">
+      <h4>長く守ることを、目的にできます</h4>
+      <p>その場をしのぐのではなく、やり直しを減らし、将来にわたる負担を抑えることを目指せます。目先の1本の費用ではなく、長い目で見た負担で考えられます。</p>
+    </div>
+    <div class="notice">
+      <h4>治療のあとも、ご一緒に支えます</h4>
+      <p>当院の自由診療には15年の保証があります（定期的なメインテナンスの継続が条件です）。入れて終わりではなく、長くお付き合いしていきます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 費用について -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <p class="eyebrow">費用について</p>
+    <h2 class="title">費用は、隠さずお伝えします</h2>
+    <p>
+      自由診療の費用は、材料費だけで決まるものではありません。
+      診断・設計、技術、時間、説明、保証、そして治療後の継続管理まで含めた、
+      <strong>価値に対するもの</strong>です。だからこそ、費用ははっきりとお伝えします。
+    </p>
+
+    <h3 style="font-size:15.5px;color:var(--sage);margin:22px 0 8px;font-weight:700;">お支払いのしくみ</h3>
+    <div class="list">
+      <div class="row">
+        <svg class="mk"><use href="#i-wallet"/></svg>
+        <div class="tx"><h4>総額を先に、はっきりと</h4><p>総額をお伝えしたうえで、お支払い方法をご案内します。多くの治療で、着手時と完成時の2回に分けられます。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-wallet"/></svg>
+        <div class="tx"><h4>診断の費用は、治療費に充てられます</h4><p>治療を始める前の診断・設計の費用は、その後その治療に進まれた場合、治療費に充てます。</p></div>
+      </div>
+      <div class="row">
+        <svg class="mk"><use href="#i-wallet"/></svg>
+        <div class="tx"><h4>同じ歯に、二度はいただきません</h4><p>一度治した歯にやり直しや治療の変更が必要になっても、いただいた技術料を次の治療に充てます。</p></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:15.5px;color:var(--sage);margin:26px 0 8px;font-weight:700;">おおよその費用の目安</h3>
+    <table class="price">
+      <caption>※ 税込・総額のおおよその目安です（「〜」は標準的な場合の下限）。</caption>
+      <thead>
+        <tr><th>治療の内容</th><th>目安（税込）</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>白い詰め物・被せ物（セラミックなど）／1歯</th><td>約 140,000円〜</td></tr>
+        <tr><th>歯の神経の精密な治療（精密根管）／1歯</th><td>約 100,000円〜</td></tr>
+        <tr><th>自由診療の入れ歯</th><td>約 240,000円〜</td></tr>
+        <tr><th>インプラント／1歯（骨をつくる処置は別途）</th><td>約 460,000円〜</td></tr>
+        <tr><th>歯並びを整える矯正（部分）</th><td>約 220,000円〜</td></tr>
+        <tr><th>歯並びを整える矯正（全体）</th><td>約 715,000円〜</td></tr>
+        <tr><th>前歯の見た目を整える（ラミネートベニア）</th><td>約 180,000円〜</td></tr>
+        <tr><th>ホワイトニング</th><td>約 30,000円〜</td></tr>
+        <tr><th>まず全体を診る相談（全体設計コンサル）</th><td>16,000円</td></tr>
+      </tbody>
+    </table>
+
+    <div class="disclaimer">
+      <p>
+        ・上の金額は <strong>税込・総額のおおよその目安</strong>です。お口の状態・本数・範囲・選ぶ材料によって変わります。<br>
+        ・正確な金額は、診断のうえでご案内します。各治療の詳しい費用は、それぞれのページに載せています。<br>
+        ・全体設計コンサルの費用は、その後その治療に進まれた場合、治療費に充てられます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. 進め方（急がない） -->
+<section class="section">
+  <div class="wrap reveal">
+    <p class="eyebrow">進め方</p>
+    <h2 class="title">急いで決める必要はありません</h2>
+    <p>
+      自由診療は、いきなり始めるものではありません。
+      まずお口全体を診て、設計図を描くところから始めます。
+      内容と費用に納得いただいてから、進めます。
+    </p>
+    <div class="bridge">
+      <p>
+        今すぐ、すべてを決めていただく必要はありません。
+        今は保険で整えておいて、あとから自由診療を選ぶこともできます。
+        その逆も、いつでも、ご一緒に見直せます。
+      </p>
+      <p style="margin-bottom:0;">
+        まずは「全体を一度診てほしい」「費用も含めて相談したい」だけでも構いません。
+        考えられる状態をつくることから、ご一緒に始めましょう。
+      </p>
+    </div>
+
+    <a class="cross" href="insurance.html" style="margin-top:18px;">
+      <svg class="ic"><use href="#i-wallet"/></svg>
+      <div class="cb">
+        <b>今は費用を抑えたい方へ</b>
+        <span>保険治療でできること・できないこと、3割負担の費用の目安はこちら</span>
+      </div>
+      <svg class="ar"><use href="#i-arrow"/></svg>
+    </a>
+  </div>
+</section>
+
+<div class="wrap backrow reveal">
+  <a class="back" href="index.html">
+    <svg><use href="#i-back"/></svg>
+    治療と費用のご案内トップへ
+  </a>
+</div>
+
+<footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;margin-top:24px;">
+  <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(el){el.classList.add('show');});
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+      });
+    },{threshold:0.12});
+    els.forEach(function(el){io.observe(el);});
+  })();
+</script>
+
+</body>
+</html>
