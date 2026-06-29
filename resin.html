@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>レジン修復について｜ライフデンタルクリニック</title>
+<style>
+:root{
+  --paper:#FFFFFF;
+  --soft:#F4F7F5;        /* 淡いセージ地（交互バンド） */
+  --card:#EEF3F1;        /* カード地 */
+  --ink:#2E3A3F;         /* 本文チャコール */
+  --ink-soft:#54636A;    /* やや薄い本文 */
+  --muted:#6E7B80;       /* 補足 */
+  --sage:#4F7A6C;        /* アクセント（深め） */
+  --sage-2:#6E9C8E;      /* アクセント（明るめ） */
+  --line:#D8E0DD;        /* 罫 */
+  --line-2:#E7EDEA;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic","YuGothic","Noto Sans JP","Noto Sans CJK JP",sans-serif;
+  --maxtext:720px;
+  --maxwide:1080px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--gothic);line-height:1.8;
+  font-size:16px;letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;height:auto;display:block;}
+svg{display:block;}
+
+/* ---- レイアウト ---- */
+.section{padding:64px 22px;}
+.section.soft{background:var(--soft);}
+.wrap{max-width:var(--maxtext);margin:0 auto;}
+.wrap-wide{max-width:var(--maxwide);margin:0 auto;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--sage);
+  margin:0 0 14px;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--sage);flex:0 0 auto;}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:.01em;line-height:1.32;}
+h2.title{font-size:28px;margin-bottom:12px;}
+.nb{white-space:nowrap;}
+.scroll-hint{display:block;font-size:11.5px;color:var(--muted);text-align:right;margin:0 2px 7px;}
+.lead{font-size:16px;color:var(--ink-soft);margin:0 0 8px;line-height:1.85;}
+.note{font-size:12.5px;color:var(--muted);line-height:1.7;}
+
+/* ---- ピクトグラム共通 ---- */
+.pico{width:30px;height:30px;stroke:var(--sage);stroke-width:1.7;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;}
+.pico.solid{fill:none;}
+.circle-ico{
+  width:54px;height:54px;border-radius:50%;background:#fff;
+  border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+}
+.circle-ico .pico{width:28px;height:28px;}
+
+/* ================= HERO ================= */
+.hero{padding:60px 22px 56px;background:linear-gradient(180deg,#fff 0%,var(--soft) 100%);}
+.hero .wrap-wide{display:grid;grid-template-columns:1fr;gap:30px;align-items:center;}
+.hero-kicker{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--sage);margin-bottom:16px;}
+.hero h1{font-size:28px;line-height:1.42;margin-bottom:16px;letter-spacing:.005em;}
+.hero h1 .em{color:var(--sage);}
+.hero p{font-size:15.5px;color:var(--ink-soft);margin:0 0 22px;line-height:1.85;}
+.hero-figure{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 16px 14px;}
+.hero-figure .cap{text-align:center;font-size:12.5px;color:var(--muted);margin-top:12px;}
+.steps{display:grid;grid-template-columns:1fr;gap:12px;margin-top:4px;}
+.step{
+  display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:15px 16px;
+}
+.step .num{
+  width:30px;height:30px;border-radius:50%;background:var(--sage);color:#fff;
+  font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;margin-top:1px;
+}
+.step .stitle{font-weight:800;font-size:15.5px;margin-bottom:3px;display:flex;align-items:center;gap:8px;}
+.step .sdesc{font-size:13.5px;color:var(--ink-soft);line-height:1.7;}
+.step .pico{width:22px;height:22px;}
+
+/* ================= FLOW（選び方の地図） ================= */
+.flow{display:grid;grid-template-columns:1fr;gap:0;margin-top:26px;}
+.flow-row{display:flex;flex-direction:column;align-items:stretch;gap:14px;}
+.flow-start{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:16px;text-align:center;
+}
+.flow-start .lbl{font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.flow-start .sub{font-size:13px;color:var(--muted);margin-top:4px;}
+.flow-arrow{display:flex;justify-content:center;color:var(--sage-2);}
+.flow-arrow svg{width:22px;height:26px;stroke:var(--sage-2);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.flow-row .flow-arrow svg{transform:rotate(90deg);}
+.flow-branch{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.flow-node{
+  background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:16px 11px;text-align:center;
+}
+.flow-node.lit{border-color:var(--sage);box-shadow:0 0 0 3px rgba(79,122,108,.08);}
+.flow-node .circle-ico{margin:0 auto 10px;width:50px;height:50px;border-color:var(--sage-2);}
+.flow-node .nt{font-weight:800;font-size:15px;margin-bottom:2px;}
+.flow-node .nd{font-size:12px;color:var(--muted);line-height:1.5;}
+.flow-node .tag{font-size:11px;color:var(--sage);font-weight:700;margin-bottom:6px;letter-spacing:.03em;}
+.flow-mat{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:2px;
+}
+.flow-mat .mt{font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px;}
+.mat-chips{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.chip{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:10px 12px;}
+.chip .pico{width:22px;height:22px;}
+.chip b{font-size:13.5px;font-weight:800;}
+.chip span{font-size:11.5px;color:var(--muted);display:block;line-height:1.4;}
+
+/* ================= 比較表 ================= */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:24px;
+  border:1px solid var(--line);border-radius:14px;background:#fff;}
+table.compare{border-collapse:collapse;width:100%;min-width:560px;font-size:13.5px;}
+table.compare th,table.compare td{padding:13px 12px;text-align:center;border-bottom:1px solid var(--line-2);}
+table.compare thead th{background:var(--soft);font-weight:800;color:var(--ink);vertical-align:bottom;}
+table.compare thead .grp{font-size:11px;color:var(--sage);font-weight:700;letter-spacing:.06em;display:block;margin-bottom:3px;}
+table.compare tbody th{
+  text-align:left;font-weight:700;background:#fff;color:var(--ink);white-space:nowrap;
+  position:sticky;left:0;z-index:1;border-right:1px solid var(--line-2);
+  display:flex;align-items:center;gap:9px;min-height:46px;
+}
+table.compare tbody th .pico{width:20px;height:20px;}
+table.compare td .mk{font-size:17px;font-weight:800;line-height:1;}
+table.compare td small{display:block;font-size:11px;color:var(--muted);margin-top:3px;line-height:1.35;}
+.mk-good{color:var(--sage);}
+.mk-ok{color:var(--ink);}
+.mk-warn{color:#B08456;}
+.mk-no{color:#A7B0B2;}
+table.compare td.fee{font-size:12px;color:var(--ink-soft);line-height:1.5;}
+table.compare td.fee b{color:var(--ink);font-weight:700;}
+.legend{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.7;}
+.legend b{color:var(--ink-soft);}
+
+/* ================= できること ================= */
+.use-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px;}
+.use{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 18px;}
+.use .uh{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.use .uh .circle-ico{width:48px;height:48px;border-color:var(--line);}
+.use .ut{font-weight:800;font-size:15.5px;}
+.use .ud{font-size:13.5px;color:var(--ink-soft);line-height:1.78;margin:0;}
+.use-foot{margin-top:20px;background:var(--card);border-radius:12px;padding:15px 17px;
+  font-size:13px;color:var(--ink-soft);line-height:1.78;display:flex;gap:12px;align-items:flex-start;}
+.use-foot .pico{width:24px;height:24px;margin-top:2px;stroke:var(--sage);}
+
+/* ================= 良さ（why） ================= */
+.why-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px;}
+.why{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px 18px;}
+.why .wh{display:flex;align-items:center;gap:12px;margin-bottom:9px;}
+.why .wh .circle-ico{width:46px;height:46px;border-color:var(--line);}
+.why .wt{font-weight:800;font-size:15.5px;}
+.why .wd{font-size:13.5px;color:var(--ink-soft);line-height:1.78;margin:0;}
+.why .wd b{color:var(--ink);font-weight:800;}
+
+/* ================= 精度 ================= */
+.prec-rows{display:grid;grid-template-columns:1fr;gap:11px;margin-top:24px;}
+.prec-row{display:flex;gap:13px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px 15px;align-items:flex-start;}
+.prec-row .circle-ico{width:44px;height:44px;border-color:var(--line);}
+.prec-row .pt{font-weight:800;font-size:14.5px;margin-bottom:2px;}
+.prec-row .pt b{color:var(--sage);}
+.prec-row .pd{font-size:12.5px;color:var(--ink-soft);line-height:1.68;}
+.evidence{margin-top:20px;background:var(--card);border-radius:14px;padding:18px 19px;}
+.evidence .eh{font-weight:800;font-size:15px;margin-bottom:9px;display:flex;align-items:center;gap:10px;}
+.evidence .eh .pico{width:24px;height:24px;stroke:var(--sage);}
+.evidence p{font-size:13.5px;color:var(--ink-soft);line-height:1.82;margin:0 0 9px;}
+.evidence p b{color:var(--ink);font-weight:800;}
+.evidence p:last-child{margin-bottom:0;}
+
+/* ================= 料金 ================= */
+.price-block{margin-top:24px;}
+.price-head{display:flex;align-items:center;gap:11px;margin-bottom:14px;}
+.price-head .badge{font-size:13px;font-weight:800;color:#fff;background:var(--sage);
+  padding:6px 15px;border-radius:999px;letter-spacing:.04em;}
+.price-head .ph-note{font-size:12.5px;color:var(--muted);}
+.price-cards{display:grid;grid-template-columns:1fr;gap:13px;}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 17px;}
+.pcard .pc-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;}
+.pcard .pc-name{font-size:15px;font-weight:800;}
+.pcard .pc-name small{display:block;font-size:11.5px;color:var(--muted);font-weight:600;margin-top:2px;}
+.pcard .pc-total{font-size:22px;font-weight:800;color:var(--ink);white-space:nowrap;}
+.pcard .pc-total small{font-size:12px;color:var(--muted);font-weight:600;}
+.pcard .pc-meta{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:11px;padding-top:11px;border-top:1px solid var(--line-2);}
+.pcard .pc-meta div{font-size:12.5px;color:var(--ink-soft);}
+.pcard .pc-meta .pm-k{color:var(--muted);font-weight:700;margin-right:5px;font-size:11.5px;}
+.price-table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:14px;
+  border:1px solid var(--line);border-radius:14px;background:#fff;}
+table.price{border-collapse:collapse;width:100%;min-width:460px;font-size:13.5px;}
+table.price th,table.price td{padding:13px 12px;text-align:center;border-bottom:1px solid var(--line-2);}
+table.price thead th{background:var(--soft);font-weight:800;color:var(--ink);}
+table.price tbody th{text-align:left;font-weight:800;background:#fff;color:var(--ink);
+  border-right:1px solid var(--line-2);display:flex;align-items:center;gap:9px;min-height:46px;}
+table.price tbody th .pico{width:20px;height:20px;}
+table.price td{font-weight:700;color:var(--ink);}
+table.price td small{display:block;font-size:11px;color:var(--muted);font-weight:600;margin-top:2px;}
+.price-notes{margin-top:18px;font-size:12.5px;color:var(--muted);line-height:1.85;}
+.price-notes li{margin-bottom:3px;}
+
+/* ================= 保証・長持ち ================= */
+.warranty-cond{
+  display:flex;align-items:center;gap:11px;background:var(--card);border-radius:12px;
+  padding:13px 16px;margin-top:22px;font-size:13.5px;color:var(--ink-soft);font-weight:600;
+}
+.warranty-cond .pico{width:24px;height:24px;}
+.warranty-cond b{color:var(--sage);font-weight:800;}
+.timeline{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px;}
+.phase{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 17px;}
+.phase .ptop{display:flex;align-items:center;gap:11px;margin-bottom:13px;}
+.phase .pdot{width:44px;height:44px;border-radius:50%;background:var(--soft);border:1.5px solid var(--sage);
+  color:var(--sage);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;text-align:center;line-height:1.1;}
+.phase .pname{font-weight:800;font-size:15px;}
+.phase .pbody{font-size:13.5px;color:var(--ink-soft);line-height:1.78;margin:0;}
+.phase .pbody b{color:var(--sage);font-weight:800;}
+.phase .pbody b.cost{color:var(--ink);}
+
+/* ================= CTA / footer ================= */
+.cta{background:var(--sage);color:#fff;text-align:center;padding:56px 22px;}
+.cta h2{font-size:24px;color:#fff;margin-bottom:14px;line-height:1.5;}
+.cta p{font-size:15px;color:#EAF1EE;line-height:1.85;margin:0 auto 22px;max-width:560px;}
+.cta .qr-slot{
+  display:inline-flex;flex-direction:column;align-items:center;gap:10px;
+  background:rgba(255,255,255,.12);border:1px dashed rgba(255,255,255,.5);
+  border-radius:14px;padding:18px 26px;font-size:12.5px;color:#EAF1EE;
+}
+.cta .qr-slot .qbox{width:96px;height:96px;border-radius:10px;background:rgba(255,255,255,.18);
+  display:flex;align-items:center;justify-content:center;}
+.cta .qr-slot .qbox svg{width:46px;height:46px;stroke:#fff;stroke-width:1.6;fill:none;}
+
+/* ================= 子LP誘導 ================= */
+.more-link{display:block;text-decoration:none;color:inherit;}
+.more-card{background:var(--sage);color:#fff;border-radius:18px;padding:22px 22px;display:flex;align-items:center;gap:16px;transition:transform .2s ease;}
+.more-link:hover .more-card{transform:translateY(-2px);}
+.more-card .mc-ico{width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.more-card .mc-ico svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.more-card .mc-body{flex:1;min-width:0;}
+.more-card .mc-k{font-size:11.5px;font-weight:700;letter-spacing:.08em;color:#D8E6E0;margin-bottom:3px;}
+.more-card .mc-t{font-size:17.5px;font-weight:800;margin-bottom:3px;line-height:1.4;}
+.more-card .mc-d{font-size:12.5px;color:#EAF1EE;line-height:1.6;}
+.more-card .mc-arrow{flex:0 0 auto;}
+.more-card .mc-arrow svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ================= レスポンシブ ================= */
+@media (min-width:760px){
+  .scroll-hint{display:none;}
+  body{font-size:16.5px;}
+  .section{padding:84px 32px;}
+  .hero{padding:84px 32px 76px;}
+  .hero .wrap-wide{grid-template-columns:1.05fr .95fr;gap:48px;}
+  .hero h1{font-size:40px;}
+  .hero-kicker{font-size:14px;}
+  h2.title{font-size:34px;}
+  .steps{margin-top:18px;}
+  .use-grid{grid-template-columns:1fr 1fr;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .price-cards{grid-template-columns:1fr 1fr;}
+  .timeline{grid-template-columns:repeat(3,1fr);}
+}
+@media (min-width:1024px){
+  .hero h1{font-size:44px;}
+  table.compare{font-size:14.5px;}
+}
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== SVG シンボル定義 ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="ic-leaf" viewBox="0 0 24 24"><path d="M5 19C5 11 11 5 19 5c0 8-6 14-14 14Z"/><path d="M5 19c3-5 7-8 11-9"/></symbol>
+  <symbol id="ic-sparkle" viewBox="0 0 24 24"><path d="M12 3.5c.6 4.2 1.8 5.4 6 6-4.2.6-5.4 1.8-6 6-.6-4.2-1.8-5.4-6-6 4.2-.6 5.4-1.8 6-6Z"/><path d="M18.5 13c.3 1.8.8 2.3 2.5 2.5-1.7.3-2.2.7-2.5 2.5-.3-1.8-.8-2.2-2.5-2.5 1.7-.2 2.2-.7 2.5-2.5Z"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="m8.5 14 2 2 3.5-3.8"/></symbol>
+  <symbol id="ic-find" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.7-4.7"/><path d="M10.5 8v5M8 10.5h5"/></symbol>
+  <symbol id="ic-shape" viewBox="0 0 24 24"><path d="M12 3c-2.5 0-3 2.4-5.5 2.4C5 5.4 4 7.2 4 10c0 4 1.8 11 3.4 11 1 0 1.4-2.6 2.8-2.6h3.6c1.4 0 1.8 2.6 2.8 2.6C18 21 20 14 20 10c0-2.8-1-4.6-2.5-4.6C15 5.4 14.5 3 12 3Z"/><path d="M8.5 11.5h7"/></symbol>
+  <symbol id="ic-fit" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.4"/><path d="M12 1v3.5M12 19.5V23M1 12h3.5M19.5 12H23"/></symbol>
+  <symbol id="ic-yen" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M8 7.5 12 13l4-5.5M12 13v5M8.6 13.8h6.8M8.6 16.4h6.8"/></symbol>
+  <symbol id="ic-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+  <symbol id="ic-material" viewBox="0 0 24 24"><circle cx="9" cy="10" r="5"/><circle cx="15" cy="14" r="5"/></symbol>
+  <symbol id="ic-insurance" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 9.6 4-1.3 7-5.2 7-9.6V6l-7-3Z"/><path d="M9 11.5l2 2 4-4.2"/></symbol>
+  <symbol id="ic-gem" viewBox="0 0 24 24"><path d="M6 4h12l3 5-9 11L3 9l3-5Z"/><path d="M3 9h18M9 4 7.5 9 12 20M15 4l1.5 5L12 20"/></symbol>
+  <symbol id="ic-durable" viewBox="0 0 24 24"><path d="M12 2.5 4 5.5v5.2c0 5 3.4 9.3 8 10.8 4.6-1.5 8-5.8 8-10.8V5.5l-8-3Z"/><path d="M12 7.5v9M7.8 12h8.4"/></symbol>
+  <symbol id="ic-inlay" viewBox="0 0 24 24"><path d="M6 4c-1.5 0-2.5 2-2.5 5 0 4 1 11 3 11 1.2 0 1.5-3 3-3s1.8 3 3 3c2 0 3-7 3-11 0-3-1-5-2.5-5-1.5 0-2 1.2-3.5 1.2S7.5 4 6 4Z"/><rect x="9.2" y="7.5" width="5.6" height="3.4" rx="1"/></symbol>
+  <symbol id="ic-crown" viewBox="0 0 24 24"><path d="M6 9c-1.4 0-2.4 2-2.4 4.8 0 3.8 1 9.2 2.9 9.2 1.1 0 1.4-2.6 3.5-2.6s2.4 2.6 3.5 2.6c1.9 0 2.9-5.4 2.9-9.2C18.9 11 17.9 9 16.5 9c-1.4 0-2 1-4.5 1S7.4 9 6 9Z"/><path d="M4.5 9 6.6 3.6l2.4 2.6L12 2.8l3 3.4 2.4-2.6L19.5 9c-2 1-4.6 1.4-7.5 1.4S6.5 10 4.5 9Z"/></symbol>
+  <symbol id="ic-tooth" viewBox="0 0 24 24"><path d="M12 3c-2.5 0-3 2-5.5 2C5 5 4 6.8 4 9.5c0 4 1.8 11.5 3.4 11.5 1 0 1.4-3 2.8-3h3.6c1.4 0 1.8 3 2.8 3C18 21 20 13.5 20 9.5 20 6.8 19 5 17.5 5 15 5 14.5 3 12 3Z"/></symbol>
+  <symbol id="ic-scope" viewBox="0 0 24 24"><path d="M11 3h3v4h-3z"/><path d="M9.5 7h6l-1 4h-4z"/><path d="M12.5 11v4"/><circle cx="12.5" cy="18" r="2.6"/><path d="M15 16.5l4 1.5"/></symbol>
+  <symbol id="ic-shield-check" viewBox="0 0 24 24"><path d="M12 2.5 4 5.5v5.2c0 5 3.4 9.3 8 10.8 4.6-1.5 8-5.8 8-10.8V5.5l-8-3Z"/><path d="m8.4 11.6 2.5 2.5 4.7-5"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="ic-repair" viewBox="0 0 24 24"><path d="M14.5 5.5a4 4 0 0 0-5.3 5.3l-5.6 5.6a1.6 1.6 0 0 0 2.3 2.3l5.6-5.6a4 4 0 0 0 5.3-5.3l-2.4 2.4-2-2 2.4-2.4Z"/></symbol>
+  <symbol id="ic-question" viewBox="0 0 24 24"><path d="M4 5.5h16a1.4 1.4 0 0 1 1.4 1.4v8.2A1.4 1.4 0 0 1 20 16.5H9l-4 3.4V16.5a1.4 1.4 0 0 1-1.4-1.4V6.9A1.4 1.4 0 0 1 4 5.5Z"/><path d="M9.4 9.6a2.6 2.6 0 0 1 3.9-.4c1.1 1 .7 2.2-.5 3-.7.5-1 .9-1 1.7"/><circle cx="11.8" cy="16.4" r=".5" fill="#4F7A6C" stroke="none"/></symbol>
+  <symbol id="ic-arrow-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></symbol>
+  <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="ic-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v0M14 21h3M21 17v4M17 21h4"/></symbol>
+  <symbol id="ic-alert" viewBox="0 0 24 24"><path d="M12 3.5 21.5 20H2.5L12 3.5Z"/><path d="M12 9.5v5M12 17.5v.2"/></symbol>
+</defs></svg>
+
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap-wide">
+    <div>
+      <div class="hero-kicker">レジン修復について</div>
+      <h1>その場で<span class="nb">「<span class="em">白く詰める</span>」</span>、<br>歯にいちばんやさしい治療</h1>
+      <p>むし歯を削った部分に、白い樹脂（レジン）をその場で詰めて、形を整えます。型取りも待ち時間もなく、<b>削る量がいちばん少なく済む</b>のが特徴です。小さなむし歯や、前歯の小さな欠け・すき間にも使えます。</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <div class="stitle"><svg class="pico"><use href="#ic-leaf"/></svg>削る量が少ない</div>
+            <div class="sdesc">むし歯のところだけを最小限に削り、健康な歯をできるだけ<b>多く残せます</b>。</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <div class="stitle"><svg class="pico"><use href="#ic-calendar"/></svg>多くは1回で終わる</div>
+            <div class="sdesc">型取りや技工所での製作がいらないので、<b>その日のうちに</b>白く仕上がります。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-figure">
+      <svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="むし歯を削って白い樹脂で詰める流れ" style="width:100%;height:auto">
+        <style>
+          .to{fill:#fff;stroke:#4F7A6C;stroke-width:2.2;stroke-linejoin:round}
+          .cav{fill:#E7B7A6;stroke:#C98E78;stroke-width:1.4}
+          .hole{fill:#F4F7F5;stroke:#9AA6A2;stroke-width:1.4;stroke-dasharray:4 3}
+          .resin{fill:#EEF3F1;stroke:#4F7A6C;stroke-width:1.6}
+          .ar{fill:none;stroke:#6E9C8E;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+          .lb{fill:#2E3A3F;font-family:"Noto Sans CJK JP",sans-serif;font-size:13px;font-weight:800;text-anchor:middle}
+          .lm{fill:#6E7B80;font-family:"Noto Sans CJK JP",sans-serif;font-size:11px;text-anchor:middle}
+        </style>
+        <!-- step1 むし歯 -->
+        <g transform="translate(20,40)">
+          <path class="to" d="M40 20c-14 0-17 11-30 11C2 31-4 41-4 56c0 22 10 64 19 64 6 0 8-16 16-16h20c8 0 10 16 16 16 9 0 19-42 19-64 0-15-6-25-14-25-13 0-16-11-30-11Z" transform="scale(.86) translate(8,0)"/>
+          <ellipse class="cav" cx="40" cy="46" rx="15" ry="13"/>
+          <text class="lb" x="40" y="140">むし歯</text>
+          <text class="lm" x="40" y="158">①治す前</text>
+        </g>
+        <path class="ar" d="M150 110 h26 M170 103 l8 7 -8 7"/>
+        <!-- step2 削る -->
+        <g transform="translate(190,40)">
+          <path class="to" d="M40 20c-14 0-17 11-30 11C2 31-4 41-4 56c0 22 10 64 19 64 6 0 8-16 16-16h20c8 0 10 16 16 16 9 0 19-42 19-64 0-15-6-25-14-25-13 0-16-11-30-11Z" transform="scale(.86) translate(8,0)"/>
+          <path class="hole" d="M28 38h24v18a12 9 0 0 1-24 0Z"/>
+          <text class="lb" x="40" y="140">最小限に削る</text>
+          <text class="lm" x="40" y="158">②むし歯だけ除去</text>
+        </g>
+        <path class="ar" d="M320 110 h26 M340 103 l8 7 -8 7"/>
+        <!-- step3 詰める -->
+        <g transform="translate(360,40)">
+          <path class="to" d="M40 20c-14 0-17 11-30 11C2 31-4 41-4 56c0 22 10 64 19 64 6 0 8-16 16-16h20c8 0 10 16 16 16 9 0 19-42 19-64 0-15-6-25-14-25-13 0-16-11-30-11Z" transform="scale(.86) translate(8,0)"/>
+          <path class="resin" d="M28 38h24v18a12 9 0 0 1-24 0Z"/>
+          <text class="lb" x="40" y="140">白く詰める</text>
+          <text class="lm" x="40" y="158">③その日に完成</text>
+        </g>
+      </svg>
+      <div class="cap">むし歯のところだけを削り、白い樹脂を詰めて整えます</div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ================= 1. 選び方の地図 ================= -->
+<section class="section">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>選び方の地図</span>
+    <h2 class="title">レジンで足りる？ それとも被せる？</h2>
+    <p class="lead">どの治療になるかは、まず<b>削る範囲の大きさ</b>で決まります。小さければレジンで詰め、大きくなるほど、詰める・被せる治療へと移っていきます。順番に見ていきましょう。</p>
+    <div class="flow">
+      <div class="flow-row">
+        <div class="flow-start">
+          <div class="lbl"><svg class="pico"><use href="#ic-find"/></svg>削る範囲</div>
+          <div class="sub">むし歯で欠けた大きさ</div>
+        </div>
+        <div class="flow-arrow"><svg><use href="#ic-arrow-right"/></svg></div>
+        <div class="flow-branch">
+          <div class="flow-node lit">
+            <div class="tag">小さい</div>
+            <div class="circle-ico"><svg class="pico"><use href="#ic-leaf"/></svg></div>
+            <div class="nt">レジン修復</div>
+            <div class="nd">その場で白く詰める</div>
+          </div>
+          <div class="flow-node">
+            <div class="tag">中くらい</div>
+            <div class="circle-ico"><svg class="pico"><use href="#ic-inlay"/></svg></div>
+            <div class="nt">インレー</div>
+            <div class="nd">型を取って詰める</div>
+          </div>
+          <div class="flow-node">
+            <div class="tag">大きい</div>
+            <div class="circle-ico"><svg class="pico"><use href="#ic-crown"/></svg></div>
+            <div class="nt">クラウン</div>
+            <div class="nd">歯全体を被せる</div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-arrow" style="margin:14px 0;"><svg><use href="#ic-arrow-down"/></svg></div>
+      <div class="flow-mat">
+        <div class="mt"><svg class="pico"><use href="#ic-material"/></svg>そのうえで、保険か自費かを選ぶ</div>
+        <div class="mat-chips">
+          <div class="chip"><svg class="pico"><use href="#ic-insurance"/></svg><div><b>保険のレジン</b><span>費用を抑える</span></div></div>
+          <div class="chip"><svg class="pico"><use href="#ic-gem"/></svg><div><b>自費のレジン</b><span>精度・自然な見た目</span></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="legend" style="margin-top:18px;">レジンは「いちばん歯を削らずに済む」入口の治療です。むし歯が大きく、噛む力を強く受ける部分では、<b>インレー・クラウンのほうが長く安心して使える</b>ことがあります。どこまでをレジンで整えるかは、ご一緒に決めていきます。</p>
+  </div>
+</section>
+
+
+<!-- ================= 2. レジンの良さ ================= -->
+<section class="section soft">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>レジン修復の良さ</span>
+    <h2 class="title">歯にやさしく、手軽に整える</h2>
+    <p class="lead">レジンは、白い樹脂をその場で詰めて固める治療です。手軽でやさしいぶん、知っておきたい性質もあります。良い面と気をつけたい面の両方を、正直にお伝えします。</p>
+    <div class="why-grid">
+      <div class="why">
+        <div class="wh"><div class="circle-ico"><svg class="pico"><use href="#ic-leaf"/></svg></div><div class="wt">削る量がいちばん少ない</div></div>
+        <p class="wd">むし歯のところだけを最小限に削るので、<b>健康な歯を多く残せます</b>。歯は削る量が少ないほど、長持ちしやすくなります。</p>
+      </div>
+      <div class="why">
+        <div class="wh"><div class="circle-ico"><svg class="pico"><use href="#ic-calendar"/></svg></div><div class="wt">多くは1回で完成する</div></div>
+        <p class="wd">型取りや技工所での製作がいりません。削って詰めて、その<b>日のうちに白く仕上がる</b>ので、通院の負担が軽くなります。</p>
+      </div>
+      <div class="why">
+        <div class="wh"><div class="circle-ico"><svg class="pico"><use href="#ic-repair"/></svg></div><div class="wt">直したり、足したりしやすい</div></div>
+        <p class="wd">欠けたり、すり減ったりしても、<b>その部分だけを足して直しやすい</b>のが利点です。後からセラミックなど、より長持ちする方法へ進むこともできます。</p>
+      </div>
+      <div class="why">
+        <div class="wh"><div class="circle-ico"><svg class="pico"><use href="#ic-clock"/></svg></div><div class="wt">気をつけたいこと</div></div>
+        <p class="wd">レジンは年月とともに<b>少し色が変わったり、すり減ったりする</b>ことがあります。セラミックほど長期の保証はつきませんが、定期的なお手入れで、きれいな状態を保ちやすくなります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= 3. 保険と自費の比較 ================= -->
+<section class="section">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>保険と自費のちがい</span>
+    <h2 class="title">同じレジンでも、何が変わるのか</h2>
+    <p class="lead">レジンには「保険のレジン」と「自費のレジン（ダイレクトボンディング）」があります。使う材料の質や、かけられる時間・手間が変わります。「どちらが正解」ではなく、重視する点で選んでいただけます。</p>
+    <div class="scroll-hint">横にスクロールできます →</div>
+    <div class="table-scroll">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th style="text-align:left;">項目</th>
+            <th><span class="grp">保険診療</span>保険の<br>レジン</th>
+            <th><span class="grp">自費診療</span>自費のレジン<br>（ダイレクトボンディング）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><svg class="pico"><use href="#ic-eye"/></svg>自然な<br>見た目</th>
+            <td><span class="mk mk-ok">○</span><small>白い</small></td>
+            <td><span class="mk mk-good">◎</span><small>色を細かく合わせる</small></td>
+          </tr>
+          <tr>
+            <th><svg class="pico"><use href="#ic-shape"/></svg>形の<br>自由度</th>
+            <td><span class="mk mk-ok">○</span></td>
+            <td><span class="mk mk-good">◎</span><small>すき間・形も整える</small></td>
+          </tr>
+          <tr>
+            <th><svg class="pico"><use href="#ic-fit"/></svg>適合・<br>仕上がり</th>
+            <td><span class="mk mk-ok">○</span></td>
+            <td><span class="mk mk-good">◎</span><small>すき間を小さく</small></td>
+          </tr>
+          <tr>
+            <th><svg class="pico"><use href="#ic-durable"/></svg>色もち・<br>長もち</th>
+            <td><span class="mk mk-warn">△</span><small>変色しやすい</small></td>
+            <td><span class="mk mk-ok">○</span><small>変色しにくい材料</small></td>
+          </tr>
+          <tr>
+            <th><svg class="pico"><use href="#ic-calendar"/></svg>1回で<br>完成</th>
+            <td><span class="mk mk-good">◎</span></td>
+            <td><span class="mk mk-good">◎</span></td>
+          </tr>
+          <tr>
+            <th><svg class="pico"><use href="#ic-insurance"/></svg>保険<br>適用</th>
+            <td><span class="mk mk-ok">○</span><small>適用</small></td>
+            <td><span class="mk mk-no">×</span><small>自費</small></td>
+          </tr>
+          <tr>
+            <th><svg class="pico"><use href="#ic-yen"/></svg>費用の<br>目安</th>
+            <td class="fee"><b>1本</b> 1,500〜3,000円<br>（3割負担の目安）</td>
+            <td class="fee">自費<br>（料金表へ）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="legend"><b>◎ とても良い　○ 良い　△ 注意</b>　｜　保険の費用は3割負担・おおよその目安です（むし歯の大きさや本数で変わります）。</p>
+  </div>
+</section>
+
+
+<!-- ================= 4. こんなときに ================= -->
+<section class="section soft">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>こんなときに</span>
+    <h2 class="title">レジンが向いている、こんなお悩み</h2>
+    <p class="lead">小さなむし歯だけでなく、前歯の見た目を自然に整えたいときにも使えます。削る量が少ないので、気軽にご相談いただけます。</p>
+    <div class="use-grid">
+      <div class="use">
+        <div class="uh"><div class="circle-ico"><svg class="pico"><use href="#ic-tooth"/></svg></div><div class="ut">小さなむし歯</div></div>
+        <p class="ud">削る範囲が小さいむし歯を、白く詰めて自然に治します。レジンがいちばん得意とするところです。</p>
+      </div>
+      <div class="use">
+        <div class="uh"><div class="circle-ico"><svg class="pico"><use href="#ic-shape"/></svg></div><div class="ut">前歯のすき間・小さな欠け</div></div>
+        <p class="ud">前歯のちょっとしたすき間や、欠け・形の気になるところを、削らずに整えられる場合があります。</p>
+      </div>
+      <div class="use">
+        <div class="uh"><div class="circle-ico"><svg class="pico"><use href="#ic-find"/></svg></div><div class="ut">歯ぐきぎわのへこみ</div></div>
+        <p class="ud">歯ぐきの近くがV字にへこみ、しみる・気になるところ（くさび状欠損）を、白い樹脂で補えます。</p>
+      </div>
+      <div class="use">
+        <div class="uh"><div class="circle-ico"><svg class="pico"><use href="#ic-sparkle"/></svg></div><div class="ut">古い詰め物の色が気になる</div></div>
+        <p class="ud">変色した古い詰め物を、自然な白さに入れ替えたいときにも向いています。</p>
+      </div>
+    </div>
+    <div class="use-foot">
+      <svg class="pico"><use href="#ic-question"/></svg>
+      <div>むし歯が大きい場合や、噛む力が強くかかる奥歯では、<b style="color:var(--sage)">インレー・クラウンのほうが安心</b>なことがあります。どの方法が合うかは、お口の状態を見ながらご一緒に決めます。</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= 5. 自費だからできる精度 ================= -->
+<section class="section">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>自費だからできる仕上がり</span>
+    <h2 class="title">「自費のレジン」で変わること</h2>
+    <p class="lead">自費のレジン（ダイレクトボンディング）では、時間と手間をかけて、色・形・適合をていねいに仕上げます。保険のレジンとは、ここが変わります。</p>
+    <div class="prec-rows">
+      <div class="prec-row">
+        <div class="circle-ico"><svg class="pico"><use href="#ic-material"/></svg></div>
+        <div><div class="pt">色を<b>何層にも</b>重ねて自然に</div><div class="pd">歯は、表面と内側で色が違います。色味のちがう樹脂を少しずつ重ねて、天然の歯になじむ自然な白さに仕上げます。</div></div>
+      </div>
+      <div class="prec-row">
+        <div class="circle-ico"><svg class="pico"><use href="#ic-scope"/></svg></div>
+        <div><div class="pt">拡大して<b>すき間を小さく</b></div><div class="pd">歯と樹脂の境目を拡大しながら、ていねいに整えます。すき間を小さく保つことが、汚れの停滞やむし歯の再発を遠ざける助けになります。</div></div>
+      </div>
+      <div class="prec-row">
+        <div class="circle-ico"><svg class="pico"><use href="#ic-shape"/></svg></div>
+        <div><div class="pt">形・すき間まで<b>整え直せる</b></div><div class="pd">むし歯を治すだけでなく、前歯のすき間や形のバランスまで、削らずに整えられる場合があります。見た目のお悩みにも使えます。</div></div>
+      </div>
+    </div>
+    <div class="evidence">
+      <div class="eh"><svg class="pico"><use href="#ic-find"/></svg>「ぴったり」が、なぜ大切なのか</div>
+      <p>詰め物と歯の境目に<b>すき間</b>があると、そこに汚れや細菌が入り込み、再びむし歯（二次う蝕）になりやすいことが知られています。すき間を小さく保つことは、再発のリスクや汚れの停滞を抑える助けになります。</p>
+      <p style="font-size:12.5px;color:var(--muted);">※ むし歯のなりやすさは、仕上がりの精度だけでなく、ふだんのお手入れや体質などにも左右されます。精度を高めることは、守れる要素のひとつです。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= 6. 料金 ================= -->
+<section class="section">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>料金（自費・税込総額）</span>
+    <h2 class="title">自費のレジン（ダイレクトボンディング）の料金</h2>
+    <p class="lead">価格は税込の総額です。お支払いは、処置が終わったときに一括でお願いしています（分割もご相談いただけます）。本数をまとめると、治療時間の効率化で1本あたりの費用を抑えられます。</p>
+
+    <div class="price-block">
+      <div class="price-head"><span class="badge">前歯</span><span class="ph-note">見える歯・審美の整えにも</span></div>
+      <div class="price-table-scroll">
+        <table class="price">
+          <thead>
+            <tr><th style="text-align:left;">本数</th><th>1本</th><th>2本</th><th>3本</th><th>4本目〜</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th><svg class="pico"><use href="#ic-tooth"/></svg>前歯</th>
+              <td>50,000<small>円</small></td>
+              <td>85,000<small>円</small></td>
+              <td>130,000<small>円</small></td>
+              <td>＋45,000<small>円／本</small></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="price-block">
+      <div class="price-head"><span class="badge">奥歯</span><span class="ph-note">噛む面のむし歯に</span></div>
+      <div class="price-table-scroll">
+        <table class="price">
+          <thead>
+            <tr><th style="text-align:left;">本数</th><th>1本</th><th>2本</th><th>3本</th><th>4本目〜</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th><svg class="pico"><use href="#ic-tooth"/></svg>奥歯</th>
+              <td>40,000<small>円</small></td>
+              <td>65,000<small>円</small></td>
+              <td>100,000<small>円</small></td>
+              <td>＋35,000<small>円／本</small></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <ul class="price-notes">
+      <li>価格は税込の総額です。お支払いは処置完了時に一括でお願いしています（分割もご相談ください）。</li>
+      <li>複数本をまとめて治療すると、治療時間の効率化で1本あたりの費用を抑えられます。</li>
+      <li>保険のレジンも選べます。むし歯の大きさや見た目のご希望に合わせてご提案します。</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ================= 7. 長持ちとお直しの考え方 ================= -->
+<section class="section soft">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>長持ちとお直し</span>
+    <h2 class="title">もしものときの、お直しの考え方</h2>
+    <p class="lead">レジンは手軽でやさしい治療ですが、セラミックのような長期の保証はつきません。そのかわり、欠けたり色が変わったりしても直しやすいのが利点です。考え方をお伝えします。</p>
+    <div class="warranty-cond">
+      <svg class="pico"><use href="#ic-calendar"/></svg>
+      <div>定期的な<b>メンテナンス</b>を続けることで、きれいな状態を長く保ちやすくなります。</div>
+    </div>
+    <div class="timeline">
+      <div class="phase">
+        <div class="ptop"><div class="pdot">〜<br>6か月</div><div class="pname">治療後〜6か月</div></div>
+        <p class="pbody">早い時期に外れてしまった場合は、<b>無料でお直し</b>します。なじむまでの初期のもしもに備えます。</p>
+      </div>
+      <div class="phase">
+        <div class="ptop"><div class="pdot">6か月<br>〜</div><div class="pname">6か月以降</div></div>
+        <p class="pbody">欠け・着色などのお直し・やり直しは、<b class="cost">材料代（約16,000円／本）</b>で承ります。その部分だけ足して直せることも多くあります。</p>
+      </div>
+      <div class="phase">
+        <div class="ptop"><div class="pdot"><svg class="pico" style="stroke:var(--sage);width:20px;height:20px"><use href="#ic-arrow-right"/></svg></div><div class="pname">より長持ちさせたいとき</div></div>
+        <p class="pbody">大きくなったむし歯や、長く安心して使いたい部分は、<b>インレー・セラミックへ進む</b>選択もできます。いつでもご相談ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= 8. もっと詳しく（インレー・クラウンへ） ================= -->
+<section class="section">
+  <div class="wrap reveal">
+    <a class="more-link" href="inlay-crown.html">
+      <div class="more-card">
+        <div class="mc-ico"><svg><use href="#ic-inlay"/></svg></div>
+        <div class="mc-body">
+          <div class="mc-k">あわせて読みたい</div>
+          <div class="mc-t">むし歯が大きいときは？</div>
+          <div class="mc-d">「詰める（インレー）」「被せる（クラウン）」治療と、素材の選び方をご案内します。</div>
+        </div>
+        <div class="mc-arrow"><svg><use href="#ic-arrow-right"/></svg></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<!-- ================= 9. CTA ================= -->
+<section class="cta">
+  <div class="wrap">
+    <h2>気になる点は、いつでもご相談ください</h2>
+    <p>この資料は、後からでもゆっくりご覧いただけます。ご家族と相談してから決めていただいてかまいません。すぐに、すべてを決めていただく必要はありません。</p>
+    <div class="qr-slot">
+      <div class="qbox"><svg><use href="#ic-qr"/></svg></div>
+      <div>掲載先が決まりしだい、QRコードを設置します</div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
+  <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
+  <div class="fl" style="font-size:13px;color:var(--ink-soft);font-weight:800;letter-spacing:.04em;">ライフデンタルクリニック</div>
+  <div class="ft" style="font-size:12px;color:var(--muted);margin-top:6px;">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+(function(){
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+</body>
+</html>
