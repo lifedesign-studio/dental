@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>入れ歯（義歯）治療について｜ライフデンタルクリニック</title>
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --soft:#F4F7F5;
+    --card:#EEF3F1;
+    --ink:#2E3A3F;
+    --ink-soft:#54636A;
+    --muted:#6E7B80;
+    --sage:#4F7A6C;
+    --sage-2:#6E9C8E;
+    --line:#D8E0DD;
+    --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
+    --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:var(--gothic);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.8;
+    letter-spacing:.02em;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;height:auto;display:block;}
+
+  /* ── レイアウト ── */
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px;}
+  .section{padding:46px 0;}
+  .section.soft{background:var(--soft);}
+  .section + .section{border-top:1px solid var(--line);}
+  .section.soft + .section,.section + .section.soft{border-top:none;}
+
+  /* ── 見出し ── */
+  .eyebrow{
+    font-size:11px;letter-spacing:.32em;color:var(--sage);
+    font-weight:700;margin:0 0 10px;
+  }
+  h2.title{
+    font-size:23px;line-height:1.5;color:var(--ink);
+    margin:0 0 6px;letter-spacing:.04em;font-weight:700;
+  }
+  .lead{
+    font-size:15px;color:var(--ink-soft);margin:14px 0 0;
+  }
+
+  /* ── ヒーロー ── */
+  .hero{
+    background:linear-gradient(180deg,var(--card) 0%,var(--soft) 100%);
+    padding:58px 0 50px;text-align:center;
+  }
+  .hero .eyebrow{margin-bottom:14px;}
+  .hero h1{
+    font-size:30px;line-height:1.45;margin:0;letter-spacing:.05em;
+    color:var(--ink);font-weight:700;
+  }
+  .hero .sub{
+    font-size:15px;color:var(--ink-soft);margin:18px auto 0;max-width:30em;
+  }
+  .hero .leaf{
+    width:42px;height:42px;margin:0 auto 18px;color:var(--sage);
+  }
+
+  /* ── 本文パーツ ── */
+  p{margin:0 0 14px;font-size:15px;color:var(--ink);}
+  p:last-child{margin-bottom:0;}
+  .muted{color:var(--muted);font-size:13.5px;}
+
+  /* 役割カード（横並び→縦） */
+  .roles{display:grid;grid-template-columns:1fr;gap:14px;margin-top:26px;}
+  .role{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:14px;padding:20px 20px;display:flex;gap:16px;align-items:flex-start;
+  }
+  .section.soft .role{background:var(--paper);}
+  .role .ic{width:30px;height:30px;color:var(--sage);flex:0 0 auto;margin-top:2px;}
+  .role h3{font-size:16px;margin:0 0 4px;color:var(--ink);font-weight:700;}
+  .role p{font-size:14px;color:var(--ink-soft);margin:0;}
+
+  /* 種類（総入れ歯・部分入れ歯） */
+  .kinds{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+  .kind{
+    background:var(--card);border-radius:16px;padding:24px 22px;
+  }
+  .kind .ic{width:38px;height:38px;color:var(--sage);margin-bottom:12px;}
+  .kind h3{font-size:18px;margin:0 0 8px;color:var(--ink);font-weight:700;letter-spacing:.03em;}
+  .kind p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+
+  /* 素材の違い */
+  .materials{margin-top:26px;display:grid;gap:14px;}
+  .mat{
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;
+  }
+  .section.soft .mat{background:var(--paper);}
+  .mat h3{
+    font-size:16px;margin:0 0 8px;color:var(--sage);font-weight:700;
+    display:flex;align-items:center;gap:10px;letter-spacing:.03em;
+  }
+  .mat h3 .ic{width:22px;height:22px;flex:0 0 auto;}
+  .mat p{font-size:14px;color:var(--ink-soft);margin:0;}
+
+  /* 費用テーブル */
+  .price-block{margin-top:24px;}
+  .price-block h3{
+    font-size:16px;margin:0 0 12px;color:var(--ink);font-weight:700;
+    letter-spacing:.04em;display:flex;align-items:baseline;gap:10px;
+  }
+  .price-block h3 .tag{
+    font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--sage);
+    border:1px solid var(--sage-2);border-radius:20px;padding:2px 10px;
+  }
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;
+    border:1px solid var(--line);border-radius:14px;background:var(--paper);}
+  table{border-collapse:collapse;width:100%;min-width:380px;}
+  th,td{
+    padding:13px 16px;text-align:left;font-size:14px;
+    border-bottom:1px solid var(--line);
+  }
+  thead th{
+    background:var(--card);color:var(--sage);font-weight:700;
+    font-size:12.5px;letter-spacing:.08em;white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  td.name{color:var(--ink);}
+  td.yen{text-align:right;white-space:nowrap;color:var(--ink);font-weight:600;}
+  th.yen,th.num{text-align:right;}
+  td.num{text-align:right;white-space:nowrap;color:var(--ink);font-weight:600;}
+  .note{font-size:12.5px;color:var(--muted);margin:12px 2px 0;line-height:1.7;}
+
+  /* 帯（保証・進め方） */
+  .band{
+    background:var(--card);border-radius:16px;padding:24px 22px;margin-top:26px;
+  }
+  .section.soft .band{background:var(--paper);border:1px solid var(--line);}
+  .band h3{font-size:16px;margin:0 0 8px;color:var(--ink);font-weight:700;letter-spacing:.03em;}
+  .band p{font-size:14px;color:var(--ink-soft);}
+  .band ul{margin:10px 0 0;padding:0;list-style:none;}
+  .band li{
+    position:relative;padding:6px 0 6px 26px;font-size:14px;color:var(--ink-soft);
+    border-top:1px dotted var(--line);
+  }
+  .band li:first-child{border-top:none;}
+  .band li::before{
+    content:"";position:absolute;left:4px;top:14px;width:10px;height:10px;
+    border-radius:50%;background:var(--sage-2);
+  }
+
+  /* 締めのことば */
+  .closing{text-align:center;}
+  .closing .eyebrow{margin-bottom:14px;}
+  .closing h2.title{margin-bottom:14px;}
+  .closing p{max-width:30em;margin:0 auto 14px;color:var(--ink-soft);}
+
+  /* スクロール表示アニメ */
+  .reveal{opacity:0;transform:translateY(18px);
+    transition:opacity .7s ease,transform .7s ease;}
+  .reveal.visible{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  /* フッター */
+  footer{
+    background:#fff;border-top:1px solid var(--line);
+    padding:36px 22px 40px;text-align:center;
+  }
+  footer img{width:112px;height:auto;margin:0 auto 13px;display:block;}
+  .fl{font-size:14px;color:var(--ink);letter-spacing:.08em;}
+  .ft{font-family:var(--mincho);font-size:14px;color:var(--sage);margin-top:6px;letter-spacing:.1em;}
+
+  /* PC幅 */
+  @media (min-width:760px){
+    .wrap{max-width:760px;padding:0 28px;}
+    .section{padding:64px 0;}
+    .hero{padding:80px 0 66px;}
+    .hero h1{font-size:36px;}
+    h2.title{font-size:26px;}
+    .roles{grid-template-columns:1fr 1fr;gap:18px;}
+    .kinds{grid-template-columns:1fr 1fr;gap:22px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- アイコン定義（symbol） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 19c0-7 5-13 14-14 0 9-6 14-14 14Z"/><path d="M5 19c3-4 6-6 10-8"/>
+  </symbol>
+  <symbol id="i-bite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 8c0-2 2-3 4-3s4 1 4 3-2 3-4 3-4-1-4-3Z"/><path d="M12 8c0-2 2-3 4-3s4 1 4 3-2 3-4 3-4-1-4-3Z"/><path d="M6 13v4M10 13v4M14 13v4M18 13v4"/>
+  </symbol>
+  <symbol id="i-smile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M8 14c1 1.4 2.4 2 4 2s3-.6 4-2"/><path d="M9 10h.01M15 10h.01"/>
+  </symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z"/><path d="M9 12l2 2 4-4"/>
+  </symbol>
+  <symbol id="i-talk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 6h16v10H9l-5 4V6Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/>
+  </symbol>
+  <symbol id="i-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 9c2-2 14-2 16 0 1 1 0 4-1 6-1 1.6-2 1-2.5-.5C16 13 15 12 12 12s-4 1-4.5 2.5C7 16 6 16.6 5 15c-1-2-2-5-1-6Z"/>
+  </symbol>
+  <symbol id="i-partial" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 11h6M15 11h6"/><path d="M9 8c1.5-1.2 4.5-1.2 6 0 .8 1 0 4-1 5-.6.6-1.4.3-1.7-.6C12 11 12 11 12 11s0 0-.3.8c-.3.9-1.1 1.2-1.7.6-1-1-1.8-4-1-5Z"/>
+  </symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/>
+  </symbol>
+  <symbol id="i-plate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 9c2-1.8 14-1.8 16 0 .8 1.4 0 3.4-1 4.6-.8 1-1.6.6-2-.4-.6-1.4-2-2.2-5-2.2s-4.4.8-5 2.2c-.4 1-1.2 1.4-2 .4-1-1.2-1.8-3.2-1-4.6Z"/>
+  </symbol>
+  <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 12a3 3 0 0 1 3-3h3a3 3 0 0 1 0 6h-1"/><path d="M15 12a3 3 0 0 1-3 3H9a3 3 0 0 1 0-6h1"/>
+  </symbol>
+</svg>
+
+<!-- ヒーロー -->
+<header class="hero">
+  <div class="wrap reveal">
+    <svg class="leaf" aria-hidden="true"><use href="#i-leaf"/></svg>
+    <p class="eyebrow">DENTURE ｜ 治療と費用のご案内</p>
+    <h1>入れ歯（義歯）治療</h1>
+    <p class="sub">失った歯を、また噛める形に。お口になじみ、長く使える入れ歯を、おひとりずつご一緒に選んでいきます。</p>
+  </div>
+</header>
+
+<!-- 入れ歯の役割 -->
+<section class="section">
+  <div class="wrap reveal">
+    <p class="eyebrow">ABOUT</p>
+    <h2 class="title">入れ歯が、毎日にしてくれること</h2>
+    <p class="lead">歯を失ったところを補うと、噛む・話すといった毎日の動きが整い、残っている歯やお口全体への負担もやわらぎます。</p>
+    <div class="roles">
+      <div class="role">
+        <svg class="ic" aria-hidden="true"><use href="#i-bite"/></svg>
+        <div><h3>しっかり噛める</h3><p>食べたいものを、自分の歯に近い感覚で噛めるように整えます。</p></div>
+      </div>
+      <div class="role">
+        <svg class="ic" aria-hidden="true"><use href="#i-talk"/></svg>
+        <div><h3>話しやすくなる</h3><p>歯が抜けたところを補うことで、発音や口元の動きが落ち着きます。</p></div>
+      </div>
+      <div class="role">
+        <svg class="ic" aria-hidden="true"><use href="#i-smile"/></svg>
+        <div><h3>口元が自然に</h3><p>頬や唇のハリが戻り、笑ったときの見た目も自然に保てます。</p></div>
+      </div>
+      <div class="role">
+        <svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>
+        <div><h3>残った歯を守る</h3><p>抜けたところをそのままにせず、残っている歯が傾いたり負担が偏るのを防ぎます。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 当院の考え方 -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <p class="eyebrow">OUR APPROACH</p>
+    <h2 class="title">当院の入れ歯の考え方</h2>
+    <p class="lead">入れ歯は、つくって終わりではありません。お口に合わせて調整を重ね、長く心地よく使えるところまでをご一緒に目指します。</p>
+    <p style="margin-top:18px;">保険でつくる入れ歯にも、毎日を支える確かな役割があります。そのうえで自由診療の入れ歯は、薄さ・丈夫さ・お口へのなじみ・見た目といった点で、選べる幅が広がります。どちらが上ということではなく、何を大切にしたいかで選んでいただけます。</p>
+    <p>当院では、見た目を競うためではなく、毎日きちんと噛めること、長く使えること、お口になじむことを大切に設計しています。</p>
+  </div>
+</section>
+
+<!-- 入れ歯の種類 -->
+<section class="section">
+  <div class="wrap reveal">
+    <p class="eyebrow">TYPE</p>
+    <h2 class="title">入れ歯の種類</h2>
+    <p class="lead">失った歯の本数や場所によって、大きく二つの形があります。</p>
+    <div class="kinds">
+      <div class="kind">
+        <svg class="ic" aria-hidden="true"><use href="#i-full"/></svg>
+        <h3>総入れ歯</h3>
+        <p>上または下の歯がすべてない場合に、歯ぐき全体で支える入れ歯です。噛む力の伝わり方と、お口へのなじみが心地よさを左右します。</p>
+      </div>
+      <div class="kind">
+        <svg class="ic" aria-hidden="true"><use href="#i-partial"/></svg>
+        <h3>部分入れ歯</h3>
+        <p>一部の歯を失った場合に、残っている歯に支えてもらう入れ歯です。支え方や留め具のつくりで、見た目や使い心地が変わります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 素材・つくりの違い -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <p class="eyebrow">MATERIAL</p>
+    <h2 class="title">つくりと素材の違い</h2>
+    <p class="lead">お口に触れる土台（床）の素材や、留め具のつくりで、つけ心地や見た目が変わります。優劣ではなく、目的の違いとしてお選びいただけます。</p>
+    <div class="materials">
+      <div class="mat">
+        <h3><svg class="ic" aria-hidden="true"><use href="#i-drop"/></svg>樹脂（レジン）の床</h3>
+        <p>歯科用の樹脂でつくる、標準的なつくりです。調整や修理がしやすく、まず入れ歯に慣れたい方にも向いています。</p>
+      </div>
+      <div class="mat">
+        <h3><svg class="ic" aria-hidden="true"><use href="#i-plate"/></svg>金属（チタン）の床</h3>
+        <p>お口に触れる土台を薄い金属（チタン）でつくります。薄くて丈夫なので装着感がよく、食べ物の温かさ・冷たさが伝わりやすいのが特長です。</p>
+      </div>
+      <div class="mat">
+        <h3><svg class="ic" aria-hidden="true"><use href="#i-smile"/></svg>金具が目立たない部分入れ歯</h3>
+        <p>金属のバネ（クラスプ）を使わないつくりで、笑ったときに留め具が見えにくく、口元が自然に見えます。部分入れ歯の見た目が気になる方に。</p>
+      </div>
+    </div>
+    <p class="note">※「スタンダード」と「プレミアム」は、受けていただくケア（診断・調整・15年保証・継続的な通院管理）は同じです。違いは、技工士による仕上がり（お口へのなじみ・見た目・長く使ったときの安定）にあります。</p>
+  </div>
+</section>
+
+<!-- 費用のご案内 -->
+<section class="section">
+  <div class="wrap reveal">
+    <p class="eyebrow">FEE</p>
+    <h2 class="title">費用のご案内</h2>
+    <p class="lead">価格はすべて税込・総額です。着手時とお渡し時の2回に分けてお支払いいただけます。</p>
+
+    <div class="price-block">
+      <h3>総入れ歯<span class="tag">自由診療</span></h3>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>つくり</th><th class="yen">費用（税込）</th></tr></thead>
+          <tbody>
+            <tr><td class="name">樹脂（レジン）の床　スタンダード</td><td class="yen">240,000円</td></tr>
+            <tr><td class="name">樹脂（レジン）の床　プレミアム</td><td class="yen">250,000円</td></tr>
+            <tr><td class="name">金属（チタン）の床　スタンダード</td><td class="yen">300,000円</td></tr>
+            <tr><td class="name">金属（チタン）の床　プレミアム</td><td class="yen">330,000円</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="price-block">
+      <h3>部分入れ歯<span class="tag">自由診療</span></h3>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>つくり</th><th class="num">〜3本</th><th class="num">4〜7本</th><th class="num">8本〜</th></tr></thead>
+          <tbody>
+            <tr><td class="name">金具が目立たないタイプ　スタンダード</td><td class="num">150,000円</td><td class="num">220,000円</td><td class="num">270,000円</td></tr>
+            <tr><td class="name">金具が目立たないタイプ　プレミアム</td><td class="num">170,000円</td><td class="num">240,000円</td><td class="num">290,000円</td></tr>
+            <tr><td class="name">金属（チタン）の床タイプ</td><td class="num">210,000円</td><td class="num">290,000円</td><td class="num">340,000円</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">本数は、補う歯の数の目安です。お口の状態によって最適なつくりが変わりますので、診察のうえでご案内します。</p>
+    </div>
+
+    <div class="band">
+      <h3>保険の入れ歯について</h3>
+      <p>保険でつくる入れ歯もご用意しています。費用はご加入の保険と負担割合によって決まります。まずは保険の入れ歯で始めて、後から見直すこともできます。どの選び方でも、毎日を支える役割は変わりません。</p>
+    </div>
+  </div>
+</section>
+
+<!-- インプラントで支える入れ歯 -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <p class="eyebrow">OPTION</p>
+    <h2 class="title">しっかり固定したい方へ</h2>
+    <p class="lead">「入れ歯が動くのが気になる」「もっとしっかり噛みたい」という場合は、お口に埋め込んだ土台で入れ歯を支える方法もあります。</p>
+    <div class="band">
+      <h3><span style="display:inline-flex;align-items:center;gap:8px;"><svg class="ic" style="width:20px;height:20px;color:var(--sage);" aria-hidden="true"><use href="#i-link"/></svg>インプラントで支える入れ歯</span></h3>
+      <p>少数のインプラントを土台にして入れ歯を固定すると、ぐらつきが抑えられ、噛む力が安定します。総入れ歯のずれが気になる方に向いた方法です。くわしくはインプラント治療のご案内、または診察時にお尋ねください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 保証と通い方 -->
+<section class="section">
+  <div class="wrap reveal">
+    <p class="eyebrow">CARE &amp; GUARANTEE</p>
+    <h2 class="title">つくったあとも、ご一緒に</h2>
+    <p class="lead">入れ歯は、お口の変化に合わせて調整を続けることで、長く心地よく使えます。</p>
+    <div class="band">
+      <h3>15年保証と、通い方</h3>
+      <ul>
+        <li>自由診療の入れ歯には15年保証がつきます（年2回の定期的なメインテナンス通院が条件です）。</li>
+        <li>合わなくなったときの調整・つけ直しは、生涯無料でご一緒に整えます。</li>
+        <li>つくり直しが必要なときも、保証の期間内は実費のみで承ります。</li>
+        <li>お口は少しずつ変化します。定期的にお会いして、噛み合わせや歯ぐきの様子を一緒に見ていきます。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 締め -->
+<section class="section soft">
+  <div class="wrap reveal closing">
+    <p class="eyebrow">YOUR PACE</p>
+    <h2 class="title">急いで決めなくて、大丈夫です</h2>
+    <p>入れ歯のつくりや費用は、お口の状態とご希望によって変わります。今日すべてを決めていただく必要はありません。</p>
+    <p>気になることは、いつでもお尋ねください。あとからでも、ご一緒に見直していけます。</p>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer>
+  <img src="life-logo.png" alt="ライフデンタルクリニック">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>

@@ -2,214 +2,290 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ライフデンタル｜治療と費用のご案内</title>
 <style>
-:root{
-  --paper:#FFFFFF;
-  --soft:#F4F7F5;
-  --card:#EEF3F1;
-  --ink:#2E3A3F;
-  --ink-soft:#54636A;
-  --muted:#6E7B80;
-  --sage:#4F7A6C;
-  --sage-2:#6E9C8E;
-  --line:#D8E0DD;
-  --line-2:#E7EDEA;
-  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic","YuGothic","Noto Sans JP","Noto Sans CJK JP",sans-serif;
-  --maxtext:720px;
-  --maxwide:1080px;
-}
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
-body{
-  margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--gothic);line-height:1.8;
-  font-size:16px;letter-spacing:.01em;
-  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-}
-img{max-width:100%;height:auto;display:block;}
-svg{display:block;}
-a{color:inherit;}
+  :root{
+    --paper:#FFFFFF;
+    --soft:#F4F7F5;
+    --card:#EEF3F1;
+    --ink:#2E3A3F;
+    --ink-soft:#54636A;
+    --muted:#6E7B80;
+    --sage:#4F7A6C;
+    --sage-2:#6E9C8E;
+    --line:#D8E0DD;
+    --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
+    --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:var(--gothic);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.8;
+    letter-spacing:.02em;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;height:auto;display:block;}
 
-.section{padding:58px 22px;}
-.section.soft{background:var(--soft);}
-.wrap-wide{max-width:var(--maxwide);margin:0 auto;}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--sage);
-  margin:0 0 12px;
-}
-.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--sage);flex:0 0 auto;}
-h1,h2,h3{margin:0;font-weight:800;letter-spacing:.01em;line-height:1.32;}
-h2.title{font-size:25px;margin-bottom:10px;}
-.lead{font-size:15px;color:var(--ink-soft);margin:0;line-height:1.85;}
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px;}
+  .section{padding:46px 0;}
+  .section.soft{background:var(--soft);}
 
-/* ===== HERO ===== */
-.hero{padding:62px 22px 50px;background:linear-gradient(180deg,#fff 0%,var(--soft) 100%);}
-.hero .wrap-wide{max-width:var(--maxtext);}
-.hero-kicker{font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--sage);margin-bottom:16px;}
-.hero h1{font-size:27px;line-height:1.46;margin-bottom:16px;letter-spacing:.005em;}
-.hero h1 .em{color:var(--sage);}
-.hero p{font-size:15px;color:var(--ink-soft);margin:0 0 10px;line-height:1.9;}
-.hero .note{font-size:12.5px;color:var(--muted);line-height:1.7;margin:0;}
+  .eyebrow{
+    font-size:11px;letter-spacing:.32em;color:var(--sage);
+    font-weight:700;margin:0 0 10px;
+  }
+  h2.title{
+    font-size:23px;line-height:1.5;color:var(--ink);
+    margin:0 0 6px;letter-spacing:.04em;font-weight:700;
+  }
+  .lead{font-size:15px;color:var(--ink-soft);margin:14px 0 0;}
 
-/* ===== カードグリッド ===== */
-.cat-lead{margin-bottom:4px;}
-.hub-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:22px;}
-.hub-card{
-  display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);
-  border-radius:14px;padding:15px 16px;text-decoration:none;color:inherit;
-  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
-}
-a.hub-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(46,58,63,.09);border-color:var(--sage-2);}
-.hub-card .hc-ico{
-  width:46px;height:46px;border-radius:12px;background:var(--soft);
-  display:flex;align-items:center;justify-content:center;flex:0 0 auto;
-}
-.hub-card .hc-ico svg{width:26px;height:26px;stroke:var(--sage);stroke-width:1.7;fill:none;
-  stroke-linecap:round;stroke-linejoin:round;}
-.hub-card .hc-body{flex:1;min-width:0;}
-.hub-card .hc-t{font-weight:800;font-size:15.5px;margin-bottom:2px;line-height:1.45;}
-.hub-card .hc-d{font-size:12.5px;color:var(--muted);line-height:1.55;}
-.hub-card .hc-arrow{flex:0 0 auto;}
-.hub-card .hc-arrow svg{width:20px;height:20px;stroke:var(--sage-2);stroke-width:2;fill:none;
-  stroke-linecap:round;stroke-linejoin:round;}
-.hub-card.soon{opacity:.66;}
-.hub-card.soon .hc-ico{background:#EFF1F0;}
-.hub-card.soon .hc-ico svg{stroke:var(--muted);}
-.soon-chip{
-  font-size:11px;font-weight:800;color:var(--muted);background:#EFF1F0;
-  border:1px solid var(--line);border-radius:999px;padding:3px 11px;flex:0 0 auto;letter-spacing:.04em;
-}
+  /* ヒーロー */
+  .hero{
+    background:linear-gradient(180deg,var(--card) 0%,var(--soft) 100%);
+    padding:64px 0 54px;text-align:center;
+  }
+  .hero .leaf{width:44px;height:44px;margin:0 auto 18px;color:var(--sage);}
+  .hero .eyebrow{margin-bottom:14px;}
+  .hero h1{
+    font-size:30px;line-height:1.45;margin:0;letter-spacing:.06em;
+    color:var(--ink);font-weight:700;
+  }
+  .hero .sub{font-size:15px;color:var(--ink-soft);margin:18px auto 0;max-width:30em;}
 
-/* ===== CTA / footer ===== */
-.cta{background:var(--sage);color:#fff;text-align:center;padding:54px 22px;}
-.cta h2{font-size:23px;color:#fff;margin-bottom:13px;line-height:1.5;}
-.cta p{font-size:14.5px;color:#EAF1EE;line-height:1.85;margin:0 auto;max-width:560px;}
-footer{padding:36px 22px 40px;text-align:center;background:#fff;border-top:1px solid var(--line);}
-footer .flogo{width:112px;height:auto;margin:0 auto 13px;}
-footer .fl{font-size:13px;color:var(--ink-soft);font-weight:800;letter-spacing:.06em;}
-footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
+  /* ハブ（治療カード一覧） */
+  .hub{display:grid;grid-template-columns:1fr;gap:14px;margin-top:30px;}
+  .hub-card{
+    position:relative;display:block;text-decoration:none;color:inherit;
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:22px 22px;transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;
+  }
+  a.hub-card:hover,a.hub-card:focus-visible{
+    border-color:var(--sage-2);
+    box-shadow:0 6px 20px rgba(79,122,108,.10);
+    transform:translateY(-2px);
+  }
+  a.hub-card:focus-visible{outline:2px solid var(--sage);outline-offset:3px;}
+  .hc-ic{width:34px;height:34px;color:var(--sage);margin-bottom:12px;}
+  .hc-name{font-size:18px;font-weight:700;color:var(--ink);letter-spacing:.04em;margin:0;}
+  .hc-desc{font-size:13.5px;color:var(--ink-soft);margin:6px 0 0;padding-right:28px;}
+  .hc-arrow{
+    position:absolute;right:18px;bottom:18px;width:26px;height:26px;
+    border-radius:50%;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;color:var(--sage);
+    transition:background .25s ease,border-color .25s ease,color .25s ease;
+  }
+  a.hub-card:hover .hc-arrow,a.hub-card:focus-visible .hc-arrow{
+    background:var(--sage);border-color:var(--sage);color:#fff;
+  }
+  .hc-arrow svg{width:14px;height:14px;}
 
-@media (min-width:760px){
-  body{font-size:16.5px;}
-  .section{padding:76px 32px;}
-  .hero{padding:84px 32px 64px;}
-  .hero h1{font-size:31px;}
-  h2.title{font-size:28px;}
-  .hub-grid{grid-template-columns:1fr 1fr;gap:14px;}
-}
+  /* 準備中カード */
+  .hub-card.soon{
+    background:var(--soft);border-style:dashed;border-color:var(--line);
+    cursor:default;
+  }
+  .hub-card.soon .hc-ic{color:var(--sage-2);opacity:.55;}
+  .hub-card.soon .hc-name{color:var(--muted);}
+  .hub-card.soon .hc-desc{color:var(--muted);}
+  .soon-chip{
+    position:absolute;right:18px;bottom:18px;
+    font-size:11px;letter-spacing:.14em;color:var(--muted);
+    background:var(--card);border:1px solid var(--line);border-radius:20px;
+    padding:3px 12px;
+  }
 
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
-.reveal.in{opacity:1;transform:none;}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+  /* 補足帯 */
+  .infonote{
+    background:var(--card);border-radius:16px;padding:22px 22px;margin-top:30px;
+  }
+  .infonote p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+  .infonote p + p{margin-top:8px;}
+
+  /* スクロール表示アニメ */
+  .reveal{opacity:0;transform:translateY(18px);
+    transition:opacity .7s ease,transform .7s ease;}
+  .reveal.visible{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  /* フッター */
+  footer{
+    background:#fff;border-top:1px solid var(--line);
+    padding:36px 22px 40px;text-align:center;
+  }
+  footer img{width:112px;height:auto;margin:0 auto 13px;display:block;}
+  .fl{font-size:14px;color:var(--ink);letter-spacing:.08em;}
+  .ft{font-family:var(--mincho);font-size:14px;color:var(--sage);margin-top:6px;letter-spacing:.1em;}
+
+  @media (min-width:760px){
+    .wrap{max-width:780px;padding:0 28px;}
+    .section{padding:60px 0;}
+    .hero{padding:88px 0 66px;}
+    .hero h1{font-size:37px;}
+    .hub{grid-template-columns:1fr 1fr;gap:18px;}
+  }
 </style>
 </head>
 <body>
 
-<!-- ===== SVG シンボル定義 ===== -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-  <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
-  <symbol id="ic-resin" viewBox="0 0 24 24"><path d="M6 4c-1.5 0-2.5 2-2.5 5 0 4 1 11 3 11 1.2 0 1.5-3 3-3s1.8 3 3 3c2 0 3-7 3-11 0-3-1-5-2.5-5-1.5 0-2 1.2-3.5 1.2S7.5 4 6 4Z"/><circle cx="12" cy="10" r="1.6" fill="#4F7A6C" stroke="none"/></symbol>
-  <symbol id="ic-inlay" viewBox="0 0 24 24"><path d="M6 4c-1.5 0-2.5 2-2.5 5 0 4 1 11 3 11 1.2 0 1.5-3 3-3s1.8 3 3 3c2 0 3-7 3-11 0-3-1-5-2.5-5-1.5 0-2 1.2-3.5 1.2S7.5 4 6 4Z"/><rect x="9.2" y="7.5" width="5.6" height="3.4" rx="1"/></symbol>
-  <symbol id="ic-root" viewBox="0 0 24 24"><path d="M6 4c-1.5 0-2.5 2-2.5 5 0 4 1 11 3 11 1.2 0 1.5-3 3-3s1.8 3 3 3c2 0 3-7 3-11 0-3-1-5-2.5-5-1.5 0-2 1.2-3.5 1.2S7.5 4 6 4Z"/><path d="M10 9v9M14 9v9"/></symbol>
-  <symbol id="ic-bridge" viewBox="0 0 24 24"><path d="M3 14c0-2 1-3 2.4-3S8 12 8 14M9.6 14c0-2 1-3 2.4-3s2.4 1 2.4 3M16.2 14c0-2 1-3 2.4-3S21 12 21 14"/><path d="M2 14h20M5 17v2M19 17v2"/></symbol>
-  <symbol id="ic-denture" viewBox="0 0 24 24"><path d="M4 7h16v4a8 8 0 0 1-8 8 8 8 0 0 1-8-8Z"/><path d="M8 7v3.4M12 7v3.4M16 7v3.4"/></symbol>
-  <symbol id="ic-implant" viewBox="0 0 24 24"><path d="M9 3h6l-1 4h-4z"/><path d="M10 7h4l-.6 5h-2.8z"/><path d="M12 12v8"/><path d="M9.5 14.5h5M9.5 17h5"/></symbol>
-  <symbol id="ic-align" viewBox="0 0 24 24"><path d="M4 9.5c2.6-1.4 5.3-2 8-2s5.4.6 8 2"/><path d="M4 14.5c2.6 1.4 5.3 2 8 2s5.4-.6 8-2"/><path d="M8 8.6v6.8M12 8v8M16 8.6v6.8"/></symbol>
-  <symbol id="ic-sparkle" viewBox="0 0 24 24"><path d="M12 3.5c.6 4.2 1.8 5.4 6 6-4.2.6-5.4 1.8-6 6-.6-4.2-1.8-5.4-6-6 4.2-.6 5.4-1.8 6-6Z"/><path d="M18.5 13c.3 1.8.8 2.3 2.5 2.5-1.7.3-2.2.7-2.5 2.5-.3-1.8-.8-2.2-2.5-2.5 1.7-.2 2.2-.7 2.5-2.5Z"/></symbol>
-</defs></svg>
+<!-- アイコン定義 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 19c0-7 5-13 14-14 0 9-6 14-14 14Z"/><path d="M5 19c3-4 6-6 10-8"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>
+  </symbol>
+  <symbol id="i-resin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3s5 5.5 5 9.5A5 5 0 0 1 7 12.5C7 8.5 12 3 12 3Z"/><path d="M10 12.5a2 2 0 0 0 2 2"/>
+  </symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 10l3 3 5-6 5 6 3-3-1.5 9h-13L4 10Z"/>
+  </symbol>
+  <symbol id="i-root" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 3c-2 0-3.5 1.6-3.5 3.8 0 1.4.5 2.6.9 4.4.6 2.6 1 6 1.6 8.4.2.9 1.4.9 1.6 0 .3-1.6.6-3.6 1.4-3.6s1.1 2 1.4 3.6c.2.9 1.4.9 1.6 0 .6-2.4 1-5.8 1.6-8.4.4-1.8.9-3 .9-4.4C16.5 4.6 15 3 13 3c-1 0-1.6.5-2.5.5S9 3 8 3Z"/>
+  </symbol>
+  <symbol id="i-bridge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 14v-2c0-1 .8-1.6 1.6-1.2C6 11.5 7 12 9 12s3-.5 4.4-1.2C14.2 10.4 15 11 15 12"/>
+    <path d="M3 12V8M9 12v-2M15 12V8M21 14v-2c0-1-.8-1.6-1.6-1.2"/>
+    <path d="M3 14h18"/>
+  </symbol>
+  <symbol id="i-denture" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 9c2-2 14-2 16 0 1 1 0 4-1 6-1 1.6-2 1-2.5-.5C16 13 15 12 12 12s-4 1-4.5 2.5C7 16 6 16.6 5 15c-1-2-2-5-1-6Z"/>
+  </symbol>
+  <symbol id="i-implant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 3h6l-1.2 3H10.2L9 3Z"/><path d="M12 6v3"/>
+    <path d="M9.5 9h5l-.5 2h-4l-.5-2Z"/><path d="M10 11l.6 4M14 11l-.6 4"/><path d="M11 18h2"/>
+  </symbol>
+  <symbol id="i-ortho" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 10h16"/><rect x="6" y="8" width="3" height="4" rx="1"/><rect x="10.5" y="8" width="3" height="4" rx="1"/><rect x="15" y="8" width="3" height="4" rx="1"/>
+  </symbol>
+  <symbol id="i-aesthetic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M8 14c1 1.4 2.4 2 4 2s3-.6 4-2"/><path d="M16 5.5l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7.7-1.6Z"/>
+  </symbol>
+</svg>
 
-
-<!-- ===== HERO ===== -->
+<!-- ヒーロー -->
 <header class="hero">
-  <div class="wrap-wide">
-    <div class="hero-kicker">LIFE DENTAL CLINIC</div>
-    <h1>どんな治療があるのか、<br><span class="em">ご自分のペース</span>でご覧ください。</h1>
-    <p>当院で行っている治療を、種類ごとにまとめています。それぞれの内容や選び方を、気になるところからご覧いただけます。</p>
-    <p class="note">すべてを読む必要はありません。わからないことは、いつでも院内でおたずねください。</p>
+  <div class="wrap reveal">
+    <svg class="leaf" aria-hidden="true"><use href="#i-leaf"/></svg>
+    <p class="eyebrow">LIFE DENTAL CLINIC</p>
+    <h1>治療と費用のご案内</h1>
+    <p class="sub">当院で行う治療の内容と費用を、ご覧いただけます。気になる治療をお選びください。</p>
   </div>
 </header>
 
-
-<!-- ===== 治療のご案内 ===== -->
+<!-- 治療一覧 -->
 <section class="section">
-  <div class="wrap-wide reveal">
-    <span class="eyebrow"><span class="dot"></span>治療のご案内</span>
-    <h2 class="title">どんな治療があるか</h2>
-    <p class="lead cat-lead">むし歯の小さなものから、歯を失ったときの治療まで。それぞれの内容と選び方をご案内します。</p>
-    <div class="hub-grid">
-      <a class="hub-card" href="resin.html">
-        <div class="hc-ico"><svg><use href="#ic-resin"/></svg></div>
-        <div class="hc-body"><div class="hc-t">レジン修復</div><div class="hc-d">小さなむし歯を、白い樹脂で詰めて治します</div></div>
-        <span class="hc-arrow"><svg><use href="#ic-arrow-right"/></svg></span>
-      </a>
+  <div class="wrap reveal">
+    <p class="eyebrow">TREATMENTS</p>
+    <h2 class="title">治療のご案内</h2>
+    <p class="lead">それぞれの治療の内容・つくり・費用を、ページごとにまとめています。</p>
 
+    <div class="hub">
+
+      <!-- レジン修復（準備中） -->
+      <div class="hub-card soon">
+        <svg class="hc-ic" aria-hidden="true"><use href="#i-resin"/></svg>
+        <p class="hc-name">レジン修復</p>
+        <p class="hc-desc">小さな虫歯を、削る量を抑えて白く整えます。</p>
+        <span class="soon-chip">準備中</span>
+      </div>
+
+      <!-- インレー・クラウン治療（公開中） -->
       <a class="hub-card" href="inlay-crown.html">
-        <div class="hc-ico"><svg><use href="#ic-inlay"/></svg></div>
-        <div class="hc-body"><div class="hc-t">インレー・クラウン治療</div><div class="hc-d">「詰める」「被せる」治療と、素材の選び方</div></div>
-        <span class="hc-arrow"><svg><use href="#ic-arrow-right"/></svg></span>
+        <svg class="hc-ic" aria-hidden="true"><use href="#i-crown"/></svg>
+        <p class="hc-name">インレー・クラウン治療</p>
+        <p class="hc-desc">詰め物・被せ物で、しっかり噛める歯に整えます。</p>
+        <span class="hc-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
       </a>
 
-      <a class="hub-card" href="root-canal.html">
-        <div class="hc-ico"><svg><use href="#ic-root"/></svg></div>
-        <div class="hc-body"><div class="hc-t">根管治療</div><div class="hc-d">歯の神経の治療。歯を残すための土台づくり</div></div>
-        <span class="hc-arrow"><svg><use href="#ic-arrow-right"/></svg></span>
-      </a>
-      <a class="hub-card" href="bridge.html">
-        <div class="hc-ico"><svg><use href="#ic-bridge"/></svg></div>
-        <div class="hc-body"><div class="hc-t">ブリッジ治療</div><div class="hc-d">失った歯を、両隣の歯で支えて補います</div></div>
-        <span class="hc-arrow"><svg><use href="#ic-arrow-right"/></svg></span>
-      </a>
+      <!-- 根管治療（準備中） -->
       <div class="hub-card soon">
-        <div class="hc-ico"><svg><use href="#ic-denture"/></svg></div>
-        <div class="hc-body"><div class="hc-t">入れ歯（義歯）治療</div><div class="hc-d">取り外しできる装置で、噛む力を取り戻します</div></div>
+        <svg class="hc-ic" aria-hidden="true"><use href="#i-root"/></svg>
+        <p class="hc-name">根管治療</p>
+        <p class="hc-desc">歯の根を治して、ご自分の歯を残します。</p>
         <span class="soon-chip">準備中</span>
       </div>
-      <a class="hub-card" href="implant.html">
-        <div class="hc-ico"><svg><use href="#ic-implant"/></svg></div>
-        <div class="hc-body"><div class="hc-t">インプラント治療</div><div class="hc-d">顎の骨に支えを立て、自分の歯のように噛む</div></div>
-        <span class="hc-arrow"><svg><use href="#ic-arrow-right"/></svg></span>
-      </a>
-      <a class="hub-card" href="ortho.html">
-        <div class="hc-ico"><svg><use href="#ic-align"/></svg></div>
-        <div class="hc-body"><div class="hc-t">矯正治療</div><div class="hc-d">歯並び・噛み合わせを整えます</div></div>
-        <span class="hc-arrow"><svg><use href="#ic-arrow-right"/></svg></span>
-      </a>
+
+      <!-- ブリッジ治療（準備中） -->
       <div class="hub-card soon">
-        <div class="hc-ico"><svg><use href="#ic-sparkle"/></svg></div>
-        <div class="hc-body"><div class="hc-t">審美治療</div><div class="hc-d">自然な白さ・見た目を整えます</div></div>
+        <svg class="hc-ic" aria-hidden="true"><use href="#i-bridge"/></svg>
+        <p class="hc-name">ブリッジ治療</p>
+        <p class="hc-desc">抜けたところを、両隣の歯で支えて補います。</p>
         <span class="soon-chip">準備中</span>
       </div>
+
+      <!-- 入れ歯（義歯）治療（公開・活性） -->
+      <a class="hub-card" href="denture.html">
+        <svg class="hc-ic" aria-hidden="true"><use href="#i-denture"/></svg>
+        <p class="hc-name">入れ歯（義歯）治療</p>
+        <p class="hc-desc">失った歯を、また噛める形に。お口になじむ入れ歯を。</p>
+        <span class="hc-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <!-- インプラント治療（準備中） -->
+      <div class="hub-card soon">
+        <svg class="hc-ic" aria-hidden="true"><use href="#i-implant"/></svg>
+        <p class="hc-name">インプラント治療</p>
+        <p class="hc-desc">あごの土台から、しっかり噛める歯をつくります。</p>
+        <span class="soon-chip">準備中</span>
+      </div>
+
+      <!-- 矯正治療（準備中） -->
+      <div class="hub-card soon">
+        <svg class="hc-ic" aria-hidden="true"><use href="#i-ortho"/></svg>
+        <p class="hc-name">矯正治療</p>
+        <p class="hc-desc">歯並び・かみ合わせを、無理なく整えます。</p>
+        <span class="soon-chip">準備中</span>
+      </div>
+
+      <!-- 審美治療（準備中） -->
+      <div class="hub-card soon">
+        <svg class="hc-ic" aria-hidden="true"><use href="#i-aesthetic"/></svg>
+        <p class="hc-name">審美治療</p>
+        <p class="hc-desc">白さや見た目を、自然に整えます。</p>
+        <span class="soon-chip">準備中</span>
+      </div>
+
+    </div>
+
+    <div class="infonote">
+      <p>費用はすべて税込・総額で表示しています。自由診療の補綴は、着手時とお渡し時の2回に分けてお支払いいただけます。</p>
+      <p>このご案内は、診察やご相談の内容を確かめていただくためのものです。今すぐすべてを決めていただく必要はありません。</p>
     </div>
   </div>
 </section>
 
-
-<!-- ===== CTA ===== -->
-<section class="cta">
-  <div class="wrap-wide" style="max-width:var(--maxtext);">
-    <h2>気になる点は、いつでもご相談ください</h2>
-    <p>この情報サイトは、後からでもゆっくりご覧いただけます。ご家族と相談してから決めていただいてかまいません。すぐに、すべてを決めていただく必要はありません。</p>
-  </div>
-</section>
-
+<!-- フッター -->
 <footer>
-  <img class="flogo" src="life-logo.png" alt="ライフデンタルクリニック">
+  <img src="life-logo.png" alt="ライフデンタルクリニック">
   <div class="fl">ライフデンタルクリニック</div>
   <div class="ft">いい歯で、いい人生を。</div>
 </footer>
 
 <script>
-(function(){
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var els=document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
-  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});
-  els.forEach(function(e){io.observe(e);});
-})();
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  })();
 </script>
+
 </body>
 </html>
