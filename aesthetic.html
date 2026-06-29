@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>審美治療について｜ライフデンタルクリニック</title>
+<style>
+:root{
+  --paper:#FFFFFF;
+  --soft:#F4F7F5;        /* 淡いセージ地（交互バンド） */
+  --card:#EEF3F1;        /* カード地 */
+  --ink:#2E3A3F;         /* 本文チャコール */
+  --ink-soft:#54636A;    /* やや薄い本文 */
+  --muted:#6E7B80;       /* 補足 */
+  --sage:#4F7A6C;        /* アクセント（深め） */
+  --sage-2:#6E9C8E;      /* アクセント（明るめ） */
+  --line:#D8E0DD;        /* 罫 */
+  --line-2:#E7EDEA;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic","YuGothic","Noto Sans JP","Noto Sans CJK JP",sans-serif;
+  --maxtext:720px;
+  --maxwide:1080px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--gothic);line-height:1.8;
+  font-size:16px;letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;height:auto;display:block;}
+svg{display:block;}
+
+/* ---- レイアウト ---- */
+.section{padding:64px 22px;}
+.section.soft{background:var(--soft);}
+.wrap{max-width:var(--maxtext);margin:0 auto;}
+.wrap-wide{max-width:var(--maxwide);margin:0 auto;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--sage);
+  margin:0 0 14px;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--sage);flex:0 0 auto;}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:.01em;line-height:1.32;}
+h2.title{font-size:28px;margin-bottom:12px;}
+.nb{white-space:nowrap;}
+.scroll-hint{display:block;font-size:11.5px;color:var(--muted);text-align:right;margin:0 2px 7px;}
+.lead{font-size:16px;color:var(--ink-soft);margin:0 0 8px;line-height:1.85;}
+.note{font-size:12.5px;color:var(--muted);line-height:1.7;}
+
+/* ---- ピクトグラム共通 ---- */
+.pico{width:30px;height:30px;stroke:var(--sage);stroke-width:1.7;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;}
+.pico.solid{fill:none;}
+.circle-ico{
+  width:54px;height:54px;border-radius:50%;background:#fff;
+  border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+}
+.circle-ico .pico{width:28px;height:28px;}
+
+/* ================= HERO ================= */
+.hero{padding:60px 22px 56px;background:linear-gradient(180deg,#fff 0%,var(--soft) 100%);}
+.hero .wrap-wide{display:grid;grid-template-columns:1fr;gap:30px;align-items:center;}
+.hero-kicker{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--sage);margin-bottom:16px;}
+.hero h1{font-size:28px;line-height:1.42;margin-bottom:16px;letter-spacing:.005em;}
+.hero h1 .em{color:var(--sage);}
+.hero p{font-size:15.5px;color:var(--ink-soft);margin:0 0 22px;line-height:1.85;}
+.hero-figure{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;}
+.hero-figure img{border-radius:10px;width:100%;}
+.hero-figure .cap{text-align:center;font-size:12.5px;color:var(--muted);margin-top:10px;}
+.steps{display:grid;grid-template-columns:1fr;gap:12px;margin-top:4px;}
+.step{
+  display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:15px 16px;
+}
+.step .num{
+  width:30px;height:30px;border-radius:50%;background:var(--sage);color:#fff;
+  font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;margin-top:1px;
+}
+.step .stitle{font-weight:800;font-size:15.5px;margin-bottom:3px;display:flex;align-items:center;gap:8px;}
+.step .sdesc{font-size:13.5px;color:var(--ink-soft);line-height:1.7;}
+.step .pico{width:22px;height:22px;}
+
+/* ================= FLOW（選び方の地図） ================= */
+.flow{display:grid;grid-template-columns:1fr;gap:0;margin-top:26px;}
+.flow-row{display:flex;flex-direction:column;align-items:stretch;gap:14px;}
+.flow-start{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:16px;text-align:center;
+}
+.flow-start .lbl{font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.flow-start .sub{font-size:13px;color:var(--muted);margin-top:4px;}
+.flow-arrow{display:flex;justify-content:center;color:var(--sage-2);}
+.flow-arrow svg{width:22px;height:26px;stroke:var(--sage-2);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.flow-row .flow-arrow svg{transform:rotate(90deg);}
+.flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.flow-node{
+  background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:16px 14px;text-align:center;
+}
+.flow-node .circle-ico{margin:0 auto 10px;width:50px;height:50px;border-color:var(--sage-2);}
+.flow-node .nt{font-weight:800;font-size:15.5px;margin-bottom:2px;}
+.flow-node .nd{font-size:12.5px;color:var(--muted);}
+.flow-node .tag{font-size:11.5px;color:var(--sage);font-weight:700;margin-bottom:6px;letter-spacing:.04em;}
+.flow-mat{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:2px;
+}
+.flow-mat .mt{font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px;}
+.mat-chips{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.chip{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:10px 12px;}
+.chip .pico{width:22px;height:22px;}
+.chip b{font-size:13.5px;font-weight:800;}
+.chip span{font-size:11.5px;color:var(--muted);display:block;line-height:1.4;}
+
+/* ================= 比較表 ================= */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:24px;
+  border:1px solid var(--line);border-radius:14px;background:#fff;}
+table.compare{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px;}
+table.compare th,table.compare td{padding:13px 12px;text-align:center;border-bottom:1px solid var(--line-2);}
+table.compare thead th{background:var(--soft);font-weight:800;color:var(--ink);vertical-align:bottom;}
+table.compare thead .grp{font-size:11px;color:var(--sage);font-weight:700;letter-spacing:.06em;display:block;margin-bottom:3px;}
+table.compare tbody th{
+  text-align:left;font-weight:700;background:#fff;color:var(--ink);white-space:nowrap;
+  position:sticky;left:0;z-index:1;border-right:1px solid var(--line-2);
+  display:flex;align-items:center;gap:9px;min-height:46px;
+}
+table.compare tbody th .pico{width:20px;height:20px;}
+table.compare td .mk{font-size:17px;font-weight:800;line-height:1;}
+table.compare td small{display:block;font-size:11px;color:var(--muted);margin-top:3px;line-height:1.35;}
+.mk-good{color:var(--sage);}
+.mk-ok{color:var(--ink);}
+.mk-warn{color:#B08456;}
+.mk-no{color:#A7B0B2;}
+table.compare td.fee{font-size:12px;color:var(--ink-soft);line-height:1.5;}
+table.compare td.fee b{color:var(--ink);font-weight:700;}
+.legend{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.7;}
+.legend b{color:var(--ink-soft);}
+
+/* ================= 症例ギャラリー ================= */
+.gal-group{margin-top:26px;}
+.gal-head{display:flex;align-items:center;gap:11px;margin-bottom:16px;}
+.gal-head .badge{
+  font-size:12px;font-weight:800;color:#fff;background:var(--sage);
+  padding:5px 13px;border-radius:999px;letter-spacing:.04em;
+}
+.gal-head .gh-txt{font-size:14px;color:var(--ink-soft);}
+.gal-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+.case{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.case .ph{width:100%;aspect-ratio:4/3;overflow:hidden;background:#f0f0f0;}
+.case .ph img{width:100%;height:100%;object-fit:cover;}
+.case.portrait .ph{aspect-ratio:3/4;}
+.case .cbody{padding:13px 15px 15px;}
+.case .ctag{font-size:11.5px;font-weight:800;color:var(--sage);letter-spacing:.04em;margin-bottom:3px;}
+.case .ctitle{font-size:14.5px;font-weight:800;margin-bottom:4px;}
+.case .cdesc{font-size:12.5px;color:var(--muted);line-height:1.65;}
+.gal-foot{
+  margin-top:20px;background:var(--card);border-radius:12px;padding:15px 17px;
+  font-size:13.5px;color:var(--ink-soft);line-height:1.75;display:flex;gap:12px;align-items:flex-start;
+}
+.gal-foot .pico{width:24px;height:24px;margin-top:2px;}
+
+/* ================= 保険の注意点 ================= */
+.caution-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:24px;}
+.caution{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+.caution .ph{aspect-ratio:3/2;overflow:hidden;background:#f0f0f0;}
+.caution .ph img{width:100%;height:100%;object-fit:cover;}
+.caution .cbody{padding:18px 18px 20px;}
+.caution .chead{display:flex;align-items:center;gap:11px;margin-bottom:9px;}
+.caution .chead .circle-ico{width:44px;height:44px;border-color:var(--line);}
+.caution .chead .circle-ico .pico{width:23px;height:23px;stroke:#B08456;}
+.caution h3{font-size:17px;}
+.caution p{font-size:13.5px;color:var(--ink-soft);line-height:1.78;margin:0;}
+
+/* ================= スタンダード/プレミアム ================= */
+.sp-intro{
+  background:var(--card);border-radius:16px;padding:20px 20px;margin-top:22px;
+  font-size:14.5px;color:var(--ink-soft);line-height:1.85;
+}
+.sp-intro b{color:var(--ink);font-weight:800;}
+.sp-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:20px;}
+.sp-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;}
+.sp-card .sp-h{display:flex;align-items:center;gap:11px;margin-bottom:14px;}
+.sp-card .sp-h .n{width:34px;height:34px;border-radius:50%;background:var(--sage);color:#fff;
+  font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.sp-card .sp-h h3{font-size:17px;}
+.sp-card .schema{background:var(--soft);border-radius:12px;padding:14px;margin-bottom:14px;}
+.sp-card .aesthetic{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.sp-card .aesthetic figure{margin:0;}
+.sp-card .aesthetic img{border-radius:10px;width:100%;aspect-ratio:1/1;object-fit:cover;}
+.sp-card .aesthetic figcaption{font-size:11px;color:var(--muted);text-align:center;margin-top:5px;}
+.sp-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.78;margin:0;}
+
+/* ================= 保証タイムライン ================= */
+.warranty-cond{
+  display:flex;align-items:center;gap:11px;background:var(--card);border-radius:12px;
+  padding:13px 16px;margin-top:22px;font-size:13.5px;color:var(--ink-soft);font-weight:600;
+}
+.warranty-cond .pico{width:24px;height:24px;}
+.warranty-cond b{color:var(--sage);font-weight:800;}
+.timeline{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px;}
+.phase{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 17px;position:relative;}
+.phase .ptop{display:flex;align-items:center;gap:11px;margin-bottom:13px;}
+.phase .pdot{width:38px;height:38px;border-radius:50%;background:var(--soft);border:1.5px solid var(--sage);
+  color:var(--sage);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;text-align:center;line-height:1.1;}
+.phase .pname{font-weight:800;font-size:15px;}
+.phase .prow{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.phase .pcell{background:var(--soft);border-radius:10px;padding:11px 12px;}
+.phase .pcell .pl{font-size:11px;color:var(--muted);font-weight:700;margin-bottom:3px;}
+.phase .pcell .pv{font-size:14px;font-weight:800;color:var(--ink);}
+.phase .pcell .pv.free{color:var(--sage);}
+.mat-cost{margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;}
+.mat-cost .mc-h{font-weight:800;font-size:15px;margin-bottom:6px;display:flex;align-items:center;gap:9px;}
+.mat-cost .mc-sub{font-size:12.5px;color:var(--muted);margin-bottom:14px;}
+.mat-cost .mc-grp{margin-bottom:14px;}
+.mat-cost .mc-grp:last-child{margin-bottom:0;}
+.mat-cost .mc-label{font-size:12.5px;font-weight:800;color:var(--sage);margin-bottom:8px;letter-spacing:.04em;}
+.mc-rows{display:grid;grid-template-columns:1fr;gap:8px;}
+.mc-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  border-bottom:1px dashed var(--line);padding-bottom:7px;}
+.mc-row .k{font-size:13px;color:var(--ink-soft);}
+.mc-row .v{font-size:14.5px;font-weight:800;white-space:nowrap;}
+
+/* ================= 料金 ================= */
+.price-block{margin-top:24px;}
+.price-head{display:flex;align-items:center;gap:11px;margin-bottom:14px;}
+.price-head .badge{font-size:13px;font-weight:800;color:#fff;background:var(--sage);
+  padding:6px 15px;border-radius:999px;letter-spacing:.04em;}
+.price-head .ph-note{font-size:12.5px;color:var(--muted);}
+.price-cards{display:grid;grid-template-columns:1fr;gap:13px;}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 17px;}
+.pcard.oneday{background:var(--soft);border-style:dashed;}
+.pcard .pc-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;}
+.pcard .pc-name{font-size:15px;font-weight:800;}
+.pcard .pc-name small{display:block;font-size:11.5px;color:var(--muted);font-weight:600;margin-top:2px;}
+.pcard .pc-total{font-size:22px;font-weight:800;color:var(--ink);white-space:nowrap;}
+.pcard .pc-total small{font-size:12px;color:var(--muted);font-weight:600;}
+.pcard .pc-meta{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:11px;padding-top:11px;border-top:1px solid var(--line-2);}
+.pcard .pc-meta div{font-size:12.5px;color:var(--ink-soft);}
+.pcard .pc-meta .pm-k{color:var(--muted);font-weight:700;margin-right:5px;font-size:11.5px;}
+.pcard .pc-warranty{color:var(--sage);font-weight:800;}
+.pcard .pc-warranty.none{color:var(--muted);font-weight:700;}
+.price-notes{margin-top:18px;font-size:12.5px;color:var(--muted);line-height:1.85;}
+.price-notes li{margin-bottom:3px;}
+
+/* ================= CTA / footer ================= */
+.cta{background:var(--sage);color:#fff;text-align:center;padding:56px 22px;}
+.cta h2{font-size:24px;color:#fff;margin-bottom:14px;line-height:1.5;}
+.cta p{font-size:15px;color:#EAF1EE;line-height:1.85;margin:0 auto 22px;max-width:560px;}
+.cta .qr-slot{
+  display:inline-flex;flex-direction:column;align-items:center;gap:10px;
+  background:rgba(255,255,255,.12);border:1px dashed rgba(255,255,255,.5);
+  border-radius:14px;padding:18px 26px;font-size:12.5px;color:#EAF1EE;
+}
+.cta .qr-slot .qbox{width:96px;height:96px;border-radius:10px;background:rgba(255,255,255,.18);
+  display:flex;align-items:center;justify-content:center;}
+.cta .qr-slot .qbox svg{width:46px;height:46px;stroke:#fff;stroke-width:1.6;fill:none;}
+footer{background:#26313550;padding:30px 22px;text-align:center;background:var(--soft);}
+footer .fl{font-size:13px;color:var(--ink-soft);font-weight:800;letter-spacing:.04em;}
+footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
+.divider{height:1px;background:var(--line);max-width:var(--maxtext);margin:0 auto;}
+
+/* ================= レスポンシブ ================= */
+@media (min-width:760px){
+  .scroll-hint{display:none;}
+  body{font-size:16.5px;}
+  .section{padding:84px 32px;}
+  .hero{padding:84px 32px 76px;}
+  .hero .wrap-wide{grid-template-columns:1.05fr .95fr;gap:48px;}
+  .hero h1{font-size:40px;}
+  .hero-kicker{font-size:14px;}
+  h2.title{font-size:34px;}
+  .steps{margin-top:18px;}
+  .flow-row{flex-direction:row;align-items:stretch;}
+  .flow-start{flex:0 0 210px;display:flex;flex-direction:column;justify-content:center;}
+  .flow-arrow{align-items:center;}
+  .flow-row .flow-arrow svg{transform:none;}
+  .flow-arrow svg{width:30px;height:30px;}
+  .flow-branch{flex:1;grid-template-columns:1fr 1fr;}
+  .flow-vert{display:flex;flex-direction:column;justify-content:center;gap:12px;flex:1;}
+  .gal-grid{grid-template-columns:repeat(3,1fr);}
+  .caution-grid{grid-template-columns:1fr 1fr;}
+  .sp-grid{grid-template-columns:1fr 1fr;}
+  .timeline{grid-template-columns:repeat(3,1fr);}
+  .price-cards{grid-template-columns:1fr 1fr;}
+  .pcard.span2{grid-column:1 / -1;}
+  .mc-rows{grid-template-columns:1fr 1fr;gap:8px 22px;}
+}
+@media (min-width:1024px){
+  .hero h1{font-size:44px;}
+  table.compare{font-size:14.5px;}
+}
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+}
+
+/* なぜクラウン */
+.isthmus{background:var(--soft);border-radius:14px;padding:18px 16px 14px;margin-top:22px;}
+.isthmus .icap{font-size:12.5px;color:var(--muted);text-align:center;margin-top:10px;line-height:1.6;}
+.evid-inline{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;font-size:12.5px;color:var(--ink-soft);line-height:1.7;display:flex;gap:11px;align-items:flex-start;}
+.evid-inline .pico{width:22px;height:22px;margin-top:1px;stroke:var(--sage);}
+.why-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px;}
+.why{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px 18px;}
+.why .wh{display:flex;align-items:center;gap:12px;margin-bottom:9px;}
+.why .wh .circle-ico{width:46px;height:46px;border-color:var(--line);}
+.why .wt{font-weight:800;font-size:15.5px;}
+.why .wd{font-size:13.5px;color:var(--ink-soft);line-height:1.78;margin:0;}
+.why .wd b{color:var(--ink);font-weight:800;}
+.why figure{margin:0 0 13px;}
+.why figure img{width:100%;border-radius:11px;border:1px solid var(--line);}
+.why figure figcaption{font-size:11.5px;color:var(--muted);text-align:center;margin-top:7px;}
+.why-foot{margin-top:18px;background:var(--card);border-radius:12px;padding:15px 17px;font-size:13px;color:var(--ink-soft);line-height:1.78;display:flex;gap:12px;align-items:flex-start;}
+.why-foot .pico{width:24px;height:24px;margin-top:2px;stroke:var(--sage);}
+
+/* 精度 */
+.prec-top{display:grid;grid-template-columns:1fr;gap:18px;margin-top:22px;}
+.video-figure{margin:0;}
+.lp-video{width:100%;display:block;border-radius:16px;border:1px solid var(--line);background:#000;aspect-ratio:16/9;object-fit:cover;}
+.vcap2{font-size:12.5px;color:var(--muted);line-height:1.65;margin-top:9px;}
+.video-slot{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#000;}
+.video-slot img{width:100%;display:block;opacity:.94;}
+.video-slot .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+.video-slot .pbtn{width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.25);}
+.video-slot .pbtn svg{width:30px;height:30px;}
+.video-slot .vcap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#fff;font-size:12px;padding:22px 14px 11px;}
+.prec-rows{display:grid;grid-template-columns:1fr;gap:11px;}
+.prec-row{display:flex;gap:13px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 15px;align-items:flex-start;}
+.prec-row .circle-ico{width:44px;height:44px;border-color:var(--line);}
+.prec-row .pt{font-weight:800;font-size:14.5px;margin-bottom:2px;}
+.prec-row .pt b{color:var(--sage);}
+.prec-row .pd{font-size:12.5px;color:var(--ink-soft);line-height:1.68;}
+.evidence{margin-top:20px;background:var(--card);border-radius:14px;padding:18px 19px;}
+.evidence .eh{font-weight:800;font-size:15px;margin-bottom:9px;display:flex;align-items:center;gap:10px;}
+.evidence .eh .pico{width:24px;height:24px;stroke:var(--sage);}
+.evidence p{font-size:13.5px;color:var(--ink-soft);line-height:1.82;margin:0 0 9px;}
+.evidence p b{color:var(--ink);font-weight:800;}
+.evidence .src{font-size:11px;color:var(--muted);line-height:1.6;border-top:1px solid var(--line);padding-top:9px;}
+
+/* 子LP誘導 */
+.more-link{display:block;text-decoration:none;color:inherit;}
+.more-card{background:var(--sage);color:#fff;border-radius:18px;padding:22px 22px;display:flex;align-items:center;gap:16px;transition:transform .2s ease;}
+.more-link:hover .more-card{transform:translateY(-2px);}
+.more-card .mc-ico{width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.more-card .mc-ico svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.more-card .mc-body{flex:1;min-width:0;}
+.more-card .mc-k{font-size:11.5px;font-weight:700;letter-spacing:.08em;color:#D8E6E0;margin-bottom:3px;}
+.more-card .mc-t{font-size:17.5px;font-weight:800;margin-bottom:3px;line-height:1.4;}
+.more-card .mc-d{font-size:12.5px;color:#EAF1EE;line-height:1.6;}
+.more-card .mc-arrow{flex:0 0 auto;}
+.more-card .mc-arrow svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+
+@media (min-width:760px){
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .prec-top{grid-template-columns:1.02fr .98fr;align-items:start;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===== SVG シンボル定義 ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="ic-arrow-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></symbol>
+  <symbol id="ic-bridge" viewBox="0 0 24 24"><path d="M3 14c0-2 1-3 2.4-3S8 12 8 14M9.6 14c0-2 1-3 2.4-3s2.4 1 2.4 3M16.2 14c0-2 1-3 2.4-3S21 12 21 14"/><path d="M2 14h20M5 17v2M19 17v2"/></symbol>
+  <symbol id="ic-tooth" viewBox="0 0 24 24"><path d="M6 4c-1.5 0-2.5 2-2.5 5 0 4 1 11 3 11 1.2 0 1.5-3 3-3s1.8 3 3 3c2 0 3-7 3-11 0-3-1-5-2.5-5-1.5 0-2 1.2-3.5 1.2S7.5 4 6 4Z"/></symbol>
+  <symbol id="ic-crown" viewBox="0 0 24 24"><path d="M6 9c-1.4 0-2.4 2-2.4 4.8 0 3.8 1 9.2 2.9 9.2 1.1 0 1.4-2.6 3.5-2.6s2.4 2.6 3.5 2.6c1.9 0 2.9-5.4 2.9-9.2C18.9 11 17.9 9 16.5 9c-1.4 0-2 1-4.5 1S7.4 9 6 9Z"/><path d="M4.5 9 6.6 3.6l2.4 2.6L12 2.8l3 3.4 2.4-2.6L19.5 9c-2 1-4.6 1.4-7.5 1.4S6.5 10 4.5 9Z"/></symbol>
+  <symbol id="ic-denture" viewBox="0 0 24 24"><path d="M4 7h16v4a8 8 0 0 1-8 8 8 8 0 0 1-8-8Z"/><path d="M8 7v3.4M12 7v3.4M16 7v3.4"/></symbol>
+  <symbol id="ic-implant" viewBox="0 0 24 24"><path d="M9 3h6l-1 4h-4z"/><path d="M10 7h4l-.6 5h-2.8z"/><path d="M12 12v8"/><path d="M9.5 14.5h5M9.5 17h5"/></symbol>
+  <symbol id="ic-grind" viewBox="0 0 24 24"><path d="M6 4c-1.5 0-2.5 2-2.5 5 0 4 1 11 3 11 1.2 0 1.5-3 3-3s1.8 3 3 3c2 0 3-7 3-11 0-3-1-5-2.5-5-1.5 0-2 1.2-3.5 1.2S7.5 4 6 4Z"/><path d="M14.5 3.5 20 9M20 3.5 14.5 9" stroke-width="1.6"/></symbol>
+  <symbol id="ic-bite" viewBox="0 0 24 24"><path d="M12 3v8M8.5 7.5 12 11l3.5-3.5"/><path d="M4 14.5c2.5 1.2 5 1.8 8 1.8s5.5-.6 8-1.8M6 18c2 .9 3.9 1.3 6 1.3s4-.4 6-1.3"/></symbol>
+  <symbol id="ic-clean" viewBox="0 0 24 24"><path d="M3 19.5 14 8.5l1.5 1.5L4.5 21z"/><path d="M14 8.5 17.5 5a2.1 2.1 0 0 1 3 3l-3.5 3.5z"/><path d="M16 18h6M16 21h6M16 15h4"/></symbol>
+  <symbol id="ic-material" viewBox="0 0 24 24"><circle cx="9" cy="10" r="5"/><circle cx="15" cy="14" r="5"/></symbol>
+  <symbol id="ic-insurance" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 9.6 4-1.3 7-5.2 7-9.6V6l-7-3Z"/><path d="M9 11.5l2 2 4-4.2"/></symbol>
+  <symbol id="ic-gem" viewBox="0 0 24 24"><path d="M6 4h12l3 5-9 11L3 9l3-5Z"/><path d="M3 9h18M9 4 7.5 9 12 20M15 4l1.5 5L12 20"/></symbol>
+  <symbol id="ic-find" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.7-4.7"/><path d="M10.5 8v5M8 10.5h5"/></symbol>
+  <symbol id="ic-durable" viewBox="0 0 24 24"><path d="M12 2.5 4 5.5v5.2c0 5 3.4 9.3 8 10.8 4.6-1.5 8-5.8 8-10.8V5.5l-8-3Z"/><path d="M12 7.5v9M7.8 12h8.4"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="m8.5 14 2 2 3.5-3.8"/></symbol>
+  <symbol id="ic-yen" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M8 7.5 12 13l4-5.5M12 13v5M8.6 13.8h6.8M8.6 16.4h6.8"/></symbol>
+  <symbol id="ic-question" viewBox="0 0 24 24"><path d="M4 5.5h16a1.4 1.4 0 0 1 1.4 1.4v8.2A1.4 1.4 0 0 1 20 16.5H9l-4 3.4V16.5a1.4 1.4 0 0 1-1.4-1.4V6.9A1.4 1.4 0 0 1 4 5.5Z"/><path d="M9.4 9.6a2.6 2.6 0 0 1 3.9-.4c1.1 1 .7 2.2-.5 3-.7.5-1 .9-1 1.7"/><circle cx="11.8" cy="16.4" r=".5" fill="#4F7A6C" stroke="none"/></symbol>
+  <symbol id="ic-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v0M14 21h3M21 17v4M17 21h4"/></symbol>
+  <symbol id="ic-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.6 4.8L18.4 9.4 13.6 11 12 15.8 10.4 11 5.6 9.4 10.4 7.8 12 3Z"/><path d="M18.5 14.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2Z" stroke-width="1.4"/></symbol>
+  <symbol id="ic-veneer" viewBox="0 0 24 24"><path d="M6 4c-1.5 0-2.5 2-2.5 5 0 4 1 11 3 11 1.2 0 1.5-3 3-3s1.8 3 3 3c2 0 3-7 3-11 0-3-1-5-2.5-5-1.5 0-2 1.2-3.5 1.2S7.5 4 6 4Z"/><path d="M9 6.5c1.4-.6 4.6-.6 6 0" stroke-width="1.4"/></symbol>
+</defs></svg>
+
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap-wide">
+    <div>
+      <div class="hero-kicker">審美治療について</div>
+      <h1>気になる白さや形を、<br><span class="em">自然なバランス</span>で整えます</h1>
+      <p>当院の審美は、目立たせるためではなく、お顔やほかの歯となじむ自然な美しさを大切にします。歯を削らない方法から、しっかり形を整える方法まで、ご希望に合わせて選べます。</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <div class="stitle"><svg class="pico"><use href="#ic-find"/></svg>今の状態とご希望を確かめる</div>
+            <div class="sdesc">気になっているところと、<b>どんな見た目を望まれるか</b>を、まずていねいにうかがいます。</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <div class="stitle"><svg class="pico"><use href="#ic-sparkle"/></svg>削らない方法から考える</div>
+            <div class="sdesc">できるだけ<b>歯を残せる方法</b>から順にご提案し、必要に応じて形を整える方法もご案内します。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-figure">
+      <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="自然な白さに整えた前歯の模式図" style="width:100%;height:auto">
+        <style>
+          .gum2{fill:#F0D7CF}
+          .th{fill:#fff;stroke:#4F7A6C;stroke-width:2.4;stroke-linejoin:round}
+          .thc{fill:#EAF1EE;stroke:#4F7A6C;stroke-width:2.4;stroke-linejoin:round}
+          .spk{fill:#6E9C8E}
+          .lbl2{fill:#2E3A3F;font-family:"Noto Sans CJK JP",sans-serif;font-size:13px;font-weight:800}
+          .sub2{fill:#6E7B80;font-family:"Noto Sans CJK JP",sans-serif;font-size:11px}
+        </style>
+        <!-- 歯ぐき -->
+        <path class="gum2" d="M20 70 Q180 52 340 70 V96 Q180 84 20 96 Z"/>
+        <!-- 前歯6本（中央2本を少し明るいトーンに） -->
+        <path class="th"  d="M44 92 q14 -8 28 0 v52 q-14 14 -28 0 Z"/>
+        <path class="thc" d="M82 90 q16 -9 32 0 v56 q-16 15 -32 0 Z"/>
+        <path class="thc" d="M124 89 q18 -9 36 0 v58 q-18 16 -36 0 Z"/>
+        <path class="thc" d="M170 89 q18 -9 36 0 v58 q-18 16 -36 0 Z"/>
+        <path class="thc" d="M216 90 q16 -9 32 0 v56 q-16 15 -32 0 Z"/>
+        <path class="th"  d="M256 92 q14 -8 28 0 v52 q-14 14 -28 0 Z"/>
+        <!-- きらめき -->
+        <path class="spk" d="M150 40l2.4 6.4 6.4 2.4-6.4 2.4-2.4 6.4-2.4-6.4-6.4-2.4 6.4-2.4 2.4-6.4Z"/>
+        <path class="spk" d="M206 56l1.4 3.8 3.8 1.4-3.8 1.4-1.4 3.8-1.4-3.8-3.8-1.4 3.8-1.4 1.4-3.8Z"/>
+        <text class="lbl2" x="180" y="190" text-anchor="middle" fill="#3D6557">自然な白さ・自然な形</text>
+        <text class="sub2" x="180" y="214" text-anchor="middle">まわりの歯やお顔となじむ仕上がりを大切に</text>
+      </svg>
+      <div class="cap">白すぎず、まわりとなじむ自然な仕上がりをめざします</div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ================= 1. 見た目への力の入れ方 ================= -->
+<section class="section">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>見た目への力の入れ方</span>
+    <h2 class="title">どこまで整えるかは、選べます</h2>
+    <p class="lead">見た目にどれくらい力を入れたいかは、人それぞれです。当院では、3つの方針からお選びいただけます。どれかが上ということではなく、いまのお気持ちにいちばん近いものをお選びください。</p>
+    <div class="caution-grid">
+      <div class="caution">
+        <div class="cbody">
+          <div class="chead">
+            <div class="circle-ico"><svg class="pico"><use href="#ic-gem"/></svg></div>
+            <h3>見た目も整える</h3>
+          </div>
+          <p>積極的に、美しさも整えたい方へ。気になる白さや形、左右のバランスまで、ていねいに整えていきます。</p>
+        </div>
+      </div>
+      <div class="caution">
+        <div class="cbody">
+          <div class="chead">
+            <div class="circle-ico"><svg class="pico"><use href="#ic-sparkle"/></svg></div>
+            <h3>自然な見た目を保つ</h3>
+          </div>
+          <p>自然な白さ・自然な見た目を保ちたい方へ。いまの歯を活かしながら、白さや清潔感をやさしく整えます。</p>
+        </div>
+      </div>
+      <div class="caution">
+        <div class="cbody">
+          <div class="chead">
+            <div class="circle-ico"><svg class="pico"><use href="#ic-bite"/></svg></div>
+            <h3>機能を大切にする</h3>
+          </div>
+          <p>見た目より、しっかり噛めることを大切にしたい方へ。見た目のための治療は、無理におすすめしません。</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-foot">
+      <svg class="pico"><use href="#ic-durable"/></svg>
+      <div>方針は、いつでも見直せます。「いまは機能を中心に、落ち着いてから見た目を」という進め方もできます。すぐにすべてを決めていただく必要はありません。</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= 2. 白く・整える3つの関わり方 ================= -->
+<section class="section soft">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>整え方の選択</span>
+    <h2 class="title">白く・整える、3つの関わり方</h2>
+    <p class="lead">見た目を整える方法は、大きく3つあります。いまの歯をどれだけ活かすか、どれだけ形を変えるかが違います。「どれが正解」ではなく、目的によって向くものが変わります。</p>
+    <div class="scroll-hint">横にスクロールできます →</div>
+    <div class="table-scroll">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th></th>
+            <th><span class="grp">削らない</span>ホワイトニング</th>
+            <th><span class="grp">少し削る</span>ラミネートベニア</th>
+            <th><span class="grp">覆う</span>前歯の被せ物</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><svg class="pico"><use href="#ic-veneer"/></svg>歯を削るか</th>
+            <td>削らない</td>
+            <td>表面を少しだけ</td>
+            <td>覆う形に整える</td>
+          </tr>
+          <tr>
+            <th><svg class="pico"><use href="#ic-sparkle"/></svg>できること</th>
+            <td>白くする</td>
+            <td>色も形も変えられる</td>
+            <td>色・形を大きく整えられる</td>
+          </tr>
+          <tr>
+            <th><svg class="pico"><use href="#ic-tooth"/></svg>向く場面</th>
+            <td>自分の歯を、白くしたい</td>
+            <td>前歯のすき間・形・変色</td>
+            <td>神経のない変色・大きく欠けた前歯</td>
+          </tr>
+          <tr>
+            <th><svg class="pico"><use href="#ic-calendar"/></svg>後戻り</th>
+            <td>少しずつ自然に戻る</td>
+            <td>戻りにくい</td>
+            <td>戻りにくい</td>
+          </tr>
+          <tr>
+            <th><svg class="pico"><use href="#ic-yen"/></svg>費用の目安</th>
+            <td class="fee"><b>35,000円</b>〜</td>
+            <td class="fee"><b>180,000円</b>〜</td>
+            <td class="fee"><b>180,000円</b>〜</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="legend">迷われたときは、<b>いちばん歯を残せる方法から順に</b>ご相談します。いきなり削る方法を選ぶ必要はありません。検査の結果をもとに、ご一緒に選びますので、いま決めきらなくて大丈夫です。</p>
+  </div>
+</section>
+
+
+<!-- ================= 3. 知っておきたいこと ================= -->
+<section class="section">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>知っておきたいこと</span>
+    <h2 class="title">進める前に、知っておいていただきたいこと</h2>
+    <p class="lead">審美の治療には、口元がきれいに整うよさがあります。一方で、選ぶ前に知っておいていただきたい点もあります。かくさずにお伝えします。</p>
+    <div class="caution-grid">
+      <div class="caution">
+        <div class="cbody">
+          <div class="chead">
+            <div class="circle-ico"><svg class="pico"><use href="#ic-sparkle"/></svg></div>
+            <h3>白さは少しずつ戻ります</h3>
+          </div>
+          <p>ホワイトニングの白さは、食べ物や時間とともにゆるやかに戻っていきます。気になったときに追加していただくことで、明るさを保てます。色戻りは自然なことで、不具合ではありません。</p>
+        </div>
+      </div>
+      <div class="caution">
+        <div class="cbody">
+          <div class="chead">
+            <div class="circle-ico"><svg class="pico"><use href="#ic-veneer"/></svg></div>
+            <h3>貼る・被せる方法は歯を削ります</h3>
+          </div>
+          <p>ラミネートベニアや被せ物は、歯を少し削るため、元の状態には戻せません。本当に必要かを、ご一緒によく確かめ、納得いただいてから進めます。</p>
+        </div>
+      </div>
+      <div class="caution">
+        <div class="cbody">
+          <div class="chead">
+            <div class="circle-ico"><svg class="pico"><use href="#ic-find"/></svg></div>
+            <h3>自然なバランスを大切にします</h3>
+          </div>
+          <p>白さや形は、白すぎても浮いて見えてしまいます。お顔やほかの歯となじむ自然な仕上がりを、見本を見ていただきながら、ご一緒に決めていきます。</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-foot">
+      <svg class="pico"><use href="#ic-durable"/></svg>
+      <div>仕上がりは、日々のお手入れと年2回のメインテナンスで長く保てます。気になる点があれば、いつでもおたずねください。</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= 4. ホワイトニングの選び方 ================= -->
+<section class="section soft">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>白くする方法</span>
+    <h2 class="title">ホワイトニングの選び方</h2>
+    <p class="lead">歯を削らずに、薬剤で白くする方法です。医院で行う方法、ご自宅で行う方法、その両方を組み合わせる方法があります。生活に合わせてお選びいただけます。</p>
+    <div class="scroll-hint">横にスクロールできます →</div>
+    <div class="table-scroll">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th></th>
+            <th><span class="grp">医院で</span>オフィス</th>
+            <th><span class="grp">ご自宅で</span>ホーム</th>
+            <th><span class="grp">両方</span>デュアル</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><svg class="pico"><use href="#ic-calendar"/></svg>行う場所</th>
+            <td>医院で</td>
+            <td>ご自宅で</td>
+            <td>医院＋ご自宅</td>
+          </tr>
+          <tr>
+            <th><svg class="pico"><use href="#ic-sparkle"/></svg>進み方</th>
+            <td>1回で実感しやすい</td>
+            <td>毎日少しずつ、じっくり</td>
+            <td>早く・長持ちしやすい</td>
+          </tr>
+          <tr>
+            <th><svg class="pico"><use href="#ic-clean"/></svg>こんな方に</th>
+            <td>近いうちに予定がある</td>
+            <td>自分のペースで続けたい</td>
+            <td>しっかり明るく保ちたい</td>
+          </tr>
+          <tr>
+            <th><svg class="pico"><use href="#ic-yen"/></svg>費用</th>
+            <td class="fee"><b>35,000円</b></td>
+            <td class="fee"><b>30,000円</b></td>
+            <td class="fee"><b>65,000円</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="evid-inline">
+      <svg class="pico"><use href="#ic-sparkle"/></svg>
+      <div>過去に<b>神経を取った歯</b>が黒ずんできた場合は、外側からの漂白では白くなりにくいことがあります。そのときは、歯の<b>内側から白くするウォーキングブリーチ</b>（35,000円）という方法をご案内できます。</div>
+    </div>
+    <p class="legend">ホームホワイトニングは、続けるための<b>追加ジェル（リフィル4本 8,000円）</b>をご用意しています。白さの戻りは自然なことなので保証はつきませんが、気になったときに少しずつ続けられます。</p>
+  </div>
+</section>
+
+
+<!-- ================= 5. 15年保証 ================= -->
+<section class="section">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>セラミックの保証</span>
+    <h2 class="title">貼る・被せる治療の、15年保証</h2>
+    <p class="lead">ラミネートベニアと前歯の被せ物（セラミック）には、15年保証が付きます。被せ物（クラウン）と同じ考え方です。ホワイトニングは消耗的な処置のため保証はつきませんが、追加で続けていただけます。</p>
+    <div class="warranty-cond">
+      <svg class="pico"><use href="#ic-calendar"/></svg>
+      <div><b>条件：年2回の定期メンテナンスの継続</b>　｜　装着から15年が対象です。</div>
+    </div>
+    <div class="timeline">
+      <div class="phase">
+        <div class="ptop"><div class="pdot">〜1年</div><div class="pname">装着〜1年</div></div>
+        <div class="prow">
+          <div class="pcell"><div class="pl">外れて戻せる</div><div class="pv free">無料</div></div>
+          <div class="pcell"><div class="pl">作り直し</div><div class="pv free">無料で作り直し</div></div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="ptop"><div class="pdot">1〜15<br>年</div><div class="pname">1年〜15年</div></div>
+        <div class="prow">
+          <div class="pcell"><div class="pl">再装着（処置料）</div><div class="pv free">0円</div></div>
+          <div class="pcell"><div class="pl">作り直し</div><div class="pv">材料代のみ</div></div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="ptop"><div class="pdot">15年<br>〜</div><div class="pname">15年〜</div></div>
+        <div class="prow">
+          <div class="pcell"><div class="pl">再装着</div><div class="pv free">0円（生涯）</div></div>
+          <div class="pcell"><div class="pl">作り直し</div><div class="pv">技術料を充当</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="why-foot">
+      <svg class="pico"><use href="#ic-sparkle"/></svg>
+      <div>ホワイトニングの白さは時間とともにゆるやかに戻りますが、これは自然なことです。気になったときに追加していただくことで、明るさを保てます。</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= 6. 料金 ================= -->
+<section class="section soft">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>料金（自費・税込総額）</span>
+    <h2 class="title">審美治療の料金</h2>
+    <p class="lead">白くする治療（ホワイトニング）と、形を整える治療（貼る・被せる）で、料金とお支払いの仕方が分かれます。どちらも税込の総額でご案内します。</p>
+
+    <div class="price-block">
+      <div class="price-head"><span class="badge">ホワイトニング（削らない）</span><span class="ph-note">お支払いは処置のときに　※ホームは2回に分けられます</span></div>
+      <div class="price-cards">
+        <div class="pcard">
+          <div class="pc-top"><div class="pc-name">オフィス<small>医院で</small></div><div class="pc-total">35,000<small>円</small></div></div>
+          <div class="pc-meta"><div><span class="pm-k">対象</span>上下の前歯・1回</div></div>
+        </div>
+        <div class="pcard">
+          <div class="pc-top"><div class="pc-name">ホーム<small>ご自宅で</small></div><div class="pc-total">30,000<small>円</small></div></div>
+          <div class="pc-meta"><div><span class="pm-k">内容</span>上下トレー＋ジェル（初回キット）</div></div>
+        </div>
+        <div class="pcard">
+          <div class="pc-top"><div class="pc-name">デュアル<small>医院＋自宅</small></div><div class="pc-total">65,000<small>円</small></div></div>
+          <div class="pc-meta"><div><span class="pm-k">内容</span>オフィス＋ホームの組み合わせ</div></div>
+        </div>
+        <div class="pcard">
+          <div class="pc-top"><div class="pc-name">ウォーキングブリーチ<small>神経のない歯</small></div><div class="pc-total">35,000<small>円</small></div></div>
+          <div class="pc-meta"><div><span class="pm-k">内容</span>1歯コース・交換4回まで込み</div></div>
+        </div>
+      </div>
+      <div class="icap" style="text-align:left;margin-top:12px;">ホームホワイトニングを続けるための<b style="color:var(--ink)">追加ジェル（リフィル4本）は 8,000円</b>です。</div>
+    </div>
+
+    <div class="price-block" style="margin-top:22px;">
+      <div class="price-head"><span class="badge">貼る・被せる治療（15年保証）</span><span class="ph-note">お支払いは着手時とお渡し時に半額ずつ</span></div>
+      <div class="price-cards">
+        <div class="pcard">
+          <div class="pc-top"><div class="pc-name">ラミネートベニア<small>前歯・1本</small></div><div class="pc-total">180,000<small>円</small></div></div>
+          <div class="pc-meta"><div><span class="pm-k">2本目以降</span>＋130,000円／本</div><div class="pc-warranty">15年保証</div></div>
+        </div>
+        <div class="pcard">
+          <div class="pc-top"><div class="pc-name">前歯の被せ物<small>セラミック・1本</small></div><div class="pc-total">180,000<small>円</small></div></div>
+          <div class="pc-meta"><div><span class="pm-k">くわしくは</span>インレー・クラウン治療のページへ</div><div class="pc-warranty">15年保証</div></div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="price-notes">
+      <li>価格は税込の総額です。ホワイトニング（オフィス・ウォーキングブリーチ）は処置完了時に、ホームは2回に分けてお支払いいただけます。</li>
+      <li>ラミネートベニア・前歯の被せ物は、着手時とお渡し時に半額ずつのお支払いです。</li>
+      <li>ホワイトニングの白さは時間とともにゆるやかに戻ります。気になったときに追加できます（消耗的な処置のため、保証はつきません）。</li>
+      <li>ラミネートベニア・前歯の被せ物には15年保証が付きます（年2回の定期メンテナンス継続が条件）。</li>
+      <li>前歯の被せ物（セラミック）の詳しい内容と料金は、<b>「インレー・クラウン治療」</b>のページもあわせてご覧ください。</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ================= 7. CTA ================= -->
+<section class="cta">
+  <div class="wrap">
+    <h2>気になる点は、いつでもご相談ください</h2>
+    <p>この資料は、後からでもゆっくりご覧いただけます。ご家族と相談してから決めていただいてかまいません。すぐに、すべてを決めていただく必要はありません。</p>
+    <div class="qr-slot">
+      <div class="qbox"><svg><use href="#ic-qr"/></svg></div>
+      <div>掲載先が決まりしだい、QRコードを設置します</div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;">
+  <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+(function(){
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+</body>
+</html>
