@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知っておきたいお話｜ライフデンタルクリニック</title>
+<style>
+:root{
+  --paper:#FFFFFF;
+  --soft:#F4F7F5;
+  --card:#EEF3F1;
+  --ink:#2E3A3F;
+  --ink-soft:#54636A;
+  --muted:#6E7B80;
+  --sage:#4F7A6C;
+  --sage-2:#6E9C8E;
+  --line:#D8E0DD;
+  --line-2:#E7EDEA;
+  /* このページ専用：状態を表す暖色（赤は使わず、落ち着いた色で） */
+  --keep:#4F7A6C;   /* 保てる・良い */
+  --warn:#B08456;   /* 途中・ゆらぎ */
+  --clay:#9C6650;   /* 失う・弱る */
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic","YuGothic","Noto Sans JP","Noto Sans CJK JP",sans-serif;
+  --maxtext:720px;
+  --maxwide:1080px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--gothic);line-height:1.8;
+  font-size:16px;letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;height:auto;display:block;}
+svg{display:block;}
+
+/* ---- レイアウト ---- */
+.section{padding:64px 22px;}
+.section.soft{background:var(--soft);}
+.wrap{max-width:var(--maxtext);margin:0 auto;}
+.wrap-wide{max-width:var(--maxwide);margin:0 auto;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--sage);
+  margin:0 0 14px;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--sage);flex:0 0 auto;}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:.01em;line-height:1.32;}
+h2.title{font-size:28px;margin-bottom:12px;}
+.nb{white-space:nowrap;}
+.lead{font-size:16px;color:var(--ink-soft);margin:0 0 8px;line-height:1.85;}
+.note{font-size:12.5px;color:var(--muted);line-height:1.7;}
+
+/* ---- ピクトグラム共通 ---- */
+.pico{width:30px;height:30px;stroke:var(--sage);stroke-width:1.7;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;}
+.circle-ico{
+  width:54px;height:54px;border-radius:50%;background:#fff;
+  border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+}
+.circle-ico .pico{width:28px;height:28px;}
+
+/* ================= HERO ================= */
+.hero{padding:60px 22px 52px;background:linear-gradient(180deg,#fff 0%,var(--soft) 100%);}
+.hero .wrap-wide{display:grid;grid-template-columns:1fr;gap:26px;align-items:start;}
+.hero-kicker{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--sage);margin-bottom:16px;}
+.hero h1{font-size:27px;line-height:1.45;margin-bottom:16px;letter-spacing:.005em;}
+.hero h1 .em{color:var(--sage);}
+.hero p{font-size:15.5px;color:var(--ink-soft);margin:0 0 20px;line-height:1.9;}
+.hero-pair{
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--sage);
+  border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;
+}
+.hero-pair .pico{width:24px;height:24px;margin-top:2px;}
+.hero-pair p{font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.75;}
+.hero-pair b{color:var(--ink);font-weight:800;}
+.topics{display:grid;grid-template-columns:1fr;gap:11px;}
+.topic{
+  display:flex;gap:13px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:14px 15px;
+}
+.topic .num{
+  width:30px;height:30px;border-radius:50%;background:var(--sage);color:#fff;
+  font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;margin-top:1px;
+}
+.topic .ttitle{font-weight:800;font-size:15px;margin-bottom:2px;display:flex;align-items:center;gap:8px;}
+.topic .ttitle .pico{width:21px;height:21px;}
+.topic .tdesc{font-size:13px;color:var(--ink-soft);line-height:1.65;}
+
+/* ================= セクション見出し補助 ================= */
+.sec-lead{margin-bottom:8px;}
+.kicker-r{font-size:13.5px;color:var(--muted);line-height:1.8;margin:0 0 4px;}
+
+/* ================= 原因3つ ================= */
+.causes{display:grid;grid-template-columns:1fr;gap:13px;margin-top:24px;}
+.cause-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px;text-align:center;}
+.cause-card .ci{width:56px;height:56px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 11px;}
+.cause-card .ci .pico{width:30px;height:30px;}
+.cause-card .cn{font-size:16.5px;font-weight:800;margin-bottom:5px;}
+.cause-card .cd{font-size:13px;color:var(--ink-soft);line-height:1.7;}
+
+/* ================= 円グラフ ================= */
+.donut-block{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 20px;}
+.donut-block .db-h{font-weight:800;font-size:15.5px;margin-bottom:4px;display:flex;align-items:center;gap:9px;}
+.donut-block .db-h .pico{width:22px;height:22px;}
+.donut-block .db-sub{font-size:12.5px;color:var(--muted);margin-bottom:16px;}
+.donut-wrap{display:flex;flex-direction:column;align-items:center;gap:20px;}
+.donut{width:200px;height:200px;flex:0 0 auto;}
+.dlegend{display:flex;flex-direction:column;gap:11px;width:100%;max-width:300px;}
+.dl{display:flex;align-items:center;gap:11px;font-size:14.5px;color:var(--ink);}
+.dl .sw{width:15px;height:15px;border-radius:4px;flex:0 0 auto;}
+.dl b{font-weight:800;margin-left:auto;color:var(--ink);}
+
+/* ================= 出典・エビデンス枠 ================= */
+.evidence{margin-top:22px;background:var(--card);border-radius:14px;padding:17px 18px;}
+.evidence .eh{font-weight:800;font-size:14.5px;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+.evidence .eh .pico{width:22px;height:22px;stroke:var(--sage);}
+.evidence p{font-size:13px;color:var(--ink-soft);line-height:1.85;margin:0 0 9px;}
+.evidence p:last-of-type{margin-bottom:0;}
+.evidence p b{color:var(--ink);font-weight:800;}
+.evidence .src{font-size:11px;color:var(--muted);line-height:1.65;border-top:1px solid var(--line);padding-top:9px;margin-top:11px;}
+
+/* ================= 署名：あなたの場合は ブリッジ ================= */
+.bridge{
+  margin-top:22px;background:var(--sage);color:#fff;border-radius:16px;
+  padding:20px 20px;display:flex;gap:15px;align-items:flex-start;
+}
+.bridge .b-ico{width:46px;height:46px;border-radius:13px;background:rgba(255,255,255,.16);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.bridge .b-ico svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.bridge .b-k{font-size:12px;font-weight:700;letter-spacing:.08em;color:#D8E6E0;margin-bottom:5px;}
+.bridge .b-t{font-size:15px;font-weight:800;line-height:1.6;margin-bottom:5px;}
+.bridge p{font-size:13.5px;color:#EAF1EE;line-height:1.75;margin:0;}
+.bridge .doc{display:inline-block;font-weight:800;color:#fff;border-bottom:1.5px solid rgba(255,255,255,.5);padding-bottom:1px;}
+.bridge .dots{display:inline-flex;gap:5px;vertical-align:middle;margin:0 2px;}
+.bridge .dots i{width:11px;height:11px;border-radius:50%;display:inline-block;}
+
+/* ================= 一方通行の階段 ================= */
+.stair{display:grid;grid-template-columns:1fr;gap:0;margin-top:22px;}
+.stair-row{display:flex;flex-direction:column;align-items:stretch;gap:8px;}
+.stair-step{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 15px;
+  display:flex;align-items:center;gap:13px;}
+.stair-step .s2-ico{width:46px;height:46px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.stair-step .s2-ico .pico{width:28px;height:28px;}
+.stair-step .s2t{font-weight:800;font-size:15px;}
+.stair-step .s2d{font-size:12.5px;color:var(--muted);margin-top:1px;}
+.stair-arrow{display:flex;justify-content:center;color:var(--sage-2);padding:3px 0;}
+.stair-arrow svg{width:20px;height:22px;stroke:var(--sage-2);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.stair-cap{font-size:12.5px;color:var(--muted);line-height:1.7;margin-top:14px;text-align:center;}
+
+/* ================= 折れ線（丈夫さ） ================= */
+.figbox{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 18px 16px;}
+.figbox .fb-h{font-weight:800;font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:9px;}
+.figbox .fb-h .pico{width:22px;height:22px;}
+.linechart{width:100%;max-width:440px;margin:0 auto;}
+.linechart svg{width:100%;height:auto;}
+.fb-cap{font-size:11.5px;color:var(--muted);line-height:1.65;margin-top:12px;}
+
+/* ================= 痛みのものさし ================= */
+.painline{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 18px;}
+.painline .pl-h{font-weight:800;font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:9px;}
+.painline .pl-h .pico{width:22px;height:22px;stroke:var(--clay);}
+.plbar{display:flex;height:24px;border-radius:7px;overflow:hidden;border:1px solid var(--line);}
+.plseg{flex:1;display:flex;align-items:center;justify-content:center;font-size:10.5px;color:#fff;font-weight:700;}
+.plfaces{display:flex;margin-top:9px;}
+.plf{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;}
+.plf svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.plf span{font-size:10.5px;color:var(--muted);line-height:1.3;}
+.pl-note{font-size:12.5px;color:var(--clay);font-weight:700;margin-top:12px;text-align:center;line-height:1.6;}
+
+/* ================= 連鎖（支え） ================= */
+.chain{display:grid;grid-template-columns:1fr;gap:12px;margin-top:22px;}
+.chain-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 16px;
+  display:flex;align-items:center;gap:15px;}
+.chain-card .cc-fig{width:170px;flex:0 0 auto;}
+.chain-card .cc-fig svg{width:100%;height:auto;}
+.chain-card .cc-pct{font-size:24px;font-weight:800;line-height:1;}
+.chain-card .cc-pct small{font-size:13px;font-weight:700;}
+.chain-card .cc-lab{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin-top:5px;}
+.chain-card.k .cc-pct{color:var(--keep);}
+.chain-card.w .cc-pct{color:var(--warn);}
+.chain-card.c .cc-pct{color:var(--clay);}
+.chain-arrow{display:flex;justify-content:center;color:var(--sage-2);}
+.chain-arrow svg{width:20px;height:22px;stroke:var(--sage-2);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.chain-note{font-size:12.5px;color:var(--muted);line-height:1.75;margin-top:16px;text-align:center;}
+.chain-note b{color:var(--ink-soft);font-weight:800;}
+.chain-note .star{color:var(--clay);font-weight:700;}
+.eightoh{margin-top:20px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:16px 17px;
+  display:flex;gap:13px;align-items:flex-start;}
+.eightoh .pico{width:26px;height:26px;margin-top:2px;}
+.eightoh p{font-size:13.5px;color:var(--ink-soft);line-height:1.8;margin:0;}
+.eightoh b{color:var(--ink);font-weight:800;}
+
+/* ================= 体とのつながり：倍率カード ================= */
+.riskpre{font-size:14.5px;color:var(--ink-soft);line-height:1.9;margin:24px 0 16px;text-align:center;}
+.riskpre .keep{display:inline-block;font-weight:800;color:var(--keep);background:rgba(79,122,108,.12);
+  border:1px solid rgba(79,122,108,.3);border-radius:20px;padding:2px 13px;}
+.riskpre .lost{display:inline-block;font-weight:800;color:#fff;background:var(--clay);border-radius:20px;padding:2px 13px;}
+.riskcards{display:grid;grid-template-columns:1fr;gap:13px;}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 16px;text-align:center;}
+.rcard .ri{width:48px;height:48px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 12px;}
+.rcard .ri .pico{width:27px;height:27px;stroke:var(--clay);}
+.rcard .rn{font-size:46px;font-weight:800;color:var(--clay);line-height:1;}
+.rcard .rn small{font-size:18px;}
+.rcard .rl{font-size:14px;color:var(--ink);margin-top:8px;line-height:1.45;font-weight:700;}
+
+/* ================= 通い方3つ ================= */
+.ways{display:grid;grid-template-columns:1fr;gap:13px;margin-top:24px;}
+.way{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px;}
+.way .wi{display:flex;align-items:center;gap:12px;margin-bottom:9px;}
+.way .wi .circle-ico{width:46px;height:46px;}
+.way .wn{font-size:17px;font-weight:800;}
+.way .wd{font-size:13.5px;color:var(--ink-soft);line-height:1.75;margin:0;}
+.ways-note{font-size:12.5px;color:var(--muted);line-height:1.7;margin-top:14px;text-align:center;}
+
+/* ================= 締め（やさしい一歩） ================= */
+.closing{background:var(--sage);color:#fff;text-align:center;padding:60px 22px;}
+.closing .cmark{width:46px;height:46px;margin:0 auto 22px;}
+.closing .cmark svg{width:46px;height:46px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.closing .cpre{font-size:15px;color:#EAF1EE;line-height:1.9;margin:0 auto 22px;max-width:560px;}
+.closing .cpre b{color:#fff;font-weight:800;}
+.closing .cbig{font-size:30px;font-weight:800;letter-spacing:.06em;line-height:1.4;}
+.closing .chr{width:46px;height:2px;background:rgba(255,255,255,.6);margin:24px auto 18px;}
+.closing .clogo{font-size:12px;letter-spacing:.3em;color:#D8E6E0;}
+
+/* ================= CTA ================= */
+.cta{background:var(--card);text-align:center;padding:52px 22px;}
+.cta h2{font-size:22px;margin-bottom:13px;line-height:1.5;}
+.cta p{font-size:14.5px;color:var(--ink-soft);line-height:1.85;margin:0 auto 22px;max-width:560px;}
+.cta .qr-slot{display:inline-flex;flex-direction:column;align-items:center;gap:12px;
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;}
+.cta .qr-slot .qbox{width:160px;height:160px;border-radius:12px;background:#fff;border:1px solid var(--line);padding:9px;}
+.cta .qr-slot .qbox svg{width:100%;height:100%;display:block;}
+.cta .qr-cap{font-size:13px;color:var(--ink-soft);line-height:1.6;}
+.cta .qr-url{font-size:11px;color:var(--muted);word-break:break-all;letter-spacing:.01em;max-width:220px;}
+/* トップへ戻る */
+.backtop{background:#fff;text-align:center;padding:34px 22px 6px;}
+.backtop a{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;font-weight:800;
+  color:var(--sage);text-decoration:none;border:1px solid var(--line);border-radius:999px;
+  padding:12px 24px;transition:background .2s ease;}
+.backtop a:hover{background:var(--soft);}
+.backtop a .bt-arrow{width:20px;height:20px;stroke:var(--sage);fill:none;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;transform:scaleX(-1);}
+
+footer .fl{font-size:13px;color:var(--ink-soft);font-weight:800;letter-spacing:.04em;}
+footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
+
+/* ================= レスポンシブ ================= */
+@media (min-width:760px){
+  body{font-size:16.5px;}
+  .section{padding:84px 32px;}
+  .hero{padding:84px 32px 72px;}
+  .hero .wrap-wide{grid-template-columns:1.05fr .95fr;gap:46px;}
+  .hero h1{font-size:38px;}
+  .hero-kicker{font-size:14px;}
+  h2.title{font-size:34px;}
+  .causes{grid-template-columns:repeat(3,1fr);}
+  .donut-wrap{flex-direction:row;justify-content:center;gap:42px;}
+  .stair-row{flex-direction:row;align-items:stretch;}
+  .stair-step{flex:1;flex-direction:column;text-align:center;justify-content:center;}
+  .stair-arrow{align-items:center;width:34px;}
+  .stair-arrow svg{transform:rotate(-90deg);}
+  .riskcards{grid-template-columns:repeat(3,1fr);}
+  .ways{grid-template-columns:repeat(3,1fr);}
+  .chain{grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;}
+  .chain-card{flex-direction:column;text-align:center;}
+  .chain-card .cc-fig{width:196px;}
+  .chain-arrow svg{transform:rotate(-90deg);}
+  .closing .cbig{font-size:40px;}
+}
+@media (min-width:1024px){
+  .hero h1{font-size:42px;}
+}
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== ピクトグラム定義 ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="ic-tooth" viewBox="0 0 24 24"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z"/></symbol>
+  <symbol id="ic-gum" viewBox="0 0 24 24"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z"/><path d="M5.5 15.5c3.5 2.2 9.5 2.2 13 0" stroke="#9C6650"/></symbol>
+  <symbol id="ic-bite" viewBox="0 0 24 24"><path d="M12 3v8M8.5 7.5 12 11l3.5-3.5"/><path d="M4 14.5c2.5 1.2 5 1.8 8 1.8s5.5-.6 8-1.8M6 18c2 .9 3.9 1.3 6 1.3s4-.4 6-1.3"/></symbol>
+  <symbol id="ic-find" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.7-4.7"/><path d="M10.5 8v5M8 10.5h5"/></symbol>
+  <symbol id="ic-alert" viewBox="0 0 24 24"><path d="M12 3.5 21.5 20H2.5L12 3.5Z"/><path d="M12 9.5v5M12 17.5v.2"/></symbol>
+  <symbol id="ic-arrow-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></symbol>
+  <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="ic-shield-check" viewBox="0 0 24 24"><path d="M12 2.5 4 5.5v5.2c0 5 3.4 9.3 8 10.8 4.6-1.5 8-5.8 8-10.8V5.5l-8-3Z"/><path d="m8.4 11.6 2.5 2.5 4.7-5"/></symbol>
+  <symbol id="ic-doc" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 10h7M8.5 13.5h7M8.5 17h4"/></symbol>
+  <symbol id="ic-leaf" viewBox="0 0 24 24"><path d="M5 19C5 11 11 5 19 5c0 8-6 14-14 14Z"/><path d="M5 19c3-5 7-8 11-9"/></symbol>
+  <symbol id="ic-frail" viewBox="0 0 24 24"><circle cx="9" cy="5" r="2.2"/><path d="M9 8c-1.6 3-1.4 6-3.5 8M9 8c2 1.2 2.8 3 4.6 3.6l3.4 1.2"/><path d="M5.5 16l-1.5 4M12.5 13.5 13 21"/></symbol>
+  <symbol id="ic-care" viewBox="0 0 24 24"><path d="M12 7.5c1.4-2.3 5.5-2 5.5 1.2 0 2.4-3.5 4.6-5.5 6.3-2-1.7-5.5-3.9-5.5-6.3C6.5 5.5 10.6 5.2 12 7.5Z"/><path d="M3 20c1.5-1.5 4-2.2 6-2.2M21 20c-1.5-1.5-4-2.2-6-2.2"/></symbol>
+  <symbol id="ic-brain" viewBox="0 0 24 24"><path d="M9 5.5C7 5.5 5.5 7 5.5 8.8c-1.3.4-2 1.5-2 2.8 0 1 .5 1.9 1.4 2.4-.2 1.6 1 3 2.7 3 .5 1.2 1.6 2 2.9 2 .7 0 1-.4 1-1V6.5C11.5 6 11 5.5 9 5.5Z"/><path d="M15 5.5c2 0 3.5 1.5 3.5 3.3 1.3.4 2 1.5 2 2.8 0 1-.5 1.9-1.4 2.4.2 1.6-1 3-2.7 3-.5 1.2-1.6 2-2.9 2-.7 0-1-.4-1-1V6.5c0-.5.5-1 2.5-1Z"/></symbol>
+  <symbol id="ic-now" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6"/></symbol>
+  <symbol id="ic-keep" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.4 12.2l2.6 2.6 4.6-5"/></symbol>
+  <symbol id="ic-whole" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></symbol>
+  <symbol id="ic-heart" viewBox="0 0 24 24"><path d="M12 20.5S4 15.6 4 9.9A4 4 0 0 1 12 7a4 4 0 0 1 8 2.9C20 15.6 12 20.5 12 20.5Z"/></symbol>
+  <symbol id="ic-chat" viewBox="0 0 24 24"><path d="M4 5.5h16a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-4 3.5V16.5a1.5 1.5 0 0 1-1.5-1.5V7A1.5 1.5 0 0 1 4 5.5Z"/></symbol>
+  <symbol id="ic-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v0M14 21h3M21 17v4M17 21h4"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5V5.5Z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5V5.5Z"/></symbol>
+  <!-- 痛みのものさし用の顔 -->
+  <symbol id="f-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 14c1 1.4 2.2 2 3.5 2s2.5-.6 3.5-2"/><circle cx="9" cy="10" r=".6" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r=".6" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="f-mid" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 14.5h6"/><circle cx="9" cy="10" r=".6" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r=".6" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="f-pain" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 16c1-1.4 2.2-2 3.5-2s2.5.6 3.5 2"/><path d="M7.6 9.4l1.8 1M16.4 9.4l-1.8 1"/></symbol>
+  <symbol id="f-numb" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 14.8h6"/><path d="M7.6 10h2.8M13.6 10h2.8"/></symbol>
+</defs></svg>
+
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap-wide">
+    <div>
+      <div class="hero-kicker">知っておきたいお話</div>
+      <h1>お口のことを、<br><span class="em">「自分のこと」</span>として<br>見ていくために。</h1>
+      <p>痛いところを治すだけが、歯科ではありません。なぜ起きたのか、これからどう守っていけるのか。検査の結果をご覧いただく前に、知っておくと役に立つ「4つのお話」をまとめました。</p>
+      <div class="hero-pair">
+        <svg class="pico"><use href="#ic-doc"/></svg>
+        <p>このページは、あなたの<b>「検査でわかったこと」</b>と一緒にご覧いただくと、いちばん「自分のこと」として見えてきます。各お話の最後に、あなたの結果とつなげる場所をご用意しています。</p>
+      </div>
+    </div>
+    <div>
+      <div class="topics">
+        <div class="topic">
+          <div class="num">1</div>
+          <div>
+            <div class="ttitle"><svg class="pico"><use href="#ic-tooth"/></svg>むし歯だけ、ではありません</div>
+            <div class="tdesc">お口のトラブルは、もとをたどると大きく「3つの原因」です。</div>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="num">2</div>
+          <div>
+            <div class="ttitle"><svg class="pico"><use href="#ic-arrow-down"/></svg>歯は、治療のたびに弱くなる</div>
+            <div class="tdesc">削った歯は、もとに戻りません。しかも痛みなく進むことが多い。</div>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="num">3</div>
+          <div>
+            <div class="ttitle"><svg class="pico"><use href="#ic-bite"/></svg>支えが崩れると、連鎖していく</div>
+            <div class="tdesc">奥歯を1本失うと、噛む力が下がり、別の歯にも負担が広がります。</div>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="num">4</div>
+          <div>
+            <div class="ttitle"><svg class="pico"><use href="#ic-heart"/></svg>あなたの選択が、未来を分ける</div>
+            <div class="tdesc">お口の状態は、全身の健康にもつながっています。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ================= §1 むし歯だけ、ではありません ================= -->
+<section class="section">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="dot"></span>その1 ｜ お口の中で起きていること</div>
+    <h2 class="title">むし歯だけ、ではありません</h2>
+    <p class="lead">お口のトラブルは、もとをたどると大きく「3つの原因」に分けられます。私たちは、お口をいつもこの3つの目で見ています。</p>
+
+    <div class="causes">
+      <div class="cause-card">
+        <div class="ci"><svg class="pico"><use href="#ic-tooth"/></svg></div>
+        <div class="cn">むし歯</div>
+        <div class="cd">歯そのものが溶けていく。歯の図で、場所と深さを確かめます。</div>
+      </div>
+      <div class="cause-card">
+        <div class="ci"><svg class="pico"><use href="#ic-gum"/></svg></div>
+        <div class="cn">歯ぐき</div>
+        <div class="cd">歯を支える土台がゆるむ。ポケットの深さ・出血で見ます。</div>
+      </div>
+      <div class="cause-card">
+        <div class="ci"><svg class="pico"><use href="#ic-bite"/></svg></div>
+        <div class="cn">力・かみ合わせ</div>
+        <div class="cd">かむ力の負担や、すり減り・割れ。奥歯の支えで見ます。</div>
+      </div>
+    </div>
+
+    <div class="donut-block">
+      <div class="db-h"><svg class="pico"><use href="#ic-find"/></svg>歯を失う原因（実際のデータ）</div>
+      <div class="db-sub">永久歯を抜くことになった原因の割合です。</div>
+      <div class="donut-wrap">
+        <svg class="donut" viewBox="0 0 100 100" role="img" aria-label="歯を失う原因の割合：歯周病37%、むし歯29%、破折18%、その他16%">
+          <g transform="rotate(-90 50 50)">
+            <circle cx="50" cy="50" r="34" fill="none" stroke="#4F7A6C" stroke-width="22" stroke-dasharray="79.0 134.6" stroke-dashoffset="0"/>
+            <circle cx="50" cy="50" r="34" fill="none" stroke="#B08456" stroke-width="22" stroke-dasharray="61.9 151.7" stroke-dashoffset="-79.0"/>
+            <circle cx="50" cy="50" r="34" fill="none" stroke="#6E9C8E" stroke-width="22" stroke-dasharray="38.4 175.2" stroke-dashoffset="-140.9"/>
+            <circle cx="50" cy="50" r="34" fill="none" stroke="#CBD6D1" stroke-width="22" stroke-dasharray="34.2 179.4" stroke-dashoffset="-179.3"/>
+          </g>
+          <text x="50" y="46" text-anchor="middle" font-size="7.5" fill="#6E7B80">この3つで</text>
+          <text x="50" y="60" text-anchor="middle" font-size="15" fill="#2E3A3F" font-weight="800">約8割</text>
+        </svg>
+        <div class="dlegend">
+          <div class="dl"><span class="sw" style="background:#4F7A6C"></span>歯周病（歯ぐき）<b>37%</b></div>
+          <div class="dl"><span class="sw" style="background:#B08456"></span>むし歯<b>29%</b></div>
+          <div class="dl"><span class="sw" style="background:#6E9C8E"></span>破折（力）<b>18%</b></div>
+          <div class="dl"><span class="sw" style="background:#CBD6D1"></span>その他<b>16%</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="evidence">
+      <div class="eh"><svg class="pico"><use href="#ic-book"/></svg>くわしく</div>
+      <p>症状が同じでも、原因がちがえば対応も変わります。そして<b>原因が残っていると、また繰り返します。</b>だから私たちは、むし歯・歯ぐき・力を、それぞれ別に見ています。</p>
+      <div class="src">出典：8020推進財団／日本歯科医師会「永久歯の抜歯原因調査」（割合は調査年により変動します）</div>
+    </div>
+
+    <div class="bridge">
+      <div class="b-ico"><svg><use href="#ic-find"/></svg></div>
+      <div>
+        <div class="b-k">あなたの場合は？</div>
+        <div class="b-t">今日の検査も、この3つの目で見ています。</div>
+        <p><span class="doc">検査でわかったこと</span> で、あなたの「むし歯・歯ぐき・かみ合わせ」の3つを、ご一緒に確かめます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= §2 治すほど、戻れない ================= -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="dot"></span>その2 ｜ お口の中で起きていること</div>
+    <h2 class="title">歯は、治療のたびに弱くなる</h2>
+    <p class="lead">削った歯は、もとには戻りません。しかも、痛みを感じないまま静かに進むことが多い。だからこそ、早めに気づくことに意味があります。</p>
+
+    <div class="stair">
+      <div class="stair-row">
+        <div class="stair-step"><div class="s2-ico"><svg class="pico" style="stroke:#4F7A6C"><use href="#ic-tooth"/></svg></div><div><div class="s2t">健康な歯</div><div class="s2d">いちばん丈夫</div></div></div>
+        <div class="stair-arrow"><svg><use href="#ic-arrow-down"/></svg></div>
+        <div class="stair-step"><div class="s2-ico"><svg class="pico"><use href="#ic-tooth"/></svg></div><div><div class="s2t">詰め物</div><div class="s2d">一部を削る</div></div></div>
+        <div class="stair-arrow"><svg><use href="#ic-arrow-down"/></svg></div>
+        <div class="stair-step"><div class="s2-ico"><svg class="pico"><use href="#ic-tooth"/></svg></div><div><div class="s2t">かぶせ</div><div class="s2d">大きく削る</div></div></div>
+        <div class="stair-arrow"><svg><use href="#ic-arrow-down"/></svg></div>
+        <div class="stair-step"><div class="s2-ico"><svg class="pico" style="stroke:#B08456"><use href="#ic-tooth"/></svg></div><div><div class="s2t">神経を取った歯</div><div class="s2d">もろくなる</div></div></div>
+        <div class="stair-arrow"><svg><use href="#ic-arrow-down"/></svg></div>
+        <div class="stair-step"><div class="s2-ico"><svg class="pico" style="stroke:#9C6650"><use href="#ic-tooth"/></svg></div><div><div class="s2t">抜歯</div><div class="s2d">失う</div></div></div>
+      </div>
+    </div>
+    <div class="stair-cap">治療は、この向きに進みやすい一方通行。だから「いま、どこにいるか」を知ることが大切です。</div>
+
+    <div class="figbox">
+      <div class="fb-h"><svg class="pico"><use href="#ic-arrow-down"/></svg>歯の丈夫さは、治療のたびに下がる</div>
+      <div class="linechart">
+        <svg viewBox="0 0 320 150" role="img" aria-label="歯の丈夫さの目安：健康100%、詰め物 約85%、かぶせ 約60%、神経を取った歯 約40%">
+          <line x1="34" y1="22" x2="300" y2="22" stroke="#E7EDEA" stroke-width="1"/>
+          <line x1="34" y1="76" x2="300" y2="76" stroke="#E7EDEA" stroke-width="1"/>
+          <line x1="34" y1="130" x2="300" y2="130" stroke="#D8E0DD" stroke-width="1.2"/>
+          <text x="30" y="25" text-anchor="end" font-size="9" fill="#9AA6A2">100</text>
+          <text x="30" y="79" text-anchor="end" font-size="9" fill="#9AA6A2">50</text>
+          <text x="30" y="133" text-anchor="end" font-size="9" fill="#9AA6A2">0</text>
+          <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4F7A6C"/><stop offset="1" stop-color="#9C6650"/></linearGradient></defs>
+          <polyline points="44,22 130,38.2 220,65.2 290,86.8" fill="none" stroke="url(#lg)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="44" cy="22" r="4.2" fill="#4F7A6C" stroke="#fff" stroke-width="1.3"/>
+          <circle cx="130" cy="38.2" r="4.2" fill="#6E9C8E" stroke="#fff" stroke-width="1.3"/>
+          <circle cx="220" cy="65.2" r="4.2" fill="#B08456" stroke="#fff" stroke-width="1.3"/>
+          <circle cx="290" cy="86.8" r="4.2" fill="#9C6650" stroke="#fff" stroke-width="1.3"/>
+          <text x="44" y="13" text-anchor="middle" font-size="12" fill="#2E3A3F" font-weight="800">100%</text>
+          <text x="130" y="29" text-anchor="middle" font-size="12" fill="#2E3A3F" font-weight="800">約85</text>
+          <text x="220" y="56" text-anchor="middle" font-size="12" fill="#2E3A3F" font-weight="800">約60</text>
+          <text x="290" y="77.6" text-anchor="middle" font-size="12" fill="#2E3A3F" font-weight="800">約40</text>
+          <text x="44" y="145" text-anchor="middle" font-size="10.5" fill="#6E7B80">健康</text>
+          <text x="130" y="145" text-anchor="middle" font-size="10.5" fill="#6E7B80">詰め物</text>
+          <text x="220" y="145" text-anchor="middle" font-size="10.5" fill="#6E7B80">かぶせ</text>
+          <text x="290" y="145" text-anchor="middle" font-size="10.5" fill="#6E7B80">神経除去</text>
+        </svg>
+      </div>
+      <div class="fb-cap">健康な歯の丈夫さを100%としたときの目安です。神経を取ると、約40%まで弱くなります（イメージ）。</div>
+    </div>
+
+    <div class="painline">
+      <div class="pl-h"><svg class="pico"><use href="#ic-alert"/></svg>痛みは、当てになりません</div>
+      <div class="plbar">
+        <div class="plseg" style="background:#8FAF94">ごく初期</div>
+        <div class="plseg" style="background:#C7A45A">少し進む</div>
+        <div class="plseg" style="background:#B08456">神経の近く</div>
+        <div class="plseg" style="background:#8A5648">神経が死ぬ</div>
+      </div>
+      <div class="plfaces">
+        <div class="plf" style="color:#4F7A6C"><svg><use href="#f-ok"/></svg><span>痛くない</span></div>
+        <div class="plf" style="color:#B08456"><svg><use href="#f-mid"/></svg><span>しみる程度</span></div>
+        <div class="plf" style="color:#9C6650"><svg><use href="#f-pain"/></svg><span>痛い</span></div>
+        <div class="plf" style="color:#8A5648"><svg><use href="#f-numb"/></svg><span>痛み消える</span></div>
+      </div>
+      <div class="pl-note">痛い時期は、ほんの一部。痛みが消えても、中では進んでいます。</div>
+    </div>
+
+    <div class="bridge">
+      <div class="b-ico"><svg><use href="#ic-doc"/></svg></div>
+      <div>
+        <div class="b-k">あなたの場合は？</div>
+        <div class="b-t">いまの詰め物・かぶせが、どのあたりか。</div>
+        <p><span class="doc">検査でわかったこと</span> の歯の図（緑＝治した歯）を見ると、あなたの歯が今どの段階にいるか、見えてきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= §3 支えの連鎖 ================= -->
+<section class="section">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="dot"></span>その3 ｜ 長く守るための考え方</div>
+    <h2 class="title">支えが崩れると、連鎖していく</h2>
+    <p class="lead">奥歯（6番・7番）を1本失うと、噛む力が下がり、残った歯への負担が広がります。とくに下の<strong style="color:#9C6650">6番★</strong>は要になる歯です。</p>
+
+    <div class="chain">
+      <div class="chain-card k">
+        <div class="cc-fig"><svg viewBox="0 0 240 148" aria-label="両側で支えがそろっている状態"><line x1="18" y1="70" x2="222" y2="70" stroke="#9DACA6" stroke-width="1.2"/><line x1="120" y1="22" x2="120" y2="124" stroke="#9DACA6" stroke-width="1.3"/><text x="120" y="15" text-anchor="middle" font-size="10.5" fill="#8A958F">上</text><text x="120" y="144" text-anchor="middle" font-size="10.5" fill="#8A958F">下</text><text x="11" y="66" text-anchor="middle" font-size="10.5" fill="#8A958F">右</text><text x="229" y="66" text-anchor="middle" font-size="10.5" fill="#8A958F">左</text><g transform="translate(36,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(69,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(102,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(138,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(171,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(204,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(36,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(69,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(102,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(138,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(171,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(204,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="36" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">7</text><text x="69" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">6</text><text x="102" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">5</text><text x="138" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">5</text><text x="171" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">6</text><text x="204" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">7</text><text x="120" y="77" text-anchor="middle" font-size="12.5" fill="#6E7B80">〜</text><text x="69" y="130" text-anchor="middle" font-size="14" fill="#9C6650">★</text><text x="171" y="130" text-anchor="middle" font-size="14" fill="#9C6650">★</text></svg></div>
+        <div>
+          <div class="cc-pct">100<small>%</small></div>
+          <div class="cc-lab">A　両側で、しっかり支える</div>
+        </div>
+      </div>
+      <div class="chain-arrow"><svg><use href="#ic-arrow-down"/></svg></div>
+      <div class="chain-card w">
+        <div class="cc-fig"><svg viewBox="0 0 240 148" aria-label="下の6番が欠け、反対側に負担がかかる状態"><line x1="18" y1="70" x2="222" y2="70" stroke="#9DACA6" stroke-width="1.2"/><line x1="120" y1="22" x2="120" y2="124" stroke="#9DACA6" stroke-width="1.3"/><text x="120" y="15" text-anchor="middle" font-size="10.5" fill="#8A958F">上</text><text x="120" y="144" text-anchor="middle" font-size="10.5" fill="#8A958F">下</text><text x="11" y="66" text-anchor="middle" font-size="10.5" fill="#8A958F">右</text><text x="229" y="66" text-anchor="middle" font-size="10.5" fill="#8A958F">左</text><g transform="translate(36,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(69,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#B08456" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(102,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(138,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(171,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(204,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M69 24v9M64 29l5 5 5-5" stroke="#B08456" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(36,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(69,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#9C6650" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 2" opacity=".6"/></g><path d="M60 90l18 18M78 90l-18 18" stroke="#9C6650" stroke-width="2.4" stroke-linecap="round"/><g transform="translate(102,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(138,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(171,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(204,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="36" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">7</text><text x="69" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">6</text><text x="102" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">5</text><text x="138" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">5</text><text x="171" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">6</text><text x="204" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">7</text><text x="120" y="77" text-anchor="middle" font-size="12.5" fill="#6E7B80">〜</text><text x="69" y="130" text-anchor="middle" font-size="14" fill="#9C6650">★</text><text x="171" y="130" text-anchor="middle" font-size="14" fill="#9C6650">★</text></svg></div>
+        <div>
+          <div class="cc-pct">約67<small>%</small></div>
+          <div class="cc-lab">B　下の6番が欠け → 反対に負担</div>
+        </div>
+      </div>
+      <div class="chain-arrow"><svg><use href="#ic-arrow-down"/></svg></div>
+      <div class="chain-card c">
+        <div class="cc-fig"><svg viewBox="0 0 240 148" aria-label="下の大臼歯が失われ、全体が弱った状態"><line x1="18" y1="70" x2="222" y2="70" stroke="#9DACA6" stroke-width="1.2"/><line x1="120" y1="22" x2="120" y2="124" stroke="#9DACA6" stroke-width="1.3"/><text x="120" y="15" text-anchor="middle" font-size="10.5" fill="#8A958F">上</text><text x="120" y="144" text-anchor="middle" font-size="10.5" fill="#8A958F">下</text><text x="11" y="66" text-anchor="middle" font-size="10.5" fill="#8A958F">右</text><text x="229" y="66" text-anchor="middle" font-size="10.5" fill="#8A958F">左</text><g transform="translate(36,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(69,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(102,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(138,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(171,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(204,42) scale(1.4,-1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(36,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#9C6650" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 2" opacity=".6"/></g><path d="M27 90l18 18M45 90l-18 18" stroke="#9C6650" stroke-width="2.4" stroke-linecap="round"/><g transform="translate(69,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#9C6650" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 2" opacity=".6"/></g><path d="M60 90l18 18M78 90l-18 18" stroke="#9C6650" stroke-width="2.4" stroke-linecap="round"/><g transform="translate(102,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(138,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#54636A" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(171,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#9C6650" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 2" opacity=".6"/></g><path d="M162 90l18 18M180 90l-18 18" stroke="#9C6650" stroke-width="2.4" stroke-linecap="round"/><g transform="translate(204,99) scale(1.4,1.4) translate(-12,-12)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" stroke="#9C6650" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 2" opacity=".6"/></g><path d="M195 90l18 18M213 90l-18 18" stroke="#9C6650" stroke-width="2.4" stroke-linecap="round"/><text x="36" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">7</text><text x="69" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">6</text><text x="102" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">5</text><text x="138" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">5</text><text x="171" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">6</text><text x="204" y="77" text-anchor="middle" font-size="11" fill="#6E7B80" font-weight="700">7</text><text x="120" y="77" text-anchor="middle" font-size="12.5" fill="#6E7B80">〜</text></svg></div>
+        <div>
+          <div class="cc-pct">約34<small>%</small></div>
+          <div class="cc-lab">C　大臼歯を失い、全体が弱る</div>
+        </div>
+      </div>
+    </div>
+    <p class="chain-note">中央の<b>たて線が正中（左右の境）</b>、<b>よこ線が上下の境</b>。内側から <b>5番・6番・7番</b> です。<span class="star">★</span> は、とくに要となる <b>6番</b>。</p>
+
+    <div class="figbox">
+      <div class="fb-h"><svg class="pico"><use href="#ic-bite"/></svg>奥歯を失うと、噛む力はこう下がる</div>
+      <div class="linechart">
+        <svg viewBox="0 0 320 175" role="img" aria-label="噛む力の目安：すべてある100%、6番を1本失う 約67%、さらに失う 約56%、大臼歯なし 約34%">
+          <line x1="34" y1="20" x2="300" y2="20" stroke="#E7EDEA" stroke-width="1"/>
+          <line x1="34" y1="80" x2="300" y2="80" stroke="#E7EDEA" stroke-width="1"/>
+          <line x1="34" y1="140" x2="300" y2="140" stroke="#D8E0DD" stroke-width="1.2"/>
+          <rect x="46" y="20" width="46" height="120" rx="3" fill="#4F7A6C"/>
+          <rect x="116" y="59.6" width="46" height="80.4" rx="3" fill="#7E8A63"/>
+          <rect x="186" y="72.8" width="46" height="67.2" rx="3" fill="#B08456"/>
+          <rect x="256" y="99.2" width="46" height="40.8" rx="3" fill="#9C6650"/>
+          <text x="69" y="14" text-anchor="middle" font-size="11.5" fill="#2E3A3F" font-weight="800">100%</text>
+          <text x="139" y="53.6" text-anchor="middle" font-size="11.5" fill="#2E3A3F" font-weight="800">約67</text>
+          <text x="209" y="66.8" text-anchor="middle" font-size="11.5" fill="#2E3A3F" font-weight="800">約56</text>
+          <text x="279" y="93.2" text-anchor="middle" font-size="11.5" fill="#2E3A3F" font-weight="800">約34</text>
+          <text x="69" y="154" text-anchor="middle" font-size="10" fill="#6E7B80">すべて</text>
+          <text x="69" y="166" text-anchor="middle" font-size="10" fill="#6E7B80">ある</text>
+          <text x="139" y="154" text-anchor="middle" font-size="10" fill="#6E7B80">6番を</text>
+          <text x="139" y="166" text-anchor="middle" font-size="10" fill="#6E7B80">1本失う</text>
+          <text x="209" y="154" text-anchor="middle" font-size="10" fill="#6E7B80">さらに</text>
+          <text x="209" y="166" text-anchor="middle" font-size="10" fill="#6E7B80">失う</text>
+          <text x="279" y="154" text-anchor="middle" font-size="10" fill="#6E7B80">大臼歯</text>
+          <text x="279" y="166" text-anchor="middle" font-size="10" fill="#6E7B80">なし</text>
+        </svg>
+      </div>
+      <div class="fb-cap">出典：Yurkstas &amp; Manly ほか（咀嚼効率）。6番喪失で約33%低下との報告もあります（数値はイメージ）。</div>
+    </div>
+
+    <div class="eightoh">
+      <svg class="pico"><use href="#ic-shield-check"/></svg>
+      <p><b>20本残せば、よく噛めます（8020）。</b>下の6番は最も早く生え、失われやすい歯。でも、上下の6番か7番が噛み合えば、お口の高さは保てます。なるべく奥歯まで残すほど、長く守れます。</p>
+    </div>
+
+    <div class="bridge">
+      <div class="b-ico"><svg><use href="#ic-bite"/></svg></div>
+      <div>
+        <div class="b-k">あなたの場合は？</div>
+        <div class="b-t">あなたの奥歯の支えは、どのくらい？</div>
+        <p><span class="doc">検査でわかったこと</span> の「かむ力・かみ合わせ」<span class="dots"><i style="background:#4F7A6C"></i><i style="background:#B08456"></i><i style="background:#9C6650"></i></span>で、ご一緒に確かめます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= §4 あなたの選択が、未来を分ける ================= -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="dot"></span>その4 ｜ お口と体のつながり</div>
+    <h2 class="title">あなたの選択が、未来を分ける</h2>
+    <p class="lead">お口の力は、全身ともつながっています。これは、実際の研究データです。選び方で、これだけ変わります。</p>
+
+    <div class="riskpre">
+      <span class="keep">噛む・話す力を保てた人</span> とくらべて、<br><span class="lost">衰えた人</span> は——
+    </div>
+
+    <div class="riskcards">
+      <div class="rcard">
+        <div class="ri"><svg class="pico"><use href="#ic-frail"/></svg></div>
+        <div class="rn">2.4<small>倍</small></div>
+        <div class="rl">全身が虚弱に<br>（フレイル）</div>
+      </div>
+      <div class="rcard">
+        <div class="ri"><svg class="pico"><use href="#ic-care"/></svg></div>
+        <div class="rn">2.4<small>倍</small></div>
+        <div class="rl">介護が必要に<br>なりやすい</div>
+      </div>
+      <div class="rcard">
+        <div class="ri"><svg class="pico"><use href="#ic-brain"/></svg></div>
+        <div class="rn">1.9<small>倍</small></div>
+        <div class="rl">認知症に<br>なりやすい</div>
+      </div>
+    </div>
+
+    <div class="evidence">
+      <div class="eh"><svg class="pico"><use href="#ic-book"/></svg>選んだ方針で、未来は変わります</div>
+      <p>あなたが選ぶ「通い方」で、これからの守り方が変わります。下の3つは、優劣ではなく<b>目的の違い</b>です。どれを選んでも、定期的なメインテナンスはご一緒に続けます。</p>
+      <div class="src">出典：Tanaka T, et al. 2018／Yamamoto T, et al. 2012。※掲示前に最新値を要確認　／　並び順は優劣ではありません</div>
+    </div>
+
+    <div class="ways">
+      <div class="way">
+        <div class="wi"><div class="circle-ico"><svg class="pico"><use href="#ic-now"/></svg></div><div class="wn">今を整える</div></div>
+        <p class="wd">今の困りごとに、その都度こたえていく通い方です。</p>
+      </div>
+      <div class="way">
+        <div class="wi"><div class="circle-ico"><svg class="pico"><use href="#ic-keep"/></svg></div><div class="wn">気になる歯を残す</div></div>
+        <p class="wd">気になる歯を、しっかり治して残していく通い方です。</p>
+      </div>
+      <div class="way">
+        <div class="wi"><div class="circle-ico"><svg class="pico"><use href="#ic-whole"/></svg></div><div class="wn">全体で守る</div></div>
+        <p class="wd">お口全体を診て、根本から治して長く守る通い方です。</p>
+      </div>
+    </div>
+    <div class="ways-note">並び順は、段階や優劣ではありません。目的の違いで、お選びいただけます。</div>
+
+    <div class="bridge">
+      <div class="b-ico"><svg><use href="#ic-chat"/></svg></div>
+      <div>
+        <div class="b-k">あなたの場合は？</div>
+        <div class="b-t">どの一歩から始めるか。</div>
+        <p><span class="doc">検査でわかったこと</span> を見ながら、あなたと一緒に決めていきます。今日すべてを決める必要はありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= 締め ================= -->
+<section class="closing">
+  <div class="wrap">
+    <div class="cmark"><svg><use href="#ic-leaf"/></svg></div>
+    <div class="cpre">全部を完璧に、でなくて大丈夫。<br><b>少しでもいい歯にすれば、少しでもいい人生</b> に近づきます。<br>その一歩を、私たちがお手伝いします。</div>
+    <div class="cbig">いい歯で、いい人生を。</div>
+    <div class="chr"></div>
+    <div class="clogo">L I F E　D E N T A L　C L I N I C</div>
+  </div>
+</section>
+
+
+<!-- ================= CTA ================= -->
+<section class="cta">
+  <div class="wrap">
+    <h2>気になる点は、いつでもご相談ください</h2>
+    <p>このページは、後からでもゆっくりご覧いただけます。ご家族と相談してから決めていただいてかまいません。すぐに、すべてを決めていただく必要はありません。</p>
+    <div class="qr-slot">
+      <div class="qbox"><svg viewBox="0 0 37 37" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="このページのQRコード"><rect width="37" height="37" fill="#fff"/><path d="M2 2h7v1h-7zM12 2h1v1h-1zM14 2h3v1h-3zM19 2h1v1h-1zM23 2h2v1h-2zM28 2h7v1h-7zM2 3h1v1h-1zM8 3h1v1h-1zM10 3h2v1h-2zM13 3h2v1h-2zM23 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM34 3h1v1h-1zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM10 4h1v1h-1zM13 4h2v1h-2zM16 4h3v1h-3zM20 4h1v1h-1zM22 4h2v1h-2zM28 4h1v1h-1zM30 4h3v1h-3zM34 4h1v1h-1zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h4v1h-4zM16 5h1v1h-1zM18 5h2v1h-2zM23 5h1v1h-1zM28 5h1v1h-1zM30 5h3v1h-3zM34 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM12 6h1v1h-1zM15 6h4v1h-4zM20 6h4v1h-4zM25 6h1v1h-1zM28 6h1v1h-1zM30 6h3v1h-3zM34 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM13 7h1v1h-1zM17 7h1v1h-1zM24 7h1v1h-1zM28 7h1v1h-1zM34 7h1v1h-1zM2 8h7v1h-7zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h1v1h-1zM26 8h1v1h-1zM28 8h7v1h-7zM10 9h1v1h-1zM13 9h2v1h-2zM17 9h2v1h-2zM22 9h1v1h-1zM24 9h2v1h-2zM2 10h1v1h-1zM8 10h1v1h-1zM10 10h2v1h-2zM15 10h2v1h-2zM18 10h2v1h-2zM21 10h2v1h-2zM24 10h5v1h-5zM31 10h3v1h-3zM3 11h3v1h-3zM7 11h1v1h-1zM9 11h2v1h-2zM12 11h1v1h-1zM15 11h1v1h-1zM17 11h1v1h-1zM19 11h3v1h-3zM25 11h1v1h-1zM30 11h3v1h-3zM4 12h1v1h-1zM8 12h3v1h-3zM13 12h1v1h-1zM15 12h4v1h-4zM20 12h1v1h-1zM22 12h2v1h-2zM27 12h2v1h-2zM30 12h1v1h-1zM32 12h2v1h-2zM2 13h1v1h-1zM7 13h1v1h-1zM10 13h2v1h-2zM13 13h3v1h-3zM20 13h2v1h-2zM24 13h1v1h-1zM28 13h5v1h-5zM34 13h1v1h-1zM3 14h2v1h-2zM6 14h1v1h-1zM8 14h1v1h-1zM12 14h1v1h-1zM15 14h1v1h-1zM18 14h1v1h-1zM20 14h3v1h-3zM25 14h2v1h-2zM28 14h2v1h-2zM2 15h1v1h-1zM4 15h2v1h-2zM7 15h1v1h-1zM10 15h1v1h-1zM14 15h2v1h-2zM20 15h3v1h-3zM25 15h1v1h-1zM27 15h3v1h-3zM33 15h2v1h-2zM5 16h2v1h-2zM8 16h1v1h-1zM12 16h2v1h-2zM15 16h3v1h-3zM22 16h1v1h-1zM27 16h2v1h-2zM31 16h3v1h-3zM2 17h1v1h-1zM4 17h2v1h-2zM10 17h3v1h-3zM14 17h1v1h-1zM16 17h1v1h-1zM20 17h1v1h-1zM22 17h1v1h-1zM25 17h1v1h-1zM27 17h1v1h-1zM29 17h4v1h-4zM34 17h1v1h-1zM3 18h2v1h-2zM6 18h1v1h-1zM8 18h6v1h-6zM15 18h2v1h-2zM19 18h1v1h-1zM22 18h1v1h-1zM24 18h4v1h-4zM29 18h2v1h-2zM34 18h1v1h-1zM3 19h2v1h-2zM9 19h1v1h-1zM11 19h13v1h-13zM25 19h1v1h-1zM28 19h1v1h-1zM31 19h2v1h-2zM34 19h1v1h-1zM2 20h1v1h-1zM4 20h1v1h-1zM7 20h2v1h-2zM12 20h2v1h-2zM17 20h1v1h-1zM21 20h1v1h-1zM23 20h1v1h-1zM25 20h2v1h-2zM28 20h2v1h-2zM31 20h4v1h-4zM2 21h1v1h-1zM17 21h2v1h-2zM20 21h1v1h-1zM22 21h1v1h-1zM25 21h1v1h-1zM30 21h3v1h-3zM34 21h1v1h-1zM4 22h1v1h-1zM7 22h2v1h-2zM10 22h5v1h-5zM17 22h1v1h-1zM19 22h1v1h-1zM21 22h1v1h-1zM26 22h2v1h-2zM29 22h3v1h-3zM2 23h2v1h-2zM12 23h2v1h-2zM17 23h1v1h-1zM19 23h3v1h-3zM23 23h4v1h-4zM29 23h3v1h-3zM2 24h1v1h-1zM4 24h2v1h-2zM8 24h1v1h-1zM10 24h3v1h-3zM14 24h5v1h-5zM20 24h1v1h-1zM22 24h2v1h-2zM26 24h4v1h-4zM31 24h1v1h-1zM33 24h1v1h-1zM2 25h1v1h-1zM5 25h2v1h-2zM9 25h2v1h-2zM14 25h2v1h-2zM18 25h1v1h-1zM22 25h1v1h-1zM24 25h1v1h-1zM29 25h1v1h-1zM32 25h3v1h-3zM2 26h3v1h-3zM6 26h3v1h-3zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h3v1h-3zM18 26h1v1h-1zM21 26h2v1h-2zM26 26h6v1h-6zM33 26h1v1h-1zM10 27h12v1h-12zM23 27h1v1h-1zM26 27h1v1h-1zM30 27h1v1h-1zM32 27h1v1h-1zM34 27h1v1h-1zM2 28h7v1h-7zM11 28h2v1h-2zM14 28h1v1h-1zM17 28h1v1h-1zM20 28h1v1h-1zM23 28h4v1h-4zM28 28h1v1h-1zM30 28h1v1h-1zM32 28h2v1h-2zM2 29h1v1h-1zM8 29h1v1h-1zM16 29h2v1h-2zM20 29h2v1h-2zM25 29h2v1h-2zM30 29h5v1h-5zM2 30h1v1h-1zM4 30h3v1h-3zM8 30h1v1h-1zM12 30h3v1h-3zM19 30h1v1h-1zM21 30h1v1h-1zM24 30h1v1h-1zM26 30h6v1h-6zM33 30h1v1h-1zM2 31h1v1h-1zM4 31h3v1h-3zM8 31h1v1h-1zM12 31h1v1h-1zM14 31h1v1h-1zM17 31h3v1h-3zM21 31h2v1h-2zM25 31h3v1h-3zM29 31h3v1h-3zM33 31h2v1h-2zM2 32h1v1h-1zM4 32h3v1h-3zM8 32h1v1h-1zM11 32h2v1h-2zM15 32h1v1h-1zM17 32h2v1h-2zM21 32h2v1h-2zM25 32h1v1h-1zM27 32h1v1h-1zM29 32h2v1h-2zM33 32h2v1h-2zM2 33h1v1h-1zM8 33h1v1h-1zM13 33h4v1h-4zM18 33h1v1h-1zM24 33h1v1h-1zM29 33h4v1h-4zM2 34h7v1h-7zM10 34h1v1h-1zM12 34h1v1h-1zM14 34h2v1h-2zM17 34h1v1h-1zM19 34h3v1h-3zM24 34h4v1h-4zM29 34h1v1h-1zM33 34h1v1h-1z" fill="#2E3A3F"/></svg></div>
+      <div class="qr-cap">スマホのカメラで読み取ると、<br>このページをいつでも見返せます。</div>
+      <div class="qr-url">lifedesign-studio.github.io/dental/oral-health.html</div>
+    </div>
+  </div>
+</section>
+
+<nav class="backtop">
+  <a href="index.html"><svg class="bt-arrow"><use href="#ic-arrow-right"/></svg>治療と費用のご案内トップへ</a>
+</nav>
+
+<footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
+  <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+(function(){
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+</body>
+</html>
