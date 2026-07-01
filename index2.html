@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ライフデンタル｜治療と費用のご案内</title>
+<style>
+:root{
+  --paper:#FFFFFF; --soft:#F4F7F5; --card:#EEF3F1; --ink:#2E3A3F;
+  --ink-soft:#54636A; --muted:#6E7B80; --sage:#4F7A6C; --sage-2:#6E9C8E;
+  --line:#D8E0DD;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--gothic);line-height:1.8;
+  letter-spacing:.02em;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px;}
+.section{padding:52px 0;}
+.section.soft{background:var(--soft);}
+.eyebrow{font-size:12px;letter-spacing:.28em;color:var(--sage);font-weight:700;margin-bottom:12px;}
+h2.title{font-size:25px;font-weight:600;color:var(--ink);letter-spacing:.03em;line-height:1.5;}
+.lead{margin-top:14px;font-size:15px;color:var(--ink-soft);line-height:1.9;}
+.lead b{color:var(--sage);font-weight:600;}
+
+/* hero */
+.hero{padding:60px 0 40px;text-align:center;background:linear-gradient(180deg,#fff,var(--soft));}
+.hero .eyebrow{margin-bottom:14px;letter-spacing:.34em;}
+.hero h1{font-size:30px;font-weight:600;letter-spacing:.06em;line-height:1.5;color:var(--ink);}
+.hero p{margin-top:18px;font-size:15px;color:var(--ink-soft);line-height:2;}
+
+/* CTA */
+.cta{display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:600;color:var(--paper);background:var(--sage);
+  border:none;border-radius:10px;padding:13px 22px;text-decoration:none;letter-spacing:.03em;}
+.cta.ghost{color:var(--sage);background:var(--paper);border:1.5px solid var(--sage);}
+.cta svg{width:17px;height:17px;}
+.ctarow{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+
+/* 通い方3ミニ */
+.ways3{display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px;}
+.way3{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 20px;}
+.way3 .w3n{font-size:16px;font-weight:600;color:var(--ink);}
+.way3 .w3d{margin-top:6px;font-size:13.5px;color:var(--ink-soft);line-height:1.75;}
+
+/* 治療グリッド */
+.tgroup{margin-top:30px;}
+.tgroup:first-of-type{margin-top:24px;}
+.tgroup .tgh{font-size:14px;font-weight:600;color:var(--sage);letter-spacing:.04em;margin-bottom:12px;
+  padding-left:11px;border-left:3px solid var(--sage-2);}
+.tgrid{display:grid;grid-template-columns:1fr;gap:11px;}
+.tcard{display:flex;align-items:center;gap:14px;background:var(--paper);border:1px solid var(--line);
+  border-radius:13px;padding:16px 18px;text-decoration:none;transition:background .2s ease,border-color .2s ease;}
+.tcard:hover{background:var(--soft);border-color:var(--sage-2);}
+.tcard .tc-body{flex:1;min-width:0;}
+.tcard .tc-n{font-size:16px;font-weight:600;color:var(--ink);}
+.tcard .tc-d{margin-top:3px;font-size:13px;color:var(--muted);line-height:1.6;}
+.tcard .tc-arrow{width:22px;height:22px;flex:0 0 auto;color:var(--sage);}
+
+/* 読み物カード */
+.readcards{display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px;}
+.rc{display:block;background:var(--paper);border:1px solid var(--line);border-radius:14px;
+  padding:18px 20px;text-decoration:none;transition:background .2s ease,border-color .2s ease;}
+.rc:hover{background:var(--card);border-color:var(--sage-2);}
+.rc .rc-n{font-size:16px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:8px;}
+.rc .rc-n svg{width:18px;height:18px;color:var(--sage);flex:0 0 auto;}
+.rc .rc-d{margin-top:7px;font-size:13.5px;color:var(--ink-soft);line-height:1.75;}
+
+.mtline{margin-top:26px;background:var(--card);border-radius:12px;padding:15px 18px;
+  font-size:13.5px;color:var(--ink-soft);line-height:1.75;display:flex;gap:10px;align-items:flex-start;}
+.mtline svg{width:19px;height:19px;flex:0 0 auto;margin-top:2px;color:var(--sage);}
+
+/* footer */
+footer{background:#fff;border-top:1px solid var(--line);padding:38px 22px 42px;text-align:center;}
+footer img{width:112px;height:auto;margin:0 auto 13px;display:block;}
+footer .fl{font-size:14px;color:var(--ink);letter-spacing:.05em;}
+footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08em;}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@media (min-width:760px){
+  h2.title{font-size:28px;}
+  .hero h1{font-size:36px;}
+  .ways3{grid-template-columns:repeat(3,1fr);}
+  .tgrid{grid-template-columns:1fr 1fr;}
+  .readcards{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ヒーロー -->
+<header class="hero">
+  <div class="wrap reveal">
+    <div class="eyebrow">ライフデンタル</div>
+    <h1>治療と費用のご案内</h1>
+    <p>すでにご来院された方、検討中の方へ。<br>
+    治療の内容と費用を、ご自身のペースで確認いただけます。<br>
+    今日、すべてを決めていただく必要はありません。</p>
+  </div>
+</header>
+
+<!-- 通い方から -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow">まず、通い方から</div>
+    <h2 class="title">これからの「通い方」を、選べます</h2>
+    <p class="lead">治療を始める前に、どんなふうに通っていくか（通い方の方針）を、一度ご一緒に考えます。
+    目的の違いで、<b>3つから選べます</b>。優劣ではありません。</p>
+
+    <div class="ways3">
+      <div class="way3"><div class="w3n">今を整える</div><div class="w3d">今の困りごとに、その都度こたえていく通い方。</div></div>
+      <div class="way3"><div class="w3n">気になる歯を残す</div><div class="w3d">気になる歯を、しっかり治して残していく通い方。</div></div>
+      <div class="way3"><div class="w3n">全体で守る</div><div class="w3d">お口全体を診て、根本から治して長く守る通い方。</div></div>
+    </div>
+
+    <div class="ctarow">
+      <a class="cta" href="approach.html">
+        通い方の方針を見る
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 治療から探す -->
+<section class="section">
+  <div class="wrap reveal">
+    <div class="eyebrow">治療から探す</div>
+    <h2 class="title">治療ごとの、内容と費用</h2>
+    <p class="lead">気になる治療から、内容と費用をご覧いただけます。</p>
+
+    <div class="tgroup">
+      <div class="tgh">歯を治す・守る</div>
+      <div class="tgrid">
+        <a class="tcard" href="inlay-crown.html"><div class="tc-body"><div class="tc-n">詰めもの・被せもの</div><div class="tc-d">インレー・クラウンの治療と費用</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="tcard" href="resin.html"><div class="tc-body"><div class="tc-n">レジン修復</div><div class="tc-d">小さなむし歯を、白く詰める治療</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="tcard" href="root-canal.html"><div class="tc-body"><div class="tc-n">根の治療</div><div class="tc-d">歯の根（神経）の治療と費用</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+
+    <div class="tgroup">
+      <div class="tgh">歯を補う</div>
+      <div class="tgrid">
+        <a class="tcard" href="bridge.html"><div class="tc-body"><div class="tc-n">ブリッジ</div><div class="tc-d">前後の歯でつなぐ、固定式の治療</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="tcard" href="denture.html"><div class="tc-body"><div class="tc-n">入れ歯</div><div class="tc-d">取り外し式で歯を補う治療</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="tcard" href="implant.html"><div class="tc-body"><div class="tc-n">インプラント</div><div class="tc-d">あごの骨に土台を入れて補う治療</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+
+    <div class="tgroup">
+      <div class="tgh">整える</div>
+      <div class="tgrid">
+        <a class="tcard" href="ortho.html"><div class="tc-body"><div class="tc-n">矯正</div><div class="tc-d">歯ならび・かみ合わせを整える治療</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="tcard" href="aesthetic.html"><div class="tc-body"><div class="tc-n">見た目・ホワイトニング</div><div class="tc-d">白さや見た目を整える治療</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 知っておきたいこと -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow">知っておきたいこと</div>
+    <h2 class="title">はじめての方に、読んでほしいお話</h2>
+    <p class="lead">治療や費用を考える前に、お口のことを「自分のこと」として見ていただくための読み物です。</p>
+
+    <div class="readcards">
+      <a class="rc" href="oral-health.html">
+        <div class="rc-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z"/></svg>知っておきたいお話</div>
+        <div class="rc-d">お口の3つの原因、歯の一生、奥歯の支え、全身とのつながり。治療の前に知っておくと役に立つ4つのお話です。</div>
+      </a>
+      <a class="rc" href="insurance.html">
+        <div class="rc-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>今を整える〈保険診療〉について</div>
+        <div class="rc-d">保険診療でできること・進め方・範囲を、正直にご説明します。まずは今の困りごとを整えたい方へ。</div>
+      </a>
+      <a class="rc" href="insurance.html#age40">
+        <div class="rc-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg>40歳以降の方、治療が多い方へ</div>
+        <div class="rc-d">40代からは、お口の中身が少しずつ変わってきます。80歳のお口を、いまから一緒に考えるためのお話です。</div>
+      </a>
+    </div>
+
+    <div class="mtline">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg>
+      <div>どの治療・通い方をお選びいただいても、お口の健康を保つための定期的なメインテナンスは、ご一緒に続けていきます。</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="life-logo.png" alt="ライフデンタルクリニック">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

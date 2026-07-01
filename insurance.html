@@ -4,463 +4,495 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>保険治療でできること｜ライフデンタルクリニック</title>
+<title>今を整える（保険診療）について｜ライフデンタルクリニック</title>
 <style>
-  :root{
-    --paper:#FFFFFF;
-    --soft:#F4F7F5;
-    --card:#EEF3F1;
-    --ink:#2E3A3F;
-    --ink-soft:#54636A;
-    --muted:#6E7B80;
-    --sage:#4F7A6C;
-    --sage-2:#6E9C8E;
-    --line:#D8E0DD;
-    --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    font-family:var(--gothic);
-    color:var(--ink);
-    background:var(--paper);
-    line-height:1.8;
-    letter-spacing:.02em;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+:root{
+  --paper:#FFFFFF; --soft:#F4F7F5; --card:#EEF3F1; --ink:#2E3A3F;
+  --ink-soft:#54636A; --muted:#6E7B80; --sage:#4F7A6C; --sage-2:#6E9C8E;
+  --line:#D8E0DD;
+  --keep:#4F7A6C; --warn:#B08456; --clay-2:#9C6650;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--gothic);line-height:1.8;
+  letter-spacing:.02em;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+.section{padding:52px 0;}
+.section.soft{background:var(--soft);}
+.eyebrow{font-size:12px;letter-spacing:.28em;color:var(--sage);font-weight:700;margin-bottom:12px;}
+h2.title{font-size:26px;font-weight:600;color:var(--ink);letter-spacing:.03em;line-height:1.45;}
+.lead{margin-top:14px;font-size:15px;color:var(--ink-soft);line-height:1.9;}
+.note{font-size:12.5px;color:var(--muted);line-height:1.8;}
+.body{margin-top:16px;font-size:14.5px;color:var(--ink-soft);line-height:1.95;}
+.body b{color:var(--sage);font-weight:600;}
 
-  /* hero */
-  .hero{padding:54px 0 30px;}
-  .hero .eyebrow{margin-bottom:14px;}
-  .hero h1{
-    font-size:25px;line-height:1.5;margin:0 0 14px;
-    font-weight:700;letter-spacing:.04em;color:var(--ink);
-  }
-  .hero .lead{margin:0;}
+/* breadcrumb */
+.crumb{max-width:760px;margin:0 auto;padding:20px 22px 0;font-size:12.5px;color:var(--muted);}
+.crumb a{color:var(--sage);text-decoration:none;}
 
-  /* sections */
-  .section{padding:38px 0;border-top:1px solid var(--line);}
-  .section.soft{background:var(--soft);border-top:none;}
-  .section:first-of-type{border-top:none;}
-  .eyebrow{
-    font-size:11px;letter-spacing:.28em;color:var(--sage);
-    font-weight:700;margin:0 0 9px;
-  }
-  h2.title{
-    font-size:20px;line-height:1.5;margin:0 0 14px;
-    font-weight:700;letter-spacing:.03em;color:var(--ink);
-  }
-  h3.sub{
-    font-size:15.5px;margin:26px 0 8px;font-weight:700;
-    color:var(--sage);letter-spacing:.03em;
-  }
-  .lead{font-size:15px;color:var(--ink-soft);margin:0 0 6px;}
-  p{font-size:15px;margin:0 0 14px;}
-  p.small{font-size:13.5px;color:var(--muted);line-height:1.85;}
-  strong{color:var(--sage);font-weight:700;}
+/* hero */
+.hero{padding:44px 0 52px;text-align:center;}
+.hero .eyebrow{margin-bottom:16px;}
+.hero h1{font-size:29px;font-weight:600;letter-spacing:.05em;line-height:1.5;color:var(--ink);}
+.hero p{margin-top:20px;font-size:15.5px;color:var(--ink-soft);line-height:2;}
+.hero p b{color:var(--sage);font-weight:600;}
 
-  /* fit cards (どんな方に向いているか) */
-  .fit{display:grid;gap:14px;margin:18px 0 4px;}
-  @media (min-width:760px){.fit{grid-template-columns:1fr 1fr;}}
-  .fit .item{
-    background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:18px 18px 16px;display:flex;gap:13px;align-items:flex-start;
-  }
-  .fit .ic{flex:0 0 auto;width:30px;height:30px;color:var(--sage);}
-  .fit .item h4{margin:1px 0 4px;font-size:15px;font-weight:700;color:var(--ink);letter-spacing:.02em;}
-  .fit .item p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.75;}
+/* できること 3カード */
+.cards{display:flex;flex-direction:column;gap:14px;margin-top:26px;}
+.card{border:1px solid var(--line);border-radius:14px;padding:20px 22px;background:var(--paper);}
+.card .cn{font-size:17px;font-weight:600;color:var(--ink);letter-spacing:.02em;}
+.card .cd{margin-top:8px;font-size:14px;color:var(--ink-soft);line-height:1.85;}
+.card .cd b{color:var(--sage);font-weight:600;}
+.card .fig{display:flex;justify-content:center;align-items:flex-end;height:104px;
+  margin-bottom:14px;background:var(--soft);border-radius:10px;padding:10px;}
+.card .fig svg{height:100%;width:auto;}
 
-  /* can / cannot lists */
-  .list{margin:16px 0 6px;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
-  .list .row{
-    display:flex;gap:13px;align-items:flex-start;
-    padding:15px 17px;border-top:1px solid var(--line);
-  }
-  .list .row:first-child{border-top:none;}
-  .list.can .row{background:var(--paper);}
-  .list .mk{flex:0 0 auto;width:22px;height:22px;margin-top:2px;color:var(--sage);}
-  .list .mk.no{color:var(--muted);}
-  .list .tx h4{margin:0 0 3px;font-size:14.5px;font-weight:700;color:var(--ink);letter-spacing:.02em;}
-  .list .tx p{margin:0;font-size:13px;color:var(--ink-soft);line-height:1.7;}
+/* 進め方バンド */
+.band{margin-top:20px;background:var(--card);border-radius:14px;padding:20px 22px;}
+.band .bn{font-size:15px;font-weight:600;color:var(--sage);letter-spacing:.03em;margin-bottom:8px;}
+.band .bd{font-size:14px;color:var(--ink-soft);line-height:1.9;}
+.band .bd b{color:var(--sage);font-weight:600;}
 
-  /* notice block (限界・将来の負担) */
-  .notice{
-    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--sage);
-    border-radius:12px;padding:18px 20px;margin:18px 0;
-  }
-  .notice h4{margin:0 0 6px;font-size:15px;font-weight:700;color:var(--ink);letter-spacing:.02em;}
-  .notice p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.78;}
-  .notice + .notice{margin-top:14px;}
+/* 知っておいて（限界）リスト */
+.aware{display:flex;flex-direction:column;gap:14px;margin-top:24px;}
+.aware .ar{display:flex;gap:12px;align-items:flex-start;}
+.aware .ar svg{width:20px;height:20px;flex:0 0 auto;margin-top:3px;}
+.aware .at{font-size:14.5px;color:var(--ink-soft);line-height:1.85;}
+.aware .at b{color:var(--ink);font-weight:600;}
 
-  /* price table */
-  .price{
-    width:100%;border-collapse:collapse;margin:16px 0 10px;
-    border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px;
-  }
-  .price caption{
-    text-align:left;font-size:13.5px;color:var(--muted);
-    padding:0 2px 10px;line-height:1.7;
-  }
-  .price th,.price td{padding:13px 15px;text-align:left;border-top:1px solid var(--line);vertical-align:top;}
-  .price thead th{
-    background:var(--card);color:var(--sage);font-weight:700;font-size:13px;
-    letter-spacing:.04em;border-top:none;
-  }
-  .price tbody th{font-weight:600;color:var(--ink);width:58%;}
-  .price td{color:var(--ink-soft);white-space:nowrap;}
-  .price tbody tr:nth-child(even) th,
-  .price tbody tr:nth-child(even) td{background:var(--soft);}
+/* 分岐（自費への窓） */
+.signal{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:24px;}
+.signal .row{display:flex;gap:0;border-bottom:1px solid var(--line);}
+.signal .row:last-child{border-bottom:none;}
+.signal .q{flex:1.4;padding:15px 18px;font-size:14px;color:var(--ink);line-height:1.7;background:var(--paper);}
+.signal .a{flex:1;padding:15px 18px;font-size:13.5px;color:var(--sage);line-height:1.7;
+  background:var(--soft);font-weight:600;display:flex;align-items:center;}
+.signal .head .q,.signal .head .a{background:var(--card);color:var(--muted);font-weight:600;
+  font-size:12.5px;letter-spacing:.04em;}
 
-  /* footnote / disclaimer */
-  .disclaimer{
-    background:var(--soft);border:1px solid var(--line);border-radius:12px;
-    padding:16px 18px;margin:14px 0 4px;
-  }
-  .disclaimer p{margin:0;font-size:13px;color:var(--muted);line-height:1.8;}
+/* CTA */
+.cta{display:inline-flex;align-items:center;gap:8px;margin-top:8px;
+  font-size:14px;font-weight:600;color:var(--paper);background:var(--sage);
+  border:none;border-radius:10px;padding:12px 20px;text-decoration:none;letter-spacing:.03em;}
+.cta.ghost{color:var(--sage);background:var(--paper);border:1.5px solid var(--sage);}
+.cta svg{width:17px;height:17px;}
+.ctarow{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
 
-  /* gentle bridge */
-  .bridge{
-    background:var(--card);border:1px solid var(--line);border-radius:16px;
-    padding:24px 22px;margin:8px 0 2px;
-  }
-  .bridge h3{margin:0 0 10px;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:.03em;}
-  .bridge p{font-size:14.5px;color:var(--ink-soft);}
-  .bridge p:last-child{margin-bottom:0;}
+.mtline{margin-top:24px;background:var(--card);border-radius:12px;padding:14px 18px;
+  font-size:13.5px;color:var(--ink-soft);line-height:1.75;display:flex;gap:10px;align-items:flex-start;}
+.mtline svg{width:19px;height:19px;flex:0 0 auto;margin-top:2px;}
 
-  /* back link */
-  .backrow{padding:30px 0 6px;}
-  .back{
-    display:inline-flex;align-items:center;gap:8px;
-    color:var(--sage);font-size:14px;font-weight:600;text-decoration:none;
-    border:1px solid var(--line);border-radius:999px;padding:10px 18px;background:var(--paper);
-  }
-  .back svg{width:16px;height:16px;}
+/* footer */
+footer{background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;}
+footer img{width:112px;height:auto;margin:0 auto 13px;display:block;}
+footer .fl{font-size:14px;color:var(--ink);letter-spacing:.05em;}
+footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08em;}
 
-  /* footer */
-  footer .fl{font-size:14px;color:var(--ink);letter-spacing:.08em;margin-top:2px;}
-  footer .ft{font-size:12.5px;color:var(--muted);letter-spacing:.1em;margin-top:4px;}
+/* reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
 
-  /* reveal animation */
-  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease;}
-  .reveal.show{opacity:1;transform:none;}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+/* ===== 40歳セクション ===== */
+.age-intro{margin-top:24px;background:var(--paper);border:1px solid var(--line);
+  border-left:4px solid var(--sage);border-radius:12px;padding:18px 20px;}
+.age-intro .ah{font-size:17px;font-weight:600;color:var(--ink);margin-bottom:8px;}
+.age-intro p{font-size:14px;color:var(--ink-soft);line-height:1.9;margin:0;}
+.age-intro b{color:var(--sage);font-weight:600;}
+.subh{margin-top:34px;font-size:17px;font-weight:600;color:var(--ink);letter-spacing:.02em;}
+.subp{margin-top:8px;font-size:14px;color:var(--ink-soft);line-height:1.9;}
+.subp b{color:var(--sage);font-weight:600;}
+.caries2{display:grid;grid-template-columns:1fr;gap:13px;margin-top:16px;}
+.c2-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;}
+.c2-card.re{border-color:#E3D3C8;background:#FBF7F4;}
+.c2-top{display:flex;align-items:center;gap:13px;margin-bottom:11px;}
+.c2-fig{width:54px;height:54px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.c2-card.re .c2-fig{background:#fff;border-color:#E3D3C8;}
+.c2-fig svg{width:32px;height:32px;}
+.c2-tag{font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--sage);}
+.c2-card.re .c2-tag{color:var(--clay-2);}
+.c2-name{font-size:16px;font-weight:600;color:var(--ink);margin-top:1px;}
+.c2-card p{font-size:13px;color:var(--ink-soft);line-height:1.75;margin:0;}
+.stair{margin-top:16px;}
+.stair-row{display:flex;flex-direction:column;gap:8px;}
+.stair-step{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:13px 15px;
+  display:flex;align-items:center;gap:13px;}
+.stair-step .s2-ico{width:46px;height:46px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.stair-step .s2-ico svg{width:28px;height:28px;fill:none;stroke:var(--sage);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.stair-step .s2t{font-weight:600;font-size:15px;color:var(--ink);}
+.stair-step .s2d{font-size:12.5px;color:var(--muted);margin-top:1px;}
+.stair-arrow{display:flex;justify-content:center;padding:2px 0;}
+.stair-arrow svg{width:20px;height:20px;fill:none;stroke:var(--sage-2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.stair-cap{font-size:12.5px;color:var(--muted);line-height:1.7;margin-top:14px;text-align:center;}
+.retain{margin-top:16px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 18px 16px;}
+.retain .rt-h{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.retain .rt-sub{font-size:12.5px;color:var(--muted);margin-bottom:12px;}
+.retain svg{width:100%;height:auto;max-width:440px;margin:0 auto;display:block;}
+.retain .rt-cap{font-size:11.5px;color:var(--muted);line-height:1.7;margin-top:12px;}
+.eightoh{margin-top:16px;background:var(--soft);border:1px solid var(--line);border-radius:14px;
+  padding:16px 17px;display:flex;gap:13px;align-items:flex-start;}
+.eightoh svg{width:26px;height:26px;margin-top:2px;flex:0 0 auto;fill:none;stroke:var(--sage);
+  stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.eightoh p{font-size:13.5px;color:var(--ink-soft);line-height:1.8;margin:0;}
+.eightoh b{color:var(--ink);font-weight:600;}
+.riskpre{font-size:14.5px;color:var(--ink-soft);line-height:1.95;margin:18px 0 16px;text-align:center;}
+.riskpre .keep{display:inline-block;font-weight:600;color:var(--keep);background:rgba(79,122,108,.12);
+  border:1px solid rgba(79,122,108,.3);border-radius:20px;padding:2px 13px;}
+.riskpre .lost{display:inline-block;font-weight:600;color:#fff;background:var(--clay-2);border-radius:20px;padding:2px 13px;}
+.riskcards{display:grid;grid-template-columns:1fr;gap:13px;}
+.rcard{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 16px;text-align:center;}
+.rcard .ri{width:48px;height:48px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 12px;}
+.rcard .ri svg{width:27px;height:27px;fill:none;stroke:var(--clay-2);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.rcard .rn{font-size:44px;font-weight:700;color:var(--clay-2);line-height:1;}
+.rcard .rn small{font-size:18px;}
+.rcard .rl{font-size:14px;color:var(--ink);margin-top:8px;line-height:1.45;font-weight:600;}
+.risknote{font-size:11px;color:var(--muted);line-height:1.65;margin-top:12px;}
+.age-ask{margin-top:24px;background:var(--card);border-radius:16px;padding:22px;}
+.age-ask .qh{font-size:18px;font-weight:600;color:var(--ink);line-height:1.5;}
+.age-ask .qp{margin-top:10px;font-size:14px;color:var(--ink-soft);line-height:1.9;}
+.age-ask .qp b{color:var(--sage);font-weight:600;}
+
+@media (min-width:760px){
+  h2.title{font-size:29px;}
+  .hero h1{font-size:35px;}
+  .cards{flex-direction:row;}
+  .cards .card{flex:1;}
+  .caries2{grid-template-columns:1fr 1fr;}
+  .stair-row{flex-direction:row;align-items:stretch;}
+  .stair-step{flex:1;flex-direction:column;text-align:center;justify-content:center;}
+  .stair-arrow{align-items:center;width:30px;}
+  .stair-arrow svg{transform:rotate(-90deg);}
+  .riskcards{grid-template-columns:repeat(3,1fr);}
+}
+@media (max-width:600px){
+  .signal .row{flex-direction:column;}
+  .signal .a{border-top:1px dotted var(--line);}
+  .signal .head{display:none;}
+}
 </style>
 </head>
 <body>
 
-<!-- icon definitions -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M5 18c0-7 6-12 13-12 0 7-6 12-13 12z"/><path d="M5 18c3-4 6-6 9-7"/>
-  </symbol>
-  <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 9h18"/><circle cx="16.5" cy="13" r="1.1" fill="currentColor" stroke="none"/>
-  </symbol>
-  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 12.5l5 5 11-12"/>
-  </symbol>
-  <symbol id="i-dash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-    <path d="M5 12h14"/>
-  </symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M15 5l-7 7 7 7"/>
-  </symbol>
-</svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="ic-tooth" viewBox="0 0 24 24"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z"/></symbol>
+<symbol id="ic-arrow-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></symbol>
+<symbol id="ic-shield-check" viewBox="0 0 24 24"><path d="M12 2.5 4 5.5v5.2c0 5 3.4 9.3 8 10.8 4.6-1.5 8-5.8 8-10.8V5.5l-8-3Z"/><path d="m8.4 11.6 2.5 2.5 4.7-5"/></symbol>
+<symbol id="ic-frail" viewBox="0 0 24 24"><circle cx="9" cy="5" r="2.2"/><path d="M9 8c-1.6 3-1.4 6-3.5 8M9 8c2 1.2 2.8 3 4.6 3.6l3.4 1.2"/><path d="M5.5 16l-1.5 4M12.5 13.5 13 21"/></symbol>
+<symbol id="ic-care" viewBox="0 0 24 24"><path d="M12 7.5c1.4-2.3 5.5-2 5.5 1.2 0 2.4-3.5 4.6-5.5 6.3-2-1.7-5.5-3.9-5.5-6.3C6.5 5.5 10.6 5.2 12 7.5Z"/><path d="M3 20c1.5-1.5 4-2.2 6-2.2M21 20c-1.5-1.5-4-2.2-6-2.2"/></symbol>
+<symbol id="ic-brain" viewBox="0 0 24 24"><path d="M9 5.5C7 5.5 5.5 7 5.5 8.8c-1.3.4-2 1.5-2 2.8 0 1 .5 1.9 1.4 2.4-.2 1.6 1 3 2.7 3 .5 1.2 1.6 2 2.9 2 .7 0 1-.4 1-1V6.5C11.5 6 11 5.5 9 5.5Z"/><path d="M15 5.5c2 0 3.5 1.5 3.5 3.3 1.3.4 2 1.5 2 2.8 0 1-.5 1.9-1.4 2.4.2 1.6-1 3-2.7 3-.5 1.2-1.6 2-2.9 2-.7 0-1-.4-1-1V6.5c0-.5.5-1 2.5-1Z"/></symbol>
+</defs></svg>
 
+<div class="crumb"><a href="approach.html">通い方の方針</a> ／ 今を整える（保険診療）</div>
+
+<!-- ヒーロー -->
 <header class="hero">
   <div class="wrap reveal">
-    <p class="eyebrow">保険治療について</p>
-    <h1>保険治療でできること</h1>
-    <p class="lead">
-      保険治療で「できること」と「できないこと」を、中立的にご案内します。
-      おおよその費用（3割負担の目安）も載せています。
-      まずは、どんな方にこの治療が向いているかからお伝えします。
-    </p>
+    <div class="eyebrow">通い方の方針｜今を整える</div>
+    <h1>今の困りごとに、その都度こたえます</h1>
+    <p>「今を整える」は、いま気になっているところを <b>保険診療で、その都度整えていく</b> 通い方です。<br>
+    これまで保険診療で通われてきた方には、この方針がいちばん近いかもしれません。<br>
+    まずは、この方針でできることと、進め方をご覧ください。</p>
   </div>
 </header>
 
-<!-- 1. どんな方に向いているか -->
+<!-- できること -->
 <section class="section soft">
   <div class="wrap reveal">
-    <p class="eyebrow">はじめに</p>
-    <h2 class="title">こんな方に、保険治療は合っています</h2>
-    <p>
-      保険治療は、けっして「劣った治療」ではありません。
-      自由診療とは<strong>目的と組み立て方が違う</strong>、別の役割を持った治療です。
-      次のようなお気持ちの方には、保険治療がコンセプト的によく合います。
-    </p>
+    <div class="eyebrow">この方針でできること</div>
+    <h2 class="title">保険診療の範囲で、丁寧に</h2>
+    <p class="lead">保険診療は、いま起きている痛みや不具合を整えるための治療です。
+    当院では保険診療でも、金属（メタル）はできるだけお勧めせず、<b style="color:var(--sage);">白いCAD/CAM素材を基本</b>に、丁寧にお作りします。</p>
 
-    <div class="fit">
-      <div class="item">
-        <svg class="ic"><use href="#i-leaf"/></svg>
-        <div>
-          <h4>今を整えたい方</h4>
-          <p>今ある痛みや不具合を、その都度こたえて整えていきたい。まずは目の前の困りごとを解決したい方。</p>
+    <div class="cards">
+      <div class="card">
+        <div class="fig">
+          <svg viewBox="0 0 150 96" xmlns="http://www.w3.org/2000/svg" aria-label="詰めものの模式図">
+            <path d="M60 54 L63 78 L69 78 L71 54" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M79 54 L81 78 L87 78 L90 54" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <rect x="52" y="20" width="46" height="34" rx="11" fill="none" stroke="#4F7A6C" stroke-width="2"/>
+            <rect x="62" y="25" width="26" height="12" rx="3" fill="#6E9C8E" fill-opacity="0.30" stroke="#4F7A6C" stroke-width="1.6"/>
+          </svg>
         </div>
+        <div class="cn">詰めもの</div>
+        <div class="cd">小さな範囲は <b>白いレジン</b> で。少し大きな範囲は、保険で使える白い詰めもの（<b>CAD/CAMインレー</b>）でお作りします。</div>
       </div>
-      <div class="item">
-        <svg class="ic"><use href="#i-wallet"/></svg>
-        <div>
-          <h4>今の費用を抑えたい方</h4>
-          <p>必要なところを、必要な分だけ。今の暮らしを大切にしながら、費用を抑えて治していきたい方。</p>
+      <div class="card">
+        <div class="fig">
+          <svg viewBox="0 0 150 96" xmlns="http://www.w3.org/2000/svg" aria-label="被せものの模式図">
+            <path d="M60 56 L63 78 L69 78 L71 56" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M79 56 L81 78 L87 78 L90 56" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <rect x="58" y="26" width="34" height="30" rx="7" fill="none" stroke="#4F7A6C" stroke-width="1.3" stroke-opacity="0.55"/>
+            <rect x="50" y="18" width="50" height="40" rx="13" fill="#6E9C8E" fill-opacity="0.28" stroke="#4F7A6C" stroke-width="2.4"/>
+          </svg>
         </div>
+        <div class="cn">被せもの</div>
+        <div class="cd">被せものは <b>白いCAD/CAM冠</b> を基本にします。使える材料は、部位ごとに保険のルールで決まります。</div>
+      </div>
+      <div class="card">
+        <div class="fig">
+          <svg viewBox="0 0 190 96" xmlns="http://www.w3.org/2000/svg" aria-label="ブリッジの模式図">
+            <path d="M42 52 L45 74 L51 74 L53 52" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M55 52 L57 74 L63 74 L65 52" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M125 52 L127 74 L133 74 L135 52" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M137 52 L139 74 L145 74 L148 52" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <rect x="30" y="24" width="40" height="30" rx="8" fill="none" stroke="#4F7A6C" stroke-width="2"/>
+            <rect x="75" y="26" width="40" height="26" rx="8" fill="#6E9C8E" fill-opacity="0.30" stroke="#4F7A6C" stroke-width="2"/>
+            <rect x="120" y="24" width="40" height="30" rx="8" fill="none" stroke="#4F7A6C" stroke-width="2"/>
+            <line x1="70" y1="30" x2="120" y2="30" stroke="#4F7A6C" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="cn">歯を失ったとき</div>
+        <div class="cd">前後の歯でつなぐ <b>ブリッジ（前歯・小臼歯は白い前装）</b>、または <b>入れ歯</b> で補います。</div>
       </div>
     </div>
 
-    <p class="small" style="margin-top:16px;">
-      当院の「通い方の方針」でいう <strong>今を整える</strong> 方針に近いお気持ちです。
-      どの方針を選ばれても、定期的なメインテナンス（お口の健康を保つための通院）は、ご一緒に続けていきます。
-    </p>
+    <div class="band">
+      <div class="bn">進め方</div>
+      <div class="bd">保険診療は、制度のルール上、<b>1ヶ月に1部位（1〜3本相当）</b> ずつ進めていきます。
+      気になるところから、優先順位を整理して、その都度整えていきます。
+      通院の回数や期間の見通しは、最初にご一緒に確認します。</div>
+    </div>
   </div>
 </section>
 
-<!-- 2. 保険治療とは -->
+<!-- 知っておいていただきたいこと -->
 <section class="section">
   <div class="wrap reveal">
-    <p class="eyebrow">保険治療とは</p>
-    <h2 class="title">今ある困りごとに、その都度こたえる治療</h2>
-    <p>
-      保険治療は、国の制度にもとづいた治療です。
-      むし歯・歯周病・痛み・取れた・しみる・噛めないといった、
-      <strong>今ある困りごとを解消する</strong>ことを役割にしています（対処療法）。
-      今の不具合を整えるうえで、とても大切な治療です。
-    </p>
-    <p>
-      進め方は、自然と「気になる歯を1本ずつ、順番に治していく形」になります。
-      また、どなたでも受けられるように、
-      費用を抑えた材料・方法を使うことが前もって決められています。
-      このしくみ上、一度にまとめてではなく、
-      何回かに分けて少しずつ進めていく形になります。
-    </p>
-  </div>
-</section>
+    <div class="eyebrow">あらかじめ、知っておいていただきたいこと</div>
+    <h2 class="title">保険診療の、役割と範囲</h2>
+    <p class="lead">保険診療と自由診療は、質の上下ではなく、<b style="color:var(--sage);">目的が異なる別のもの</b> です。
+    保険診療の役割と範囲を、正直にお伝えします。</p>
 
-<!-- 3. できること -->
-<section class="section soft">
-  <div class="wrap reveal">
-    <p class="eyebrow">適応となる治療</p>
-    <h2 class="title">保険でできること</h2>
-    <p>今ある困りごとを整えるための、次のような治療が受けられます。</p>
-
-    <div class="list can">
-      <div class="row">
-        <svg class="mk"><use href="#i-check"/></svg>
-        <div class="tx"><h4>むし歯を削って詰める</h4><p>白いプラスチック（レジン）や、銀の詰め物（インレー）で、削ったところを補います。</p></div>
+    <div class="aware">
+      <div class="ar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <div class="at"><b>今ある痛み・不具合を整えるための治療です。</b>「長く持たせる」「再発を防ぐ」といった、将来に向けた積極的な設計は、保険の枠組みには含みにくいのが実情です。</div>
       </div>
-      <div class="row">
-        <svg class="mk"><use href="#i-check"/></svg>
-        <div class="tx"><h4>歯の神経の治療（根の治療）</h4><p>深いむし歯で傷んだ神経を取り、根の中をきれいにして、痛みや腫れを抑えます。</p></div>
+      <div class="ar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        <div class="at"><b>使える材料・方法は、保険のルールで決まります。</b> 部位ごとに選べる範囲が限られ、ご希望どおりの材料を選べないことがあります。</div>
       </div>
-      <div class="row">
-        <svg class="mk"><use href="#i-check"/></svg>
-        <div class="tx"><h4>被せ物（銀歯・白い被せ物）</h4><p>銀の被せ物のほか、条件が合えば白い被せ物（CAD/CAM冠）も保険で選べます。</p></div>
+      <div class="ar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L8 12h4l-1 9 6-11h-4z"/></svg>
+        <div class="at"><b>CAD/CAM素材は、割れることがあります。</b> 部位や噛む力によっては、すぐに壊れたり、作り直しても壊れてしまう場合があります。その際は、金属（メタル）に変えてお作りすることもあります。</div>
       </div>
-      <div class="row">
-        <svg class="mk"><use href="#i-check"/></svg>
-        <div class="tx"><h4>抜歯</h4><p>残すことがむずかしい歯を抜きます。</p></div>
+      <div class="ar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg>
+        <div class="at"><b>まとめて治療することはできません。</b> 1ヶ月に治せる範囲が決まっているため、治すところが多いと、通院の回数と期間が長くなります。</div>
       </div>
-      <div class="row">
-        <svg class="mk"><use href="#i-check"/></svg>
-        <div class="tx"><h4>歯を失ったところを補う（保険のブリッジ・入れ歯）</h4><p>抜けたところを、保険の範囲のブリッジや入れ歯で補い、噛めるようにします。</p></div>
-      </div>
-      <div class="row">
-        <svg class="mk"><use href="#i-check"/></svg>
-        <div class="tx"><h4>歯ぐきの基本的な治療</h4><p>歯石を取る、歯ぐきの炎症を抑えるなど、歯周病の基本的な治療を行います。</p></div>
-      </div>
-      <div class="row">
-        <svg class="mk"><use href="#i-check"/></svg>
-        <div class="tx"><h4>定期的なメインテナンス</h4><p>治療のあとも、お口の健康を保つための定期的な通院を、保険で続けられます。</p></div>
+      <div class="ar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/></svg>
+        <div class="at">これらは、<b>保険制度の仕組みによるもの</b> で、どの歯科医院にも共通のことです。当院は、その範囲の中で、できるかぎり丁寧にお作りします。</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 4. できない・苦手なこと -->
+<!-- 40歳以降・治療が多い方へ -->
+<section class="section soft" id="age40">
+  <div class="wrap reveal">
+    <div class="eyebrow">40歳からの、お口の守り方</div>
+    <h2 class="title">40歳以降の方、治療が多い方・欠損が多い方へ</h2>
+    <p class="lead">これまで大きな問題がなかった方も、40代からは、お口の中身が少しずつ変わってきます。
+    80歳のお口を、いまから一緒に考えていきましょう。</p>
+
+    <div class="age-intro">
+      <div class="ah">40代からは、むし歯の「中身」が変わります</div>
+      <p>これまで保険診療で通ってこられた方、これからも「今を整える」を選ばれる方に、
+      ひとつ知っておいていただきたいことがあります。
+      <b>40代を過ぎると、新しいむし歯よりも、治した歯の再発（再治療）が増えてきます。</b>
+      治療を重ねてきた方・銀歯が多い方・すでに歯を失っている方は、とくにその傾向が強くなります。</p>
+    </div>
+
+    <div class="subh">同じ「むし歯」でも、意味が違います</div>
+    <div class="subp">新しいむし歯と、治した歯の再発（2次カリエス）は、まったく別ものです。</div>
+    <div class="caries2">
+      <div class="c2-card">
+        <div class="c2-top">
+          <div class="c2-fig">
+            <svg viewBox="0 0 24 24" aria-label="新しいむし歯の図"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" fill="none" stroke="#4F7A6C" stroke-width="1.4" stroke-linejoin="round"/><circle cx="10.6" cy="8.4" r="1.5" fill="#9C6650"/></svg>
+          </div>
+          <div>
+            <div class="c2-tag">新しいむし歯</div>
+            <div class="c2-name">はじめてできるむし歯</div>
+          </div>
+        </div>
+        <p>健康な歯にできるむし歯。小さいうちなら、少し削って詰めれば済み、歯へのダメージは最小限におさえられます。</p>
+      </div>
+      <div class="c2-card re">
+        <div class="c2-top">
+          <div class="c2-fig">
+            <svg viewBox="0 0 24 24" aria-label="2次カリエスの図"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" fill="none" stroke="#4F7A6C" stroke-width="1.4" stroke-linejoin="round"/><rect x="8.2" y="6.6" width="7.6" height="3.2" rx="1" fill="#6E9C8E" fill-opacity="0.45" stroke="#4F7A6C" stroke-width="0.7"/><circle cx="8.4" cy="10.4" r="1.3" fill="#9C6650"/><path d="M8.4 11.4 Q8.2 13.5 9 15.2" stroke="#9C6650" stroke-width="1.1" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="c2-tag">2次カリエス（再発）</div>
+            <div class="c2-name">治した歯の、再びのむし歯</div>
+          </div>
+        </div>
+        <p>詰め物・被せ物の「境目」や「下」からの再発。気づきにくく、見つかったときには大きくなっていることも。治すたびに、さらに削ることになります。</p>
+      </div>
+    </div>
+
+    <div class="subh">治療を重ねるほど、歯は弱くなります</div>
+    <div class="subp">削った歯は、もとには戻りません。再治療のたびに、歯は下の向きへ一段ずつ進みやすくなります。</div>
+    <div class="stair">
+      <div class="stair-row">
+        <div class="stair-step"><div class="s2-ico"><svg><use href="#ic-tooth"/></svg></div><div><div class="s2t">健康な歯</div><div class="s2d">いちばん丈夫</div></div></div>
+        <div class="stair-arrow"><svg><use href="#ic-arrow-down"/></svg></div>
+        <div class="stair-step"><div class="s2-ico"><svg><use href="#ic-tooth"/></svg></div><div><div class="s2t">詰め物</div><div class="s2d">一部を削る</div></div></div>
+        <div class="stair-arrow"><svg><use href="#ic-arrow-down"/></svg></div>
+        <div class="stair-step"><div class="s2-ico"><svg><use href="#ic-tooth"/></svg></div><div><div class="s2t">かぶせ</div><div class="s2d">大きく削る</div></div></div>
+        <div class="stair-arrow"><svg><use href="#ic-arrow-down"/></svg></div>
+        <div class="stair-step"><div class="s2-ico"><svg style="stroke:#B08456"><use href="#ic-tooth"/></svg></div><div><div class="s2t">神経を取った歯</div><div class="s2d">もろくなる</div></div></div>
+        <div class="stair-arrow"><svg><use href="#ic-arrow-down"/></svg></div>
+        <div class="stair-step"><div class="s2-ico"><svg style="stroke:#9C6650"><use href="#ic-tooth"/></svg></div><div><div class="s2t">抜歯</div><div class="s2d">失う</div></div></div>
+      </div>
+    </div>
+    <div class="stair-cap">治療は、この向きに進みやすい一方通行。抜歯まで進むと、入れ歯・ブリッジ・インプラントで補うことになります。</div>
+
+    <div class="subh">奥歯を1本失うと、連鎖します</div>
+    <div class="subp">奥歯（とくに下の6番）は、噛み合わせの <b>かなめ</b> です。1本失うと噛む力が下がり、
+    残った歯に負担が広がって、次々と連鎖しやすくなります。</div>
+    <div class="retain">
+      <div class="rt-h">奥歯を失うと、噛む力はこう下がります</div>
+      <svg viewBox="0 0 320 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="噛む力の目安：すべてある100%、6番を1本失う 約67%、さらに失う 約56%、大臼歯なし 約34%">
+        <line x1="34" y1="20" x2="300" y2="20" stroke="#E7EDEA" stroke-width="1"/>
+        <line x1="34" y1="80" x2="300" y2="80" stroke="#E7EDEA" stroke-width="1"/>
+        <line x1="34" y1="140" x2="300" y2="140" stroke="#D8E0DD" stroke-width="1.2"/>
+        <rect x="46" y="20" width="46" height="120" rx="3" fill="#4F7A6C"/>
+        <rect x="116" y="59.6" width="46" height="80.4" rx="3" fill="#7E8A63"/>
+        <rect x="186" y="72.8" width="46" height="67.2" rx="3" fill="#B08456"/>
+        <rect x="256" y="99.2" width="46" height="40.8" rx="3" fill="#9C6650"/>
+        <text x="69" y="14" text-anchor="middle" font-size="11.5" fill="#2E3A3F" font-weight="700">100%</text>
+        <text x="139" y="53.6" text-anchor="middle" font-size="11.5" fill="#2E3A3F" font-weight="700">約67</text>
+        <text x="209" y="66.8" text-anchor="middle" font-size="11.5" fill="#2E3A3F" font-weight="700">約56</text>
+        <text x="279" y="93.2" text-anchor="middle" font-size="11.5" fill="#2E3A3F" font-weight="700">約34</text>
+        <text x="69" y="154" text-anchor="middle" font-size="10" fill="#6E7B80">すべて</text>
+        <text x="69" y="166" text-anchor="middle" font-size="10" fill="#6E7B80">ある</text>
+        <text x="139" y="154" text-anchor="middle" font-size="10" fill="#6E7B80">6番を</text>
+        <text x="139" y="166" text-anchor="middle" font-size="10" fill="#6E7B80">1本失う</text>
+        <text x="209" y="154" text-anchor="middle" font-size="10" fill="#6E7B80">さらに</text>
+        <text x="209" y="166" text-anchor="middle" font-size="10" fill="#6E7B80">失う</text>
+        <text x="279" y="154" text-anchor="middle" font-size="10" fill="#6E7B80">大臼歯</text>
+        <text x="279" y="166" text-anchor="middle" font-size="10" fill="#6E7B80">なし</text>
+      </svg>
+      <div class="rt-cap">出典：Yurkstas &amp; Manly ほか（咀嚼効率）。6番喪失で約33%低下との報告もあります（数値はイメージ）。</div>
+    </div>
+    <div class="eightoh">
+      <svg><use href="#ic-shield-check"/></svg>
+      <p><b>20本残せば、よく噛めます（8020）。</b>下の6番は、最も早く生え、失われやすい歯。でも、上下の6番か7番が噛み合えば、お口の高さは保てます。なるべく奥歯まで残すほど、80歳になっても、長く噛めます。</p>
+    </div>
+
+    <div class="subh">同じように続けると、歯の数はどうなるでしょう</div>
+    <div class="subp">下は、日本人の平均の歯の数です。<b>平均では、年齢とともに歯は減っていきます。</b>
+    でも、しっかり守り続けた方は、多くの歯を保てます。この差が、これからの通い方で生まれます。</div>
+    <div class="retain">
+      <div class="rt-h">日本人の、歯の数の平均</div>
+      <div class="rt-sub">同じ40歳でも、これからの守り方で、大きく変わります。</div>
+      <svg viewBox="0 0 340 195" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="平均残存歯数の推移。平均は年齢とともに減るが、守り続ければ多く保てる。">
+        <line x1="45" y1="30" x2="315" y2="30" stroke="#E7EDEA" stroke-width="1"/>
+        <line x1="45" y1="87.6" x2="315" y2="87.6" stroke="#D8E0DD" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="45" y1="160" x2="315" y2="160" stroke="#E7EDEA" stroke-width="1"/>
+        <text x="40" y="33" text-anchor="end" font-size="9" fill="#9AA6A2">28</text>
+        <text x="40" y="90.6" text-anchor="end" font-size="9" fill="#9AA6A2">20</text>
+        <text x="40" y="163" text-anchor="end" font-size="9" fill="#9AA6A2">10</text>
+        <polyline points="45,30 315,44.4" fill="none" stroke="#4F7A6C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="45,30 105,44.4 165,58.8 225,87.6 285,123.6 315,130.8" fill="none" stroke="#9C6650" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="45" cy="30" r="3.4" fill="#4F7A6C"/>
+        <circle cx="315" cy="44.4" r="3.4" fill="#4F7A6C"/>
+        <circle cx="315" cy="130.8" r="3.4" fill="#9C6650"/>
+        <text x="315" y="36.4" text-anchor="end" font-size="10" fill="#4F7A6C" font-weight="700">守り続けた場合</text>
+        <text x="315" y="146.8" text-anchor="end" font-size="10" fill="#9C6650" font-weight="700">平均</text>
+        <text x="47" y="83.6" font-size="8.5" fill="#6E7B80">20本（よく噛める目安）</text>
+        <text x="45" y="180" text-anchor="middle" font-size="9" fill="#6E7B80">40歳</text>
+        <text x="135" y="180" text-anchor="middle" font-size="9" fill="#6E7B80">55</text>
+        <text x="225" y="180" text-anchor="middle" font-size="9" fill="#6E7B80">70</text>
+        <text x="315" y="180" text-anchor="middle" font-size="9" fill="#6E7B80">85歳</text>
+      </svg>
+      <div class="rt-cap">出典：厚生労働省「令和4年 歯科疾患実態調査」ほか（1人平均現在歯数の目安）。実際の本数は、ご来院時の検査でご一緒に確かめます。</div>
+    </div>
+
+    <div class="subh">80歳のとき、どんなお口でいたいですか</div>
+    <div class="subp">お口の力は、毎日の食事や会話、そして全身の健康にもつながっています。
+    <b>どの通い方を選ぶかで、これからのお口の守られ方は変わります。</b>
+    今日の一歩が、10年後、20年後のお口をつくります。</div>
+
+    <div class="riskpre"><span class="keep">噛む・話す力を保てた人</span> とくらべて、<br><span class="lost">衰えた人</span> は——</div>
+    <div class="riskcards">
+      <div class="rcard"><div class="ri"><svg><use href="#ic-frail"/></svg></div><div class="rn">2.4<small>倍</small></div><div class="rl">全身が虚弱に<br>（フレイル）</div></div>
+      <div class="rcard"><div class="ri"><svg><use href="#ic-care"/></svg></div><div class="rn">2.4<small>倍</small></div><div class="rl">介護が必要に<br>なりやすい</div></div>
+      <div class="rcard"><div class="ri"><svg><use href="#ic-brain"/></svg></div><div class="rn">1.9<small>倍</small></div><div class="rl">認知症に<br>なりやすい</div></div>
+    </div>
+    <div class="risknote">出典：Tanaka T, et al. 2018／Yamamoto T, et al. 2012。数値は目安です。並び順は優劣ではありません。</div>
+
+    <div class="age-ask">
+      <div class="qh">少しでも不安がある方、もっとよくしたい方へ</div>
+      <div class="qp">40歳でも、50代・60代でも、70代でも——<b>方針を変えるのに、遅すぎるということはありません。</b>
+      これまで「今を整える」で通ってこられた方も、いまからいつでも切り替えられます。
+      年齢を重ねたから、治療が多いからと、あきらめる必要はありません。
+      まずはご来院時の検査で、いまの状態をご一緒に確かめて、これからの通い方を考えていきましょう。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 自費への窓 -->
 <section class="section">
   <div class="wrap reveal">
-    <p class="eyebrow">適応とならないこと</p>
-    <h2 class="title">保険ではできない・苦手なこと</h2>
-    <p>
-      制度の範囲が決まっているため、次のようなことは保険の対象になりません。
-      これは「保険が悪い」のではなく、<strong>制度の役割の外にある</strong>、という意味です。
-    </p>
+    <div class="eyebrow">もし、もう少しご希望が出てきたら</div>
+    <h2 class="title">通い方は、いつでも選び直せます</h2>
+    <p class="lead">「少しでも歯を長く持たせたい」「見た目や噛み心地も大切にしたい」——
+    そんなお気持ちが出てきたら、他の通い方の方針も、いつでも検討できます。
+    今すぐ決めていただく必要はありません。ご自身のタイミングで大丈夫です。</p>
 
-    <div class="list">
-      <div class="row">
-        <svg class="mk no"><use href="#i-dash"/></svg>
-        <div class="tx"><h4>より自然で長持ちする材料</h4><p>セラミックやジルコニア、ゴールドなどの材料を使った詰め物・被せ物は、保険の対象外です。</p></div>
+    <div class="signal">
+      <div class="row head">
+        <div class="q">こんなお気持ちなら</div>
+        <div class="a">向いている通い方</div>
       </div>
       <div class="row">
-        <svg class="mk no"><use href="#i-dash"/></svg>
-        <div class="tx"><h4>歯を失ったところにインプラント</h4><p>あごの骨に土台を入れて歯を取り戻すインプラントは、保険の対象外です。</p></div>
+        <div class="q">今の痛み・不具合を、まず整えたい</div>
+        <div class="a">今を整える（このページ）</div>
       </div>
       <div class="row">
-        <svg class="mk no"><use href="#i-dash"/></svg>
-        <div class="tx"><h4>歯並びを整える矯正</h4><p>かみ合わせや歯並びを整える矯正は、原則として保険の対象外です。</p></div>
+        <div class="q">気になる歯を、長く持たせたい／きれいに・しっかり噛めるように治したい</div>
+        <div class="a">気になる歯を残す</div>
       </div>
       <div class="row">
-        <svg class="mk no"><use href="#i-dash"/></svg>
-        <div class="tx"><h4>見た目を細かく整えること</h4><p>白さや形を細かく合わせる、ホワイトニングで明るくするなど、見た目を整える治療は対象外です。</p></div>
+        <div class="q">再発を防いで、お口全体を長く守りたい</div>
+        <div class="a">全体で守る</div>
       </div>
-      <div class="row">
-        <svg class="mk no"><use href="#i-dash"/></svg>
-        <div class="tx"><h4>お口全体の設計図から治すこと</h4><p>かみ合わせや力のかかり方まで含めて、全体を設計してから治していく進め方は、保険のしくみでは行いにくいものです。</p></div>
-      </div>
-      <div class="row">
-        <svg class="mk no"><use href="#i-dash"/></svg>
-        <div class="tx"><h4>一度に、まとめて多くを治すこと</h4><p>しくみ上、何回かに分けて少しずつ進める形になり、短期間でまとめて治すことはむずかしくなります。</p></div>
-      </div>
+    </div>
+
+    <div class="ctarow">
+      <a class="cta" href="approach.html#jihi">
+        「気になる歯を残す／全体で守る」を見る
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="cta ghost" href="approach.html">
+        通い方の方針にもどる
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="mtline">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg>
+      <div>どの方針をお選びいただいても、お口の健康を保つための定期的なメインテナンスは、ご一緒に続けていきます。</div>
     </div>
   </div>
 </section>
 
-<!-- 5. 知っておいてほしいこと（限界と将来の負担） -->
-<section class="section soft">
-  <div class="wrap reveal">
-    <p class="eyebrow">知っておいてほしいこと</p>
-    <h2 class="title">「保険で十分」と思う前に、知っておいてほしいこと</h2>
-    <p>
-      保険治療は、今の困りごとを整える大切な治療です。
-      いっぽうで、目的によっては届きにくいところもあります。
-      <strong>そこを知らないまま「保険で十分」と思ってしまうと、あとで気持ちとずれてしまう</strong>ことがあります。
-      だからこそ、選ぶ前に次のことを知っておいていただきたいのです。
-    </p>
-
-    <div class="notice">
-      <h4>材料や方法に、範囲があります</h4>
-      <p>費用を抑えた材料が前提のため、年月とともにすり減ったり、欠けたり、変色したり、汚れが付きやすかったりすることがあります。自然な見た目や長持ちを、細かく追い求めることはむずかしくなります。</p>
-    </div>
-    <div class="notice">
-      <h4>1本ずつの積み上げになりやすい</h4>
-      <p>気になる歯を順番に治していく形になるため、かみ合わせや力のかかり方といった「お口全体の課題」が、計画に入りにくくなります。全体の課題が残ったままだと、ていねいに治した1本も、早く傷みやすくなることがあります。</p>
-    </div>
-    <div class="notice">
-      <h4>治した歯は、元の健康な歯には戻りません</h4>
-      <p>一度削った歯やかぶせた歯は、元どおりにはなりません。むし歯や歯周病がまた進むと、やり直しが必要になります。やり直しを重ねるほど、歯そのものへの負担も大きくなっていきます。</p>
-    </div>
-
-    <p style="margin-top:18px;">
-      これらを知ったうえで、<strong>「今の費用を抑えたい」という目的で保険治療を選ぶことは、尊重される選択</strong>です。
-      ただ、もしご本心が「長く持たせたい」「繰り返したくない」「見た目も整えたい」であれば、
-      保険治療だけでは、その願いに届ききらないことがあります。
-      そのときは、進め方そのものを変える選択肢もあります。
-    </p>
-  </div>
-</section>
-
-<!-- 6. おおよその費用 -->
-<section class="section">
-  <div class="wrap reveal">
-    <p class="eyebrow">おおよその費用</p>
-    <h2 class="title">保険治療の費用の目安（3割負担）</h2>
-    <p>あくまで目安です。実際の金額は、お口の状態・歯の場所・本数・通う回数などによって変わります。</p>
-
-    <table class="price">
-      <caption>※ 3割負担の方の、おおよその窓口でのお支払いの目安です。</caption>
-      <thead>
-        <tr><th>治療の内容</th><th>目安（3割）</th></tr>
-      </thead>
-      <tbody>
-        <tr><th>初診時の検査（診察・レントゲンなど）</th><td>約 1,500〜3,000円</td></tr>
-        <tr><th>むし歯を白いプラスチック（レジン）で詰める／1歯</th><td>約 1,500〜3,000円</td></tr>
-        <tr><th>銀の詰め物（インレー）／1歯</th><td>約 1,500〜2,500円</td></tr>
-        <tr><th>歯の神経の治療（根の治療）※数回・被せ物代は別</th><td>約 3,000〜6,000円</td></tr>
-        <tr><th>銀の被せ物／1歯</th><td>約 3,000〜4,000円</td></tr>
-        <tr><th>白い被せ物（CAD/CAM冠・条件あり）／1歯</th><td>約 6,000〜7,000円</td></tr>
-        <tr><th>抜歯／1歯</th><td>約 1,500〜5,000円</td></tr>
-        <tr><th>保険のブリッジ（3本連結の例）</th><td>約 10,000〜20,000円</td></tr>
-        <tr><th>保険の部分入れ歯（本数による）</th><td>約 5,000〜15,000円</td></tr>
-        <tr><th>保険の総入れ歯</th><td>約 10,000〜15,000円</td></tr>
-        <tr><th>歯ぐきの基本的な治療（歯石取りなど）／1回</th><td>約 数百〜1,500円</td></tr>
-        <tr><th>定期的なメインテナンス／1回</th><td>約 2,000〜3,500円</td></tr>
-      </tbody>
-    </table>
-
-    <div class="disclaimer">
-      <p>
-        ・上の金額は <strong>3割負担の方の目安</strong>です。1割・2割負担の方は、お支払いがこれより少なくなります。<br>
-        ・保険治療は、初診時とそれ以降で計算のしかたが変わるほか、お口の状態や追加の処置によって前後します。<br>
-        ・正確な金額は、診察のうえでご案内します。気になる場合は、治療を始める前にお気軽にお尋ねください。
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- 7. 今は保険で整えたい方へ -->
-<section class="section soft">
-  <div class="wrap reveal">
-    <p class="eyebrow">それでも、今は保険で</p>
-    <h2 class="title">納得して選んでいただくことを、大切にしています</h2>
-    <p>
-      限界や将来の負担を知ったうえで、「今は費用を抑えて、必要なところを整えたい」。
-      そう選んでいただくのは、まったく自然なことです。
-      当院は、その選択を尊重します。
-    </p>
-    <p>
-      大切なのは、<strong>よく分からないまま「とりあえず保険で」と進めてしまわないこと</strong>。
-      役割と範囲を知ったうえで選べば、それは納得のいく選択になります。
-      そして保険治療を選ばれた方とも、メインテナンスを通じて、ご一緒に長くお付き合いしていきます。
-    </p>
-  </div>
-</section>
-
-<!-- 8. やさしいブリッジ（自費の選択肢） -->
-<section class="section">
-  <div class="wrap reveal">
-    <p class="eyebrow">もし、お気持ちが変わってきたら</p>
-    <h2 class="title">目的が変わったときの、もうひとつの選択肢</h2>
-    <p>
-      通ううちに、「やっぱり長く持たせたい」「もう繰り返したくない」「見た目も整えたい」
-      という気持ちが出てくることがあります。
-      そのときは、<strong>気になる歯を残す</strong>、あるいは<strong>全体で守る</strong>といった、
-      別の進め方（自由診療）という選択肢もあります。
-    </p>
-
-    <div class="bridge">
-      <h3>1本ずつ治す進め方と、全体の設計図から決める進め方</h3>
-      <p>
-        保険治療が「気になる歯を1本ずつ、順番に治していく進め方」だとすれば、
-        自由診療は「お口全体の設計図を先に描いて、ゴールから逆算して治していく進め方」です。
-        どちらが偉いということではなく、組み立て方が違います。
-      </p>
-      <p>
-        全体の設計図から治していくと、やり直しを減らし、将来にわたる負担を抑えやすくなります。
-        ご興味が出たときに、費用や内容をゆっくり見比べていただけます。
-        <strong>今すぐ決めていただく必要はありません。いつでも、ご一緒に見直せます。</strong>
-      </p>
-    </div>
-  </div>
-</section>
-
-<div class="wrap backrow reveal">
-  <a class="back" href="index.html">
-    <svg><use href="#i-arrow"/></svg>
-    治療と費用のご案内トップへ
-  </a>
-</div>
-
-<footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;margin-top:24px;">
-  <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
+<footer>
+  <img src="life-logo.png" alt="ライフデンタルクリニック">
   <div class="fl">ライフデンタルクリニック</div>
   <div class="ft">いい歯で、いい人生を。</div>
 </footer>
 
 <script>
-  (function(){
-    var els = document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){
-      els.forEach(function(el){el.classList.add('show');});
-      return;
-    }
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
-      });
-    },{threshold:0.12});
-    els.forEach(function(el){io.observe(el);});
-  })();
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
-
 </body>
 </html>
