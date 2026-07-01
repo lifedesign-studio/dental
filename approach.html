@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>通い方の方針について｜ライフデンタルクリニック</title>
+<style>
+:root{
+  --paper:#FFFFFF; --soft:#F4F7F5; --card:#EEF3F1; --ink:#2E3A3F;
+  --ink-soft:#54636A; --muted:#6E7B80; --sage:#4F7A6C; --sage-2:#6E9C8E;
+  --line:#D8E0DD;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--gothic);line-height:1.8;
+  letter-spacing:.02em;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+.section{padding:52px 0;}
+.section.soft{background:var(--soft);}
+.eyebrow{font-size:12px;letter-spacing:.28em;color:var(--sage);font-weight:700;margin-bottom:12px;}
+h2.title{font-size:26px;font-weight:600;color:var(--ink);letter-spacing:.03em;line-height:1.45;}
+.lead{margin-top:14px;font-size:15px;color:var(--ink-soft);line-height:1.9;}
+.note{font-size:12.5px;color:var(--muted);line-height:1.8;}
+
+/* hero */
+.hero{padding:70px 0 56px;text-align:center;}
+.hero .eyebrow{margin-bottom:16px;}
+.hero h1{font-size:30px;font-weight:600;letter-spacing:.06em;line-height:1.5;color:var(--ink);}
+.hero p{margin-top:20px;font-size:15.5px;color:var(--ink-soft);line-height:2;}
+.hero p b{color:var(--sage);font-weight:600;}
+
+/* 3方針カード */
+.ways{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+.way{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;}
+.way .tag{display:inline-block;font-size:11px;letter-spacing:.06em;color:var(--muted);
+  border:1px solid var(--line);border-radius:20px;padding:2px 11px;margin-bottom:10px;}
+.way .tag.j{color:var(--sage);border-color:var(--sage-2);}
+.way .nm{font-size:20px;font-weight:600;color:var(--ink);letter-spacing:.03em;}
+.way .desc{margin-top:8px;font-size:14px;color:var(--ink-soft);line-height:1.8;}
+.way .goal{margin-top:12px;font-size:13px;color:var(--ink-soft);line-height:1.85;
+  background:var(--soft);border-radius:10px;padding:11px 14px;}
+.way .goal b{color:var(--sage);font-weight:600;}
+.knote{margin-top:16px;font-size:12.5px;color:var(--muted);text-align:center;}
+.mtline{margin-top:18px;background:var(--card);border-radius:12px;padding:13px 18px;
+  font-size:13.5px;color:var(--ink-soft);line-height:1.7;display:flex;gap:10px;align-items:flex-start;}
+.mtline svg{width:19px;height:19px;flex:0 0 auto;margin-top:2px;}
+
+/* CTAボタン */
+.cta{display:inline-flex;align-items:center;gap:8px;margin-top:16px;
+  font-size:14px;font-weight:600;color:var(--paper);background:var(--sage);
+  border:none;border-radius:10px;padding:12px 20px;text-decoration:none;letter-spacing:.03em;}
+.cta.ghost{color:var(--sage);background:var(--paper);border:1.5px solid var(--sage);}
+.cta svg{width:17px;height:17px;}
+.ctarow{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+
+/* 見た目 */
+.looks{display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+.look{border:1px solid var(--line);border-radius:12px;padding:15px 18px;background:var(--paper);}
+.look .ln{font-size:16px;font-weight:600;color:var(--ink);}
+.look .ld{margin-top:4px;font-size:13px;color:var(--ink-soft);line-height:1.75;}
+
+/* 組み立て方 2カード */
+.build{display:flex;flex-direction:column;gap:16px;margin-top:26px;}
+.bcard{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--paper);}
+.bcard .bt{font-size:18px;font-weight:600;color:var(--ink);letter-spacing:.02em;}
+.bcard .bsub{margin-top:3px;font-size:12.5px;color:var(--muted);}
+.bcard .bd{margin-top:12px;font-size:14px;color:var(--ink-soft);line-height:1.85;}
+.bcard .bd b{color:var(--sage);font-weight:600;}
+.parts{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+.parts a{flex:1;min-width:120px;text-align:center;font-size:14px;color:var(--sage);
+  background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 8px;
+  text-decoration:none;font-weight:600;}
+
+/* コンサル */
+.consult{background:var(--card);border-radius:16px;padding:26px 24px;margin-top:24px;}
+.consult .cprice{display:flex;align-items:baseline;gap:6px;margin:6px 0 4px;}
+.consult .cprice .v{font-size:30px;font-weight:600;color:var(--sage);letter-spacing:.02em;}
+.consult .cprice .u{font-size:13px;color:var(--ink-soft);}
+.consult .cn{font-size:13.5px;color:var(--ink-soft);line-height:1.85;}
+.consult .cn b{color:var(--sage);font-weight:600;}
+.consult ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:9px;}
+.consult li{display:flex;gap:9px;font-size:13.5px;color:var(--ink-soft);line-height:1.7;align-items:flex-start;}
+.consult li svg{width:18px;height:18px;flex:0 0 auto;margin-top:2px;}
+
+/* 費用レンジ */
+.rangegrid{display:flex;flex-direction:column;gap:22px;margin-top:24px;}
+.rgroup .gt{font-size:14px;font-weight:600;color:var(--sage);letter-spacing:.03em;
+  padding-bottom:7px;border-bottom:1px solid var(--line);margin-bottom:4px;}
+.rrow{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  padding:11px 2px;border-bottom:1px dotted var(--line);}
+.rrow .rl{font-size:14px;color:var(--ink);}
+.rrow .rl small{display:block;font-size:11.5px;color:var(--muted);margin-top:1px;}
+.rrow .rv{font-size:15px;font-weight:600;color:var(--ink);white-space:nowrap;}
+.rrow .rv small{font-size:11.5px;font-weight:400;color:var(--muted);}
+
+/* お約束 */
+.promise{display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px;}
+.pcell{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--paper);}
+.pcell .pt{font-size:15px;font-weight:600;color:var(--ink);}
+.pcell .pd{margin-top:5px;font-size:13px;color:var(--ink-soft);line-height:1.75;}
+.pcell .pd b{color:var(--sage);font-weight:600;}
+
+/* 控除 */
+.taxtable{width:100%;border-collapse:collapse;margin-top:16px;font-size:13.5px;}
+.taxtable th,.taxtable td{border:1px solid var(--line);padding:9px 10px;text-align:center;}
+.taxtable th{background:var(--card);color:var(--ink);font-weight:600;font-size:12.5px;}
+.taxtable .back{color:var(--sage);font-weight:600;}
+.disc{margin-top:12px;font-size:11.5px;color:var(--muted);line-height:1.75;}
+.disc b{color:var(--ink-soft);font-weight:600;}
+
+/* footer */
+footer{background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;}
+footer img{width:112px;height:auto;margin:0 auto 13px;display:block;}
+footer .fl{font-size:14px;color:var(--ink);letter-spacing:.05em;}
+footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08em;}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@media (min-width:760px){
+  h2.title{font-size:29px;}
+  .hero h1{font-size:36px;}
+  .ways{flex-direction:row;}
+  .ways .way{flex:1;}
+  .looks{flex-direction:row;}
+  .looks .look{flex:1;}
+  .build{flex-direction:row;}
+  .build .bcard{flex:1;}
+  .promise{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ヒーロー -->
+<header class="hero">
+  <div class="wrap reveal">
+    <div class="eyebrow">これからの通い方について</div>
+    <h1>通い方の方針を、ご一緒に</h1>
+    <p>より一人ひとりのご希望に合った治療をご提供するために、<br>
+    当院では <b>3つの通い方の方針</b> からお選びいただけるようになりました。<br>
+    どれを選んでも、定期的なメインテナンスはご一緒に続けていきます。</p>
+  </div>
+</header>
+
+<!-- 3つの方針 -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow">3つに整理すると</div>
+    <h2 class="title">お気持ちに、いちばん近いものを</h2>
+    <p class="lead">お手元の「いい歯への基本方針」と同じ内容です。並び順は、段階や優劣ではありません。
+    目的の違いで、いつでも選び直せます。</p>
+
+    <div class="ways">
+      <div class="way">
+        <span class="tag">保険診療のみ</span>
+        <div class="nm">今を整える</div>
+        <div class="desc">今の困りごとに、その都度こたえます。</div>
+        <div class="goal"><b>目標／</b>今の痛み・不具合を取る<br>
+        <b>優先／</b>今の費用を抑えたい<br>
+        <b>大切に／</b>必要なところを必要な分だけ</div>
+      </div>
+      <div class="way">
+        <span class="tag j">一部、自由診療</span>
+        <div class="nm">気になる歯を残す</div>
+        <div class="desc">気になる歯を、しっかり治して残します。</div>
+        <div class="goal"><b>目標／</b>気になる歯を残す<br>
+        <b>希望／</b>しっかり噛みたい・きれいにしたい<br>
+        <b>大切に／</b>重点的にしっかり</div>
+      </div>
+      <div class="way">
+        <span class="tag j">一部、自由診療</span>
+        <div class="nm">全体で守る</div>
+        <div class="desc">全体を診て、根本から治して長く守ります。</div>
+        <div class="goal"><b>目標／</b>再発を防いで長く守る<br>
+        <b>希望／</b>1本でも多く歯を残したい<br>
+        <b>優先／</b>将来の負担を抑えたい</div>
+      </div>
+    </div>
+
+    <div class="mtline">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg>
+      <div>どの方針をお選びいただいても、お口の健康を保つための定期的なメインテナンスは、ご一緒に続けていきます。</div>
+    </div>
+
+    <div class="ctarow">
+      <a class="cta" href="insurance.html">
+        「今を整える」保険治療のご案内へ
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="cta ghost" href="#jihi">
+        「気になる歯を残す／全体で守る」自費の進め方
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 見た目の方針 -->
+<section class="section">
+  <div class="wrap reveal">
+    <div class="eyebrow">見た目の方針（任意）</div>
+    <h2 class="title">見た目への力の入れ方も、選べます</h2>
+    <p class="lead">通い方とは別に、見た目についてご希望があれば添えられます。なくても構いません。</p>
+    <div class="looks">
+      <div class="look">
+        <div class="ln">見た目も整える</div>
+        <div class="ld">積極的に、美しさも追求。審美診断で左右差まで整えます。</div>
+      </div>
+      <div class="look">
+        <div class="ln">自然な見た目を保つ</div>
+        <div class="ld">自然な白さ・自然な見た目に。白い詰め物・被せ物やホワイトニングで。</div>
+      </div>
+      <div class="look">
+        <div class="ln">機能を大切にする</div>
+        <div class="ld">見た目は気にせず、しっかり噛めることを大切にします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 自費の進め方（組み立て方） -->
+<section class="section soft" id="jihi">
+  <div class="wrap reveal">
+    <div class="eyebrow">自費の進め方</div>
+    <h2 class="title">治療の組み立て方を、選べます</h2>
+    <p class="lead">これまでに自費の治療をされた方、あるいは保険よりもう少し良い治療をご希望の方へ。
+    2つの進め方があります。どちらを選ぶかは、ご自身で決めるところです。</p>
+
+    <div class="build">
+      <div class="bcard">
+        <div class="bt">1本ずつ・順番に</div>
+        <div class="bsub">気になるところから治す進め方</div>
+        <div class="bd">気になる歯を、<b>1本ずつ良い治療で</b> 残していきます。まずは、治したい部位のご案内をご覧ください。</div>
+        <div class="parts">
+          <a href="front.html">前歯の治療</a>
+          <a href="premolar.html">小臼歯の治療</a>
+          <a href="molar.html">大臼歯の治療</a>
+        </div>
+      </div>
+      <div class="bcard">
+        <div class="bt">お口全体を設計</div>
+        <div class="bsub">全体の設計図から決める進め方</div>
+        <div class="bd">先に <b>お口全体の設計図</b> をつくり、いちばん大事な1本から計画的に進めます。
+        全部いっぺんに決めなくて大丈夫です。</div>
+        <div class="ctarow">
+          <a class="cta ghost" href="#consult">全体設計コンサルのご案内
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 全体設計コンサル -->
+<section class="section" id="consult">
+  <div class="wrap reveal">
+    <div class="eyebrow">設計図づくりのご案内</div>
+    <h2 class="title">お口全体の「設計図」をつくる</h2>
+    <p class="lead">「全体で守る」を選んだ方、または「気になる歯を残す」で設計図づくりをご希望の方へ。
+    まず全体を見てから、これからの進め方を決めます。</p>
+
+    <div class="consult">
+      <div style="font-size:14px;color:var(--ink-soft);font-weight:600;">全体設計コンサル</div>
+      <div class="cprice"><span class="v">16,000</span><span class="u">円（税込）</span></div>
+      <div class="cn">治療に進めば、<b>全額が治療費に充当</b> されます（6か月以内の着手で）。
+      お口全体の設計図が、そのまま治療の地図になります。</div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg>
+        お口全体を診て、完全な設計図（トータルプラン）をつくります。</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M7 19v-6M12 19V8M17 19v-9"/></svg>
+        「いま治す1本」と「将来整えていきたいところ」を、優先順位をつけて整理します。</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+        ドクターが全体プランを作成（約20分）＋コーディネーターがご説明（約30分）。あわせて約60分です。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 費用レンジ -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow">自由診療の費用のめやす</div>
+    <h2 class="title">それぞれの治療の、費用の幅</h2>
+    <p class="lead">すべて税込・総額のめやすです。本数や状態で変わります。正式なお見積りは検査結果から。
+    自費のお支払いは、着手時と仕上げ時の2回に分けられます。</p>
+
+    <div class="rangegrid">
+      <div class="rgroup">
+        <div class="gt">歯を治す・守る</div>
+        <div class="rrow"><div class="rl">白い詰めもの<small>ダイレクトボンディング</small></div><div class="rv">4〜13<small>万円</small></div></div>
+        <div class="rrow"><div class="rl">セラミックの詰めもの<small>インレー</small></div><div class="rv">5.5〜9<small>万円</small></div></div>
+        <div class="rrow"><div class="rl">セラミックの被せもの<small>クラウン</small></div><div class="rv">8.5〜18<small>万円</small></div></div>
+        <div class="rrow"><div class="rl">精密根管治療<small>神経の治療</small></div><div class="rv">10〜16<small>万円</small></div></div>
+        <div class="rrow"><div class="rl">自費の歯周治療<small>1ブロック〜再生</small></div><div class="rv">2.5〜11<small>万円</small></div></div>
+      </div>
+      <div class="rgroup">
+        <div class="gt">歯を補う・整える</div>
+        <div class="rrow"><div class="rl">ブリッジ<small>3本〜</small></div><div class="rv">32<small>万円〜</small></div></div>
+        <div class="rrow"><div class="rl">自費の入れ歯<small>部分〜総</small></div><div class="rv">15〜34<small>万円</small></div></div>
+        <div class="rrow"><div class="rl">インプラント<small>1歯／＋骨造成13万円</small></div><div class="rv">46<small>万円〜</small></div></div>
+        <div class="rrow"><div class="rl">ワイヤー矯正<small>部分〜全体</small></div><div class="rv">15〜90<small>万円</small></div></div>
+        <div class="rrow"><div class="rl">マウスピース矯正<small>片顎〜両顎</small></div><div class="rv">27〜36<small>万円</small></div></div>
+        <div class="rrow"><div class="rl">ホワイトニング<small>1回〜</small></div><div class="rv">3<small>万円〜</small></div></div>
+        <div class="rrow"><div class="rl">ラミネートベニア<small>前歯1本</small></div><div class="rv">18<small>万円〜</small></div></div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:16px;">「被せもの」は当日仕上げ 8.5万円〜、技工士の最上位仕上げ 18万円まで。前歯・奥歯で幅があります。</p>
+  </div>
+</section>
+
+<!-- お約束 -->
+<section class="section">
+  <div class="wrap reveal">
+    <div class="eyebrow">自費治療の、4つのお約束</div>
+    <h2 class="title">安心して選んでいただくために</h2>
+    <p class="lead">費用の不安を、できるだけ小さくします。</p>
+    <div class="promise">
+      <div class="pcell"><div class="pt">2回の分割払い</div><div class="pd"><b>着手時に半分・仕上げ時に半分</b>。一括が難しい場合もご相談ください。</div></div>
+      <div class="pcell"><div class="pt">15年保証</div><div class="pd">対象の治療は <b>15年保証</b>。年2回のメインテナンス継続が条件です。</div></div>
+      <div class="pcell"><div class="pt">診断料は全額充当</div><div class="pd">検査・診断料は、治療に進めば <b>全額が治療費に</b> 充当されます。</div></div>
+      <div class="pcell"><div class="pt">技術料は二重取りしない</div><div class="pd">一度自費で治した歯は、作り替えても <b>技術料を重ねません</b>。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 医療費控除 -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow">知っておきたい｜医療費控除</div>
+    <h2 class="title">治療費は、税金が戻ることがあります</h2>
+    <p class="lead">保険診療でも、自由診療でも。1年間（1月〜12月）に支払った医療費が対象です。</p>
+
+    <div style="margin-top:18px;font-size:14px;color:var(--ink-soft);line-height:1.9;">
+      保険診療の窓口負担も、自費の治療費も <b style="color:var(--sage);">合算して対象</b> になります。
+      インプラント・かみ合わせの矯正・セラミックなど、機能を回復する治療も対象です
+      （見た目だけのホワイトニング等は対象外）。通院の交通費や、ご家族の分も合算できます。
+    </div>
+
+    <table class="taxtable">
+      <tr><th>課税所得の目安</th><th>税率</th><th>戻りの目安<br><span style="font-weight:400;">所得税＋住民税</span></th></tr>
+      <tr><td>〜195万円</td><td>5%</td><td class="back">約9万円</td></tr>
+      <tr><td>330〜695万円</td><td>20%</td><td class="back">約18万円</td></tr>
+      <tr><td>900〜1800万円</td><td>33%</td><td class="back">約26万円</td></tr>
+    </table>
+    <div class="disc">医療費が年70万円かかった場合の目安（控除額＝70万−10万＝60万円）。これに所得税率＋住民税約10%をかけた額が、戻り（軽減）の目安です。<br>
+    ※2026年1月時点の制度の一般的な説明で、対象・金額はご事情により異なります。控除には確定申告が必要です。正確なことは <b>税務署・税理士</b> へご確認ください。私たちは税務の専門家ではありません。</div>
+  </div>
+</section>
+
+<footer>
+  <img src="life-logo.png" alt="ライフデンタルクリニック">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
