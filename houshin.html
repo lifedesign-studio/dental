@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>これからの方針｜ライフデンタルクリニック</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6F3EC; --paper:#FFFFFF; --ink:#2B2A26; --green:#3A4A3F; --green-soft:#5E7E5A;
+    --rule:#D8D2C4; --rule2:#E5E0D3; --panel:#EFEBE0; --panel2:#EDEFE8; --labbg:#EDEAE0;
+    --amber:#B8923A; --terra:#A85B4C; --faint:#8C887C;
+    --serif:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
+    --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
+    --wrap:920px;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--cream); color:var(--ink); font-family:var(--gothic);
+    -webkit-font-smoothing:antialiased; line-height:1.85; font-size:16px; }
+  .mincho{ font-family:var(--serif); }
+  img{ max-width:100%; display:block; }
+
+  /* ---------- layout ---------- */
+  .wrap{ width:100%; max-width:var(--wrap); margin:0 auto; padding:0 22px; }
+  .section{ padding:52px 0; border-top:1px solid var(--rule2); }
+  .section.soft{ background:var(--panel); }
+  .section:first-of-type{ border-top:none; }
+
+  /* ---------- hero ---------- */
+  .hero{ padding:64px 0 48px; text-align:left; }
+  .hero .eyebrow{ font-size:12px; letter-spacing:.36em; color:var(--green); font-weight:700; }
+  .hero h1{ font-family:var(--serif); font-weight:600; font-size:clamp(29px,6vw,46px);
+    line-height:1.32; letter-spacing:.03em; color:var(--ink); margin:20px 0 0; }
+  .hero .lead{ font-size:16px; color:var(--ink); margin-top:22px; max-width:640px; }
+  .hero .lead b{ color:var(--green); font-weight:600; }
+  .hero .connect{ margin-top:22px; background:var(--paper); border:1px solid var(--rule);
+    border-radius:14px; padding:15px 20px; font-size:14px; color:var(--ink); max-width:640px; line-height:1.7; }
+  .hero .connect b{ color:var(--green); font-weight:600; }
+
+  /* ---------- toc ---------- */
+  .toc{ display:grid; grid-template-columns:1fr; gap:10px; margin-top:30px; }
+  .toc a{ display:flex; align-items:center; gap:14px; text-decoration:none; color:inherit;
+    background:var(--paper); border:1px solid var(--rule); border-radius:12px; padding:13px 16px;
+    transition:border-color .2s, transform .2s; }
+  .toc a:hover{ border-color:var(--green-soft); transform:translateX(2px); }
+  .toc .n{ font-family:var(--serif); font-size:15px; color:#fff; background:var(--green);
+    width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+  .toc .tt{ font-size:14.5px; letter-spacing:.02em; }
+  .toc .tt small{ display:block; font-size:11.5px; color:var(--faint); letter-spacing:.02em; margin-top:1px; }
+
+  /* ---------- section head ---------- */
+  .sec-eyebrow{ font-size:11.5px; letter-spacing:.24em; color:var(--green-soft); font-weight:700; }
+  .sec-h{ display:flex; align-items:flex-start; gap:14px; margin-top:8px; }
+  .sec-h .no{ font-family:var(--serif); font-size:19px; color:#fff; background:var(--green);
+    width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex:0 0 auto; margin-top:4px; }
+  .sec-h h2{ font-family:var(--serif); font-weight:600; font-size:clamp(23px,4.4vw,32px);
+    line-height:1.25; letter-spacing:.03em; color:var(--ink); }
+  .sec-lead{ font-size:15px; color:var(--ink); margin-top:16px; max-width:660px; }
+  .sec-lead b{ color:var(--green); font-weight:600; }
+  .sec-lead em{ font-style:normal; color:var(--terra); font-weight:700; }
+
+  /* ---------- generic cards ---------- */
+  .grid{ display:grid; gap:16px; margin-top:24px; }
+  .g2{ grid-template-columns:1fr; }
+  .g3{ grid-template-columns:1fr; }
+  .card{ background:var(--paper); border:1px solid var(--rule); border-radius:16px; padding:22px 22px 20px; }
+  .card.tint{ background:var(--panel2); }
+
+  /* approach cards (section 1) */
+  .ac-top{ display:flex; align-items:center; gap:14px; }
+  .ac-ic{ width:56px; height:56px; border-radius:50%; background:var(--panel2); border:1px solid var(--rule);
+    display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+  .ac-ic svg{ width:30px; height:30px; }
+  .ac-nm{ font-family:var(--serif); font-size:20px; color:var(--ink); line-height:1.25; }
+  .ac-sub{ font-size:12.5px; color:var(--faint); margin-top:3px; }
+  .flag{ margin-bottom:0; }
+  .flag:not(:empty){ margin-bottom:14px; }
+  .recpill{ display:inline-block; font-size:11px; color:#fff; background:var(--green-soft);
+    border-radius:20px; padding:3px 12px; font-weight:600; }
+  .needs{ background:var(--cream); border:1px solid var(--rule); border-radius:12px; padding:14px 16px; margin-top:16px; }
+  .card.tint .needs{ background:var(--paper); }
+  .needs .nh{ font-size:12px; font-weight:700; color:var(--green); letter-spacing:.04em; margin-bottom:9px;
+    display:flex; align-items:center; gap:7px; }
+  .needs .nh svg{ width:16px; height:16px; }
+  .needs ul{ list-style:none; display:flex; flex-direction:column; gap:8px; }
+  .needs li{ font-family:var(--serif); font-size:15.5px; color:var(--ink); line-height:1.5; display:flex; gap:9px; align-items:flex-start; }
+  .needs li::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--green-soft); flex:0 0 auto; margin-top:9px; }
+  .apline{ font-size:13.5px; color:var(--ink); margin-top:14px; line-height:1.7; }
+  .apline b{ color:var(--green); font-weight:600; }
+  .mrow{ display:flex; gap:9px; align-items:flex-start; font-size:13.5px; line-height:1.6; margin-top:10px; }
+  .mrow .k{ font-weight:700; flex:0 0 auto; font-size:12px; border-radius:6px; padding:2px 9px; margin-top:2px; }
+  .mrow.pro .k{ color:#fff; background:var(--green-soft); }
+  .mrow.con .k{ color:#fff; background:var(--amber); }
+  .leadto{ margin-top:16px; padding-top:14px; border-top:1px dotted var(--rule); font-size:12.5px; color:var(--faint); }
+  .leadto b{ font-family:var(--serif); color:var(--green); font-size:14px; font-weight:500; }
+
+  /* comparison table (section 2) */
+  .tblwrap{ margin-top:24px; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .kmp{ width:100%; min-width:560px; border-collapse:collapse; table-layout:fixed; background:var(--paper); }
+  .kmp col.lab{ width:96px; }
+  .kmp th,.kmp td{ border:1px solid var(--rule); padding:11px 12px; vertical-align:top; }
+  .kmp .lab{ background:var(--labbg); font-size:12px; color:var(--green); font-weight:700; text-align:center; line-height:1.4; vertical-align:middle; }
+  .kmp thead td{ text-align:center; vertical-align:middle; }
+  .kmp thead .nm{ font-family:var(--serif); font-size:17px; color:var(--ink); line-height:1.2; }
+  .kmp thead .tag{ display:inline-block; font-size:10px; color:var(--faint); border:1px solid var(--rule);
+    border-radius:20px; padding:2px 10px; margin-top:6px; }
+  .kmp thead .tag.j{ color:var(--amber); border-color:#E3CDA6; background:#FBF6EA; }
+  .kmp td.c{ font-size:13px; color:var(--ink); line-height:1.6; text-align:center; }
+  .kmp td.goal{ font-size:12.5px; line-height:1.7; }
+  .kmp td.goal b{ color:var(--green); font-weight:600; }
+  .kmp tr.choose td:not(.lab){ background:var(--panel2); font-size:12.5px; line-height:1.7; text-align:left; }
+  .kmp tr.choose td b{ color:var(--green); font-weight:600; }
+  .kmp tr.choose .lab{ color:var(--green); }
+  .knote{ font-size:12px; color:var(--faint); margin-top:12px; line-height:1.6; }
+
+  /* mitame chips */
+  .mitame{ display:grid; grid-template-columns:1fr; gap:12px; margin-top:18px; }
+  .mit{ background:var(--paper); border:1px solid var(--rule); border-radius:12px; padding:15px 18px; }
+  .mit .mt{ font-family:var(--serif); font-size:16px; color:var(--ink); }
+  .mit .md{ font-size:13px; color:var(--faint); margin-top:4px; line-height:1.6; }
+
+  /* price ranges (section 4) */
+  .rnggrp{ margin-top:8px; }
+  .rnggrp .gt{ font-size:13px; color:var(--green); font-weight:700; letter-spacing:.03em; margin:16px 0 4px; }
+  .rnggrp:first-child .gt{ margin-top:2px; }
+  .rng{ display:flex; align-items:baseline; gap:12px; padding:9px 0; border-bottom:1px dotted var(--rule2); }
+  .rng .rnm{ font-size:14.5px; color:var(--ink); }
+  .rng .rsub{ font-size:11.5px; color:var(--faint); }
+  .rng .fill{ flex:1; border-bottom:1px dotted var(--rule); transform:translateY(-4px); min-width:10px; }
+  .rng .rval{ font-family:var(--serif); font-size:17px; color:var(--green); white-space:nowrap; }
+  .rng .rval small{ font-size:11px; color:var(--faint); }
+  .src{ font-size:11.5px; color:var(--faint); line-height:1.7; margin-top:14px; padding-top:12px; border-top:1px dotted var(--rule); }
+
+  /* promises */
+  .promise{ background:var(--paper); border:1px solid var(--rule); border-radius:16px; padding:24px; margin-top:24px; }
+  .promise .ph{ font-family:var(--serif); font-size:20px; color:var(--green); text-align:center; }
+  .promise .psub{ font-size:13px; color:var(--faint); text-align:center; margin-top:5px; }
+  .pgrid{ display:grid; grid-template-columns:1fr; gap:18px; margin-top:22px; }
+  .pcell{ display:flex; gap:15px; align-items:flex-start; }
+  .pic2{ width:50px; height:50px; border-radius:50%; background:var(--panel2); border:1px solid var(--rule);
+    display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+  .pic2 svg{ width:26px; height:26px; }
+  .pt2{ font-family:var(--serif); font-size:16px; color:var(--ink); line-height:1.3; }
+  .pd2{ font-size:13px; color:var(--faint); line-height:1.6; margin-top:3px; }
+  .pd2 b{ color:var(--green); font-weight:600; }
+
+  /* price box (section 3) */
+  .pricebox{ background:var(--green); border-radius:16px; padding:22px 24px; color:var(--cream); margin-top:22px; }
+  .pricebox .pl{ font-size:13px; letter-spacing:.04em; color:rgba(246,243,236,.85); }
+  .pricebox .pv{ font-family:var(--serif); font-size:38px; color:#fff; line-height:1.1; margin-top:2px; }
+  .pricebox .pv small{ font-size:16px; }
+  .pricebox .pn{ font-size:13px; color:rgba(246,243,236,.94); margin-top:12px; line-height:1.7;
+    border-top:1px solid rgba(246,243,236,.25); padding-top:12px; }
+  .pricebox .pn b{ color:#fff; font-weight:600; }
+  .whorow{ display:flex; gap:11px; align-items:flex-start; font-size:14px; color:var(--ink); line-height:1.7; margin-top:14px; }
+  .whorow svg{ width:20px; height:20px; flex:0 0 auto; margin-top:3px; }
+  .whorow b{ color:var(--green); font-weight:600; }
+  .pt{ display:flex; gap:11px; align-items:flex-start; margin-top:14px; }
+  .pt svg{ width:22px; height:22px; flex:0 0 auto; margin-top:2px; }
+  .pt .tx{ font-size:14px; line-height:1.7; }
+  .pt .tx b{ color:var(--green); font-weight:600; }
+  .prio{ display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+  .prio span{ font-size:12px; color:var(--faint); background:var(--paper); border:1px solid var(--rule); border-radius:20px; padding:3px 12px; }
+  .prio b{ color:var(--green); }
+
+  /* medical deduction (section 5) */
+  .formula{ display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:6px; }
+  .fchip{ background:var(--panel2); border:1px solid var(--rule); border-radius:12px; padding:12px 18px; text-align:center; }
+  .fchip .fk{ font-size:11px; color:var(--faint); letter-spacing:.03em; }
+  .fchip .fv{ font-family:var(--serif); font-size:17px; color:var(--ink); margin-top:3px; }
+  .fchip.res{ background:var(--green); border-color:var(--green); }
+  .fchip.res .fk{ color:rgba(246,243,236,.78); }
+  .fchip.res .fv{ color:#fff; }
+  .fop{ font-family:var(--serif); font-size:22px; color:var(--green-soft); }
+  .fnote{ font-size:12.5px; color:var(--faint); text-align:center; margin-top:14px; line-height:1.7; }
+  .fnote b{ color:var(--green); font-weight:600; } .fnote em{ font-style:normal; color:var(--terra); font-weight:700; }
+  .taxtable{ width:100%; border-collapse:collapse; margin-top:8px; }
+  .taxtable th,.taxtable td{ text-align:center; padding:10px 6px; border-bottom:1px solid var(--rule2); }
+  .taxtable th{ font-size:11.5px; color:var(--faint); font-weight:600; }
+  .taxtable td{ font-size:14px; color:var(--ink); }
+  .taxtable td.rate{ font-family:var(--serif); color:var(--amber); }
+  .taxtable td.back{ font-family:var(--serif); font-size:16px; color:var(--green); }
+  .taxtable tr.hi td{ background:var(--panel2); }
+  .disc{ font-size:11.5px; color:var(--faint); line-height:1.7; margin-top:14px; padding-top:12px; border-top:1px dotted var(--rule); }
+  .disc b{ color:var(--green); font-weight:600; }
+
+  /* your-case box */
+  .yourcase{ background:var(--panel2); border:1px solid #CBD3C4; border-radius:16px; padding:20px 22px; margin-top:26px; }
+  .yourcase .yh{ font-size:12px; letter-spacing:.14em; color:var(--green); font-weight:700; display:flex; align-items:center; gap:8px; }
+  .yourcase .yh svg{ width:17px; height:17px; }
+  .yourcase .yt{ font-family:var(--serif); font-size:18px; color:var(--ink); margin-top:8px; line-height:1.4; }
+  .yourcase .yb{ font-size:13.5px; color:var(--ink); margin-top:8px; line-height:1.75; }
+  .yourcase .yb b{ color:var(--green); font-weight:600; }
+
+  /* point bar (green) */
+  .pointbar{ background:var(--green); border-radius:16px; padding:18px 22px; margin-top:26px;
+    display:flex; align-items:center; gap:15px; }
+  .pointbar svg{ width:26px; height:26px; flex:0 0 auto; }
+  .pointbar .tx{ font-size:14.5px; color:var(--cream); line-height:1.7; letter-spacing:.01em; }
+  .pointbar .tx b{ font-family:var(--serif); color:#fff; border-bottom:1.5px solid rgba(246,243,236,.5); padding-bottom:1px; font-weight:500; }
+
+  /* closing */
+  .closing{ text-align:center; padding:70px 0 60px; background:var(--panel); border-top:1px solid var(--rule2); }
+  .closing .cmsg{ font-family:var(--serif); font-size:clamp(18px,3.6vw,24px); color:var(--ink); line-height:1.9; letter-spacing:.03em; }
+  .closing .cmsg b{ color:var(--green); font-weight:600; }
+  .closing .slogan{ font-family:var(--serif); font-size:clamp(24px,5vw,34px); color:var(--green); letter-spacing:.08em; margin-top:34px; }
+  .closing .brandline{ font-size:11px; letter-spacing:.42em; color:var(--faint); margin-top:12px; }
+
+  /* footer */
+  footer{ background:var(--cream); border-top:1px solid var(--rule); padding:44px 0 40px; }
+  .foot-consult .fh{ font-family:var(--serif); font-size:20px; color:var(--green); }
+  .foot-consult .fp{ font-size:13.5px; color:var(--ink); line-height:1.8; margin-top:12px; max-width:660px; }
+  .foot-qr{ display:flex; align-items:center; gap:18px; margin-top:22px; flex-wrap:wrap; }
+  .qrbox{ width:116px; height:116px; background:#fff; border:1px solid var(--rule); border-radius:12px; padding:9px; flex:0 0 auto; }
+  .qrbox svg{ width:100%; height:100%; display:block; }
+  .foot-qr .qrh{ font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .foot-qr .url{ font-family:var(--serif); color:var(--green); font-size:12.5px; word-break:break-all; margin-top:6px; display:inline-block; }
+  .foot-link{ margin-top:24px; }
+  .foot-link a{ display:inline-flex; align-items:center; gap:8px; text-decoration:none; color:var(--green);
+    font-size:13.5px; border:1px solid var(--rule); border-radius:24px; padding:9px 18px; background:var(--paper); transition:border-color .2s; }
+  .foot-link a:hover{ border-color:var(--green-soft); }
+  .foot-brand{ display:flex; align-items:center; gap:14px; margin-top:34px; padding-top:26px; border-top:1px solid var(--rule); }
+  .foot-brand img{ height:44px; width:auto; }
+  .foot-brand .bn{ font-size:13px; color:var(--ink); letter-spacing:.06em; }
+  .foot-brand .bs{ font-size:12px; color:var(--faint); margin-top:2px; }
+
+  /* reveal */
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* responsive */
+  @media (min-width:760px){
+    body{ font-size:16px; }
+    .g2{ grid-template-columns:1fr 1fr; }
+    .g3{ grid-template-columns:1fr 1fr 1fr; }
+    .flag{ min-height:23px; margin-bottom:14px; }
+    .pgrid{ grid-template-columns:1fr 1fr; gap:22px 28px; }
+    .toc{ grid-template-columns:1fr 1fr; }
+    .mitame{ grid-template-columns:1fr 1fr 1fr; }
+    .foot-brand{ justify-content:flex-start; }
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">これからの方針</p>
+      <h1 class="mincho">検査の結果を見たら、<br>これからの「方針」を、<br>ご一緒に決めていきます。</h1>
+      <p class="lead">ドクターから、今のお口の状態をご説明しました。ここからは、<b>「どう治していくか」</b>。今日すべてを決める必要はありません。あなたのお気持ち・ご希望に合わせて、通い方の方針をご一緒に選んでいきます。</p>
+      <div class="connect">
+        このページは、お手元の <b>「検査でわかったこと」</b> と <b>「いい歯への基本方針」</b> の用紙と一緒にご覧いただくと、いちばん「自分のこと」として見えてきます。各セクションの最後に、あなたの選択とつなげる場所をご用意しています。
+      </div>
+
+      <nav class="toc" aria-label="目次">
+        <a href="#s1"><span class="n mincho">1</span><span class="tt">治療の組み立て方を、選ぶ<small>1本ごと／全体設計</small></span></a>
+        <a href="#s2"><span class="n mincho">2</span><span class="tt">通い方の方針を、決める<small>今を整える／気になる歯を残す／全体で守る</small></span></a>
+        <a href="#s3"><span class="n mincho">3</span><span class="tt">お口全体の「設計図」をつくる<small>全体設計コンサルのご案内</small></span></a>
+        <a href="#s4"><span class="n mincho">4</span><span class="tt">自費治療の、費用のめやす<small>費用の幅と、4つのお約束</small></span></a>
+        <a href="#s5"><span class="n mincho">5</span><span class="tt">医療費控除の、知っておきたい話<small>治療費は、税金が戻ることがあります</small></span></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ SECTION 1 ============ -->
+  <section class="section" id="s1">
+    <div class="wrap reveal">
+      <p class="sec-eyebrow">その1 ｜ 進め方を選ぶ</p>
+      <div class="sec-h"><span class="no mincho">1</span><h2 class="mincho">治療の組み立て方を、選びます</h2></div>
+      <p class="sec-lead">「今を整える」のか、「将来も守る」のか。<b>目的によって、治療の組み立て方が変わります。</b>どちらが合うかは、お気持ち・ニーズしだい。当てはまるものに近いほうを選ぶと、次の <b>方針</b> につながります。</p>
+
+      <div class="grid g2">
+        <div class="card">
+          <div class="flag"></div>
+          <div class="ac-top">
+            <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#5E7E5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="16" width="14" height="4" rx="1"/><rect x="7" y="11" width="10" height="4" rx="1"/><rect x="9" y="6" width="6" height="4" rx="1"/><path d="M12 5.5V2.5M10.4 4L12 2.5 13.6 4"/></svg></div>
+            <div><div class="ac-nm">1本ごとに組み立てる進め方</div><div class="ac-sub">気になるところから、その都度</div></div>
+          </div>
+          <div class="needs">
+            <div class="nh"><svg viewBox="0 0 24 24" fill="none" stroke="#3A4A3F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-6.5-4.2-6.5-9A3.4 3.4 0 0 1 12 8a3.4 3.4 0 0 1 6.5 3c0 4.8-6.5 9-6.5 9Z"/></svg>こんなニーズの方に</div>
+            <ul>
+              <li>今の費用を、できるだけ抑えたい</li>
+              <li>いま困っている痛み・不具合を取りたい</li>
+              <li>必要なところを、必要な分だけ治したい</li>
+            </ul>
+          </div>
+          <p class="apline">1〜2本ずつ、気になる箇所から。<b>保険治療の考え方</b> に合います。</p>
+          <div class="mrow pro"><span class="k">メリット</span><div>すぐ始められる／進めやすい／いまの費用を抑えやすい</div></div>
+          <div class="mrow con"><span class="k">デメリット</span><div>全体を見ないぶん将来のリスクが残りやすい／再治療が増えやすい</div></div>
+          <div class="leadto">この進め方が合う方針 ── <b>今を整える</b> ／ <b>気になる歯を残す</b></div>
+        </div>
+
+        <div class="card tint">
+          <div class="flag"><span class="recpill">将来を守りたい方へ</span></div>
+          <div class="ac-top">
+            <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#5E7E5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="4" rx="1"/><path d="M12 7v3M5.5 16v-3a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v3M12 10v6"/><rect x="3" y="16" width="5" height="4" rx="1"/><rect x="9.5" y="16" width="5" height="4" rx="1"/><rect x="16" y="16" width="5" height="4" rx="1"/></svg></div>
+            <div><div class="ac-nm">全体の設計図から決める進め方</div><div class="ac-sub">最初に設計してから、効率よく</div></div>
+          </div>
+          <div class="needs">
+            <div class="nh"><svg viewBox="0 0 24 24" fill="none" stroke="#3A4A3F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-6.5-4.2-6.5-9A3.4 3.4 0 0 1 12 8a3.4 3.4 0 0 1 6.5 3c0 4.8-6.5 9-6.5 9Z"/></svg>こんなニーズの方に</div>
+            <ul>
+              <li>気になる歯を、しっかり治して残したい</li>
+              <li>将来の歯の健康を、長く守りたい</li>
+              <li>再発・再治療を、できるだけ防ぎたい</li>
+            </ul>
+          </div>
+          <p class="apline">最初に <b>設計図</b> をつくり、効率よく。一部、自由診療を使います。</p>
+          <div class="mrow pro"><span class="k">メリット</span><div>将来の負担を減らせる／丁寧で効率的／歯を最大限 残せる</div></div>
+          <div class="mrow con"><span class="k">デメリット</span><div>いまの費用・期間が増えることがある</div></div>
+          <div class="leadto">この進め方が合う方針 ── <b>気になる歯を残す</b> ／ <b>全体で守る</b></div>
+        </div>
+      </div>
+
+      <div class="pointbar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F6F3EC" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 12l2 2 3.5-4"/></svg>
+        <div class="tx">どちらを選ぶかは、<b>ご自身で決めるところ</b>。このあとコーディネーターとご相談ください。決まった方針に合わせて、<b>最適な治療を組み立てます</b>。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2 ============ -->
+  <section class="section soft" id="s2">
+    <div class="wrap reveal">
+      <p class="sec-eyebrow">その2 ｜ 3つに整理すると</p>
+      <div class="sec-h"><span class="no mincho">2</span><h2 class="mincho">通い方の方針を、ご一緒に</h2></div>
+      <p class="sec-lead">お手元の「いい歯への基本方針」と同じ表です。<b>お気持ちにいちばん近いもの</b> を、お選びください。並び順は、段階や優劣ではありません。目的の違いで選べます。</p>
+
+      <div class="tblwrap">
+        <table class="kmp">
+          <colgroup><col class="lab"><col><col><col></colgroup>
+          <thead>
+            <tr>
+              <td class="lab">通い方</td>
+              <td><div class="nm">今を整える</div><span class="tag">保険診療のみ</span></td>
+              <td><div class="nm">気になる歯を残す</div><span class="tag j">一部、自由診療</span></td>
+              <td><div class="nm">全体で守る</div><span class="tag j">一部、自由診療</span></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lab">どんな方針</td>
+              <td class="c">今の困りごとに、その都度こたえます</td>
+              <td class="c">気になる歯を、しっかり治して残します</td>
+              <td class="c">全体を診て、根本から治して長く守ります</td>
+            </tr>
+            <tr>
+              <td class="lab">目標・希望・優先</td>
+              <td class="goal"><b>目標／</b>今の痛み・不具合を取る<br><b>優先／</b>今の費用を抑えたい<br><b>大切に／</b>必要なところを必要な分だけ</td>
+              <td class="goal"><b>目標／</b>気になる歯を残す<br><b>希望／</b>しっかり噛みたい・きれいにしたい<br><b>大切に／</b>重点的にしっかり</td>
+              <td class="goal"><b>目標／</b>再発を防いで長く守る<br><b>希望／</b>1本でも多く歯を残したい<br><b>優先／</b>将来の負担を抑えたい（健康投資）</td>
+            </tr>
+            <tr>
+              <td class="lab">これからの進め方</td>
+              <td class="c">気になるところから<br>治療を始めます</td>
+              <td class="c">良い治療で進めます<br><span style="font-size:11px;color:var(--faint);">（設計図づくりはご希望で）</span></td>
+              <td class="c">全体の設計図をつくり<br>計画を立てます</td>
+            </tr>
+            <tr class="choose">
+              <td class="lab">この方針を<br>選ぶと</td>
+              <td>今後、治療が必要になったときは、<b>保険治療を前提に進めます</b>。自由診療のご案内はしません。</td>
+              <td>治療が必要になったとき、<b>その都度、ご希望に応じた選択肢（保険・自由診療など）をご提案します</b>。</td>
+              <td>まずは <b>全体設計コンサル</b> で、今のお口のリスクや、治療した方がよい箇所をお調べします。そのうえで、<b>ご希望に応じた選択肢をご提案します</b>。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="knote">※ 並び順は、段階や優劣ではありません。目的の違いで、お選びいただけます。どの方針でも、メインテナンスは続けていきます。</p>
+
+      <p class="sec-eyebrow" style="margin-top:34px;">見た目の方針（任意）</p>
+      <div class="mitame">
+        <div class="mit"><div class="mt">見た目も整える</div><div class="md">積極的に、美しさも追求</div></div>
+        <div class="mit"><div class="mt">自然な見た目を保つ</div><div class="md">自然な白さ・自然な見た目に</div></div>
+        <div class="mit"><div class="mt">機能を大切にする</div><div class="md">見た目は気にせず、機能を優先</div></div>
+      </div>
+
+      <div class="yourcase">
+        <div class="yh"><svg viewBox="0 0 24 24" fill="none" stroke="#3A4A3F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16l-7-3-7 3z"/><path d="M9 9h6M9 12h4"/></svg>あなたの場合は？</div>
+        <div class="yt">お手元の用紙に、○をつけながら。</div>
+        <div class="yb">「いい歯への基本方針」の用紙にも、同じ表があります。コーディネーターと <b>ご一緒に○をつけながら</b>、あなたの通い方を決めていきます。今日すぐに決めきらなくても大丈夫です。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3 ============ -->
+  <section class="section" id="s3">
+    <div class="wrap reveal">
+      <p class="sec-eyebrow">その3 ｜ 設計図づくりのご案内</p>
+      <div class="sec-h"><span class="no mincho">3</span><h2 class="mincho">お口全体の「設計図」をつくる</h2></div>
+      <p class="sec-lead">「全体で守る」、または「気になる歯を残す」で <b>設計図づくり</b> をご希望の方へ。まず全体を見てから、これからの進め方を決めていきます。</p>
+
+      <div class="grid g2">
+        <div class="card">
+          <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="#5E7E5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg><div class="tx">お口全体を診て、<b>完全な設計図（トータルプラン）</b> をつくります。「今ある状態の地図」を、ご一緒に見ます。</div></div>
+          <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="#5E7E5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M7 19v-6M12 19V8M17 19v-9"/></svg><div class="tx">「<b>いま治す1本</b>」と「<b>将来、整えていきたいところ</b>」を、優先順位をつけて整理します。</div></div>
+          <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="#5E7E5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><div class="tx">全部いっぺんに決めなくて大丈夫。<b>いちばん大事な1本から</b>、ご一緒に進めます。</div></div>
+          <div class="prio"><span><b>◎</b> すぐ</span><span><b>○</b> 必要</span><span><b>◇</b> 前向きに</span><span><b>・</b> 経過観察</span></div>
+          <div class="src">ドクターが全体プランを作成（約20分）＋コーディネーターがご説明（約30分）。あわせて約60分のお時間です。</div>
+        </div>
+
+        <div class="card tint">
+          <div class="pricebox">
+            <div class="pl">全体設計コンサル</div>
+            <div class="pv">16,000<small> 円（税込）</small></div>
+            <div class="pn">治療に進めば、<b>全額が治療費に充当</b> されます（6か月以内の着手で）。お口全体の設計図が、そのまま治療の地図になります。</div>
+          </div>
+          <div class="whorow"><svg viewBox="0 0 24 24" fill="none" stroke="#5E7E5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg><div><b>「全体で守る」</b> を選んだ方／<b>「気になる歯を残す」</b> で設計図づくりをご希望の方に。</div></div>
+          <div class="whorow"><svg viewBox="0 0 24 24" fill="none" stroke="#5E7E5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg><div>さらに詳しい診断が必要なときは、<b>精密診断（CT等）</b> 33,000〜55,000円（こちらも全額充当）へ。</div></div>
+          <div class="whorow"><svg viewBox="0 0 24 24" fill="none" stroke="#5E7E5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v16l-6-3-6 3z"/></svg><div>「今を整える」を選んだ方には行いません（自費のお話は持ち出しません）。</div></div>
+        </div>
+      </div>
+
+      <div class="pointbar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F6F3EC" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-4 3v-3H4z"/><path d="M8 9h8M8 12h5"/></svg>
+        <div class="tx">この設計図を見ながら、<b>これからの進め方</b> を、用紙にご一緒に書き込んでいきます。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 4 ============ -->
+  <section class="section soft" id="s4">
+    <div class="wrap reveal">
+      <p class="sec-eyebrow">その4 ｜ 自由診療の費用のめやす</p>
+      <div class="sec-h"><span class="no mincho">4</span><h2 class="mincho">それぞれの治療の、費用の幅</h2></div>
+      <p class="sec-lead">すべて <b>税込・総額のめやす</b> です。本数や状態で変わります。正式なお見積りは、検査結果からお出しします。</p>
+
+      <div class="grid g2">
+        <div class="card">
+          <div class="rnggrp">
+            <div class="gt">歯を治す・守る（詰める・被せる／1歯あたり）</div>
+            <div class="rng"><span class="rnm">ダイレクトボンディング</span><span class="rsub">白い詰めもの</span><span class="fill"></span><span class="rval">4〜13<small>万円</small></span></div>
+            <div class="rng"><span class="rnm">セラミックの詰めもの</span><span class="rsub">インレー</span><span class="fill"></span><span class="rval">5.5〜9<small>万円</small></span></div>
+            <div class="rng"><span class="rnm">セラミックの被せもの</span><span class="rsub">クラウン</span><span class="fill"></span><span class="rval">8.5〜18<small>万円</small></span></div>
+          </div>
+          <div class="rnggrp">
+            <div class="gt">神経・歯ぐきを守る</div>
+            <div class="rng"><span class="rnm">精密根管治療</span><span class="rsub">神経の治療</span><span class="fill"></span><span class="rval">10〜16<small>万円</small></span></div>
+            <div class="rng"><span class="rnm">自費の歯周治療</span><span class="rsub">1ブロック〜再生</span><span class="fill"></span><span class="rval">2.5〜11<small>万円</small></span></div>
+          </div>
+          <div class="src">「被せもの」＝当日仕上げ 8.5万円〜、技工士の最上位仕上げ 18万円まで。前歯・奥歯で幅があります。</div>
+        </div>
+
+        <div class="card tint">
+          <div class="rnggrp">
+            <div class="gt">失った歯を補う</div>
+            <div class="rng"><span class="rnm">ブリッジ</span><span class="rsub">3本〜</span><span class="fill"></span><span class="rval">32<small>万円〜</small></span></div>
+            <div class="rng"><span class="rnm">自費の入れ歯</span><span class="rsub">部分〜総</span><span class="fill"></span><span class="rval">15〜34<small>万円</small></span></div>
+            <div class="rng"><span class="rnm">インプラント</span><span class="rsub">1歯／＋骨造成13万</span><span class="fill"></span><span class="rval">46<small>万円〜</small></span></div>
+          </div>
+          <div class="rnggrp">
+            <div class="gt">歯並び・見た目</div>
+            <div class="rng"><span class="rnm">ワイヤー矯正</span><span class="rsub">部分〜全体</span><span class="fill"></span><span class="rval">15〜90<small>万円</small></span></div>
+            <div class="rng"><span class="rnm">マウスピース矯正</span><span class="rsub">片顎〜両顎</span><span class="fill"></span><span class="rval">27〜36<small>万円</small></span></div>
+            <div class="rng"><span class="rnm">ホワイトニング</span><span class="rsub">1回〜</span><span class="fill"></span><span class="rval">3<small>万円〜</small></span></div>
+            <div class="rng"><span class="rnm">ラミネートベニア</span><span class="rsub">前歯1本</span><span class="fill"></span><span class="rval">18<small>万円〜</small></span></div>
+          </div>
+          <div class="src">矯正は部位・難易度で変わります。ワイヤーの舌側（裏側）は別料金です。</div>
+        </div>
+      </div>
+
+      <div class="promise">
+        <div class="ph">自費治療の、4つのお約束</div>
+        <div class="psub">安心して選んでいただくために。費用の不安を、できるだけ小さくします。</div>
+        <div class="pgrid">
+          <div class="pcell">
+            <div class="pic2"><svg viewBox="0 0 24 24" fill="none" stroke="#3A4A3F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14h4"/></svg></div>
+            <div><div class="pt2">2回の分割払い</div><div class="pd2"><b>着手時に半分・仕上げ時に半分</b>。一括が難しい場合もご相談を。</div></div>
+          </div>
+          <div class="pcell">
+            <div class="pic2"><svg viewBox="0 0 24 24" fill="none" stroke="#3A4A3F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg></div>
+            <div><div class="pt2">15年保証</div><div class="pd2">対象の治療は <b>15年保証</b>。年2回のメインテナンス継続が条件です。</div></div>
+          </div>
+          <div class="pcell">
+            <div class="pic2"><svg viewBox="0 0 24 24" fill="none" stroke="#3A4A3F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M8.5 13.5L12 17l3.5-3.5"/></svg></div>
+            <div><div class="pt2">診断料は全額充当</div><div class="pd2">検査・診断料は、治療に進めば <b>全額が治療費に</b>。</div></div>
+          </div>
+          <div class="pcell">
+            <div class="pic2"><svg viewBox="0 0 24 24" fill="none" stroke="#3A4A3F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 8 8"/><path d="M4 12V7M4 12h5"/></svg></div>
+            <div><div class="pt2">技術料は二重取りしない</div><div class="pd2">一度自費で治した歯は、作り替えても <b>技術料を重ねません</b>。</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 5 ============ -->
+  <section class="section" id="s5">
+    <div class="wrap reveal">
+      <p class="sec-eyebrow">その5 ｜ 知っておきたい｜医療費控除</p>
+      <div class="sec-h"><span class="no mincho">5</span><h2 class="mincho">治療費は、税金が戻ることがあります</h2></div>
+      <p class="sec-lead">保険診療でも、自由診療でも。<b>1年間（1月〜12月）に支払った医療費</b> が対象です。</p>
+
+      <div class="card" style="margin-top:24px;">
+        <div class="sec-eyebrow" style="color:var(--green);">しくみ（かんたんに）</div>
+        <div class="formula" style="margin-top:16px;">
+          <div class="fchip"><div class="fk">1年間の医療費</div><div class="fv">○○万円 − 10万円</div></div>
+          <div class="fop">×</div>
+          <div class="fchip"><div class="fk">所得税率 ＋ 住民税</div><div class="fv">5〜45% ＋ 約10%</div></div>
+          <div class="fop">≒</div>
+          <div class="fchip res"><div class="fk">目安</div><div class="fv">この分が戻ります</div></div>
+        </div>
+        <div class="fnote"><b>所得税</b> は確定申告でお金が戻り、<b>住民税</b> は翌年ぶんが軽くなります。だから税率に住民税分（<em>＋</em>約10%）を足して見積もります。</div>
+      </div>
+
+      <div class="grid g2">
+        <div class="card">
+          <div class="sec-eyebrow" style="color:var(--green);">何が対象？　保険でも自費でも</div>
+          <div class="pt" style="margin-top:14px;"><svg viewBox="0 0 24 24" fill="none" stroke="#5E7E5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><div class="tx">保険診療の窓口負担も、自費の治療費も <b>合算して対象</b> になります。</div></div>
+          <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="#5E7E5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5c-3 0-4.4 1.3-4.4 3.7 0 2 .7 3.4 1.4 5.7.35 1.1.5 1.8 1.1 1.8.95 0 .8-2.8 2-2.8s1.05 2.8 2 2.8c.6 0 .75-.7 1.1-1.8.7-2.3 1.4-3.7 1.4-5.7C16.4 5.8 15 4.5 12 4.5Z"/></svg><div class="tx">インプラント・かみ合わせの矯正・セラミックなど、機能を回復する治療も対象（<em>見た目だけ</em> のホワイトニング等は対象外）。</div></div>
+          <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="#5E7E5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3.3 2.7-5 6-5M15 11l2 2 4-4"/></svg><div class="tx">通院の交通費、<b>ご家族の分</b> も合算できます。デンタルローンも契約した年に対象です（金利分を除く）。</div></div>
+        </div>
+
+        <div class="card tint">
+          <div class="sec-eyebrow" style="color:var(--green);">収入のある年ほど、戻りも大きい</div>
+          <div class="pt" style="margin-top:14px;"><svg viewBox="0 0 24 24" fill="none" stroke="#5E7E5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M7 19v-6M12 19V8M17 19v-9"/></svg><div class="tx">税率は所得が高いほど高く（5〜45%）。<b>退職して年金中心になると下がりがち</b>。働いて収入があるうちのほうが、戻る割合は大きくなりやすいしくみです。</div></div>
+          <table class="taxtable">
+            <tr><th>課税所得の目安</th><th>税率</th><th>戻りの目安<br><span style="font-weight:400;">所得税＋住民税</span></th></tr>
+            <tr><td>〜195万円</td><td class="rate">5%</td><td class="back">約9万円</td></tr>
+            <tr class="hi"><td>330〜695万円</td><td class="rate">20%</td><td class="back">約18万円</td></tr>
+            <tr><td>900〜1800万円</td><td class="rate">33%</td><td class="back">約26万円</td></tr>
+          </table>
+          <div class="disc">医療費が年70万円かかった場合の目安（控除額＝70万−10万＝60万円）。これに所得税率＋住民税約10%をかけた額が戻り（軽減）の目安です。<br>※2026年1月時点の制度の一般的な説明で、対象・金額はご事情により異なります。控除には確定申告が必要です。正確なことは <b>税務署・税理士</b> へご確認ください。</div>
+        </div>
+      </div>
+
+      <div class="pointbar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F6F3EC" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+        <div class="tx">1年間（1月〜12月）の医療費の領収書は、ご家族の分もまとめて <b>大事に保管してください</b>。申告のときに必要になります。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section class="closing">
+    <div class="wrap reveal">
+      <p class="cmsg">全部を完璧に、でなくて大丈夫。<br><b>少しでもいい歯にすれば、少しでもいい人生</b> に近づきます。<br>その一歩を、ご一緒に決めていきましょう。</p>
+      <div class="slogan mincho">いい歯で、いい人生を。</div>
+      <div class="brandline">L I F E　D E N T A L　C L I N I C</div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-consult">
+        <div class="fh mincho">気になる点は、いつでもご相談ください</div>
+        <p class="fp">このページは、後からでもゆっくりご覧いただけます。ご家族と相談してから決めていただいてかまいません。すぐに、すべてを決めていただく必要はありません。</p>
+      </div>
+      <div class="foot-qr">
+        <div class="qrbox"><svg viewBox="0 0 296 296" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QRコード：このページのURL"><rect width="296" height="296" fill="#FFFFFF"/><path d="M16 16h8v8h-8z M24 16h8v8h-8z M32 16h8v8h-8z M40 16h8v8h-8z M48 16h8v8h-8z M56 16h8v8h-8z M64 16h8v8h-8z M80 16h8v8h-8z M88 16h8v8h-8z M104 16h8v8h-8z M120 16h8v8h-8z M144 16h8v8h-8z M168 16h8v8h-8z M176 16h8v8h-8z M200 16h8v8h-8z M224 16h8v8h-8z M232 16h8v8h-8z M240 16h8v8h-8z M248 16h8v8h-8z M256 16h8v8h-8z M264 16h8v8h-8z M272 16h8v8h-8z M16 24h8v8h-8z M64 24h8v8h-8z M80 24h8v8h-8z M96 24h8v8h-8z M112 24h8v8h-8z M120 24h8v8h-8z M152 24h8v8h-8z M160 24h8v8h-8z M176 24h8v8h-8z M184 24h8v8h-8z M192 24h8v8h-8z M200 24h8v8h-8z M224 24h8v8h-8z M272 24h8v8h-8z M16 32h8v8h-8z M32 32h8v8h-8z M40 32h8v8h-8z M48 32h8v8h-8z M64 32h8v8h-8z M88 32h8v8h-8z M96 32h8v8h-8z M104 32h8v8h-8z M168 32h8v8h-8z M176 32h8v8h-8z M208 32h8v8h-8z M224 32h8v8h-8z M240 32h8v8h-8z M248 32h8v8h-8z M256 32h8v8h-8z M272 32h8v8h-8z M16 40h8v8h-8z M32 40h8v8h-8z M40 40h8v8h-8z M48 40h8v8h-8z M64 40h8v8h-8z M80 40h8v8h-8z M88 40h8v8h-8z M104 40h8v8h-8z M112 40h8v8h-8z M128 40h8v8h-8z M136 40h8v8h-8z M144 40h8v8h-8z M152 40h8v8h-8z M176 40h8v8h-8z M192 40h8v8h-8z M208 40h8v8h-8z M224 40h8v8h-8z M240 40h8v8h-8z M248 40h8v8h-8z M256 40h8v8h-8z M272 40h8v8h-8z M16 48h8v8h-8z M32 48h8v8h-8z M40 48h8v8h-8z M48 48h8v8h-8z M64 48h8v8h-8z M96 48h8v8h-8z M104 48h8v8h-8z M112 48h8v8h-8z M120 48h8v8h-8z M128 48h8v8h-8z M152 48h8v8h-8z M168 48h8v8h-8z M192 48h8v8h-8z M208 48h8v8h-8z M224 48h8v8h-8z M240 48h8v8h-8z M248 48h8v8h-8z M256 48h8v8h-8z M272 48h8v8h-8z M16 56h8v8h-8z M64 56h8v8h-8z M104 56h8v8h-8z M112 56h8v8h-8z M120 56h8v8h-8z M160 56h8v8h-8z M168 56h8v8h-8z M224 56h8v8h-8z M272 56h8v8h-8z M16 64h8v8h-8z M24 64h8v8h-8z M32 64h8v8h-8z M40 64h8v8h-8z M48 64h8v8h-8z M56 64h8v8h-8z M64 64h8v8h-8z M80 64h8v8h-8z M96 64h8v8h-8z M112 64h8v8h-8z M128 64h8v8h-8z M144 64h8v8h-8z M160 64h8v8h-8z M176 64h8v8h-8z M192 64h8v8h-8z M208 64h8v8h-8z M224 64h8v8h-8z M232 64h8v8h-8z M240 64h8v8h-8z M248 64h8v8h-8z M256 64h8v8h-8z M264 64h8v8h-8z M272 64h8v8h-8z M80 72h8v8h-8z M88 72h8v8h-8z M96 72h8v8h-8z M104 72h8v8h-8z M112 72h8v8h-8z M128 72h8v8h-8z M152 72h8v8h-8z M160 72h8v8h-8z M176 72h8v8h-8z M192 72h8v8h-8z M200 72h8v8h-8z M16 80h8v8h-8z M32 80h8v8h-8z M40 80h8v8h-8z M56 80h8v8h-8z M64 80h8v8h-8z M72 80h8v8h-8z M104 80h8v8h-8z M128 80h8v8h-8z M152 80h8v8h-8z M160 80h8v8h-8z M176 80h8v8h-8z M184 80h8v8h-8z M200 80h8v8h-8z M224 80h8v8h-8z M248 80h8v8h-8z M264 80h8v8h-8z M272 80h8v8h-8z M32 88h8v8h-8z M40 88h8v8h-8z M72 88h8v8h-8z M80 88h8v8h-8z M104 88h8v8h-8z M112 88h8v8h-8z M128 88h8v8h-8z M144 88h8v8h-8z M152 88h8v8h-8z M160 88h8v8h-8z M168 88h8v8h-8z M176 88h8v8h-8z M184 88h8v8h-8z M192 88h8v8h-8z M200 88h8v8h-8z M224 88h8v8h-8z M232 88h8v8h-8z M248 88h8v8h-8z M256 88h8v8h-8z M272 88h8v8h-8z M32 96h8v8h-8z M56 96h8v8h-8z M64 96h8v8h-8z M72 96h8v8h-8z M80 96h8v8h-8z M88 96h8v8h-8z M96 96h8v8h-8z M104 96h8v8h-8z M128 96h8v8h-8z M144 96h8v8h-8z M152 96h8v8h-8z M160 96h8v8h-8z M192 96h8v8h-8z M200 96h8v8h-8z M208 96h8v8h-8z M216 96h8v8h-8z M232 96h8v8h-8z M240 96h8v8h-8z M248 96h8v8h-8z M264 96h8v8h-8z M272 96h8v8h-8z M16 104h8v8h-8z M24 104h8v8h-8z M40 104h8v8h-8z M48 104h8v8h-8z M96 104h8v8h-8z M104 104h8v8h-8z M112 104h8v8h-8z M120 104h8v8h-8z M128 104h8v8h-8z M144 104h8v8h-8z M160 104h8v8h-8z M208 104h8v8h-8z M216 104h8v8h-8z M224 104h8v8h-8z M232 104h8v8h-8z M248 104h8v8h-8z M264 104h8v8h-8z M272 104h8v8h-8z M16 112h8v8h-8z M40 112h8v8h-8z M48 112h8v8h-8z M56 112h8v8h-8z M64 112h8v8h-8z M104 112h8v8h-8z M152 112h8v8h-8z M192 112h8v8h-8z M208 112h8v8h-8z M216 112h8v8h-8z M232 112h8v8h-8z M240 112h8v8h-8z M248 112h8v8h-8z M264 112h8v8h-8z M272 112h8v8h-8z M56 120h8v8h-8z M80 120h8v8h-8z M96 120h8v8h-8z M104 120h8v8h-8z M144 120h8v8h-8z M152 120h8v8h-8z M168 120h8v8h-8z M192 120h8v8h-8z M208 120h8v8h-8z M216 120h8v8h-8z M232 120h8v8h-8z M248 120h8v8h-8z M256 120h8v8h-8z M264 120h8v8h-8z M16 128h8v8h-8z M24 128h8v8h-8z M40 128h8v8h-8z M56 128h8v8h-8z M64 128h8v8h-8z M96 128h8v8h-8z M136 128h8v8h-8z M144 128h8v8h-8z M160 128h8v8h-8z M168 128h8v8h-8z M184 128h8v8h-8z M192 128h8v8h-8z M208 128h8v8h-8z M224 128h8v8h-8z M232 128h8v8h-8z M240 128h8v8h-8z M248 128h8v8h-8z M16 136h8v8h-8z M24 136h8v8h-8z M48 136h8v8h-8z M56 136h8v8h-8z M72 136h8v8h-8z M80 136h8v8h-8z M96 136h8v8h-8z M104 136h8v8h-8z M112 136h8v8h-8z M120 136h8v8h-8z M144 136h8v8h-8z M160 136h8v8h-8z M168 136h8v8h-8z M176 136h8v8h-8z M184 136h8v8h-8z M192 136h8v8h-8z M200 136h8v8h-8z M216 136h8v8h-8z M224 136h8v8h-8z M248 136h8v8h-8z M256 136h8v8h-8z M16 144h8v8h-8z M32 144h8v8h-8z M40 144h8v8h-8z M64 144h8v8h-8z M72 144h8v8h-8z M96 144h8v8h-8z M104 144h8v8h-8z M120 144h8v8h-8z M136 144h8v8h-8z M160 144h8v8h-8z M168 144h8v8h-8z M184 144h8v8h-8z M192 144h8v8h-8z M216 144h8v8h-8z M224 144h8v8h-8z M240 144h8v8h-8z M248 144h8v8h-8z M256 144h8v8h-8z M16 152h8v8h-8z M24 152h8v8h-8z M32 152h8v8h-8z M48 152h8v8h-8z M56 152h8v8h-8z M72 152h8v8h-8z M88 152h8v8h-8z M96 152h8v8h-8z M104 152h8v8h-8z M112 152h8v8h-8z M120 152h8v8h-8z M128 152h8v8h-8z M136 152h8v8h-8z M152 152h8v8h-8z M176 152h8v8h-8z M192 152h8v8h-8z M200 152h8v8h-8z M208 152h8v8h-8z M216 152h8v8h-8z M224 152h8v8h-8z M240 152h8v8h-8z M248 152h8v8h-8z M264 152h8v8h-8z M272 152h8v8h-8z M24 160h8v8h-8z M32 160h8v8h-8z M48 160h8v8h-8z M56 160h8v8h-8z M64 160h8v8h-8z M72 160h8v8h-8z M80 160h8v8h-8z M128 160h8v8h-8z M136 160h8v8h-8z M144 160h8v8h-8z M176 160h8v8h-8z M208 160h8v8h-8z M216 160h8v8h-8z M232 160h8v8h-8z M240 160h8v8h-8z M256 160h8v8h-8z M24 168h8v8h-8z M40 168h8v8h-8z M56 168h8v8h-8z M80 168h8v8h-8z M96 168h8v8h-8z M112 168h8v8h-8z M120 168h8v8h-8z M128 168h8v8h-8z M136 168h8v8h-8z M144 168h8v8h-8z M152 168h8v8h-8z M192 168h8v8h-8z M208 168h8v8h-8z M224 168h8v8h-8z M240 168h8v8h-8z M32 176h8v8h-8z M48 176h8v8h-8z M64 176h8v8h-8z M72 176h8v8h-8z M80 176h8v8h-8z M88 176h8v8h-8z M96 176h8v8h-8z M104 176h8v8h-8z M112 176h8v8h-8z M120 176h8v8h-8z M128 176h8v8h-8z M184 176h8v8h-8z M248 176h8v8h-8z M256 176h8v8h-8z M264 176h8v8h-8z M16 184h8v8h-8z M24 184h8v8h-8z M48 184h8v8h-8z M80 184h8v8h-8z M88 184h8v8h-8z M104 184h8v8h-8z M128 184h8v8h-8z M136 184h8v8h-8z M152 184h8v8h-8z M160 184h8v8h-8z M168 184h8v8h-8z M200 184h8v8h-8z M208 184h8v8h-8z M224 184h8v8h-8z M248 184h8v8h-8z M272 184h8v8h-8z M32 192h8v8h-8z M40 192h8v8h-8z M56 192h8v8h-8z M64 192h8v8h-8z M72 192h8v8h-8z M80 192h8v8h-8z M88 192h8v8h-8z M96 192h8v8h-8z M112 192h8v8h-8z M128 192h8v8h-8z M144 192h8v8h-8z M152 192h8v8h-8z M176 192h8v8h-8z M200 192h8v8h-8z M216 192h8v8h-8z M256 192h8v8h-8z M264 192h8v8h-8z M272 192h8v8h-8z M24 200h8v8h-8z M48 200h8v8h-8z M56 200h8v8h-8z M72 200h8v8h-8z M104 200h8v8h-8z M120 200h8v8h-8z M144 200h8v8h-8z M160 200h8v8h-8z M176 200h8v8h-8z M208 200h8v8h-8z M216 200h8v8h-8z M232 200h8v8h-8z M240 200h8v8h-8z M272 200h8v8h-8z M16 208h8v8h-8z M40 208h8v8h-8z M56 208h8v8h-8z M64 208h8v8h-8z M72 208h8v8h-8z M88 208h8v8h-8z M104 208h8v8h-8z M112 208h8v8h-8z M128 208h8v8h-8z M136 208h8v8h-8z M152 208h8v8h-8z M168 208h8v8h-8z M192 208h8v8h-8z M200 208h8v8h-8z M208 208h8v8h-8z M216 208h8v8h-8z M224 208h8v8h-8z M232 208h8v8h-8z M240 208h8v8h-8z M264 208h8v8h-8z M80 216h8v8h-8z M88 216h8v8h-8z M104 216h8v8h-8z M120 216h8v8h-8z M136 216h8v8h-8z M144 216h8v8h-8z M152 216h8v8h-8z M168 216h8v8h-8z M176 216h8v8h-8z M184 216h8v8h-8z M200 216h8v8h-8z M208 216h8v8h-8z M240 216h8v8h-8z M248 216h8v8h-8z M16 224h8v8h-8z M24 224h8v8h-8z M32 224h8v8h-8z M40 224h8v8h-8z M48 224h8v8h-8z M56 224h8v8h-8z M64 224h8v8h-8z M80 224h8v8h-8z M88 224h8v8h-8z M96 224h8v8h-8z M112 224h8v8h-8z M120 224h8v8h-8z M144 224h8v8h-8z M168 224h8v8h-8z M192 224h8v8h-8z M200 224h8v8h-8z M208 224h8v8h-8z M224 224h8v8h-8z M240 224h8v8h-8z M16 232h8v8h-8z M64 232h8v8h-8z M80 232h8v8h-8z M96 232h8v8h-8z M112 232h8v8h-8z M120 232h8v8h-8z M144 232h8v8h-8z M160 232h8v8h-8z M168 232h8v8h-8z M176 232h8v8h-8z M184 232h8v8h-8z M200 232h8v8h-8z M208 232h8v8h-8z M240 232h8v8h-8z M248 232h8v8h-8z M256 232h8v8h-8z M264 232h8v8h-8z M16 240h8v8h-8z M32 240h8v8h-8z M40 240h8v8h-8z M48 240h8v8h-8z M64 240h8v8h-8z M104 240h8v8h-8z M128 240h8v8h-8z M136 240h8v8h-8z M152 240h8v8h-8z M168 240h8v8h-8z M176 240h8v8h-8z M184 240h8v8h-8z M192 240h8v8h-8z M200 240h8v8h-8z M208 240h8v8h-8z M216 240h8v8h-8z M224 240h8v8h-8z M232 240h8v8h-8z M240 240h8v8h-8z M256 240h8v8h-8z M264 240h8v8h-8z M272 240h8v8h-8z M16 248h8v8h-8z M32 248h8v8h-8z M40 248h8v8h-8z M48 248h8v8h-8z M64 248h8v8h-8z M80 248h8v8h-8z M96 248h8v8h-8z M104 248h8v8h-8z M152 248h8v8h-8z M176 248h8v8h-8z M192 248h8v8h-8z M200 248h8v8h-8z M232 248h8v8h-8z M248 248h8v8h-8z M256 248h8v8h-8z M272 248h8v8h-8z M16 256h8v8h-8z M32 256h8v8h-8z M40 256h8v8h-8z M48 256h8v8h-8z M64 256h8v8h-8z M80 256h8v8h-8z M88 256h8v8h-8z M96 256h8v8h-8z M112 256h8v8h-8z M128 256h8v8h-8z M152 256h8v8h-8z M176 256h8v8h-8z M192 256h8v8h-8z M224 256h8v8h-8z M232 256h8v8h-8z M248 256h8v8h-8z M16 264h8v8h-8z M64 264h8v8h-8z M88 264h8v8h-8z M96 264h8v8h-8z M120 264h8v8h-8z M136 264h8v8h-8z M144 264h8v8h-8z M152 264h8v8h-8z M160 264h8v8h-8z M176 264h8v8h-8z M192 264h8v8h-8z M200 264h8v8h-8z M208 264h8v8h-8z M224 264h8v8h-8z M232 264h8v8h-8z M240 264h8v8h-8z M272 264h8v8h-8z M16 272h8v8h-8z M24 272h8v8h-8z M32 272h8v8h-8z M40 272h8v8h-8z M48 272h8v8h-8z M56 272h8v8h-8z M64 272h8v8h-8z M80 272h8v8h-8z M88 272h8v8h-8z M104 272h8v8h-8z M112 272h8v8h-8z M136 272h8v8h-8z M144 272h8v8h-8z M152 272h8v8h-8z M184 272h8v8h-8z M200 272h8v8h-8z M240 272h8v8h-8z M256 272h8v8h-8z" fill="#2B2A26"/></svg></div>
+        <div class="qrtx"><span class="qrh">スマホのカメラで読み取ると、<br>このページをいつでも見返せます。</span><br><span class="url">lifedesign-studio.github.io/dental/houshin.html</span></div>
+      </div>
+      <div class="foot-link"><a href="index.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>治療と費用のご案内トップへ</a></div>
+      <div class="foot-brand">
+        <img src="life-logo.png" alt="ライフデンタルクリニック" onerror="this.style.display='none'">
+        <div><div class="bn">ライフデンタルクリニック</div><div class="bs mincho">いい歯で、いい人生を。</div></div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  (function(){
+    var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+    if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+      els.forEach(function(e){ e.classList.add('in'); }); return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold:0.12 });
+    els.forEach(function(e){ io.observe(e); });
+  })();
+</script>
+</body>
+</html>
