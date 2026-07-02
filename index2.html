@@ -57,6 +57,18 @@ h2.title{font-size:25px;font-weight:600;color:var(--ink);letter-spacing:.03em;li
 .tcard .tc-n{font-size:16px;font-weight:600;color:var(--ink);}
 .tcard .tc-d{margin-top:3px;font-size:13px;color:var(--muted);line-height:1.6;}
 .tcard .tc-arrow{width:22px;height:22px;flex:0 0 auto;color:var(--sage);}
+.tgh2{margin-top:30px;font-size:17px;font-weight:600;color:var(--ink);letter-spacing:.02em;padding-bottom:10px;border-bottom:1px solid var(--line);}
+.tgh2:first-of-type{margin-top:24px;}
+.part{border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px;display:flex;flex-direction:column;gap:14px;}
+.part-fig{background:var(--soft);border-radius:12px;padding:14px 8px;}
+.part-fig svg{width:100%;height:auto;max-width:300px;display:block;margin:0 auto;}
+.part-n{font-size:17px;font-weight:600;color:var(--ink);text-align:center;}
+.part-links{display:grid;grid-template-columns:1fr;gap:10px;}
+.pl-wide{margin-top:14px;}
+.plink{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:14px 16px;text-decoration:none;color:var(--ink);font-size:14.5px;font-weight:600;transition:background .2s ease,border-color .2s ease;}
+.plink:hover{background:var(--soft);border-color:var(--sage-2);}
+.plink svg{width:18px;height:18px;color:var(--sage);flex:0 0 auto;}
+.soon{font-size:10.5px;font-weight:600;color:var(--muted);background:var(--card);border-radius:6px;padding:2px 8px;letter-spacing:.02em;margin-left:2px;}
 
 /* 読み物カード */
 .readcards{display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px;}
@@ -86,6 +98,12 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
   .hero h1{font-size:36px;}
   .ways3{grid-template-columns:repeat(3,1fr);}
   .tgrid{grid-template-columns:1fr 1fr;}
+  .part{flex-direction:row;align-items:center;gap:24px;}
+  .part-fig{flex:0 0 290px;}
+  .part-body{flex:1;}
+  .part-n{text-align:left;}
+  .part-links{grid-template-columns:1fr 1fr;}
+  .pl-wide{grid-template-columns:1fr 1fr;}
   .readcards{grid-template-columns:1fr;}
 }
 </style>
@@ -126,37 +144,49 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
   </div>
 </section>
 
-<!-- 治療から探す -->
+<!-- 治療から探す（部位起点） -->
 <section class="section">
   <div class="wrap reveal">
     <div class="eyebrow">治療から探す</div>
     <h2 class="title">治療ごとの、内容と費用</h2>
-    <p class="lead">気になる治療から、内容と費用をご覧いただけます。</p>
+    <p class="lead">まずは「どの歯か」から。部位ごとに、その歯を <b>治す・守る治療</b> と、失った歯を <b>補う治療</b> をまとめています。</p>
 
-    <div class="tgroup">
-      <div class="tgh">歯を治す・守る</div>
-      <div class="tgrid">
-        <a class="tcard" href="inlay-crown.html"><div class="tc-body"><div class="tc-n">詰めもの・被せもの</div><div class="tc-d">インレー・クラウンの治療と費用</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="tcard" href="resin.html"><div class="tc-body"><div class="tc-n">レジン修復</div><div class="tc-d">小さなむし歯を、白く詰める治療</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="tcard" href="root-canal.html"><div class="tc-body"><div class="tc-n">根の治療</div><div class="tc-d">歯の根（神経）の治療と費用</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="tgh2">1本ごとの治療</div>
+    <div class="part">
+      <div class="part-fig"><svg viewBox="0 0 248 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(24,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="#6E9C8E" fill-opacity="0.30" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(56,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="#6E9C8E" fill-opacity="0.30" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(88,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="#6E9C8E" fill-opacity="0.30" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(120,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(152,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(184,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(216,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g></svg></div>
+      <div class="part-body">
+        <div class="part-n">前歯</div>
+        <div class="part-links">
+          <a class="plink" href="front-restore.html"><span>歯を治す・守る治療 <span class="soon">準備中</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="plink" href="front-replace.html"><span>歯を補う治療 <span class="soon">準備中</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="part">
+      <div class="part-fig"><svg viewBox="0 0 248 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(24,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(56,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(88,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(120,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="#6E9C8E" fill-opacity="0.30" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(152,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="#6E9C8E" fill-opacity="0.30" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(184,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(216,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g></svg></div>
+      <div class="part-body">
+        <div class="part-n">小臼歯</div>
+        <div class="part-links">
+          <a class="plink" href="premolar-restore.html"><span>歯を治す・守る治療 <span class="soon">準備中</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="plink" href="premolar-replace.html"><span>歯を補う治療 <span class="soon">準備中</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="part">
+      <div class="part-fig"><svg viewBox="0 0 248 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(24,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(56,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(88,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(120,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(152,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(184,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="#6E9C8E" fill-opacity="0.30" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(216,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="#6E9C8E" fill-opacity="0.30" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g></svg></div>
+      <div class="part-body">
+        <div class="part-n">大臼歯</div>
+        <div class="part-links">
+          <a class="plink" href="molar-restore.html"><span>歯を治す・守る治療 <span class="soon">準備中</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="plink" href="molar-replace.html"><span>歯を補う治療 <span class="soon">準備中</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
     </div>
 
-    <div class="tgroup">
-      <div class="tgh">歯を補う</div>
-      <div class="tgrid">
-        <a class="tcard" href="bridge.html"><div class="tc-body"><div class="tc-n">ブリッジ</div><div class="tc-d">前後の歯でつなぐ、固定式の治療</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="tcard" href="denture.html"><div class="tc-body"><div class="tc-n">入れ歯</div><div class="tc-d">取り外し式で歯を補う治療</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="tcard" href="implant.html"><div class="tc-body"><div class="tc-n">インプラント</div><div class="tc-d">あごの骨に土台を入れて補う治療</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-
-    <div class="tgroup">
-      <div class="tgh">整える</div>
-      <div class="tgrid">
-        <a class="tcard" href="ortho.html"><div class="tc-body"><div class="tc-n">矯正</div><div class="tc-d">歯ならび・かみ合わせを整える治療</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="tcard" href="aesthetic.html"><div class="tc-body"><div class="tc-n">見た目・ホワイトニング</div><div class="tc-d">白さや見た目を整える治療</div></div><svg class="tc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
+    <div class="tgh2">全体で整える</div>
+    <div class="part-links pl-wide">
+      <a class="plink" href="comprehensive.html"><span>包括治療（矯正・かみ合わせ） <span class="soon">準備中</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="plink" href="aesthetic.html"><span>審美・ホワイトニング</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
