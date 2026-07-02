@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ライフデンタル｜大臼歯を治す・守る治療</title>
+<style>
+:root{
+  --paper:#FFFFFF; --soft:#F4F7F5; --card:#EEF3F1; --ink:#2E3A3F;
+  --ink-soft:#54636A; --muted:#6E7B80; --sage:#4F7A6C; --sage-2:#6E9C8E;
+  --line:#D8E0DD;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--gothic);line-height:1.8;
+  letter-spacing:.02em;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px;}
+.section{padding:52px 0;}
+.section.soft{background:var(--soft);}
+.eyebrow{font-size:12px;letter-spacing:.28em;color:var(--sage);font-weight:700;margin-bottom:12px;}
+h2.title{font-size:25px;font-weight:600;color:var(--ink);letter-spacing:.03em;line-height:1.5;}
+.lead{margin-top:14px;font-size:15px;color:var(--ink-soft);line-height:1.9;}
+.lead b{color:var(--sage);font-weight:600;}
+
+/* hero */
+.hero{padding:56px 0 40px;text-align:center;background:linear-gradient(180deg,#fff,var(--soft));}
+.hero .eyebrow{margin-bottom:16px;letter-spacing:.30em;}
+.hero .archfig{max-width:300px;margin:0 auto 8px;}
+.hero .archfig svg{width:100%;height:auto;display:block;}
+.hero .archcap{font-size:11.5px;color:var(--muted);margin:0 auto 20px;letter-spacing:.02em;}
+.hero h1{font-size:28px;font-weight:600;letter-spacing:.06em;line-height:1.5;color:var(--ink);}
+.hero p{margin-top:16px;font-size:15px;color:var(--ink-soft);line-height:2;}
+
+/* パンくず */
+.crumb{max-width:820px;margin:0 auto;padding:14px 22px 0;font-size:12.5px;color:var(--muted);}
+.crumb a{color:var(--sage);text-decoration:none;}
+
+/* 対象の方（オーディエンス注記） */
+.aud{margin-top:16px;background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--sage-2);
+  border-radius:10px;padding:13px 16px;font-size:12.5px;color:var(--ink-soft);line-height:1.75;}
+.aud b{color:var(--sage);font-weight:600;}
+
+/* 適応：詰める/被せる 2カラム */
+.decide{display:grid;grid-template-columns:1fr;gap:14px;margin-top:22px;}
+.dcol{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 18px;}
+.dcol .dc-h{display:flex;align-items:center;gap:11px;}
+.dcol .dc-ic{width:44px;height:44px;flex:0 0 auto;border-radius:11px;background:var(--card);
+  display:flex;align-items:center;justify-content:center;}
+.dcol .dc-ic svg{width:26px;height:26px;color:var(--sage);}
+.dcol .dc-n{font-size:17px;font-weight:600;color:var(--ink);}
+.dcol .dc-sub{margin-top:2px;font-size:12px;color:var(--muted);letter-spacing:.03em;}
+.dcol ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.dcol li{position:relative;padding-left:20px;font-size:13.5px;color:var(--ink-soft);line-height:1.7;}
+.dcol li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:50%;
+  background:var(--sage-2);}
+.dcol .dc-sum{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+  font-size:13px;color:var(--ink);line-height:1.7;}
+.dcol .dc-sum b{color:var(--sage);font-weight:600;}
+
+/* 選ぶときに知っておきたいこと */
+.knows{margin-top:16px;background:var(--card);border-radius:14px;padding:18px 18px;}
+.knows .k-t{font-size:13.5px;font-weight:600;color:var(--sage);margin-bottom:10px;letter-spacing:.03em;}
+.knows .k-i{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--ink-soft);line-height:1.75;
+  padding:7px 0;}
+.knows .k-i + .k-i{border-top:1px solid var(--line);}
+.knows .k-i svg{width:17px;height:17px;flex:0 0 auto;margin-top:3px;color:var(--sage);}
+.knows .k-i b{color:var(--sage);font-weight:600;}
+.inlink{display:inline-flex;align-items:center;gap:4px;color:var(--sage);text-decoration:none;font-weight:600;}
+.inlink svg{width:14px;height:14px;}
+
+/* 保険と自費の比較 */
+/* 治療タイトルのサブ */
+.tsub{margin-top:8px;font-size:13px;color:var(--sage);font-weight:600;line-height:1.7;}
+.tsub-plain{color:var(--ink-soft);font-weight:500;}
+
+/* 保険で行う場合（簡易紹介） */
+.hoken{margin-top:16px;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:15px 16px;}
+.hoken .h-t{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:var(--sage);
+  letter-spacing:.03em;margin-bottom:8px;}
+.hoken .h-t svg{width:16px;height:16px;flex:0 0 auto;}
+.hoken .h-d{font-size:13px;color:var(--ink-soft);line-height:1.8;}
+.hoken .h-d b{color:var(--ink);font-weight:600;}
+.hoken .h-more{margin-top:8px;font-size:12px;color:var(--muted);line-height:1.7;}
+.hoken .h-more a{color:var(--sage);text-decoration:none;font-weight:600;}
+
+/* 審美の仕上がり */
+.aesth{margin-top:16px;background:var(--card);border-radius:12px;padding:16px 16px;}
+.aesth .a-t{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--sage);
+  letter-spacing:.02em;margin-bottom:9px;}
+.aesth .a-t svg{width:17px;height:17px;flex:0 0 auto;}
+.aesth .a-d{font-size:13px;color:var(--ink-soft);line-height:1.9;}
+.aesth .a-d b{color:var(--sage);font-weight:600;}
+.aesth .a-list{list-style:none;margin:11px 0 0;padding:0;display:flex;flex-direction:column;gap:11px;}
+.aesth .a-list li{position:relative;padding-left:20px;font-size:13px;color:var(--ink-soft);line-height:1.85;}
+.aesth .a-list li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--sage-2);}
+.aesth .a-list li b{color:var(--sage);font-weight:600;}
+.aesth .a-list li .li-h{display:block;color:var(--ink);font-weight:600;font-size:13px;margin-bottom:1px;}
+.aesth .a-more{margin-top:11px;font-size:12px;color:var(--muted);line-height:1.7;}
+.aesth .a-more a{color:var(--sage);text-decoration:none;font-weight:600;}
+
+/* できること・できないこと */
+.limits{display:flex;flex-direction:column;gap:12px;margin-top:22px;}
+.limit{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 16px;}
+.limit .l-n{font-size:14.5px;font-weight:600;color:var(--ink);}
+.limit .l-n .l-tag{font-size:11px;font-weight:600;color:var(--muted);margin-left:7px;letter-spacing:.03em;}
+.limit .l-rows{margin-top:11px;display:flex;flex-direction:column;gap:8px;}
+.limit .l-row{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;line-height:1.75;}
+.limit .l-row svg{width:16px;height:16px;flex:0 0 auto;margin-top:2px;}
+.limit .l-can svg{color:var(--sage);}
+.limit .l-cant svg{color:var(--muted);}
+.limit .l-row .l-txt{color:var(--ink-soft);}
+.limit .l-row .l-txt b{color:var(--ink);font-weight:600;}
+
+/* インフォグラフィック */
+.axis{margin:18px 0 4px;}
+.axis .ax-bar{height:8px;border-radius:6px;background:linear-gradient(90deg,var(--card),var(--sage-2));}
+.axis .ax-lb{display:flex;justify-content:space-between;margin-top:6px;font-size:11.5px;color:var(--muted);}
+.axis .ax-zones{display:flex;margin-top:9px;gap:9px;}
+.axis .ax-z{flex:1;text-align:center;font-size:12.5px;font-weight:700;color:var(--sage);background:var(--card);border-radius:9px;padding:8px 4px;}
+.stepflow{display:flex;align-items:flex-start;gap:4px;margin-top:14px;}
+.stepflow .step{flex:1;text-align:center;min-width:0;}
+.stepflow .s-ic{max-width:62px;margin:0 auto 7px;}
+.stepflow .s-ic svg{width:100%;height:auto;display:block;}
+.stepflow .s-cap{font-size:11.5px;color:var(--ink-soft);line-height:1.5;}
+.stepflow .s-cap b{color:var(--sage);font-weight:600;}
+.stepflow .s-arrow{align-self:center;color:var(--sage-2);flex:0 0 auto;padding-top:16px;}
+.stepflow .s-arrow svg{width:15px;height:15px;display:block;}
+.figbox{margin-top:12px;background:var(--paper);border:1px solid var(--line);border-radius:12px;
+  padding:14px;display:flex;gap:14px;align-items:center;}
+.figbox .fb-svg{flex:0 0 auto;width:128px;}
+.figbox .fb-svg svg{width:100%;height:auto;display:block;}
+.figbox .fb-tx{font-size:12.5px;color:var(--ink-soft);line-height:1.8;}
+.figbox .fb-tx b{color:var(--sage);font-weight:600;}
+.figbox.ferrule .fb-svg{width:190px;}
+.ferr-ill{position:relative;line-height:0;}
+.ferr-ill img{width:100%;display:block;}
+.ferr-ill svg{position:absolute;inset:0;width:100%;height:100%;}
+@media (max-width:520px){ .figbox.ferrule .fb-svg{width:210px;} }
+.limits-h{display:flex;align-items:center;gap:8px;margin-top:20px;font-size:14px;font-weight:700;color:var(--ink);}
+.limits-h svg{width:17px;height:17px;color:var(--sage);}
+@media (max-width:520px){ .figbox{flex-direction:column;align-items:flex-start;} .figbox .fb-svg{width:150px;margin:2px auto 0;} }
+@media (min-width:760px){ .limits.two{flex-direction:row;} .limits.two .limit{flex:1;} }
+
+/* 写真スロット */
+.photo{margin-top:16px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper);}
+.photo .ph{aspect-ratio:3/2;background:var(--card);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:9px;text-align:center;padding:22px;}
+.photo .ph svg{width:36px;height:36px;color:var(--sage-2);opacity:.75;}
+.photo .ph .ph-t{font-size:13px;font-weight:600;color:var(--ink-soft);}
+.photo .ph .ph-s{font-size:11px;color:var(--muted);letter-spacing:.02em;}
+.photo img{display:none;width:100%;height:auto;vertical-align:bottom;}
+.photo.loaded .ph{display:none;}
+.photo.loaded img{display:block;}
+.photo figcaption{padding:9px 14px;font-size:11.5px;color:var(--muted);line-height:1.65;
+  background:var(--paper);border-top:1px solid var(--line);}
+.photo figcaption b{color:var(--ink-soft);font-weight:600;}
+.photo.pair .pair-imgs{display:flex;gap:3px;background:var(--line);}
+.photo.pair .pcell{flex:1;position:relative;min-width:0;line-height:0;}
+.photo.pair .pcell img{width:100%;display:block;}
+.photo .pcap{position:absolute;top:8px;left:8px;background:rgba(46,58,63,.72);color:#fff;font-size:10.5px;font-weight:600;letter-spacing:.03em;padding:2px 9px;border-radius:6px;line-height:1.5;}
+.photo .pcap.after{background:var(--sage);}
+.photo.solo img{display:block;width:100%;}
+
+
+/* 治療ブロック */
+.tblk{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 20px;margin-top:16px;}
+.tblk:first-of-type{margin-top:22px;}
+.tblk .tb-h{display:flex;align-items:center;gap:12px;}
+.tblk .tb-ic{width:40px;height:40px;flex:0 0 auto;border-radius:10px;background:var(--card);
+  display:flex;align-items:center;justify-content:center;}
+.tblk .tb-ic svg{width:22px;height:22px;color:var(--sage);}
+.tblk .tb-n{font-size:18px;font-weight:600;color:var(--ink);}
+.tblk .tb-sub{margin-top:2px;font-size:12.5px;color:var(--muted);letter-spacing:.04em;}
+.tblk .tb-lead{margin-top:14px;font-size:14px;color:var(--ink-soft);line-height:1.85;}
+
+/* 費用表示 */
+.price{margin-top:16px;background:var(--soft);border-radius:12px;padding:16px 18px;}
+.price .p-name{font-size:13.5px;color:var(--ink-soft);font-weight:600;}
+.price .p-total{margin-top:4px;font-size:22px;font-weight:600;color:var(--ink);letter-spacing:.02em;}
+.price .p-total .yen{font-size:14px;font-weight:600;margin-left:1px;}
+.price .p-total .tax{font-size:12px;font-weight:600;color:var(--muted);margin-left:8px;letter-spacing:.04em;}
+.price .p-split{margin-top:8px;font-size:12.5px;color:var(--ink-soft);line-height:1.7;
+  border-top:1px solid var(--line);padding-top:8px;}
+.price .p-more{margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.7;}
+.price .p-more b{color:var(--sage);font-weight:600;}
+
+/* 補足（保証・クレジット） */
+.note{margin-top:14px;display:flex;gap:9px;align-items:flex-start;
+  font-size:12.5px;color:var(--ink-soft);line-height:1.75;}
+.note svg{width:17px;height:17px;flex:0 0 auto;margin-top:2px;color:var(--sage);}
+.note b{color:var(--sage);font-weight:600;}
+.more{margin-top:16px;display:inline-flex;align-items:center;gap:6px;
+  font-size:13px;font-weight:600;color:var(--sage);text-decoration:none;
+  border-top:1px solid var(--line);padding-top:14px;width:100%;}
+.more .m-a{width:16px;height:16px;flex:0 0 auto;}
+.more:hover{color:var(--ink);}
+
+/* 次の一歩リンク */
+.nexts{display:grid;grid-template-columns:1fr;gap:11px;margin-top:22px;}
+.nx{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--paper);
+  border:1px solid var(--line);border-radius:13px;padding:16px 18px;text-decoration:none;
+  transition:background .2s ease,border-color .2s ease;}
+.nx:hover{background:var(--soft);border-color:var(--sage-2);}
+.nx .nx-b{min-width:0;}
+.nx .nx-n{font-size:15px;font-weight:600;color:var(--ink);}
+.nx .nx-d{margin-top:3px;font-size:12.5px;color:var(--muted);line-height:1.6;}
+.nx .nx-a{width:20px;height:20px;flex:0 0 auto;color:var(--sage);}
+
+/* メインテナンス一文 */
+.mtline{margin-top:24px;background:var(--card);border-radius:12px;padding:15px 18px;
+  font-size:13.5px;color:var(--ink-soft);line-height:1.75;display:flex;gap:10px;align-items:flex-start;}
+.mtline svg{width:19px;height:19px;flex:0 0 auto;margin-top:2px;color:var(--sage);}
+
+/* footer */
+footer{background:#fff;border-top:1px solid var(--line);padding:38px 22px 42px;text-align:center;}
+footer img{width:112px;height:auto;margin:0 auto 13px;display:block;}
+footer .fl{font-size:14px;color:var(--ink);letter-spacing:.05em;}
+footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08em;}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@media (min-width:760px){
+  h2.title{font-size:28px;}
+  .hero h1{font-size:34px;}
+  .decide{grid-template-columns:1fr 1fr;}
+  .nexts{grid-template-columns:1fr 1fr;}
+}
+
+/* topbar（トップへ戻る＋QR） */
+.topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:28px;text-align:left;}
+.topbar .back{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--sage);text-decoration:none;letter-spacing:.02em;padding-top:6px;}
+.topbar .back svg{width:16px;height:16px;flex:0 0 auto;}
+.topbar .qr{display:flex;flex-direction:column;align-items:center;gap:5px;flex:0 0 auto;}
+.topbar .qr img{width:74px;height:74px;display:block;border:1px solid var(--line);border-radius:9px;padding:5px;background:var(--paper);}
+.topbar .qr span{font-size:10.5px;color:var(--muted);letter-spacing:.02em;}
+.photo.video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--card);vertical-align:bottom;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap reveal">
+    <div class="topbar">
+      <a class="back" href="index2.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        トップへ戻る
+      </a>
+      <div class="qr">
+        <img alt="このサイトのトップページを開くQRコード" src="data:image/png;base64,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">
+        <span>スマホで見る</span>
+      </div>
+    </div>
+    <div class="eyebrow">大臼歯｜歯を治す・守る治療</div>
+    <div class="archfig">
+      <svg viewBox="0 0 248 66" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g transform="translate(24,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <g transform="translate(56,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <g transform="translate(88,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <g transform="translate(120,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <g transform="translate(152,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="none" fill-opacity="0" stroke="#C3CEC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <g transform="translate(184,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="#6E9C8E" fill-opacity="0.30" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <g transform="translate(216,10) scale(1.35)"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z" transform="translate(-12,-3)" fill="#6E9C8E" fill-opacity="0.30" stroke="#4F7A6C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <text x="24" y="60" text-anchor="middle" font-family="var(--gothic)" font-size="12" font-weight="500" fill="#9AA7AC">1</text>
+        <text x="56" y="60" text-anchor="middle" font-family="var(--gothic)" font-size="12" font-weight="500" fill="#9AA7AC">2</text>
+        <text x="88" y="60" text-anchor="middle" font-family="var(--gothic)" font-size="12" font-weight="500" fill="#9AA7AC">3</text>
+        <text x="120" y="60" text-anchor="middle" font-family="var(--gothic)" font-size="12" font-weight="500" fill="#9AA7AC">4</text>
+        <text x="152" y="60" text-anchor="middle" font-family="var(--gothic)" font-size="12" font-weight="500" fill="#9AA7AC">5</text>
+        <text x="184" y="60" text-anchor="middle" font-family="var(--gothic)" font-size="12" font-weight="700" fill="#4F7A6C">6</text>
+        <text x="216" y="60" text-anchor="middle" font-family="var(--gothic)" font-size="12" font-weight="700" fill="#4F7A6C">7</text>
+      </svg>
+    </div>
+    <div class="archcap">数字は前から数えた歯の位置です（色のついた6・7が大臼歯）</div>
+    <h1>大臼歯を、治す・守る</h1>
+    <p>その歯を残していくための治療です。<br>
+    奥でいちばん強い力がかかる歯なので、<br>
+    しっかり噛める強さと、割れにくさを大切にして治していきます。</p>
+  </div>
+</header>
+
+<div class="crumb"><a href="index2.html">治療と費用のご案内</a> ／ 1本ごとの治療 ／ 大臼歯を治す・守る</div>
+
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow">まず、進め方から</div>
+    <h2 class="title">どこまで治す？</h2>
+
+    <div class="aud">※ このページは、しっかり治して長く残したい方（通い方でいう <b>「気になる歯を残す」「全体で守る」</b>）に向けたご案内です。まず今の困りごとを整えたい方（<b>「今を整える」</b>）は、保険診療を中心にご説明しますので、ご希望をお聞かせください。</div>
+
+    <p class="lead">大臼歯は<b>いちばん強い力がかかる歯</b>です。傷みの大きさに合わせて、型でぴったり詰めるか、全体を覆って守るかを決めます。</p>
+
+    <div class="axis">
+      <div class="ax-bar"></div>
+      <div class="ax-lb"><span>中くらいの傷み</span><span>大きな傷み・割れ</span></div>
+      <div class="ax-zones"><div class="ax-z">インレー（型で詰める）</div><div class="ax-z">被せる（クラウン）</div></div>
+    </div>
+
+    <div class="decide">
+      <div class="dcol">
+        <div class="dc-h"><div class="dc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z"/><path d="M9.2 8.4h5.6l-1 3.4H10.2z"/></svg></div><div><div class="dc-n">インレー（型で詰める）</div><div class="dc-sub">歯を多く残せる・精度が高い</div></div></div>
+        <div class="dc-sum">噛む面の傷みに、<b>型を取ってぴったり詰めます</b>。歯を大きく削らず、割れにくく長く使えます。</div>
+      </div>
+      <div class="dcol">
+        <div class="dc-h"><div class="dc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9c0-3 2.5-5 6-5s6 2 6 5c0 4-2 6-2 9 0 1.5-1.5 2-2 0-.4-1.4-.8-2-2-2s-1.6.6-2 2c-.5 2-2 1.5-2 0 0-3-2-5-2-9Z"/><path d="M5.4 8.6h13.2"/></svg></div><div><div class="dc-n">被せる（クラウン）</div><div class="dc-sub">全体を覆う・強い力に強い</div></div></div>
+        <div class="dc-sum">大きく欠けた歯・根の治療のあとに。<b>歯全体を覆って守り</b>、強い噛む力にも安定します。長く使う保証もつきます。</div>
+      </div>
+    </div>
+
+    <div class="knows">
+      <div class="k-t">費用や進め方は、目的で選べます</div>
+      <div class="k-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg><div><b>今の費用を抑えたい</b>なら保険で。<b>その日にまとめて終えたい</b>なら1day。<b>長く安心して使いたい</b>なら自費（15年保証）。<b>素材の質までこだわりたい</b>ならプレミアム。どれが上ということではなく、目的でお選びいただけます。</div></div>
+      <div class="k-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>1day治療</b>は、その日で終わる身軽さが持ち味です。長もちはおおよそ保険の治療と同じくらいで、15年保証はつきません（早い時期に外れたときは<b>6か月間の無償リペア</b>）。「時間」を大切にしたいときの選択肢です。</div></div>
+      <div class="k-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg><div>大臼歯は<b>強い力がかかり、割れやすい</b>歯です。神経を取った歯はとくに、被せて守ると安心。噛む力や歯ぎしりのお話は<a class="inlink" href="oral-health.html">知っておきたいお話<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>もご覧ください。</div></div>
+    </div>
+
+    <div class="figbox ferrule">
+      <div class="fb-tx">被せをしっかり支えるには、<b>健全な歯の壁が1.5〜2mm</b>あるのが目安です。残りが少ないときは、歯ぐきの中からゆっくり<b>引き上げて支えをつくる</b>ことも。むずかしい場合は、抜いて補う方法（<a class="inlink" href="molar-replace.html">大臼歯を補う治療<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>）をご一緒に考えます。</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap reveal">
+    <div class="eyebrow">大臼歯を治す・守る ①</div>
+    <h2 class="title">インレー（型で詰める）</h2>
+    <div class="tsub">歯を多く残して、ぴったり詰める</div>
+    <p class="lead">噛む面の少し大きめの傷みに、<b>型を取って作った詰め物</b>をぴったり入れます。境目のすき間ができにくく、強い力がかかる大臼歯でも割れにくく長く使えます。</p>
+
+    <figure class="photo">
+      <div class="ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 16l-4.5-4.5L9 19"/></svg>
+        <div class="ph-t">治療例の写真を準備しています</div>
+        <div class="ph-s">大臼歯のインレー治療例</div>
+      </div>
+      <img data-src="photo-molar-restore-inlay.jpg" alt="大臼歯のインレー治療例">
+      <figcaption>実際の治療例を準備しています。仕上がりには個人差があります。治療内容・費用・リスクは本文をご確認ください。</figcaption>
+    </figure>
+
+    <div class="tblk">
+      <div class="tb-h"><div class="tb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z"/><path d="M9.2 8.4h5.6l-1 3.4H10.2z"/></svg></div><div><div class="tb-n">セラミックインレー</div><div class="tb-sub">精度が高い・割れにくい・15年保証つき</div></div></div>
+      <div class="tb-lead">型を取ってお作りし、噛む面にぴったり入れます。ご自身の歯をできるだけ多く残しながら、長く使える詰め物です。</div>
+      <div class="price">
+        <div class="p-name">大臼歯 セラミックインレー（スタンダード）</div>
+        <div class="p-total">80,000<span class="yen">円</span><span class="tax">税込</span></div>
+        <div class="p-more">より透明感と自然さを重視する <b>プレミアムは 90,000円</b>（税込）。</div>
+        <div class="p-split">お支払いは、着手のときとセットのときの <b>2回に分けて</b>（それぞれ半額ずつ）。</div>
+      </div>
+      <div class="price">
+        <div class="p-name">1day インレー（当日完結）</div>
+        <div class="p-total">60,000<span class="yen">円〜</span><span class="tax">税込</span></div>
+        <div class="p-more">型取りも技工所での製作もなく、<b>その日のうちに</b>白い詰め物が入ります。当日一括のお支払いです。</div>
+      </div>
+      <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg><div>セラミックインレーには <b>15年保証</b>つき（1day は保証対象外＝6か月の無償リペア）。長くお使いいただく前提でお守りします。</div></div>
+      <div class="hoken">
+        <div class="h-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/></svg>保険で行う場合</div>
+        <div class="h-d">保険の白い樹脂（レジン）や、銀の詰め物でも治せます。費用は <b>3割負担で1,500〜3,000円ほど</b>。手軽ですが、適合や長もちには範囲があり、年月とともに入れ替えが必要になることがあります。</div>
+        <div class="h-more"><a href="insurance.html">今を整える〈保険診療〉について →</a></div>
+      </div>
+      <a class="more" href="inlay-crown.html">インレー・クラウンをもっと詳しく（素材の選び方・保険との違い）<svg class="m-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <div class="limits-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>できること・できないこと</div>
+    <div class="limits two">
+      <div class="limit">
+        <div class="l-n">1day インレー<span class="l-tag">自費・当日</span></div>
+        <div class="l-rows">
+          <div class="l-row l-can"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><div class="l-txt"><b>その日のうちに</b>白い詰め物が入る。通院回数を抑えられる。</div></div>
+          <div class="l-row l-cant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg><div class="l-txt">長もちはおおよそ保険と同じくらい。15年保証はつかない。</div></div>
+        </div>
+      </div>
+      <div class="limit">
+        <div class="l-n">セラミックインレー<span class="l-tag">自費・15年保証</span></div>
+        <div class="l-rows">
+          <div class="l-row l-can"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><div class="l-txt">境目がぴったりで<b>割れにくく、長く安定</b>。15年保証つき。</div></div>
+          <div class="l-row l-cant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg><div class="l-txt">型取り〜製作で来院が2回ほど。費用は1dayより高くなる。</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow">大臼歯を治す・守る ②</div>
+    <h2 class="title">被せる治療（クラウン）</h2>
+    <div class="tsub">歯全体を覆って、強い力から守る</div>
+    <p class="lead">傷みが大きいときや、根の治療のあとは、歯全体をセラミックで覆って守ります。<b>強い噛む力がかかる大臼歯</b>を、割れや欠けから守り、長く使えるようにします。</p>
+
+    <figure class="photo">
+      <div class="ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 16l-4.5-4.5L9 19"/></svg>
+        <div class="ph-t">治療例の写真を準備しています</div>
+        <div class="ph-s">大臼歯の被せる治療例</div>
+      </div>
+      <img data-src="photo-molar-restore-crown.jpg" alt="大臼歯の被せる治療例">
+      <figcaption>実際の治療例を準備しています。仕上がりには個人差があります。治療内容・費用・リスクは本文をご確認ください。</figcaption>
+    </figure>
+
+    <div class="tblk">
+      <div class="tb-h"><div class="tb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9c0-3 2.5-5 6-5s6 2 6 5c0 4-2 6-2 9 0 1.5-1.5 2-2 0-.4-1.4-.8-2-2-2s-1.6.6-2 2c-.5 2-2 1.5-2 0 0-3-2-5-2-9Z"/><path d="M5.4 8.6h13.2"/></svg></div><div><div class="tb-n">大臼歯のセラミッククラウン</div><div class="tb-sub">強い力に安定・15年保証つき</div></div></div>
+      <div class="tb-lead">噛み合わせと形をていねいに合わせて、まわりの歯となじむように仕上げます。長くお使いいただくための保証がついています。</div>
+      <div class="price">
+        <div class="p-name">大臼歯 セラミッククラウン（スタンダード）</div>
+        <div class="p-total">140,000<span class="yen">円</span><span class="tax">税込</span></div>
+        <div class="p-more">より自然な色・質感を重視する <b>プレミアムは 160,000円</b>（税込）。</div>
+        <div class="p-split">お支払いは、着手のときとセットのときの <b>2回に分けて</b>（それぞれ半額ずつ）。</div>
+      </div>
+      <div class="price">
+        <div class="p-name">1day クラウン（当日完結）</div>
+        <div class="p-total">90,000<span class="yen">円〜</span><span class="tax">税込</span></div>
+        <div class="p-more">型取りも製作もなく、<b>その日のうちに</b>被せが入ります。当日一括のお支払いです。</div>
+      </div>
+      <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg><div>セラミッククラウンには <b>15年保証</b>つき。作り直しが必要になっても、15年を過ぎてからの入れ直しは無料でお続けします（1day は保証対象外＝6か月の無償リペア）。</div></div>
+      <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 8 8"/><path d="M4 12v5h5"/></svg><div><b>同じ歯に、技術料を二度いただきません。</b>この歯に一度お支払いいただいた技術料は、将来この歯へ別の治療が必要になったとき、次の費用に充てられます（部位継承クレジット）。</div></div>
+      <div class="hoken">
+        <div class="h-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/></svg>保険で行う場合</div>
+        <div class="h-d">保険では<b>銀歯（メタルクラウン）</b>が基本です。条件を満たせば白い被せ（CAD/CAM冠）も選べます。費用を抑えられますが、素材・見た目や長もちには範囲があります。</div>
+        <div class="h-more"><a href="insurance.html">今を整える〈保険診療〉について →</a></div>
+      </div>
+      <a class="more" href="inlay-crown.html">クラウンをもっと詳しく（素材の選び方・保険との違い）<svg class="m-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <div class="limits-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>できること・できないこと</div>
+    <div class="limits two">
+      <div class="limit">
+        <div class="l-n">保険の被せ（銀・CAD/CAM）<span class="l-tag">保険</span></div>
+        <div class="l-rows">
+          <div class="l-row l-can"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><div class="l-txt"><b>費用を抑えて</b>、しっかり噛める被せに。強い力にも対応。</div></div>
+          <div class="l-row l-cant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg><div class="l-txt">銀色になることが多い。細かな色みや長期の安定には範囲がある。</div></div>
+        </div>
+      </div>
+      <div class="limit">
+        <div class="l-n">セラミッククラウン<span class="l-tag">自費・15年保証</span></div>
+        <div class="l-rows">
+          <div class="l-row l-can"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><div class="l-txt">噛み合わせ・<b>割れにくさ・自然な白さ</b>まで整える。15年保証つき。</div></div>
+          <div class="l-row l-cant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg><div class="l-txt">歯全体を覆うため削る量は多め。費用は高くなる。</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap reveal">
+    <div class="eyebrow">大臼歯を治す・守る ③</div>
+    <h2 class="title">根の治療</h2>
+    <div class="tsub">多くは、このあと「被せる治療」とセットになります</div>
+    <p class="lead">歯の内側（神経の通り道）まで傷みが進んだとき、根の中をていねいに整えて、<b>歯を残す</b>ための治療です。大臼歯は根が複雑で数も多いため、細かい部分まで見える器具を使って精密に行います。神経を取った歯は割れやすくなるため、<b>根の治療のあとに被せて（クラウン）守る</b>のが一般的な流れです。</p>
+
+    <div class="tblk">
+      <div class="tb-h"><div class="tb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 0-5 2-5 5 0 3 1.5 5 2 8l1 4c.2 1 1.6 1 1.8 0l1-4c.5-3 2-5 2-8 0-3-2-5-4.8-5Z"/></svg></div><div><div class="tb-n">精密根管治療（大臼歯）</div><div class="tb-sub">歯を残すための、根の治療</div></div></div>
+      <div class="tb-lead">見える器具で、複雑な根の中を細かく確認しながら進めます。ご自身の歯を、できるだけ長く残していくための治療です。</div>
+      <div class="price">
+        <div class="p-name">精密根管治療（大臼歯・1本）</div>
+        <div class="p-total">140,000<span class="yen">円</span><span class="tax">税込</span></div>
+        <div class="p-more">感染が進んでいて、根の再治療が必要な場合は合計 <b>160,000円</b>（税込）。仮歯のセットまで含んだ総額です。骨の削除が大きいときは、別途お見積もりします。</div>
+        <div class="p-split">お支払いは、着手のときと治療の区切りで分けられます。無理のない進め方をご相談ください。</div>
+      </div>
+      <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 8 8"/><path d="M4 12v5h5"/></svg><div>そのまま続けて自費の被せに進む場合、<b>重なる仮歯の分をお値引き</b>します。力を尽くしてもやむを得ず抜歯になったときは、<b>お支払いいただいた分を次の治療に充てます</b>（同じ歯に技術料を二度いただかない考え方です）。</div></div>
+      <div class="hoken">
+        <div class="h-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/></svg>保険で行う場合</div>
+        <div class="h-d">根の治療は保険でも受けられます。費用は <b>3割負担で5,000〜10,000円ほど</b>（根の治療の部分のみ。被せ物・土台は別途、通院回数で変わります）。より精密に、再発のリスクを抑えたい場合の選択が、上の精密根管治療です。</div>
+        <div class="h-more"><a href="insurance.html">今を整える〈保険診療〉について →</a></div>
+      </div>
+      <a class="more" href="root-canal.html">根の治療をもっと詳しく（精密な進め方・保険との違い）<svg class="m-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow">あわせてご覧ください</div>
+    <h2 class="title">次に、読んでおくと役に立つこと</h2>
+    <p class="lead">大臼歯の治療を考えるとき、いっしょに知っておくと選びやすくなるお話をまとめました。</p>
+    <div class="nexts">
+      <a class="nx" href="molar-replace.html"><div class="nx-b"><div class="nx-n">大臼歯を補う治療</div><div class="nx-d">歯を失ったときの、ブリッジ・入れ歯・インプラント。</div></div><svg class="nx-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="nx" href="oral-health.html"><div class="nx-b"><div class="nx-n">知っておきたいお話</div><div class="nx-d">お口の3つの原因、歯の一生、噛む力と割れのお話。</div></div><svg class="nx-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="nx" href="approach.html"><div class="nx-b"><div class="nx-n">通い方の方針</div><div class="nx-d">今を整える／気になる歯を残す／全体で守る。目的で選べます。</div></div><svg class="nx-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="nx" href="insurance.html"><div class="nx-b"><div class="nx-n">今を整える〈保険診療〉について</div><div class="nx-d">保険でできること・進め方・範囲を、正直にご説明します。</div></div><svg class="nx-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="mtline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg><div>どの治療・通い方をお選びいただいても、お口の健康を保つための定期的なメインテナンスは、ご一緒に続けていきます。</div></div>
+  </div>
+</section>
+
+<footer>
+  <img src="life-logo.png" alt="ライフデンタルクリニック">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  document.querySelectorAll('.photo').forEach(fig=>{
+    const img=fig.querySelector('img[data-src]'); if(!img) return;
+    const test=new Image();
+    test.onload=()=>{ img.src=img.getAttribute('data-src'); fig.classList.add('loaded'); };
+    test.src=img.getAttribute('data-src');
+  });
+  document.querySelectorAll('video[data-autoplay]').forEach(v=>{
+    const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!reduce){ v.muted=true; const p=v.play(); if(p&&p.catch) p.catch(()=>{}); }
+  });
+</script>
+</body>
+</html>
