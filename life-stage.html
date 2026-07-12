@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ライフステージ別 治療のご案内｜ライフデンタルクリニック</title>
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --soft:#F4F7F5;
+    --card:#EEF3F1;
+    --ink:#2E3A3F;
+    --ink-soft:#54636A;
+    --muted:#6E7B80;
+    --sage:#4F7A6C;
+    --sage-2:#6E9C8E;
+    --line:#D8E0DD;
+    --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",YuGothic,Meiryo,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--gothic);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.8;
+    letter-spacing:.02em;
+    font-size:15px;
+  }
+  img{max-width:100%;height:auto;}
+  a{color:var(--sage);}
+
+  /* ---------- header / hero ---------- */
+  .hero{
+    background:var(--soft);
+    padding:56px 22px 44px;
+    text-align:center;
+  }
+  .hero .eyebrow{margin-bottom:14px;}
+  .hero h1{
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:.06em;
+    line-height:1.6;
+    margin-bottom:16px;
+  }
+  .hero .lead{
+    max-width:640px;
+    margin:0 auto;
+    color:var(--ink-soft);
+    font-size:14.5px;
+    text-align:left;
+  }
+
+  /* ---------- shared parts ---------- */
+  .section{padding:52px 22px;background:var(--paper);}
+  .section.soft{background:var(--soft);}
+  .inner{max-width:760px;margin:0 auto;}
+  .eyebrow{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:.22em;
+    color:var(--sage);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  h2.title{
+    font-size:21px;
+    font-weight:700;
+    letter-spacing:.05em;
+    line-height:1.6;
+    margin-bottom:14px;
+  }
+  .lead{
+    color:var(--ink-soft);
+    font-size:14.5px;
+    margin-bottom:26px;
+  }
+  h3.sub{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-size:15.5px;
+    font-weight:700;
+    letter-spacing:.05em;
+    color:var(--sage);
+    margin:30px 0 12px;
+  }
+  h3.sub svg{width:20px;height:20px;flex:none;stroke:var(--sage);}
+  .card{
+    background:var(--card);
+    border-radius:12px;
+    padding:20px 20px;
+    margin-bottom:14px;
+    font-size:14.5px;
+  }
+  .section.soft .card{background:var(--paper);}
+  .card p + p{margin-top:10px;}
+  .note{
+    font-size:12.5px;
+    color:var(--muted);
+    margin-top:10px;
+  }
+
+  /* ---------- stage nav (timeline) ---------- */
+  .stage-nav{
+    max-width:760px;
+    margin:34px auto 0;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .stage-nav a{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px 16px;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .stage-nav .age{
+    flex:none;
+    width:86px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.08em;
+    color:var(--sage);
+    line-height:1.5;
+  }
+  .stage-nav .nm{font-size:14.5px;font-weight:700;letter-spacing:.04em;}
+  .stage-nav .tm{margin-left:auto;flex:none;font-size:11.5px;color:var(--muted);letter-spacing:.06em;}
+
+  /* ---------- interval band ---------- */
+  .interval{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    background:var(--paper);
+    border:1px solid var(--sage-2);
+    border-radius:12px;
+    padding:16px 18px;
+    margin-bottom:8px;
+  }
+  .section .interval{background:var(--soft);}
+  .section.soft .interval{background:var(--paper);}
+  .interval .iv-label{
+    flex:none;
+    font-size:11.5px;
+    letter-spacing:.14em;
+    color:var(--sage);
+    font-weight:700;
+    writing-mode:horizontal-tb;
+  }
+  .interval .iv-main{
+    font-size:19px;
+    font-weight:700;
+    letter-spacing:.04em;
+    color:var(--sage);
+    line-height:1.5;
+  }
+  .interval .iv-sub{font-size:12.5px;color:var(--ink-soft);letter-spacing:.02em;line-height:1.7;}
+
+  /* ---------- home care list ---------- */
+  .care{list-style:none;}
+  .care li{
+    position:relative;
+    padding:0 0 0 22px;
+    margin-bottom:9px;
+    font-size:14.5px;
+  }
+  .care li::before{
+    content:"";
+    position:absolute;
+    left:2px;top:.62em;
+    width:9px;height:9px;
+    border-radius:50%;
+    background:var(--sage-2);
+  }
+
+  /* ---------- reco callout (院長のおすすめ) ---------- */
+  .reco-callout{
+    border:1.5px solid var(--sage-2);
+    border-radius:14px;
+    overflow:hidden;
+    margin:26px 0 6px;
+    background:var(--paper);
+  }
+  .rc-head{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    background:var(--sage);
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.14em;
+    padding:11px 16px;
+  }
+  .rc-head svg{width:18px;height:18px;flex:none;stroke:#fff;}
+  .rc-body{padding:18px 16px 14px;}
+  /* ステージごとの背景（セージの濃淡で段階づけ） */
+  .rc-s1 .rc-body{background:rgba(110,156,142,.08);}
+  .rc-s2 .rc-body{background:rgba(110,156,142,.15);}
+  .rc-s3 .rc-body{background:rgba(79,122,108,.10);}
+  .rc-s4 .rc-body{background:rgba(79,122,108,.16);}
+  .rc-s5 .rc-body{background:rgba(79,122,108,.22);}
+  .rc-cap{
+    display:block;
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:.18em;
+    color:var(--sage);
+    margin-bottom:8px;
+  }
+  .rc-opts{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .rc-opt{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.01em;
+    line-height:1.5;
+    padding:11px 4px;
+  }
+  .rc-opt.is-reco{
+    background:var(--sage);
+    border-color:var(--sage);
+    color:#fff;
+  }
+  .rc-opt.is-reco::before{content:"✓";margin-right:4px;font-size:11px;}
+  .rc-why{
+    font-size:13.5px;
+    line-height:1.85;
+    color:var(--ink);
+    border-top:1px dashed var(--sage-2);
+    padding-top:13px;
+    margin-bottom:10px;
+  }
+  .rc-note{
+    font-size:11.5px;
+    color:var(--ink-soft);
+    line-height:1.8;
+  }
+  .rc-note a{color:var(--sage);font-weight:700;}
+  @media (min-width:760px){
+    .rc-body{padding:22px 22px 16px;}
+    .rc-opt{font-size:13px;padding:12px 6px;}
+  }
+
+  /* ---------- treatment one-way chain ---------- */
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:6px;
+    margin:8px 0 6px;
+  }
+  .chain .ch{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:5px 10px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.03em;
+    color:var(--ink-soft);
+  }
+  .chain .ar{color:var(--sage-2);font-size:13px;}
+
+  /* ---------- age chip on section heads ---------- */
+  .agechip{
+    display:inline-block;
+    background:var(--sage);
+    color:#fff;
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:.1em;
+    border-radius:999px;
+    padding:4px 14px;
+    margin-bottom:12px;
+  }
+
+  /* ---------- summary table ---------- */
+  .sumtable{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+    background:var(--paper);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .sumtable th,.sumtable td{
+    border:1px solid var(--line);
+    padding:10px 10px;
+    text-align:left;
+    vertical-align:top;
+    line-height:1.6;
+  }
+  .sumtable th{
+    background:var(--card);
+    font-weight:700;
+    color:var(--sage);
+    letter-spacing:.04em;
+    white-space:nowrap;
+  }
+  .sumtable td .s{font-size:11.5px;color:var(--muted);display:block;}
+
+  /* ---------- sources ---------- */
+  .sources{
+    font-size:11.5px;
+    color:var(--muted);
+    line-height:1.9;
+    border-top:1px solid var(--line);
+    padding-top:18px;
+    margin-top:8px;
+  }
+  .sources .st{font-weight:700;letter-spacing:.1em;color:var(--ink-soft);display:block;margin-bottom:6px;}
+
+  /* ---------- footer ---------- */
+  footer .fl{
+    font-size:13.5px;
+    font-weight:700;
+    letter-spacing:.12em;
+    color:var(--ink);
+    margin-bottom:4px;
+  }
+  footer .ft{
+    font-size:12px;
+    letter-spacing:.14em;
+    color:var(--muted);
+  }
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.on{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  /* ---------- pc ---------- */
+  @media (min-width:760px){
+    body{font-size:15.5px;}
+    .hero{padding:72px 22px 56px;}
+    .hero h1{font-size:30px;}
+    .section{padding:64px 22px;}
+    h2.title{font-size:24px;}
+    .stage-nav{grid-template-columns:1fr 1fr;}
+    .stage-nav a:first-child{grid-column:1 / -1;}
+    .interval .iv-main{font-size:21px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ======== SVG symbols ======== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tooth" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 5.5c-1.6-1.5-4-2-5.7-.8C4.3 6.1 4 8.6 4.7 11c.8 2.8 1.6 6.4 2.6 7.4.9.9 1.8.3 2.1-.9.3-1.3.6-3.3 2.6-3.3s2.3 2 2.6 3.3c.3 1.2 1.2 1.8 2.1.9 1-1 1.8-4.6 2.6-7.4.7-2.4.4-4.9-1.6-6.3C16 3.5 13.6 4 12 5.5Z"/>
+  </symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8.5"/>
+    <path d="M12 8v4.5M12 15.8v.2"/>
+  </symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4.5l2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L4.8 9.8l5-.7L12 4.5Z"/>
+  </symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4.5" y="6" width="15" height="13.5" rx="2"/>
+    <path d="M4.5 10.5h15M8.5 4v3.5M15.5 4v3.5"/>
+  </symbol>
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.5 11.5 12 5l7.5 6.5"/>
+    <path d="M6.5 10.5V19h11v-8.5"/>
+  </symbol>
+  <symbol id="i-clinic" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8.5"/>
+    <path d="M12 8.5v7M8.5 12h7"/>
+  </symbol>
+  <symbol id="i-sign" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4v16"/>
+    <path d="M12 6h6.5l1.8 1.8L18.5 9.6H12"/>
+    <path d="M12 12.4H5.5L3.7 14.2l1.8 1.8H12"/>
+  </symbol>
+</svg>
+
+<!-- ======== hero ======== -->
+<header class="hero">
+  <span class="eyebrow">LIFE STAGE GUIDE</span>
+  <h1>ライフステージ別 治療のご案内</h1>
+  <p class="lead">歯とお口は、年齢とともに「守りたいもの」が変わっていきます。小さなころはむし歯から永久歯を守ること。大人になってからは歯ぐきと、これまでの治療を長くもたせること。年を重ねてからは、食べる力そのものを保つこと。このページでは、それぞれの時期のお口の特徴と、優先したいこと、通う間隔のめやす、おうちでのケアをまとめました。「いま、なにを大切にすればよいか」を知っていただくためのご案内です。</p>
+
+  <nav class="stage-nav" aria-label="ライフステージ一覧">
+    <a href="#stage1"><span class="age">〜6歳ごろ</span><span class="nm">未就学児</span><span class="tm">メインテナンス 15分</span></a>
+    <a href="#stage2"><span class="age">6〜15歳ごろ</span><span class="nm">小中学生</span><span class="tm">メインテナンス 30分</span></a>
+    <a href="#stage3"><span class="age">15〜39歳ごろ</span><span class="nm">高校生〜30代</span><span class="tm">メインテナンス 45分</span></a>
+    <a href="#stage4"><span class="age">40〜79歳ごろ</span><span class="nm">40代〜70代</span><span class="tm">メインテナンス 45分</span></a>
+    <a href="#stage5"><span class="age">80歳〜</span><span class="nm">80代以上</span><span class="tm">メインテナンス 45分</span></a>
+  </nav>
+</header>
+
+<!-- ======== stage 1 ======== -->
+<section class="section" id="stage1">
+  <div class="inner">
+    <div class="reveal">
+      <span class="agechip">〜6歳ごろ</span>
+      <span class="eyebrow">STAGE 1</span>
+      <h2 class="title">未就学児 ── 一生の土台をつくる時期</h2>
+      <p class="lead">乳歯はエナメル質がうすく、むし歯の進みが速い歯です。一方で、この時期に身につけた歯みがきの習慣、甘いものとのつき合い方、そして「歯医者さんは気持ちのいいところ」という感覚は、その後の人生をずっと支えてくれます。</p>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-tooth"/></svg>この時期のお口</h3>
+      <div class="card">
+        <p>生後6か月ごろから乳歯が生えはじめ、3歳ごろまでに20本が生えそろいます。乳歯のむし歯は進みが速く、痛みが出にくいまま大きくなることがあります。乳歯の下では永久歯が育っており、乳歯の健康は永久歯の歯並びや質にもつながっています。</p>
+      </div>
+      <h3 class="sub"><svg><use href="#i-alert"/></svg>気をつけたいこと</h3>
+      <div class="card">
+        <p>甘い飲みものやおやつをだらだらと口にする習慣、寝る前の授乳や甘い飲みもの、仕上げみがきの不足が、この時期のむし歯の主な背景です。指しゃぶりなどの癖が長く続くと、かみ合わせの育ちに影響することもあります。</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-star"/></svg>優先したいこと</h3>
+      <div class="card">
+        <p>この時期にいちばん力を発揮するのが、<strong>フッ素と習慣づくり</strong>です。乳歯を「どうせ生えかわるから」と考えず、むし歯をつくらないまま永久歯にバトンを渡すこと。それができれば、お子さまは「削る治療」を知らないまま大きくなれます。</p>
+        <p>生涯でかかる費用と手間という点でも、数千円単位の予防で「治療のいらないお口」を育てられる、いちばん割のいい時期です。</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="reco-callout rc-s1">
+        <div class="rc-head"><svg><use href="#i-sign"/></svg>迷われたときの、院長のおすすめ</div>
+        <div class="rc-body">
+          <span class="rc-cap">通い方の方針</span>
+          <div class="rc-opts"><span class="rc-opt is-reco">今を整える</span><span class="rc-opt">気になる歯を残す</span><span class="rc-opt">全体で守る</span></div>
+          <span class="rc-cap">見た目の方針</span>
+          <div class="rc-opts"><span class="rc-opt">見た目も整える</span><span class="rc-opt">自然な見た目を保つ</span><span class="rc-opt is-reco">機能を大切にする</span></div>
+          <p class="rc-why">この時期は、予防が主役です。むし歯ができても、小さいうちに見つけて「今を整える」で小さく治すのが基本。見た目よりもまず、むし歯にならないこと・しっかりかめることを大切にします。</p>
+          <p class="rc-note">※おすすめは、迷われたときのご参考です。方針に優劣はなく、ご希望に合わせてお選びいただけます。いつでも見直せます。<a href="approach.html">通い方の方針をくわしく見る</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-cal"/></svg>通う間隔のめやす</h3>
+      <div class="interval">
+        <div>
+          <div class="iv-main">3歳ごろまでは 6か月に1回<br>4〜6歳は 3〜6か月に1回</div>
+          <div class="iv-sub">3歳ごろまでは、歯が生えそろっていく様子の確認と、通う習慣づくりを大切に、半年に1回をめやすにしています。歯が生えそろう4歳ごろからは、フッ素塗布を年2回以上受けることがむし歯予防に効果的とされており、むし歯のなりやすさに応じて3〜6か月に1回をおすすめしています。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-home"/></svg>おうちでのケア</h3>
+      <div class="card">
+        <ul class="care">
+          <li><strong>フッ素入り歯みがき剤</strong>を、歯が生えたらすぐに。2歳ごろまではフッ素濃度1000ppmのものを米粒くらい（1〜2mm）、3〜5歳はグリーンピースくらい（5mm）が国内の学会が推奨するめやすです。</li>
+          <li>みがいたあとのうがいは、少しのお水で軽く1回まで。フッ素をお口に残すのがこつです。</li>
+          <li><strong>仕上げみがき</strong>は毎日、寝る前に。とくに上の前歯のつけ根と、奥歯のかみ合わせの溝を。</li>
+          <li>甘いものは「時間を決めて」。回数を減らすことが、量を減らすことより大切です。</li>
+          <li>寝る前の甘い飲みもの・授乳のあとは、歯をふくか、みがいてから眠りにつけると安心です。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-clinic"/></svg>当院での通い方</h3>
+      <div class="card">
+        <p><strong>予防メンテナンス（未就学児）｜15分</strong><br>フッ素塗布・歯みがきの確認・お口の育ちのチェックを、短いお時間でていねいに行います。「歯医者さんは気持ちのいいところ」という感覚を、小さいうちから育てていけたらと考えています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== stage 2 ======== -->
+<section class="section soft" id="stage2">
+  <div class="inner">
+    <div class="reveal">
+      <span class="agechip">6〜15歳ごろ</span>
+      <span class="eyebrow">STAGE 2</span>
+      <h2 class="title">小中学生 ── 一生使う永久歯を迎える時期</h2>
+      <p class="lead">6歳ごろ、最初の永久歯「6歳臼歯」が生えてきます。ここから約10年かけて、乳歯と永久歯が入れかわっていきます。生えたての永久歯は、まだ表面がやわらかく、実はいちばんむし歯に弱い状態。この数年間をどう守るかが、大人になってからのお口を大きく左右します。</p>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-tooth"/></svg>この時期のお口</h3>
+      <div class="card">
+        <p>乳歯と永久歯が混在する「生えかわり期」です。歯の高さがふぞろいで、みがきにくい場所が次々と生まれます。6歳臼歯・12歳臼歯は、生えてからの2〜3年がもっともむし歯になりやすい期間です。あごの成長とともに、歯並び・かみ合わせも定まっていきます。</p>
+      </div>
+      <h3 class="sub"><svg><use href="#i-alert"/></svg>気をつけたいこと</h3>
+      <div class="card">
+        <p>生えたての奥歯の溝のむし歯、みがき残し（背が伸びて仕上げみがきが外れやすくなる時期です）、部活動でのスポーツドリンクの習慣。また、歯並びやかみ合わせの気がかりが、この時期に見えてくることがあります。</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-star"/></svg>優先したいこと</h3>
+      <div class="card">
+        <p>目標はシンプルです。<strong>一生使う永久歯を、むし歯ゼロのまま大人にすること。</strong>奥歯の溝をあらかじめ埋めて守るシーラントと、フッ素の組み合わせが、その柱になります。</p>
+        <p>ここで永久歯を1本も削らずにすめば、その歯は「詰める・やり直す・被せる」という治療のくり返しに、一度も入らずにすみます。1本の奥歯を生涯守る費用として考えると、この時期の予防はとても割に合う選択です。</p>
+        <p>歯並びが気になる場合は、あごの成長を活かせるこの時期に、一度ご相談いただくのがおすすめです。矯正をする・しないを急いで決める必要はありません。選択肢が広いうちに知っておくことに、意味があります。</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="reco-callout rc-s2">
+        <div class="rc-head"><svg><use href="#i-sign"/></svg>迷われたときの、院長のおすすめ</div>
+        <div class="rc-body">
+          <span class="rc-cap">通い方の方針</span>
+          <div class="rc-opts"><span class="rc-opt is-reco">今を整える</span><span class="rc-opt">気になる歯を残す</span><span class="rc-opt">全体で守る</span></div>
+          <span class="rc-cap">見た目の方針</span>
+          <div class="rc-opts"><span class="rc-opt">見た目も整える</span><span class="rc-opt is-reco">自然な見た目を保つ</span><span class="rc-opt">機能を大切にする</span></div>
+          <p class="rc-why">生えかわり期も、予防が主役です。むし歯は「今を整える」で小さいうちに。前歯が永久歯にかわっていく時期なので、治療が必要なときは白い詰めもので自然な見た目を保ちます。歯並び・かみ合わせのご相談は、お口全体の育ちを見る入り口に。</p>
+          <p class="rc-note">※おすすめは、迷われたときのご参考です。方針に優劣はなく、ご希望に合わせてお選びいただけます。いつでも見直せます。<a href="approach.html">通い方の方針をくわしく見る</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-cal"/></svg>通う間隔のめやす</h3>
+      <div class="interval">
+        <div>
+          <div class="iv-main">3〜6か月に1回</div>
+          <div class="iv-sub">生えたての永久歯が弱い期間（生えてから2〜3年）や、むし歯になりやすいお子さまは短め（3〜4か月）が安心です。お口の状態が安定していれば、半年に1回でも十分に守れます。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-home"/></svg>おうちでのケア</h3>
+      <div class="card">
+        <ul class="care">
+          <li>6歳からは、フッ素濃度<strong>1500ppm</strong>の歯みがき剤を、歯ブラシに1.5〜2cmほど。うがいは少しのお水で1回までに。</li>
+          <li><strong>仕上げみがき（点検みがき）は、小学校の中学年ごろまで</strong>続けるのがおすすめです。とくに生えかけの奥歯を。</li>
+          <li>生えかわりででこぼこしている場所は、歯ブラシを縦に入れて1本ずつ。</li>
+          <li>デンタルフロスを、歯と歯がくっついている場所に。習慣は早いほど身につきます。</li>
+          <li>スポーツドリンクや甘い飲みものは、飲む場面と回数を決めて。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-clinic"/></svg>当院での通い方</h3>
+      <div class="card">
+        <p><strong>予防メンテナンス（小中学生）｜30分</strong><br>クリーニングと歯みがきの確認に加え、必要に応じてフッ素やシーラントで、むし歯になりにくいお口を整えます。生活やかみ合わせの育ちも、担当の衛生士が一緒に見守ります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== stage 3 ======== -->
+<section class="section" id="stage3">
+  <div class="inner">
+    <div class="reveal">
+      <span class="agechip">15〜39歳ごろ</span>
+      <span class="eyebrow">STAGE 3</span>
+      <h2 class="title">高校生〜30代 ── いちばん丈夫で、いちばん遠ざかりやすい時期</h2>
+      <p class="lead">永久歯列が完成し、歯そのものは人生でいちばん丈夫な時期です。ただ、進学・就職・子育てと生活が大きく変わり、歯科から足が遠のきやすい時期でもあります。実際、国の調査では歯科健診の受診の割合は30〜50代で低くなります。そしてこの間に、歯ぐきの病気は静かに始まっています。</p>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-tooth"/></svg>この時期のお口</h3>
+      <div class="card">
+        <p>歯を失う方はまだ少ない一方で、歯ぐきの炎症（歯肉炎）から歯周病への入り口が始まる時期です。国の最新の調査では、15〜24歳でもおよそ2割の方に、深さ4mm以上の歯周ポケットが見られています。親知らずのトラブルや、はじめての「詰めもののやり直し」を経験するのもこの時期です。</p>
+      </div>
+      <h3 class="sub"><svg><use href="#i-alert"/></svg>気をつけたいこと</h3>
+      <div class="card">
+        <p>通院の中断がいちばんの落とし穴です。自覚症状のない初期の歯周病、親知らずまわりの腫れ、間食や甘い飲みものの習慣、喫煙（歯ぐきの血流を悪くし、歯周病を進めます）。妊娠中はホルモンの変化で歯ぐきが腫れやすくなるため、節目の確認をおすすめします。</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-star"/></svg>優先したいこと</h3>
+      <div class="card">
+        <p>キーワードは<strong>「治療デビューを遅らせる」「治すなら小さく」</strong>です。歯は一度削ると、やり直しのたびに少しずつ大きく削られていきます。初期のむし歯を削らずに管理できれば、40代以降の「やり直しのくり返し」をまるごと避けられます。</p>
+        <p>もし治療が必要になったときは、「なるべく削らない方法」「長くもたせる方法」を含めて、選択肢を費用と一緒にご説明します。どれを選ぶかは目的しだいで、優劣はありません。この時期に知っておくことが、のちの選択を楽にします。</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="reco-callout rc-s3">
+        <div class="rc-head"><svg><use href="#i-sign"/></svg>迷われたときの、院長のおすすめ</div>
+        <div class="rc-body">
+          <span class="rc-cap">通い方の方針</span>
+          <div class="rc-opts"><span class="rc-opt">今を整える</span><span class="rc-opt is-reco">気になる歯を残す</span><span class="rc-opt is-reco">全体で守る</span></div>
+          <span class="rc-cap">見た目の方針</span>
+          <div class="rc-opts"><span class="rc-opt is-reco">見た目も整える</span><span class="rc-opt">自然な見た目を保つ</span><span class="rc-opt">機能を大切にする</span></div>
+          <p class="rc-why">これから何十年も使う歯だからこそ、治療になったときは、最初の治療を長くもたせる「気になる歯を残す」を。治すところが重なるときは、「全体で守る」で設計から考えると回り道がありません。人と会う機会の多い時期、笑ったときに見える範囲は、見た目も整える価値があります。小さなむし歯は「今を整える」でも十分に対応できます。</p>
+          <p class="rc-note">※おすすめは、迷われたときのご参考です。方針に優劣はなく、ご希望に合わせてお選びいただけます。いつでも見直せます。<a href="approach.html">通い方の方針をくわしく見る</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-cal"/></svg>通う間隔のめやす</h3>
+      <div class="interval">
+        <div>
+          <div class="iv-main">3〜6か月に1回</div>
+          <div class="iv-sub">世界的には「お口の状態に合わせて間隔を決める」考え方が主流で、英国の診療指針では大人は3か月〜2年の幅で個別に決めるとされています。歯ぐきが健康で安定している方は、ご相談のうえ1年に1回程度まで延ばせる場合もあります。逆に、むし歯や歯ぐきの心配がある方は3〜4か月ごとが安心です。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-home"/></svg>おうちでのケア</h3>
+      <div class="card">
+        <ul class="care">
+          <li>フッ素濃度<strong>1500ppm</strong>の歯みがき剤で、1日2回。とくに寝る前はていねいに。うがいは少しのお水で1回まで。</li>
+          <li><strong>デンタルフロスを毎日。</strong>この年代のむし歯と歯ぐきの炎症は、歯と歯の間から始まります。</li>
+          <li>歯ぐきとの境目に毛先を45度に当てる、やさしいみがき方を。力はいりません。</li>
+          <li>甘い飲みものを机に置きっぱなしにしない。「だらだら」を避けるだけで、むし歯の条件は大きく変わります。</li>
+          <li>喫煙されている方は、歯ぐきのためにも本数を見直す価値があります。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-clinic"/></svg>当院での通い方</h3>
+      <div class="card">
+        <p><strong>予防メンテナンス（高校生〜大人）｜45分</strong><br>歯ぐきの状態の確認とクリーニングを中心に、お口全体をていねいに診させていただきます。担当の衛生士が継続して拝見し、いまの良い状態を長く保てるようにいたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== stage 4 ======== -->
+<section class="section soft" id="stage4">
+  <div class="inner">
+    <div class="reveal">
+      <span class="agechip">40〜79歳ごろ</span>
+      <span class="eyebrow">STAGE 4</span>
+      <h2 class="title">40代〜70代 ── 歯ぐきを守り、歯を失わない時期</h2>
+      <p class="lead">この40年間で、お口の主役は「むし歯」から「歯ぐき」へと変わります。歯を失う原因の第一位は歯周病。そして歯周病は、痛みのないまま進む病気です。前半（40〜50代）と後半（60〜70代）で大切なことが少し変わるため、分けてご案内します。</p>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-tooth"/></svg>40〜50代のお口 ── 歯周病と「やり直し」が動き出す</h3>
+      <div class="card">
+        <p>国の調査では、40代以降、深さ4mm以上の歯周ポケットのある方の割合が年代とともに増え、60代前半ではおよそ6割にのぼります。あわせて、若いころに治療した詰めもの・被せものの寿命が順に切れ、やり直しの治療が重なりはじめます。歯ぐきが下がることで、歯の根元のむし歯（根面う蝕）も出てきます。</p>
+      </div>
+      <h3 class="sub"><svg><use href="#i-star"/></svg>40〜50代で優先したいこと</h3>
+      <div class="card">
+        <p><strong>最優先は、歯周病の管理です。</strong>歯周病は「治して終わり」ではなく「進ませない」病気。定期的なメインテナンスで進行を止めることが、将来のブリッジ・入れ歯・インプラントにかかる費用と時間を避ける、この年代でいちばん確実な備えになります。</p>
+        <p>やり直しの治療が来たときは、「また同じ年数で繰り返すのか、繰り返しを減らす治し方にするのか」を、費用と一緒に比べて選べるようにご説明します。全身の面では、糖尿病と歯周病はお互いに影響し合うことが知られており、両方をあわせて整えることが大切です。</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-tooth"/></svg>60〜70代のお口 ── 「守る」と「補う」の分かれ道</h3>
+      <div class="card">
+        <p>歯を失うことが現実になりやすい時期です。歯は1本失うと、隣やかみ合う歯に負担がまわり、連鎖的に失いやすくなります。国の最新の調査では、平均して20本以上の歯を保てているのは70〜74歳まで。ここが「80歳で20本」への正念場です。残った歯の根元のむし歯や、被せものの下のむし歯も増えてきます。</p>
+      </div>
+      <h3 class="sub"><svg><use href="#i-star"/></svg>60〜70代で優先したいこと</h3>
+      <div class="card">
+        <p>合言葉は<strong>「これ以上、失わない」</strong>。もし歯を失ったときは、補い方（ブリッジ・入れ歯・インプラント）を、値段の比較だけでなく「残っている歯にかかる負担」と「何年もつか」で比べていただくと、判断がしやすくなります。ここでの選択が、80代の食べる力を決めます。</p>
+        <p>どの歯を守り、どこをどう補うか。全体を見た計画を一度立てておくと、その場その場の治療より、結果も費用も落ち着きます。70代からは「かむ・飲みこむ」といったお口の機能にも、少しずつ目を向けはじめる時期です。</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-alert"/></svg>治療を重ねてきた方・歯を失っている方へ</h3>
+      <div class="card">
+        <p><strong>40代を過ぎると、むし歯の「中身」が変わります。</strong>新しいむし歯よりも、治した歯の再発——2次カリエスが増えてくるのです。治療を重ねてきた方、銀歯の多い方、すでに歯を失っている方は、とくにその傾向が強くなります。</p>
+        <p>同じ「むし歯」でも、この2つは別ものです。<strong>新しいむし歯</strong>は、健康な歯にはじめてできるもの。小さいうちに見つかれば、少し削って詰めるだけですみます。いっぽう<strong>2次カリエス</strong>は、詰めもの・被せものの「境目」や「下」から始まる再発。気づきにくく、見つかったときには大きくなっていることがあり、治すたびに、さらに削ることになります。</p>
+      </div>
+      <div class="card">
+        <p><strong>削った歯は、もとには戻りません。</strong>再治療のたびに、歯は次の段階へ一段ずつ進みやすくなります。</p>
+        <div class="chain" aria-label="治療が進む段階">
+          <span class="ch">健康な歯</span><span class="ar">→</span>
+          <span class="ch">詰めもの</span><span class="ar">→</span>
+          <span class="ch">かぶせ</span><span class="ar">→</span>
+          <span class="ch">神経を取った歯</span><span class="ar">→</span>
+          <span class="ch">抜歯</span>
+        </div>
+        <p class="note">治療は、この向きに進みやすい一方通行の道です。だからこそ、これまでと同じ治し方をくり返すのか、くり返しにくい治し方に変えるのかが、この時期の分かれ道になります。</p>
+      </div>
+      <div class="card">
+        <p>こうした理由から、治療を重ねてきた方・歯を失っている方には、気になる歯をしっかり治して長くもたせる<strong>「気になる歯を残す」</strong>、または再発の原因から見直してお口全体を設計する<strong>「全体で守る」</strong>を、迷われたときのご参考としておすすめしています。</p>
+        <p>方針を変えるのに、遅すぎるということはありません。これまで保険診療で通ってこられた方も、いつからでも切り替えられます。まずはご来院時の検査で、いまの状態をご一緒に確かめるところから始めましょう。</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="reco-callout rc-s4">
+        <div class="rc-head"><svg><use href="#i-sign"/></svg>迷われたときの、院長のおすすめ</div>
+        <div class="rc-body">
+          <span class="rc-cap">通い方の方針</span>
+          <div class="rc-opts"><span class="rc-opt">今を整える</span><span class="rc-opt is-reco">気になる歯を残す</span><span class="rc-opt is-reco">全体で守る</span></div>
+          <span class="rc-cap">見た目の方針</span>
+          <div class="rc-opts"><span class="rc-opt is-reco">見た目も整える</span><span class="rc-opt is-reco">自然な見た目を保つ</span><span class="rc-opt">機能を大切にする</span></div>
+          <p class="rc-why">治療を重ねてきた方・歯を失っている方には、上でご説明した理由から「気になる歯を残す」または「全体で守る」を。これまで大きな治療のなかった方は、歯周病の管理を軸に、どの方針でもしっかり守れます。見た目は、まわりの歯になじむ自然さを基本に。治し直しの機会に、笑ったときに見える範囲をあわせて整えていく選び方もおすすめです。</p>
+          <p class="rc-note">※おすすめは、迷われたときのご参考です。方針に優劣はなく、ご希望に合わせてお選びいただけます。いつでも見直せます。<a href="approach.html">通い方の方針をくわしく見る</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-cal"/></svg>通う間隔のめやす</h3>
+      <div class="interval">
+        <div>
+          <div class="iv-main">3〜4か月に1回</div>
+          <div class="iv-sub">歯周病の治療を受けた方の継続管理は、世界的に3〜4か月ごとが広く用いられています。歯ぐきが安定している方は6か月に1回まで延ばせることもあり、状態に合わせてご提案します。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-home"/></svg>おうちでのケア</h3>
+      <div class="card">
+        <ul class="care">
+          <li><strong>歯間ブラシまたはフロスを毎日。</strong>この年代の歯周病とむし歯は、歯と歯の間・歯ぐきとの境目から進みます。すき間の広さに合った太さを、メインテナンスの際にご案内します。</li>
+          <li>フッ素濃度<strong>1500ppm</strong>の歯みがき剤で、下がった歯ぐきの根元をやさしく。うがいは少しのお水で1回まで。</li>
+          <li>力を入れすぎない、こまかく動かすみがき方を。強くみがくほど、歯ぐきは下がります。</li>
+          <li>喫煙されている方は、歯周病がとくに進みやすくなります。禁煙は歯ぐきへのいちばんの贈りものです。</li>
+          <li>糖尿病をお持ちの方は、血糖の管理と歯ぐきの管理を、両輪で。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-clinic"/></svg>当院での通い方</h3>
+      <div class="card">
+        <p><strong>予防メンテナンス（高校生〜大人）｜45分</strong><br>歯ぐきの検査とクリーニングを中心に、担当の衛生士が継続して拝見します。治療が必要になったときは、選択肢を費用と一緒にご説明し、お口全体の計画づくりもお手伝いします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== stage 5 ======== -->
+<section class="section" id="stage5">
+  <div class="inner">
+    <div class="reveal">
+      <span class="agechip">80歳〜</span>
+      <span class="eyebrow">STAGE 5</span>
+      <h2 class="title">80代以上 ── 食べる力・話す力を保つ時期</h2>
+      <p class="lead">「80歳で20本の歯を」という8020（ハチマルニイマル）。国の最新の調査では、達成された方は61.5%と、いまや5人に3人の時代になりました。歯が残っているからこそ、守りかたの主役は「歯の病気を治すこと」から「食べる・話す力を保つこと」へと変わっていきます。</p>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-tooth"/></svg>この時期のお口</h3>
+      <div class="card">
+        <p>残っている歯の根元のむし歯と歯周病、そして入れ歯の合い具合が、日々の食べやすさを左右します。あわせて、わずかなむせ・食べこぼし・滑舌の変化といった「お口のささいな衰え（オーラルフレイル）」が始まることがあります。研究では、お口の衰えのある方は栄養が足りなくなりやすく、体の衰えや要介護にもつながりやすいことがわかっています。</p>
+      </div>
+      <h3 class="sub"><svg><use href="#i-alert"/></svg>気をつけたいこと</h3>
+      <div class="card">
+        <p>歯の根元のむし歯（お薬の影響などで唾液が減ると、進みやすくなります）、合わない入れ歯の我慢、かたいものを避けるうちに進む「かむ力」の低下、お口の乾き。「食べにくいから、やわらかいものだけに」という流れは、栄養と体力の低下につながるため、早めにご相談ください。</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-star"/></svg>優先したいこと</h3>
+      <div class="card">
+        <p>目標は<strong>「おいしく食べ続けられること」</strong>です。そのために、①残っている歯を1本でも長く守ること（フッ素と根元のケア）、②合わない入れ歯を我慢しないこと（かむ力は、栄養と体の元気に直結します）、③お口の機能を保つ体操と確認。この3つを柱にします。</p>
+        <p>この時期のメインテナンスは、歯のお掃除であると同時に、「食べ続けられる体」を保つための通院です。お口の健康が全身の健康と医療費全体に良い影響を与えることは、近年多くの研究で示されています。</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="reco-callout rc-s5">
+        <div class="rc-head"><svg><use href="#i-sign"/></svg>迷われたときの、院長のおすすめ</div>
+        <div class="rc-body">
+          <span class="rc-cap">通い方の方針</span>
+          <div class="rc-opts"><span class="rc-opt is-reco">今を整える</span><span class="rc-opt is-reco">気になる歯を残す</span><span class="rc-opt">全体で守る</span></div>
+          <span class="rc-cap">見た目の方針</span>
+          <div class="rc-opts"><span class="rc-opt">見た目も整える</span><span class="rc-opt">自然な見た目を保つ</span><span class="rc-opt is-reco">機能を大切にする</span></div>
+          <p class="rc-why">基本は「今を整える」とメインテナンス。そのうえで、かみ合わせのかなめになる歯は「気になる歯を残す」で長くもたせます。見た目よりも、おいしく食べられること・話せることを第一に。</p>
+          <p class="rc-note">※おすすめは、迷われたときのご参考です。方針に優劣はなく、ご希望に合わせてお選びいただけます。いつでも見直せます。<a href="approach.html">通い方の方針をくわしく見る</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-cal"/></svg>通う間隔のめやす</h3>
+      <div class="interval">
+        <div>
+          <div class="iv-main">3〜4か月に1回<span style="font-size:13px;font-weight:400;">（状態により 1〜2か月に1回）</span></div>
+          <div class="iv-sub">歯周病や根元のむし歯の進みやすさ、入れ歯の調整、お口の機能の変化に合わせて、短めの間隔をご提案することがあります。通院がむずかしくなってきた場合の通い方も、ご家族とご一緒にご相談ください。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-home"/></svg>おうちでのケア</h3>
+      <div class="card">
+        <ul class="care">
+          <li>フッ素濃度<strong>1500ppm</strong>の歯みがき剤を続けて。歯の根元は、やわらかい歯ブラシでやさしくていねいに。</li>
+          <li><strong>入れ歯は毎食後に外して洗い、寝るときは外して</strong>、水またはお手入れ剤につけて保管を。歯ぐきを休ませます。</li>
+          <li>お口の乾きを感じたら、こまめな水分と保湿剤を。唾液はお口をむし歯から守る力そのものです。</li>
+          <li>「パ・タ・カ・ラ」とはっきり発音するお口の体操を、1日数回。食べる・飲みこむ筋肉を保ちます。</li>
+          <li>ひと口を意識してよくかむこと、かたさのあるものも少しずつ。食べる力は、使うことで保たれます。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="sub"><svg><use href="#i-clinic"/></svg>当院での通い方</h3>
+      <div class="card">
+        <p><strong>予防メンテナンス（高校生〜大人）｜45分</strong><br>クリーニングと歯ぐきの管理に加え、入れ歯の調整やお口の機能の確認もあわせて行います。お車での来院、ご家族とのご来院もどうぞ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== summary ======== -->
+<section class="section soft">
+  <div class="inner">
+    <div class="reveal">
+      <span class="eyebrow">SUMMARY</span>
+      <h2 class="title">5つの時期の一覧</h2>
+      <p class="lead">どの年代も、土台は定期的なメインテナンスです。通う間隔は、お口の状態に合わせてご一緒に決めていきます。</p>
+      <table class="sumtable">
+        <tr><th>時期</th><th>メインテナンス</th><th>通う間隔のめやす</th><th>いちばん大切なこと</th></tr>
+        <tr><td>未就学児<span class="s">〜6歳ごろ</span></td><td>15分</td><td>〜3歳：6か月に1回<br>4〜6歳：3〜6か月に1回</td><td>フッ素と習慣づくり</td></tr>
+        <tr><td>小中学生<span class="s">6〜15歳ごろ</span></td><td>30分</td><td>3〜6か月に1回</td><td>永久歯をむし歯ゼロで大人に</td></tr>
+        <tr><td>高校生〜30代</td><td>45分</td><td>3〜6か月に1回<span class="s">（安定していれば延ばせる場合も）</span></td><td>治療デビューを遅らせる</td></tr>
+        <tr><td>40代〜70代</td><td>45分</td><td>3〜4か月に1回<span class="s">（安定していれば6か月）</span></td><td>歯周病を進ませない・歯を失わない</td></tr>
+        <tr><td>80代以上</td><td>45分</td><td>3〜4か月に1回<span class="s">（状態により1〜2か月）</span></td><td>食べる力・話す力を保つ</td></tr>
+      </table>
+      <p class="note">※間隔は一律ではなく、お口の状態・むし歯や歯周病のなりやすさに合わせて、ご相談のうえ決めていきます。</p>
+    </div>
+
+    <div class="reveal">
+      <div class="sources">
+        <span class="st">おもな参考資料</span>
+        厚生労働省「令和6年 歯科疾患実態調査」（8020達成者の割合、年代別の歯周ポケット・現在歯数など）／日本口腔衛生学会ほか4学会合同「フッ化物配合歯磨剤の推奨される利用方法」（2023年）／英国NICE診療ガイドライン（歯科の通院間隔）／日本歯科医師会「オーラルフレイル」関連資料。内容は一般的なご案内であり、実際のご提案はお一人おひとりの診査にもとづいて行います。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== footer ======== -->
+<footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
+  <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;" onerror="this.style.display='none'">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on');});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}
+      });
+    },{threshold:.08});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+</body>
+</html>
