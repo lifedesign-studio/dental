@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未就学児 ── 一生の土台をつくる時期｜ライフデンタルクリニック</title>
+<style>
+
+:root{
+  --paper:#FFFFFF;
+  --soft:#F4F7F5;
+  --card:#EEF3F1;
+  --ink:#2E3A3F;
+  --ink-soft:#54636A;
+  --muted:#6E7B80;
+  --sage:#4F7A6C;
+  --sage-2:#6E9C8E;
+  --line:#D8E0DD;
+  --line-2:#E7EDEA;
+  /* このページ専用：状態を表す暖色（赤は使わず、落ち着いた色で） */
+  --keep:#4F7A6C;   /* 保てる・良い */
+  --warn:#B08456;   /* 途中・ゆらぎ */
+  --clay:#9C6650;   /* 失う・弱る */
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic","YuGothic","Noto Sans JP","Noto Sans CJK JP",sans-serif;
+  --maxtext:720px;
+  --maxwide:1080px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--gothic);line-height:1.8;
+  font-size:16px;letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;height:auto;display:block;}
+svg{display:block;}
+
+/* ---- レイアウト ---- */
+.section{padding:64px 22px;}
+.section.soft{background:var(--soft);}
+.wrap{max-width:var(--maxtext);margin:0 auto;}
+.wrap-wide{max-width:var(--maxwide);margin:0 auto;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--sage);
+  margin:0 0 14px;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--sage);flex:0 0 auto;}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:.01em;line-height:1.32;}
+h2.title{font-size:28px;margin-bottom:12px;}
+.nb{white-space:nowrap;}
+.lead{font-size:16px;color:var(--ink-soft);margin:0 0 8px;line-height:1.85;}
+.note{font-size:12.5px;color:var(--muted);line-height:1.7;}
+
+/* ---- ピクトグラム共通 ---- */
+.pico{width:30px;height:30px;stroke:var(--sage);stroke-width:1.7;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;}
+.circle-ico{
+  width:54px;height:54px;border-radius:50%;background:#fff;
+  border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+}
+.circle-ico .pico{width:28px;height:28px;}
+
+/* ================= HERO ================= */
+.hero{padding:60px 22px 52px;background:linear-gradient(180deg,#fff 0%,var(--soft) 100%);}
+.hero .wrap-wide{display:grid;grid-template-columns:1fr;gap:26px;align-items:start;}
+.hero-kicker{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--sage);margin-bottom:16px;}
+.hero h1{font-size:27px;line-height:1.45;margin-bottom:16px;letter-spacing:.005em;}
+.hero h1 .em{color:var(--sage);}
+.hero p{font-size:15.5px;color:var(--ink-soft);margin:0 0 20px;line-height:1.9;}
+.hero-pair{
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--sage);
+  border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;
+}
+.hero-pair .pico{width:24px;height:24px;margin-top:2px;}
+.hero-pair p{font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.75;}
+.hero-pair b{color:var(--ink);font-weight:800;}
+.topics{display:grid;grid-template-columns:1fr;gap:11px;}
+.topic{
+  display:flex;gap:13px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:14px 15px;
+}
+.topic .num{
+  width:30px;height:30px;border-radius:50%;background:var(--sage);color:#fff;
+  font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;margin-top:1px;
+}
+.topic .ttitle{font-weight:800;font-size:15px;margin-bottom:2px;display:flex;align-items:center;gap:8px;}
+.topic .ttitle .pico{width:21px;height:21px;}
+.topic .tdesc{font-size:13px;color:var(--ink-soft);line-height:1.65;}
+
+/* ================= セクション見出し補助 ================= */
+.sec-lead{margin-bottom:8px;}
+.kicker-r{font-size:13.5px;color:var(--muted);line-height:1.8;margin:0 0 4px;}
+
+/* ================= 原因3つ ================= */
+.causes{display:grid;grid-template-columns:1fr;gap:13px;margin-top:24px;}
+.cause-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px;text-align:center;}
+.cause-card .ci{width:56px;height:56px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 11px;}
+.cause-card .ci .pico{width:30px;height:30px;}
+.cause-card .cn{font-size:16.5px;font-weight:800;margin-bottom:5px;}
+.cause-card .cd{font-size:13px;color:var(--ink-soft);line-height:1.7;}
+
+/* ================= 円グラフ ================= */
+.donut-block{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 20px;}
+.donut-block .db-h{font-weight:800;font-size:15.5px;margin-bottom:4px;display:flex;align-items:center;gap:9px;}
+.donut-block .db-h .pico{width:22px;height:22px;}
+.donut-block .db-sub{font-size:12.5px;color:var(--muted);margin-bottom:16px;}
+.donut-wrap{display:flex;flex-direction:column;align-items:center;gap:20px;}
+.donut{width:200px;height:200px;flex:0 0 auto;}
+.dlegend{display:flex;flex-direction:column;gap:11px;width:100%;max-width:300px;}
+.dl{display:flex;align-items:center;gap:11px;font-size:14.5px;color:var(--ink);}
+.dl .sw{width:15px;height:15px;border-radius:4px;flex:0 0 auto;}
+.dl b{font-weight:800;margin-left:auto;color:var(--ink);}
+
+/* ================= 出典・エビデンス枠 ================= */
+.evidence{margin-top:22px;background:var(--card);border-radius:14px;padding:17px 18px;}
+.evidence .eh{font-weight:800;font-size:14.5px;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+.evidence .eh .pico{width:22px;height:22px;stroke:var(--sage);}
+.evidence p{font-size:13px;color:var(--ink-soft);line-height:1.85;margin:0 0 9px;}
+.evidence p:last-of-type{margin-bottom:0;}
+.evidence p b{color:var(--ink);font-weight:800;}
+.evidence .src{font-size:11px;color:var(--muted);line-height:1.65;border-top:1px solid var(--line);padding-top:9px;margin-top:11px;}
+
+/* ================= 署名：あなたの場合は ブリッジ ================= */
+.bridge{
+  margin-top:22px;background:var(--sage);color:#fff;border-radius:16px;
+  padding:20px 20px;display:flex;gap:15px;align-items:flex-start;
+}
+.bridge .b-ico{width:46px;height:46px;border-radius:13px;background:rgba(255,255,255,.16);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.bridge .b-ico svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.bridge .b-k{font-size:12px;font-weight:700;letter-spacing:.08em;color:#D8E6E0;margin-bottom:5px;}
+.bridge .b-t{font-size:15px;font-weight:800;line-height:1.6;margin-bottom:5px;}
+.bridge p{font-size:13.5px;color:#EAF1EE;line-height:1.75;margin:0;}
+.bridge .doc{display:inline-block;font-weight:800;color:#fff;border-bottom:1.5px solid rgba(255,255,255,.5);padding-bottom:1px;}
+.bridge .b-cta{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:#fff;color:var(--sage);
+  font-weight:800;font-size:13.5px;text-decoration:none;padding:10px 18px;border-radius:26px;
+  transition:transform .2s ease,box-shadow .2s ease;}
+.bridge .b-cta:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(0,0,0,.16);}
+.bridge .b-cta svg{width:17px;height:17px;stroke:var(--sage);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.bridge .dots{display:inline-flex;gap:5px;vertical-align:middle;margin:0 2px;}
+.bridge .dots i{width:11px;height:11px;border-radius:50%;display:inline-block;}
+
+/* ================= 一方通行の階段 ================= */
+.stair{display:grid;grid-template-columns:1fr;gap:0;margin-top:22px;}
+.stair-row{display:flex;flex-direction:column;align-items:stretch;gap:8px;}
+.stair-step{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 15px;
+  display:flex;align-items:center;gap:13px;}
+.stair-step .s2-ico{width:46px;height:46px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.stair-step .s2-ico .pico{width:28px;height:28px;}
+.stair-step .s2t{font-weight:800;font-size:15px;}
+.stair-step .s2d{font-size:12.5px;color:var(--muted);margin-top:1px;}
+.stair-arrow{display:flex;justify-content:center;color:var(--sage-2);padding:3px 0;}
+.stair-arrow svg{width:20px;height:22px;stroke:var(--sage-2);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.stair-cap{font-size:12.5px;color:var(--muted);line-height:1.7;margin-top:14px;text-align:center;}
+
+/* ================= 折れ線（丈夫さ） ================= */
+.figbox{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 18px 16px;}
+.figbox .fb-h{font-weight:800;font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:9px;}
+.figbox .fb-h .pico{width:22px;height:22px;}
+.linechart{width:100%;max-width:440px;margin:0 auto;}
+.linechart svg{width:100%;height:auto;}
+.fb-cap{font-size:11.5px;color:var(--muted);line-height:1.65;margin-top:12px;}
+
+/* ================= 痛みのものさし ================= */
+.painline{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 18px;}
+.painline .pl-h{font-weight:800;font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:9px;}
+.painline .pl-h .pico{width:22px;height:22px;stroke:var(--clay);}
+.plbar{display:flex;height:24px;border-radius:7px;overflow:hidden;border:1px solid var(--line);}
+.plseg{flex:1;display:flex;align-items:center;justify-content:center;font-size:10.5px;color:#fff;font-weight:700;}
+.plfaces{display:flex;margin-top:9px;}
+.plf{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;}
+.plf svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.plf span{font-size:10.5px;color:var(--muted);line-height:1.3;}
+.pl-note{font-size:12.5px;color:var(--clay);font-weight:700;margin-top:12px;text-align:center;line-height:1.6;}
+
+/* ================= 連鎖（支え） ================= */
+.chain{display:grid;grid-template-columns:1fr;gap:12px;margin-top:22px;}
+.chain-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 16px;
+  display:flex;align-items:center;gap:15px;}
+.chain-card .cc-fig{width:170px;flex:0 0 auto;}
+.chain-card .cc-fig svg{width:100%;height:auto;}
+.chain-card .cc-pct{font-size:24px;font-weight:800;line-height:1;}
+.chain-card .cc-pct small{font-size:13px;font-weight:700;}
+.chain-card .cc-lab{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin-top:5px;}
+.chain-card.k .cc-pct{color:var(--keep);}
+.chain-card.w .cc-pct{color:var(--warn);}
+.chain-card.c .cc-pct{color:var(--clay);}
+.chain-arrow{display:flex;justify-content:center;color:var(--sage-2);}
+.chain-arrow svg{width:20px;height:22px;stroke:var(--sage-2);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.chain-note{font-size:12.5px;color:var(--muted);line-height:1.75;margin-top:16px;text-align:center;}
+.chain-note b{color:var(--ink-soft);font-weight:800;}
+.chain-note .star{color:var(--clay);font-weight:700;}
+.eightoh{margin-top:20px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:16px 17px;
+  display:flex;gap:13px;align-items:flex-start;}
+.eightoh .pico{width:26px;height:26px;margin-top:2px;}
+.eightoh p{font-size:13.5px;color:var(--ink-soft);line-height:1.8;margin:0;}
+.eightoh b{color:var(--ink);font-weight:800;}
+
+/* ================= 体とのつながり：倍率カード ================= */
+.riskpre{font-size:14.5px;color:var(--ink-soft);line-height:1.9;margin:24px 0 16px;text-align:center;}
+.riskpre .keep{display:inline-block;font-weight:800;color:var(--keep);background:rgba(79,122,108,.12);
+  border:1px solid rgba(79,122,108,.3);border-radius:20px;padding:2px 13px;}
+.riskpre .lost{display:inline-block;font-weight:800;color:#fff;background:var(--clay);border-radius:20px;padding:2px 13px;}
+.riskcards{display:grid;grid-template-columns:1fr;gap:13px;}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 16px;text-align:center;}
+.rcard .ri{width:48px;height:48px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 12px;}
+.rcard .ri .pico{width:27px;height:27px;stroke:var(--clay);}
+.rcard .rn{font-size:46px;font-weight:800;color:var(--clay);line-height:1;}
+.rcard .rn small{font-size:18px;}
+.rcard .rl{font-size:14px;color:var(--ink);margin-top:8px;line-height:1.45;font-weight:700;}
+
+/* ================= 通い方3つ ================= */
+.ways{display:grid;grid-template-columns:1fr;gap:13px;margin-top:24px;}
+.way{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px;}
+.way .wi{display:flex;align-items:center;gap:12px;margin-bottom:9px;}
+.way .wi .circle-ico{width:46px;height:46px;}
+.way .wn{font-size:17px;font-weight:800;}
+.way .wd{font-size:13.5px;color:var(--ink-soft);line-height:1.75;margin:0;}
+.ways-note{font-size:12.5px;color:var(--muted);line-height:1.7;margin-top:14px;text-align:center;}
+
+/* ================= 締め（やさしい一歩） ================= */
+.closing{background:var(--sage);color:#fff;text-align:center;padding:60px 22px;}
+.closing .cmark{width:46px;height:46px;margin:0 auto 22px;}
+.closing .cmark svg{width:46px;height:46px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.closing .cpre{font-size:15px;color:#EAF1EE;line-height:1.9;margin:0 auto 22px;max-width:560px;}
+.closing .cpre b{color:#fff;font-weight:800;}
+.closing .cbig{font-size:30px;font-weight:800;letter-spacing:.06em;line-height:1.4;}
+.closing .chr{width:46px;height:2px;background:rgba(255,255,255,.6);margin:24px auto 18px;}
+.closing .clogo{font-size:12px;letter-spacing:.3em;color:#D8E6E0;}
+
+/* ================= CTA ================= */
+.cta{background:var(--card);text-align:center;padding:52px 22px;}
+.cta h2{font-size:22px;margin-bottom:13px;line-height:1.5;}
+.cta p{font-size:14.5px;color:var(--ink-soft);line-height:1.85;margin:0 auto 22px;max-width:560px;}
+.cta .qr-slot{display:inline-flex;flex-direction:column;align-items:center;gap:12px;
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;}
+.cta .qr-slot .qbox{width:160px;height:160px;border-radius:12px;background:#fff;border:1px solid var(--line);padding:9px;}
+.cta .qr-slot .qbox svg{width:100%;height:100%;display:block;}
+.cta .qr-cap{font-size:13px;color:var(--ink-soft);line-height:1.6;}
+.cta .qr-url{font-size:11px;color:var(--muted);word-break:break-all;letter-spacing:.01em;max-width:220px;}
+/* トップへ戻る */
+.backtop{background:#fff;text-align:center;padding:34px 22px 6px;}
+.backtop a{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;font-weight:800;
+  color:var(--sage);text-decoration:none;border:1px solid var(--line);border-radius:999px;
+  padding:12px 24px;transition:background .2s ease;}
+.backtop a:hover{background:var(--soft);}
+.backtop a .bt-arrow{width:20px;height:20px;stroke:var(--sage);fill:none;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;transform:scaleX(-1);}
+
+footer .fl{font-size:13px;color:var(--ink-soft);font-weight:800;letter-spacing:.04em;}
+footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
+
+/* ================= 新しいむし歯／2次カリエス ================= */
+.c2-lead{margin-top:22px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--sage);
+  border-radius:12px;padding:15px 17px;font-size:13.5px;color:var(--ink-soft);line-height:1.85;}
+.c2-lead b{color:var(--ink);font-weight:800;}
+.caries2{display:grid;grid-template-columns:1fr;gap:13px;margin-top:14px;}
+.c2-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;}
+.c2-card.re{border-color:#E3D3C8;background:#FBF7F4;}
+.c2-top{display:flex;align-items:center;gap:13px;margin-bottom:11px;}
+.c2-fig{width:54px;height:54px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.c2-card.re .c2-fig{background:#fff;border-color:#E3D3C8;}
+.c2-fig svg{width:32px;height:32px;}
+.c2-tag{font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--sage);}
+.c2-card.re .c2-tag{color:var(--clay);}
+.c2-name{font-size:16px;font-weight:800;color:var(--ink);margin-top:1px;}
+.c2-card p{font-size:13px;color:var(--ink-soft);line-height:1.75;margin:0;}
+.c2-close{margin-top:14px;background:var(--card);border-radius:14px;padding:16px 17px;
+  font-size:13.5px;color:var(--ink-soft);line-height:1.85;}
+.c2-close b{color:var(--ink);font-weight:800;}
+
+/* ================= レスポンシブ ================= */
+@media (min-width:760px){
+  body{font-size:16.5px;}
+  .section{padding:84px 32px;}
+  .hero{padding:84px 32px 72px;}
+  .hero .wrap-wide{grid-template-columns:1.05fr .95fr;gap:46px;}
+  .hero h1{font-size:38px;}
+  .hero-kicker{font-size:14px;}
+  h2.title{font-size:34px;}
+  .causes{grid-template-columns:repeat(3,1fr);}
+  .donut-wrap{flex-direction:row;justify-content:center;gap:42px;}
+  .stair-row{flex-direction:row;align-items:stretch;}
+  .stair-step{flex:1;flex-direction:column;text-align:center;justify-content:center;}
+  .stair-arrow{align-items:center;width:34px;}
+  .stair-arrow svg{transform:rotate(-90deg);}
+  .riskcards{grid-template-columns:repeat(3,1fr);}
+  .ways{grid-template-columns:repeat(3,1fr);}
+  .caries2{grid-template-columns:1fr 1fr;}
+  .chain{grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;}
+  .chain-card{flex-direction:column;text-align:center;}
+  .chain-card .cc-fig{width:196px;}
+  .chain-arrow svg{transform:rotate(-90deg);}
+  .closing .cbig{font-size:40px;}
+}
+@media (min-width:1024px){
+  .hero h1{font-size:42px;}
+}
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+}
+
+/* ================= 年代別ページ 追加部品（デザイン統一仕様の範囲内） ================= */
+/* 本文プローズ（知識ゾーン＝読み物トーン） */
+.prose p{font-size:15px;color:var(--ink-soft);line-height:1.95;margin:0 0 15px;}
+.prose p:last-child{margin-bottom:0;}
+.prose p b,.prose p strong{color:var(--ink);font-weight:800;}
+.cite{font-size:11px;color:var(--muted);line-height:1.7;margin-top:10px;}
+
+/* 年代チップ・小見出し（既存life-stage.htmlの部品を踏襲） */
+  .agechip{
+    display:inline-block;
+    background:var(--sage);
+    color:#fff;
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:.1em;
+    border-radius:999px;
+    padding:4px 14px;
+    margin-bottom:12px;
+  }
+h3.sub{display:flex;align-items:center;gap:9px;font-size:15.5px;font-weight:800;letter-spacing:.05em;color:var(--sage);margin:30px 0 12px;}
+h3.sub svg{width:20px;height:20px;flex:none;stroke:var(--sage);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+
+/* カード・通う間隔・おうちでのケア（既存life-stage.htmlの部品を踏襲） */
+  .card{
+    background:var(--card);
+    border-radius:12px;
+    padding:20px 20px;
+    margin-bottom:14px;
+    font-size:14.5px;
+  }
+  .section.soft .card{background:var(--paper);}
+  .card p + p{margin-top:10px;}
+.card p{font-size:14.5px;line-height:1.85;margin:0;}
+.card p + p{margin-top:10px;}
+  .interval{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    background:var(--paper);
+    border:1px solid var(--sage-2);
+    border-radius:12px;
+    padding:16px 18px;
+    margin-bottom:8px;
+  }
+  .section .interval{background:var(--soft);}
+  .section.soft .interval{background:var(--paper);}
+  .interval .iv-label{
+    flex:none;
+    font-size:11.5px;
+    letter-spacing:.14em;
+    color:var(--sage);
+    font-weight:700;
+    writing-mode:horizontal-tb;
+  }
+  .interval .iv-main{
+    font-size:19px;
+    font-weight:700;
+    letter-spacing:.04em;
+    color:var(--sage);
+    line-height:1.5;
+  }
+  .interval .iv-sub{font-size:12.5px;color:var(--ink-soft);letter-spacing:.02em;line-height:1.7;}
+  .care{list-style:none;}
+  .care li{
+    position:relative;
+    padding:0 0 0 22px;
+    margin-bottom:9px;
+    font-size:14.5px;
+  }
+  .care li::before{
+    content:"";
+    position:absolute;
+    left:2px;top:.62em;
+    width:9px;height:9px;
+    border-radius:50%;
+    background:var(--sage-2);
+  }
+.care{list-style:none;margin:0;padding:0;}
+.care li{color:var(--ink-soft);line-height:1.8;}
+.care li strong{color:var(--ink);font-weight:800;}
+
+/* 院長のおすすめ（既存life-stage.htmlの部品を踏襲） */
+  /* ---------- reco callout (院長のおすすめ) ---------- */
+  .reco-callout{
+    border:1.5px solid var(--sage-2);
+    border-radius:14px;
+    overflow:hidden;
+    margin:26px 0 6px;
+    background:var(--paper);
+  }
+  .rc-head{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    background:var(--sage);
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.14em;
+    padding:11px 16px;
+  }
+  .rc-head svg{width:18px;height:18px;flex:none;stroke:#fff;}
+  .rc-body{padding:18px 16px 14px;}
+  /* ステージごとの背景（セージの濃淡で段階づけ） */
+  .rc-s1 .rc-body{background:rgba(110,156,142,.08);}
+  .rc-s2 .rc-body{background:rgba(110,156,142,.15);}
+  .rc-s3 .rc-body{background:rgba(79,122,108,.10);}
+  .rc-s4 .rc-body{background:rgba(79,122,108,.16);}
+  .rc-s5 .rc-body{background:rgba(79,122,108,.22);}
+  .rc-cap{
+    display:block;
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:.18em;
+    color:var(--sage);
+    margin-bottom:8px;
+  }
+  .rc-opts{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .rc-opt{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.01em;
+    line-height:1.5;
+    padding:11px 4px;
+  }
+  .rc-opt.is-reco{
+    background:var(--sage);
+    border-color:var(--sage);
+    color:#fff;
+  }
+  .rc-opt.is-reco::before{content:"✓";margin-right:4px;font-size:11px;}
+  .rc-why{
+    font-size:13.5px;
+    line-height:1.85;
+    color:var(--ink);
+    border-top:1px dashed var(--sage-2);
+    padding-top:13px;
+    margin-bottom:10px;
+  }
+  .rc-note{
+    font-size:11.5px;
+    color:var(--ink-soft);
+    line-height:1.8;
+  }
+  .rc-note a{color:var(--sage);font-weight:700;}
+  @media (min-width:760px){
+    .rc-body{padding:22px 22px 16px;}
+    .rc-opt{font-size:13px;padding:12px 6px;}
+  }
+.rc-why{background:transparent;}
+
+/* 見た目の整え方カード */
+.opts{display:grid;grid-template-columns:1fr;gap:12px;margin-top:20px;}
+.opt-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 17px;}
+.opt-card .on{font-weight:800;font-size:15px;color:var(--ink);margin-bottom:4px;}
+.opt-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.75;margin:0;}
+
+/* アクションゾーン：3つの入り口カード */
+.entries{display:grid;grid-template-columns:1fr;gap:13px;margin-top:24px;}
+.entry{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px 18px;}
+.entry .en{width:30px;height:30px;border-radius:50%;background:var(--sage);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.entry .et{font-size:15.5px;font-weight:800;color:var(--ink);margin-bottom:6px;}
+.entry p{font-size:13px;color:var(--ink-soft);line-height:1.8;margin:0;}
+.entry p b{color:var(--ink);font-weight:800;}
+
+/* 治療リンクカード（index.htmlのhub-card系を流用） */
+.hub{display:grid;gap:13px;margin-top:20px;}
+.hub-card{display:flex;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:17px 18px;text-decoration:none;color:inherit;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease;}
+a.hub-card:hover{border-color:var(--sage-2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(79,122,108,.09);}
+.hub-card .ic{flex:0 0 auto;width:34px;height:34px;color:var(--sage);}
+.hc-body{flex:1 1 auto;min-width:0;}
+.hc-title{display:block;font-size:15.5px;font-weight:700;color:var(--ink);letter-spacing:.02em;}
+.hc-desc{display:block;font-size:13px;color:var(--ink-soft);line-height:1.65;margin-top:3px;}
+.hc-arrow{flex:0 0 auto;width:20px;height:20px;color:var(--sage-2);}
+.mini-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px;}
+.mini-links a{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:700;color:var(--sage);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:#fff;transition:background .2s ease;}
+.mini-links a:hover{background:var(--soft);}
+.mini-links a svg{width:14px;height:14px;color:var(--sage-2);}
+
+/* 統計ハイライト */
+.stat-tile{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;margin-top:18px;}
+.stat-tile .si{width:48px;height:48px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;}
+.stat-tile .si .pico{width:26px;height:26px;}
+.stat-tile .sl{font-size:13px;color:var(--ink-soft);line-height:1.7;}
+.stat-tile .sn{font-size:29px;font-weight:800;color:var(--clay);line-height:1.35;margin:4px 0 2px;}
+.stat-tile .ss{font-size:12px;color:var(--muted);line-height:1.7;margin-top:6px;}
+
+/* 気をつけたいこと アイコンリスト */
+.warn-list{display:grid;grid-template-columns:1fr;gap:10px;margin-top:16px;}
+.warn-item{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:13px;padding:12px 15px;}
+.warn-item .wi-ico{width:40px;height:40px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.warn-item .wi-ico .pico{width:22px;height:22px;stroke:var(--warn);}
+.warn-item p{font-size:13.5px;color:var(--ink-soft);line-height:1.7;margin:0;}
+.warn-item p b{color:var(--ink);font-weight:800;}
+
+/* つながりの図 */
+.rel{display:flex;flex-direction:column;align-items:center;gap:7px;margin-top:18px;}
+.rel-box{width:100%;max-width:320px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 16px;display:flex;gap:12px;align-items:center;}
+.rel-box .wi-ico{width:42px;height:42px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rel-box .wi-ico .pico{width:23px;height:23px;}
+.rel-box p{font-size:14px;color:var(--ink);font-weight:800;line-height:1.5;margin:0;}
+.rel-box p .rs{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:2px;}
+.rel-arrow{display:flex;justify-content:center;color:var(--sage-2);}
+.rel-arrow svg{width:24px;height:26px;stroke:var(--sage-2);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.rel-cap{font-size:12.5px;color:var(--muted);line-height:1.7;margin-top:12px;text-align:center;}
+
+/* 審美相談の流れ */
+.flow{display:grid;grid-template-columns:1fr;gap:8px;margin-top:16px;}
+.flow-step{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 15px;display:flex;align-items:center;gap:12px;}
+.flow-step .fn{width:26px;height:26px;border-radius:50%;background:var(--sage);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.flow-step p{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+/* 方針ラベル・見た目カードのアイコン */
+.pol-cap{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--sage);margin:26px 0 0;}
+.pol-cap + .ways{margin-top:12px;}
+.opt-card .oi{width:44px;height:44px;border-radius:50%;background:var(--soft);border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:9px;}
+.opt-card .oi .pico{width:24px;height:24px;}
+
+/* ページ下部リンク */
+.backtop{background:#fff;text-align:center;padding:34px 22px 6px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.backtop a{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;font-weight:800;color:var(--sage);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:12px 24px;transition:background .2s ease;}
+.backtop a:hover{background:var(--soft);}
+.backtop a .bt-arrow{width:20px;height:20px;stroke:var(--sage);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transform:scaleX(-1);}
+
+@media (min-width:760px){
+  .entries{grid-template-columns:repeat(3,1fr);}
+  .opts{grid-template-columns:repeat(3,1fr);}
+  .hub{grid-template-columns:1fr 1fr;}
+  .warn-list{grid-template-columns:1fr 1fr;}
+  .causes.two{grid-template-columns:repeat(2,1fr);}
+  .rel{flex-direction:row;justify-content:center;gap:12px;}
+  .rel-arrow svg{transform:rotate(-90deg);}
+  .flow{grid-template-columns:repeat(4,1fr);}
+  .flow-step{flex-direction:column;text-align:center;gap:9px;}
+}
+
+
+</style>
+</head>
+<body>
+
+<!-- ===== ピクトグラム定義 ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+
+  <symbol id="ic-tooth" viewBox="0 0 24 24"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z"/></symbol>
+  <symbol id="ic-gum" viewBox="0 0 24 24"><path d="M12 3.2c-4 0-6 2-6 5 0 3 1 5 2 8 .5 1.5.7 2.6 1.6 2.6 1.3 0 1-4 2.4-4s1.1 4 2.4 4c.9 0 1.1-1.1 1.6-2.6 1-3 2-5 2-8 0-3-2-5-6-5Z"/><path d="M5.5 15.5c3.5 2.2 9.5 2.2 13 0" stroke="#9C6650"/></symbol>
+  <symbol id="ic-bite" viewBox="0 0 24 24"><path d="M12 3v8M8.5 7.5 12 11l3.5-3.5"/><path d="M4 14.5c2.5 1.2 5 1.8 8 1.8s5.5-.6 8-1.8M6 18c2 .9 3.9 1.3 6 1.3s4-.4 6-1.3"/></symbol>
+  <symbol id="ic-find" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.7-4.7"/><path d="M10.5 8v5M8 10.5h5"/></symbol>
+  <symbol id="ic-alert" viewBox="0 0 24 24"><path d="M12 3.5 21.5 20H2.5L12 3.5Z"/><path d="M12 9.5v5M12 17.5v.2"/></symbol>
+  <symbol id="ic-arrow-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></symbol>
+  <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="ic-shield-check" viewBox="0 0 24 24"><path d="M12 2.5 4 5.5v5.2c0 5 3.4 9.3 8 10.8 4.6-1.5 8-5.8 8-10.8V5.5l-8-3Z"/><path d="m8.4 11.6 2.5 2.5 4.7-5"/></symbol>
+  <symbol id="ic-doc" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 10h7M8.5 13.5h7M8.5 17h4"/></symbol>
+  <symbol id="ic-leaf" viewBox="0 0 24 24"><path d="M5 19C5 11 11 5 19 5c0 8-6 14-14 14Z"/><path d="M5 19c3-5 7-8 11-9"/></symbol>
+  <symbol id="ic-frail" viewBox="0 0 24 24"><circle cx="9" cy="5" r="2.2"/><path d="M9 8c-1.6 3-1.4 6-3.5 8M9 8c2 1.2 2.8 3 4.6 3.6l3.4 1.2"/><path d="M5.5 16l-1.5 4M12.5 13.5 13 21"/></symbol>
+  <symbol id="ic-care" viewBox="0 0 24 24"><path d="M12 7.5c1.4-2.3 5.5-2 5.5 1.2 0 2.4-3.5 4.6-5.5 6.3-2-1.7-5.5-3.9-5.5-6.3C6.5 5.5 10.6 5.2 12 7.5Z"/><path d="M3 20c1.5-1.5 4-2.2 6-2.2M21 20c-1.5-1.5-4-2.2-6-2.2"/></symbol>
+  <symbol id="ic-brain" viewBox="0 0 24 24"><path d="M9 5.5C7 5.5 5.5 7 5.5 8.8c-1.3.4-2 1.5-2 2.8 0 1 .5 1.9 1.4 2.4-.2 1.6 1 3 2.7 3 .5 1.2 1.6 2 2.9 2 .7 0 1-.4 1-1V6.5C11.5 6 11 5.5 9 5.5Z"/><path d="M15 5.5c2 0 3.5 1.5 3.5 3.3 1.3.4 2 1.5 2 2.8 0 1-.5 1.9-1.4 2.4.2 1.6-1 3-2.7 3-.5 1.2-1.6 2-2.9 2-.7 0-1-.4-1-1V6.5c0-.5.5-1 2.5-1Z"/></symbol>
+  <symbol id="ic-now" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6"/></symbol>
+  <symbol id="ic-keep" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.4 12.2l2.6 2.6 4.6-5"/></symbol>
+  <symbol id="ic-whole" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></symbol>
+  <symbol id="ic-heart" viewBox="0 0 24 24"><path d="M12 20.5S4 15.6 4 9.9A4 4 0 0 1 12 7a4 4 0 0 1 8 2.9C20 15.6 12 20.5 12 20.5Z"/></symbol>
+  <symbol id="ic-chat" viewBox="0 0 24 24"><path d="M4 5.5h16a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-4 3.5V16.5a1.5 1.5 0 0 1-1.5-1.5V7A1.5 1.5 0 0 1 4 5.5Z"/></symbol>
+  <symbol id="ic-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v0M14 21h3M21 17v4M17 21h4"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5V5.5Z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5V5.5Z"/></symbol>
+  <!-- 痛みのものさし用の顔 -->
+  <symbol id="f-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 14c1 1.4 2.2 2 3.5 2s2.5-.6 3.5-2"/><circle cx="9" cy="10" r=".6" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r=".6" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="f-mid" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 14.5h6"/><circle cx="9" cy="10" r=".6" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r=".6" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="f-pain" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 16c1-1.4 2.2-2 3.5-2s2.5.6 3.5 2"/><path d="M7.6 9.4l1.8 1M16.4 9.4l-1.8 1"/></symbol>
+  <symbol id="f-numb" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 14.8h6"/><path d="M7.6 10h2.8M13.6 10h2.8"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4.5l2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L4.8 9.8l5-.7L12 4.5Z"/>
+  </symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4.5" y="6" width="15" height="13.5" rx="2"/>
+    <path d="M4.5 10.5h15M8.5 4v3.5M15.5 4v3.5"/>
+  </symbol>
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.5 11.5 12 5l7.5 6.5"/>
+    <path d="M6.5 10.5V19h11v-8.5"/>
+  </symbol>
+  <symbol id="i-clinic" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8.5"/>
+    <path d="M12 8.5v7M8.5 12h7"/>
+  </symbol>
+  <symbol id="i-sign" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4v16"/>
+    <path d="M12 6h6.5l1.8 1.8L18.5 9.6H12"/>
+    <path d="M12 12.4H5.5L3.7 14.2l1.8 1.8H12"/>
+  </symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 4.2c-1.9 0-3.1 1.5-3.1 3.5 0 1.7.5 3.1 1 4.7.4 1.3.6 3 .8 4.5.15 1.05.9 1.7 1.7 1.7.65 0 1.05-.55 1.15-1.3l.5-3.1c.06-.45.45-.45.5 0l.5 3.1c.1.75.55 1.3 1.2 1.3.8 0 1.55-.65 1.7-1.7.2-1.5.4-3.2.8-4.5.5-1.6 1-3 1-4.7 0-2-1.2-3.5-3.1-3.5-1.05 0-1.8.45-2.3.85-.3.25-.7.25-1 0-.5-.4-1.25-.85-2.3-.85z"/>
+    <path d="M5.4 8.6c2.2 1 9 1 13.2 0"/>
+  </symbol>
+  <symbol id="i-root" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5c-3.2 0-5.5 1.7-5.5 4 0 1.2.6 2 1.1 3.2.6 1.5.9 4 1.2 6.4.12 1 .7 1.6 1.3 1.6.55 0 .9-.5 1-1.3l.6-4.4c.05-.4.55-.4.6 0l.6 4.4c.1.8.45 1.3 1 1.3.6 0 1.18-.6 1.3-1.6.3-2.4.6-4.9 1.2-6.4.5-1.2 1.1-2 1.1-3.2 0-2.3-2.3-4-5.5-4z"/>
+  </symbol>
+  <symbol id="i-bridge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="7" width="5" height="10" rx="2.2"/><rect x="9.5" y="7" width="5" height="10" rx="2.2"/><rect x="16" y="7" width="5" height="10" rx="2.2"/>
+    <path d="M3 9.4h18"/>
+  </symbol>
+  <symbol id="i-denture" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 7c0 6 2 11 8 11s8-5 8-11"/>
+    <path d="M4 7c2.7-1.4 13.3-1.4 16 0"/>
+    <path d="M8 8v2.4M12 8.2v2.6M16 8v2.4"/>
+  </symbol>
+  <symbol id="i-implant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 6.5c2.6-1.4 7.4-1.4 10 0"/>
+    <path d="M12 8.5v11"/>
+    <path d="M9.4 11h5.2M9.7 13.5h4.6M10 16h4M10.6 18.5h2.8"/>
+  </symbol>
+  <symbol id="i-align" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.5" y="9" width="3.6" height="6" rx="1.4"/><rect x="10.2" y="9" width="3.6" height="6" rx="1.4"/><rect x="16.9" y="9" width="3.6" height="6" rx="1.4"/>
+    <path d="M3.5 6.5h17"/>
+  </symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5l1.7 4.8L18.5 10l-4.8 1.7L12 16.5l-1.7-4.8L5.5 10l4.8-1.7z"/>
+    <path d="M18.5 15.5l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6z"/>
+  </symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 18c0-7 6-12 13-12 0 7-6 12-13 12z"/><path d="M5 18c3-4 6-6 9-7"/>
+  </symbol>
+  <symbol id="i-goal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="i-know" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 6.4C10.4 5 7.9 4.5 5 4.8v12c2.9-.3 5.4.2 7 1.6 1.6-1.4 4.1-1.9 7-1.6v-12c-2.9-.3-5.4.2-7 1.6z"/>
+    <path d="M12 6.4v11.6"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 5l7 7-7 7"/>
+  </symbol>
+  <symbol id="ic-smoke" viewBox="0 0 24 24"><rect x="3" y="14" width="13" height="4" rx="1.2"/><path d="M18.5 14v4"/><path d="M15.5 10.5c1.3-1 1.3-2.4 0-3.4M18.5 10.5c1.9-1.4 1.9-3.3 0-4.7"/></symbol>
+  <symbol id="ic-drop" viewBox="0 0 24 24"><path d="M12 4.5c3.2 3.8 5.5 6.6 5.5 9.3a5.5 5.5 0 0 1-11 0c0-2.7 2.3-5.5 5.5-9.3Z"/></symbol>
+  <symbol id="ic-swap-v" viewBox="0 0 24 24"><path d="M8 4.5v13M4.5 14.5 8 18l3.5-3.5"/><path d="M16 19.5v-13M12.5 9.5 16 6l3.5 3.5"/></symbol>
+
+
+  <symbol id="ic-moon" viewBox="0 0 24 24"><path d="M15.5 4a8 8 0 1 0 4.6 10.6A7 7 0 0 1 15.5 4Z"/></symbol>
+  <symbol id="ic-brush" viewBox="0 0 24 24"><path d="M4 20l8.5-8.5"/><path d="M12.5 11.5 17 7a1.7 1.7 0 0 1 2.4 2.4L14.9 13.9"/><path d="M14 8.5l2.4 2.4"/></symbol>
+  <symbol id="ic-tray" viewBox="0 0 24 24"><path d="M5 9.5c0 5.5 2.8 8.5 7 8.5s7-3 7-8.5"/><path d="M5 9.5c2.4-1.3 11.6-1.3 14 0"/><path d="M8.5 10v2M12 10.2v2.2M15.5 10v2"/></symbol>
+
+</defs></svg>
+
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap" style="text-align:center;">
+    <span class="agechip">〜6歳ごろ</span>
+    <div class="hero-kicker">年代別のご案内</div>
+    <h1>未就学児<br><span class="em">一生の土台をつくる</span>時期</h1>
+    <p style="text-align:left;">乳歯はエナメル質がうすく、むし歯の進みが速い歯です。一方で、この時期に身につけた歯みがきの習慣、甘いものとのつき合い方、そして「歯医者さんは気持ちのいいところ」という感覚は、その後の人生をずっと支えてくれます。このページは、お子さんのはじめてのお口を見守る保護者の方に向けてまとめました。</p>
+  </div>
+</header>
+
+<!-- ================= 1｜この時期のお口 ================= -->
+<section class="section">
+  <div class="wrap reveal prose">
+    <div class="eyebrow"><span class="dot"></span>1 ｜ いまの状態</div>
+    <h2 class="title">この時期のお口</h2>
+    <p>生後6か月ごろから乳歯が生えはじめ、3歳ごろまでに20本が生えそろいます。乳歯のむし歯は進みが速く、痛みが出にくいまま大きくなることがあります。乳歯の下では永久歯が育っており、乳歯の健康は永久歯の歯並びや質にもつながっています。</p>
+
+    <div class="stat-tile">
+      <div class="si"><svg class="pico"><use href="#ic-tooth"/></svg></div>
+      <div class="sl">生後6か月ごろから生えはじめて</div>
+      <div class="sn">3歳ごろまでに 20本</div>
+      <div class="ss">乳歯の下では、永久歯が育っています。</div>
+    </div>
+
+    <h3 class="sub"><svg><use href="#ic-alert"/></svg>気をつけたいこと</h3>
+    <div class="warn-list">
+      <div class="warn-item"><div class="wi-ico"><svg class="pico"><use href="#ic-drop"/></svg></div><p>甘い飲みものやおやつを<b>だらだらと口にする習慣</b></p></div>
+      <div class="warn-item"><div class="wi-ico"><svg class="pico"><use href="#ic-moon"/></svg></div><p><b>寝る前の授乳や甘い飲みもの</b></p></div>
+      <div class="warn-item"><div class="wi-ico"><svg class="pico"><use href="#ic-brush"/></svg></div><p><b>仕上げみがきの不足</b></p></div>
+      <div class="warn-item"><div class="wi-ico"><svg class="pico"><use href="#ic-bite"/></svg></div><p><b>指しゃぶりなどの癖</b> ── 長く続くと、かみ合わせの育ちに影響することも</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2｜予防と習慣づくり ================= -->
+<section class="section soft">
+  <div class="wrap reveal prose">
+    <div class="eyebrow"><span class="dot"></span>2 ｜ 予防が主役</div>
+    <h2 class="title">この時期の主役は、予防と習慣づくり</h2>
+    <p>この時期にいちばん力を発揮するのが、<b>フッ素と習慣づくり</b>です。乳歯を「どうせ生えかわるから」と考えず、むし歯をつくらないまま永久歯にバトンを渡すこと。それができれば、お子さまは「削る治療」を知らないまま大きくなれます。生涯でかかる費用と手間という点でも、数千円単位の予防で「治療のいらないお口」を育てられる、<b>いちばん割のいい時期</b>です。</p>
+
+    <div class="causes two">
+      <div class="cause-card">
+        <div class="ci"><svg class="pico"><use href="#ic-shield-check"/></svg></div>
+        <div class="cn">フッ素</div>
+        <div class="cd">歯を強くして、むし歯をつくらせない。医院での塗布と、おうちの歯みがき剤で。</div>
+      </div>
+      <div class="cause-card">
+        <div class="ci"><svg class="pico"><use href="#ic-leaf"/></svg></div>
+        <div class="cn">習慣づくり</div>
+        <div class="cd">歯みがきの習慣と、甘いものとのつき合い方。小さいうちほど、自然に身につきます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3｜はじめての歯医者さん ================= -->
+<section class="section">
+  <div class="wrap reveal prose">
+    <div class="eyebrow"><span class="dot"></span>3 ｜ はじめての通院</div>
+    <h2 class="title">はじめての歯医者さん ── 泣いても、大丈夫です</h2>
+    <p>「泣いてしまったら迷惑では」「じっとしていられないのに」——はじめての通院で、いちばん多いご心配です。どうぞ、そのままお連れください。<b>泣くのは、この年齢のあたりまえの反応です。</b></p>
+    <p>当院では、この時期の通院を「治療の場」ではなく「慣れる場」として考えています。お椅子に座ってみる、お口を見せてみる、お水のシャワーを体験してみる。できたことをひとつずつ増やしながら、その子のペースで進めます。今日ぜんぶできなくて、かまいません。</p>
+
+    <div class="flow" style="grid-template-columns:1fr;">
+      <div class="flow-step"><div class="fn">1</div><p>お椅子に座ってみる</p></div>
+      <div class="flow-step"><div class="fn">2</div><p>お口を見せてみる</p></div>
+      <div class="flow-step"><div class="fn">3</div><p>お水のシャワーを体験してみる</p></div>
+    </div>
+    <div class="rel-cap">できたことを、ひとつずつ。その子のペースで進めます。</div>
+
+    <p style="margin-top:24px;">はじめてのご来院は、<b>むし歯ができる前</b>がおすすめです。痛い経験より先に「気持ちのいい経験」から始められると、「歯医者さんは気持ちのいいところ」という感覚が、いちばん自然に育ちます。</p>
+  </div>
+</section>
+
+<!-- ================= 4｜よくあるご相談 ================= -->
+<section class="section soft">
+  <div class="wrap reveal prose">
+    <div class="eyebrow"><span class="dot"></span>4 ｜ よくあるご相談</div>
+    <h2 class="title">この時期の、よくあるご相談</h2>
+
+    <div class="opts" style="grid-template-columns:1fr;">
+      <div class="opt-card">
+        <div class="oi"><svg class="pico"><use href="#ic-chat"/></svg></div>
+        <div class="on">仕上げみがきを嫌がります</div>
+        <p>多くのご家庭で通る道です。こつは、①頭をひざにのせて上から見る姿勢、②上唇の裏のすじに指をそえて前歯のつけ根を守る、③短く終えて、最後は必ずほめる。それでも難しい日は、寝る前の1回だけはがんばる——それで十分です。みがき方は、メインテナンスの際に実際のお口で一緒に練習できますので、遠慮なくお声がけください。</p>
+        <div class="flow" style="grid-template-columns:1fr;margin-top:12px;">
+          <div class="flow-step"><div class="fn">1</div><p>頭をひざにのせて、上から見る姿勢</p></div>
+          <div class="flow-step"><div class="fn">2</div><p>上唇の裏のすじに指をそえて、前歯のつけ根を守る</p></div>
+          <div class="flow-step"><div class="fn">3</div><p>短く終えて、最後は必ずほめる</p></div>
+        </div>
+      </div>
+      <div class="opt-card">
+        <div class="oi"><svg class="pico"><use href="#ic-drop"/></svg></div>
+        <div class="on">おやつは、あげてはだめですか</div>
+        <p>だめではありません。大切なのは量より<b style="color:var(--ink);">回数と時間</b>です。「時間を決めて食べる」「だらだら食べ・だらだら飲みを避ける」——これだけで、むし歯の条件は大きく変わります。寝る前の甘い飲みもの・授乳のあとは、歯をふくか、みがいてから眠りにつけると安心です。</p>
+      </div>
+      <div class="opt-card">
+        <div class="oi"><svg class="pico"><use href="#ic-heart"/></svg></div>
+        <div class="on">指しゃぶりは、やめさせるべきですか</div>
+        <p>3歳ごろまでは、あわてなくて大丈夫です。長く続くとかみ合わせの育ちに影響することがあるため、4歳を過ぎても続くようなら、メインテナンスの際にご相談ください。無理にやめさせるより、様子を見ながら一緒に考えていきましょう。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="dot"></span>5 ｜ 迷われたときに</div>
+    <h2 class="title">通い方の方針と、見た目の方針</h2>
+    <p class="lead">当院では、「通い方」と「見た目」を、それぞれ3つの方針からお選びいただけます。どれも優劣ではなく、目的の違いです。そのうえで、迷われたときのご参考に、この年代のおすすめを下に添えました。</p>
+
+    <div class="pol-cap">通い方の方針（3つ）</div>
+    <div class="ways">
+      <div class="way">
+        <div class="wi"><div class="circle-ico"><svg class="pico"><use href="#ic-now"/></svg></div><div class="wn">今を整える</div></div>
+        <p class="wd">今の困りごとに、その都度こたえていく通い方です。</p>
+      </div>
+      <div class="way">
+        <div class="wi"><div class="circle-ico"><svg class="pico"><use href="#ic-keep"/></svg></div><div class="wn">気になる歯を残す</div></div>
+        <p class="wd">気になる歯を、しっかり治して残していく通い方です。</p>
+      </div>
+      <div class="way">
+        <div class="wi"><div class="circle-ico"><svg class="pico"><use href="#ic-whole"/></svg></div><div class="wn">全体で守る</div></div>
+        <p class="wd">お口全体を診て、根本から治して長く守る通い方です。</p>
+      </div>
+    </div>
+
+    <div class="pol-cap">見た目の方針（3つ）</div>
+    <div class="ways">
+      <div class="way">
+        <div class="wi"><div class="circle-ico"><svg class="pico"><use href="#i-sparkle"/></svg></div><div class="wn">見た目も整える</div></div>
+        <p class="wd">積極的に、美しさも追求。審美診断で左右差まで整えます。</p>
+      </div>
+      <div class="way">
+        <div class="wi"><div class="circle-ico"><svg class="pico"><use href="#ic-tooth"/></svg></div><div class="wn">自然な見た目を保つ</div></div>
+        <p class="wd">自然な白さ・自然な見た目に。白い詰めもの・被せものやホワイトニングで。</p>
+      </div>
+      <div class="way">
+        <div class="wi"><div class="circle-ico"><svg class="pico"><use href="#ic-bite"/></svg></div><div class="wn">機能を大切にする</div></div>
+        <p class="wd">見た目は気にせず、しっかり噛めることを大切にします。</p>
+      </div>
+    </div>
+    <div class="reco-callout rc-s1">
+      <div class="rc-head"><svg><use href="#i-sign"/></svg>迷われたときの、院長のおすすめ</div>
+      <div class="rc-body">
+        <span class="rc-cap">通い方の方針</span>
+        <div class="rc-opts"><span class="rc-opt is-reco">今を整える</span><span class="rc-opt">気になる歯を残す</span><span class="rc-opt">全体で守る</span></div>
+        <span class="rc-cap">見た目の方針</span>
+        <div class="rc-opts"><span class="rc-opt">見た目も整える</span><span class="rc-opt">自然な見た目を保つ</span><span class="rc-opt is-reco">機能を大切にする</span></div>
+        <p class="rc-why">この時期は、予防が主役です。むし歯ができても、小さいうちに見つけて「今を整える」で小さく治すのが基本。見た目よりもまず、むし歯にならないこと・しっかりかめることを大切にします。</p>
+        <p class="rc-note">※おすすめは、迷われたときのご参考です。方針に優劣はなく、ご希望に合わせてお選びいただけます。いつでも見直せます。<a href="approach.html">通い方の方針をくわしく見る</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= 6｜通う間隔・ケア・通い方 ================= -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="dot"></span>6 ｜ 通い方とケア</div>
+    <h2 class="title">通う間隔のめやす・おうちでのケア・<span class="nb">当院での通い方</span></h2>
+
+    <h3 class="sub"><svg><use href="#i-cal"/></svg>通う間隔のめやす</h3>
+    <div class="interval">
+      <div>
+        <div class="iv-main">3歳ごろまでは 6か月に1回<br>4〜6歳は 3〜6か月に1回</div>
+        <div class="iv-sub">3歳ごろまでは、歯が生えそろっていく様子の確認と、通う習慣づくりを大切に、半年に1回をめやすにしています。歯が生えそろう4歳ごろからは、フッ素塗布を年2回以上受けることがむし歯予防に効果的とされており、むし歯のなりやすさに応じて3〜6か月に1回をおすすめしています。</div>
+      </div>
+    </div>
+
+    <h3 class="sub"><svg><use href="#i-home"/></svg>おうちでのケア</h3>
+    <div class="card">
+      <ul class="care">
+        <li><strong>フッ素入り歯みがき剤</strong>を、歯が生えたらすぐに。2歳ごろまではフッ素濃度1000ppmのものを米粒くらい（1〜2mm）、3〜5歳はグリーンピースくらい（5mm）が国内の学会が推奨するめやすです。</li>
+        <li>みがいたあとのうがいは、少しのお水で軽く1回まで。フッ素をお口に残すのがこつです。</li>
+        <li><strong>仕上げみがきは毎日、寝る前に。</strong>とくに上の前歯のつけ根と、奥歯のかみ合わせの溝を。</li>
+        <li>甘いものは「時間を決めて」。回数を減らすことが、量を減らすことより大切です。</li>
+        <li>寝る前の甘い飲みもの・授乳のあとは、歯をふくか、みがいてから眠りにつけると安心です。</li>
+      </ul>
+    </div>
+
+    <h3 class="sub"><svg><use href="#i-clinic"/></svg>当院での通い方</h3>
+    <div class="card">
+      <p><strong>予防メンテナンス（未就学児）｜15分</strong><br>フッ素塗布・歯みがきの確認・お口の育ちの確認を、短いお時間でていねいに行います。「歯医者さんは気持ちのいいところ」という感覚を、小さいうちから育てていけたらと考えています。ごきょうだい・親子でのご予約、お車でのご来院もどうぞ。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7｜保護者の方へ ================= -->
+<section class="section">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="dot"></span>7 ｜ 保護者の方へ</div>
+    <div class="bridge" style="margin-top:14px;">
+      <div class="b-ico"><svg><use href="#ic-doc"/></svg></div>
+      <div>
+        <div class="b-k">保護者の方へ</div>
+        <div class="b-t">歯の生えぐあい、仕上げみがきの届きぐあい、お口の育ち。</div>
+        <p>メインテナンスのあとにお渡しするご報告と一緒にご覧いただくと、いま何を育てている時期なのかが見えてきます。仕上げみがきで気づいたこと、食事や癖のことなど、小さなことほど、次のご来院のときにそのままお聞かせください。保護者の方ご自身のお口のことも、いつでもご相談いただけます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="dot"></span>8 ｜ 気になったら</div>
+    <h2 class="title">気になったら、ここから<span class="nb">（3つの入り口）</span></h2>
+    <div class="entries">
+      <div class="entry">
+        <div class="en">1</div>
+        <div class="et">次の通院で、ひとこと</div>
+        <p>「そろそろ歯医者さんデビューさせたいのですが」「指しゃぶりのことで聞きたいことが」——次のご来院のときに、そのままお聞かせください。特別な準備はいりません。</p>
+      </div>
+      <div class="entry">
+        <div class="en">2</div>
+        <div class="et">くわしく調べる</div>
+        <p>おうちでのケアの方法は、このページをいつでも見返せます。ご家族で共有していただくのもおすすめです。</p>
+      </div>
+      <div class="entry">
+        <div class="en">3</div>
+        <div class="et">相談の時間をつくる</div>
+        <p>じっくりお話ししたいときは、ご相談のお時間を別にお取りできます。お電話または受付で「相談したい」とお伝えください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ================= QR ================= -->
+<section class="cta">
+  <div class="wrap">
+    <h2>スマホで、いつでも見返せます</h2>
+    <p>このページを、ご自宅でもゆっくりご覧いただけます。ご家族で共有していただくのもおすすめです。</p>
+    <div class="qr-slot">
+      <div class="qbox"><svg viewBox="0 0 37 37" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="このページのQRコード"><rect width="37" height="37" fill="#fff"/><path d="M2 2h7v1h-7zM11 2h2v1h-2zM15 2h1v1h-1zM18 2h1v1h-1zM20 2h6v1h-6zM28 2h7v1h-7zM2 3h1v1h-1zM8 3h1v1h-1zM11 3h1v1h-1zM13 3h1v1h-1zM16 3h2v1h-2zM19 3h2v1h-2zM23 3h2v1h-2zM26 3h1v1h-1zM28 3h1v1h-1zM34 3h1v1h-1zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM10 4h2v1h-2zM14 4h1v1h-1zM16 4h3v1h-3zM22 4h3v1h-3zM28 4h1v1h-1zM30 4h3v1h-3zM34 4h1v1h-1zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h3v1h-3zM15 5h3v1h-3zM19 5h1v1h-1zM26 5h1v1h-1zM28 5h1v1h-1zM30 5h3v1h-3zM34 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h3v1h-3zM18 6h6v1h-6zM25 6h1v1h-1zM28 6h1v1h-1zM30 6h3v1h-3zM34 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM16 7h2v1h-2zM20 7h1v1h-1zM22 7h3v1h-3zM28 7h1v1h-1zM34 7h1v1h-1zM2 8h7v1h-7zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h1v1h-1zM26 8h1v1h-1zM28 8h7v1h-7zM10 9h5v1h-5zM16 9h3v1h-3zM20 9h2v1h-2zM23 9h3v1h-3zM2 10h1v1h-1zM4 10h5v1h-5zM13 10h5v1h-5zM19 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM28 10h5v1h-5zM11 11h1v1h-1zM13 11h1v1h-1zM15 11h1v1h-1zM18 11h2v1h-2zM21 11h2v1h-2zM25 11h1v1h-1zM28 11h1v1h-1zM34 11h1v1h-1zM2 12h1v1h-1zM4 12h5v1h-5zM11 12h2v1h-2zM16 12h3v1h-3zM20 12h1v1h-1zM22 12h3v1h-3zM27 12h1v1h-1zM30 12h4v1h-4zM2 13h4v1h-4zM7 13h1v1h-1zM11 13h3v1h-3zM18 13h1v1h-1zM20 13h1v1h-1zM23 13h5v1h-5zM29 13h1v1h-1zM31 13h3v1h-3zM2 14h2v1h-2zM5 14h2v1h-2zM8 14h3v1h-3zM12 14h1v1h-1zM14 14h1v1h-1zM18 14h2v1h-2zM21 14h2v1h-2zM26 14h1v1h-1zM29 14h2v1h-2zM2 15h3v1h-3zM6 15h2v1h-2zM9 15h1v1h-1zM11 15h2v1h-2zM14 15h2v1h-2zM18 15h1v1h-1zM20 15h6v1h-6zM28 15h1v1h-1zM31 15h1v1h-1zM34 15h1v1h-1zM2 16h2v1h-2zM6 16h3v1h-3zM10 16h1v1h-1zM12 16h2v1h-2zM15 16h3v1h-3zM22 16h3v1h-3zM28 16h3v1h-3zM32 16h2v1h-2zM4 17h1v1h-1zM6 17h2v1h-2zM14 17h1v1h-1zM17 17h1v1h-1zM22 17h2v1h-2zM26 17h2v1h-2zM32 17h1v1h-1zM4 18h1v1h-1zM7 18h2v1h-2zM12 18h4v1h-4zM19 18h1v1h-1zM24 18h1v1h-1zM27 18h1v1h-1zM30 18h1v1h-1zM33 18h2v1h-2zM3 19h3v1h-3zM9 19h1v1h-1zM16 19h1v1h-1zM19 19h5v1h-5zM25 19h1v1h-1zM28 19h1v1h-1zM31 19h2v1h-2zM34 19h1v1h-1zM3 20h1v1h-1zM5 20h2v1h-2zM8 20h1v1h-1zM10 20h2v1h-2zM13 20h3v1h-3zM17 20h3v1h-3zM22 20h2v1h-2zM27 20h2v1h-2zM33 20h1v1h-1zM2 21h2v1h-2zM7 21h1v1h-1zM9 21h2v1h-2zM12 21h1v1h-1zM14 21h1v1h-1zM18 21h1v1h-1zM21 21h4v1h-4zM27 21h1v1h-1zM31 21h2v1h-2zM5 22h2v1h-2zM8 22h1v1h-1zM10 22h1v1h-1zM14 22h3v1h-3zM19 22h1v1h-1zM25 22h3v1h-3zM29 22h2v1h-2zM33 22h1v1h-1zM2 23h1v1h-1zM4 23h1v1h-1zM7 23h1v1h-1zM10 23h2v1h-2zM14 23h3v1h-3zM18 23h1v1h-1zM20 23h3v1h-3zM25 23h1v1h-1zM27 23h2v1h-2zM31 23h1v1h-1zM34 23h1v1h-1zM2 24h1v1h-1zM5 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM13 24h1v1h-1zM17 24h1v1h-1zM19 24h2v1h-2zM23 24h1v1h-1zM26 24h2v1h-2zM31 24h1v1h-1zM33 24h1v1h-1zM2 25h1v1h-1zM6 25h1v1h-1zM10 25h1v1h-1zM12 25h3v1h-3zM16 25h1v1h-1zM18 25h1v1h-1zM20 25h2v1h-2zM23 25h2v1h-2zM27 25h6v1h-6zM34 25h1v1h-1zM2 26h1v1h-1zM4 26h1v1h-1zM7 26h2v1h-2zM10 26h7v1h-7zM19 26h2v1h-2zM24 26h1v1h-1zM26 26h5v1h-5zM33 26h2v1h-2zM10 27h1v1h-1zM12 27h1v1h-1zM16 27h1v1h-1zM18 27h5v1h-5zM26 27h1v1h-1zM30 27h5v1h-5zM2 28h7v1h-7zM12 28h2v1h-2zM15 28h1v1h-1zM17 28h3v1h-3zM23 28h4v1h-4zM28 28h1v1h-1zM30 28h4v1h-4zM2 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM12 29h2v1h-2zM16 29h2v1h-2zM21 29h4v1h-4zM26 29h1v1h-1zM30 29h3v1h-3zM34 29h1v1h-1zM2 30h1v1h-1zM4 30h3v1h-3zM8 30h1v1h-1zM10 30h2v1h-2zM13 30h1v1h-1zM16 30h1v1h-1zM19 30h1v1h-1zM21 30h2v1h-2zM24 30h1v1h-1zM26 30h5v1h-5zM33 30h2v1h-2zM2 31h1v1h-1zM4 31h3v1h-3zM8 31h1v1h-1zM10 31h1v1h-1zM13 31h1v1h-1zM19 31h4v1h-4zM24 31h1v1h-1zM27 31h1v1h-1zM29 31h3v1h-3zM33 31h2v1h-2zM2 32h1v1h-1zM4 32h3v1h-3zM8 32h1v1h-1zM10 32h3v1h-3zM14 32h1v1h-1zM17 32h1v1h-1zM19 32h1v1h-1zM24 32h2v1h-2zM28 32h1v1h-1zM32 32h1v1h-1zM2 33h1v1h-1zM8 33h1v1h-1zM12 33h1v1h-1zM14 33h1v1h-1zM16 33h3v1h-3zM20 33h1v1h-1zM23 33h3v1h-3zM29 33h1v1h-1zM31 33h2v1h-2zM2 34h7v1h-7zM10 34h1v1h-1zM13 34h1v1h-1zM15 34h2v1h-2zM19 34h1v1h-1zM25 34h4v1h-4zM33 34h1v1h-1z" fill="#2E3A3F"/></svg></div>
+      <div class="qr-cap">スマホのカメラで読み取ると、<br>このページをいつでも見返せます。</div>
+      <div class="qr-url">lifedesign-studio.github.io/dental/life-stage-1-preschool.html</div>
+    </div>
+  </div>
+</section>
+
+<nav class="backtop">
+  <a href="index.html"><svg class="bt-arrow"><use href="#ic-arrow-right"/></svg>治療と費用のご案内トップへ</a>
+  <a href="life-stage.html"><svg class="bt-arrow"><use href="#ic-arrow-right"/></svg>5つの時期の一覧へ</a>
+</nav>
+
+<footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
+  <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+
+
+<script>
+(function(){
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+</body>
+</html>

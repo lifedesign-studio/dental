@@ -71,6 +71,22 @@
   .hc-desc{display:block;font-size:13px;color:var(--ink-soft);line-height:1.65;margin-top:3px;}
   .hc-arrow{flex:0 0 auto;width:20px;height:20px;color:var(--sage-2);}
 
+  /* age cards (年代別) */
+  .agenum{
+    flex:0 0 auto;width:34px;height:34px;border-radius:50%;
+    background:var(--soft);border:1.5px solid var(--line);
+    color:var(--sage);font-weight:700;font-size:14.5px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .stage-list-link{
+    display:inline-flex;align-items:center;gap:8px;margin-top:16px;
+    font-size:13px;font-weight:700;color:var(--sage);text-decoration:none;
+    border:1px solid var(--line);border-radius:999px;padding:9px 18px;background:var(--paper);
+    transition:background .2s ease;
+  }
+  .stage-list-link:hover{background:var(--card);}
+  .stage-list-link svg{width:16px;height:16px;color:var(--sage-2);}
+
   /* feature card (別セクション・保険治療) */
   .feature{
     display:flex;gap:16px;align-items:flex-start;
@@ -167,39 +183,61 @@
   </div>
 </header>
 
-<!-- まず読む：知っておきたいお話（oral-health） -->
-<section class="section" style="border-top:none;padding-top:10px;">
-  <div class="wrap reveal">
-    <p class="eyebrow">まず、はじめに</p>
-    <a class="feature" href="oral-health.html" style="border-left:4px solid var(--sage);">
-      <svg class="ic"><use href="#i-know"/></svg>
-      <div class="fb">
-        <h3>お口のことを、自分のこととして</h3>
-        <p>なぜトラブルが起きるのか、これからどう守っていけるのか。治療を選ぶ前に知っておきたい4つのお話を、図とデータでまとめました。検査の結果と一緒に読むと、いちばん「自分のこと」として見えてきます。</p>
-      </div>
-      <svg class="hc-arrow"><use href="#i-arrow"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- ライフステージ別のご案内 -->
-<section class="section soft">
+<!-- 年代別のご案内（5カード） -->
+<section class="section soft" style="border-top:none;">
   <div class="wrap reveal">
     <p class="eyebrow">年代別のご案内</p>
-    <h2 class="title">ライフステージ別 治療のご案内</h2>
+    <h2 class="title">いまの年代で、大切にしたいこと</h2>
     <p class="lead">
       歯とお口は、年齢とともに「守りたいもの」が変わっていきます。
       それぞれの時期に大切なことと、通う間隔のめやす、おうちでのケアをまとめました。
+      まずは、ご自身やご家族の年代からどうぞ。
     </p>
 
-    <a class="feature" href="life-stage.html">
-      <svg class="ic"><use href="#i-leaf"/></svg>
-      <div class="fb">
-        <h3>いまの年代で、大切にしたいこと</h3>
-        <p>未就学のお子さまから80代以上の方まで、5つの時期に分けてご案内しています。迷われたときのご参考に、「院長のおすすめ」もそれぞれの時期に添えました。</p>
-      </div>
-      <svg class="hc-arrow"><use href="#i-arrow"/></svg>
-    </a>
+    <div class="hub">
+      <a class="hub-card" href="life-stage-1-preschool.html">
+        <span class="agenum">1</span>
+        <span class="hc-body">
+          <span class="hc-title">未就学児（〜6歳ごろ）</span>
+          <span class="hc-desc">一生の土台をつくる時期</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+      </a>
+      <a class="hub-card" href="life-stage-2-school.html">
+        <span class="agenum">2</span>
+        <span class="hc-body">
+          <span class="hc-title">小中学生（6〜15歳ごろ）</span>
+          <span class="hc-desc">一生使う永久歯を迎える時期</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+      </a>
+      <a class="hub-card" href="life-stage-3-adult.html">
+        <span class="agenum">3</span>
+        <span class="hc-body">
+          <span class="hc-title">高校生〜30代（15〜39歳ごろ）</span>
+          <span class="hc-desc">いちばん丈夫で、いちばん遠ざかりやすい時期</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+      </a>
+      <a class="hub-card" href="life-stage-4-middle.html">
+        <span class="agenum">4</span>
+        <span class="hc-body">
+          <span class="hc-title">40代〜70代</span>
+          <span class="hc-desc">歯ぐきを守り、歯を失わない時期</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+      </a>
+      <a class="hub-card" href="life-stage-5-senior.html">
+        <span class="agenum">5</span>
+        <span class="hc-body">
+          <span class="hc-title">80代以上</span>
+          <span class="hc-desc">食べる力・話す力を保つ時期</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+
+    <a class="stage-list-link" href="life-stage.html">5つの時期の一覧（比較表）を見る<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a>
   </div>
 </section>
 
