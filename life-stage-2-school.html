@@ -558,6 +558,21 @@ a.hub-card:hover{border-color:var(--sage-2);transform:translateY(-2px);box-shado
 }
 
 
+
+/* ===== 15年後のこと（追記 2026-08-28） ===== */
+  .rc-goal{background:var(--paper);border:1px solid var(--line);border-radius:12px;
+    padding:15px 16px;margin-bottom:18px;}
+  .rc-goal-q{font-size:15px;font-weight:700;color:var(--ink);line-height:1.75;}
+  .rc-goal-q em{font-style:normal;color:var(--sage);}
+  .rc-goal-list{list-style:none;margin:13px 0 0;padding:0;display:flex;
+    flex-direction:column;gap:9px;counter-reset:g;}
+  .rc-goal-list li{position:relative;padding-left:27px;font-size:13.5px;
+    color:var(--ink-soft);line-height:1.8;counter-increment:g;}
+  .rc-goal-list li:before{content:counter(g);position:absolute;left:0;top:2px;
+    width:19px;height:19px;border-radius:50%;background:var(--sage);color:#fff;
+    font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .rc-goal-tail{margin-top:13px;font-size:12.5px;color:var(--muted);line-height:1.9;}
+  .rc-goal-tail a{color:var(--sage);font-weight:600;}
 </style>
 </head>
 <body>
@@ -831,6 +846,16 @@ a.hub-card:hover{border-color:var(--sage-2);transform:translateY(-2px);box-shado
     <div class="reco-callout rc-s2">
       <div class="rc-head"><svg><use href="#i-sign"/></svg>迷われたときの、院長のおすすめ</div>
       <div class="rc-body">
+        <div class="rc-goal">
+          <div class="rc-goal-q">15年後、お子さんは <em>何歳</em> になっていますか。そのとき、どんなお口でいてほしいですか。</div>
+          <ol class="rc-goal-list">
+          <li>生えたばかりの永久歯を、削らずに保てていること</li>
+          <li>かみ合わせと歯ならびが整い、みがきやすいこと</li>
+          <li>通う習慣が、大人になっても続いていること</li>
+          </ol>
+          <p class="rc-goal-tail">この3つがそろっている状態を、院長はおすすめしています。いま生えた永久歯は、一生使う歯です。ここを削らずに渡せるかどうかが、その後の何十年かを大きく変えます。<br>これは院長の推奨で、目指すべき正解ではありません。ご希望に合わせてお選びいただけますし、いつでも見直せます。 <a href="approach.html#goal">15年後のことを、くわしく見る</a></p>
+        </div>
+
         <span class="rc-cap">通い方の方針</span>
         <div class="rc-opts"><span class="rc-opt is-reco">今を整える</span><span class="rc-opt">気になる歯を残す</span><span class="rc-opt">全体で守る</span></div>
         <span class="rc-cap">見た目の方針</span>

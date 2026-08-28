@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>費用を、時間軸で考える｜ライフデンタルクリニック</title>
+<style>
+:root{
+  --paper:#FFFFFF; --soft:#F4F7F5; --card:#EEF3F1; --ink:#2E3A3F;
+  --ink-soft:#54636A; --muted:#6E7B80; --sage:#4F7A6C; --sage-2:#6E9C8E;
+  --line:#D8E0DD;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--gothic);line-height:1.8;
+  letter-spacing:.02em;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+.section{padding:52px 0;}
+.section.soft{background:var(--soft);}
+.eyebrow{font-size:12px;letter-spacing:.28em;color:var(--sage);font-weight:700;margin-bottom:12px;}
+h2.title{font-size:26px;font-weight:600;color:var(--ink);letter-spacing:.03em;line-height:1.45;}
+.lead{margin-top:14px;font-size:15px;color:var(--ink-soft);line-height:1.9;}
+.note{font-size:12.5px;color:var(--muted);line-height:1.8;}
+
+/* hero */
+.hero{padding:70px 0 56px;text-align:center;}
+.hero .eyebrow{margin-bottom:16px;}
+.hero h1{font-size:30px;font-weight:600;letter-spacing:.06em;line-height:1.5;color:var(--ink);}
+.hero p{margin-top:20px;font-size:15.5px;color:var(--ink-soft);line-height:2;}
+.hero p b{color:var(--sage);font-weight:600;}
+
+/* 3方針カード */
+.ways{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+.way{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;}
+.way .tag{display:inline-block;font-size:11px;letter-spacing:.06em;color:var(--muted);
+  border:1px solid var(--line);border-radius:20px;padding:2px 11px;margin-bottom:10px;}
+.way .tag.j{color:var(--sage);border-color:var(--sage-2);}
+.way .nm{font-size:20px;font-weight:600;color:var(--ink);letter-spacing:.03em;}
+.way .desc{margin-top:8px;font-size:14px;color:var(--ink-soft);line-height:1.8;}
+.way .goal{margin-top:12px;font-size:13px;color:var(--ink-soft);line-height:1.85;
+  background:var(--soft);border-radius:10px;padding:11px 14px;}
+.way .goal b{color:var(--sage);font-weight:600;}
+.way .act{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;
+  font-size:13px;color:var(--ink-soft);line-height:1.9;}
+.way .act .act-h{display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;
+  color:var(--sage);letter-spacing:.04em;margin-bottom:5px;}
+.way .act .act-h svg{width:15px;height:15px;flex:0 0 auto;}
+.way .act b{color:var(--sage);font-weight:600;}
+.knote{margin-top:16px;font-size:12.5px;color:var(--muted);text-align:center;}
+.mtline{margin-top:18px;background:var(--card);border-radius:12px;padding:13px 18px;
+  font-size:13.5px;color:var(--ink-soft);line-height:1.7;display:flex;gap:10px;align-items:flex-start;}
+.mtline svg{width:19px;height:19px;flex:0 0 auto;margin-top:2px;}
+
+/* CTAボタン */
+.cta{display:inline-flex;align-items:center;gap:8px;margin-top:16px;
+  font-size:14px;font-weight:600;color:var(--paper);background:var(--sage);
+  border:none;border-radius:10px;padding:12px 20px;text-decoration:none;letter-spacing:.03em;}
+.cta.ghost{color:var(--sage);background:var(--paper);border:1.5px solid var(--sage);}
+.cta svg{width:17px;height:17px;}
+.ctarow{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+
+/* 見た目 */
+.looks{display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+.look{border:1px solid var(--line);border-radius:12px;padding:15px 18px;background:var(--paper);}
+.look .ln{font-size:16px;font-weight:600;color:var(--ink);}
+.look .ld{margin-top:4px;font-size:13px;color:var(--ink-soft);line-height:1.75;}
+
+/* 組み立て方 2カード */
+.build{display:flex;flex-direction:column;gap:16px;margin-top:26px;}
+.bcard{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--paper);}
+.bcard .bt{font-size:18px;font-weight:600;color:var(--ink);letter-spacing:.02em;}
+.bcard .bsub{margin-top:3px;font-size:12.5px;color:var(--muted);}
+.bcard .bd{margin-top:12px;font-size:14px;color:var(--ink-soft);line-height:1.85;}
+.bcard .bd b{color:var(--sage);font-weight:600;}
+.parts{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+.parts a{flex:1;min-width:120px;text-align:center;font-size:14px;color:var(--sage);
+  background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 8px;
+  text-decoration:none;font-weight:600;}
+
+/* コンサル */
+.consult{background:var(--card);border-radius:16px;padding:26px 24px;margin-top:24px;}
+.consult .cprice{display:flex;align-items:baseline;gap:6px;margin:6px 0 4px;}
+.consult .cprice .v{font-size:30px;font-weight:600;color:var(--sage);letter-spacing:.02em;}
+.consult .cprice .u{font-size:13px;color:var(--ink-soft);}
+.consult .cn{font-size:13.5px;color:var(--ink-soft);line-height:1.85;}
+.consult .cn b{color:var(--sage);font-weight:600;}
+.consult ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:9px;}
+.consult li{display:flex;gap:9px;font-size:13.5px;color:var(--ink-soft);line-height:1.7;align-items:flex-start;}
+.consult li svg{width:18px;height:18px;flex:0 0 auto;margin-top:2px;}
+
+/* 費用レンジ */
+.rangegrid{display:flex;flex-direction:column;gap:22px;margin-top:24px;}
+.rgroup .gt{font-size:14px;font-weight:600;color:var(--sage);letter-spacing:.03em;
+  padding-bottom:7px;border-bottom:1px solid var(--line);margin-bottom:4px;}
+.rrow{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  padding:11px 2px;border-bottom:1px dotted var(--line);}
+.rrow .rl{font-size:14px;color:var(--ink);}
+.rrow .rl small{display:block;font-size:11.5px;color:var(--muted);margin-top:1px;}
+.rrow .rv{font-size:15px;font-weight:600;color:var(--ink);white-space:nowrap;}
+.rrow .rv small{font-size:11.5px;font-weight:400;color:var(--muted);}
+
+/* お約束 */
+.promise{display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px;}
+.pcell{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--paper);}
+.pcell .pt{font-size:15px;font-weight:600;color:var(--ink);}
+.pcell .pd{margin-top:5px;font-size:13px;color:var(--ink-soft);line-height:1.75;}
+.pcell .pd b{color:var(--sage);font-weight:600;}
+
+/* 控除 */
+.taxtable{width:100%;border-collapse:collapse;margin-top:16px;font-size:13.5px;}
+.taxtable th,.taxtable td{border:1px solid var(--line);padding:9px 10px;text-align:center;}
+.taxtable th{background:var(--card);color:var(--ink);font-weight:600;font-size:12.5px;}
+.taxtable .back{color:var(--sage);font-weight:600;}
+.disc{margin-top:12px;font-size:11.5px;color:var(--muted);line-height:1.75;}
+.disc b{color:var(--ink-soft);font-weight:600;}
+
+/* footer */
+footer{background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;}
+footer img{width:112px;height:auto;margin:0 auto 13px;display:block;}
+footer .fl{font-size:14px;color:var(--ink);letter-spacing:.05em;}
+footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08em;}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@media (min-width:760px){
+  h2.title{font-size:29px;}
+  .hero h1{font-size:36px;}
+  .ways{flex-direction:row;}
+  .ways .way{flex:1;}
+  .looks{flex-direction:row;}
+  .looks .look{flex:1;}
+  .build{flex-direction:row;}
+  .build .bcard{flex:1;}
+  .promise{grid-template-columns:1fr 1fr;}
+}
+
+/* ===== 15年後のこと（追記 2026-08-28） ===== */
+.goalbox{background:var(--card);border-radius:16px;padding:26px 22px;margin-top:26px;}
+.goalq{font-size:17px;font-weight:600;color:var(--ink);line-height:1.75;letter-spacing:.02em;}
+.goalq span{color:var(--sage);}
+.goalsub{margin-top:12px;font-size:13.5px;color:var(--ink-soft);line-height:1.95;}
+.pillars{display:flex;flex-direction:column;gap:12px;margin-top:20px;}
+.pillar{background:var(--paper);border:1px solid var(--line);border-radius:12px;
+  padding:15px 16px;display:flex;gap:12px;align-items:flex-start;}
+.pillar .pnum{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--sage);
+  color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+.pillar .ptt{font-size:15.5px;font-weight:600;color:var(--ink);line-height:1.6;}
+.pillar .pdd{margin-top:5px;font-size:13px;color:var(--ink-soft);line-height:1.8;}
+.goalnote{margin-top:18px;font-size:12.5px;color:var(--muted);line-height:1.9;
+  border-top:1px solid var(--line);padding-top:14px;}
+.goalnote b{color:var(--ink-soft);font-weight:600;}
+@media (min-width:760px){
+  .pillars{flex-direction:row;}
+  .pillars .pillar{flex:1;flex-direction:column;}
+  .pillars .pillar .pnum{margin-top:0;}
+}
+
+/* ===== 費用を時間軸で（cost-over-time） 2026-08-28 ===== */
+.crow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;
+  padding:16px 2px;border-bottom:1px dotted var(--line);}
+.crow .cl{font-size:14.5px;color:var(--ink);line-height:1.6;}
+.crow .cl small{display:block;font-size:11.5px;color:var(--muted);margin-top:2px;}
+.crow .cr{text-align:right;white-space:nowrap;}
+.crow .cr .total{font-size:21px;font-weight:700;color:var(--ink);letter-spacing:.01em;}
+.crow .cr .total small{font-size:12px;font-weight:400;color:var(--ink-soft);}
+.crow .cr .per{margin-top:3px;font-size:12px;color:var(--muted);}
+.cond{margin-top:18px;background:var(--card);border-radius:12px;padding:15px 17px;
+  font-size:12.5px;color:var(--ink-soft);line-height:1.95;}
+.cond b{color:var(--sage);font-weight:600;}
+.formula{margin-top:24px;background:var(--soft);border:1px dashed var(--line);border-radius:12px;
+  padding:20px 16px;text-align:center;font-size:15px;color:var(--ink);line-height:2.1;}
+.formula b{color:var(--sage);font-weight:700;font-size:17px;}
+.gauge{display:flex;flex-direction:column;gap:12px;margin-top:22px;}
+.gitem{border:1px solid var(--line);border-radius:12px;padding:15px 17px;background:var(--paper);}
+.gitem .gn{font-size:15px;font-weight:600;color:var(--ink);}
+.gitem .gv{margin-top:6px;font-size:18px;font-weight:700;color:var(--sage);}
+.gitem .gs{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.8;}
+.gitem.blank{background:var(--soft);border-style:dashed;}
+.caution{border:1px solid var(--line);border-radius:14px;padding:20px 20px 16px;background:var(--paper);margin-top:22px;}
+.caution li{list-style:none;display:flex;gap:10px;font-size:13.5px;color:var(--ink-soft);
+  line-height:1.9;padding:9px 0;border-bottom:1px dotted var(--line);}
+.caution li:last-child{border-bottom:none;}
+.caution li span{color:var(--sage);font-weight:700;flex:0 0 auto;}
+@media (min-width:760px){
+  .gauge{flex-direction:row;}
+  .gauge .gitem{flex:1;}
+}
+</style>
+</head>
+<body>
+
+<!-- ヒーロー -->
+<header class="hero">
+  <div class="wrap reveal">
+    <div class="eyebrow">費用の考え方</div>
+    <h1>その金額を、<br>時間で割ってみる</h1>
+    <p>治療費は、その場で聞くと大きな数字に感じられます。<br>
+    けれど歯は、<b>毎日使い、長く使うもの</b>です。<br>
+    一度、時間で割って眺めてみると、見え方が変わることがあります。</p>
+  </div>
+</header>
+
+<!-- なぜ時間で割るのか -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow">はじめに</div>
+    <h2 class="title">どちらが正しい、ではありません</h2>
+    <p class="lead">「総額でいくらか」は、お支払いのときに実際に必要になる、いちばん大事な数字です。
+    このページは、それを小さく見せるためのものではありません。</p>
+    <p class="lead">ただ、総額だけで見ていると、<b style="color:var(--sage);">どれくらい長く使うものなのか</b>が視野から抜けやすくなります。
+    毎日使うものを、1年あたりでも眺めてみる。両方の見方をお手元に置いていただくと、ご自分にとっての値打ちが判断しやすくなります。</p>
+    <p class="note" style="margin-top:16px;">お決めいただくのは、いつでもかまいません。このページは、決めるための材料のひとつです。</p>
+  </div>
+</section>
+
+<!-- 15年という物差し -->
+<section class="section">
+  <div class="wrap reveal">
+    <div class="eyebrow">当院の物差し</div>
+    <h2 class="title">わたしたちは「15年」で考えます</h2>
+    <p class="lead">当院が対象の治療にお付けしている保証は、15年です。
+    15年お使いいただけるようにお作りし、その間の責任をお引き受けする。だから、費用も同じ15年で割って考えます。</p>
+
+    <div class="cond">
+      <b>ただし、条件があります。</b>保証が続く条件は、定期的なメインテナンスにご一緒いただくことです。
+      詰めものや被せものは、入れて終わりではありません。まわりの歯ぐきと、かみ合わせと、毎日のお手入れに支えられて、はじめて長持ちします。<br>
+      「はじめにきちんと整えて、あとは予防で保つ」——これが、15年という数字の中身です。
+    </div>
+
+    <div class="ctarow">
+      <a class="cta ghost" href="approach.html#goal">15年後のことを、先に考える
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 実際に割ってみる -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow">割ってみると</div>
+    <h2 class="title">1年あたりで見ると</h2>
+    <p class="lead">代表的な治療で、実際に計算してみます。大きい数字が総額、その下の小さい数字が1年あたりです。</p>
+
+    <div style="margin-top:22px;">
+      <div class="crow">
+        <div class="cl">セラミックの詰めもの<small>インレー</small></div>
+        <div class="cr">
+          <div class="total">5.5〜9<small>万円</small></div>
+          <div class="per">15年で割ると 年 約3,700〜6,000円</div>
+        </div>
+      </div>
+      <div class="crow">
+        <div class="cl">セラミックの被せもの<small>クラウン</small></div>
+        <div class="cr">
+          <div class="total">8.5〜18<small>万円</small></div>
+          <div class="per">15年で割ると 年 約5,700〜12,000円</div>
+        </div>
+      </div>
+      <div class="crow">
+        <div class="cl">インプラント<small>1歯／骨造成が必要な場合は別途</small></div>
+        <div class="cr">
+          <div class="total">46<small>万円〜</small></div>
+          <div class="per">15年で割ると 年 約30,700円〜</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cond">
+      すべて税込・総額のめやすです。本数や状態で変わります。正式なお見積りは、検査の結果からお出しします。<br>
+      1年あたりの金額は <b>「15年お使いいただいたと仮定した場合」</b> の目安であり、15年もつことをお約束するものではありません。
+      実際にどれくらい使えるかは、お口の状態や毎日のお手入れ、メインテナンスの継続によって変わります。<br>
+      <b>メインテナンスの費用は含んでいません（別途）。</b>くわしくは、下の「メインテナンスの費用について」をご覧ください。<br>
+      ほかの治療の費用は <a href="approach.html" style="color:var(--sage);font-weight:600;">通い方の方針のページ</a> にまとめています。
+    </div>
+  </div>
+</section>
+
+<!-- 暮らしの中の物差し -->
+<section class="section">
+  <div class="wrap reveal">
+    <div class="eyebrow">くらべる物差し</div>
+    <h2 class="title">暮らしの中の、ほかの支出と</h2>
+    <p class="lead">金額の大きさは、それだけを見ても測れません。ふだんの暮らしにある支出を、同じ「1年あたり」に揃えて並べてみます。
+    どれが良い・悪いという比較ではありません。ものさしとして置くだけのものです。</p>
+
+    <div class="gauge">
+      <div class="gitem">
+        <div class="gn">軽自動車の維持費</div>
+        <div class="gv">年 およそ25万円</div>
+        <div class="gs">ガソリン・駐車場・税金・保険・車検などの合計。普通車（コンパクトカー）ではおよそ40万円とされています。</div>
+      </div>
+      <div class="gitem">
+        <div class="gn">たばこ 1日1箱</div>
+        <div class="gv">年 およそ21〜22万円</div>
+        <div class="gs">主要銘柄が1箱580〜600円（2026年1月時点）。毎日1箱として計算した場合の金額です。</div>
+      </div>
+      <div class="gitem blank">
+        <div class="gn">あなたの物差し</div>
+        <div class="gv">年 ？円</div>
+        <div class="gs">毎日使っているもの、毎年払っているもの。ご自分にとって身近なものを1年あたりに直して、並べてみてください。</div>
+      </div>
+    </div>
+
+    <div class="formula">
+      治療の総額 &nbsp;÷&nbsp; <b>15年</b> &nbsp;=&nbsp; 1年あたりの金額<br>
+      <span style="font-size:12.5px;color:var(--muted);">この数字を、上の物差しと並べてみてください。</span>
+    </div>
+
+    <p class="note" style="margin-top:16px;">※金額は一般的な目安です（2026年8月時点で確認）。車種・地域・銘柄によって変わります。
+    出典：車の維持費＝一般の解説記事の平均値／たばこ＝2026年1月時点の主要銘柄価格。年1回、見直しています。</p>
+  </div>
+</section>
+
+<!-- メインテナンス費用 -->
+<section class="section soft">
+  <div class="wrap reveal">
+    <div class="eyebrow">正直にお伝えします</div>
+    <h2 class="title">メインテナンスの費用について</h2>
+    <p class="lead">上の1年あたりの金額には、メインテナンスの費用は含まれていません。
+    治療費だけを15年で割った数字です。実際には、これに定期的な通院の費用が加わります。</p>
+
+    <p class="lead">メインテナンスは、お口の状態によって<b style="color:var(--sage);">保険が適用される場合</b>と、
+    <b style="color:var(--sage);">自費でお受けいただく場合</b>があります。
+    どちらになるかは、そのときのお口の状態と、医学的に必要かどうかで決まります。
+    保険が適用される場合の窓口でのご負担は、その日の内容によって変わりますので、受付・担当からご案内します。</p>
+
+    <div style="margin-top:22px;">
+      <div class="crow">
+        <div class="cl">予防メンテナンス（未就学児）<small>15分</small></div>
+        <div class="cr"><div class="total">3,000<small>円</small></div></div>
+      </div>
+      <div class="crow">
+        <div class="cl">予防メンテナンス（小中学生）<small>30分</small></div>
+        <div class="cr"><div class="total">6,000<small>円</small></div></div>
+      </div>
+      <div class="crow">
+        <div class="cl">予防メンテナンス（高校生〜大人）<small>45分</small></div>
+        <div class="cr">
+          <div class="total">9,000<small>円</small></div>
+          <div class="per">年2回なら 年18,000円</div>
+        </div>
+      </div>
+      <div class="crow">
+        <div class="cl">じっくりお時間を取る枠<small>60分</small></div>
+        <div class="cr"><div class="total">12,000<small>円</small></div></div>
+      </div>
+    </div>
+
+    <div class="cond">
+      上の金額は、<b>自費でお受けいただく場合</b>の料金です（すべて税込）。
+      保険が適用される場合は、これとは別に、保険のご負担額になります。<br>
+      メインテナンスは、費用を上の計算から外しても、<b>説明からは外しません</b>。
+      予防を続けることが、15年という数字と保証の両方を成り立たせている部分だからです。
+      「治療費は安く、あとは放っておいて長持ち」という道は、残念ながらありません。<br>
+      なお、当院が<b>保証を続けるために保険の診療をお願いすることはありません</b>。
+      その日に何をするかは、そのときのお口の状態から決めます。
+    </div>
+  </div>
+</section>
+
+<!-- ただし書き -->
+<section class="section">
+  <div class="wrap reveal">
+    <div class="eyebrow">大切な、ただし書き</div>
+    <h2 class="title">この計算で、言えないこと</h2>
+    <ul class="caution">
+      <li><span>1</span><div><b>15年は、保証の期間です。</b>「必ず15年もちます」という意味ではありません。実際の年数は、お口の状態やお手入れ、通院の継続によって変わります。</div></li>
+      <li><span>2</span><div><b>将来の医療費が減る、とはお約束できません。</b>再治療の回数を減らせる可能性はありますが、確かなことは、その方のお口とこれからの過ごし方によります。</div></li>
+      <li><span>3</span><div><b>保険の治療が劣っている、という話でもありません。</b>今の困りごとにこたえる治療には、それ自体の大切な役割があります。目的が違えば、選ぶものも変わります。</div></li>
+      <li><span>4</span><div><b>1年あたりの金額は、支払い方法ではありません。</b>実際のお支払いは総額です（着手時と仕上げ時の2回に分けられます）。分割払いや月々のお支払いという意味ではありません。</div></li>
+    </ul>
+    <p class="note" style="margin-top:18px;">迷われたときは、そのままお聞かせください。その場でお決めいただく必要はありません。
+    ご家族と相談されてからでも、次回の通院のときでも、かまいません。</p>
+  </div>
+</section>
+
+<footer>
+  <img src="life-logo.png" alt="ライフデンタルクリニック">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
