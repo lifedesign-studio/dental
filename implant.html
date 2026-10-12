@@ -379,18 +379,6 @@ footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
 .toc a .tn{width:24px;height:24px;border-radius:50%;background:var(--soft);border:1px solid var(--sage-2);color:var(--sage);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
 .toc a svg{width:16px;height:16px;margin-left:auto;stroke:var(--sage-2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 
-/* よく聞くお話と、実際のところ */
-.gap-list{display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px;}
-.gap{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;}
-.gap .gq{display:flex;gap:12px;align-items:flex-start;padding:15px 17px;background:var(--soft);border-bottom:1px solid var(--line-2);}
-.gap .gq .gn{font-size:11.5px;font-weight:800;color:var(--sage);letter-spacing:.06em;white-space:nowrap;margin-top:3px;}
-.gap .gq p{margin:0;font-size:15px;font-weight:800;line-height:1.6;color:var(--ink);}
-.gap .ga{padding:14px 17px 16px;}
-.gap .ga .gl{font-size:11.5px;font-weight:800;color:var(--sage);letter-spacing:.06em;margin-bottom:4px;}
-.gap .ga p{margin:0 0 7px;font-size:14px;color:var(--ink-soft);line-height:1.85;}
-.gap .ga p:last-child{margin-bottom:0;}
-.gap .ga b{color:var(--ink);}
-.gap .ga .src{font-size:11.5px;color:var(--muted);line-height:1.6;}
 
 /* 部品 */
 .parts{display:grid;grid-template-columns:1fr;gap:10px;margin-top:16px;}
@@ -478,12 +466,11 @@ table.plain tr.sum td{background:var(--card);font-weight:800;}
 .after-exam b{display:block;color:var(--ink);font-size:14px;margin-bottom:2px;}
 .cta .tel{display:inline-block;font-size:24px;font-weight:800;color:#fff;text-decoration:none;letter-spacing:.04em;margin:0 0 22px;border-bottom:1px solid rgba(255,255,255,.5);}
 
-.gap a,.risk a{color:var(--sage);font-weight:800;}
+.risk a{color:var(--sage);font-weight:800;}
 @media (min-width:760px){.hero .wrap-wide{grid-template-columns:1fr;max-width:880px;}}
 
 @media (min-width:760px){
   .toc{grid-template-columns:1fr 1fr;}
-  .gap-list{grid-template-columns:1fr 1fr;}
   .parts{grid-template-columns:repeat(3,1fr);}
   .twoway{grid-template-columns:1fr 1fr;}
   .risk-grid{grid-template-columns:1fr 1fr;}
@@ -491,6 +478,93 @@ table.plain tr.sum td{background:var(--card);font-weight:800;}
   .after-exam{grid-template-columns:repeat(3,1fr);}
 }
 
+
+/* === 2026-10-12 第2版：同意資料v17と同じ図・同じ組み方に統一 === */
+.purpose-fig{margin:0 0 14px;}
+.purpose-fig img{width:100%;border-radius:12px;}
+.pfig{margin:22px 0 0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;}
+.pfig img{width:100%;}
+.pfig figcaption{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px;}
+.pfig figcaption div{font-size:11.5px;line-height:1.55;color:var(--muted);text-align:center;padding:8px 4px 0;border-top:2px solid var(--line);}
+.pfig figcaption b{display:block;font-size:13px;color:var(--ink);font-weight:800;line-height:1.45;}
+.pfig .pn{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--sage);color:var(--sage);font-weight:800;font-size:12px;margin-bottom:3px;}
+.tl{list-style:none;margin:22px 0 0;padding:0;}
+.tl li{display:grid;grid-template-columns:32px 30px 1fr auto;gap:0 12px;align-items:center;position:relative;padding:9px 0;}
+.tl li::before{content:"";position:absolute;left:15px;top:0;bottom:0;border-left:1.6px solid var(--sage-2);}
+.tl li:first-child::before{top:50%;}
+.tl li:last-child::before{bottom:auto;height:50%;}
+.tl .no{position:relative;z-index:1;width:32px;height:32px;border-radius:50%;border:1.6px solid var(--sage);background:var(--paper);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--sage);}
+.section.soft .tl .no{background:var(--soft);}
+.tl .no.dot{width:12px;height:12px;border:0;background:var(--sage);justify-self:center;}
+.tl .ic-tl{width:30px;height:30px;color:var(--sage);}
+.tl .what b{display:block;font-size:15.5px;font-weight:800;line-height:1.45;}
+.tl .what span{display:block;font-size:13px;color:var(--ink-soft);line-height:1.65;}
+.tl li.sub .what b{font-size:14.5px;}
+.tl .when{justify-self:end;text-align:center;font-weight:800;font-size:12.5px;color:var(--sage);background:#fff;border:1px solid var(--line);padding:4px 11px;border-radius:999px;white-space:nowrap;}
+.tl li.long .when{background:var(--sage);border-color:var(--sage);color:#fff;}
+.band2{background:var(--card);border-radius:14px;padding:15px 17px;margin-top:16px;font-size:14px;color:var(--ink-soft);line-height:1.8;}
+.band2 h3{font-size:15px;margin-bottom:4px;color:var(--ink);}
+.band2 p{margin:0;}
+.capbox{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:20px;}
+.capbox img{width:110px;}
+.capbox h3{font-size:15px;margin-bottom:4px;color:var(--sage);}
+.capbox p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.75;}
+.pats{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px;}
+.pat{background:#fff;border:1.5px solid var(--sage);border-radius:16px;padding:16px 17px;display:flex;flex-direction:column;gap:9px;}
+.pat .pt{display:flex;align-items:center;gap:9px;font-weight:800;font-size:16px;color:var(--sage);margin:0;}
+.pat .pl{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--sage);color:#fff;font-size:14px;}
+.patpair{display:flex;align-items:center;justify-content:center;gap:8px;}
+.patpair img{width:42%;max-width:180px;}
+.patpair .arr{font-size:20px;color:var(--sage);font-weight:800;}
+.pat p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.8;}
+.pat p b{color:var(--ink);}
+.pat ol{margin:0;padding-left:1.4em;font-size:13px;color:var(--ink);line-height:1.75;}
+.pat .when2{font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:auto;}
+.layer{border-left:3px solid var(--sage);padding:2px 0 2px 14px;margin-top:16px;}
+.layer h3{font-size:15px;margin-bottom:6px;}
+.layer ul{margin:0;padding-left:1.2em;font-size:13.5px;color:var(--ink-soft);line-height:1.8;}
+.layer.soft{border-left-color:var(--line);}
+.hl{font-weight:800;color:var(--ink);box-shadow:inset 0 -.42em 0 var(--card);}
+.tline{display:grid;grid-template-columns:1fr;gap:6px;padding:14px 0;border-bottom:1px solid var(--line);}
+.tline:first-child{border-top:1px solid var(--line);}
+.tline .tw2{font-weight:800;font-size:14.5px;color:var(--sage);line-height:1.45;}
+.tline .tw2 small{display:block;font-weight:600;font-size:12px;color:var(--muted);}
+.tline p,.tline li{font-size:14px;color:var(--ink-soft);line-height:1.8;}
+.tline p{margin:0 0 5px;}
+.tline ul{margin:0;padding-left:1.2em;}
+.tline li{margin-bottom:4px;}
+.tline b{color:var(--ink);}
+.tline .note{font-size:12.5px;}
+.chip{display:inline-block;margin-left:6px;font-size:11px;font-weight:800;padding:1px 8px;border-radius:999px;background:var(--card);color:var(--sage);vertical-align:1px;white-space:nowrap;}
+.call-line{display:block;margin-top:4px;font-size:13.5px;font-weight:800;color:var(--sage);}
+table.alt{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px;table-layout:fixed;}
+table.alt th,table.alt td{border-bottom:1px solid var(--line-2);padding:12px;text-align:left;vertical-align:top;line-height:1.7;}
+table.alt thead th{background:var(--soft);font-weight:800;font-size:12.5px;color:var(--ink-soft);}
+table.alt td:first-child{font-weight:800;color:var(--ink);}
+table.alt .mth{display:flex;flex-direction:column;align-items:flex-start;gap:4px;}
+table.alt .mth svg{width:26px;height:26px;color:var(--sage);}
+table.alt td.fee{font-size:12.5px;color:var(--ink-soft);}
+table.alt td.fee b{color:var(--ink);}
+.qa{margin-top:22px;border-top:1px solid var(--line);}
+.qa-item{padding:15px 0;border-bottom:1px solid var(--line);}
+.qa-item .q{display:flex;gap:10px;font-weight:800;font-size:15px;line-height:1.6;}
+.qa-item .a{display:flex;gap:10px;margin-top:6px;font-size:14px;color:var(--ink-soft);line-height:1.8;}
+.qa-item .q span,.qa-item .a span{flex:0 0 auto;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px;}
+.qa-item .q span{background:var(--sage);color:#fff;}
+.qa-item .a span{background:var(--card);color:var(--sage);}
+.qa-item .a a{color:var(--sage);font-weight:800;}
+@media (max-width:759px){
+  .tl li{grid-template-columns:32px 1fr;gap:2px 12px;}
+  .tl .ic-tl{display:none;}
+  .tl .when{grid-column:2;justify-self:start;margin-top:4px;}
+  .pfig figcaption{grid-template-columns:repeat(2,1fr);}
+  .capbox{grid-template-columns:84px 1fr;}
+  .capbox img{width:84px;}
+}
+@media (min-width:760px){
+  .pats{grid-template-columns:1fr 1fr;}
+  .tline{grid-template-columns:150px 1fr;gap:16px;}
+}
 </style>
 </head>
 <body>
@@ -518,320 +592,227 @@ table.plain tr.sum td{background:var(--card);font-weight:800;}
   <symbol id="ic-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v0M14 21h3M21 17v4M17 21h4"/></symbol>
 </defs></svg>
 
+<!-- 同意資料v17と同じアイコン（線画） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-box" viewBox="0 0 48 48"><rect x="8" y="14" width="32" height="24" rx="2" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 20h32M20 26h8" stroke="currentColor" stroke-width="2.2"/><path d="M14 14l4-6h12l4 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-implant" viewBox="0 0 48 48"><path d="M15 6h18l-2 12H17z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M20 18h8v4h-8z" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M19 22h10l-1.5 18c-1 3-6 3-7 0z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M19.5 27l9-2M20 32l8-2M20.5 37l7-2" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-stitch" viewBox="0 0 48 48"><path d="M8 26c8-6 24-6 32 0" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M14 18l4 14M22 17v16M30 18l-4 14M36 21l-6 10" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-wait" viewBox="0 0 48 48"><path d="M14 6h20M14 42h20M16 6c0 10 16 12 16 18S16 32 16 42M32 6c0 10-16 12-16 18s16 8 16 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M19 39c2-3 8-3 10 0z" fill="currentColor"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 48 48"><path d="M12 14c0-5 4-7 12-7s12 2 12 7l-2 16c-6 3-14 3-20 0z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M20 32h8v10h-8z" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M30 12c2 1 3 3 3 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="i-brush" viewBox="0 0 48 48"><path d="M8 40L30 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><rect x="28" y="8" width="12" height="8" rx="1.5" transform="rotate(45 34 12)" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M33 4v4M40 9h4M38 5l2-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 48 48"><path d="M8 30h32" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M19 30v-8c0-3 1-5 5-5s5 2 5 5v8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M20 30h8l-1 12h-6z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M20.5 35h7M21 39h6" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-find" viewBox="0 0 48 48"><circle cx="21" cy="21" r="13" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M31 31l10 10" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-bridge" viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="14" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M17.3 11v8M30.7 11v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 22l1.5 15c.4 2.4 3.6 2.4 4 0L14 22M34 22l1.5 15c.4 2.4 3.6 2.4 4 0L41 22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M4 27h40" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2 2.5"/></symbol>
+  <symbol id="i-denture" viewBox="0 0 48 48"><path d="M7 31c5-6 29-6 34 0v5c-7-4-27-4-34 0z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><rect x="13" y="17" width="7" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.1"/><rect x="20.5" y="16" width="7" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.1"/><rect x="28" y="17" width="7" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.1"/><path d="M7 31c-3-4-2-10 2-12M41 31c3-4 2-10-2-12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-gap" viewBox="0 0 48 48"><path d="M3 13c0-4 3-6 6-6s6 2 6 6c0 4-1 7-2 10l-1 14c-.4 2-2.6 2-3 0l-1-7-1 7c-.4 2-2.6 2-3 0l-1-14c-1-3-2-6-2-10z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M33 13c0-4 3-6 6-6s6 2 6 6c0 4-1 7-2 10l-1 14c-.4 2-2.6 2-3 0l-1-7-1 7c-.4 2-2.6 2-3 0l-1-14c-1-3-2-6-2-10z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M18 13c0-4 3-6 6-6s6 2 6 6c0 4-1 7-2 10l-1 14c-.4 2-2.6 2-3 0l-1-7-1 7c-.4 2-2.6 2-3 0l-1-14c-1-3-2-6-2-10z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2.4"/></symbol>
+</defs></svg>
+
 <!-- ================= HERO ================= -->
 <header class="hero">
   <div class="wrap-wide">
     <div>
       <div class="hero-kicker">インプラント治療のご案内</div>
       <h1>インプラントを、<br><span class="em">受けるかどうか</span>を考えている方へ</h1>
-      <p>このページは、インプラントを考えはじめた方が、ご自分に合うかどうかを判断するための材料をまとめたものです。よく聞くお話と実際のちがい、治療の流れ、起こりうること、費用を、順に並べました。</p>
+      <p>このページは、インプラントを考えはじめた方が、ご自分に合うかどうかを判断するための材料をまとめたものです。しくみ、ほかの方法との違い、治療の流れ、起こりうること、費用を、順に並べました。</p>
       <div class="hero-purpose">
-        <div class="hp-k">インプラント治療の目的</div>
-        <p>歯を失った場所のあごの骨に、<b>インプラント体（人工の歯の根）</b>を入れます。インプラント体が骨とつくと、その上に被せ物や入れ歯をしっかり固定できる土台になります。この土台の上に歯を入れて、<b>かむ・話すといった歯の働きの回復を目指します。</b></p>
-        <p>どこまで回復するかは、骨や歯ぐきの状態、かみ合わせ、上に入れる歯の種類、その後のお手入れで変わります。結果をお約束する治療ではありません。</p>
+        <div class="hp-k">この治療の目的</div>
+        <figure class="purpose-fig"><img src="implant-purpose.jpg" alt="食卓で会話をしながら食事をする夫婦" width="1344" height="752"></figure>
+        <p>歯を失った場所のあごの骨に、歯の根の代わりになる<b>インプラント体（人工の歯の根）</b>を入れます。インプラント体が骨とつくと、その上に被せ物や入れ歯をしっかり固定できる<b>土台</b>になります。この土台の上に歯を入れることで、<b>かむ・話すといった、歯の働きの回復を目指します。</b></p>
+        <p>どこまで回復するかは、骨や歯ぐきの状態、かみ合わせ、上に入れる歯の種類、その後のお手入れによって変わります。結果をお約束するものではありません。</p>
       </div>
       <nav class="toc" aria-label="このページの内容">
-        <a href="#gap"><span class="tn">1</span>よく聞くお話と、実際のところ<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
-        <a href="#how"><span class="tn">2</span>インプラントのしくみ<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
-        <a href="#compare"><span class="tn">3</span>ほかの方法と比べる<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
-        <a href="#flow"><span class="tn">4</span>治療の流れと期間<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
-        <a href="#risk"><span class="tn">5</span>起こりうること<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
-        <a href="#price"><span class="tn">6</span>費用と、費用に含まれるもの<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
-        <a href="#warranty"><span class="tn">7</span>保証<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
-        <a href="#exam"><span class="tn">8</span>まず、検査でわかること<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
+        <a href="#how"><span class="tn">1</span>インプラントのしくみ<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
+        <a href="#compare"><span class="tn">2</span>ほかの方法と比べる<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
+        <a href="#flow"><span class="tn">3</span>治療の流れと期間<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
+        <a href="#risk"><span class="tn">4</span>起こりうること<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
+        <a href="#price"><span class="tn">5</span>費用と、費用に含まれるもの<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
+        <a href="#warranty"><span class="tn">6</span>保証<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
+        <a href="#exam"><span class="tn">7</span>まず、検査でわかること<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
+        <a href="#qa"><span class="tn">8</span>よくあるご質問<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></a>
       </nav>
     </div>
   </div>
 </header>
 
 
-<!-- ================= 1. よく聞くお話と、実際のところ ================= -->
-<section class="section" id="gap">
-  <div class="wrap-wide reveal">
-    <span class="eyebrow"><span class="dot"></span>よく聞くお話</span>
-    <h2 class="title">「友だちは…」「テレビで…」。実際のところは？</h2>
-    <p class="lead">インプラントについては、ご家族やご友人の体験、テレビや雑誌の話など、いろいろなお話を耳にされると思います。その多くは、その方にとって本当のことです。ただ、結果はその方の骨や歯ぐき、かみ合わせ、お手入れの条件で決まります。よく伺うお話を7つ取り上げて、実際のところを並べました。</p>
-
-    <div class="gap-list">
-      <div class="gap">
-        <div class="gq"><span class="gn">お話 1</span><p>「友だちはインプラントにして、よくかめると喜んでいた」<br>「知り合いは、インプラントで大変な思いをしたらしい」</p></div>
-        <div class="ga">
-          <div class="gl">実際のところ</div>
-          <p>どちらも起こりうることです。結果を分けるのは、骨の量と形、歯ぐきの状態、かみ合わせ、タバコ、治療のあとのお手入れなどの条件です。</p>
-          <p>ほかの方の結果は、その方の条件での結果です。<b>ご自分の条件は、検査でCTを撮ると確かめられます。</b></p>
-        </div>
-      </div>
-
-      <div class="gap">
-        <div class="gq"><span class="gn">お話 2</span><p>「テレビで、インプラントはトラブルが多いと言っていた」</p></div>
-        <div class="ga">
-          <div class="gl">実際のところ</div>
-          <p>10年たっても使われ続けているインプラント体は、<b>およそ93〜96%</b>という報告があります。一方で、まわりの歯ぐきに炎症（インプラント周囲炎）が起きる方は、<b>使っている方のおよそ2割</b>という報告もあります。</p>
-          <p>どちらも本当です。炎症は、定期的に確かめると早く気づけます（<a href="#risk">5 起こりうること</a>）。</p>
-        </div>
-      </div>
-
-      <div class="gap">
-        <div class="gq"><span class="gn">お話 3</span><p>「インプラントは一生もの」</p></div>
-        <div class="ga">
-          <div class="gl">実際のところ</div>
-          <p>長く使える方が多い治療ですが、一生使えるとはお約束できません。当院の保証は、インプラント体の部分が<b>10年</b>、上に入れる歯が<b>15年</b>です。</p>
-          <p>年数を区切っているのは、それより先のことは、お口と体の変化によって変わるためです（<a href="#warranty">7 保証</a>）。</p>
-        </div>
-      </div>
-
-      <div class="gap">
-        <div class="gq"><span class="gn">お話 4</span><p>「むし歯にならないから、お手入れはいらない」</p></div>
-        <div class="ga">
-          <div class="gl">実際のところ</div>
-          <p>インプラントはむし歯にはなりません。ただ、まわりの歯ぐきと骨は、歯周病に似た炎症を起こすことがあります。</p>
-          <p>毎日のお手入れは、ご自分の歯と同じように必要です。治療のあとも、<b>少なくとも年2回</b>、当院でお口の状態を確かめます。</p>
-        </div>
-      </div>
-
-      <div class="gap">
-        <div class="gq"><span class="gn">お話 5</span><p>「年をとったら、インプラントはできない」</p></div>
-        <div class="ga">
-          <div class="gl">実際のところ</div>
-          <p>年齢だけでは決まりません。決め手になるのは、骨の状態と、全身の病気やお薬です。</p>
-          <p>糖尿病・骨粗しょう症のお薬・血をさらさらにするお薬などがある方は、検査のときにお知らせください。必要に応じて、かかりつけの先生にも確かめてから判断します。</p>
-        </div>
-      </div>
-
-      <div class="gap">
-        <div class="gq"><span class="gn">お話 6</span><p>「骨が足りないと言われたら、もうできない」</p></div>
-        <div class="ga">
-          <div class="gl">実際のところ</div>
-          <p>骨を増やす処置（GBR）などを加えると、できるようになることがあります。上の奥歯では、ソケットリフト・サイナスリフトという方法もあります。</p>
-          <p>処置が加わると、期間と費用が増えます。必要かどうかは、CTの結果からご説明します（<a href="#price">6 費用</a>）。</p>
-        </div>
-      </div>
-
-      <div class="gap">
-        <div class="gq"><span class="gn">お話 7</span><p>「手術は大がかりで、とても痛いらしい」</p></div>
-        <div class="ga">
-          <div class="gl">実際のところ</div>
-          <p>手術は、歯ぐきに麻酔をして行います。1本の場合、手術の時間は<b>60分ほどから</b>です。</p>
-          <p>手術のあとは腫れ・痛みが出ます。腫れは3日ほどがいちばん強く、痛みは内容によって1日〜2週間ほどで落ち着きます。</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="why-foot">
-      <svg class="pico"><use href="#ic-question"/></svg>
-      <div>ここにないお話でも、気になっていることがあれば、そのままお聞かせください。「こう聞いたのですが、本当ですか」というご質問を、私たちはいちばん大切にしています。</div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ================= 2. インプラントのしくみ ================= -->
-<section class="section soft" id="how">
+<!-- ================= 1. インプラントのしくみ ================= -->
+<section class="section" id="how">
   <div class="wrap-wide reveal">
     <span class="eyebrow"><span class="dot"></span>インプラントのしくみ</span>
     <h2 class="title">骨の中に、歯の根の代わりを入れる</h2>
     <p class="lead">インプラントは、失った歯の根の代わりに、インプラント体をあごの骨に入れる方法です。骨とついたインプラント体を土台にして、その上に歯を入れます。となりの歯を削って支えにする必要はありません。</p>
 
-    <div class="isthmus">
-      <svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="インプラントの断面：自分の歯は根が骨に支えられ、インプラントはインプラント体が骨に支えられる" style="width:100%;height:auto">
-        <style>
-          .g2{fill:#F0D7CF}
-          .bone{fill:#F4F7F5}
-          .cr{fill:#fff;stroke:#4F7A6C;stroke-width:2.2;stroke-linejoin:round}
-          .po{fill:#EAF1EE;stroke:#4F7A6C;stroke-width:2.2;stroke-linejoin:round}
-          .fix{fill:#EAF1EE;stroke:#4F7A6C;stroke-width:2.2;stroke-linejoin:round}
-          .rt{fill:#fff;stroke:#9AA6A2;stroke-width:1.8}
-          .thr{fill:none;stroke:#6E9C8E;stroke-width:1.5;stroke-linecap:round}
-          .t2{fill:#2E3A3F;font-family:"Noto Sans CJK JP",sans-serif;font-size:12.5px;font-weight:800}
-          .s2{fill:#6E7B80;font-family:"Noto Sans CJK JP",sans-serif;font-size:10.5px}
-          .ld{fill:none;stroke:#9AA6A2;stroke-width:1.2;stroke-dasharray:2 3}
-        </style>
-        <rect class="bone" x="20" y="122" width="440" height="86" rx="6"/>
-        <path class="g2" d="M20 122 H460 V142 Q240 130 20 142 Z"/>
-        <path class="rt" d="M118 140 q-9 34 -3 56 h28 q6 -22 -3 -56 Z"/>
-        <path class="cr" d="M104 78 q32 -12 60 0 v52 q-30 10 -60 0 Z"/>
-        <text class="t2" x="134" y="66" text-anchor="middle">自分の歯</text>
-        <text class="s2" x="134" y="224" text-anchor="middle">根が骨に支えられている</text>
-        <path class="cr" d="M312 78 q30 -11 56 0 v44 q-28 9 -56 0 Z"/>
-        <path class="po" d="M331 121 h18 l-3 16 h-12 Z"/>
-        <path class="fix" d="M329 137 q-3 30 0 46 q11 9 22 0 q3 -16 0 -46 Z"/>
-        <path class="thr" d="M330 150 h20M330 160 h20M330 170 h18M331 180 h16"/>
-        <text class="t2" x="340" y="66" text-anchor="middle">インプラント</text>
-        <text class="s2" x="340" y="224" text-anchor="middle">インプラント体が骨に支えられる</text>
-        <path class="ld" d="M368 96 H420"/>
-        <text class="s2" x="423" y="99">上に入れる歯</text>
-        <path class="ld" d="M352 167 H420"/>
-        <text class="s2" x="423" y="170">インプラント体</text>
-      </svg>
-      <div class="icap">自分の歯は、根が骨に支えられて立っています。インプラントは、その根の代わりにインプラント体を骨に入れ、上に歯を取り付けます。</div>
-    </div>
+    <figure class="pfig">
+      <img src="implant-steps.jpg" alt="歯を失った場所、インプラント体を入れた状態、キャップを付けて縫った状態、その上に歯を入れた状態の4つの断面図" width="1300" height="279">
+      <figcaption>
+        <div><span class="pn">1</span><b>歯を失った場所</b>手術の前</div>
+        <div><span class="pn">2</span><b>インプラント体を入れる</b>歯ぐきを開いて骨の中へ</div>
+        <div><span class="pn">3</span><b>キャップを付けて縫う</b>骨とつくのを待つ</div>
+        <div><span class="pn">4</span><b>上に歯を入れる</b>被せ物・ブリッジ・入れ歯</div>
+      </figcaption>
+    </figure>
 
     <div class="parts">
       <div class="part"><div class="pn">1</div><div><div class="pt">インプラント体（人工の歯の根）</div><div class="pd">あごの骨に入れる、ねじの形をした部品です。数か月かけて、骨とつきます。</div></div></div>
-      <div class="part"><div class="pn">2</div><div><div class="pt">歯ぐきの形を整えるキャップ</div><div class="pd">骨とつくのを待つあいだ、インプラント体の頭に付けて、歯ぐきの形を整えます。ヒーリングアバットメントとも呼びます。</div></div></div>
+      <div class="part"><div class="pn">2</div><div><div class="pt">歯ぐきの形を整えるキャップ</div><div class="pd">インプラント体の頭に付けて、まわりの歯ぐきを、あとで入れる歯に合う形に整えます。ヒーリングアバットメントとも呼びます。</div></div></div>
       <div class="part"><div class="pn">3</div><div><div class="pt">上に入れる歯</div><div class="pd">キャップを外して付ける、被せ物・ブリッジ・入れ歯です。1本なら、土台と一体の被せ物を付けます。</div></div></div>
     </div>
 
     <div class="evid-inline">
       <svg class="pico"><use href="#ic-find"/></svg>
-      <div>インプラントの治療は、大きく<b>「インプラント体を入れ、キャップを付けるまで」</b>と<b>「上に歯を入れる」</b>の2つに分かれます。費用と保証も、この2つに分けてご案内します（<a href="#price">6 費用</a>・<a href="#warranty">7 保証</a>）。</div>
+      <div>インプラントの治療は、<b>「インプラント体を入れ、キャップを付けるまで」</b>と<b>「上に歯を入れる」</b>の2つに分かれます。費用と保証も、この2つに分けてご案内します（<a href="#price" style="color:var(--sage);font-weight:800">5 費用</a>・<a href="#warranty" style="color:var(--sage);font-weight:800">6 保証</a>）。</div>
     </div>
   </div>
 </section>
 
 
-<!-- ================= 3. ほかの方法と比べる ================= -->
-<section class="section" id="compare">
+<!-- ================= 2. ほかの方法と比べる ================= -->
+<section class="section soft" id="compare">
   <div class="wrap-wide reveal">
-    <span class="eyebrow"><span class="dot"></span>補い方の比較</span>
-    <h2 class="title">歯を失ったあとの、4つの選び方</h2>
-    <p class="lead">歯を失ったあとの選び方は、インプラントのほかに、ブリッジ・入れ歯・何もしないがあります。並び順に優劣はありません。向くものは、失った本数と場所、骨や全身の状態、ご希望によって変わります。</p>
+    <span class="eyebrow"><span class="dot"></span>ほかの方法</span>
+    <h2 class="title">インプラントのほかにも、歯を補う方法があります</h2>
+    <p class="lead">並び順に優劣はありません。向くものは、失った本数と場所、骨や全身の状態、ご希望によって変わります。</p>
     <div class="scroll-hint">横にスクロールできます →</div>
     <div class="table-scroll">
-      <table class="compare" style="min-width:760px">
-        <thead>
-          <tr>
-            <th></th>
-            <th><span class="grp">固定式</span>インプラント</th>
-            <th><span class="grp">固定式</span>ブリッジ</th>
-            <th><span class="grp">取り外し式</span>入れ歯</th>
-            <th><span class="grp">そのまま</span>何もしない</th>
-          </tr>
-        </thead>
+      <table class="alt">
+        <colgroup><col style="width:17%"><col style="width:22%"><col style="width:20%"><col style="width:22%"><col style="width:19%"></colgroup>
+        <thead><tr><th>方法</th><th>どんな方法か</th><th>よいところ</th><th>起こりうること</th><th>費用（税込）</th></tr></thead>
         <tbody>
-          <tr>
-            <th><svg class="pico"><use href="#ic-tooth"/></svg>どんな方法か</th>
-            <td>骨にインプラント体を入れ、上に歯を付ける</td>
-            <td>両どなりの歯を削り、橋をかけるように歯をつなぐ</td>
-            <td>取り外しのできる装置で補う</td>
-            <td>歯のない状態のまま様子を見る</td>
-          </tr>
-          <tr>
-            <th><svg class="pico"><use href="#ic-grind"/></svg>まわりの歯</th>
-            <td>削らない</td>
-            <td>両どなりを削って支えにする</td>
-            <td>大きくは削らない（バネをかけることがある）</td>
-            <td>となりの歯が傾いたり、かみ合う歯が伸びてきたりすることがある</td>
-          </tr>
-          <tr>
-            <th><svg class="pico"><use href="#ic-bite"/></svg>かむ感覚</th>
-            <td>自分の歯に近い</td>
-            <td>自分の歯に近い</td>
-            <td>かむ力が弱くなりやすい。慣れが必要</td>
-            <td>その場所ではかめない</td>
-          </tr>
-          <tr>
-            <th><svg class="pico"><use href="#ic-implant"/></svg>手術</th>
-            <td>必要</td>
-            <td>いらない</td>
-            <td>いらない</td>
-            <td>いらない</td>
-          </tr>
-          <tr>
-            <th><svg class="pico"><use href="#ic-calendar"/></svg>期間</th>
-            <td>数か月〜（骨とつくのを待つ）</td>
-            <td>比較的短い</td>
-            <td>比較的短い</td>
-            <td>—</td>
-          </tr>
-          <tr>
-            <th><svg class="pico"><use href="#ic-clean"/></svg>お手入れ</th>
-            <td>自分の歯と同じみがき方＋年2回以上の確認</td>
-            <td>つないだ歯の下に専用の通し方が要る</td>
-            <td>毎日外して洗う</td>
-            <td>となりの歯の変化に注意</td>
-          </tr>
-          <tr>
-            <th><svg class="pico"><use href="#ic-yen"/></svg>費用</th>
-            <td class="fee"><b>自費のみ</b><br>1本 480,000〜520,000円</td>
-            <td class="fee">保険／<b>自費</b>から選べる<br>自費は3本つなぐ形で390,000円〜</td>
-            <td class="fee">保険／<b>自費</b>から選べる<br>自費の部分入れ歯は150,000円〜</td>
-            <td class="fee">かからない</td>
-          </tr>
+          <tr><td><span class="mth"><svg><use href="#i-implant"/></svg>インプラント</span></td><td>骨にインプラント体を入れ、その上に被せ物や入れ歯を付ける</td><td>まわりの歯を削らない。自分の歯に近い感覚でかめる</td><td>手術が必要。治療に数か月かかる。全身の状態によってはできない</td><td class="fee"><b>自費のみ</b><br>1本 480,000〜520,000円</td></tr>
+          <tr><td><span class="mth"><svg><use href="#i-bridge"/></svg>ブリッジ</span></td><td>両隣の歯を削り、橋をかけるように被せ物をつなげる</td><td>手術がいらない。治療期間が短い</td><td>両隣の歯を削る。支える歯に負担がかかる</td><td class="fee">保険／<b>自費</b>から選べる<br>自費は3本つなぐ形で<span class="nb">390,000円〜</span></td></tr>
+          <tr><td><span class="mth"><svg><use href="#i-denture"/></svg>入れ歯</span></td><td>取り外しのできる装置で補う</td><td>手術がいらない。歯を大きく削らない</td><td>かむ力が弱くなりやすい。違和感が出やすい。毎日の取り外しとお手入れが必要</td><td class="fee">保険／<b>自費</b>から選べる<br>自費の部分入れ歯は<span class="nb">150,000円〜</span></td></tr>
+          <tr><td><span class="mth"><svg><use href="#i-gap"/></svg>何もしない</span></td><td>歯のない状態のまま様子を見る</td><td>費用がかからない</td><td>となりの歯が傾いたり、かみ合う歯が伸びてきたりして、かみ合わせが変わることがある</td><td class="fee">かからない</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="legend">インプラントのよいところは、<b>まわりの歯を削らない</b>ことと、自分の歯に近くかめることです。一方で、手術が必要で、治療に数か月かかり、費用は自費のみです。全身の状態によっては、できないこともあります。ブリッジと入れ歯の詳しいことは、<a href="bridge.html" style="color:var(--sage);font-weight:800">ブリッジ治療</a>・<a href="denture.html" style="color:var(--sage);font-weight:800">入れ歯治療</a>のページをご覧ください。費用はいずれも税込です。</p>
+    <p class="legend">ブリッジと入れ歯の詳しいことは、<a href="bridge.html" style="color:var(--sage);font-weight:800">ブリッジ治療</a>・<a href="denture.html" style="color:var(--sage);font-weight:800">入れ歯治療</a>のページをご覧ください。</p>
   </div>
 </section>
 
 
-<!-- ================= 4. 治療の流れと期間 ================= -->
-<section class="section soft" id="flow">
+<!-- ================= 3. 治療の流れと期間 ================= -->
+<section class="section" id="flow">
   <div class="wrap-wide reveal">
-    <span class="eyebrow"><span class="dot"></span>治療の流れ</span>
+    <span class="eyebrow"><span class="dot"></span>これからの流れ</span>
     <h2 class="title">検査から、メインテナンスまで</h2>
-    <p class="lead">期間は、骨の状態と本数で変わります。骨とつくのを待つ期間だけで2か月〜6か月ほどかかるため、検査から上に歯が入るまでには、数か月〜半年以上かかります。</p>
+    <p class="lead">期間は骨の状態と本数で変わり、数か月かかります。骨とつくのを待つ期間だけで、2か月〜6か月ほどかかります。</p>
 
-    <ol class="flow-list">
-      <li class="mark"><span class="fn">1</span><div><div class="ft2">検査と全体設計<span class="fw">1〜2回</span></div><div class="fd">CTで、骨の量と形、神経や血管の位置を立体で確かめます。お口全体の計画と、ほかの方法との比較、あなたの場合の費用をご説明します。インプラントにするかどうかは、ここで決めていただきます。</div></div></li>
-      <li><span class="fn">2</span><div><div class="ft2">手術の準備<span class="fw">約2週間</span></div><div class="fd">ご予約を確定したあと、CTのデータから手術用ガイド（インプラント体を入れる位置を決める型）を作ります。</div></div></li>
-      <li><span class="fn">3</span><div><div class="ft2">手術（インプラント体を入れる）<span class="fw">60分ほどから</span></div><div class="fd">歯ぐきに麻酔をして、インプラント体を骨の中に入れます。翌日に消毒、7〜10日後に糸を抜きます。</div></div></li>
-      <li class="sub"><span class="fn">待つ</span><div><div class="ft2">骨とつくのを待つ<span class="fw">2か月〜6か月ほど</span></div><div class="fd">いちばん長い期間です。骨の状態で変わります。歯のない期間の見た目やかみにくさが気になる方は、仮の入れ歯などで対応できることがあります。</div></div></li>
-      <li><span class="fn">4</span><div><div class="ft2">上に歯を入れる<span class="fw">型取り→装着</span></div><div class="fd">歯ぐきの形が整ったら、型を取って、被せ物・ブリッジ・入れ歯を付けます。</div></div></li>
-      <li><span class="fn">5</span><div><div class="ft2">メインテナンス<span class="fw">年2回以上・ずっと</span></div><div class="fd">長く使うために、インプラントのまわりの歯ぐきと骨、かみ合わせを確かめ続けます。</div></div></li>
+    <ol class="tl">
+      <li><span class="no">1</span><svg class="ic-tl"><use href="#i-find"/></svg><div class="what"><b>検査と全体設計</b><span>CTで骨の量と形、神経や血管の位置を確かめ、あなたの場合の進め方と費用をご説明します</span></div><span class="when">1〜2回</span></li>
+      <li><span class="no">2</span><svg class="ic-tl"><use href="#i-box"/></svg><div class="what"><b>手術の準備</b><span>手術準備金をお預かりし、手術用ガイドを作ります</span></div><span class="when">約2週間</span></li>
+      <li><span class="no">3</span><svg class="ic-tl"><use href="#i-implant"/></svg><div class="what"><b>手術（インプラント体を入れる）</b><span>歯ぐきに麻酔をして行います</span></div><span class="when">60分ほどから</span></li>
+      <li class="sub"><span class="no dot"></span><svg class="ic-tl"><use href="#i-stitch"/></svg><div class="what"><b>消毒・抜糸</b><span>手術の翌日に消毒、7〜10日後に糸を抜きます</span></div><span class="when">翌日／7〜10日後</span></li>
+      <li class="long sub"><span class="no dot"></span><svg class="ic-tl"><use href="#i-wait"/></svg><div class="what"><b>骨とつくのを待つ</b><span>いちばん長い期間です。骨の状態で変わります</span></div><span class="when">2か月〜6か月ほど</span></li>
+      <li><span class="no">4</span><svg class="ic-tl"><use href="#i-cap"/></svg><div class="what"><b>キャップで歯ぐきの形を整える</b><span>1回の手術なら手術の日に、2回の手術なら骨とついたあとに付けます</span></div><span class="when">下の進め方</span></li>
+      <li><span class="no">5</span><svg class="ic-tl"><use href="#i-crown"/></svg><div class="what"><b>上に入れる歯（被せ物・ブリッジ・入れ歯）</b><span>歯ぐきの形が整ったら、型を取って付けます</span></div><span class="when">型取り→装着</span></li>
+      <li><span class="no">6</span><svg class="ic-tl"><use href="#i-brush"/></svg><div class="what"><b>メインテナンス</b><span>長く使うために、状態を確かめ続けます</span></div><span class="when">年2回以上・ずっと</span></li>
     </ol>
 
-    <p class="lead" style="margin-top:24px;margin-bottom:0;">手術の進め方は2つあり、骨の状態と、入れた直後の安定のぐあいで担当医が選びます。<b>費用はどちらでも同じです。</b></p>
-    <div class="twoway">
-      <div class="tw-card"><div class="twh">1回の手術で進める</div><p>インプラント体を入れたその日に、歯ぐきの形を整えるキャップまで付けます。骨の量が足りていて、入れた直後からしっかり固定されているときの進め方です。</p></div>
-      <div class="tw-card"><div class="twh">2回の手術で進める</div><p>インプラント体に小さなふたをして歯ぐきで閉じ、骨とついたあとに小さな手術でキャップに付け替えます。骨を増やす処置を一緒に行ったときなどの進め方です。</p></div>
+    <div class="band2">
+      <h3>歯のない期間が気になる方へ</h3>
+      <p>見た目やかみにくさが気になる場合は、数か月だけ使う仮の入れ歯などで対応できることがあります。方法と費用は、担当医にご相談ください。</p>
     </div>
+
+    <h3 style="font-size:20px;margin-top:40px;">手術の進め方は、2つあります</h3>
+    <p class="lead" style="margin-top:8px;">骨の状態と、入れた直後のインプラント体の安定のぐあいを見て、担当医がいちばんよい進め方を選びます。</p>
+
+    <div class="capbox">
+      <img src="implant-cap.jpg" alt="キャップを付けて縫った状態の断面図" width="303" height="279">
+      <div>
+        <h3>歯ぐきの形を整えるキャップ（ヒーリングアバットメント）とは</h3>
+        <p>インプラント体の頭に付ける、小さなキャップのような部品です。歯ぐきから少し頭を出して、まわりの歯ぐきを、あとで入れる被せ物や入れ歯に合う形に整えます。</p>
+      </div>
+    </div>
+
+    <div class="pats">
+      <div class="pat">
+        <p class="pt"><span class="pl">A</span>1回の手術で進める</p>
+        <div class="patpair"><img src="implant-a1.jpg" alt="歯ぐきを開いてインプラント体を入れた状態" width="306" height="278"><span class="arr">→</span><img src="implant-cap.jpg" alt="キャップを付けて縫った状態" width="303" height="279"></div>
+        <p>インプラント体を入れたその日に、<b>キャップまで付けて</b>、まわりの歯ぐきを縫います。手術は1回です。</p>
+        <ol><li>手術（インプラント体＋キャップ）</li><li>7〜10日後に抜糸</li><li>骨とつくのを待つ</li><li>上に入れる歯へ</li></ol>
+        <p class="when2">こんなときに：骨の量が足りていて、入れた直後からインプラント体がしっかり固定されているとき</p>
+      </div>
+      <div class="pat">
+        <p class="pt"><span class="pl">B</span>2回の手術で進める</p>
+        <div class="patpair"><img src="implant-b1.jpg" alt="ふたをして歯ぐきで閉じた状態" width="552" height="431"><span class="arr">→</span><img src="implant-b2.jpg" alt="2回目の手術でキャップに付け替えた状態" width="549" height="430"></div>
+        <p>インプラント体に<b>小さなふた（カバースクリュー）</b>をして、歯ぐきで覆って閉じます。骨と歯ぐきが治ったら、<b>2回目の小さな手術</b>で歯ぐきを開け、ふたをキャップに付け替えます。</p>
+        <ol><li>1回目の手術（インプラント体＋ふた）</li><li>7〜10日後に抜糸</li><li>骨とつくのを待つ</li><li>2回目の手術（キャップに付け替え）</li><li>歯ぐきが整うのを待つ</li><li>上に入れる歯へ</li></ol>
+        <p class="when2">こんなときに：骨を増やす処置（GBR）などを一緒に行ったとき／入れた直後の固定が弱めで、歯ぐきの中で守りながら待つほうがよいとき</p>
+      </div>
+    </div>
+
+    <div class="layer">
+      <h3>どちらにするかの決め方</h3>
+      <ul>
+        <li>手術の前に、CTで骨の量と形を確かめて、予定を立てます。</li>
+        <li>手術の日に、骨を直接見て、入れた直後の固定（初期固定）を確かめ、<span class="hl">予定を変えることがあります</span>。手術のあとに、どちらで進めたかをご説明します。</li>
+      </ul>
+    </div>
+    <div class="band2"><p><b>費用は、どちらの進め方でも同じです。</b>2回目の手術の費用はいただきません。骨を増やす処置などが加わる場合は、その費用がかかります。</p></div>
   </div>
 </section>
 
 
-<!-- ================= 5. 起こりうること ================= -->
-<section class="section" id="risk">
+<!-- ================= 4. 起こりうること ================= -->
+<section class="section soft" id="risk">
   <div class="wrap-wide reveal">
     <span class="eyebrow"><span class="dot"></span>起こりうること</span>
-    <h2 class="title">選ぶ前に、知っておいていただきたいこと</h2>
-    <p class="lead">主なものを、時期ごとに並べました。インプラントを受けると決めた方には、手術の前に、すべての項目を書面でくわしくご説明します。</p>
+    <h2 class="title">時期ごとに、起こりうること</h2>
+    <p class="lead">時期の順に並べています。何がよくある経過で、何がご連絡いただくべきことかを知っておくと、安心して過ごせます。</p>
 
-    <div class="risk-grid">
-      <div class="risk">
-        <div class="rw">手術の前</div>
-        <h3>全身の病気・お薬・タバコ</h3>
-        <ul>
-          <li>糖尿病、骨粗しょう症とそのお薬、血をさらさらにするお薬、ステロイドのお薬などは、手術の安全と、骨とつくかどうかに影響します。</li>
-          <li><b>タバコは、インプラント体が骨とつくことを妨げます。</b>吸っている方は、手術の6週間前から手術のあと8週間は吸わないでいただきます。加熱式タバコも同じです。</li>
-          <li>歯周病がある場合は、先に歯周病の治療を行います。</li>
-        </ul>
+    <div style="margin-top:22px">
+      <div class="tline">
+        <div class="tw2">手術の前<small>確かめること</small></div>
+        <div>
+          <p><span class="hl">次の病気やお薬がある方は、必ずお知らせください。</span>手術のリスクや、骨とつくかどうかに影響します。必要に応じてかかりつけの先生に問い合わせ、担当医が判断します。</p>
+          <p class="note">糖尿病／骨粗しょう症／貧血／高血圧／骨粗しょう症のお薬（ビスフォスフォネート系・デノスマブなど）／血をさらさらにするお薬／ステロイドのお薬／喫煙</p>
+          <p>タバコは、インプラント体が骨とつくことを妨げます。吸っている方は、<b>手術の6週間前から手術のあと8週間</b>は吸わないでいただきます。加熱式タバコも同じです。</p>
+          <p>歯周病がある場合は、先に歯周病の治療を行います。歯ぎしり・食いしばりがある場合は、マウスピースをおすすめすることがあります。</p>
+        </div>
       </div>
-      <div class="risk">
-        <div class="rw">手術のとき・手術のあと</div>
-        <h3>腫れ・痛み・しびれ</h3>
+      <div class="tline">
+        <div class="tw2">手術のとき<small>当日</small></div>
         <ul>
-          <li>腫れ・痛み・出血は、よくある経過です。数日〜2週間ほどで落ち着きます。</li>
-          <li>神経に近い場所では、<b>唇・あご・舌にしびれ</b>が出ることがあります。早く対処するほど回復しやすくなりますが、まれに長く残ることがあります。</li>
+          <li>神経に近い場所では、<span class="hl">唇・あご・舌にしびれ</span>が出ることがあります。早く対処するほど回復しやすくなりますが、まれに長く残ることがあります。</li>
           <li>上の奥歯では、鼻の横の空洞（上顎洞）に炎症が起きることがあります。</li>
+          <li>骨の状態を直接見て、骨を増やす処置を加えたり、進め方（1回の手術／2回の手術）を変えたりすることがあります。</li>
         </ul>
       </div>
-      <div class="risk">
-        <div class="rw">骨とつくのを待つあいだ</div>
-        <h3>骨とつかないことがある</h3>
+      <div class="tline">
+        <div class="tw2">手術のあと<small>数日〜2週間</small></div>
+        <div>
+          <ul>
+            <li>腫れは<span class="hl">手術から3日ほどがいちばん強く</span>、そのあと引いていきます。<span class="chip">よくある経過</span></li>
+            <li>痛みは、治療の内容によって<span class="hl">1日〜2週間ほどで落ち着きます</span>。<span class="chip">よくある経過</span></li>
+            <li>血がにじむときは、<span class="hl">ガーゼを当てて10〜15分ほど押さえる</span>と止まります。<span class="chip">よくある経過</span></li>
+            <li>上の奥歯で骨の処置をした場合は、鼻血が出ることがあります。長くても1か月ほどで治まります。</li>
+          </ul>
+          <span class="call-line">→ しびれに気づいたら、すぐにお電話ください（044-740-0880）</span>
+        </div>
+      </div>
+      <div class="tline">
+        <div class="tw2">骨とつくのを待つあいだ<small>2か月〜6か月ほど</small></div>
         <ul>
-          <li>インプラント体が骨とつかないことがあります。手術から<b>3か月以内</b>なら、骨の処置も含めて当院の負担でやり直します。</li>
-          <li>キャップがゆるんだり外れたりすることがあります。</li>
+          <li>インプラント体が骨とつかないことがあります。3か月以内なら、当院の負担でやり直します（<a href="#warranty" style="color:var(--sage);font-weight:800">6 保証</a>）。</li>
+          <li>歯ぐきの形を整えるキャップが、ゆるんだり外れたりすることがあります。<b>外れたら捨てずにお持ちいただき、ご連絡ください。</b></li>
+          <li>2回の手術の方は、歯ぐきの下のふたが、歯ぐきから見えてくることがあります。痛みがなくても、ご連絡ください。</li>
         </ul>
       </div>
-      <div class="risk">
-        <div class="rw">長く使う中で</div>
-        <h3>まわりの炎症・ぐらつき</h3>
+      <div class="tline">
+        <div class="tw2">長く使う中で<small>メインテナンスで早く気づけます</small></div>
         <ul>
-          <li>インプラント体のまわりに、<b>歯周病に似た炎症（インプラント周囲炎）</b>が起きることがあります。</li>
-          <li>インプラント体がぐらつく、抜けることがあります。上に入れた歯が欠けることや、インプラント体が折れることも、まれにあります。</li>
-          <li>定期的に確かめると、変化に早く気づけます。</li>
+          <li>インプラント体のまわりに、<span class="hl">歯周病に似た炎症（インプラント周囲炎）</span>が起きることがあります。</li>
+          <li>インプラント体がぐらつく、抜けることがあります。インプラント体が折れることも、まれにあります。</li>
         </ul>
       </div>
     </div>
 
     <div class="num-box">
-      <div class="nh"><svg class="pico"><use href="#ic-find"/></svg>数字で見ると</div>
+      <div class="nh"><svg class="pico"><use href="#ic-find"/></svg>数字の目安</div>
       <div class="num-row">
         <div class="nl">10年たっても使われ続けているインプラント体の割合</div>
         <div class="nv">およそ93〜96%<small>（10年）</small></div>
-        <p>18件の研究をまとめた報告では、96.4%でした。途中で通院しなくなった方の分を、うまくいかなかったと仮定して計算し直すと、93.2%でした。これは「残っている」割合で、<b>トラブルがなかったという意味ではありません。</b></p>
+        <p>18件の研究をまとめた報告では、96.4%でした。途中で通院しなくなった方の分を、うまくいかなかったと仮定して計算し直すと、93.2%でした。これは「残っている」割合で、<b>トラブルがないという意味ではありません。</b></p>
       </div>
       <div class="num-row">
         <div class="nl">インプラント周囲炎が起きる割合</div>
@@ -840,12 +821,21 @@ table.plain tr.sum td{background:var(--card);font-weight:800;}
       </div>
       <div class="src">出典：Howe MS, Keys W, Richards D. Long-term (10-year) dental implant survival: A systematic review and sensitivity meta-analysis. J Dent. 2019;84:9–21.／Rakic M, et al. How frequent does peri-implantitis occur? A systematic review and meta-analysis. Clin Oral Investig. 2018;22(4):1805–1816.<br>当院では「成功率」という言葉は使いません。何を「成功」とするかが、研究ごとに違うためです。</div>
     </div>
+
+    <div class="layer soft">
+      <h3>骨の量が足りないときに加わる処置</h3>
+      <ul>
+        <li><b>骨を増やす処置（GBR）</b>：骨の厚みがない場所に、骨のもとになる材料と膜を入れます。</li>
+        <li><b>ソケットリフト</b>：上の奥歯で骨の厚みが少し足りないとき、インプラント体を入れるのと同時に、骨のもとになる材料を入れます。</li>
+        <li><b>サイナスリフト</b>：上の奥歯で骨の厚みが大きく足りないとき、鼻の横の空洞の底を持ち上げて、骨のもとになる材料を入れます。</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 
 <!-- ================= 6. 費用 ================= -->
-<section class="section soft" id="price">
+<section class="section" id="price">
   <div class="wrap-wide reveal">
     <span class="eyebrow"><span class="dot"></span>費用（自費・税込）</span>
     <h2 class="title">費用と、費用に含まれるもの</h2>
@@ -854,7 +844,7 @@ table.plain tr.sum td{background:var(--card);font-weight:800;}
     <div class="total-card">
       <div class="tk">インプラント1本の総額</div>
       <div class="tv">480,000〜520,000<small>円（税込）</small></div>
-      <p class="ts">骨を増やす処置などが必要な場合は、その費用が加わります。治療の期間は数か月〜で、手術を伴います。起こりうることは<a href="#risk" style="color:var(--sage);font-weight:800">5 起こりうること</a>をご覧ください。</p>
+      <p class="ts">骨を増やす処置などが必要な場合は、その費用が加わります。治療の期間は数か月〜で、手術を伴います。起こりうることは<a href="#risk" style="color:var(--sage);font-weight:800">4 起こりうること</a>をご覧ください。</p>
     </div>
 
     <div class="scroll-hint" style="margin-top:18px">横にスクロールできます →</div>
@@ -879,7 +869,7 @@ table.plain tr.sum td{background:var(--card);font-weight:800;}
         <li>インプラント体と、歯ぐきの形を整えるキャップ</li>
         <li>2回の手術で進める場合の、2回目の手術（費用はいただきません）</li>
         <li>手術の前後に使う洗口液（1本目）、消毒と抜糸</li>
-        <li>インプラント体の部分の10年保証（<a href="#warranty" style="color:var(--sage);font-weight:800">7 保証</a>）</li>
+        <li>インプラント体の部分の10年保証（<a href="#warranty" style="color:var(--sage);font-weight:800">6 保証</a>）</li>
       </ul>
     </div>
 
@@ -926,7 +916,7 @@ table.plain tr.sum td{background:var(--card);font-weight:800;}
 
 
 <!-- ================= 7. 保証 ================= -->
-<section class="section" id="warranty">
+<section class="section soft" id="warranty">
   <div class="wrap-wide reveal">
     <span class="eyebrow"><span class="dot"></span>保証</span>
     <h2 class="title">インプラント体は10年、上に入れる歯は15年</h2>
@@ -957,7 +947,7 @@ table.plain tr.sum td{background:var(--card);font-weight:800;}
 
 
 <!-- ================= 8. 検査 ================= -->
-<section class="section soft" id="exam">
+<section class="section" id="exam">
   <div class="wrap-wide reveal">
     <span class="eyebrow"><span class="dot"></span>はじめの一歩</span>
     <h2 class="title">まず、検査でわかること</h2>
@@ -987,6 +977,24 @@ table.plain tr.sum td{background:var(--card);font-weight:800;}
   </div>
 </section>
 
+
+
+<!-- ================= 8. よくあるご質問 ================= -->
+<section class="section soft" id="qa">
+  <div class="wrap-wide reveal">
+    <span class="eyebrow"><span class="dot"></span>よくあるご質問</span>
+    <h2 class="title">よくあるご質問</h2>
+    <div class="qa">
+      <div class="qa-item"><div class="q"><span>Q</span>友人はうまくいったと言い、別の知り合いは大変だったと聞きました。</div><div class="a"><span>A</span><div>どちらも起こりうることです。結果は、骨や歯ぐきの状態、かみ合わせ、タバコ、お手入れの条件で変わります。ご自分の条件は、検査で確かめられます（<a href="#exam">7 検査</a>）。</div></div></div>
+      <div class="qa-item"><div class="q"><span>Q</span>インプラントは一生もちますか。</div><div class="a"><span>A</span><div>長く使える方が多い治療ですが、一生をお約束することはできません。保証は、インプラント体の部分が10年、上に入れる歯が15年です（<a href="#warranty">6 保証</a>）。</div></div></div>
+      <div class="qa-item"><div class="q"><span>Q</span>むし歯にならないなら、お手入れはいりませんか。</div><div class="a"><span>A</span><div>むし歯にはなりませんが、まわりに歯周病に似た炎症が起きることがあります。毎日のお手入れと、年2回以上の確認が必要です。</div></div></div>
+      <div class="qa-item"><div class="q"><span>Q</span>年をとっていても、受けられますか。</div><div class="a"><span>A</span><div>年齢だけでは決まりません。骨の状態と、全身の病気やお薬で決まります。検査のときにお知らせください。</div></div></div>
+      <div class="qa-item"><div class="q"><span>Q</span>骨が足りないと言われたら、もうできませんか。</div><div class="a"><span>A</span><div>骨を増やす処置などを加えると、できるようになることがあります。期間と費用が増えるため、CTの結果からご説明します。</div></div></div>
+      <div class="qa-item"><div class="q"><span>Q</span>手術は痛いですか。</div><div class="a"><span>A</span><div>手術は麻酔をして行います。手術のあとの腫れは3日ほどがいちばん強く、痛みは1日〜2週間ほどで落ち着きます（<a href="#risk">4 起こりうること</a>）。</div></div></div>
+      <div class="qa-item"><div class="q"><span>Q</span>検査を受けたら、インプラントに決めないといけませんか。</div><div class="a"><span>A</span><div>決める必要はありません。結果を見て、ほかの方法を選ぶ方もいらっしゃいます。持ち帰って、ご家族と相談していただいてかまいません。</div></div></div>
+    </div>
+  </div>
+</section>
 
 <!-- ================= CTA ================= -->
 <section class="cta">
