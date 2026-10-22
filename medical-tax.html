@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>医療費控除のこと｜ライフデンタルクリニック</title>
+<style>
+:root{
+  --paper:#FFFFFF; --soft:#F4F7F5; --card:#EEF3F1; --ink:#2E3A3F;
+  --ink-soft:#54636A; --muted:#6E7B80; --sage:#4F7A6C; --sage-2:#6E9C8E;
+  --line:#D8E0DD;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--gothic);line-height:1.8;letter-spacing:.02em;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;height:auto;display:block;}
+a{color:var(--sage);}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+.section{padding:52px 0;}
+.section.soft{background:var(--soft);}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.2em;color:var(--sage);font-weight:700;margin-bottom:12px;}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--sage);}
+h2.title{font-size:24px;font-weight:700;color:var(--ink);letter-spacing:.03em;line-height:1.45;}
+.lead{margin-top:14px;font-size:15px;color:var(--ink-soft);line-height:1.9;}
+.lead b{color:var(--ink);}
+.note{font-size:12.5px;color:var(--muted);line-height:1.8;}
+.nb{display:inline-block;}
+
+/* hero */
+.hero{padding:64px 0 48px;text-align:center;}
+.hero h1{font-size:28px;font-weight:700;letter-spacing:.05em;line-height:1.5;}
+.hero p{margin-top:18px;font-size:15.5px;color:var(--ink-soft);line-height:2;}
+.hero p b{color:var(--sage);}
+.hero img{width:min(320px,80%);margin:28px auto 0;border-radius:14px;}
+
+/* しくみ */
+.calc{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 18px;}
+.calc-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;text-align:center;}
+.calc-row .box{background:var(--card);border-radius:10px;padding:10px 12px;line-height:1.5;}
+.calc-row .box small{display:block;font-size:11.5px;font-weight:400;color:var(--muted);}
+.calc-row .op{color:var(--sage);font-size:20px;}
+.calc-row .res{background:var(--sage);color:#fff;}
+.calc-row .res small{color:#E6EFEB;}
+.points{margin-top:16px;padding-left:1.2em;font-size:14px;color:var(--ink-soft);line-height:1.9;}
+.points li{margin-bottom:4px;}
+.points b{color:var(--ink);}
+
+/* 対象 */
+.okng{display:grid;grid-template-columns:1fr;gap:12px;margin-top:20px;}
+.oc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;}
+.oc h3{font-size:15.5px;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.oc h3 .mk{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-size:14px;color:#fff;background:var(--sage);}
+.oc.ng h3 .mk{background:#9AA5A9;}
+.oc ul{padding-left:1.1em;font-size:14px;color:var(--ink-soft);line-height:1.85;}
+.oc li{margin-bottom:4px;}
+.oc li b{color:var(--ink);}
+
+/* 目安 */
+.coord{margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 18px;}
+.coord-h{font-weight:700;color:var(--sage);font-size:14px;margin-bottom:8px;}
+.coord p{font-size:14px;color:var(--ink-soft);line-height:1.9;margin-bottom:8px;}
+.coord p b{color:var(--ink);}
+.tax-ex{margin-top:12px;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+.tx-h{background:var(--card);font-size:13px;font-weight:700;padding:10px 14px;}
+.srow{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;border-top:1px solid var(--line);font-size:14px;}
+.srow-head{font-size:12px;color:var(--muted);font-weight:700;}
+.srow .sv{font-weight:700;}
+.srow .sv i{font-style:normal;font-size:12px;font-weight:400;margin-left:2px;}
+.tx-note{font-size:12px;color:var(--muted);line-height:1.75;padding:10px 14px;border-top:1px solid var(--line);}
+
+/* 手続き */
+.steps{counter-reset:s;margin-top:20px;display:grid;gap:10px;}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 56px;font-size:14px;color:var(--ink-soft);line-height:1.85;}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--sage);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.step b{color:var(--ink);display:block;font-size:15px;}
+
+.cite{font-size:11px;color:var(--muted);line-height:1.7;margin-top:18px;border-top:1px solid var(--line);padding-top:10px;}
+.links{display:grid;gap:10px;margin-top:20px;}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:var(--ink);font-weight:700;font-size:14.5px;}
+.links a span{color:var(--sage);}
+
+/* footer */
+footer{background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;}
+footer img{width:112px;height:auto;margin:0 auto 13px;display:block;}
+footer .fl{font-size:14px;color:var(--ink);letter-spacing:.05em;}
+footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08em;}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@media (max-width:560px){.calc-row{flex-direction:column;}.calc-row .box{width:100%;}}
+@media (min-width:760px){
+  h2.title{font-size:28px;}
+  .hero h1{font-size:34px;}
+  .okng{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>医療費控除のこと</span>
+    <h1>歯の治療費で、<br><span class="nb">税金の一部が</span><span class="nb">戻ることがあります</span></h1>
+    <p>1年間に支払った医療費が<b>10万円を超えたら</b>、<br>確定申告で「医療費控除」を受けられます。<br>保険の治療も、自費の治療も対象です。</p>
+    <img src="il-03.jpg" alt="領収書をまとめる夫婦のイラスト">
+  </div>
+</section>
+
+<section class="section soft" id="how">
+  <div class="wrap reveal">
+    <span class="eyebrow"><span class="dot"></span>しくみ</span>
+    <h2 class="title">10万円を超えた分が、<span class="nb">所得から差し引かれます</span></h2>
+    <div class="calc">
+      <div class="calc-row">
+        <span class="box">1年間に支払った医療費<small>1月1日〜12月31日</small></span>
+        <span class="op">−</span>
+        <span class="box">保険金などで<br>補われた分</span>
+        <span class="op">−</span>
+        <span class="box">10万円<small>所得が200万円未満の方は所得の5%</small></span>
+        <span class="op">＝</span>
+        <span class="box res">医療費控除の額<small>最高200万円</small></span>
+      </div>
+    </div>
+    <ul class="points">
+      <li><b>ご家族の分も、まとめて申告できます。</b>生計を一つにしている配偶者やご家族の医療費が対象です。</li>
+      <li><b>その年に支払った額</b>が、その年の対象です。治療が年をまたぐときは、それぞれの年に分けて申告します。</li>
+      <li>デンタルローンで支払ったときは、ローンを契約した年に、信販会社が立て替えた額が対象です。ローンの利息や手数料は対象外です。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="target">
+  <div class="wrap reveal">
+    <span class="eyebrow"><span class="dot"></span>歯の治療で対象になるもの</span>
+    <h2 class="title">治療を目的とするものは、<span class="nb">対象になります</span></h2>
+    <div class="okng">
+      <div class="oc">
+        <h3><span class="mk">○</span>対象になるもの</h3>
+        <ul>
+          <li>保険の治療の、窓口でのお支払い</li>
+          <li><b>セラミックや金を使った治療</b>（国税庁は、これらは歯の治療材料として一般的に使われているため、対象になると示しています）</li>
+          <li>年齢や目的からみて必要と認められる歯並びの矯正（お子さんの成長を妨げないための矯正など）</li>
+          <li>通院のための電車・バスなどの交通費（小さなお子さんの付き添いの方の分も）</li>
+        </ul>
+      </div>
+      <div class="oc ng">
+        <h3><span class="mk">×</span>対象にならないもの</h3>
+        <ul>
+          <li>見た目を整えることだけを目的とした処置</li>
+          <li>自家用車で通ったときのガソリン代・駐車場代</li>
+          <li>一般的な水準を大きく超える、特別な治療の費用</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note" style="margin-top:14px;">※ ご自身の治療が対象になるかどうかは、お住まいの地域の税務署にご確認ください。</p>
+  </div>
+</section>
+
+<section class="section soft" id="amount">
+  <div class="wrap reveal">
+    <span class="eyebrow"><span class="dot"></span>戻ってくる金額の目安</span>
+    <h2 class="title">所得の高い方ほど、<span class="nb">戻る金額は大きくなります</span></h2>
+    <div class="coord">
+      <div class="coord-h">コーディネーターより</div>
+      <p>医療費控除で戻ってくる金額は、<b>その方の所得税の税率によって変わります</b>。税率は、所得が高い方ほど高くなります。そのため同じ治療費でも、<b>所得の高い方ほど戻ってくる金額が大きく</b>なります。</p>
+      <p>ご家族の医療費は、まとめて申告できます。<b>ご家族の中で所得の高い方がまとめて申告される</b>と、戻ってくる金額が大きくなることが多いです。</p>
+      <div class="tax-ex">
+        <div class="tx-h">目安：1年間の医療費が30万円の場合（控除額 20万円）</div>
+        <div class="srow srow-head"><span class="sk">所得税の税率</span><span class="sv">戻ってくる所得税の目安</span></div>
+        <div class="srow"><span class="sk">5%</span><span class="sv">約10,000<i>円</i></span></div>
+        <div class="srow"><span class="sk">20%</span><span class="sv">約40,000<i>円</i></span></div>
+        <div class="srow"><span class="sk">33%</span><span class="sv">約66,000<i>円</i></span></div>
+        <p class="tx-note">このほか、翌年度の住民税が約20,000円（控除額の10%）軽くなります。復興特別所得税は含めずに計算しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="steps">
+  <div class="wrap reveal">
+    <span class="eyebrow"><span class="dot"></span>申告のしかた</span>
+    <h2 class="title">領収書をとっておいて、<span class="nb">確定申告で申請します</span></h2>
+    <div class="steps">
+      <div class="step"><b>領収書を、とっておく</b>当院の領収書は、治療のたびにお渡しします。通院の交通費は、日付と金額をメモしておきます。</div>
+      <div class="step"><b>「医療費控除の明細書」をつくる</b>領収書をもとに、明細書をつくります。健康保険から届く「医療費のお知らせ（医療費通知）」を添えると、書く手間を減らせます。</div>
+      <div class="step"><b>確定申告で申請する</b>明細書を確定申告書に添えて提出します。領収書は、税務署から求められたときのために、申告の期限から5年間保管してください。</div>
+    </div>
+    <p class="note" style="margin-top:14px;">※ 市販薬の購入費を対象にした「セルフメディケーション税制」とは、どちらか一方を選んで申告します。</p>
+    <div class="cite">出典：国税庁 タックスアンサー No.1120「医療費を支払ったとき（医療費控除）」／No.1128「医療費控除の対象となる歯の治療費の具体例」／No.2260「所得税の税率」（いずれも令和8年4月1日現在法令等）</div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap reveal">
+    <span class="eyebrow"><span class="dot"></span>あわせて読みたい</span>
+    <h2 class="title">治療と費用のこと</h2>
+    <div class="links">
+      <a href="index.html">受けられる治療の一覧へ<span>→</span></a>
+      <a href="cost-over-time.html">費用を、時間軸で考える<span>→</span></a>
+    </div>
+    <p class="note" style="margin-top:16px;">わからないことは、受付またはお電話でお気軽にお尋ねください。</p>
+  </div>
+</section>
+
+<footer>
+  <img src="life-logo.png" alt="ライフデンタルクリニック">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
