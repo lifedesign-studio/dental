@@ -123,6 +123,23 @@ h2.title{font-size:24px;line-height:1.4;margin:0 0 12px;font-weight:800;}
 .next a span{color:var(--sage);}
 footer .fl{font-size:13px;color:var(--ink-soft);font-weight:800;letter-spacing:.04em;}
 footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
+.video-figure{margin:0;}
+.lp-video{width:100%;display:block;border-radius:16px;border:1px solid var(--line);background:#000;aspect-ratio:16/9;object-fit:cover;}
+.vcap2{font-size:12.5px;color:var(--muted);line-height:1.65;margin-top:9px;}
+/* 適合シェーマ */
+.fitfig{margin:22px 0 0;}
+.fitfig > svg{background:var(--soft);border-radius:14px;padding:16px;}
+.ficap{font-size:12.5px;color:var(--ink-soft);line-height:1.72;margin-top:12px;}
+.ficap b{color:var(--ink);font-weight:800;}
+.fitnum{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px;}
+.fn{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;}
+.fn.good{border-color:var(--sage-2);background:var(--card);}
+.fn .fnk{display:block;font-size:11.5px;color:var(--muted);font-weight:700;margin-bottom:3px;}
+.fn .fnv{display:block;font-size:19px;font-weight:800;color:var(--ink);line-height:1.2;}
+.fn.good .fnv{color:var(--sage);}
+.fn .fns{display:block;font-size:11px;color:var(--muted);margin-top:4px;line-height:1.55;}
+
+@media(min-width:760px){.fitnum{grid-template-columns:1fr 1fr;}}
 
 .b-badge{text-align:center;margin:-4px 0 16px;}
 .b-badge{font-family:var(--hand);font-weight:600;font-size:14px;}
@@ -130,6 +147,25 @@ footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
 .tx{color:var(--sage);font-weight:700;font-size:13.5px;text-decoration:none;border-bottom:1.5px solid var(--line);}
 .k-li{margin:0 0 10px;padding-left:1.2em;font-size:14px;color:var(--ink-soft);line-height:1.85;}
 .cost-grid .cg-v{font-size:15px;line-height:1.5;}
+.k-fig{margin:4px 0 12px;}
+.k-fig img{width:100%;border-radius:10px;border:1px solid var(--line);}
+.k-fig figcaption{font-size:12px;color:var(--ink-soft);margin-top:6px;line-height:1.6;}
+.wr-tl{display:grid;grid-template-columns:1fr;gap:8px;margin:6px 0 10px;}
+.wr-ph{background:var(--card);border-radius:12px;padding:10px 12px;}
+.wr-t{font-weight:800;color:var(--sage);font-size:13.5px;margin-bottom:4px;}
+.wr-r{display:flex;justify-content:space-between;gap:10px;font-size:13px;line-height:1.6;padding:3px 0;color:var(--ink-soft);}
+.wr-r b{color:var(--ink);white-space:nowrap;}
+.wr-r b.free{color:var(--sage);}
+.wr-box{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0 0 10px;}
+.wr-bh{font-weight:800;font-size:13px;margin-bottom:4px;}
+.wr-box .wr-r{border-top:1px dashed var(--line);}
+@media(min-width:760px){.wr-tl{grid-template-columns:repeat(3,1fr);}}
+.tax-banner{display:flex;gap:14px;align-items:flex-start;margin-top:18px;padding:16px;border-radius:14px;border:1.5px solid var(--sage-2);background:var(--soft);text-decoration:none;color:var(--ink);}
+.tb-ico{flex:0 0 40px;height:40px;border-radius:50%;background:var(--sage);color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;}
+.tb-body{display:flex;flex-direction:column;gap:4px;line-height:1.6;}
+.tb-body b{font-size:15px;}
+.tb-body small{font-size:12.5px;color:var(--ink-soft);}
+.tb-body em{font-style:normal;font-size:13px;font-weight:700;color:var(--sage);}
 .k-figs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0 12px;}
 .k-figs figure{margin:0;}
 .k-figs img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--soft);}
@@ -180,7 +216,7 @@ html.sm-open{overflow:hidden;}
 <nav class="sm-panel" id="sm-panel" aria-label="素材ごとのストーリー" hidden>
   <div class="sm-head"><span>素材ごとのストーリー</span><button class="sm-close" type="button" aria-label="閉じる">×</button></div>
   <p class="sm-lead">気になる素材の「この先」を、見くらべてみてください。</p>
-  <a class="sm-item cur" href="inlay-crown-metal.html" aria-current="page"><span class="sm-dot" style="background:#4E6478"></span><span class="sm-t"><b>金属（保険）で治すと</b><small>費用を抑えて、いまの1本を治す</small></span><em>いま見ているページ</em></a><span class="sm-item soon"><span class="sm-dot" style="background:#4F7A6C"></span><span class="sm-t"><b>CAD/CAM（保険）で治すと</b><small>保険で、歯の根を守る（当院のおすすめ）</small></span><em>準備中</em></span><a class="sm-item" href="inlay-crown-1day.html"><span class="sm-dot" style="background:#A8692A"></span><span class="sm-t"><b>1dayで治すと</b><small>期限までに、1日でまとめて治す</small></span><i>→</i></a><span class="sm-item soon"><span class="sm-dot" style="background:#465C92"></span><span class="sm-t"><b>セラミック（奥歯）で治すと</b><small>作り直しを減らして、長く使う</small></span><em>準備中</em></span><span class="sm-item soon"><span class="sm-dot" style="background:#A05A6B"></span><span class="sm-t"><b>セラミック（前歯）で治すと</b><small>前歯の見た目に、自信を持つ</small></span><em>準備中</em></span>
+  <a class="sm-item cur" href="inlay-crown-metal.html" aria-current="page"><span class="sm-dot" style="background:#4E6478"></span><span class="sm-t"><b>金属（保険）で治すと</b><small>費用を抑えて、いまの1本を治す</small></span><em>いま見ているページ</em></a><span class="sm-item soon"><span class="sm-dot" style="background:#4F7A6C"></span><span class="sm-t"><b>CAD/CAM（保険）で治すと</b><small>保険で、歯の根を守る（当院のおすすめ）</small></span><em>準備中</em></span><a class="sm-item" href="inlay-crown-1day.html"><span class="sm-dot" style="background:#A8692A"></span><span class="sm-t"><b>1dayで治すと</b><small>期限までに、1日でまとめて治す</small></span><i>→</i></a><a class="sm-item" href="inlay-crown-ceramic.html"><span class="sm-dot" style="background:#465C92"></span><span class="sm-t"><b>セラミック（奥歯）で治すと</b><small>作り直しを減らして、長く使う</small></span><i>→</i></a><span class="sm-item soon"><span class="sm-dot" style="background:#A05A6B"></span><span class="sm-t"><b>セラミック（前歯）で治すと</b><small>前歯の見た目に、自信を持つ</small></span><em>準備中</em></span>
   <a class="sm-home" href="inlay-crown.html">← インレー・クラウン治療のページへ</a>
 </nav>
 <script>
@@ -253,6 +289,10 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <h2 class="title">保険の範囲で、2回の通院で治せます</h2>
     <div class="cost-grid"><div class="cg"><div class="cg-k">通院</div><div class="cg-v">30分 × 2回</div></div><div class="cg"><div class="cg-k">インレー（詰めもの）</div><div class="cg-v">約3,000〜6,000円</div></div><div class="cg"><div class="cg-k">クラウン（被せもの）</div><div class="cg-v">約7,000〜11,000円</div></div><div class="cg"><div class="cg-k">神経の治療＋土台＋クラウン（一連）</div><div class="cg-v">約11,000〜16,000円</div></div><div class="cg"><div class="cg-k">保証</div><div class="cg-v">保険の決まりによる</div></div><div class="cg"><div class="cg-k">お支払い</div><div class="cg-v">その日ごとに窓口で</div></div></div>
     <p class="note" style="margin-top:12px;">※ 保険3割負担・2回の通院の合計（再診料・麻酔・型取りなどを含む）のおおよその幅です。歯の場所や、神経があるかどうかで変わります。神経の治療からクラウンまでの一連は、約3,500〜5,200点（4〜6回の通院の合計）からの目安です。1割・2割負担の方は、この3分の1・3分の2ほどです。金属の費用は、金属の値段に合わせて数か月ごとに変わります。</p>
+    <a class="tax-banner" href="medical-tax.html">
+      <span class="tb-ico" aria-hidden="true">¥</span>
+      <span class="tb-body"><b>この治療の費用も、医療費控除の対象です</b><small>1年間に支払った医療費（ご家族の分も合わせて）が10万円を超えたら、確定申告で税金の一部が戻ることがあります。</small><em>医療費控除のくわしい説明へ →</em></span>
+    </a>
   </div>
 </section>
 
@@ -298,7 +338,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>ほかの素材のストーリー</span>
     <h2 class="title">ほかの選び方も、見てみませんか</h2>
-    <div class="next"><span class="next-soon">CAD/CAM（保険）で治すと<span>準備中</span></span><a href="inlay-crown-1day.html">1dayで治すと<span>→</span></a><span class="next-soon">セラミック（奥歯）で治すと<span>準備中</span></span><span class="next-soon">セラミック（前歯）で治すと<span>準備中</span></span><a href="inlay-crown.html">インレー・クラウンのページに戻る<span>←</span></a></div>
+    <div class="next"><span class="next-soon">CAD/CAM（保険）で治すと<span>準備中</span></span><a href="inlay-crown-1day.html">1dayで治すと<span>→</span></a><a href="inlay-crown-ceramic.html">セラミック（奥歯）で治すと<span>→</span></a><span class="next-soon">セラミック（前歯）で治すと<span>準備中</span></span><a href="inlay-crown.html">インレー・クラウンのページに戻る<span>←</span></a></div>
     <p class="note" style="margin-top:16px;">選ぶのは、ご自身です。今回選んだ方法は、ずっと続く決まりではありません。迷ったら、受付またはお電話でご相談ください。</p>
   </div>
 </section>
