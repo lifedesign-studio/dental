@@ -184,8 +184,8 @@ footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
   .kai p{font-size:15.5px;}
   .next{grid-template-columns:1fr 1fr;}
 }
-@media (min-width:1360px){
-  .pc-toc{display:block;position:fixed;top:110px;left:calc(50% - 450px - 236px);width:200px;z-index:20;font-size:13.5px;}
+@media (min-width:1240px){
+  .pc-toc{display:block;position:fixed;top:110px;left:max(12px, calc(50% - 450px - 200px));width:156px;z-index:20;font-size:13px;}
   .pt-h{font-weight:800;color:var(--sage);letter-spacing:.08em;font-size:12px;margin-bottom:10px;}
   .pc-toc ul{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);}
   .pc-toc ul ul{border-left:none;padding-left:12px;}
@@ -394,7 +394,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
 
 <nav class="pc-toc" aria-label="このページの目次">
   <div class="pt-h">このページの目次</div>
-  <ul><li><a href="#story" data-t="story">この先の流れ</a></li><li><a href="#cost" data-t="cost">費用と通院の回数</a></li><li><a href="#sim" data-t="sim">20年のシミュレーション</a></li><li><a href="#kaisetsu" data-t="kaisetsu">解説</a><ul><li><a href="#k1" data-t="k1">解説1</a></li><li><a href="#k2" data-t="k2">解説2</a></li><li><a href="#k3" data-t="k3">解説3</a></li></ul></li><li><a href="#others" data-t="others">ほかの素材</a></li></ul>
+  <ul><li><a href="#story" data-t="story">この先の流れ</a></li><li><a href="#cost" data-t="cost">費用と通院の回数</a></li><li><a href="#sim" data-t="sim">シミュレーション</a></li><li><a href="#kaisetsu" data-t="kaisetsu">解説</a><ul><li><a href="#k1" data-t="k1">解説1</a></li><li><a href="#k2" data-t="k2">解説2</a></li><li><a href="#k3" data-t="k3">解説3</a></li></ul></li><li><a href="#others" data-t="others">ほかの素材</a></li></ul>
   <a class="pt-home" href="inlay-crown.html">← インレー・クラウン治療</a>
 </nav>
 <script>
