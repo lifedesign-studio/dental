@@ -140,7 +140,12 @@ footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
 .fn .fns{display:block;font-size:11px;color:var(--muted);margin-top:4px;line-height:1.55;}
 
 @media(min-width:760px){.fitnum{grid-template-columns:1fr 1fr;}}
-
+.figbox{margin-top:20px;margin-bottom:18px;background:var(--soft);border:1px solid var(--line-2);border-radius:14px;padding:18px 16px 14px;}
+.figbox .fb-h{font-weight:800;font-size:14.5px;margin-bottom:12px;display:flex;align-items:center;gap:9px;}
+.figbox .fb-h .pico{width:22px;height:22px;}
+.fb-cap{font-size:11.5px;color:var(--muted);line-height:1.7;margin-top:10px;}
+/* 節3 */
+.thick{max-width:520px;margin:0 auto;}
 .b-badge{text-align:center;margin:-4px 0 16px;}
 .b-badge{font-family:var(--hand);font-weight:600;font-size:14px;}
 .b-badge::before{content:"★ ";color:#E2A93B;}
@@ -216,7 +221,7 @@ html.sm-open{overflow:hidden;}
 <nav class="sm-panel" id="sm-panel" aria-label="素材ごとのストーリー" hidden>
   <div class="sm-head"><span>素材ごとのストーリー</span><button class="sm-close" type="button" aria-label="閉じる">×</button></div>
   <p class="sm-lead">気になる素材の「この先」を、見くらべてみてください。</p>
-  <a class="sm-item" href="inlay-crown-metal.html"><span class="sm-dot" style="background:#4E6478"></span><span class="sm-t"><b>金属（保険）で治すと</b><small>費用を抑えて、いまの1本を治す</small></span><i>→</i></a><span class="sm-item soon"><span class="sm-dot" style="background:#4F7A6C"></span><span class="sm-t"><b>CAD/CAM（保険）で治すと</b><small>保険で、歯の根を守る（当院のおすすめ）</small></span><em>準備中</em></span><a class="sm-item" href="inlay-crown-1day.html"><span class="sm-dot" style="background:#A8692A"></span><span class="sm-t"><b>1dayで治すと</b><small>期限までに、1日でまとめて治す</small></span><i>→</i></a><a class="sm-item cur" href="inlay-crown-ceramic.html" aria-current="page"><span class="sm-dot" style="background:#465C92"></span><span class="sm-t"><b>セラミック（奥歯）で治すと</b><small>作り直しを減らして、長く使う</small></span><em>いま見ているページ</em></a><span class="sm-item soon"><span class="sm-dot" style="background:#A05A6B"></span><span class="sm-t"><b>セラミック（前歯）で治すと</b><small>前歯の見た目に、自信を持つ</small></span><em>準備中</em></span>
+  <a class="sm-item" href="inlay-crown-metal.html"><span class="sm-dot" style="background:#4E6478"></span><span class="sm-t"><b>金属（保険）で治すと</b><small>費用を抑えて、いまの1本を治す</small></span><i>→</i></a><a class="sm-item" href="inlay-crown-cadcam.html"><span class="sm-dot" style="background:#4F7A6C"></span><span class="sm-t"><b>CAD/CAM（保険）で治すと</b><small>保険で、歯の根を守る（当院のおすすめ）</small></span><i>→</i></a><a class="sm-item" href="inlay-crown-1day.html"><span class="sm-dot" style="background:#A8692A"></span><span class="sm-t"><b>1dayで治すと</b><small>期限までに、1日でまとめて治す</small></span><i>→</i></a><a class="sm-item cur" href="inlay-crown-ceramic.html" aria-current="page"><span class="sm-dot" style="background:#465C92"></span><span class="sm-t"><b>セラミック（奥歯）で治すと</b><small>作り直しを減らして、長く使う</small></span><em>いま見ているページ</em></a><a class="sm-item" href="inlay-crown-front.html"><span class="sm-dot" style="background:#A05A6B"></span><span class="sm-t"><b>セラミック（前歯）で治すと</b><small>前歯の見た目に、自信を持つ</small></span><i>→</i></a>
   <a class="sm-home" href="inlay-crown.html">← インレー・クラウン治療のページへ</a>
 </nav>
 <script>
@@ -440,7 +445,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>ほかの素材のストーリー</span>
     <h2 class="title">ほかの選び方も、見てみませんか</h2>
-    <div class="next"><a href="inlay-crown-metal.html">金属（保険）で治すと<span>→</span></a><span class="next-soon">CAD/CAM（保険）で治すと<span>準備中</span></span><a href="inlay-crown-1day.html">1dayで治すと<span>→</span></a><span class="next-soon">セラミック（前歯）で治すと<span>準備中</span></span><a href="inlay-crown.html">インレー・クラウンのページに戻る<span>←</span></a></div>
+    <div class="next"><a href="inlay-crown-metal.html">金属（保険）で治すと<span>→</span></a><a href="inlay-crown-cadcam.html">CAD/CAM（保険）で治すと<span>→</span></a><a href="inlay-crown-1day.html">1dayで治すと<span>→</span></a><a href="inlay-crown-front.html">セラミック（前歯）で治すと<span>→</span></a><a href="inlay-crown.html">インレー・クラウンのページに戻る<span>←</span></a></div>
     <p class="note" style="margin-top:16px;">選ぶのは、ご自身です。今回選んだ方法は、ずっと続く決まりではありません。迷ったら、受付またはお電話でご相談ください。</p>
   </div>
 </section>

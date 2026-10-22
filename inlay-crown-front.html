@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>セラミック（前歯）で治すと｜インレー・クラウン｜ライフデンタルクリニック</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF;--soft:#F4F7F5;--card:#EEF3F1;--ink:#2E3A3F;--ink-soft:#54636A;--muted:#6E7B80;
+  --sage:#4F7A6C;--sage-2:#6E9C8E;--line:#D8E0DD;--line-2:#E7EDEA;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic","YuGothic","Noto Sans JP","Noto Sans CJK JP",sans-serif;
+  --hand:"Klee One",var(--gothic);
+  /* スクラップ帳の表現用（インフォグラフィック内だけで使う） */
+  --kraft:#D8C29D;--kraft-ink:#4A3F2E;--board:#FAFBFA;--hl:rgba(242,201,76,.55);--tape2:#D99A9A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--gothic);line-height:1.8;font-size:16px;letter-spacing:.01em;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;height:auto;display:block;}
+a{color:var(--sage);}
+.wrap{max-width:720px;margin:0 auto;}
+.section{padding:56px 20px;}
+.section.soft{background:var(--soft);}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--sage);margin:0 0 12px;}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--sage);}
+h2.title{font-size:24px;line-height:1.4;margin:0 0 12px;font-weight:800;}
+.lead{font-size:15px;color:var(--ink-soft);margin:0 0 10px;line-height:1.85;}
+.note{font-size:12.5px;color:var(--muted);line-height:1.75;}
+.cite{font-size:11px;color:var(--muted);line-height:1.7;margin-top:10px;border-top:1px solid var(--line);padding-top:8px;}
+.crumb{font-size:12.5px;color:var(--muted);padding:14px 20px 0;max-width:720px;margin:0 auto;}
+.crumb a{color:var(--sage);text-decoration:none;}
+
+/* ===== 縦長インフォグラフィック（スクラップ帳風） ===== */
+.board{
+  background-color:var(--board);
+  background-image:linear-gradient(var(--line-2) 1px,transparent 1px),linear-gradient(90deg,var(--line-2) 1px,transparent 1px);
+  background-size:22px 22px;
+  padding:40px 18px 48px;
+}
+.board .inner{max-width:560px;margin:0 auto;position:relative;}
+.b-title{font-family:var(--hand);font-weight:600;font-size:34px;line-height:1.35;text-align:center;margin:0 0 14px;color:var(--ink);letter-spacing:.06em;}
+.b-intro{font-family:var(--hand);font-size:15.5px;line-height:1.9;text-align:center;margin:0 0 30px;color:var(--ink);}
+.stage{position:relative;display:flex;align-items:center;gap:18px;}
+.stage.rev{flex-direction:row-reverse;}
+.polaroid{position:relative;flex:0 0 210px;background:#fff;padding:10px 10px 14px;box-shadow:0 6px 14px rgba(46,58,63,.14);transform:rotate(-2deg);}
+.stage.rev .polaroid{transform:rotate(2deg);}
+.stage.rev .kraft{transform:rotate(-.8deg);}
+.polaroid img{width:100%;aspect-ratio:1/1;object-fit:cover;}
+.kraft{
+  flex:1 1 auto;position:relative;background:var(--kraft);color:var(--kraft-ink);
+  padding:22px 20px 18px;border-radius:2px;box-shadow:0 6px 14px rgba(46,58,63,.12);
+  background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1.2px),radial-gradient(rgba(0,0,0,.05) 1px,transparent 1.2px);
+  background-size:7px 7px,11px 11px;transform:rotate(.8deg);
+}
+.when{display:inline-block;font-family:var(--hand);font-weight:600;font-size:15px;background:#fff;color:var(--ink);border-radius:999px;padding:3px 14px;margin-bottom:8px;box-shadow:0 2px 4px rgba(0,0,0,.08);}
+.kraft h3{font-family:var(--hand);font-weight:600;font-size:19px;margin:0 0 8px;line-height:1.5;}
+.kraft ul{margin:0;padding-left:1.1em;font-family:var(--hand);font-size:14px;line-height:1.85;}
+.kraft .more{display:inline-block;margin-top:10px;font-family:var(--hand);font-weight:600;font-size:14px;color:var(--kraft-ink);text-decoration:none;border-bottom:1.5px dashed var(--kraft-ink);}
+.tape{position:absolute;width:96px;height:22px;opacity:.88;z-index:2;}
+.tape.t1{top:-10px;left:50%;margin-left:-48px;transform:rotate(-6deg);background:var(--sage);clip-path:polygon(3% 0,97% 6%,100% 94%,0 100%);}
+.tape.t3{top:-10px;left:50%;margin-left:-48px;transform:rotate(5deg);background:var(--tape2);clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%);}
+.pin{position:absolute;top:-20px;width:30px;height:38px;z-index:3;}
+.flow{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0;}
+.flow svg{width:38px;height:68px;}
+.flow span{font-family:var(--hand);font-weight:600;font-size:23px;color:var(--ink);background:linear-gradient(transparent 62%,var(--hl) 62%);}
+.b-note{font-family:var(--hand);font-size:12.5px;text-align:center;color:var(--ink-soft);margin:-14px 0 26px;}
+.big{font-family:var(--hand);font-weight:600;font-size:34px;line-height:1.1;color:var(--ink);}
+.big small{display:block;font-size:12px;font-weight:400;margin-top:6px;color:var(--ink-soft);line-height:1.5;}
+.sticker{width:84px;height:84px;margin:0 auto 6px;filter:drop-shadow(0 4px 6px rgba(0,0,0,.12));}
+.arrow-hand{font-family:var(--hand);font-size:12.5px;color:var(--ink-soft);}
+.b-sum{font-family:var(--hand);font-weight:600;font-size:22px;text-align:center;line-height:1.6;margin:42px 0 10px;}
+.b-sum span{background:linear-gradient(transparent 60%,var(--hl) 60%);}
+.b-foot{font-family:var(--hand);font-size:13px;text-align:center;color:var(--ink-soft);}
+@media (max-width:560px){
+  .stage,.stage.rev{flex-direction:column;align-items:stretch;gap:14px;}
+  .polaroid{flex:none;width:72%;margin:0 auto;}
+  .b-sum{font-size:18px;}
+  .b-title{font-size:28px;}
+}
+
+/* ===== シミュレーション ===== */
+.sim{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:18px;}
+.sim-row{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;padding:13px 16px;border-bottom:1px solid var(--line-2);}
+.sim-row:last-child{border-bottom:none;}
+.sim-y{font-weight:800;color:var(--sage);font-size:14px;}
+.sim-what{font-size:13.5px;line-height:1.6;}
+.sim-what small{display:block;color:var(--muted);font-size:11.5px;}
+.sim-fee{font-weight:800;font-size:14px;white-space:nowrap;text-align:right;}
+.sim-total{background:var(--card);}
+.tbd{color:#B08456;font-size:11.5px;font-weight:700;}
+
+/* ===== 解説 ===== */
+.kai{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 18px;margin-top:18px;scroll-margin-top:16px;}
+.kai .k-no{display:inline-block;font-size:12px;font-weight:800;color:#fff;background:var(--sage);border-radius:999px;padding:3px 12px;margin-bottom:8px;letter-spacing:.06em;}
+.kai h3{font-size:17px;line-height:1.5;margin:0 0 8px;}
+.kai p{font-size:14px;color:var(--ink-soft);line-height:1.85;margin:0 0 10px;}
+.kai p b{color:var(--ink);}
+.kai .ours{background:var(--card);border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--ink-soft);line-height:1.8;}
+.kai .ours b{color:var(--sage);}
+.back{display:inline-block;font-size:12.5px;margin-top:6px;text-decoration:none;}
+
+/* ===== 症例 ===== */
+.case-flow{display:grid;grid-template-columns:1fr;gap:12px;margin-top:16px;}
+.cf{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.cf .ph{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;border-bottom:1.5px dashed var(--sage-2);
+  background:repeating-linear-gradient(45deg,#fff 0 10px,var(--soft) 10px 20px);color:var(--sage);font-size:12px;font-weight:700;}
+.cf .cb{padding:11px 14px;font-size:13px;line-height:1.7;}
+.cf .cb b{display:block;font-size:14px;}
+.cf .fee{color:var(--ink);font-weight:800;}
+.case-note{font-size:12px;color:var(--muted);line-height:1.75;margin-top:12px;}
+@media (min-width:760px){.case-flow{grid-template-columns:repeat(4,1fr);}}
+
+.cost-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+.cg{background:var(--card);border-radius:12px;padding:12px 14px;}
+.cg-k{font-size:12px;color:var(--muted);font-weight:700;}
+.cg-v{font-size:16px;font-weight:800;margin-top:2px;}
+.next{display:grid;grid-template-columns:1fr;gap:10px;margin-top:16px;}
+.next a{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:var(--ink);font-weight:700;font-size:14.5px;}
+.next a span{color:var(--sage);}
+footer .fl{font-size:13px;color:var(--ink-soft);font-weight:800;letter-spacing:.04em;}
+footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
+.video-figure{margin:0;}
+.lp-video{width:100%;display:block;border-radius:16px;border:1px solid var(--line);background:#000;aspect-ratio:16/9;object-fit:cover;}
+.vcap2{font-size:12.5px;color:var(--muted);line-height:1.65;margin-top:9px;}
+/* 適合シェーマ */
+.fitfig{margin:22px 0 0;}
+.fitfig > svg{background:var(--soft);border-radius:14px;padding:16px;}
+.ficap{font-size:12.5px;color:var(--ink-soft);line-height:1.72;margin-top:12px;}
+.ficap b{color:var(--ink);font-weight:800;}
+.fitnum{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px;}
+.fn{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;}
+.fn.good{border-color:var(--sage-2);background:var(--card);}
+.fn .fnk{display:block;font-size:11.5px;color:var(--muted);font-weight:700;margin-bottom:3px;}
+.fn .fnv{display:block;font-size:19px;font-weight:800;color:var(--ink);line-height:1.2;}
+.fn.good .fnv{color:var(--sage);}
+.fn .fns{display:block;font-size:11px;color:var(--muted);margin-top:4px;line-height:1.55;}
+
+@media(min-width:760px){.fitnum{grid-template-columns:1fr 1fr;}}
+.figbox{margin-top:20px;margin-bottom:18px;background:var(--soft);border:1px solid var(--line-2);border-radius:14px;padding:18px 16px 14px;}
+.figbox .fb-h{font-weight:800;font-size:14.5px;margin-bottom:12px;display:flex;align-items:center;gap:9px;}
+.figbox .fb-h .pico{width:22px;height:22px;}
+.fb-cap{font-size:11.5px;color:var(--muted);line-height:1.7;margin-top:10px;}
+/* 節3 */
+.thick{max-width:520px;margin:0 auto;}
+.b-badge{text-align:center;margin:-4px 0 16px;}
+.b-badge{font-family:var(--hand);font-weight:600;font-size:14px;}
+.b-badge::before{content:"★ ";color:#E2A93B;}
+.tx{color:var(--sage);font-weight:700;font-size:13.5px;text-decoration:none;border-bottom:1.5px solid var(--line);}
+.k-li{margin:0 0 10px;padding-left:1.2em;font-size:14px;color:var(--ink-soft);line-height:1.85;}
+.cost-grid .cg-v{font-size:15px;line-height:1.5;}
+.k-fig{margin:4px 0 12px;}
+.k-fig img{width:100%;border-radius:10px;border:1px solid var(--line);}
+.k-fig figcaption{font-size:12px;color:var(--ink-soft);margin-top:6px;line-height:1.6;}
+.wr-tl{display:grid;grid-template-columns:1fr;gap:8px;margin:6px 0 10px;}
+.wr-ph{background:var(--card);border-radius:12px;padding:10px 12px;}
+.wr-t{font-weight:800;color:var(--sage);font-size:13.5px;margin-bottom:4px;}
+.wr-r{display:flex;justify-content:space-between;gap:10px;font-size:13px;line-height:1.6;padding:3px 0;color:var(--ink-soft);}
+.wr-r b{color:var(--ink);white-space:nowrap;}
+.wr-r b.free{color:var(--sage);}
+.wr-box{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0 0 10px;}
+.wr-bh{font-weight:800;font-size:13px;margin-bottom:4px;}
+.wr-box .wr-r{border-top:1px dashed var(--line);}
+@media(min-width:760px){.wr-tl{grid-template-columns:repeat(3,1fr);}}
+.tax-banner{display:flex;gap:14px;align-items:flex-start;margin-top:18px;padding:16px;border-radius:14px;border:1.5px solid var(--sage-2);background:var(--soft);text-decoration:none;color:var(--ink);}
+.tb-ico{flex:0 0 40px;height:40px;border-radius:50%;background:var(--sage);color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;}
+.tb-body{display:flex;flex-direction:column;gap:4px;line-height:1.6;}
+.tb-body b{font-size:15px;}
+.tb-body small{font-size:12.5px;color:var(--ink-soft);}
+.tb-body em{font-style:normal;font-size:13px;font-weight:700;color:var(--sage);}
+.k-figs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0 12px;}
+.k-figs figure{margin:0;}
+.k-figs img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--soft);}
+.k-figs figcaption{font-size:12px;color:var(--ink-soft);line-height:1.6;margin-top:6px;}
+.crumb{padding-right:84px;}
+.sm-btn{position:fixed;top:12px;right:12px;z-index:50;width:56px;height:56px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.94);color:var(--sage);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(46,58,63,.16);cursor:pointer;padding:0;}
+.sm-btn:focus-visible,.sm-close:focus-visible,.sm-panel a:focus-visible{outline:3px solid var(--sage-2);outline-offset:2px;}
+.sm-veil{position:fixed;inset:0;background:rgba(46,58,63,.35);z-index:60;}
+.sm-panel{position:fixed;top:0;right:0;bottom:0;width:min(360px,88vw);background:#fff;z-index:70;overflow-y:auto;padding:18px 16px 28px;box-shadow:-6px 0 18px rgba(46,58,63,.18);}
+.sm-panel[hidden],.sm-veil[hidden]{display:none;}
+html.sm-open{overflow:hidden;}
+.sm-head{display:flex;align-items:center;justify-content:space-between;font-weight:800;font-size:16px;}
+.sm-close{width:40px;height:40px;border:none;background:var(--soft);border-radius:50%;font-size:22px;line-height:1;color:var(--ink);cursor:pointer;}
+.sm-lead{font-size:12.5px;color:var(--muted);margin:6px 0 14px;line-height:1.7;}
+.sm-item{display:flex;align-items:center;gap:12px;padding:12px 12px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;text-decoration:none;color:var(--ink);}
+.sm-item.soon{color:var(--muted);background:#FAFAFA;}
+.next-soon{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#FAFAFA;border:1px dashed var(--line);border-radius:12px;padding:14px 16px;color:var(--muted);font-weight:700;font-size:14.5px;}
+.next-soon span{font-size:11.5px;}
+.sm-item.cur{background:var(--soft);border-color:var(--sage-2);}
+.sm-dot{flex:0 0 14px;height:14px;border-radius:50%;}
+.sm-t{flex:1;display:flex;flex-direction:column;line-height:1.5;}
+.sm-t b{font-size:14.5px;}
+.sm-t small{font-size:12px;color:var(--ink-soft);}
+.sm-item i{font-style:normal;color:var(--sage);font-weight:800;}
+.sm-item em{font-style:normal;font-size:10.5px;color:var(--sage);font-weight:800;white-space:nowrap;}
+.sm-home{display:block;margin-top:14px;font-size:13.5px;font-weight:700;text-decoration:none;}
+.ph-img{position:relative;aspect-ratio:4/3;background:var(--soft);border-bottom:1px solid var(--line);}
+.ph-img img{width:100%;height:100%;object-fit:cover;}
+.cf-tag{position:absolute;left:8px;top:8px;background:var(--sage);color:#fff;font-size:11.5px;font-weight:800;border-radius:999px;padding:2px 10px;letter-spacing:.06em;}
+.case-dl{background:#fff;border:1px solid var(--line);border-radius:14px;margin:14px 0 0;padding:6px 16px;}
+.case-dl div{display:grid;grid-template-columns:104px 1fr;gap:10px;padding:9px 0;border-bottom:1px solid var(--line-2);font-size:13.5px;line-height:1.7;}
+.case-dl div:last-child{border-bottom:none;}
+.case-dl dt{font-weight:800;color:var(--sage);}
+.case-dl dd{margin:0;}
+:root{--sage:#A05A6B;--sage-2:#C88A98;--soft:#FBF4F5;--card:#F5E8EB;--line:#EAD6DB;--line-2:#F3E6E9;--kraft:#EFD3D6;--kraft-ink:#4E2C35;--board:#FDF9FA;--hl:rgba(240,170,185,.50);--tape2:#E7B98A;}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="tooth" viewBox="0 0 100 100"><path d="M24 14c-9 0-15 10-15 26 0 20 6 50 17 50 7 0 8-17 24-17s17 17 24 17c11 0 17-30 17-50 0-16-6-26-15-26-9 0-12 6-26 6S33 14 24 14Z" fill="#fff" stroke="#2E3A3F" stroke-width="3.2" stroke-linejoin="round"/></symbol>
+  <symbol id="pin-red" viewBox="0 0 30 38"><ellipse cx="15" cy="9" rx="10" ry="8" fill="#E25B4A"/><rect x="10" y="12" width="10" height="9" rx="2" fill="#C94634"/><ellipse cx="15" cy="21" rx="9" ry="3" fill="#E25B4A"/><line x1="15" y1="22" x2="15" y2="37" stroke="#8A8F91" stroke-width="2"/></symbol>
+  <symbol id="pin-blue" viewBox="0 0 30 38"><ellipse cx="15" cy="9" rx="10" ry="8" fill="#3E86C6"/><rect x="10" y="12" width="10" height="9" rx="2" fill="#2F6FA8"/><ellipse cx="15" cy="21" rx="9" ry="3" fill="#3E86C6"/><line x1="15" y1="22" x2="15" y2="37" stroke="#8A8F91" stroke-width="2"/></symbol>
+</defs></svg>
+
+<button class="sm-btn" type="button" aria-label="ほかの素材のストーリーを開く" aria-expanded="false" aria-controls="sm-panel"><svg viewBox="0 0 100 100" width="34" height="34" aria-hidden="true"><path d="M24 14c-9 0-15 10-15 26 0 20 6 50 17 50 7 0 8-17 24-17s17 17 24 17c11 0 17-30 17-50 0-16-6-26-15-26-9 0-12 6-26 6S33 14 24 14Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M33 33H67M33 44H67M33 55H67" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></button>
+<div class="sm-veil" hidden></div>
+<nav class="sm-panel" id="sm-panel" aria-label="素材ごとのストーリー" hidden>
+  <div class="sm-head"><span>素材ごとのストーリー</span><button class="sm-close" type="button" aria-label="閉じる">×</button></div>
+  <p class="sm-lead">気になる素材の「この先」を、見くらべてみてください。</p>
+  <a class="sm-item" href="inlay-crown-metal.html"><span class="sm-dot" style="background:#4E6478"></span><span class="sm-t"><b>金属（保険）で治すと</b><small>費用を抑えて、いまの1本を治す</small></span><i>→</i></a><a class="sm-item" href="inlay-crown-cadcam.html"><span class="sm-dot" style="background:#4F7A6C"></span><span class="sm-t"><b>CAD/CAM（保険）で治すと</b><small>保険で、歯の根を守る（当院のおすすめ）</small></span><i>→</i></a><a class="sm-item" href="inlay-crown-1day.html"><span class="sm-dot" style="background:#A8692A"></span><span class="sm-t"><b>1dayで治すと</b><small>期限までに、1日でまとめて治す</small></span><i>→</i></a><a class="sm-item" href="inlay-crown-ceramic.html"><span class="sm-dot" style="background:#465C92"></span><span class="sm-t"><b>セラミック（奥歯）で治すと</b><small>作り直しを減らして、長く使う</small></span><i>→</i></a><a class="sm-item cur" href="inlay-crown-front.html" aria-current="page"><span class="sm-dot" style="background:#A05A6B"></span><span class="sm-t"><b>セラミック（前歯）で治すと</b><small>前歯の見た目に、自信を持つ</small></span><em>いま見ているページ</em></a>
+  <a class="sm-home" href="inlay-crown.html">← インレー・クラウン治療のページへ</a>
+</nav>
+<script>
+(function(){var b=document.querySelector('.sm-btn'),p=document.getElementById('sm-panel'),v=document.querySelector('.sm-veil'),c=p.querySelector('.sm-close');
+function o(x){p.hidden=!x;v.hidden=!x;b.setAttribute('aria-expanded',x);document.documentElement.classList.toggle('sm-open',x);if(x)c.focus();else b.focus();}
+b.addEventListener('click',function(){o(p.hidden);});c.addEventListener('click',function(){o(false);});v.addEventListener('click',function(){o(false);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o(false);});})();
+</script>
+<div class="crumb"><a href="inlay-crown.html">インレー・クラウン治療</a> ＞ セラミック（前歯）で治すと</div>
+
+<section class="board" id="story">
+  <div class="inner">
+    <h1 class="b-title">前歯をセラミックで治すと、<br>この先どうなる？</h1>
+    <p class="b-intro">今の1本を治すだけでなく、<br>10年後・20年後の歯の姿を、<br>一緒にのぞいてみましょう。</p>
+    <p class="b-note">年数は、調査の平均や当院の経験をもとにした一例です。</p>
+
+    <div class="stage">
+      <div class="polaroid"><img src="ic-front-1.jpg" alt="前歯の1本だけ色が合わない口元のイラスト" loading="lazy"><span class="tape t1"></span></div>
+      <div class="kraft">
+        <div class="when">今</div>
+        <h3>前歯の色や形が気になる</h3>
+        <ul><li>古い被せものの色が、まわりと合わない</li><li>笑うときに、口元を隠してしまう</li></ul>
+      </div>
+    </div>
+
+    <div class="flow"><svg viewBox="0 0 40 70" aria-hidden="true"><path d="M20 4 C 12 22, 28 38, 20 60" fill="none" stroke="#2E3A3F" stroke-width="2.4" stroke-linecap="round"/><path d="M11 52 L20 64 L29 52" fill="none" stroke="#2E3A3F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>まず仮歯で</span></div>
+
+    <div class="stage rev">
+      <div class="polaroid"><img src="ic-front-2.jpg" alt="仮歯の前歯を確かめている口元のイラスト" loading="lazy"><span class="tape t3"></span></div>
+      <div class="kraft"><span class="pin" style="left:50%;margin-left:-15px;"><svg width="30" height="38"><use href="#pin-blue"/></svg></span>
+        <div class="when">仮歯</div>
+        <h3>形・色・笑顔を、仮歯で確かめる</h3>
+        <ul><li>笑ったときの口元、お顔との調和を見ながら</li><li>気になるところを直してから仕上げる</li></ul>
+        <a class="more" href="#k1">解説1　仮歯で確かめるのは？ →</a>
+      </div>
+    </div>
+
+    <div class="flow"><svg viewBox="0 0 40 70" aria-hidden="true"><path d="M20 4 C 28 22, 12 38, 20 60" fill="none" stroke="#2E3A3F" stroke-width="2.4" stroke-linecap="round"/><path d="M11 52 L20 64 L29 52" fill="none" stroke="#2E3A3F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>決まった形で</span></div>
+
+    <div class="stage">
+      <div class="polaroid"><img src="ic-front-3.jpg" alt="前歯がそろって白く自然な口元のイラスト" loading="lazy"><span class="tape t1"></span></div>
+      <div class="kraft">
+        <div class="when">仕上げ</div>
+        <h3>プレミアムのセラミックで仕上げる</h3>
+        <ul><li>まわりの歯となじむ自然な仕上がりから、白く整った並びまで</li><li>前歯はプレミアムのみ</li></ul>
+        <a class="more" href="#k2">解説2　前歯がプレミアムのみなのは？ →</a>
+      </div>
+    </div>
+
+    <div class="flow"><svg viewBox="0 0 40 70" aria-hidden="true"><path d="M20 4 C 12 22, 28 38, 20 60" fill="none" stroke="#2E3A3F" stroke-width="2.4" stroke-linecap="round"/><path d="M11 52 L20 64 L29 52" fill="none" stroke="#2E3A3F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>その先も</span></div>
+
+    <div class="stage rev">
+      <div class="polaroid"><img src="ic-front-4.jpg" alt="自信を持って笑う口元のイラスト" loading="lazy"><span class="tape t3"></span></div>
+      <div class="kraft"><span class="pin" style="left:38%;"><svg width="30" height="38"><use href="#pin-red"/></svg></span>
+        <div class="when">その先</div>
+        <h3>自信を持って笑える</h3>
+        <ul><li>口の中で変わりにくい素材</li><li>年2回のメインテナンスと、15年保証で支える</li></ul>
+        <a class="more" href="#k3">解説3　保証のしくみ →</a>
+      </div>
+    </div>
+
+    <p class="b-sum"><span>前歯の見た目に、自信を持って笑うために。</span></p>
+    <p class="b-foot">気になったところは、下の解説でくわしく ↓<br><a href="#cost" style="color:var(--ink-soft)">費用と通院の回数を見る</a></p>
+  </div>
+</section>
+
+<section class="section" id="cost">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>費用と通院の回数</span>
+    <h2 class="title">仮歯で確かめながら、数回で仕上げます</h2>
+    <div class="cost-grid"><div class="cg"><div class="cg-k">通院</div><div class="cg-v">仮歯の期間を含めて数回</div></div><div class="cg"><div class="cg-k">クラウン（前歯・プレミアム）</div><div class="cg-v">180,000円</div></div><div class="cg"><div class="cg-k">となり合う前歯</div><div class="cg-v">1本あたり170,000円</div></div><div class="cg"><div class="cg-k">保証</div><div class="cg-v">15年保証</div></div></div>
+    <p class="note" style="margin-top:12px;">※ 税込の総額です。お支払いは「始めるとき」と「入れるとき」の2回に分けられます。土台・根の治療・歯ぐきの処置が必要な歯は、別に費用がかかります。始める前に、必ずお伝えします。</p>
+    <a class="tax-banner" href="medical-tax.html">
+      <span class="tb-ico" aria-hidden="true">¥</span>
+      <span class="tb-body"><b>この治療の費用も、医療費控除の対象です</b><small>1年間に支払った医療費（ご家族の分も合わせて）が10万円を超えたら、確定申告で税金の一部が戻ることがあります。</small><em>医療費控除のくわしい説明へ →</em></span>
+    </a>
+  </div>
+</section>
+
+<section class="section soft" id="sim">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>費用の例</span>
+    <h2 class="title">前歯を治す本数ごとの費用</h2>
+    <p class="lead">となり合う前歯をまとめて治すときは、1本あたりの価格が変わります。</p>
+    <div class="sim"><div class="sim-row"><div class="sim-y">1本</div><div class="sim-what">前歯のクラウン<small>プレミアム</small></div><div class="sim-fee">180,000円</div></div><div class="sim-row"><div class="sim-y">2本</div><div class="sim-what">となり合う前歯<small>170,000円 × 2本</small></div><div class="sim-fee">340,000円</div></div><div class="sim-row"><div class="sim-y">4本</div><div class="sim-what">となり合う前歯<small>170,000円 × 4本</small></div><div class="sim-fee">680,000円</div></div></div>
+    <p class="note" style="margin-top:12px;">※ 税込の総額です。15年保証つき。離れた歯や、別の日に分けて治す場合は、1本ごとの通常の価格になります。</p>
+  </div>
+</section>
+
+<section class="section" id="kaisetsu">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>解説</span>
+    <h2 class="title">気になったところを、くわしく</h2>
+
+    <div class="kai" id="k1">
+      <span class="k-no">解説1</span>
+      <h3>仮歯で、何を確かめるのですか</h3>
+      <p>見た目は、言葉だけでは決めにくいものです。仮歯で毎日過ごしてみて、歯の形・色・長さ、笑ったときの口元、お顔との調和を確かめます。</p><p>気になるところを仮歯で直してから、セラミックを作ります。仕上がりを先に確かめられるので、安心して進められます。</p><p style="margin:10px 0 0;"><a class="tx" href="crown-flow-provisional.html">仮歯で確かめる6つの手順を見る →</a></p>
+      <a class="back" href="#story">↑ 流れに戻る</a>
+    </div>
+
+    <div class="kai" id="k2">
+      <span class="k-no">解説2</span>
+      <h3>前歯がプレミアムのみなのは、なぜですか</h3>
+      <p>前歯は、見た目が仕上がりの満足を大きく左右するためです。プレミアムは、色・形・透け感を、まわりの歯に合わせて細かく再現します。</p><p>まわりの歯となじむ自然な仕上がりから、白く整った並びまで、ご希望に合わせて作ります。</p><figure class="k-fig"><img src="grade-front.jpg" alt="プレミアムクラウンの前歯の仕上がり（横から見たところ）" loading="lazy"><figcaption>上の歯は、すべてプレミアムのクラウンです。</figcaption></figure>
+      <a class="back" href="#story">↑ 流れに戻る</a>
+    </div>
+
+    <div class="kai" id="k3">
+      <span class="k-no">解説3</span>
+      <h3>15年保証のしくみ</h3>
+      <p>セラミック（スタンダード・プレミアム）には、15年保証がつきます。条件は、<b>年2回、当院でお口の状態を確認させていただくこと</b>です。その日に何をするかは、そのときのお口の状態で決めます。保証を続けるために、保険の診療をお願いすることはありません。</p><p>入れてから1年以内の不具合は、無料で作り直します。1〜15年は、作り直しの費用は材料代のみです。外れたものの付け直しは、15年を過ぎても、ずっと0円です。</p><p>インレーを入れた歯が、年月を経てクラウンに変わるときは、インレーでお支払いいただいた技術料の分（35,000円）を差し引きます。<b>同じ歯に、技術料を二度いただきません。</b>15年を過ぎても変わりません。1dayは対象外です。</p><p>15年保証は、当院で直すことを前提とした保証です。転居などで通えなくなったときは、これまでの治療の記録をお渡しします。</p>
+<div class="wr-tl">
+  <div class="wr-ph"><div class="wr-t">入れてから1年</div><div class="wr-r"><span>外れたものの付け直し</span><b class="free">0円</b></div><div class="wr-r"><span>作り直し</span><b class="free">無料</b></div></div>
+  <div class="wr-ph"><div class="wr-t">1年〜15年</div><div class="wr-r"><span>外れたものの付け直し</span><b class="free">0円</b></div><div class="wr-r"><span>作り直し</span><b>材料代のみ</b></div></div>
+  <div class="wr-ph"><div class="wr-t">15年〜</div><div class="wr-r"><span>外れたものの付け直し</span><b class="free">0円（ずっと）</b></div><div class="wr-r"><span>作り直し</span><b>技術料を差し引き</b></div></div>
+</div>
+<div class="wr-box">
+  <div class="wr-bh">作り直すときの材料代（実費）の目安</div>
+  <div class="wr-r"><span>インレー スタンダード／プレミアム</span><b>約49,300円／約62,500円</b></div>
+  <div class="wr-r"><span>クラウン スタンダード</span><b>約79,500円</b></div>
+  <div class="wr-r"><span>クラウン プレミアム（奥歯）／（前歯）</span><b>約90,100円／約117,600円</b></div>
+</div>
+<div class="wr-box">
+  <div class="wr-bh">同じ歯に、技術料を二度いただきません（インレー → クラウン）</div>
+  <div class="wr-r"><span>インレー スタンダード → クラウン スタンダード</span><b>105,000円</b></div>
+  <div class="wr-r"><span>インレー スタンダード → クラウン プレミアム（奥歯）</span><b>125,000円</b></div>
+  <div class="wr-r"><span>インレー プレミアム → クラウン プレミアム（奥歯）</span><b>125,000円</b></div>
+</div>
+      <a class="back" href="#story">↑ 流れに戻る</a>
+    </div>
+  </div>
+</section>
+
+<section class="section soft" id="case">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>実際の症例</span>
+    <h2 class="title">前歯をセラミックで治した例</h2>
+    <p class="lead">前歯をセラミックで治した、実際の例です。（写真は準備中です）</p>
+    <div class="case-flow"><div class="cf"><div class="ph">写真枠<br>治療前</div><div class="cb"><b>○○</b>症例に合わせて</div></div><div class="cf"><div class="ph">写真枠<br>仮歯</div><div class="cb"><b>形と色を確かめる</b>症例に合わせて</div></div><div class="cf"><div class="ph">写真枠<br>仕上げ</div><div class="cb"><b>プレミアムのクラウン</b>○○円</div></div><div class="cf"><div class="ph">写真枠<br>○年後</div><div class="cb"><b>○○</b>症例に合わせて</div></div></div>
+    
+    <p class="case-note">※ 写真は、患者さんの同意を得て掲載しています。治り方や費用は、お口の状態によって一人ひとり異なります。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>ほかの素材のストーリー</span>
+    <h2 class="title">ほかの選び方も、見てみませんか</h2>
+    <div class="next"><a href="inlay-crown-metal.html">金属（保険）で治すと<span>→</span></a><a href="inlay-crown-cadcam.html">CAD/CAM（保険）で治すと<span>→</span></a><a href="inlay-crown-1day.html">1dayで治すと<span>→</span></a><a href="inlay-crown-ceramic.html">セラミック（奥歯）で治すと<span>→</span></a><a href="inlay-crown.html">インレー・クラウンのページに戻る<span>←</span></a></div>
+    <p class="note" style="margin-top:16px;">選ぶのは、ご自身です。今回選んだ方法は、ずっと続く決まりではありません。迷ったら、受付またはお電話でご相談ください。</p>
+  </div>
+</section>
+
+<footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
+  <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+</body>
+</html>
