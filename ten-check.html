@@ -136,9 +136,44 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
   nav.pc-toc a{display:block;color:var(--ink-soft);text-decoration:none;padding:3px 0 3px 10px;border-left:2px solid var(--line);}
   nav.pc-toc a.on{color:var(--ink);font-weight:700;border-left-color:var(--sage);}
 }
+
+/* 図（2026-10-22 追加） */
+.fig{margin:2px 0 18px;background:var(--soft);border-radius:14px;padding:14px 12px 10px;}
+.fig svg{width:100%;height:auto;display:block;max-width:440px;margin:0 auto;overflow:visible;}
+.fig figcaption{font-size:12.5px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.6;}
+.fig .s{fill:none;stroke:var(--sage);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.fig .sd{fill:none;stroke:var(--sage-2);stroke-width:1.6;stroke-dasharray:4 4;stroke-linecap:round;}
+.fig .th{fill:#fff;stroke:var(--ink-soft);stroke-width:1.6;stroke-linejoin:round;}
+.fig .thf{fill:var(--card);stroke:var(--sage);stroke-width:1.6;stroke-linejoin:round;}
+.fig .thx{fill:#fff;stroke:var(--line);stroke-width:1.4;stroke-dasharray:3 3;}
+.fig .gum{fill:var(--card);stroke:var(--sage-2);stroke-width:1.4;}
+.fig .lb{font-size:11.5px;fill:var(--ink-soft);font-family:var(--gothic);}
+.fig .lbs{font-size:12px;fill:var(--sage);font-weight:700;font-family:var(--gothic);}
+.fig .lbw{font-size:11.5px;fill:#fff;font-family:var(--gothic);}
+.fig .dot{fill:var(--sage);}
+.fig .xr{fill:var(--ink);}
+/* 研究でわかっていること（2026-10-22 追加） */
+.ev{margin-top:16px;border:1.5px solid var(--sage-2);border-radius:14px;background:#fff;overflow:hidden;}
+.ev-h{display:flex;align-items:center;gap:8px;background:var(--sage);color:#fff;font-size:13px;font-weight:700;letter-spacing:.06em;padding:8px 14px;}
+.ev-h svg{width:18px;height:18px;flex:none;}
+.ev-h .chip{margin-left:auto;font-size:11px;font-weight:700;background:#fff;color:var(--sage);border-radius:999px;padding:1px 9px;letter-spacing:.04em;}
+.ev-b{padding:12px 14px 12px;}
+.ev-b p{font-size:14px;color:var(--ink);line-height:1.85;}
+.ev-b p+p{margin-top:8px;}
+.ev-b .ev-note{font-size:12.5px;color:var(--ink-soft);}
+.ev-src{border-top:1px dashed var(--line);margin-top:10px;padding-top:8px;font-size:11.5px;color:var(--muted);line-height:1.7;}
+.ev-src b{color:var(--ink-soft);}
+@media (min-width:1000px){.ev-b p{font-size:15px;}.ev-src{font-size:12px;}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="molar" viewBox="0 0 40 60"><path d="M4 22 Q3 6 12 6 Q16 2 20 6 Q24 2 28 6 Q37 6 36 22 L33 30 L30 55 Q27 59 24 55 L21 34 L19 34 L16 55 Q13 59 10 55 L7 30 Z"/></symbol>
+    <symbol id="incisor" viewBox="0 0 24 64"><path d="M4 4 Q12 0 20 4 L19 26 L15 59 Q12 63 9 59 L5 26 Z"/></symbol>
+    <symbol id="book" viewBox="0 0 24 24"><path d="M3 5.5 Q7.5 3.5 12 6 Q16.5 3.5 21 5.5 L21 19 Q16.5 17 12 19.5 Q7.5 17 3 19 Z M12 6 L12 19.5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
 
 <nav class="pc-toc" aria-label="このページの目次">
   <div class="toc-h">このページの目次</div>
@@ -233,9 +268,11 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
       <div class="item-top"><span class="item-no">01</span><div><span class="item-cat">奥歯</span><div class="item-text">左右の奥歯で、しっかり噛める</div></div></div>
       <div class="item-body">
         <h3>左右の奥歯で噛めることが、お口全体の土台です</h3>
+        <figure class="fig"><svg viewBox="0 0 320 160" role="img" aria-label="右と左の奥歯（6番・7番）で、上下が噛み合っている図"><use href="#molar" class="thf" transform="translate(36,70) scale(1,-1)" width="40" height="60"/><use href="#molar" class="thf" transform="translate(78,70) scale(1,-1)" width="40" height="60"/><use href="#molar" class="thf" x="36" y="72" width="40" height="60"/><use href="#molar" class="thf" x="78" y="72" width="40" height="60"/><line x1="32" y1="71" x2="122" y2="71" class="sd"/><text x="56" y="148" text-anchor="middle" class="lb">6番</text><text x="98" y="148" text-anchor="middle" class="lb">7番</text><text x="77" y="6" text-anchor="middle" class="lbs">右の奥歯</text><use href="#molar" class="thf" transform="translate(204,70) scale(1,-1)" width="40" height="60"/><use href="#molar" class="thf" transform="translate(246,70) scale(1,-1)" width="40" height="60"/><use href="#molar" class="thf" x="204" y="72" width="40" height="60"/><use href="#molar" class="thf" x="246" y="72" width="40" height="60"/><line x1="200" y1="71" x2="290" y2="71" class="sd"/><text x="224" y="148" text-anchor="middle" class="lb">6番</text><text x="266" y="148" text-anchor="middle" class="lb">7番</text><text x="245" y="6" text-anchor="middle" class="lbs">左の奥歯</text><text x="160" y="68" text-anchor="middle" class="lb">上の歯</text><text x="160" y="84" text-anchor="middle" class="lb">下の歯</text></svg><figcaption>右でも左でも、上下の6番どうし（または7番どうし）が噛み合っていれば印がつきます。</figcaption></figure>
         <div class="blk"><div class="blk-h">印がつくとき</div><p>右と左のそれぞれで、上下の奥歯が噛み合っているときです。見るのは、前から数えて6番目と7番目の、大きな奥歯です。上下の6番どうし、または7番どうしが噛み合っていれば、印がつきます。</p></div>
         <div class="blk"><div class="blk-h">なぜ大切か</div><p>奥歯は、噛む力の多くを受け止めています。上下の噛み合わせの高さを支えているのも、奥歯です。</p></div>
         <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>片側の奥歯で噛めないと、反対側や前歯に力が集まります。その歯に負担が重なり、傷みやすくなることがあります。奥歯の支えが減ると、前歯が押されて、すき間が開くことがあります。</p></div>
+        <aside class="ev"><div class="ev-h"><svg aria-hidden="true"><use href="#book"/></svg>研究でわかっていること<span class="chip">論文</span></div><div class="ev-b"><p>上下で噛み合う歯の組が多いほど、よく噛めることが、多くの研究をまとめた論文で示されています。</p><div class="ev-src"><b>出典</b>：Gotfredsen K, Walls AWG. What dentition assures oral function? <i>Clinical Oral Implants Research</i> 2007;18(Suppl 3):34-45.</div></div></aside>
         <div class="blk"><div class="blk-h">整えていく方法</div><p>抜けたままの奥歯は、入れ歯・ブリッジ・インプラントで補えます。歯はあっても噛み合っていない場合は、原因によって方法が変わります。先生にお尋ねください。</p>
           <div class="go-links"><a href="denture.html">入れ歯 →</a><a href="bridge.html">ブリッジ →</a><a href="implant.html">インプラント →</a></div></div>
         <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
@@ -246,9 +283,11 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
       <div class="item-top"><span class="item-no">02</span><div><span class="item-cat">定期チェック</span><div class="item-text">この1年で、2回以上メインテナンスに通えている</div></div></div>
       <div class="item-body">
         <h3>年2回のメインテナンスで、小さいうちに見つけられます</h3>
+        <figure class="fig"><svg viewBox="0 0 320 120" role="img" aria-label="1年のうちに2回メインテナンスに通う図"><line x1="24" y1="70" x2="296" y2="70" class="s"/><line x1="24.0" y1="64" x2="24.0" y2="76" stroke="var(--line)" stroke-width="1.5"/><line x1="46.7" y1="64" x2="46.7" y2="76" stroke="var(--line)" stroke-width="1.5"/><line x1="69.3" y1="64" x2="69.3" y2="76" stroke="var(--line)" stroke-width="1.5"/><line x1="92.0" y1="64" x2="92.0" y2="76" stroke="var(--line)" stroke-width="1.5"/><line x1="114.7" y1="64" x2="114.7" y2="76" stroke="var(--line)" stroke-width="1.5"/><line x1="137.3" y1="64" x2="137.3" y2="76" stroke="var(--line)" stroke-width="1.5"/><line x1="160.0" y1="64" x2="160.0" y2="76" stroke="var(--line)" stroke-width="1.5"/><line x1="182.7" y1="64" x2="182.7" y2="76" stroke="var(--line)" stroke-width="1.5"/><line x1="205.3" y1="64" x2="205.3" y2="76" stroke="var(--line)" stroke-width="1.5"/><line x1="228.0" y1="64" x2="228.0" y2="76" stroke="var(--line)" stroke-width="1.5"/><line x1="250.7" y1="64" x2="250.7" y2="76" stroke="var(--line)" stroke-width="1.5"/><line x1="273.3" y1="64" x2="273.3" y2="76" stroke="var(--line)" stroke-width="1.5"/><line x1="296.0" y1="64" x2="296.0" y2="76" stroke="var(--line)" stroke-width="1.5"/><circle cx="92.0" cy="70" r="10" class="dot"/><path d="M88.0 70 l3 3 l6 -7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="92.0" y="46" text-anchor="middle" class="lbs">1回目</text><text x="92.0" y="30" text-anchor="middle" class="lb">メインテナンス</text><circle cx="228.0" cy="70" r="10" class="dot"/><path d="M224.0 70 l3 3 l6 -7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="228.0" y="46" text-anchor="middle" class="lbs">2回目</text><text x="228.0" y="30" text-anchor="middle" class="lb">メインテナンス</text><path d="M24 92 L24 98 L296 98 L296 92" class="sd"/><text x="160" y="114" text-anchor="middle" class="lb">1年</text></svg><figcaption>1年に2回、お口のお手入れと確認に通います。</figcaption></figure>
         <div class="blk"><div class="blk-h">印がつくとき</div><p>この1年に、メインテナンスに2回以上通われたときです。メインテナンスは、お口のお手入れと、変わりがないかの確認です。初めての方は、これまでの通院のお話をうかがって判断します。</p></div>
         <div class="blk"><div class="blk-h">なぜ大切か</div><p>むし歯や歯ぐきの病気は、初めのうちは痛みがほとんどありません。定期的に見ていれば、小さいうちに見つけられます。早く見つかれば、削る量も、通う回数も小さくすみます。</p></div>
         <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>痛みが出てから来院すると、病気が進んでいることがあります。歯と歯ぐきの間にたまった歯石は、歯ブラシでは取れません。</p></div>
+        <aside class="ev"><div class="ev-h"><svg aria-hidden="true"><use href="#book"/></svg>研究でわかっていること<span class="chip">論文</span></div><div class="ev-b"><p>歯科に定期的に通う人は、むし歯が少なく、ご自身のお口の健康を良いと感じる人が多いことが、長く追いかけた研究をまとめた論文で示されています。</p><p class="ev-note">歯を失う数との関係は、研究によって結果が分かれています。</p><div class="ev-src"><b>出典</b>：Khairuddin ANM, et al. Impact of dental visiting patterns on oral health: a systematic review of longitudinal studies. <i>BDJ Open</i> 2024;10:18.</div></div></aside>
         <div class="blk"><div class="blk-h">整えていく方法</div><p>当院では、年2回以上のメインテナンスをおすすめしています。15年保証の条件も、年2回、当院でお口の状態を確認させていただくことです。次の予約は、受付でお取りいただけます。</p></div>
         <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
       </div>
@@ -258,9 +297,11 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
       <div class="item-top"><span class="item-no">03</span><div><span class="item-cat">歯の本数</span><div class="item-text">噛むのに使える歯が、20本以上ある</div></div></div>
       <div class="item-body">
         <h3>使える歯が20本あると、たいていのものを噛めます</h3>
+        <figure class="fig"><svg viewBox="0 0 320 150" role="img" aria-label="親知らずを除く28本のうち、使える歯が20本ある図"><rect x="20" y="30" width="17" height="26" rx="6" class="thf"/><rect x="40" y="30" width="17" height="26" rx="6" class="thx"/><rect x="60" y="30" width="17" height="26" rx="6" class="thf"/><rect x="80" y="30" width="17" height="26" rx="6" class="thf"/><rect x="100" y="30" width="17" height="26" rx="6" class="thf"/><rect x="120" y="30" width="17" height="26" rx="6" class="thf"/><rect x="140" y="30" width="17" height="26" rx="6" class="thx"/><rect x="160" y="30" width="17" height="26" rx="6" class="thf"/><rect x="180" y="30" width="17" height="26" rx="6" class="thf"/><rect x="200" y="30" width="17" height="26" rx="6" class="thf"/><rect x="220" y="30" width="17" height="26" rx="6" class="thf"/><rect x="240" y="30" width="17" height="26" rx="6" class="thf"/><rect x="260" y="30" width="17" height="26" rx="6" class="thx"/><rect x="280" y="30" width="17" height="26" rx="6" class="thx"/><rect x="20" y="70" width="17" height="26" rx="6" class="thf"/><rect x="40" y="70" width="17" height="26" rx="6" class="thx"/><rect x="60" y="70" width="17" height="26" rx="6" class="thf"/><rect x="80" y="70" width="17" height="26" rx="6" class="thf"/><rect x="100" y="70" width="17" height="26" rx="6" class="thf"/><rect x="120" y="70" width="17" height="26" rx="6" class="thf"/><rect x="140" y="70" width="17" height="26" rx="6" class="thx"/><rect x="160" y="70" width="17" height="26" rx="6" class="thf"/><rect x="180" y="70" width="17" height="26" rx="6" class="thf"/><rect x="200" y="70" width="17" height="26" rx="6" class="thf"/><rect x="220" y="70" width="17" height="26" rx="6" class="thf"/><rect x="240" y="70" width="17" height="26" rx="6" class="thf"/><rect x="260" y="70" width="17" height="26" rx="6" class="thx"/><rect x="280" y="70" width="17" height="26" rx="6" class="thx"/><text x="160" y="18" text-anchor="middle" class="lb">上の歯</text><text x="160" y="114" text-anchor="middle" class="lb">下の歯</text><rect x="34" y="124" width="12" height="16" rx="4" class="thf"/><text x="52" y="137" class="lb">使える歯 20本</text><rect x="178" y="124" width="12" height="16" rx="4" class="thx"/><text x="196" y="137" class="lb">失った歯</text></svg><figcaption>大人の歯は、親知らずを除くと28本。20本あると、たいていのものを噛めます。</figcaption></figure>
         <div class="blk"><div class="blk-h">印がつくとき</div><p>噛むのに使える歯が、20本以上あるときです。ご自身の歯と、ブリッジやインプラントのように固定された歯を数えます。取り外しの入れ歯は数えません。</p></div>
         <div class="blk"><div class="blk-h">なぜ大切か</div><p>大人の歯は、親知らずを除くと28本です。20本あると、たいていのものを噛めます。硬いものや繊維の多いものも、食べやすくなります。</p></div>
         <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>歯が少なくなると、噛みにくいものを避けるようになることがあります。食べられるものが偏ると、食事を楽しみにくくなります。残っている歯の1本あたりの負担も、大きくなります。</p></div>
+        <aside class="ev"><div class="ev-h"><svg aria-hidden="true"><use href="#book"/></svg>研究でわかっていること<span class="chip">論文</span></div><div class="ev-b"><p>自分の歯が20本ほどあれば、食べるのに困らない程度に噛めることが、多くの研究をまとめた論文で確かめられています。</p><p>WHO（世界保健機関）が掲げる「生涯、20本以上の歯を保つ」という目標の根拠のひとつです。</p><div class="ev-src"><b>出典</b>：Gotfredsen K, Walls AWG. What dentition assures oral function? <i>Clinical Oral Implants Research</i> 2007;18(Suppl 3):34-45.</div></div></aside>
         <div class="blk"><div class="blk-h">整えていく方法</div><p>いちばん大切なのは、今ある歯を守ることです（<a href="#c02">02</a>・<a href="#c04">04</a>・<a href="#c05">05</a>）。失った歯を補う方法は、01と同じです。</p>
           <div class="go-links"><a href="denture.html">入れ歯 →</a><a href="bridge.html">ブリッジ →</a><a href="implant.html">インプラント →</a></div></div>
         <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
@@ -276,9 +317,11 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
       <div class="item-top"><span class="item-no">04</span><div><span class="item-cat">むし歯</span><div class="item-text">いま、削る必要のあるむし歯が1本もない</div></div></div>
       <div class="item-body">
         <h3>むし歯は、早く治すほど小さくすみます</h3>
+        <figure class="fig"><svg viewBox="0 0 320 160" role="img" aria-label="むし歯が進むと、治療が一段ずつ大きくなる図"><rect x="16" y="112" width="68" height="28" rx="8" class="thf"/><text x="50" y="104" text-anchor="middle" class="lb">小さく詰める</text><rect x="92" y="86" width="68" height="54" rx="8" class="th"/><text x="126" y="78" text-anchor="middle" class="lb">詰めもの</text><rect x="168" y="60" width="68" height="80" rx="8" class="th"/><text x="202" y="52" text-anchor="middle" class="lb">被せもの</text><rect x="244" y="34" width="68" height="106" rx="8" class="th"/><text x="278" y="26" text-anchor="middle" class="lb">根の治療</text><path d="M40 130 Q160 120 280 40" class="sd"/><path d="M274 36 L282 38 L280 46" class="s"/><text x="16" y="156" class="lbs">早いほど、小さくすみます</text></svg><figcaption>むし歯が進むと、治療は一段ずつ大きくなることがあります。</figcaption></figure>
         <div class="blk"><div class="blk-h">印がつくとき</div><p>いま、削って治す必要のあるむし歯がないときです。ごく初期で、削らずに様子を見るむし歯は含めません。どの歯にあるかは、裏面の「歯の記録」に赤で示しています。</p></div>
         <div class="blk"><div class="blk-h">なぜ大切か</div><p>削る必要のあるところまで進んだむし歯は、自然には元に戻りません。歯は、治すたびに少しずつ削られます。同じ歯を治せる回数には、限りがあります。</p></div>
         <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>むし歯が進むと、治療が一段ずつ大きくなることがあります。詰めもの、被せもの、根の治療と進むことがあります。痛みがなくても、中で進んでいることがあります。</p></div>
+        <aside class="ev"><div class="ev-h"><svg aria-hidden="true"><use href="#book"/></svg>研究でわかっていること<span class="chip">論文</span></div><div class="ev-b"><p>歯科で行う詰めものの治療の多くは、新しいむし歯ではなく、前の詰めものの作り直しであることが、世界の調査をまとめた論文で示されています。</p><p>作り直すたびに、歯は少しずつ削られます。</p><div class="ev-src"><b>出典</b>：Eltahlah D, et al. An update on the reasons for placement and replacement of direct restorations. <i>Journal of Dentistry</i> 2018;72:1-7.</div></div></aside>
         <div class="blk"><div class="blk-h">整えていく方法</div><p>むし歯の大きさで、詰めるか、被せるかが決まります。神経まで届いている場合は、根の治療をします。</p>
           <div class="go-links"><a href="resin.html">レジン修復 →</a><a href="inlay-crown.html">インレー・クラウン →</a><a href="root-canal.html">根管治療 →</a></div></div>
         <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
@@ -289,9 +332,11 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
       <div class="item-top"><span class="item-no">05</span><div><span class="item-cat">歯ぐき</span><div class="item-text">6mm以上の深い歯周ポケットが、1か所もない</div></div></div>
       <div class="item-body">
         <h3>歯ぐきのすき間が浅いことが、歯を支える骨を守ります</h3>
+        <figure class="fig"><svg viewBox="0 0 320 170" role="img" aria-label="歯と歯ぐきのすき間が6mmの深さで、1円玉4枚の厚みと同じであることを示す図"><path d="M70 14 Q95 6 120 14 L118 70 L110 160 Q95 168 80 160 L72 70 Z" class="th"/><path d="M121 46 Q150 40 178 44 L178 168 L114 168 L119 92 Z" class="gum"/><path d="M118 100 L178 112 L178 168 L113 168 Z" fill="#fff" stroke="var(--sage-2)" stroke-width="1.2" stroke-dasharray="2 3"/><text x="150" y="146" text-anchor="middle" class="lb">骨</text><path d="M120 46 L119 92" stroke="var(--sage)" stroke-width="3" stroke-linecap="round"/><path d="M60 46 L52 46 L52 92 L60 92" class="s"/><text x="48" y="74" text-anchor="end" class="lbs">6mm</text><text x="150" y="34" text-anchor="middle" class="lb">歯ぐき</text><text x="95" y="40" text-anchor="middle" class="lb">歯</text><ellipse cx="256" cy="56" rx="30" ry="7" class="thf"/><ellipse cx="256" cy="67" rx="30" ry="7" class="thf"/><ellipse cx="256" cy="78" rx="30" ry="7" class="thf"/><ellipse cx="256" cy="89" rx="30" ry="7" class="thf"/><text x="256" y="120" text-anchor="middle" class="lb">1円玉 4枚</text><text x="256" y="136" text-anchor="middle" class="lbs">＝ 6mm</text></svg><figcaption>深いすき間には歯ブラシが届かず、歯を支える骨が減っていきます。</figcaption></figure>
         <div class="blk"><div class="blk-h">印がつくとき</div><p>歯と歯ぐきのすき間（歯周ポケット）に、6mm以上の深いところがないときです。6mmは、1円玉を4枚重ねた厚みです。すき間は、細い器具で1本ずつ測っています。</p></div>
         <div class="blk"><div class="blk-h">なぜ大切か</div><p>歯周病は、歯を支える骨が少しずつ減る病気です。すき間が深いほど、支えの骨が減っています。深いすき間には歯ブラシが届かず、細菌がたまりやすくなります。</p></div>
         <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>歯周病は、痛みが少ないまま進むことがあります。歯がぐらついて、初めて気づくこともあります。歯ぐきの炎症は、糖尿病など体の病気とも関わりがあります。</p></div>
+        <aside class="ev"><div class="ev-h"><svg aria-hidden="true"><use href="#book"/></svg>研究でわかっていること<span class="chip">論文</span></div><div class="ev-b"><p>糖尿病の方は、歯周病になりやすいことがわかっています。</p><p>反対に、歯周病の炎症が、血糖のコントロールを悪くすることもあります。この「両方向の関係」は、国際的な専門家の会議でまとめられています。</p><p>日本歯周病学会も、糖尿病の方への歯周治療の指針を出しています。</p><div class="ev-src"><b>出典</b>：Preshaw PM, et al. Periodontitis and diabetes: a two-way relationship. <i>Diabetologia</i> 2012;55(1):21-31.／日本歯周病学会 編『糖尿病患者に対する歯周治療ガイドライン2023 改訂第3版』医歯薬出版, 2023.</div></div></aside>
         <div class="blk"><div class="blk-h">整えていく方法</div><p>まず、歯ぐきの下の歯石や汚れを取る治療をします。ご自宅での歯みがきの方法も、一緒に見直します。そのあとは、メインテナンスで安定を保ちます（<a href="#c02">02</a>）。</p></div>
         <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
       </div>
@@ -301,6 +346,7 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
       <div class="item-top"><span class="item-no">06</span><div><span class="item-cat">かみしめ</span><div class="item-text">歯ぎしり・食いしばりで、歯がすり減ったり欠けたりしていない</div></div></div>
       <div class="item-body">
         <h3>歯ぎしり・食いしばりの力から、歯を守ります</h3>
+        <figure class="fig"><svg viewBox="0 0 320 150" role="img" aria-label="寝ている間の歯ぎしりで、歯に横向きの強い力がかかる図"><use href="#molar" class="th" transform="translate(120,68) scale(1,-1)" width="40" height="60"/><use href="#molar" class="th" transform="translate(162,68) scale(1,-1)" width="40" height="60"/><use href="#molar" class="th" x="120" y="72" width="40" height="60"/><use href="#molar" class="th" x="162" y="72" width="40" height="60"/><path d="M60 70 l10 -6 l10 12 l10 -12 l10 12 l10 -6" class="s"/><path d="M106 70 l-6 -4 m6 4 l-6 4" class="s"/><path d="M260 70 l-10 -6 l-10 12 l-10 -12 l-10 12 l-10 6" class="s"/><path d="M214 70 l6 -4 m-6 4 l6 4" class="s"/><path d="M286 18 a12 12 0 1 0 10 20 a9 9 0 1 1 -10 -20 Z" fill="var(--sage-2)"/><text x="270" y="56" text-anchor="middle" class="lb">寝ている間</text><text x="160" y="146" text-anchor="middle" class="lb">すり減り・欠け・ひびの原因になることがあります</text></svg><figcaption>歯ぎしり・食いしばりでは、横向きの強い力が歯にかかることがあります。</figcaption></figure>
         <div class="blk"><div class="blk-h">印がつくとき</div><p>歯のすり減り・欠け・ひびが目立たないときです。夜に着けるマウスピースで歯を守れている方も、印がつきます。</p></div>
         <div class="blk"><div class="blk-h">なぜ大切か</div><p>歯ぎしりや食いしばりでは、食事のときより強い力がかかることがあります。寝ている間のことが多く、ご自身では気づきにくいものです。</p></div>
         <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>歯がすり減ったり、欠けたり、ひびが入ったりすることがあります。詰めもの・被せものが、外れたり割れたりすることがあります。朝、あごがだるいと感じる方もいます。</p></div>
@@ -313,9 +359,11 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
       <div class="item-top"><span class="item-no">07</span><div><span class="item-cat">詰めものの合い</span><div class="item-text">詰めもの・被せものに、段差・すき間・外れかけがない</div></div></div>
       <div class="item-body">
         <h3>境目がぴったり合っていると、中のむし歯を防げます</h3>
+        <figure class="fig"><svg viewBox="0 0 320 160" role="img" aria-label="被せものの境目がぴったりの場合と、段差・すき間がある場合の比較図"><use href="#molar" class="th" x="56" y="24" width="52" height="78"/><path d="M60 52 Q59 30 71 30 Q76 25 82 30 Q88 25 93 30 Q105 30 104 52 L102 60 L62 60 Z" class="thf"/><text x="82" y="122" text-anchor="middle" class="lbs">ぴったり</text><use href="#molar" class="th" x="212" y="24" width="52" height="78"/><path d="M218 42 Q217 18 229 18 Q234 13 240 18 Q246 13 251 18 Q263 18 262 42 L260 50 L220 50 Z" class="thf"/><circle cx="217" cy="54" r="1.8" class="dot"/><circle cx="221" cy="57" r="1.8" class="dot"/><circle cx="225" cy="54" r="1.8" class="dot"/><circle cx="253" cy="54" r="1.8" class="dot"/><circle cx="257" cy="57" r="1.8" class="dot"/><text x="238" y="122" text-anchor="middle" class="lbs">段差・すき間</text><text x="160" y="150" text-anchor="middle" class="lb">すき間に汚れがたまり、中でむし歯が進むことがあります</text></svg><figcaption>境目がぴったり合っていれば、汚れがたまりにくくなります。</figcaption></figure>
         <div class="blk"><div class="blk-h">印がつくとき</div><p>詰めもの・被せものに、段差・すき間・外れかけがないときです。合っていないものは、裏面の「歯の記録」に緑で示しています。</p></div>
         <div class="blk"><div class="blk-h">なぜ大切か</div><p>境目に段差やすき間があると、そこに汚れがたまります。その汚れには、歯ブラシが届きにくくなります。</p></div>
         <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>すき間から、詰めものの中でむし歯が進むことがあります。外から見えにくいため、気づいたときには大きくなっていることがあります。</p></div>
+        <aside class="ev"><div class="ev-h"><svg aria-hidden="true"><use href="#book"/></svg>研究でわかっていること<span class="chip">論文</span></div><div class="ev-b"><p>詰めものを作り直す理由で最も多いのは、詰めもののまわりや下にできるむし歯であることが、世界の調査をまとめた論文で示されています。</p><div class="ev-src"><b>出典</b>：Eltahlah D, et al. An update on the reasons for placement and replacement of direct restorations. <i>Journal of Dentistry</i> 2018;72:1-7.</div></div></aside>
         <div class="blk"><div class="blk-h">整えていく方法</div><p>合っていないところが見つかっても、すぐに作り直すとは限りません。直せるところは、直します。歯を削る量が増えないほうを選びます。作り直すときは、素材を選び直せます。</p>
           <div class="go-links"><a href="inlay-crown.html">インレー・クラウン →</a></div></div>
         <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
@@ -326,6 +374,7 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
       <div class="item-top"><span class="item-no">08</span><div><span class="item-cat">メタルフリー</span><div class="item-text">金属の差し歯がない</div></div></div>
       <div class="item-body">
         <h3>中が見える素材なら、変化に気づけます</h3>
+        <figure class="fig"><svg viewBox="0 0 320 160" role="img" aria-label="レントゲンで、金属は真っ白に写り下が見えず、白い素材は中が見える図"><rect x="20" y="8" width="128" height="112" rx="10" class="xr"/><use href="#molar" x="54" y="20" width="60" height="90" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.2"/><path d="M58 52 Q57 28 72 28 Q78 22 84 28 Q90 22 96 28 Q111 28 110 52 L107 62 L61 62 Z" fill="#fff"/><text x="84" y="140" text-anchor="middle" class="lbs">金属</text><text x="84" y="156" text-anchor="middle" class="lb">白く写り、下が見えない</text><rect x="172" y="8" width="128" height="112" rx="10" class="xr"/><use href="#molar" x="206" y="20" width="60" height="90" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.2"/><path d="M210 52 Q209 28 224 28 Q230 22 236 28 Q242 22 248 28 Q263 28 262 52 L259 62 L213 62 Z" fill="#fff" fill-opacity=".28" stroke="#fff" stroke-opacity=".7"/><circle cx="228" cy="60" r="4" fill="#fff" fill-opacity=".8"/><text x="236" y="140" text-anchor="middle" class="lbs">白い素材</text><text x="236" y="156" text-anchor="middle" class="lb">中の変化に気づける</text></svg><figcaption>レントゲンの写り方のイメージ。金属は中を確かめる方法がありません。</figcaption></figure>
         <div class="blk"><div class="blk-h">印がつくとき</div><p>金属の差し歯（被せもの）がないときです。保険の白い被せもの（CAD/CAM冠）でも、印がつきます。金属の差し歯は、裏面の「歯の記録」に緑で示しています。</p></div>
         <div class="blk"><div class="blk-h">なぜ大切か</div><p>金属は、レントゲンに真っ白に写ります。そのため、金属の下の歯の様子は見えません。中で変化が起きていても、確かめる方法がありません。</p></div>
         <div class="blk knew"><div class="blk-h">知っておいていただきたいこと</div><p>金属が悪いわけではありません。確かめられない、ということです。銀歯は、金属しか選べなかった時代の確かな選択です。長く問題なくお使いの方も、いらっしゃいます。いま急いで、すべてを替える必要はありません。</p></div>
@@ -339,10 +388,12 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
       <div class="item-top"><span class="item-no">09</span><div><span class="item-cat">すき間</span><div class="item-text">途中に、抜けたままの歯がない</div></div></div>
       <div class="item-body">
         <h3>抜けたところを補うと、まわりの歯が動きにくくなります</h3>
+        <figure class="fig"><svg viewBox="0 0 320 170" role="img" aria-label="歯が抜けたままだと、隣の歯が傾き、向かいの歯が伸びてくることがある図"><use href="#molar" class="th" transform="translate(60,74) scale(1,-1)" width="40" height="60"/><use href="#molar" class="thf" transform="translate(110,84) scale(1,-1)" width="40" height="60"/><use href="#molar" class="th" transform="translate(160,74) scale(1,-1)" width="40" height="60"/><use href="#molar" class="th" x="60" y="84" width="40" height="60"/><rect x="112" y="92" width="36" height="52" rx="8" class="thx"/><use href="#molar" class="th" x="160" y="84" width="40" height="60" transform="rotate(-14 180.0 144)"/><path d="M130 76 L130 90" class="s"/><path d="M125 84 L130 91 L135 84" class="s"/><text x="232" y="54" class="lbs">伸びてくる</text><path d="M228 50 L152 74" class="sd"/><path d="M196 104 Q186 96 176 102" class="s"/><path d="M180 96 L175 102 L183 104" class="s"/><text x="232" y="112" class="lbs">傾いてくる</text><text x="130" y="162" text-anchor="middle" class="lb">抜けたまま</text></svg><figcaption>抜けたままにすると、まわりの歯が少しずつ動くことがあります。</figcaption></figure>
         <div class="blk"><div class="blk-h">印がつくとき</div><p>歯並びの途中に、抜けたままの歯がないときです。入れ歯・ブリッジ・インプラントで補い、使えていれば印がつきます。親知らずは数えません。</p></div>
         <div class="blk knew"><div class="blk-h">03との違い</div><p>03は、何本残っているかを見ます。09は、抜けたところが補われているかを見ます。入れ歯をお持ちでも、使っていなければ、印はつきません。</p></div>
         <div class="blk"><div class="blk-h">なぜ大切か</div><p>歯は、まわりの歯と支え合って並んでいます。1本抜けると、その支えがなくなります。</p></div>
         <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>隣の歯が、すき間のほうへ傾いてくることがあります。噛み合う相手の歯が、伸びてくることがあります。噛み合わせが、少しずつずれていくことがあります。</p></div>
+        <aside class="ev"><div class="ev-h"><svg aria-hidden="true"><use href="#book"/></svg>研究でわかっていること<span class="chip">論文</span></div><div class="ev-b"><p>噛み合う相手を失った奥歯は、伸びてくることが多いと報告されています。ただし、伸びない方もいます。</p><p>日本の65歳以上の方、約4,400人を4年間追いかけた研究では、歯が少なく入れ歯も使っていない方に、認知症になる方が多いという結果でした。</p><p class="ev-note">2つめの研究は、関わりがあることを示したもので、原因と決まったわけではありません。</p><div class="ev-src"><b>出典</b>：Craddock HL, Youngson CC. A study of the incidence of overeruption and occlusal interferences in unopposed teeth. <i>British Dental Journal</i> 2004;196:341-348.／Yamamoto T, Kondo K, Hirai H, et al. <i>Psychosomatic Medicine</i> 2012;74(3):241-248.</div></div></aside>
         <div class="blk"><div class="blk-h">整えていく方法</div><p>入れ歯・ブリッジ・インプラントで補えます。入れ歯が合わずに使えていない方は、調整で使えるようになることもあります。</p>
           <div class="go-links"><a href="denture.html">入れ歯 →</a><a href="bridge.html">ブリッジ →</a><a href="implant.html">インプラント →</a></div></div>
         <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
@@ -353,6 +404,7 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
       <div class="item-top"><span class="item-no">10</span><div><span class="item-cat">前歯の噛み合わせ</span><div class="item-text">前歯が上下で触れ合い、あごの動きを導いている</div></div></div>
       <div class="item-body">
         <h3>奥歯は高さを支え、前歯は動きを導きます</h3>
+        <figure class="fig"><svg viewBox="0 0 320 160" role="img" aria-label="あごを前に動かすと前歯が触れて導き、奥歯が離れる図"><path d="M40 8 L58 8 L86 84 Q80 92 72 88 Z" class="thf"/><text x="30" y="30" class="lb">上</text><path d="M54 132 L68 132 L74 82 Q68 78 62 80 Z" class="th"/><circle cx="73" cy="84" r="3.2" class="dot"/><text x="34" y="120" class="lb">下</text><text x="64" y="156" text-anchor="middle" class="lbs">前歯が触れて導く</text><use href="#molar" class="th" transform="translate(200,66) scale(1,-1)" width="40" height="60"/><use href="#molar" class="th" transform="translate(242,66) scale(1,-1)" width="40" height="60"/><use href="#molar" class="th" x="200" y="78" width="40" height="60"/><use href="#molar" class="th" x="242" y="78" width="40" height="60"/><path d="M196 70 L288 70" class="sd"/><path d="M196 76 L288 76" class="sd"/><text x="242" y="156" text-anchor="middle" class="lbs">奥歯は離れる</text><path d="M110 120 L160 120" class="s"/><path d="M152 114 L160 120 L152 126" class="s"/><text x="135" y="108" text-anchor="middle" class="lb">あごを前へ</text></svg><figcaption>あごを動かすと前歯や糸切り歯が先に触れ、奥歯は離れます。</figcaption></figure>
         <div class="blk"><div class="blk-h">印がつくとき</div><p>上下の前歯が触れ合っているときです。あごを前や横に動かしたとき、前歯や糸切り歯（犬歯）が動きを導いていれば、印がつきます。</p></div>
         <div class="blk"><div class="blk-h">なぜ大切か</div><p>あごを前や横に動かすと、前歯や糸切り歯が先に触れます。すると、奥歯は離れて、横向きの力を受けにくくなります。当院では、奥歯が高さを支え、前歯が動きを導く形を大切にしています。</p></div>
         <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>前歯が触れ合わないと、あごを動かしたときに奥歯どうしがこすれることがあります。前歯で食べものを噛み切りにくいことがあります。</p></div>
