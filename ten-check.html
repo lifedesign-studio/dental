@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>いい歯の10チェック｜ライフデンタルクリニック</title>
+<style>
+:root{
+  --paper:#FFFFFF; --soft:#F4F7F5; --card:#EEF3F1; --ink:#2E3A3F;
+  --ink-soft:#54636A; --muted:#6E7B80; --sage:#4F7A6C; --sage-2:#6E9C8E;
+  --line:#D8E0DD;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--gothic);line-height:1.8;letter-spacing:.02em;-webkit-font-smoothing:antialiased;}
+a{color:var(--sage);}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+.section{padding:52px 0;}
+.section.soft{background:var(--soft);}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.2em;color:var(--sage);font-weight:700;margin-bottom:12px;}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--sage);}
+h2.title{font-size:24px;font-weight:700;color:var(--ink);letter-spacing:.03em;line-height:1.45;}
+.lead{margin-top:14px;font-size:15px;color:var(--ink-soft);line-height:1.9;}
+.lead b{color:var(--ink);}
+.note{font-size:12.5px;color:var(--muted);line-height:1.8;}
+.nb{display:inline-block;}
+
+/* hero */
+.hero{padding:64px 0 48px;text-align:center;}
+.hero h1{font-size:25px;font-weight:700;letter-spacing:.05em;line-height:1.5;}
+.hero .sub{margin-top:6px;font-size:14px;color:var(--sage);font-weight:700;letter-spacing:.1em;}
+.hero p{margin-top:18px;font-size:15.5px;color:var(--ink-soft);line-height:2;}
+
+/* 位置づけ */
+.box{margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px;}
+.box p{font-size:14.5px;color:var(--ink-soft);line-height:1.9;}
+.box p+p{margin-top:8px;}
+.box p b{color:var(--ink);}
+
+/* 印の見方 */
+.marks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px;}
+.mk-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 8px;text-align:center;}
+.mk-sym{display:flex;align-items:center;justify-content:center;width:40px;height:40px;margin:0 auto 8px;border-radius:8px;border:1.5px solid var(--sage-2);font-size:22px;font-weight:700;color:var(--sage);background:#fff;}
+.mk-card p{font-size:13px;color:var(--ink-soft);line-height:1.6;}
+.points{margin-top:16px;padding-left:1.2em;font-size:14px;color:var(--ink-soft);line-height:1.9;}
+.points li{margin-bottom:4px;}
+.points b{color:var(--ink);}
+
+/* 10項目の一覧 */
+.idx{display:grid;gap:8px;margin-top:20px;}
+.idx-h{font-size:13px;font-weight:700;color:var(--sage);margin-top:8px;}
+.idx a{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 14px;text-decoration:none;color:var(--ink);font-size:14px;line-height:1.5;}
+.idx a.base{border-left:4px solid var(--sage);}
+.idx .n{font-weight:700;color:var(--sage);font-size:16px;min-width:24px;}
+.idx .c{font-size:11.5px;color:var(--muted);display:block;}
+.idx .go{margin-left:auto;color:var(--sage);}
+
+/* 項目カード */
+.group-h{margin:8px 0 4px;}
+.group-h .lead{margin-top:6px;}
+.item{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;scroll-margin-top:16px;}
+.item.base{border-left:5px solid var(--sage);}
+.item-top{display:flex;gap:14px;align-items:flex-start;background:var(--card);padding:16px 18px;}
+.item-no{font-size:26px;font-weight:700;color:var(--sage);line-height:1;letter-spacing:.02em;}
+.item-cat{display:inline-block;font-size:11.5px;font-weight:700;color:var(--sage);border:1px solid var(--sage-2);border-radius:999px;padding:1px 10px;margin-bottom:4px;background:#fff;}
+.item-text{font-size:15px;font-weight:700;color:var(--ink);line-height:1.6;}
+.item-body{padding:18px 18px 20px;}
+.item-body h3{font-size:18px;font-weight:700;color:var(--ink);line-height:1.55;margin-bottom:12px;}
+.blk{margin-top:14px;}
+.blk:first-of-type{margin-top:0;}
+.blk-h{font-size:12.5px;font-weight:700;color:var(--sage);letter-spacing:.08em;margin-bottom:4px;}
+.blk p{font-size:14.5px;color:var(--ink-soft);line-height:1.9;}
+.blk.knew{background:var(--soft);border-radius:12px;padding:12px 14px;}
+.go-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.go-links a{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;text-decoration:none;color:var(--sage);border:1px solid var(--sage-2);border-radius:999px;padding:5px 14px;background:#fff;}
+.back{display:block;text-align:right;font-size:12.5px;margin-top:12px;color:var(--muted);text-decoration:none;}
+
+/* 表 */
+table.plain{width:100%;border-collapse:collapse;margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:14px;}
+table.plain th,table.plain td{padding:11px 14px;border-top:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.7;}
+table.plain tr:first-child th,table.plain tr:first-child td{border-top:none;}
+table.plain thead th{background:var(--card);font-size:12.5px;color:var(--ink-soft);}
+table.plain td:first-child{font-weight:700;color:var(--ink);white-space:nowrap;}
+table.plain td{color:var(--ink-soft);}
+
+/* 歯の番号 */
+.teeth{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 10px;text-align:center;}
+.t-row{display:flex;justify-content:center;gap:3px;}
+.t-row+.t-row{margin-top:6px;padding-top:6px;border-top:1px dashed var(--line);}
+.t{width:28px;height:30px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:8px;font-size:12.5px;font-weight:700;color:var(--ink-soft);position:relative;}
+.t.round{border-radius:50%;}
+.t.mol{background:var(--card);border-color:var(--sage-2);color:var(--sage);}
+.t.star::after{content:"★";position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--sage);}
+.t-mid{width:10px;}
+.t-cap{font-size:11.5px;color:var(--muted);margin-top:16px;}
+
+.links{display:grid;gap:10px;margin-top:20px;}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:var(--ink);font-weight:700;font-size:14.5px;}
+.links a span{color:var(--sage);}
+
+/* PC目次 */
+nav.pc-toc{display:none;}
+
+/* footer */
+footer{background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;}
+footer img{width:112px;height:auto;margin:0 auto 13px;display:block;}
+footer .fl{font-size:14px;color:var(--ink);letter-spacing:.05em;}
+footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08em;}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@media (max-width:380px){.t{width:24px;height:28px;font-size:11.5px;}.t-row{gap:2px;}}
+@media (min-width:760px){
+  h2.title{font-size:28px;}
+  .hero h1{font-size:34px;}
+  .idx{grid-template-columns:1fr 1fr;}
+  .idx-h{grid-column:1/-1;}
+  .t{width:36px;height:36px;font-size:14px;}
+}
+@media (min-width:1000px){
+  .wrap{max-width:900px;}
+  .section{padding:72px 0;}
+  .lead,.points,.box p,.blk p,table.plain{font-size:15.5px;}
+  .item-text{font-size:16.5px;}
+  .item-body h3{font-size:20px;}
+  .hero p{font-size:17px;}
+  .links{grid-template-columns:1fr 1fr;}
+}
+@media (min-width:1240px){
+  nav.pc-toc{display:block;position:fixed;left:18px;top:80px;width:180px;font-size:12.5px;line-height:1.6;}
+  nav.pc-toc .toc-h{font-weight:700;color:var(--sage);letter-spacing:.1em;margin-bottom:8px;}
+  nav.pc-toc a{display:block;color:var(--ink-soft);text-decoration:none;padding:3px 0 3px 10px;border-left:2px solid var(--line);}
+  nav.pc-toc a.on{color:var(--ink);font-weight:700;border-left-color:var(--sage);}
+}
+</style>
+</head>
+<body>
+
+<nav class="pc-toc" aria-label="このページの目次">
+  <div class="toc-h">このページの目次</div>
+  <a href="#about">この紙について</a>
+  <a href="#marks">印の見方</a>
+  <a href="#c01">01 奥歯</a>
+  <a href="#c02">02 定期チェック</a>
+  <a href="#c03">03 歯の本数</a>
+  <a href="#c04">04 むし歯</a>
+  <a href="#c05">05 歯ぐき</a>
+  <a href="#c06">06 かみしめ</a>
+  <a href="#c07">07 詰めものの合い</a>
+  <a href="#c08">08 メタルフリー</a>
+  <a href="#c09">09 すき間</a>
+  <a href="#c10">10 前歯の噛み合わせ</a>
+  <a href="#extra">見た目の伸びしろ</a>
+  <a href="#record">裏面の見方</a>
+  <a href="#next">これから</a>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>いい歯の10チェック</span>
+    <h1><span class="nb">検査のあとに</span><span class="nb">お渡しした紙を、</span><br><span class="nb">ご自宅で</span><span class="nb">読み返す</span><span class="nb">ページです</span></h1>
+    <p class="sub">ひとつずつの、くわしい説明</p>
+    <p class="hero-p"><span class="nb">「いい歯の10チェック」は、</span><span class="nb">今日のお口の現在地を、</span><span class="nb">10の項目で確かめる紙です。</span><br><span class="nb">項目ごとに、</span><span class="nb">なぜ大切なのかを</span><span class="nb">説明しています。</span><br><span class="nb">ご家族と一緒に</span><span class="nb">読んでいただくことも</span><span class="nb">できます。</span></p>
+  </div>
+</section>
+
+<section class="section soft" id="about">
+  <div class="wrap reveal">
+    <span class="eyebrow"><span class="dot"></span>この紙について</span>
+    <h2 class="title">10チェックは、私たちが見た<span class="nb">「今の状態」です</span></h2>
+    <div class="box">
+      <p>この紙は、私たち医療者が検査で見た状態を記したものです。</p>
+      <p>印の数で、お口の良し悪しを決める紙ではありません。</p>
+      <p>空欄は<b>「これから整えていけるところ」</b>です。すぐに治療が必要という意味ではありません。</p>
+    </div>
+    <div class="box">
+      <p><b>どこまで整えるかを決めるのは、ご自身です。</b></p>
+      <p>今の状態をどう感じているかは、「わたしの実感」の紙に書いていただきます。</p>
+      <p>2枚を並べて、これからのことを一緒に考えます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="marks">
+  <div class="wrap reveal">
+    <span class="eyebrow"><span class="dot"></span>印の見方</span>
+    <h2 class="title">印の数ではなく、<span class="nb">上からの順番を見てください</span></h2>
+    <div class="marks">
+      <div class="mk-card"><span class="mk-sym">✓</span><p>今、<br>できて<br>います</p></div>
+      <div class="mk-card"><span class="mk-sym"></span><p>これから<br>整えていける<br>ところ</p></div>
+      <div class="mk-card"><span class="mk-sym">◎</span><p>治療で<br>取り戻した<br>ところ</p></div>
+    </div>
+    <ul class="points">
+      <li>10の項目は、上から順に大切です。</li>
+      <li><b>01〜03は、お口全体の土台です。</b>この3つが整っていると、安心です。</li>
+      <li>この3つが整っていることが、ほかの歯を長く保つことにつながると、当院では考えています。</li>
+      <li>04〜10は、これらも整うと、安心です。</li>
+      <li>日付の欄は3つあります（初診・1年後・2年後）。年に1回、同じ紙で確かめていきます。</li>
+    </ul>
+
+    <div class="idx">
+      <div class="idx-h">この3つが整っていると、安心</div>
+      <a class="base" href="#c01"><span class="n">01</span><span><span class="c">奥歯</span>左右の奥歯で、しっかり噛める</span><span class="go">↓</span></a>
+      <a class="base" href="#c02"><span class="n">02</span><span><span class="c">定期チェック</span>この1年で、2回以上メインテナンスに通えている</span><span class="go">↓</span></a>
+      <a class="base" href="#c03"><span class="n">03</span><span><span class="c">歯の本数</span>噛むのに使える歯が、20本以上ある</span><span class="go">↓</span></a>
+      <div class="idx-h">これらも整うと、安心</div>
+      <a href="#c04"><span class="n">04</span><span><span class="c">むし歯</span>いま、削る必要のあるむし歯が1本もない</span><span class="go">↓</span></a>
+      <a href="#c05"><span class="n">05</span><span><span class="c">歯ぐき</span>6mm以上の深い歯周ポケットが、1か所もない</span><span class="go">↓</span></a>
+      <a href="#c06"><span class="n">06</span><span><span class="c">かみしめ</span>歯ぎしり・食いしばりで、歯がすり減ったり欠けたりしていない</span><span class="go">↓</span></a>
+      <a href="#c07"><span class="n">07</span><span><span class="c">詰めものの合い</span>詰めもの・被せものに、段差・すき間・外れかけがない</span><span class="go">↓</span></a>
+      <a href="#c08"><span class="n">08</span><span><span class="c">メタルフリー</span>金属の差し歯がない</span><span class="go">↓</span></a>
+      <a href="#c09"><span class="n">09</span><span><span class="c">すき間</span>途中に、抜けたままの歯がない</span><span class="go">↓</span></a>
+      <a href="#c10"><span class="n">10</span><span><span class="c">前歯の噛み合わせ</span>前歯が上下で触れ合い、あごの動きを導いている</span><span class="go">↓</span></a>
+      <a href="#extra"><span class="n">＋</span><span><span class="c">オプション</span>見た目の伸びしろ</span><span class="go">↓</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section soft" id="items">
+  <div class="wrap">
+
+    <div class="group-h reveal">
+      <span class="eyebrow"><span class="dot"></span>01〜03</span>
+      <h2 class="title">この3つが整っていると、安心</h2>
+      <p class="lead">お口全体の土台になる3つです。</p>
+    </div>
+
+    <article class="item base reveal" id="c01">
+      <div class="item-top"><span class="item-no">01</span><div><span class="item-cat">奥歯</span><div class="item-text">左右の奥歯で、しっかり噛める</div></div></div>
+      <div class="item-body">
+        <h3>左右の奥歯で噛めることが、お口全体の土台です</h3>
+        <div class="blk"><div class="blk-h">印がつくとき</div><p>右と左のそれぞれで、上下の奥歯が噛み合っているときです。見るのは、前から数えて6番目と7番目の、大きな奥歯です。上下の6番どうし、または7番どうしが噛み合っていれば、印がつきます。</p></div>
+        <div class="blk"><div class="blk-h">なぜ大切か</div><p>奥歯は、噛む力の多くを受け止めています。上下の噛み合わせの高さを支えているのも、奥歯です。</p></div>
+        <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>片側の奥歯で噛めないと、反対側や前歯に力が集まります。その歯に負担が重なり、傷みやすくなることがあります。奥歯の支えが減ると、前歯が押されて、すき間が開くことがあります。</p></div>
+        <div class="blk"><div class="blk-h">整えていく方法</div><p>抜けたままの奥歯は、入れ歯・ブリッジ・インプラントで補えます。歯はあっても噛み合っていない場合は、原因によって方法が変わります。先生にお尋ねください。</p>
+          <div class="go-links"><a href="denture.html">入れ歯 →</a><a href="bridge.html">ブリッジ →</a><a href="implant.html">インプラント →</a></div></div>
+        <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
+      </div>
+    </article>
+
+    <article class="item base reveal" id="c02">
+      <div class="item-top"><span class="item-no">02</span><div><span class="item-cat">定期チェック</span><div class="item-text">この1年で、2回以上メインテナンスに通えている</div></div></div>
+      <div class="item-body">
+        <h3>年2回のメインテナンスで、小さいうちに見つけられます</h3>
+        <div class="blk"><div class="blk-h">印がつくとき</div><p>この1年に、メインテナンスに2回以上通われたときです。メインテナンスは、お口のお手入れと、変わりがないかの確認です。初めての方は、これまでの通院のお話をうかがって判断します。</p></div>
+        <div class="blk"><div class="blk-h">なぜ大切か</div><p>むし歯や歯ぐきの病気は、初めのうちは痛みがほとんどありません。定期的に見ていれば、小さいうちに見つけられます。早く見つかれば、削る量も、通う回数も小さくすみます。</p></div>
+        <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>痛みが出てから来院すると、病気が進んでいることがあります。歯と歯ぐきの間にたまった歯石は、歯ブラシでは取れません。</p></div>
+        <div class="blk"><div class="blk-h">整えていく方法</div><p>当院では、年2回以上のメインテナンスをおすすめしています。15年保証の条件も、年2回、当院でお口の状態を確認させていただくことです。次の予約は、受付でお取りいただけます。</p></div>
+        <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
+      </div>
+    </article>
+
+    <article class="item base reveal" id="c03">
+      <div class="item-top"><span class="item-no">03</span><div><span class="item-cat">歯の本数</span><div class="item-text">噛むのに使える歯が、20本以上ある</div></div></div>
+      <div class="item-body">
+        <h3>使える歯が20本あると、たいていのものを噛めます</h3>
+        <div class="blk"><div class="blk-h">印がつくとき</div><p>噛むのに使える歯が、20本以上あるときです。ご自身の歯と、ブリッジやインプラントのように固定された歯を数えます。取り外しの入れ歯は数えません。</p></div>
+        <div class="blk"><div class="blk-h">なぜ大切か</div><p>大人の歯は、親知らずを除くと28本です。20本あると、たいていのものを噛めます。硬いものや繊維の多いものも、食べやすくなります。</p></div>
+        <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>歯が少なくなると、噛みにくいものを避けるようになることがあります。食べられるものが偏ると、食事を楽しみにくくなります。残っている歯の1本あたりの負担も、大きくなります。</p></div>
+        <div class="blk"><div class="blk-h">整えていく方法</div><p>いちばん大切なのは、今ある歯を守ることです（<a href="#c02">02</a>・<a href="#c04">04</a>・<a href="#c05">05</a>）。失った歯を補う方法は、01と同じです。</p>
+          <div class="go-links"><a href="denture.html">入れ歯 →</a><a href="bridge.html">ブリッジ →</a><a href="implant.html">インプラント →</a></div></div>
+        <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
+      </div>
+    </article>
+
+    <div class="group-h reveal" style="margin-top:44px;">
+      <span class="eyebrow"><span class="dot"></span>04〜10</span>
+      <h2 class="title">これらも整うと、安心</h2>
+    </div>
+
+    <article class="item reveal" id="c04">
+      <div class="item-top"><span class="item-no">04</span><div><span class="item-cat">むし歯</span><div class="item-text">いま、削る必要のあるむし歯が1本もない</div></div></div>
+      <div class="item-body">
+        <h3>むし歯は、早く治すほど小さくすみます</h3>
+        <div class="blk"><div class="blk-h">印がつくとき</div><p>いま、削って治す必要のあるむし歯がないときです。ごく初期で、削らずに様子を見るむし歯は含めません。どの歯にあるかは、裏面の「歯の記録」に赤で示しています。</p></div>
+        <div class="blk"><div class="blk-h">なぜ大切か</div><p>削る必要のあるところまで進んだむし歯は、自然には元に戻りません。歯は、治すたびに少しずつ削られます。同じ歯を治せる回数には、限りがあります。</p></div>
+        <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>むし歯が進むと、治療が一段ずつ大きくなることがあります。詰めもの、被せもの、根の治療と進むことがあります。痛みがなくても、中で進んでいることがあります。</p></div>
+        <div class="blk"><div class="blk-h">整えていく方法</div><p>むし歯の大きさで、詰めるか、被せるかが決まります。神経まで届いている場合は、根の治療をします。</p>
+          <div class="go-links"><a href="resin.html">レジン修復 →</a><a href="inlay-crown.html">インレー・クラウン →</a><a href="root-canal.html">根管治療 →</a></div></div>
+        <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
+      </div>
+    </article>
+
+    <article class="item reveal" id="c05">
+      <div class="item-top"><span class="item-no">05</span><div><span class="item-cat">歯ぐき</span><div class="item-text">6mm以上の深い歯周ポケットが、1か所もない</div></div></div>
+      <div class="item-body">
+        <h3>歯ぐきのすき間が浅いことが、歯を支える骨を守ります</h3>
+        <div class="blk"><div class="blk-h">印がつくとき</div><p>歯と歯ぐきのすき間（歯周ポケット）に、6mm以上の深いところがないときです。6mmは、1円玉を4枚重ねた厚みです。すき間は、細い器具で1本ずつ測っています。</p></div>
+        <div class="blk"><div class="blk-h">なぜ大切か</div><p>歯周病は、歯を支える骨が少しずつ減る病気です。すき間が深いほど、支えの骨が減っています。深いすき間には歯ブラシが届かず、細菌がたまりやすくなります。</p></div>
+        <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>歯周病は、痛みが少ないまま進むことがあります。歯がぐらついて、初めて気づくこともあります。歯ぐきの炎症は、糖尿病など体の病気とも関わりがあります。</p></div>
+        <div class="blk"><div class="blk-h">整えていく方法</div><p>まず、歯ぐきの下の歯石や汚れを取る治療をします。ご自宅での歯みがきの方法も、一緒に見直します。そのあとは、メインテナンスで安定を保ちます（<a href="#c02">02</a>）。</p></div>
+        <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
+      </div>
+    </article>
+
+    <article class="item reveal" id="c06">
+      <div class="item-top"><span class="item-no">06</span><div><span class="item-cat">かみしめ</span><div class="item-text">歯ぎしり・食いしばりで、歯がすり減ったり欠けたりしていない</div></div></div>
+      <div class="item-body">
+        <h3>歯ぎしり・食いしばりの力から、歯を守ります</h3>
+        <div class="blk"><div class="blk-h">印がつくとき</div><p>歯のすり減り・欠け・ひびが目立たないときです。夜に着けるマウスピースで歯を守れている方も、印がつきます。</p></div>
+        <div class="blk"><div class="blk-h">なぜ大切か</div><p>歯ぎしりや食いしばりでは、食事のときより強い力がかかることがあります。寝ている間のことが多く、ご自身では気づきにくいものです。</p></div>
+        <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>歯がすり減ったり、欠けたり、ひびが入ったりすることがあります。詰めもの・被せものが、外れたり割れたりすることがあります。朝、あごがだるいと感じる方もいます。</p></div>
+        <div class="blk"><div class="blk-h">整えていく方法</div><p>夜に着けるマウスピースで、歯を力から守ります。いびきを指摘されたことがある方は、あわせてご相談ください。</p></div>
+        <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
+      </div>
+    </article>
+
+    <article class="item reveal" id="c07">
+      <div class="item-top"><span class="item-no">07</span><div><span class="item-cat">詰めものの合い</span><div class="item-text">詰めもの・被せものに、段差・すき間・外れかけがない</div></div></div>
+      <div class="item-body">
+        <h3>境目がぴったり合っていると、中のむし歯を防げます</h3>
+        <div class="blk"><div class="blk-h">印がつくとき</div><p>詰めもの・被せものに、段差・すき間・外れかけがないときです。合っていないものは、裏面の「歯の記録」に緑で示しています。</p></div>
+        <div class="blk"><div class="blk-h">なぜ大切か</div><p>境目に段差やすき間があると、そこに汚れがたまります。その汚れには、歯ブラシが届きにくくなります。</p></div>
+        <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>すき間から、詰めものの中でむし歯が進むことがあります。外から見えにくいため、気づいたときには大きくなっていることがあります。</p></div>
+        <div class="blk"><div class="blk-h">整えていく方法</div><p>合っていないところが見つかっても、すぐに作り直すとは限りません。直せるところは、直します。歯を削る量が増えないほうを選びます。作り直すときは、素材を選び直せます。</p>
+          <div class="go-links"><a href="inlay-crown.html">インレー・クラウン →</a></div></div>
+        <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
+      </div>
+    </article>
+
+    <article class="item reveal" id="c08">
+      <div class="item-top"><span class="item-no">08</span><div><span class="item-cat">メタルフリー</span><div class="item-text">金属の差し歯がない</div></div></div>
+      <div class="item-body">
+        <h3>中が見える素材なら、変化に気づけます</h3>
+        <div class="blk"><div class="blk-h">印がつくとき</div><p>金属の差し歯（被せもの）がないときです。保険の白い被せもの（CAD/CAM冠）でも、印がつきます。金属の差し歯は、裏面の「歯の記録」に緑で示しています。</p></div>
+        <div class="blk"><div class="blk-h">なぜ大切か</div><p>金属は、レントゲンに真っ白に写ります。そのため、金属の下の歯の様子は見えません。中で変化が起きていても、確かめる方法がありません。</p></div>
+        <div class="blk knew"><div class="blk-h">知っておいていただきたいこと</div><p>金属が悪いわけではありません。確かめられない、ということです。銀歯は、金属しか選べなかった時代の確かな選択です。長く問題なくお使いの方も、いらっしゃいます。いま急いで、すべてを替える必要はありません。</p></div>
+        <div class="blk"><div class="blk-h">整えていく方法</div><p>作り直す機会が来たら、中が見える素材へ替えることをおすすめしています。保険の中でも、白いCAD/CAM冠を選べます。</p>
+          <div class="go-links"><a href="inlay-crown.html">インレー・クラウン →</a></div></div>
+        <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
+      </div>
+    </article>
+
+    <article class="item reveal" id="c09">
+      <div class="item-top"><span class="item-no">09</span><div><span class="item-cat">すき間</span><div class="item-text">途中に、抜けたままの歯がない</div></div></div>
+      <div class="item-body">
+        <h3>抜けたところを補うと、まわりの歯が動きにくくなります</h3>
+        <div class="blk"><div class="blk-h">印がつくとき</div><p>歯並びの途中に、抜けたままの歯がないときです。入れ歯・ブリッジ・インプラントで補い、使えていれば印がつきます。親知らずは数えません。</p></div>
+        <div class="blk knew"><div class="blk-h">03との違い</div><p>03は、何本残っているかを見ます。09は、抜けたところが補われているかを見ます。入れ歯をお持ちでも、使っていなければ、印はつきません。</p></div>
+        <div class="blk"><div class="blk-h">なぜ大切か</div><p>歯は、まわりの歯と支え合って並んでいます。1本抜けると、その支えがなくなります。</p></div>
+        <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>隣の歯が、すき間のほうへ傾いてくることがあります。噛み合う相手の歯が、伸びてくることがあります。噛み合わせが、少しずつずれていくことがあります。</p></div>
+        <div class="blk"><div class="blk-h">整えていく方法</div><p>入れ歯・ブリッジ・インプラントで補えます。入れ歯が合わずに使えていない方は、調整で使えるようになることもあります。</p>
+          <div class="go-links"><a href="denture.html">入れ歯 →</a><a href="bridge.html">ブリッジ →</a><a href="implant.html">インプラント →</a></div></div>
+        <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
+      </div>
+    </article>
+
+    <article class="item reveal" id="c10">
+      <div class="item-top"><span class="item-no">10</span><div><span class="item-cat">前歯の噛み合わせ</span><div class="item-text">前歯が上下で触れ合い、あごの動きを導いている</div></div></div>
+      <div class="item-body">
+        <h3>奥歯は高さを支え、前歯は動きを導きます</h3>
+        <div class="blk"><div class="blk-h">印がつくとき</div><p>上下の前歯が触れ合っているときです。あごを前や横に動かしたとき、前歯や糸切り歯（犬歯）が動きを導いていれば、印がつきます。</p></div>
+        <div class="blk"><div class="blk-h">なぜ大切か</div><p>あごを前や横に動かすと、前歯や糸切り歯が先に触れます。すると、奥歯は離れて、横向きの力を受けにくくなります。当院では、奥歯が高さを支え、前歯が動きを導く形を大切にしています。</p></div>
+        <div class="blk"><div class="blk-h">印がつかないときに、起こりやすいこと</div><p>前歯が触れ合わないと、あごを動かしたときに奥歯どうしがこすれることがあります。前歯で食べものを噛み切りにくいことがあります。</p></div>
+        <div class="blk"><div class="blk-h">整えていく方法</div><p>前歯の噛み合わせは、歯並び（矯正）や、前歯の形を整えることで変えられる場合があります。どこまで整えるかは、ご相談のうえで決めます。</p>
+          <div class="go-links"><a href="ortho.html">矯正 →</a><a href="aesthetic.html">審美 →</a></div></div>
+        <a class="back" href="#marks">↑ 項目の一覧に戻る</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="section" id="extra">
+  <div class="wrap reveal">
+    <span class="eyebrow"><span class="dot"></span>オプション｜見た目の伸びしろ</span>
+    <h2 class="title">見た目は、もっと良くしたいときに<span class="nb">選べる「伸びしろ」です</span></h2>
+    <p class="lead">この欄は、10の項目とは別のものです。日付ごとの印はつけません。もっと良くできるところに、チェックを入れています。</p>
+    <table class="plain">
+      <thead><tr><th>伸びしろ</th><th>主な方法</th></tr></thead>
+      <tbody>
+        <tr><td>歯の色</td><td>ホワイトニング・セラミック</td></tr>
+        <tr><td>歯並び</td><td>矯正</td></tr>
+        <tr><td>歯の形</td><td>セラミック・レジン</td></tr>
+        <tr><td>そのほか</td><td>紙に書き添えています</td></tr>
+      </tbody>
+    </table>
+    <div class="box">
+      <p><b>見た目をどこまで整えるかは、ご自身が決めることです。</b></p>
+      <p>今のままにしておくことも、確かな選択です。</p>
+    </div>
+    <div class="go-links" style="margin-top:14px;"><a href="aesthetic.html">審美 →</a><a href="ortho.html">矯正 →</a></div>
+  </div>
+</section>
+
+<section class="section soft" id="record">
+  <div class="wrap reveal">
+    <span class="eyebrow"><span class="dot"></span>裏面「歯の記録」の見方</span>
+    <h2 class="title">裏面の色と印で、<span class="nb">どの歯のことかがわかります</span></h2>
+    <table class="plain">
+      <thead><tr><th>書き方</th><th>意味</th><th>表の項目</th></tr></thead>
+      <tbody>
+        <tr><td>赤で塗った歯</td><td>治療が必要な歯（むし歯など）</td><td><a href="#c04">04</a></td></tr>
+        <tr><td>緑で塗った歯</td><td>金属の詰めもの・差し歯／合っていない詰めもの・被せもの</td><td><a href="#c08">08</a>・<a href="#c07">07</a></td></tr>
+        <tr><td>✕</td><td>ない歯</td><td><a href="#c09">09</a></td></tr>
+      </tbody>
+    </table>
+
+    <div class="teeth" aria-label="歯の番号の数え方">
+      <div class="t-row">
+        <span class="t">8</span><span class="t mol">7</span><span class="t mol">6</span><span class="t">5</span><span class="t">4</span><span class="t round">3</span><span class="t round">2</span><span class="t round">1</span>
+        <span class="t-mid"></span>
+        <span class="t round">1</span><span class="t round">2</span><span class="t round">3</span><span class="t">4</span><span class="t">5</span><span class="t mol">6</span><span class="t mol">7</span><span class="t">8</span>
+      </div>
+      <div class="t-row">
+        <span class="t">8</span><span class="t mol">7</span><span class="t mol star">6</span><span class="t">5</span><span class="t">4</span><span class="t round">3</span><span class="t round">2</span><span class="t round">1</span>
+        <span class="t-mid"></span>
+        <span class="t round">1</span><span class="t round">2</span><span class="t round">3</span><span class="t">4</span><span class="t">5</span><span class="t mol star">6</span><span class="t mol">7</span><span class="t">8</span>
+      </div>
+      <p class="t-cap">上の段が上の歯、下の段が下の歯です。</p>
+    </div>
+    <ul class="points">
+      <li>歯の番号は、真ん中から奥へ1〜8番と数えます。8番は親知らずです。</li>
+      <li>6番・7番は、<a href="#c01">01</a>で見る奥歯です。薄い緑で示しています。</li>
+      <li>下の6番には★をつけています。奥歯の中でも、とくに大切にしたい歯です。</li>
+    </ul>
+
+    <table class="plain">
+      <thead><tr><th>点線の枠に書く言葉</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td>クラウン</td><td>歯全体を覆う被せもの</td></tr>
+        <tr><td>インレー</td><td>歯の一部に詰める詰めもの</td></tr>
+        <tr><td>レジン</td><td>白いプラスチックの詰めもの</td></tr>
+        <tr><td>根の消毒</td><td>歯の根の中をきれいにする治療</td></tr>
+        <tr><td>抜歯</td><td>歯を抜くこと</td></tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin-top:12px;">数のまとめには、クラウン・インレー・レジン・抜歯の本数を書いています。根の消毒は数えていません。</p>
+  </div>
+</section>
+
+<section class="section" id="next">
+  <div class="wrap reveal">
+    <span class="eyebrow"><span class="dot"></span>これから</span>
+    <h2 class="title">年に1回、同じ紙で<span class="nb">一緒に確かめます</span></h2>
+    <p class="lead">その年の最初のメインテナンスで、10チェックをもう一度確かめます。治療で取り戻したところには、◎がつきます。同じ日に、「わたしの実感」も書いていただきます。</p>
+    <div class="box">
+      <p><b>今回選んだ方法は、ずっと続く決まりではありません。</b></p>
+      <p>あとから治療したくなったら、いつでもご相談ください。将来、作り直すときも、同じように選べます。</p>
+    </div>
+    <div class="links">
+      <a href="index.html">受けられる治療の一覧へ<span>→</span></a>
+      <a href="medical-tax.html">医療費控除のこと<span>→</span></a>
+    </div>
+    <p class="note" style="margin-top:16px;">わからないことは、受付またはお電話でお尋ねください。</p>
+  </div>
+</section>
+
+<footer>
+  <img src="life-logo.png" alt="ライフデンタルクリニック">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // PC目次：今読んでいる節を太字に
+  const tocLinks=[...document.querySelectorAll('nav.pc-toc a')];
+  const targets=tocLinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const tio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){tocLinks.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id));}});},{rootMargin:'-40% 0px -55% 0px'});
+  targets.forEach(t=>tio.observe(t));
+</script>
+</body>
+</html>
