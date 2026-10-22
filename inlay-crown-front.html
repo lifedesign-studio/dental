@@ -152,6 +152,50 @@ footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
 .tx{color:var(--sage);font-weight:700;font-size:13.5px;text-decoration:none;border-bottom:1.5px solid var(--line);}
 .k-li{margin:0 0 10px;padding-left:1.2em;font-size:14px;color:var(--ink-soft);line-height:1.85;}
 .cost-grid .cg-v{font-size:15px;line-height:1.5;}
+/* ===== PC幅（コンサルルームの画面など） ===== */
+.pc-toc{display:none;}
+@media (min-width:1000px){
+  .board{padding:56px 24px 64px;}
+  .board .inner{max-width:900px;}
+  .polaroid{flex-basis:300px;}
+  .stage{gap:28px;}
+  .b-title{font-size:46px;}
+  .b-intro{font-size:18.5px;}
+  .b-note{font-size:14px;}
+  .when{font-size:17px;}
+  .kraft{padding:28px 28px 24px;}
+  .kraft h3{font-size:23px;}
+  .kraft ul{font-size:16.5px;}
+  .kraft .more{font-size:16px;}
+  .flow span{font-size:30px;}
+  .flow svg{width:46px;height:80px;}
+  .b-sum{font-size:28px;}
+  .b-foot{font-size:15px;}
+  .wrap,.crumb{max-width:900px;}
+  .section{padding:72px 24px;}
+  h2.title{font-size:30px;}
+  .lead{font-size:16.5px;}
+  .cost-grid{grid-template-columns:repeat(3,1fr);}
+  .sim-row{grid-template-columns:100px 1fr auto;padding:16px 22px;}
+  .sim-what{font-size:15px;}
+  .sim-fee,.sim-y{font-size:16px;}
+  .kai{padding:26px 28px;}
+  .kai h3{font-size:19px;}
+  .kai p{font-size:15.5px;}
+  .next{grid-template-columns:1fr 1fr;}
+}
+@media (min-width:1360px){
+  .pc-toc{display:block;position:fixed;top:110px;left:calc(50% - 450px - 236px);width:200px;z-index:20;font-size:13.5px;}
+  .pt-h{font-weight:800;color:var(--sage);letter-spacing:.08em;font-size:12px;margin-bottom:10px;}
+  .pc-toc ul{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);}
+  .pc-toc ul ul{border-left:none;padding-left:12px;}
+  .pc-toc li a{display:block;padding:5px 0 5px 14px;margin-left:-2px;border-left:2px solid transparent;color:var(--ink-soft);text-decoration:none;line-height:1.5;}
+  .pc-toc ul ul li a{font-size:12.5px;padding:3px 0 3px 10px;}
+  .pc-toc li a:hover{color:var(--sage);}
+  .pc-toc li a.on{color:var(--sage);font-weight:800;border-left-color:var(--sage);}
+  .pt-home{display:block;margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sage);text-decoration:none;}
+}
+.nb{display:inline-block;}
 .k-fig{margin:4px 0 12px;}
 .k-fig img{width:100%;border-radius:10px;border:1px solid var(--line);}
 .k-fig figcaption{font-size:12px;color:var(--ink-soft);margin-top:6px;line-height:1.6;}
@@ -296,7 +340,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <p class="note" style="margin-top:12px;">※ 税込の総額です。お支払いは「始めるとき」と「入れるとき」の2回に分けられます。土台・根の治療・歯ぐきの処置が必要な歯は、別に費用がかかります。始める前に、必ずお伝えします。</p>
     <a class="tax-banner" href="medical-tax.html">
       <span class="tb-ico" aria-hidden="true">¥</span>
-      <span class="tb-body"><b>この治療の費用も、医療費控除の対象です</b><small>1年間に支払った医療費（ご家族の分も合わせて）が10万円を超えたら、確定申告で税金の一部が戻ることがあります。</small><em>医療費控除のくわしい説明へ →</em></span>
+      <span class="tb-body"><b>この治療の費用も、医療費控除の対象です</b><small>1年間の医療費が、ご家族の分と合わせて10万円を超えたとき。確定申告で、税金の一部が戻ることがあります。</small><em>医療費控除のくわしい説明へ →</em></span>
     </a>
   </div>
 </section>
@@ -304,8 +348,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
 <section class="section soft" id="sim">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>費用の例</span>
-    <h2 class="title">前歯を治す本数ごとの費用</h2>
-    <p class="lead">となり合う前歯をまとめて治すときは、1本あたりの価格が変わります。</p>
+    <h2 class="title">となり合う前歯は、<span class="nb">1本あたり170,000円になります</span></h2>
+    <p class="lead">前歯を治す本数ごとの費用です。となり合う前歯をまとめて治すときは、1本あたりの価格が変わります。</p>
     <div class="sim"><div class="sim-row"><div class="sim-y">1本</div><div class="sim-what">前歯のクラウン<small>プレミアム</small></div><div class="sim-fee">180,000円</div></div><div class="sim-row"><div class="sim-y">2本</div><div class="sim-what">となり合う前歯<small>170,000円 × 2本</small></div><div class="sim-fee">340,000円</div></div><div class="sim-row"><div class="sim-y">4本</div><div class="sim-what">となり合う前歯<small>170,000円 × 4本</small></div><div class="sim-fee">680,000円</div></div></div>
     <p class="note" style="margin-top:12px;">※ 税込の総額です。15年保証つき。離れた歯や、別の日に分けて治す場合は、1本ごとの通常の価格になります。</p>
   </div>
@@ -332,8 +376,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
 
     <div class="kai" id="k3">
       <span class="k-no">解説3</span>
-      <h3>15年保証のしくみ</h3>
-      <p>セラミック（スタンダード・プレミアム）には、15年保証がつきます。条件は、<b>年2回、当院でお口の状態を確認させていただくこと</b>です。その日に何をするかは、そのときのお口の状態で決めます。保証を続けるために、保険の診療をお願いすることはありません。</p><p>入れてから1年以内の不具合は、無料で作り直します。1〜15年は、作り直しの費用は材料代のみです。外れたものの付け直しは、15年を過ぎても、ずっと0円です。</p><p>インレーを入れた歯が、年月を経てクラウンに変わるときは、インレーでお支払いいただいた技術料の分（35,000円）を差し引きます。<b>同じ歯に、技術料を二度いただきません。</b>15年を過ぎても変わりません。1dayは対象外です。</p><p>15年保証は、当院で直すことを前提とした保証です。転居などで通えなくなったときは、これまでの治療の記録をお渡しします。</p>
+      <h3>付け直しはずっと0円、作り直しは15年まで材料代だけです</h3>
+      <p>セラミック（スタンダード・プレミアム）には、15年保証がつきます。条件は、<b>年2回、当院でお口の状態を確認させていただくこと</b>です。その日に何をするかは、そのときのお口の状態で決めます。保証を続けるために、保険の診療をお願いすることはありません。</p><p>入れてから1年以内の不具合は、無料で作り直します。1〜15年は、作り直しの費用は材料代のみです。外れたものの付け直しは、15年を過ぎても、ずっと0円です。</p><p>インレーを入れた歯が、年月を経てクラウンに変わることがあります。そのときは、インレーでお支払いいただいた技術料の分（35,000円）を差し引きます。<b>同じ歯に、技術料を二度いただきません。</b>15年を過ぎても変わりません。1dayは対象外です。</p><p>15年保証は、当院で直すことを前提とした保証です。転居などで通えなくなったときは、これまでの治療の記録をお渡しします。</p>
 <div class="wr-tl">
   <div class="wr-ph"><div class="wr-t">入れてから1年</div><div class="wr-r"><span>外れたものの付け直し</span><b class="free">0円</b></div><div class="wr-r"><span>作り直し</span><b class="free">無料</b></div></div>
   <div class="wr-ph"><div class="wr-t">1年〜15年</div><div class="wr-r"><span>外れたものの付け直し</span><b class="free">0円</b></div><div class="wr-r"><span>作り直し</span><b>材料代のみ</b></div></div>
@@ -367,7 +411,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="others">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>ほかの素材のストーリー</span>
     <h2 class="title">ほかの選び方も、見てみませんか</h2>
@@ -376,6 +420,16 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
   </div>
 </section>
 
+<nav class="pc-toc" aria-label="このページの目次">
+  <div class="pt-h">このページの目次</div>
+  <ul><li><a href="#story" data-t="story">この先の流れ</a></li><li><a href="#cost" data-t="cost">費用と通院の回数</a></li><li><a href="#sim" data-t="sim">費用の例</a></li><li><a href="#kaisetsu" data-t="kaisetsu">解説</a><ul><li><a href="#k1" data-t="k1">解説1</a></li><li><a href="#k2" data-t="k2">解説2</a></li><li><a href="#k3" data-t="k3">解説3</a></li></ul></li><li><a href="#case" data-t="case">実際の症例</a></li><li><a href="#others" data-t="others">ほかの素材</a></li></ul>
+  <a class="pt-home" href="inlay-crown.html">← インレー・クラウン治療</a>
+</nav>
+<script>
+(function(){if(!('IntersectionObserver' in window))return;var ls=document.querySelectorAll('.pc-toc a[data-t]'),m={};ls.forEach(function(a){m[a.dataset.t]=a;});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ls.forEach(function(a){a.classList.remove('on');});var a=m[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-40% 0px -55% 0px'});
+Object.keys(m).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});})();
+</script>
 <footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
   <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
   <div class="fl">ライフデンタルクリニック</div>

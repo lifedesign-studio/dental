@@ -52,7 +52,7 @@ h2.title{font-size:24px;font-weight:700;color:var(--ink);letter-spacing:.03em;li
 .oc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;}
 .oc h3{font-size:15.5px;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
 .oc h3 .mk{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-size:14px;color:#fff;background:var(--sage);}
-.oc.ng h3 .mk{background:#9AA5A9;}
+.oc.ng h3 .mk{background:#fff;border:2px solid #9AA5A9;}
 .oc ul{padding-left:1.1em;font-size:14px;color:var(--ink-soft);line-height:1.85;}
 .oc li{margin-bottom:4px;}
 .oc li b{color:var(--ink);}
@@ -92,6 +92,15 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
 .reveal.in{opacity:1;transform:none;}
 
 @media (max-width:560px){.calc-row{flex-direction:column;}.calc-row .box{width:100%;}}
+@media (min-width:1000px){
+  .wrap{max-width:900px;}
+  .section{padding:72px 0;}
+  .lead,.points,.oc ul,.coord p,.step{font-size:15.5px;}
+  .hero p{font-size:17px;}
+  .hero img{width:380px;}
+  .steps{grid-template-columns:repeat(3,1fr);}
+  .links{grid-template-columns:1fr 1fr;}
+}
 @media (min-width:760px){
   h2.title{font-size:28px;}
   .hero h1{font-size:34px;}
@@ -139,16 +148,16 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
     <h2 class="title">治療を目的とするものは、<span class="nb">対象になります</span></h2>
     <div class="okng">
       <div class="oc">
-        <h3><span class="mk">○</span>対象になるもの</h3>
+        <h3><span class="mk">✓</span>対象になるもの</h3>
         <ul>
           <li>保険の治療の、窓口でのお支払い</li>
-          <li><b>セラミックや金を使った治療</b>（国税庁は、これらは歯の治療材料として一般的に使われているため、対象になると示しています）</li>
+          <li><b>セラミックや金を使った治療</b>（歯の治療材料として一般的に使われているため、対象になると国税庁が示しています）</li>
           <li>年齢や目的からみて必要と認められる歯並びの矯正（お子さんの成長を妨げないための矯正など）</li>
           <li>通院のための電車・バスなどの交通費（小さなお子さんの付き添いの方の分も）</li>
         </ul>
       </div>
       <div class="oc ng">
-        <h3><span class="mk">×</span>対象にならないもの</h3>
+        <h3><span class="mk"></span>対象にならないもの</h3>
         <ul>
           <li>見た目を整えることだけを目的とした処置</li>
           <li>自家用車で通ったときのガソリン代・駐車場代</li>
@@ -197,7 +206,7 @@ footer .ft{font-size:12.5px;color:var(--sage);margin-top:4px;letter-spacing:.08e
 <section class="section soft">
   <div class="wrap reveal">
     <span class="eyebrow"><span class="dot"></span>あわせて読みたい</span>
-    <h2 class="title">治療と費用のこと</h2>
+    <h2 class="title">治療の一覧と、<span class="nb">費用の考え方へ</span></h2>
     <div class="links">
       <a href="index.html">受けられる治療の一覧へ<span>→</span></a>
       <a href="cost-over-time.html">費用を、時間軸で考える<span>→</span></a>

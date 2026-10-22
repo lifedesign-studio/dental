@@ -152,6 +152,50 @@ footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
 .tx{color:var(--sage);font-weight:700;font-size:13.5px;text-decoration:none;border-bottom:1.5px solid var(--line);}
 .k-li{margin:0 0 10px;padding-left:1.2em;font-size:14px;color:var(--ink-soft);line-height:1.85;}
 .cost-grid .cg-v{font-size:15px;line-height:1.5;}
+/* ===== PC幅（コンサルルームの画面など） ===== */
+.pc-toc{display:none;}
+@media (min-width:1000px){
+  .board{padding:56px 24px 64px;}
+  .board .inner{max-width:900px;}
+  .polaroid{flex-basis:300px;}
+  .stage{gap:28px;}
+  .b-title{font-size:46px;}
+  .b-intro{font-size:18.5px;}
+  .b-note{font-size:14px;}
+  .when{font-size:17px;}
+  .kraft{padding:28px 28px 24px;}
+  .kraft h3{font-size:23px;}
+  .kraft ul{font-size:16.5px;}
+  .kraft .more{font-size:16px;}
+  .flow span{font-size:30px;}
+  .flow svg{width:46px;height:80px;}
+  .b-sum{font-size:28px;}
+  .b-foot{font-size:15px;}
+  .wrap,.crumb{max-width:900px;}
+  .section{padding:72px 24px;}
+  h2.title{font-size:30px;}
+  .lead{font-size:16.5px;}
+  .cost-grid{grid-template-columns:repeat(3,1fr);}
+  .sim-row{grid-template-columns:100px 1fr auto;padding:16px 22px;}
+  .sim-what{font-size:15px;}
+  .sim-fee,.sim-y{font-size:16px;}
+  .kai{padding:26px 28px;}
+  .kai h3{font-size:19px;}
+  .kai p{font-size:15.5px;}
+  .next{grid-template-columns:1fr 1fr;}
+}
+@media (min-width:1360px){
+  .pc-toc{display:block;position:fixed;top:110px;left:calc(50% - 450px - 236px);width:200px;z-index:20;font-size:13.5px;}
+  .pt-h{font-weight:800;color:var(--sage);letter-spacing:.08em;font-size:12px;margin-bottom:10px;}
+  .pc-toc ul{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);}
+  .pc-toc ul ul{border-left:none;padding-left:12px;}
+  .pc-toc li a{display:block;padding:5px 0 5px 14px;margin-left:-2px;border-left:2px solid transparent;color:var(--ink-soft);text-decoration:none;line-height:1.5;}
+  .pc-toc ul ul li a{font-size:12.5px;padding:3px 0 3px 10px;}
+  .pc-toc li a:hover{color:var(--sage);}
+  .pc-toc li a.on{color:var(--sage);font-weight:800;border-left-color:var(--sage);}
+  .pt-home{display:block;margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sage);text-decoration:none;}
+}
+.nb{display:inline-block;}
 .k-fig{margin:4px 0 12px;}
 .k-fig img{width:100%;border-radius:10px;border:1px solid var(--line);}
 .k-fig figcaption{font-size:12px;color:var(--ink-soft);margin-top:6px;line-height:1.6;}
@@ -296,7 +340,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <p class="note" style="margin-top:12px;">※ 税込の総額です。大臼歯は、インレー60,000円・クラウン90,000円です。</p>
     <a class="tax-banner" href="medical-tax.html">
       <span class="tb-ico" aria-hidden="true">¥</span>
-      <span class="tb-body"><b>この治療の費用も、医療費控除の対象です</b><small>1年間に支払った医療費（ご家族の分も合わせて）が10万円を超えたら、確定申告で税金の一部が戻ることがあります。</small><em>医療費控除のくわしい説明へ →</em></span>
+      <span class="tb-body"><b>この治療の費用も、医療費控除の対象です</b><small>1年間の医療費が、ご家族の分と合わせて10万円を超えたとき。確定申告で、税金の一部が戻ることがあります。</small><em>医療費控除のくわしい説明へ →</em></span>
     </a>
   </div>
 </section>
@@ -304,8 +348,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
 <section class="section soft" id="sim">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>費用と期間の例</span>
-    <h2 class="title">奥歯5本をクラウンで治す場合</h2>
-    <p class="lead">1dayと保険で、かかる期間と費用を並べました。</p>
+    <h2 class="title">奥歯5本なら、<span class="nb">保険で約2か月かかる治療が1日で終わります</span></h2>
+    <p class="lead">奥歯5本をクラウン（被せもの）で治す場合の例です。1dayと保険で、かかる期間と費用を並べました。</p>
     <div class="sim"><div class="sim-row"><div class="sim-y">1day</div><div class="sim-what">クラウン5本を1日で<small>85,000円＋70,000円×4本</small></div><div class="sim-fee">365,000円</div></div><div class="sim-row"><div class="sim-y">保険</div><div class="sim-what">CAD/CAMのクラウン5本<small>1か月に2〜3本ずつ・約2か月</small></div><div class="sim-fee">約4〜6万円</div></div></div>
     <p class="note" style="margin-top:12px;">※ 例です。大臼歯が含まれる場合は1本目が90,000円になります。保険の期間は、当院の進め方の目安です。保険の費用は3割負担のおおよその幅です。</p>
   </div>
@@ -343,14 +387,14 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>実際の症例</span>
     <h2 class="title">1dayで、その日のうちに治した例</h2>
-    <p class="lead">金属の詰めものの下で、むし歯が再発していた歯を、1dayでその日のうちに白い詰めものに作り直した例です。</p>
+    <p class="lead">金属の詰めものの下で、むし歯が再発していた例です。1dayで、その日のうちに白い詰めものに作り直しました。</p>
     <div class="case-flow"><div class="cf"><div class="ph-img"><img src="case-1day-1.jpg" alt="治療前：金属の詰めもの" loading="lazy"><span class="cf-tag">治療前</span></div><div class="cb"><b>金属の詰めもの</b>外からは、目立った変化が見えません</div></div><div class="cf"><div class="ph-img"><img src="case-1day-2.jpg" alt="治療中：金属を外すと" loading="lazy"><span class="cf-tag">治療中</span></div><div class="cb"><b>金属を外すと</b>下で、むし歯が広がっていました</div></div><div class="cf"><div class="ph-img"><img src="case-1day-3.jpg" alt="治療中：むし歯を取り除く" loading="lazy"><span class="cf-tag">治療中</span></div><div class="cb"><b>むし歯を取り除く</b>取り除いた形に合わせて、院内で削り出します</div></div><div class="cf"><div class="ph-img"><img src="case-1day-4.jpg" alt="治療後：1dayの白い詰めもの" loading="lazy"><span class="cf-tag">治療後</span></div><div class="cb"><b>1dayの白い詰めもの</b>その日のうちに入れました</div></div></div>
     <dl class="case-dl"><div><dt>治療の内容</dt><dd>1dayの詰めもの（インレー）1本・自由診療</dd></div><div><dt>費用</dt><dd>55,000円（税込・大臼歯は60,000円）・当日一括</dd></div><div><dt>期間・回数</dt><dd>90分 × 1回</dd></div><div><dt>起こりうること</dt><dd>欠けたり、外れたりすることがあります。15年保証の対象外です。</dd></div></dl>
     <p class="case-note">※ 写真は、患者さんの同意を得て掲載しています。治り方や費用は、お口の状態によって一人ひとり異なります。</p>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="others">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>ほかの素材のストーリー</span>
     <h2 class="title">ほかの選び方も、見てみませんか</h2>
@@ -359,6 +403,16 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
   </div>
 </section>
 
+<nav class="pc-toc" aria-label="このページの目次">
+  <div class="pt-h">このページの目次</div>
+  <ul><li><a href="#story" data-t="story">この先の流れ</a></li><li><a href="#cost" data-t="cost">費用と通院の回数</a></li><li><a href="#sim" data-t="sim">費用と期間の例</a></li><li><a href="#kaisetsu" data-t="kaisetsu">解説</a><ul><li><a href="#k1" data-t="k1">解説1</a></li><li><a href="#k2" data-t="k2">解説2</a></li><li><a href="#k3" data-t="k3">解説3</a></li></ul></li><li><a href="#case" data-t="case">実際の症例</a></li><li><a href="#others" data-t="others">ほかの素材</a></li></ul>
+  <a class="pt-home" href="inlay-crown.html">← インレー・クラウン治療</a>
+</nav>
+<script>
+(function(){if(!('IntersectionObserver' in window))return;var ls=document.querySelectorAll('.pc-toc a[data-t]'),m={};ls.forEach(function(a){m[a.dataset.t]=a;});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ls.forEach(function(a){a.classList.remove('on');});var a=m[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-40% 0px -55% 0px'});
+Object.keys(m).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});})();
+</script>
 <footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
   <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
   <div class="fl">ライフデンタルクリニック</div>

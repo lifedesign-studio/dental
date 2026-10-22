@@ -152,6 +152,50 @@ footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
 .tx{color:var(--sage);font-weight:700;font-size:13.5px;text-decoration:none;border-bottom:1.5px solid var(--line);}
 .k-li{margin:0 0 10px;padding-left:1.2em;font-size:14px;color:var(--ink-soft);line-height:1.85;}
 .cost-grid .cg-v{font-size:15px;line-height:1.5;}
+/* ===== PC幅（コンサルルームの画面など） ===== */
+.pc-toc{display:none;}
+@media (min-width:1000px){
+  .board{padding:56px 24px 64px;}
+  .board .inner{max-width:900px;}
+  .polaroid{flex-basis:300px;}
+  .stage{gap:28px;}
+  .b-title{font-size:46px;}
+  .b-intro{font-size:18.5px;}
+  .b-note{font-size:14px;}
+  .when{font-size:17px;}
+  .kraft{padding:28px 28px 24px;}
+  .kraft h3{font-size:23px;}
+  .kraft ul{font-size:16.5px;}
+  .kraft .more{font-size:16px;}
+  .flow span{font-size:30px;}
+  .flow svg{width:46px;height:80px;}
+  .b-sum{font-size:28px;}
+  .b-foot{font-size:15px;}
+  .wrap,.crumb{max-width:900px;}
+  .section{padding:72px 24px;}
+  h2.title{font-size:30px;}
+  .lead{font-size:16.5px;}
+  .cost-grid{grid-template-columns:repeat(3,1fr);}
+  .sim-row{grid-template-columns:100px 1fr auto;padding:16px 22px;}
+  .sim-what{font-size:15px;}
+  .sim-fee,.sim-y{font-size:16px;}
+  .kai{padding:26px 28px;}
+  .kai h3{font-size:19px;}
+  .kai p{font-size:15.5px;}
+  .next{grid-template-columns:1fr 1fr;}
+}
+@media (min-width:1360px){
+  .pc-toc{display:block;position:fixed;top:110px;left:calc(50% - 450px - 236px);width:200px;z-index:20;font-size:13.5px;}
+  .pt-h{font-weight:800;color:var(--sage);letter-spacing:.08em;font-size:12px;margin-bottom:10px;}
+  .pc-toc ul{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);}
+  .pc-toc ul ul{border-left:none;padding-left:12px;}
+  .pc-toc li a{display:block;padding:5px 0 5px 14px;margin-left:-2px;border-left:2px solid transparent;color:var(--ink-soft);text-decoration:none;line-height:1.5;}
+  .pc-toc ul ul li a{font-size:12.5px;padding:3px 0 3px 10px;}
+  .pc-toc li a:hover{color:var(--sage);}
+  .pc-toc li a.on{color:var(--sage);font-weight:800;border-left-color:var(--sage);}
+  .pt-home{display:block;margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sage);text-decoration:none;}
+}
+.nb{display:inline-block;}
 .k-fig{margin:4px 0 12px;}
 .k-fig img{width:100%;border-radius:10px;border:1px solid var(--line);}
 .k-fig figcaption{font-size:12px;color:var(--ink-soft);margin-top:6px;line-height:1.6;}
@@ -293,10 +337,10 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <span class="eyebrow"><span class="dot"></span>費用と通院の回数</span>
     <h2 class="title">保険の範囲で、2回の通院で治せます</h2>
     <div class="cost-grid"><div class="cg"><div class="cg-k">通院</div><div class="cg-v">30分 × 2回</div></div><div class="cg"><div class="cg-k">インレー（詰めもの）</div><div class="cg-v">約3,000〜6,000円</div></div><div class="cg"><div class="cg-k">クラウン（被せもの）</div><div class="cg-v">約7,000〜11,000円</div></div><div class="cg"><div class="cg-k">神経の治療＋土台＋クラウン（一連）</div><div class="cg-v">約11,000〜16,000円</div></div><div class="cg"><div class="cg-k">保証</div><div class="cg-v">保険の決まりによる</div></div><div class="cg"><div class="cg-k">お支払い</div><div class="cg-v">その日ごとに窓口で</div></div></div>
-    <p class="note" style="margin-top:12px;">※ 保険3割負担・2回の通院の合計（再診料・麻酔・型取りなどを含む）のおおよその幅です。歯の場所や、神経があるかどうかで変わります。CAD/CAMで治す場合も、費用は同程度です。神経の治療からクラウンまでの一連は、約3,500〜5,200点（4〜6回の通院の合計）からの目安です。1割・2割負担の方は、この3分の1・3分の2ほどです。金属の費用は、金属の値段に合わせて数か月ごとに変わります。</p>
+    <p class="note" style="margin-top:12px;">※ 保険3割負担・2回の通院の合計（再診料・麻酔・型取りなどを含む）のおおよその幅です。歯の場所や、神経があるかどうかで変わります。CAD/CAMで治す場合も、費用は同程度です。神経の治療からクラウンまでの一連は、4〜6回の通院の合計の目安です。1割・2割負担の方は、この3分の1・3分の2ほどです。金属の費用は、金属の値段に合わせて数か月ごとに変わります。</p>
     <a class="tax-banner" href="medical-tax.html">
       <span class="tb-ico" aria-hidden="true">¥</span>
-      <span class="tb-body"><b>この治療の費用も、医療費控除の対象です</b><small>1年間に支払った医療費（ご家族の分も合わせて）が10万円を超えたら、確定申告で税金の一部が戻ることがあります。</small><em>医療費控除のくわしい説明へ →</em></span>
+      <span class="tb-body"><b>この治療の費用も、医療費控除の対象です</b><small>1年間の医療費が、ご家族の分と合わせて10万円を超えたとき。確定申告で、税金の一部が戻ることがあります。</small><em>医療費控除のくわしい説明へ →</em></span>
     </a>
   </div>
 </section>
@@ -304,10 +348,10 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
 <section class="section soft" id="sim">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>20年のシミュレーション</span>
-    <h2 class="title">1本の奥歯を、金属で治し続けた場合の一例</h2>
-    <p class="lead">作り直しの時期と、そのときの治療の大きさを、調査の平均をもとに並べました。</p>
+    <h2 class="title">金属で治し続けると、<span class="nb">20年のうちに治療が3回重なることがあります</span></h2>
+    <p class="lead">1本の奥歯を、金属で治し続けた場合の一例です。作り直しの時期と、そのときの治療の大きさを、調査の平均をもとに並べました。</p>
     <div class="sim"><div class="sim-row"><div class="sim-y">0年</div><div class="sim-what">金属のインレー<small>2回の通院</small></div><div class="sim-fee">約3,000〜6,000円</div></div><div class="sim-row"><div class="sim-y">5〜7年</div><div class="sim-what">再発 → 金属のクラウンへ<small>2回の通院</small></div><div class="sim-fee">約7,000〜11,000円</div></div><div class="sim-row"><div class="sim-y">10〜14年</div><div class="sim-what">2回目の再発 → 神経の治療＋土台＋クラウン<small>4〜6回の通院</small></div><div class="sim-fee">約11,000〜16,000円</div></div><div class="sim-row"><div class="sim-y">15〜20年</div><div class="sim-what">根が割れる・むし歯が深い → 抜歯<small>そのあと、ブリッジ・入れ歯・インプラントのどれかで補う</small></div><div class="sim-fee">別途</div></div><div class="sim-row sim-total"><div class="sim-y">合計</div><div class="sim-what">通院 約8〜10回<small>抜歯と、そのあとの治療は含まない</small></div><div class="sim-fee">約21,000〜33,000円</div></div></div>
-    <p class="note" style="margin-top:12px;">※ 一例です。もっと長く問題なく使える方も、早く進む方もいます。年数は、作り直しになった保険の詰めもの・被せものの平均使用年数（インレー約5年・金属の被せもの約7年）をもとにしています（森田ほか 1995）。費用は保険3割負担のおおよその幅で、神経の治療からクラウンまでの一連は約3,500〜5,200点からの目安です。金属の値段に合わせて変わります。</p>
+    <p class="note" style="margin-top:12px;">※ 一例です。もっと長く問題なく使える方も、早く進む方もいます。年数は、作り直しになった保険の詰めもの・被せものの平均です。インレーは約5年、金属の被せものは約7年でした（森田ほか 1995）。費用は、保険3割負担のおおよその幅です。金属の値段に合わせて変わります。</p>
   </div>
 </section>
 
@@ -319,7 +363,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="kai" id="k1">
       <span class="k-no">解説1</span>
       <h3>なぜ「5〜7年」なのですか</h3>
-      <p>一度入れた詰めもの・被せものが、どのくらいで作り直しになるかを調べた国内の調査があります。<b>作り直しが必要になった保険の詰めもの・被せもの</b>では、詰めものは<b>平均5.4年</b>、金属の被せものは<b>平均7.1年</b>で作り直されていました。理由でいちばん多かったのは、詰めものの下で再発したむし歯でした。</p><p>金属の下のむし歯は、外からも、レントゲンでも見えにくいため、気づいたときには大きく進んでいて、5年より前に作り直しになることもあります。もちろん、10年以上問題なくお使いの方もいらっしゃいます。</p><div class="k-figs"><figure><img src="k-metal-1.jpg" alt="金属の詰めもの。外からは、目立った変化が見えません。" loading="lazy"><figcaption>金属の詰めもの。外からは、目立った変化が見えません。</figcaption></figure><figure><img src="k-metal-2.jpg" alt="金属を外すと、すぐ下でむし歯が広がっていました。" loading="lazy"><figcaption>金属を外すと、すぐ下でむし歯が広がっていました。</figcaption></figure></div><div class="cite">出典：森田学ほか「歯科修復物の使用年数に関する疫学調査」口腔衛生学会雑誌 1995;45(5):788-793（再治療または抜歯と診断された3,120歯の調査）</div>
+      <p>一度入れた詰めもの・被せものが、どのくらいで作り直しになるかを調べた国内の調査があります。<b>作り直しが必要になった保険の詰めもの・被せもの</b>を調べると、詰めものは<b>平均5.4年</b>、金属の被せものは<b>平均7.1年</b>でした。理由でいちばん多かったのは、詰めものの下で再発したむし歯でした。</p><p>金属の下のむし歯は、外からもレントゲンでも見えにくいです。そのため、気づいたときには大きく進んでいることがあります。5年より前に作り直しになることもあります。もちろん、10年以上問題なくお使いの方もいらっしゃいます。</p><div class="k-figs"><figure><img src="k-metal-1.jpg" alt="金属の詰めもの。外からは、目立った変化が見えません。" loading="lazy"><figcaption>金属の詰めもの。外からは、目立った変化が見えません。</figcaption></figure><figure><img src="k-metal-2.jpg" alt="金属を外すと、すぐ下でむし歯が広がっていました。" loading="lazy"><figcaption>金属を外すと、すぐ下でむし歯が広がっていました。</figcaption></figure></div><div class="cite">出典：森田学ほか「歯科修復物の使用年数に関する疫学調査」口腔衛生学会雑誌 1995;45(5):788-793（再治療または抜歯と診断された3,120歯の調査）</div>
       <a class="back" href="#story">↑ 流れに戻る</a>
     </div>
 
@@ -333,13 +377,13 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="kai" id="k3">
       <span class="k-no">解説3</span>
       <h3>歯が割れて、抜歯になるのはどんなときですか</h3>
-      <p>日本の歯科医院で抜いた歯8,003本を調べた調査では、歯を抜く原因のうち<b>「歯が割れたこと」が17.8%</b>で、前回の調査（11.4%）より増えていました。割れて抜く歯は、神経のない歯に多いと報告されています。</p><p>神経を取った歯に<b>金属の土台（メタルコア）</b>を入れると、毎日の噛む力が一か所に集まり、根が縦に割れることがあると考えられています。根が割れると、歯ぐきが腫れて、急に抜歯になることがあります。</p><div class="ours"><b>当院では、金属の土台は使っていません。</b>ほかの医院で、すでに金属の土台が入っている歯は、根が割れることがあるため、年2回のメインテナンスで歯ぐきのようすを確かめます。</div><div class="cite">出典：8020推進財団「第2回 永久歯の抜歯原因調査報告書」2018／眞坂信夫「垂直破折歯根の接着治療」日本補綴歯科学会誌 2014;6:20-25</div>
+      <p>日本の歯科医院で抜いた歯8,003本を調べた調査があります。歯を抜く原因のうち、<b>「歯が割れたこと」は17.8%</b>でした。前回の調査（11.4%）より増えています。割れて抜く歯は、神経のない歯に多いと報告されています。</p><p>神経を取った歯に<b>金属の土台（メタルコア）</b>を入れると、毎日の噛む力が一か所に集まります。そのため、根が縦に割れることがあると考えられています。根が割れると、歯ぐきが腫れて、急に抜歯になることがあります。</p><div class="ours"><b>当院では、金属の土台は使っていません。</b>ほかの医院で入れた金属の土台がある歯は、根が割れることがあります。そのため、年2回のメインテナンスで、歯ぐきのようすを確かめます。</div><div class="cite">出典：8020推進財団「第2回 永久歯の抜歯原因調査報告書」2018／眞坂信夫「垂直破折歯根の接着治療」日本補綴歯科学会誌 2014;6:20-25</div>
       <a class="back" href="#story">↑ 流れに戻る</a>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="others">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>ほかの素材のストーリー</span>
     <h2 class="title">ほかの選び方も、見てみませんか</h2>
@@ -348,6 +392,16 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
   </div>
 </section>
 
+<nav class="pc-toc" aria-label="このページの目次">
+  <div class="pt-h">このページの目次</div>
+  <ul><li><a href="#story" data-t="story">この先の流れ</a></li><li><a href="#cost" data-t="cost">費用と通院の回数</a></li><li><a href="#sim" data-t="sim">20年のシミュレーション</a></li><li><a href="#kaisetsu" data-t="kaisetsu">解説</a><ul><li><a href="#k1" data-t="k1">解説1</a></li><li><a href="#k2" data-t="k2">解説2</a></li><li><a href="#k3" data-t="k3">解説3</a></li></ul></li><li><a href="#others" data-t="others">ほかの素材</a></li></ul>
+  <a class="pt-home" href="inlay-crown.html">← インレー・クラウン治療</a>
+</nav>
+<script>
+(function(){if(!('IntersectionObserver' in window))return;var ls=document.querySelectorAll('.pc-toc a[data-t]'),m={};ls.forEach(function(a){m[a.dataset.t]=a;});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ls.forEach(function(a){a.classList.remove('on');});var a=m[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-40% 0px -55% 0px'});
+Object.keys(m).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});})();
+</script>
 <footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
   <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
   <div class="fl">ライフデンタルクリニック</div>

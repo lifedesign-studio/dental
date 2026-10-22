@@ -152,6 +152,50 @@ footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
 .tx{color:var(--sage);font-weight:700;font-size:13.5px;text-decoration:none;border-bottom:1.5px solid var(--line);}
 .k-li{margin:0 0 10px;padding-left:1.2em;font-size:14px;color:var(--ink-soft);line-height:1.85;}
 .cost-grid .cg-v{font-size:15px;line-height:1.5;}
+/* ===== PC幅（コンサルルームの画面など） ===== */
+.pc-toc{display:none;}
+@media (min-width:1000px){
+  .board{padding:56px 24px 64px;}
+  .board .inner{max-width:900px;}
+  .polaroid{flex-basis:300px;}
+  .stage{gap:28px;}
+  .b-title{font-size:46px;}
+  .b-intro{font-size:18.5px;}
+  .b-note{font-size:14px;}
+  .when{font-size:17px;}
+  .kraft{padding:28px 28px 24px;}
+  .kraft h3{font-size:23px;}
+  .kraft ul{font-size:16.5px;}
+  .kraft .more{font-size:16px;}
+  .flow span{font-size:30px;}
+  .flow svg{width:46px;height:80px;}
+  .b-sum{font-size:28px;}
+  .b-foot{font-size:15px;}
+  .wrap,.crumb{max-width:900px;}
+  .section{padding:72px 24px;}
+  h2.title{font-size:30px;}
+  .lead{font-size:16.5px;}
+  .cost-grid{grid-template-columns:repeat(3,1fr);}
+  .sim-row{grid-template-columns:100px 1fr auto;padding:16px 22px;}
+  .sim-what{font-size:15px;}
+  .sim-fee,.sim-y{font-size:16px;}
+  .kai{padding:26px 28px;}
+  .kai h3{font-size:19px;}
+  .kai p{font-size:15.5px;}
+  .next{grid-template-columns:1fr 1fr;}
+}
+@media (min-width:1360px){
+  .pc-toc{display:block;position:fixed;top:110px;left:calc(50% - 450px - 236px);width:200px;z-index:20;font-size:13.5px;}
+  .pt-h{font-weight:800;color:var(--sage);letter-spacing:.08em;font-size:12px;margin-bottom:10px;}
+  .pc-toc ul{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);}
+  .pc-toc ul ul{border-left:none;padding-left:12px;}
+  .pc-toc li a{display:block;padding:5px 0 5px 14px;margin-left:-2px;border-left:2px solid transparent;color:var(--ink-soft);text-decoration:none;line-height:1.5;}
+  .pc-toc ul ul li a{font-size:12.5px;padding:3px 0 3px 10px;}
+  .pc-toc li a:hover{color:var(--sage);}
+  .pc-toc li a.on{color:var(--sage);font-weight:800;border-left-color:var(--sage);}
+  .pt-home{display:block;margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sage);text-decoration:none;}
+}
+.nb{display:inline-block;}
 .k-fig{margin:4px 0 12px;}
 .k-fig img{width:100%;border-radius:10px;border:1px solid var(--line);}
 .k-fig figcaption{font-size:12px;color:var(--ink-soft);margin-top:6px;line-height:1.6;}
@@ -298,7 +342,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <p class="note" style="margin-top:12px;">※ 保険3割負担・2回の通院の合計（再診料・麻酔・型取りなどを含む）のおおよその幅です。歯の場所や、神経があるかどうかで変わります。金属で治す場合と同程度です。CAD/CAMは、歯の場所やお口の状態によって、保険で選べない場合があります。</p>
     <a class="tax-banner" href="medical-tax.html">
       <span class="tb-ico" aria-hidden="true">¥</span>
-      <span class="tb-body"><b>この治療の費用も、医療費控除の対象です</b><small>1年間に支払った医療費（ご家族の分も合わせて）が10万円を超えたら、確定申告で税金の一部が戻ることがあります。</small><em>医療費控除のくわしい説明へ →</em></span>
+      <span class="tb-body"><b>この治療の費用も、医療費控除の対象です</b><small>1年間の医療費が、ご家族の分と合わせて10万円を超えたとき。確定申告で、税金の一部が戻ることがあります。</small><em>医療費控除のくわしい説明へ →</em></span>
     </a>
   </div>
 </section>
@@ -306,8 +350,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
 <section class="section soft" id="sim">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>シミュレーション</span>
-    <h2 class="title">1本の奥歯を、CAD/CAMで治し続けた場合の一例</h2>
-    <p class="lead">欠けたり外れたりしたときに、どのくらいの治療になるかを並べました。</p>
+    <h2 class="title">CAD/CAMは、<span class="nb">欠けても付け直しや作り直しで使い続けられます</span></h2>
+    <p class="lead">1本の奥歯を、CAD/CAMで治し続けた場合の一例です。欠けたり外れたりしたときに、どのくらいの治療になるかを並べました。</p>
     <div class="sim"><div class="sim-row"><div class="sim-y">0年</div><div class="sim-what">CAD/CAMのクラウン<small>2回の通院</small></div><div class="sim-fee">約7,000〜11,000円</div></div><div class="sim-row"><div class="sim-y">数年のうち</div><div class="sim-what">外れた → 付け直し<small>1回の通院・保険の範囲</small></div><div class="sim-fee">その日の処置による</div></div><div class="sim-row"><div class="sim-y">数年のうち</div><div class="sim-what">欠けた → 作り直し<small>2回の通院</small></div><div class="sim-fee">約7,000〜11,000円</div></div><div class="sim-row"><div class="sim-y">その先</div><div class="sim-what">欠けたら作り直す、をくり返す<small>歯の根は残りやすい</small></div><div class="sim-fee">—</div></div></div>
     <p class="note" style="margin-top:12px;">※ 一例です。CAD/CAMは新しい素材のため、10年以上の成績はまだ分かっていません。大臼歯の研究では、3年後も使えていた冠は86.5%でした（Inomata ほか 2022）。費用は保険3割負担のおおよその幅です。</p>
   </div>
@@ -358,7 +402,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="kai" id="k2">
       <span class="k-no">解説2</span>
       <h3>どのくらい欠けたり、外れたりしますか</h3>
-      <p>大臼歯のCAD/CAM冠362本を最長約4年追った国内の研究では、<b>3年後も使えていた冠は86.5%</b>でした。トラブルは約3割にみられ、その<b>約4分の3は「外れる」</b>ものでした。外れたものは、付け直してそのまま使える場合が多くありました。<b>歯そのものが割れたのは、362本中4本ほど</b>でした。</p><p>別の大学病院で402本を平均2年半追った調査でも、トラブルは1割ほどで、多くは外れるものでした。</p><div class="cite">出典：Inomata M, et al. Potential complications of CAD/CAM-produced resin composite crowns on molars: A retrospective cohort study over four years. PLOS ONE 2022;17(4):e0266358（東北大学）／Fuchida A, et al. Clinical survival of CAD-CAM composite resin crowns in anterior and posterior teeth: A four-year retrospective cohort study. J Prosthodont Res 2026（早期公開）</div>
+      <p>大臼歯のCAD/CAM冠362本を、最長約4年追った国内の研究があります。<b>3年後も使えていた冠は86.5%</b>でした。トラブルは約3割にみられ、その<b>約4分の3は「外れる」</b>ものでした。外れたものは、付け直してそのまま使える場合が多くありました。<b>歯そのものが割れたのは、362本中4本ほど</b>でした。</p><p>別の大学病院で402本を平均2年半追った調査でも、トラブルは1割ほどで、多くは外れるものでした。</p><div class="cite">出典：Inomata M, et al. Potential complications of CAD/CAM-produced resin composite crowns on molars: A retrospective cohort study over four years. PLOS ONE 2022;17(4):e0266358（東北大学）／Fuchida A, et al. Clinical survival of CAD-CAM composite resin crowns in anterior and posterior teeth: A four-year retrospective cohort study. J Prosthodont Res 2026（早期公開）</div>
       <a class="back" href="#story">↑ 流れに戻る</a>
     </div>
 
@@ -372,7 +416,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="kai" id="k4">
       <span class="k-no">解説4</span>
       <h3>欠けやすい方はいますか</h3>
-      <p>噛む力が強い方、歯ぎしり・食いしばりが強い方、かみ合わせや歯並びによっては、欠けたり外れたりしやすくなります。</p><p>寝ているあいだの歯ぎしりから歯を守る、マウスピースもあります。気になる方は、ご相談ください。</p>
+      <p>噛む力が強い方や、歯ぎしり・食いしばりが強い方は、欠けたり外れたりしやすくなります。かみ合わせや歯並びが影響することもあります。</p><p>寝ているあいだの歯ぎしりから歯を守る、マウスピースもあります。気になる方は、ご相談ください。</p>
       <a class="back" href="#story">↑ 流れに戻る</a>
     </div>
   </div>
@@ -389,7 +433,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="others">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>ほかの素材のストーリー</span>
     <h2 class="title">ほかの選び方も、見てみませんか</h2>
@@ -398,6 +442,16 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
   </div>
 </section>
 
+<nav class="pc-toc" aria-label="このページの目次">
+  <div class="pt-h">このページの目次</div>
+  <ul><li><a href="#story" data-t="story">この先の流れ</a></li><li><a href="#cost" data-t="cost">費用と通院の回数</a></li><li><a href="#sim" data-t="sim">シミュレーション</a></li><li><a href="#kaisetsu" data-t="kaisetsu">解説</a><ul><li><a href="#k1" data-t="k1">解説1</a></li><li><a href="#k2" data-t="k2">解説2</a></li><li><a href="#k3" data-t="k3">解説3</a></li><li><a href="#k4" data-t="k4">解説4</a></li></ul></li><li><a href="#case" data-t="case">実際の症例</a></li><li><a href="#others" data-t="others">ほかの素材</a></li></ul>
+  <a class="pt-home" href="inlay-crown.html">← インレー・クラウン治療</a>
+</nav>
+<script>
+(function(){if(!('IntersectionObserver' in window))return;var ls=document.querySelectorAll('.pc-toc a[data-t]'),m={};ls.forEach(function(a){m[a.dataset.t]=a;});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ls.forEach(function(a){a.classList.remove('on');});var a=m[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-40% 0px -55% 0px'});
+Object.keys(m).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});})();
+</script>
 <footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
   <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
   <div class="fl">ライフデンタルクリニック</div>

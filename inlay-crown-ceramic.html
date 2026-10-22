@@ -152,6 +152,50 @@ footer .ft{font-size:12px;color:var(--muted);margin-top:6px;}
 .tx{color:var(--sage);font-weight:700;font-size:13.5px;text-decoration:none;border-bottom:1.5px solid var(--line);}
 .k-li{margin:0 0 10px;padding-left:1.2em;font-size:14px;color:var(--ink-soft);line-height:1.85;}
 .cost-grid .cg-v{font-size:15px;line-height:1.5;}
+/* ===== PC幅（コンサルルームの画面など） ===== */
+.pc-toc{display:none;}
+@media (min-width:1000px){
+  .board{padding:56px 24px 64px;}
+  .board .inner{max-width:900px;}
+  .polaroid{flex-basis:300px;}
+  .stage{gap:28px;}
+  .b-title{font-size:46px;}
+  .b-intro{font-size:18.5px;}
+  .b-note{font-size:14px;}
+  .when{font-size:17px;}
+  .kraft{padding:28px 28px 24px;}
+  .kraft h3{font-size:23px;}
+  .kraft ul{font-size:16.5px;}
+  .kraft .more{font-size:16px;}
+  .flow span{font-size:30px;}
+  .flow svg{width:46px;height:80px;}
+  .b-sum{font-size:28px;}
+  .b-foot{font-size:15px;}
+  .wrap,.crumb{max-width:900px;}
+  .section{padding:72px 24px;}
+  h2.title{font-size:30px;}
+  .lead{font-size:16.5px;}
+  .cost-grid{grid-template-columns:repeat(3,1fr);}
+  .sim-row{grid-template-columns:100px 1fr auto;padding:16px 22px;}
+  .sim-what{font-size:15px;}
+  .sim-fee,.sim-y{font-size:16px;}
+  .kai{padding:26px 28px;}
+  .kai h3{font-size:19px;}
+  .kai p{font-size:15.5px;}
+  .next{grid-template-columns:1fr 1fr;}
+}
+@media (min-width:1360px){
+  .pc-toc{display:block;position:fixed;top:110px;left:calc(50% - 450px - 236px);width:200px;z-index:20;font-size:13.5px;}
+  .pt-h{font-weight:800;color:var(--sage);letter-spacing:.08em;font-size:12px;margin-bottom:10px;}
+  .pc-toc ul{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);}
+  .pc-toc ul ul{border-left:none;padding-left:12px;}
+  .pc-toc li a{display:block;padding:5px 0 5px 14px;margin-left:-2px;border-left:2px solid transparent;color:var(--ink-soft);text-decoration:none;line-height:1.5;}
+  .pc-toc ul ul li a{font-size:12.5px;padding:3px 0 3px 10px;}
+  .pc-toc li a:hover{color:var(--sage);}
+  .pc-toc li a.on{color:var(--sage);font-weight:800;border-left-color:var(--sage);}
+  .pt-home{display:block;margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sage);text-decoration:none;}
+}
+.nb{display:inline-block;}
 .k-fig{margin:4px 0 12px;}
 .k-fig img{width:100%;border-radius:10px;border:1px solid var(--line);}
 .k-fig figcaption{font-size:12px;color:var(--ink-soft);margin-top:6px;line-height:1.6;}
@@ -243,7 +287,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
       <div class="kraft">
         <div class="when">今</div>
         <h3>ぴったり合わせて、セラミックを入れる</h3>
-        <ul><li>マイクロスコープで拡大しながら、時間をかけて精密に</li><li>インレーは2回、クラウンは3回の通院</li></ul>
+        <ul><li>マイクロスコープ（歯科用の顕微鏡）で拡大しながら、時間をかけて精密に</li><li>詰めもの（インレー）は2回、被せもの（クラウン）は3回の通院</li></ul>
         <a class="more" href="#k1">解説1　すき間が小さいと？ →</a>
       </div>
     </div>
@@ -297,7 +341,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <p class="note" style="margin-top:12px;">※ 税込の総額です。「／」の左がスタンダード、右がプレミアムです。お支払いは「始めるとき」と「入れるとき」の2回に分けられます。</p>
     <a class="tax-banner" href="medical-tax.html">
       <span class="tb-ico" aria-hidden="true">¥</span>
-      <span class="tb-body"><b>この治療の費用も、医療費控除の対象です</b><small>1年間に支払った医療費（ご家族の分も合わせて）が10万円を超えたら、確定申告で税金の一部が戻ることがあります。</small><em>医療費控除のくわしい説明へ →</em></span>
+      <span class="tb-body"><b>この治療の費用も、医療費控除の対象です</b><small>1年間の医療費が、ご家族の分と合わせて10万円を超えたとき。確定申告で、税金の一部が戻ることがあります。</small><em>医療費控除のくわしい説明へ →</em></span>
     </a>
   </div>
 </section>
@@ -305,10 +349,10 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
 <section class="section soft" id="sim">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>もしものときの費用</span>
-    <h2 class="title">セラミックのクラウン（スタンダード）の場合</h2>
-    <p class="lead">作り直しが必要になるとは限りません。もし必要になったときの費用を、15年保証の決まりで並べました。</p>
+    <h2 class="title">もし作り直しになっても、<span class="nb">15年までは材料代だけです</span></h2>
+    <p class="lead">セラミックのクラウン（スタンダード）の例です。作り直しが必要になるとは限りません。もし必要になったときの費用を、15年保証の決まりで並べました。</p>
     <div class="sim"><div class="sim-row"><div class="sim-y">0年</div><div class="sim-what">セラミックのクラウン<small>3回の通院</small></div><div class="sim-fee">140,000円</div></div><div class="sim-row"><div class="sim-y">〜1年</div><div class="sim-what">不具合で作り直し<small>保証</small></div><div class="sim-fee">0円</div></div><div class="sim-row"><div class="sim-y">1〜15年</div><div class="sim-what">外れた → 付け直し／欠けた → 作り直し<small>作り直しは材料代のみ</small></div><div class="sim-fee">0円／約79,500円</div></div><div class="sim-row"><div class="sim-y">15年〜</div><div class="sim-what">外れた → 付け直し／作り直し<small>作り直しは技術料を差し引き</small></div><div class="sim-fee">0円／—</div></div></div>
-    <p class="note" style="margin-top:12px;">※ 15年保証の条件は、年2回、当院でお口の状態を確認させていただくことです。インレーからクラウンに進むときは、技術料35,000円を差し引きます（例：インレー スタンダード → クラウン スタンダード 105,000円）。</p>
+    <p class="note" style="margin-top:12px;">※ 15年保証の条件は、年2回、当院でお口の状態を確認させていただくことです。インレーからクラウンに進むときは、技術料35,000円を差し引きます。たとえば、インレー スタンダードからクラウン スタンダードなら、105,000円です。</p>
   </div>
 </section>
 
@@ -320,7 +364,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="kai" id="k1">
       <span class="k-no">解説1</span>
       <h3>すき間が小さいと、どうなりますか</h3>
-      <p>歯との境目にすき間があると、そこに汚れや細菌が入り込み、むし歯が再発しやすくなることが報告されています。</p><p>セラミックの治療では、保険の決まりにとらわれず、十分な時間をとって、マイクロスコープで拡大しながら精密に仕上げます。すき間は、臨床で許容される目安（約120μm以下）の3分の1ほど、<b>約35〜40μm</b>をめざしています。40μmは0.04mm、髪の毛1本の太さより細いすき間です。</p><figure class="fitfig">
+      <p>歯との境目にすき間があると、そこに汚れや細菌が入り込みます。そこから、むし歯が再発しやすくなることが報告されています。</p><p>セラミックの治療では、十分な時間をとります。マイクロスコープで拡大しながら、精密に仕上げます。すき間は、臨床で許容される目安（約120μm以下）の3分の1ほど、<b>約35〜40μm</b>をめざしています。40μmは0.04mm、髪の毛1本の太さより細いすき間です。</p><figure class="fitfig">
       <svg viewBox="0 0 504 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="歯と被せものの境目のすき間の模式図" style="width:100%;height:auto">
         <style>
           .ttooth{fill:#fff;stroke:var(--sage);stroke-width:2.2;stroke-linejoin:round}
@@ -393,14 +437,14 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="kai" id="k2">
       <span class="k-no">解説2</span>
       <h3>セラミックは、どのくらいもちますか</h3>
-      <p>天然の歯に入れたセラミックの冠を調べた研究をまとめた報告では、<b>5年後も96〜98.5%ほど</b>が使えていました。</p><p>数字の上では、金属を焼き付けた冠（97.1%）とほぼ同じです。当院がセラミックをおすすめする理由は、すき間を小さくできること、むし歯に気づきやすいこと、もし作り直しになっても歯への負担が小さく済みやすいこと、の3つです。</p><div class="cite">出典：Pjetursson BE, et al. Int J Prosthodont 2026;39(3):308-324（天然歯の単冠の生存率のシステマティックレビュー）</div>
+      <p>天然の歯に入れたセラミックの冠の研究を、まとめた報告があります。<b>5年後も96〜98.5%ほど</b>が使えていました。</p><p>数字の上では、金属を焼き付けた冠（97.1%）とほぼ同じです。当院がセラミックをおすすめする理由は、3つあります。</p><ul class="k-li"><li>すき間を小さくできる</li><li>むし歯の再発に気づきやすい</li><li>もし作り直しになっても、歯への負担が小さく済みやすい</li></ul><div class="cite">出典：Pjetursson BE, et al. Int J Prosthodont 2026;39(3):308-324（天然歯の単冠の生存率のシステマティックレビュー）</div>
       <a class="back" href="#story">↑ 流れに戻る</a>
     </div>
 
     <div class="kai" id="k3">
       <span class="k-no">解説3</span>
-      <h3>15年保証のしくみ</h3>
-      <p>セラミック（スタンダード・プレミアム）には、15年保証がつきます。条件は、<b>年2回、当院でお口の状態を確認させていただくこと</b>です。その日に何をするかは、そのときのお口の状態で決めます。保証を続けるために、保険の診療をお願いすることはありません。</p><p>入れてから1年以内の不具合は、無料で作り直します。1〜15年は、作り直しの費用は材料代のみです。外れたものの付け直しは、15年を過ぎても、ずっと0円です。</p><p>インレーを入れた歯が、年月を経てクラウンに変わるときは、インレーでお支払いいただいた技術料の分（35,000円）を差し引きます。<b>同じ歯に、技術料を二度いただきません。</b>15年を過ぎても変わりません。1dayは対象外です。</p><p>15年保証は、当院で直すことを前提とした保証です。転居などで通えなくなったときは、これまでの治療の記録をお渡しします。</p>
+      <h3>付け直しはずっと0円、作り直しは15年まで材料代だけです</h3>
+      <p>セラミック（スタンダード・プレミアム）には、15年保証がつきます。条件は、<b>年2回、当院でお口の状態を確認させていただくこと</b>です。その日に何をするかは、そのときのお口の状態で決めます。保証を続けるために、保険の診療をお願いすることはありません。</p><p>入れてから1年以内の不具合は、無料で作り直します。1〜15年は、作り直しの費用は材料代のみです。外れたものの付け直しは、15年を過ぎても、ずっと0円です。</p><p>インレーを入れた歯が、年月を経てクラウンに変わることがあります。そのときは、インレーでお支払いいただいた技術料の分（35,000円）を差し引きます。<b>同じ歯に、技術料を二度いただきません。</b>15年を過ぎても変わりません。1dayは対象外です。</p><p>15年保証は、当院で直すことを前提とした保証です。転居などで通えなくなったときは、これまでの治療の記録をお渡しします。</p>
 <div class="wr-tl">
   <div class="wr-ph"><div class="wr-t">入れてから1年</div><div class="wr-r"><span>外れたものの付け直し</span><b class="free">0円</b></div><div class="wr-r"><span>作り直し</span><b class="free">無料</b></div></div>
   <div class="wr-ph"><div class="wr-t">1年〜15年</div><div class="wr-r"><span>外れたものの付け直し</span><b class="free">0円</b></div><div class="wr-r"><span>作り直し</span><b>材料代のみ</b></div></div>
@@ -434,14 +478,14 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>実際の症例</span>
     <h2 class="title">セラミックで治した例</h2>
-    <p class="lead">金属の詰めものの下で再発したむし歯を取り除き、マイクロスコープで拡大しながら、プレミアムのセラミックの詰めもの（インレー）に作り直した例です。</p>
+    <p class="lead">金属の詰めものの下で、むし歯が再発していた例です。むし歯を取り除き、マイクロスコープで拡大しながら、プレミアムのセラミックのインレーに作り直しました。</p>
     <div class="case-flow"><div class="cf"><div class="ph-img"><img src="case-ceramic-1.jpg" alt="治療前：金属の詰めもの" loading="lazy"><span class="cf-tag">治療前</span></div><div class="cb"><b>金属の詰めもの</b>外からは、目立った変化が見えません</div></div><div class="cf"><div class="ph-img"><img src="case-ceramic-2.jpg" alt="治療中：金属を外すと" loading="lazy"><span class="cf-tag">治療中</span></div><div class="cb"><b>金属を外すと</b>下で、むし歯が広がっていました</div></div><div class="cf"><div class="ph-img"><img src="case-ceramic-3.jpg" alt="治療中：形を整えて、型をとる" loading="lazy"><span class="cf-tag">治療中</span></div><div class="cb"><b>形を整えて、型をとる</b>マイクロスコープで拡大しながら、境目を精密に</div></div><div class="cf"><div class="ph-img"><img src="case-ceramic-4.jpg" alt="治療後：プレミアムのインレー" loading="lazy"><span class="cf-tag">治療後</span></div><div class="cb"><b>プレミアムのインレー</b>まわりの歯となじむ色と形に</div></div></div>
     <dl class="case-dl"><div><dt>治療の内容</dt><dd>セラミックの詰めもの（プレミアムインレー）1本・自由診療</dd></div><div><dt>費用</dt><dd>90,000円（税込）・始めるときと入れるときの2回に分けてお支払い</dd></div><div><dt>期間・回数</dt><dd>60分 × 2回</dd></div><div><dt>起こりうること</dt><dd>欠けたり、外れたりすることがあります。15年保証の対象です（条件は、年2回、当院でお口の状態を確認させていただくこと）。</dd></div></dl>
     <p class="case-note">※ 写真は、患者さんの同意を得て掲載しています。治り方や費用は、お口の状態によって一人ひとり異なります。</p>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="others">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>ほかの素材のストーリー</span>
     <h2 class="title">ほかの選び方も、見てみませんか</h2>
@@ -450,6 +494,16 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
   </div>
 </section>
 
+<nav class="pc-toc" aria-label="このページの目次">
+  <div class="pt-h">このページの目次</div>
+  <ul><li><a href="#story" data-t="story">この先の流れ</a></li><li><a href="#cost" data-t="cost">費用と通院の回数</a></li><li><a href="#sim" data-t="sim">もしものときの費用</a></li><li><a href="#kaisetsu" data-t="kaisetsu">解説</a><ul><li><a href="#k1" data-t="k1">解説1</a></li><li><a href="#k2" data-t="k2">解説2</a></li><li><a href="#k3" data-t="k3">解説3</a></li><li><a href="#k4" data-t="k4">解説4</a></li></ul></li><li><a href="#case" data-t="case">実際の症例</a></li><li><a href="#others" data-t="others">ほかの素材</a></li></ul>
+  <a class="pt-home" href="inlay-crown.html">← インレー・クラウン治療</a>
+</nav>
+<script>
+(function(){if(!('IntersectionObserver' in window))return;var ls=document.querySelectorAll('.pc-toc a[data-t]'),m={};ls.forEach(function(a){m[a.dataset.t]=a;});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ls.forEach(function(a){a.classList.remove('on');});var a=m[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-40% 0px -55% 0px'});
+Object.keys(m).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});})();
+</script>
 <footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
   <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
   <div class="fl">ライフデンタルクリニック</div>
