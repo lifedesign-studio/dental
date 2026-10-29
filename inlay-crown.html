@@ -773,13 +773,14 @@ html.sm-open{overflow:hidden;}
 .ov-wish{font-size:17px;color:var(--ink);font-weight:800;line-height:1.45;margin-bottom:4px;}
 .ov-wish::before{content:"こんな方に";display:block;font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:.08em;margin-bottom:2px;}
 @media (min-width:1240px){
-  .ov-wish{font-size:clamp(20px,2.7vh,28px);min-height:3.7em;display:flex;flex-direction:column;justify-content:flex-end;}
+  .ov-wish{font-size:clamp(19px,2.5vh,26px);}
   .ov-wish::before{font-size:13px;}
   .ov-img{width:clamp(80px,14vh,150px);height:clamp(80px,14vh,150px);}
 }
 
 .ov-what{margin:4px 0 0;font-size:14px;color:var(--ink-soft);}
 @media (min-width:1240px){.ov-what{font-size:clamp(15px,1.8vh,18px);}}
+@media (min-width:1600px){.ov-wish{white-space:nowrap;}}
 </style>
 </head>
 <body>
@@ -843,7 +844,7 @@ html.sm-open{overflow:hidden;}
     </div>
     <div class="ov-grid">
       <article class="ov-col" style="--mc:#4E6478">
-        <div class="ov-wish">費用をなるべく抑えたい</div>
+        <div class="ov-wish">保険で、いまの1本を治したい</div>
         <div class="ov-mat"><span class="ov-tag">保険</span>金属</div>
         <img class="ov-img" src="ic-metal-1.jpg" alt="" loading="eager">
         <div class="ov-blk"><div class="ov-h">通う回数と時間</div><div class="ov-visit">30分 × 2回</div></div>
@@ -852,7 +853,7 @@ html.sm-open{overflow:hidden;}
         <div class="ov-links"><a class="ov-go" href="inlay-crown-metal.html">金属のストーリー →</a></div>
       </article>
       <article class="ov-col" style="--mc:#4F7A6C">
-        <div class="ov-wish">費用を抑えて、白くしたい</div>
+        <div class="ov-wish">保険で、白く治したい</div>
         <div class="ov-mat"><span class="ov-tag">保険</span>CAD/CAM</div><div class="ov-star">保険で治すなら、当院のおすすめ</div>
         <img class="ov-img" src="ic-cadcam-1.jpg" alt="" loading="eager">
         <div class="ov-blk"><div class="ov-h">通う回数と時間</div><div class="ov-visit">30分 × 2回</div></div>
@@ -861,7 +862,7 @@ html.sm-open{overflow:hidden;}
         <div class="ov-links"><a class="ov-go" href="inlay-crown-cadcam.html">CAD/CAMのストーリー →</a></div>
       </article>
       <article class="ov-col" style="--mc:#A8692A">
-        <div class="ov-wish">回数を減らして、1日で終えたい</div>
+        <div class="ov-wish">1日で、まとめて治したい</div>
         <div class="ov-mat"><span class="ov-tag">自費</span>1day</div>
         <img class="ov-img" src="ic-1day-1.jpg" alt="" loading="eager">
         <div class="ov-blk"><div class="ov-h">通う回数と時間</div><div class="ov-visit">1日（1本なら90〜120分）</div></div>
@@ -870,7 +871,7 @@ html.sm-open{overflow:hidden;}
         <div class="ov-links"><a class="ov-go" href="inlay-crown-1day.html">1dayのストーリー →</a></div>
       </article>
       <article class="ov-col" style="--mc:#465C92">
-        <div class="ov-wish">歯を長く持たせたい<br>きれいに見せたい</div>
+        <div class="ov-wish">この歯を、長く持たせたい</div>
         <div class="ov-mat"><span class="ov-tag">自費</span>セラミック</div>
         <img class="ov-img" src="ic-ceramic-1.jpg" alt="" loading="eager">
         <div class="ov-blk"><div class="ov-h">通う回数と時間</div><div class="ov-visit">60分 × 2回（インレー）／3回（クラウン）</div></div>
@@ -1012,10 +1013,10 @@ html.sm-open{overflow:hidden;}
         <thead>
           <tr class="wish-row">
             <th style="text-align:left;">こんな方に</th>
-            <th>費用をなるべく<br>抑えたい</th>
-            <th>費用を抑えて、<br>白くしたい</th>
-            <th>回数を減らして、<br>1日で終えたい<small>1本から数本まで</small></th>
-            <th>歯を長く持たせたい<br>きれいに見せたい</th>
+            <th>保険で、<br>いまの1本を治したい</th>
+            <th>保険で、<br>白く治したい</th>
+            <th>1日で、<br>まとめて治したい<small>1本から数本まで</small></th>
+            <th>この歯を、<br>長く持たせたい<small>見た目を整えたい方も</small></th>
           </tr>
           <tr class="mat-row">
             <th style="text-align:left;">素材</th>
