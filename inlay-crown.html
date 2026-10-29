@@ -768,6 +768,15 @@ html.sm-open{overflow:hidden;}
   .ov-st li::after{top:.35em;}
 }
 .ov-fr b{margin-left:auto;}
+
+/* 入口の1枚：金額を外し、ご希望を大きく（2026-10-29） */
+.ov-wish{font-size:17px;color:var(--ink);font-weight:800;line-height:1.45;margin-bottom:4px;}
+.ov-wish::before{content:"こんな方に";display:block;font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:.08em;margin-bottom:2px;}
+@media (min-width:1240px){
+  .ov-wish{font-size:clamp(20px,2.7vh,28px);min-height:3.7em;display:flex;flex-direction:column;justify-content:flex-end;}
+  .ov-wish::before{font-size:13px;}
+  .ov-img{width:clamp(80px,14vh,150px);height:clamp(80px,14vh,150px);}
+}
 </style>
 </head>
 <body>
@@ -835,7 +844,6 @@ html.sm-open{overflow:hidden;}
         <img class="ov-img" src="ic-metal-1.jpg" alt="" loading="eager">
         <div class="ov-blk"><div class="ov-h">治療の流れ</div><div class="ov-visit">30分 × 2回</div></div>
         <div class="ov-blk"><div class="ov-h">この先のストーリー</div><ol class="ov-st"><li><b>今</b><span>銀色の詰めもので治す</span></li><li><b>5〜7年</b><span>下で、むし歯が再発しやすい</span></li><li><b>作り直し</b><span>前より大きく削る</span></li><li><b>15〜20年</b><span>抜歯になることがある</span></li></ol></div>
-        <div class="ov-blk ov-fee"><div class="ov-h">料金（1本）</div><div class="ov-fr"><span>インレー</span><b>約3,000〜6,000円</b></div><div class="ov-fr"><span>クラウン</span><b>約7,000〜11,000円</b></div><div class="ov-fn">保険3割負担のおおよその幅</div></div>
         <div class="ov-wr"><span>保証</span>保険の決まりによる</div>
         <div class="ov-links"><a class="ov-go" href="inlay-crown-metal.html">金属のストーリー →</a></div>
       </article>
@@ -845,7 +853,6 @@ html.sm-open{overflow:hidden;}
         <img class="ov-img" src="ic-cadcam-1.jpg" alt="" loading="eager">
         <div class="ov-blk"><div class="ov-h">治療の流れ</div><div class="ov-visit">30分 × 2回</div></div>
         <div class="ov-blk"><div class="ov-h">この先のストーリー</div><ol class="ov-st"><li><b>今</b><span>白く治す（少し多めに削る）</span></li><li><b>数年のうちに</b><span>欠ける・外れることがある</span></li><li><b>作り直し</b><span>小さいうちに見つけて治す</span></li><li><b>その先</b><span>歯の根を守りやすい</span></li></ol></div>
-        <div class="ov-blk ov-fee"><div class="ov-h">料金（1本）</div><div class="ov-fr"><span>インレー</span><b>約3,000〜6,000円</b></div><div class="ov-fr"><span>クラウン</span><b>約7,000〜11,000円</b></div><div class="ov-fn">保険3割負担のおおよその幅</div></div>
         <div class="ov-wr"><span>保証</span>保険の決まりによる</div>
         <div class="ov-links"><a class="ov-go" href="inlay-crown-cadcam.html">CAD/CAMのストーリー →</a></div>
       </article>
@@ -855,24 +862,22 @@ html.sm-open{overflow:hidden;}
         <img class="ov-img" src="ic-1day-1.jpg" alt="" loading="eager">
         <div class="ov-blk"><div class="ov-h">治療の流れ</div><div class="ov-visit">1日（1本なら90〜120分）</div></div>
         <div class="ov-blk"><div class="ov-h">この先のストーリー</div><ol class="ov-st"><li><b>今</b><span>期限までに治したい</span></li><li><b>当日</b><span>院内で削り出して入れる</span></li><li><b>予定の日</b><span>治療を終えて迎えられる</span></li><li><b>その先</b><span>CAD/CAMと同じ歩み方</span></li></ol></div>
-        <div class="ov-blk ov-fee"><div class="ov-h">料金（1本）</div><div class="ov-fr"><span>インレー</span><b>55,000〜60,000円</b></div><div class="ov-fr"><span>クラウン</span><b>85,000〜90,000円</b></div><div class="ov-fn">税込の総額。2本目からは1本ごとに加算</div></div>
         <div class="ov-wr"><span>保証</span>15年保証の対象外</div>
         <div class="ov-links"><a class="ov-go" href="inlay-crown-1day.html">1dayのストーリー →</a></div>
       </article>
       <article class="ov-col" style="--mc:#465C92">
-        <div class="ov-wish">歯を長く持たせたい・きれいに見せたい</div>
+        <div class="ov-wish">歯を長く持たせたい<br>きれいに見せたい</div>
         <div class="ov-mat"><span class="ov-tag">自費</span>セラミック</div>
         <img class="ov-img" src="ic-ceramic-1.jpg" alt="" loading="eager">
         <div class="ov-blk"><div class="ov-h">治療の流れ</div><div class="ov-visit">60分 × 2回（インレー）／3回（クラウン）</div></div>
         <div class="ov-blk"><div class="ov-h">この先のストーリー</div><ol class="ov-st"><li><b>今</b><span>拡大して、ぴったり合わせる</span></li><li><b>5年、10年</b><span>変わらずに使い続ける</span></li><li><b>もしものとき</b><span>15年保証の決まりで直す</span></li><li><b>その先</b><span>自分の歯を残していく</span></li></ol></div>
-        <div class="ov-blk ov-fee"><div class="ov-h">料金（1本）</div><div class="ov-fr"><span>インレー</span><b>80,000円／90,000円</b></div><div class="ov-fr"><span>クラウン（奥歯）</span><b>140,000円／160,000円</b></div><div class="ov-fr"><span>クラウン（前歯）</span><b>180,000円</b></div><div class="ov-fn">税込の総額（スタンダード／プレミアム）。前歯はプレミアムのみ</div></div>
         <div class="ov-wr"><span>保証</span>15年保証</div>
         <div class="ov-links"><a class="ov-go" href="inlay-crown-ceramic.html">奥歯のストーリー →</a><a class="ov-go" href="inlay-crown-front.html">前歯のストーリー →</a></div>
       </article>
     </div>
     <div class="ov-bot">
       <p class="ov-you"><b>選ぶのは、ご自身です。</b>今日決めるのは、今回どこまで治すかだけ。いつでも相談し直せます。</p>
-      <p class="ov-note">費用は1本あたりの目安です。歯の場所や状態で変わります。CAD/CAMは、保険で選べない場合があります。治療の費用は<a href="medical-tax.html">医療費控除</a>の対象です。</p>
+      <p class="ov-note">費用・通院の回数は、それぞれのストーリーのページに載せています。CAD/CAMは、保険で選べない場合があります。治療の費用は<a href="medical-tax.html">医療費控除</a>の対象です。</p>
       <a class="ov-down" href="#form">くわしい説明は下へ ↓</a>
     </div>
   </div>
