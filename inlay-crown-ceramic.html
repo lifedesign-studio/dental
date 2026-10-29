@@ -329,7 +329,9 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     </div>
 
     <p class="b-sum"><span>最初の費用はかかっても、作り直しを減らす選び方。</span><br><span>この歯を、長く使い続けるために。</span></p>
+    <div class="sl-cost"><span class="c"><b>通院</b>60分 × 2〜3回</span><span class="c"><b>インレー</b>80,000円／90,000円</span><span class="c"><b>クラウン</b>140,000円／160,000円</span><span class="c"><b>保証</b>15年保証</span><span class="c-n">税込の総額（スタンダード／プレミアム）</span><a href="#cost">くわしく ↓</a></div>
     <p class="b-foot">気になったところは、下の解説でくわしく ↓<br><a href="#cost" style="color:var(--ink-soft)">費用と通院の回数を見る</a></p>
+    <nav class="sl-nav" aria-label="前後の素材"><a class="pv" href="inlay-crown-1day.html"><i>‹</i>1dayで治すと</a><span class="sl-sp"></span><a class="nx" href="inlay-crown-front.html">セラミック（前歯）で治すと<i>›</i></a></nav>
   </div>
 </section>
 
@@ -380,7 +382,48 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
           .lw{fill:#B0654A;font-family:"Noto Sans CJK JP",sans-serif;font-size:13px;font-weight:800}
           .mm{fill:#6E7B80;font-family:"Noto Sans CJK JP",sans-serif;font-size:10.5px}
           .tm2{fill:#2E3A3F;font-family:"Noto Sans CJK JP",sans-serif;font-size:11px;font-weight:700}
-        </style>
+        
+/* ===== 1画面スライド（コンサルルームのモニター・1240px以上）2026-10-29 ===== */
+.sl-cost,.sl-nav{display:none;}
+@media (min-width:1240px){
+  .board{position:relative;z-index:30;min-height:calc(100vh - 42px);padding:18px 40px 16px;display:flex;align-items:center;}
+  .board .inner{max-width:1780px;width:100%;display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;column-gap:6px;align-items:start;}
+  .board .inner > :not(.stage):not(.flow){grid-column:1 / -1;}
+  .b-title{font-size:clamp(34px,4.4vh,46px);margin:0 0 4px;}
+  .b-title br,.b-intro br{display:none;}
+  .b-badge{margin:0 0 4px;font-size:16px;}
+  .b-intro{font-size:clamp(17px,2.1vh,21px);margin:0 0 2px;}
+  .b-note{margin:0 0 clamp(12px,2.4vh,26px);font-size:13.5px;}
+  .stage,.stage.rev{flex-direction:column;align-items:stretch;gap:0;}
+  .polaroid,.stage.rev .polaroid{flex:none;width:min(78%,22vh);margin:0 auto;transform:rotate(-2deg);padding:8px 8px 12px;}
+  .stage.rev .polaroid{transform:rotate(2deg);}
+  .kraft,.stage.rev .kraft{margin-top:-14px;padding:20px 20px 16px;transform:rotate(.6deg);}
+  .stage.rev .kraft{transform:rotate(-.6deg);}
+  .when{font-size:clamp(15px,1.8vh,18px);}
+  .kraft h3{font-size:clamp(18px,2.25vh,23px);line-height:1.45;}
+  .kraft ul{font-size:clamp(14.5px,1.75vh,17px);line-height:1.7;}
+  .kraft .more{font-size:clamp(13.5px,1.6vh,16px);margin-top:8px;}
+  .flow{flex-direction:column;gap:2px;margin:calc(min(78%,22vh) * .38) 0 0;min-width:clamp(80px,6vw,120px);padding:0 4px;}
+  .flow span{white-space:nowrap;}
+  .flow svg{width:30px;height:54px;transform:rotate(-90deg);order:2;}
+  .flow span{font-size:clamp(16px,2vh,21px);text-align:center;line-height:1.35;order:1;}
+  .b-sum{font-size:clamp(20px,2.5vh,26px);margin:clamp(12px,2.2vh,24px) 0 6px;}
+  .b-sum br{display:none;}
+  .b-sum span + br + span{margin-left:.8em;}
+  .sl-cost{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 10px;margin:4px 0 2px;}
+  .sl-cost .c{background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 16px;font-size:15px;line-height:1.5;box-shadow:0 2px 5px rgba(46,58,63,.06);}
+  .sl-cost .c b{color:var(--sage);font-size:12.5px;margin-right:8px;letter-spacing:.04em;}
+  .sl-cost .c-n{font-size:12.5px;color:var(--muted);}
+  .sl-cost a{font-size:14px;font-weight:700;text-decoration:none;}
+  .b-foot{display:none;}
+  .b-foot br{display:none;}
+  .sl-nav{display:flex;justify-content:space-between;gap:12px;margin-top:6px;}
+  .sl-nav a{display:inline-flex;align-items:center;gap:8px;font-family:var(--hand);font-weight:600;font-size:16px;color:var(--ink);text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 18px;box-shadow:0 2px 6px rgba(46,58,63,.08);}
+  .sl-nav a i{font-style:normal;color:var(--sage);font-size:19px;line-height:1;}
+  .sl-nav .sl-sp{flex:1;}
+  .crumb{max-width:none;padding-left:40px;}
+}
+</style>
         <line x1="240" y1="40" x2="240" y2="262" stroke="#E7EDEA" stroke-width="1.6"/>
         <g transform="translate(10,0)">
           <text class="lg" x="106" y="24" text-anchor="middle">ぴったり（適合が良い）</text>
@@ -503,6 +546,14 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
 (function(){if(!('IntersectionObserver' in window))return;var ls=document.querySelectorAll('.pc-toc a[data-t]'),m={};ls.forEach(function(a){m[a.dataset.t]=a;});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ls.forEach(function(a){a.classList.remove('on');});var a=m[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-40% 0px -55% 0px'});
 Object.keys(m).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});})();
+</script>
+<script>
+/* 1画面スライド：← → キーで前後の素材へ（モニター表示のとき・ストーリーが見えているときだけ） */
+(function(){var n=document.querySelector('.sl-nav');if(!n)return;
+document.addEventListener('keydown',function(e){if(e.altKey||e.ctrlKey||e.metaKey||window.innerWidth<1240)return;
+if(document.documentElement.classList.contains('sm-open'))return;
+var b=document.getElementById('story');if(!b||b.getBoundingClientRect().bottom<window.innerHeight*.5)return;
+var a=n.querySelector(e.key==='ArrowRight'?'a.nx':e.key==='ArrowLeft'?'a.pv':null);if(a){e.preventDefault();location.href=a.href;}});})();
 </script>
 <footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
   <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
