@@ -944,6 +944,10 @@ html.sm-open{overflow:hidden;}
   .cb-l small{font-size:clamp(11.5px,1.4vh,13px);}
   .cb-note{font-size:clamp(13px,1.6vh,15px);}
 }
+
+.cb-k{flex-direction:column;text-align:center;line-height:1.3;}
+.cb-k small{display:block;font-size:10.5px;font-weight:700;color:var(--muted);margin-top:2px;}
+@media (max-width:759px){.cb-k small{display:none;}}
 </style>
 </head>
 <body>
@@ -1100,11 +1104,11 @@ html.sm-open{overflow:hidden;}
               <div class="cb-z hk"><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c3-6 7-8 11-8s8 2 11 8c-3 6-7 8-11 8s-8-2-11-8Z"/><circle cx="14" cy="14" r="3.5"/></svg><span class="cb-l">従来の方法</span></span></div>
               <div class="cb-z jh"><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4l6 3-4 8-6-3z"/><path d="M12 15l2 4M6 24h16M17 24c3-2 4-6 2-10"/><circle cx="17" cy="13" r="1.5"/></svg><span class="cb-l">精密な治療<small>マイクロスコープ</small></span></span></div></div>
             <div class="cb-x" aria-hidden="true">×</div>
-            <div class="cb-row"><span class="cb-k">時間</span>
-              <div class="cb-z hk"><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><circle cx="9" cy="16" r="1.2" fill="currentColor"/><circle cx="14" cy="16" r="1.2" fill="currentColor"/><circle cx="19" cy="16" r="1.2" fill="currentColor"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/></svg><span class="cb-l">1か月ほどかけて<small>少しずつ通う</small></span></span></div>
-              <div class="cb-z jh"><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><text x="14" y="21.5" text-anchor="middle" font-size="9" font-weight="800" fill="currentColor" stroke="none">1</text></svg><span class="cb-l">1日で<small>1回の通院で</small></span></span><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h12M8 24h12M9 4c0 6 10 7 10 10s-10 4-10 10M19 4c0 6-10 7-10 10s10 4 10 10"/></svg><span class="cb-l">丁寧に<small>時間をかけて</small></span></span></div></div>
+            <div class="cb-row"><span class="cb-k">時間<small><span class="nb">治す歯が</span><span class="nb">多いとき</span></small></span>
+              <div class="cb-z hk"><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><circle cx="9" cy="16" r="1.2" fill="currentColor"/><circle cx="14" cy="16" r="1.2" fill="currentColor"/><circle cx="19" cy="16" r="1.2" fill="currentColor"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/></svg><span class="cb-l">1か月に数本ずつ<small>順番に治します</small></span></span></div>
+              <div class="cb-z jh"><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><text x="14" y="21.5" text-anchor="middle" font-size="9" font-weight="800" fill="currentColor" stroke="none">1</text></svg><span class="cb-l">1日で<small>何本かまとめて</small></span></span><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h12M8 24h12M9 4c0 6 10 7 10 10s-10 4-10 10M19 4c0 6-10 7-10 10s10 4 10 10"/></svg><span class="cb-l">丁寧に<small>時間をかけて</small></span></span></div></div>
           </div>
-          <p class="cb-note"><span class="nb"><b>保険</b>で治す場合は、</span><span class="nb">左側の組み合わせになります（素材は2つ）。</span><span class="nb"><b>自費</b>（自由診療）では、</span><span class="nb">どの組み合わせも選べます。</span></p>
+          <p class="cb-note"><span class="nb"><b>保険</b>で治す場合は、</span><span class="nb">左側の組み合わせになります（素材は2つ）。</span><span class="nb"><b>自費</b>（自由診療）では、</span><span class="nb">どの組み合わせも選べます。</span><br><span class="nb">時間の違いは、</span><span class="nb">治す歯が多いときに大きくなります。</span><span class="nb">1〜2本なら、</span><span class="nb">大きな差はありません。</span></p>
         </figure>
       </div>
       <div class="why-story" aria-label="この先のつながり">
