@@ -249,6 +249,21 @@
     #treat-one .hub-card{flex-direction:row!important;align-items:center!important;padding:clamp(10px,1.4vh,16px) 18px;}
     #treat-one .hc-arrow{align-self:center!important;}
   }
+
+  /* 歯とからだのカード：PCは絵と見出しを大きく、説明はマウスを合わせると出す（2026-10-30） */
+  .tb-more{display:none;}
+  @media (min-width:1240px){
+    .tb-fact{position:relative;display:flex!important;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:clamp(10px,1.6vh,18px) 18px clamp(12px,1.6vh,18px)!important;cursor:pointer;transition:border-color .2s,box-shadow .2s;}
+    .tb-fact:hover,.tb-fact:focus,.tb-fact.open{border-color:var(--sage-2);box-shadow:0 8px 22px rgba(79,122,108,.14);outline:none;}
+    .tb-ill{width:clamp(260px,34vh,340px)!important;}
+    .tb-big{font-size:clamp(44px,7vh,64px)!important;line-height:1.15;margin:clamp(6px,1.4vh,16px) 0 clamp(2px,.6vh,8px);}
+    .tb-t{font-size:clamp(16px,2.2vh,20px)!important;font-weight:800;}
+    .tb-more{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:800;color:var(--sage);border:1px solid var(--line);border-radius:999px;padding:1px 10px;}
+    .tb-more::before{content:"i";display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:var(--sage);color:#fff;font-size:10px;font-style:italic;font-weight:800;}
+    .tb-d{position:absolute;left:10px;right:10px;top:calc(100% - 6px);z-index:15;background:#fff;border:1.5px solid var(--sage-2);border-radius:12px;padding:12px 16px;box-shadow:0 12px 28px rgba(46,58,63,.18);text-align:left;font-size:clamp(14px,1.8vh,16px)!important;line-height:1.75!important;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .18s,transform .18s,visibility .18s;}
+    .tb-d::before{content:"";position:absolute;top:-8px;left:50%;margin-left:-8px;border:8px solid transparent;border-top:0;border-bottom-color:var(--sage-2);}
+    .tb-fact:hover .tb-d,.tb-fact:focus .tb-d,.tb-fact.open .tb-d{opacity:1;visibility:visible;transform:none;}
+  }
 </style>
 </head>
 <body>
@@ -357,7 +372,7 @@
     <p class="lead">歯の本数は、かむ力や、からだの健康とつながっています。</p>
 
     <div class="tb-facts">
-      <div class="tb-fact">
+      <div class="tb-fact" tabindex="0">
         <svg class="tb-ill" viewBox="0 0 300 92" role="img" aria-label="詰めもの、被せもの、神経の治療と進むにつれて、歯が小さくなっていく様子のイラスト">
   <g fill="#fff" stroke="#4F7A6C" stroke-width="3" stroke-linejoin="round">
     <path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z"/>
@@ -372,17 +387,17 @@
   <g font-size="11" fill="#54636A" text-anchor="middle" font-weight="700"><text x="31" y="88">詰めもの</text><text x="104" y="88">被せもの</text><text x="176" y="88">神経の治療</text><text x="245" y="88">抜歯</text></g>
 </svg>
         <span class="tb-t">作り直すたびに、歯は小さくなります</span>
-        <span class="tb-d">詰めもの・被せものを作り直すたびに、歯は少しずつ削られます。くり返すと、詰めもの → 被せもの → 神経の治療と進み、抜歯になることがあります。</span>
+        <span class="tb-more" aria-hidden="true">くわしく</span><span class="tb-d">詰めもの・被せものを作り直すたびに、歯は少しずつ削られます。くり返すと、詰めもの → 被せもの → 神経の治療と進み、抜歯になることがあります。</span>
       </div>
-      <div class="tb-fact">
+      <div class="tb-fact" tabindex="0">
         <span class="tb-big">約2.4倍</span>
         <span class="tb-t">かむ力が衰えると、介護が必要になりやすくなります</span>
-        <span class="tb-d">かむ・飲みこむ・話す力が衰えることを「オーラルフレイル」といいます。千葉県柏市の調査では、オーラルフレイルの方は、介護が必要になる割合が約2.4倍でした。</span>
+        <span class="tb-more" aria-hidden="true">くわしく</span><span class="tb-d">かむ・飲みこむ・話す力が衰えることを「オーラルフレイル」といいます。千葉県柏市の調査では、オーラルフレイルの方は、介護が必要になる割合が約2.4倍でした。</span>
       </div>
-      <div class="tb-fact">
+      <div class="tb-fact" tabindex="0">
         <span class="tb-big">20本以上</span>
         <span class="tb-t">歯が20本以上ある人は、医療費が少ない傾向があります</span>
-        <span class="tb-d">全国の医療の記録を調べた研究では、歯が20本以上ある人のほうが、歯科以外の医療費が少ない傾向がありました。かみ合わせの支えがいちばん少ない人たちは、いちばん多い人たちの約2.2倍でした。</span>
+        <span class="tb-more" aria-hidden="true">くわしく</span><span class="tb-d">全国の医療の記録を調べた研究では、歯が20本以上ある人のほうが、歯科以外の医療費が少ない傾向がありました。かみ合わせの支えがいちばん少ない人たちは、いちばん多い人たちの約2.2倍でした。</span>
       </div>
     </div>
     <p class="tb-caution">これらは「関係がある」ことを示す調査です。歯を治せば医療費が必ず減る、という意味ではありません。</p>
@@ -608,6 +623,11 @@
 function o(x){p.hidden=!x;v.hidden=!x;b.setAttribute('aria-expanded',x);document.documentElement.classList.toggle('sm-open',x);if(x)c.focus();else b.focus();}
 b.addEventListener('click',function(){o(p.hidden);});c.addEventListener('click',function(){o(false);});v.addEventListener('click',function(){o(false);});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o(false);});})();
+</script>
+<script>
+/* カードを押しても説明が出る（タッチ画面のモニター用） */
+(function(){var cs=document.querySelectorAll('.tb-fact');cs.forEach(function(c){c.addEventListener('click',function(){var o=c.classList.contains('open');cs.forEach(function(x){x.classList.remove('open');});if(!o)c.classList.add('open');});});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')cs.forEach(function(x){x.classList.remove('open');});});})();
 </script>
 </body>
 </html>
