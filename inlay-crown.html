@@ -948,6 +948,39 @@ html.sm-open{overflow:hidden;}
 .cb-k{flex-direction:column;text-align:center;line-height:1.3;}
 .cb-k small{display:block;font-size:10.5px;font-weight:700;color:var(--muted);margin-top:2px;}
 @media (max-width:759px){.cb-k small{display:none;}}
+
+/* 組み合わせの図：1つの枠に、保険の範囲を点線でくくる（2026-10-30） */
+.c2{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px;}
+.c2-k{grid-column:1 / -1;display:flex;flex-direction:column;gap:2px;margin-top:6px;}
+.c2-k b{font-size:14px;color:var(--ink);}
+.c2-k span{font-size:12px;color:var(--ink-soft);line-height:1.55;}
+.c2-k:nth-of-type(1){grid-row:auto!important;}
+.c2-o{grid-column:span var(--s);display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 4px;color:#465C92;position:relative;z-index:1;}
+.c2-o.hk{color:var(--sage);background:#F6FAF8;border-color:#9FC1B5;}
+.c2-o .cb-l{font-size:12.5px;}
+.c2-hk{grid-column:1 / -1;font-size:12px;color:var(--ink-soft);}
+.c2-hk b{display:inline-block;border:2px dashed var(--sage-2);background:#F6FAF8;color:var(--sage);border-radius:8px;padding:1px 10px;font-weight:800;}
+.c2-hk b::after{content:"";}
+@media (max-width:1239px){.c2-o.hk{border:2px dashed var(--sage-2);}.c2-hk b::before{content:"点線の枠＝";}}
+@media (max-width:759px){.c2-o .cb-l{font-size:11.5px;}}
+.c2-k{grid-row:auto!important;}
+@media (min-width:1240px){
+  .c2{grid-template-columns:minmax(0,1.45fr) repeat(4,minmax(0,1fr));column-gap:10px;row-gap:clamp(10px,1.6vh,18px);padding-top:clamp(24px,3vh,30px);flex:1;align-content:center;}
+  .c2-k{grid-column:1;margin:0;justify-content:center;padding-right:6px;}
+  .c2-k:nth-of-type(1){grid-row:1!important;} 
+  .c2 .c2-k[style*="grid-row:2"]{grid-row:2!important;}
+  .c2 .c2-k[style*="grid-row:3"]{grid-row:3!important;}
+  .c2-k b{font-size:clamp(16px,2vh,19px);}
+  .c2-k span{font-size:clamp(12px,1.45vh,14px);}
+  .c2-o{grid-row:var(--r);grid-column:var(--c) / span var(--s);flex-direction:row;text-align:left;justify-content:flex-start;gap:8px;padding:clamp(8px,1.2vh,14px) 10px;}
+  .c2-o .cb-l{font-size:clamp(13.5px,1.6vh,15.5px);white-space:nowrap;}
+  .c2-o{gap:6px!important;padding-left:8px!important;padding-right:6px!important;}
+  .c2-k span{font-size:clamp(12px,1.4vh,13.5px)!important;}
+  .c2-o .cb-ic{width:clamp(24px,3vh,30px);height:clamp(24px,3vh,30px);flex-basis:clamp(24px,3vh,30px);}
+  .why-combo .cb-note{margin-top:clamp(12px,1.8vh,18px);}
+  .c2-hk{display:block;grid-column:2 / 4;grid-row:1 / 4;margin:-20px -6px -8px;border:2.5px dashed var(--sage-2);border-radius:14px;background:#E6EFEB;position:relative;z-index:0;}
+  .c2-hk b{position:absolute;top:-14px;left:12px;background:var(--sage);color:#fff;font-size:clamp(12.5px,1.5vh,14px);padding:2px 12px;border-radius:999px;white-space:nowrap;}
+}
 </style>
 </head>
 <body>
@@ -1094,21 +1127,16 @@ html.sm-open{overflow:hidden;}
         </figure>
         <figure class="why-fig why-combo">
           <div class="why-h"><span class="nb">素材・治し方・時間を、</span><span class="nb">組み合わせて選べます</span></div>
-          <div class="cb">
-            <div class="cb-head"><span></span><span class="cb-hh"><b class="cb-tag hk">保険</b>保険で選べるもの</span><span class="cb-hh"><b class="cb-tag jh">自費</b>自費では、こちらも</span></div>
-            <div class="cb-row"><span class="cb-k">素材</span>
-              <div class="cb-z hk"><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><rect x="10.5" y="7.5" width="7" height="4" rx="1" fill="#AEB8BD" stroke="none"/></svg><span class="cb-l">合金<small>金属</small></span></span><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l9 5v10l-9 5-9-5V9z"/><path d="M5 9l9 5 9-5M14 14v10"/></svg><span class="cb-l">ブロックレジン<small>CAD/CAM</small></span></span></div>
-              <div class="cb-z jh"><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><path d="M22 2v4M20 4h4" stroke-width="1.6"/></svg><span class="cb-l">セラミック</span></span><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><rect x="10.5" y="7.5" width="7" height="4" rx="1" fill="#A8692A" stroke="none"/></svg><span class="cb-l">ゴールド</span></span></div></div>
-            <div class="cb-x" aria-hidden="true">×</div>
-            <div class="cb-row"><span class="cb-k">治し方</span>
-              <div class="cb-z hk"><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c3-6 7-8 11-8s8 2 11 8c-3 6-7 8-11 8s-8-2-11-8Z"/><circle cx="14" cy="14" r="3.5"/></svg><span class="cb-l">従来の方法</span></span></div>
-              <div class="cb-z jh"><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4l6 3-4 8-6-3z"/><path d="M12 15l2 4M6 24h16M17 24c3-2 4-6 2-10"/><circle cx="17" cy="13" r="1.5"/></svg><span class="cb-l">精密な治療<small>マイクロスコープ</small></span></span></div></div>
-            <div class="cb-x" aria-hidden="true">×</div>
-            <div class="cb-row"><span class="cb-k">時間<small><span class="nb">治す歯が</span><span class="nb">多いとき</span></small></span>
-              <div class="cb-z hk"><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><circle cx="9" cy="16" r="1.2" fill="currentColor"/><circle cx="14" cy="16" r="1.2" fill="currentColor"/><circle cx="19" cy="16" r="1.2" fill="currentColor"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/></svg><span class="cb-l">1か月に数本ずつ<small>順番に治します</small></span></span></div>
-              <div class="cb-z jh"><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><text x="14" y="21.5" text-anchor="middle" font-size="9" font-weight="800" fill="currentColor" stroke="none">1</text></svg><span class="cb-l">1日で<small>何本かまとめて</small></span></span><span class="cb-o"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h12M8 24h12M9 4c0 6 10 7 10 10s-10 4-10 10M19 4c0 6-10 7-10 10s10 4 10 10"/></svg><span class="cb-l">丁寧に<small>時間をかけて</small></span></span></div></div>
+          <div class="c2">
+            <div class="c2-hk" aria-hidden="true"><b>保険が適用されるもの</b></div>
+            <div class="c2-k" style="grid-row:1"><b>素材</b><span><span class="nb">劣化する素材と、</span><span class="nb">しにくい素材があります。</span><span class="nb">むし歯が再発したときの、</span><span class="nb">見つけやすさも変わります</span></span></div>
+            <span class="c2-o hk" style="--r:1;--c:2;--s:1"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><rect x="10.5" y="7.5" width="7" height="4" rx="1" fill="#AEB8BD" stroke="none"/></svg><span class="cb-l">合金<small>金属</small></span></span><span class="c2-o hk" style="--r:1;--c:3;--s:1"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l9 5v10l-9 5-9-5V9z"/><path d="M5 9l9 5 9-5M14 14v10"/></svg><span class="cb-l">ブロックレジン<small>CAD/CAM</small></span></span><span class="c2-o" style="--r:1;--c:4;--s:1"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><path d="M22 2v4M20 4h4" stroke-width="1.6"/></svg><span class="cb-l">セラミック</span></span><span class="c2-o" style="--r:1;--c:5;--s:1"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><rect x="10.5" y="7.5" width="7" height="4" rx="1" fill="#A8692A" stroke="none"/></svg><span class="cb-l">ゴールド</span></span>
+            <div class="c2-k" style="grid-row:2"><b>治し方</b><span><span class="nb">1回の治療の時間、</span><span class="nb">詰めもの・被せものの合い方、</span><span class="nb">むし歯の再発しやすさが変わります</span></span></div>
+            <span class="c2-o hk" style="--r:2;--c:2;--s:2"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c3-6 7-8 11-8s8 2 11 8c-3 6-7 8-11 8s-8-2-11-8Z"/><circle cx="14" cy="14" r="3.5"/></svg><span class="cb-l">従来の方法</span></span><span class="c2-o" style="--r:2;--c:4;--s:2"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4l6 3-4 8-6-3z"/><path d="M12 15l2 4M6 24h16M17 24c3-2 4-6 2-10"/><circle cx="17" cy="13" r="1.5"/></svg><span class="cb-l">精密な治療<small>マイクロスコープ</small></span></span>
+            <div class="c2-k" style="grid-row:3"><b>時間</b><span><span class="nb">治す歯が多いとき、</span><span class="nb">治療全体の期間が変わります</span></span></div>
+            <span class="c2-o hk" style="--r:3;--c:2;--s:2"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><circle cx="9" cy="16" r="1.2" fill="currentColor"/><circle cx="14" cy="16" r="1.2" fill="currentColor"/><circle cx="19" cy="16" r="1.2" fill="currentColor"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/></svg><span class="cb-l">毎月、<small>少しずつ</small></span></span><span class="c2-o" style="--r:3;--c:4;--s:1"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><text x="14" y="21.5" text-anchor="middle" font-size="9" font-weight="800" fill="currentColor" stroke="none">1</text></svg><span class="cb-l">1日で、<small>まとめて</small></span></span><span class="c2-o" style="--r:3;--c:5;--s:1"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><path d="M10 17l3 3 5-6"/></svg><span class="cb-l">予定に、<small>合わせて</small></span></span>
           </div>
-          <p class="cb-note"><span class="nb"><b>保険</b>で治す場合は、</span><span class="nb">左側の組み合わせになります（素材は2つ）。</span><span class="nb"><b>自費</b>（自由診療）では、</span><span class="nb">どの組み合わせも選べます。</span><br><span class="nb">時間の違いは、</span><span class="nb">治す歯が多いときに大きくなります。</span><span class="nb">1〜2本なら、</span><span class="nb">大きな差はありません。</span></p>
+          <p class="cb-note"><span class="nb"><b>自費</b>（自由診療）では、</span><span class="nb">この中のどれでも組み合わせて選べます。</span><span class="nb"><b>保険</b>で治す場合は、</span><span class="nb">点線の中から選びます。</span><br><span class="nb">時間の違いは、</span><span class="nb">治す歯が多いときに大きくなります。</span><span class="nb">1〜2本なら、</span><span class="nb">大きな差はありません。</span></p>
         </figure>
       </div>
       <div class="why-story" aria-label="この先のつながり">
