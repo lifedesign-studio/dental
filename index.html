@@ -119,6 +119,16 @@
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease;}
   .reveal.show{opacity:1;transform:none;}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+  /* 歯と、からだのつながり（2026-10-30） */
+  .tb-flow{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:10px;}
+  .tb-flow li{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 58px;display:flex;flex-direction:column;gap:4px;}
+  .tb-no{position:absolute;left:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--sage);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px;}
+  .tb-t{font-weight:800;font-size:15.5px;line-height:1.5;}
+  .tb-d{font-size:13.5px;color:var(--ink-soft);line-height:1.75;}
+  .tb-flow li + li::before{content:"↓";position:absolute;left:25px;top:-14px;font-size:13px;color:var(--sage);font-weight:800;}
+  .tb-caution{font-size:12.5px;color:var(--muted);margin:10px 0 0;line-height:1.7;}
+  .tb-cite{font-size:11px;color:var(--muted);line-height:1.7;margin:16px 0 0;border-top:1px solid var(--line);padding-top:8px;}
 </style>
 </head>
 <body>
@@ -238,6 +248,42 @@
     </div>
 
     <a class="stage-list-link" href="life-stage.html">5つの時期の一覧（比較表）を見る<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<!-- 歯と、からだのつながり（2026-10-30） -->
+<section class="section" id="teeth-body">
+  <div class="wrap reveal">
+    <p class="eyebrow">歯と、からだのつながり</p>
+    <h2 class="title">歯が多く残っている人ほど、医療費が少ない傾向があります</h2>
+    <p class="lead">1本の歯の治し方が、この先のからだの健康にもつながっていきます。</p>
+
+    <ol class="tb-flow">
+      <li>
+        <span class="tb-no">1</span>
+        <span class="tb-t">作り直すたびに、歯は小さくなります</span>
+        <span class="tb-d">詰めもの・被せものを作り直すたびに、歯は少しずつ削られます。くり返すと、詰めもの → 被せもの → 神経の治療と進み、抜歯になることがあります。</span>
+      </li>
+      <li>
+        <span class="tb-no">2</span>
+        <span class="tb-t">歯が減ると、かむ力が衰えやすくなります</span>
+        <span class="tb-d">かむ・飲みこむ・話す力が衰えることを「オーラルフレイル」といいます。千葉県柏市の調査では、オーラルフレイルの方は、介護が必要になる割合が約2.4倍でした。</span>
+      </li>
+      <li>
+        <span class="tb-no">3</span>
+        <span class="tb-t">歯が少ない人ほど、医療費が多い傾向があります</span>
+        <span class="tb-d">全国の医療の記録を調べた研究では、歯が20本以上ある人のほうが、歯科以外の医療費が少ない傾向がありました。かみ合わせの支えがいちばん少ない人たちは、いちばん多い人たちの約2.2倍でした。</span>
+      </li>
+    </ol>
+    <p class="tb-caution">これらは「関係がある」ことを示す調査です。歯を治せば医療費が必ず減る、という意味ではありません。</p>
+
+    <div class="note">
+      <p><b>だからこそ、1本の歯の治し方から考えます。</b>作り直しの少ない治し方を選ぶことは、歯を残すことにつながります。素材ごとの違いは、インレー・クラウン治療のページでご覧いただけます。</p>
+    </div>
+    <div style="text-align:center;">
+      <a class="stage-list-link" href="inlay-crown.html">1本の歯の治し方を見る（インレー・クラウン治療）<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <p class="tb-cite">出典：Tanaka T, et al. J Gerontol A Biol Sci Med Sci 2018（柏市の高齢者約2,000人の追跡調査）・厚生労働省 資料／山本龍生ほか 日本歯科医療管理学会雑誌 2016;51(3):136-142（全国の医療の記録・40歳以上 約223万人）／Murata T, et al. J Health Econ Outcomes Res 2020;7(1)（健康保険の記録 約129万人）</p>
   </div>
 </section>
 
