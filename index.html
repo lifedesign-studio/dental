@@ -183,6 +183,20 @@
   .sm-g{font-size:12px;font-weight:800;color:var(--sage);letter-spacing:.08em;margin:14px 2px 6px;}
   .sm-item{padding:10px 12px;margin-bottom:6px;}
   .nb{display:inline-block;}
+
+  /* 歯と、からだ → 10チェック（2026-10-30） */
+  .tb-facts{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px;}
+  @media (min-width:760px){.tb-facts{grid-template-columns:1fr 1fr;}}
+  .tb-fact{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;}
+  .tb-big{font-size:28px;font-weight:800;color:var(--sage);line-height:1.2;}
+  .tb-bridge{margin:22px 0 0;font-size:16px;font-weight:800;color:var(--ink);text-align:center;}
+  .tc-frame{margin-top:14px;background:var(--paper);border:2px solid var(--sage-2);border-radius:18px;padding:20px 20px 22px;text-align:center;scroll-margin-top:12px;}
+  .tc-h{font-size:19px;margin:0 0 8px;line-height:1.5;}
+  .tc-lead{font-size:14px;color:var(--ink-soft);margin:0 auto 14px;max-width:620px;line-height:1.8;}
+  .tc-slots{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:6px;}
+  @media (min-width:760px){.tc-slots{grid-template-columns:1fr 1.4fr;}}
+  .tc-slot{min-height:120px;border:1.5px dashed var(--sage-2);border-radius:12px;background:repeating-linear-gradient(45deg,#fff 0 10px,var(--soft) 10px 20px);display:flex;align-items:center;justify-content:center;color:var(--sage);font-size:13px;font-weight:700;}
+  @media (min-width:1000px){.tb-big{font-size:34px;}.tc-h{font-size:22px;}.tc-lead{font-size:15px;}.tb-bridge{font-size:18px;}}
 </style>
 </head>
 <body>
@@ -244,6 +258,7 @@
   <div class="sm-g">このページ</div>
   <a class="sm-item" href="#concept"><span class="sm-t"><b>いい歯で、いい人生を。</b></span><i>↓</i></a>
   <a class="sm-item" href="#teeth-body"><span class="sm-t"><b>歯と、からだのつながり</b></span><i>↓</i></a>
+  <a class="sm-item" href="ten-check.html"><span class="sm-t"><b>いい歯の10チェック</b></span><i>→</i></a>
   <a class="sm-item" href="#ages"><span class="sm-t"><b>いまの年代で、大切にしたいこと</b></span><i>↓</i></a>
   <div class="sm-g">1本の歯を治す</div>
   <a class="sm-item" href="resin.html"><span class="sm-t"><b>レジン修復</b></span><i>→</i></a>
@@ -277,43 +292,47 @@
     <p class="eyebrow">LIFE DENTAL CLINIC</p>
     <h1><span class="nb">いい歯で、</span><span class="nb">いい人生を。</span></h1>
     <p class="lead">歯は、食べる・話す・笑うを支えています。</p>
-    <p class="lead">私たちは、いまの1本を治すだけでなく、これから先も自分の歯でかめることを大切にしています。</p>
+    <p class="lead">私たちは、目の前の1本だけを見て治療を決めません。</p>
+    <p class="lead">これから先の長い暮らしを見すえて、より良い生活につながる治療をご提案します。</p>
     <p class="concept-what">このページでは、治療の選び方とおおよその費用をまとめました。</p>
   </div>
 </header>
 
-<!-- 歯と、からだのつながり（2026-10-30） -->
+<!-- 歯と、からだのつながり → いい歯の10チェックへ（2026-10-30） -->
 <section class="section soft" id="teeth-body">
   <div class="wrap reveal">
     <p class="eyebrow">歯と、からだのつながり</p>
     <h2 class="title">歯が多く残っている人ほど、医療費が少ない傾向があります</h2>
-    <p class="lead">1本の歯の治し方が、この先のからだの健康にもつながっていきます。</p>
+    <p class="lead">歯の本数は、かむ力や、からだの健康とつながっています。</p>
 
-    <ol class="tb-flow">
-      <li>
-        <span class="tb-no">1</span>
-        <span class="tb-t">作り直すたびに、歯は小さくなります</span>
-        <span class="tb-d">詰めもの・被せものを作り直すたびに、歯は少しずつ削られます。くり返すと、詰めもの → 被せもの → 神経の治療と進み、抜歯になることがあります。</span>
-      </li>
-      <li>
-        <span class="tb-no">2</span>
-        <span class="tb-t">歯が減ると、かむ力が衰えやすくなります</span>
+    <div class="tb-facts">
+      <div class="tb-fact">
+        <span class="tb-big">約2.4倍</span>
+        <span class="tb-t">かむ力が衰えると、介護が必要になりやすくなります</span>
         <span class="tb-d">かむ・飲みこむ・話す力が衰えることを「オーラルフレイル」といいます。千葉県柏市の調査では、オーラルフレイルの方は、介護が必要になる割合が約2.4倍でした。</span>
-      </li>
-      <li>
-        <span class="tb-no">3</span>
-        <span class="tb-t">歯が少ない人ほど、医療費が多い傾向があります</span>
+      </div>
+      <div class="tb-fact">
+        <span class="tb-big">20本以上</span>
+        <span class="tb-t">歯が20本以上ある人は、医療費が少ない傾向があります</span>
         <span class="tb-d">全国の医療の記録を調べた研究では、歯が20本以上ある人のほうが、歯科以外の医療費が少ない傾向がありました。かみ合わせの支えがいちばん少ない人たちは、いちばん多い人たちの約2.2倍でした。</span>
-      </li>
-    </ol>
+      </div>
+    </div>
     <p class="tb-caution">これらは「関係がある」ことを示す調査です。歯を治せば医療費が必ず減る、という意味ではありません。</p>
 
-    <div class="note">
-      <p><b>だからこそ、1本の歯の治し方から考えます。</b>作り直しの少ない治し方を選ぶことは、歯を残すことにつながります。素材ごとの違いは、インレー・クラウン治療のページでご覧いただけます。</p>
+    <p class="tb-bridge">歯を失う前に、まず、いまのお口の状態を知ることから始めます。</p>
+
+    <!-- いい歯の10チェックへの説明（フレーム・中身は準備中） -->
+    <div class="tc-frame" id="ten-check">
+      <p class="eyebrow">いい歯の10チェック</p>
+      <h3 class="tc-h">いまのお口を、10の項目で確かめます</h3>
+      <p class="tc-lead">初めての検査のあとに、お口の状態を10の項目でお伝えする紙です。「かむのに使える歯が、20本以上ある」も、10の項目のひとつです。</p>
+      <div class="tc-slots">
+        <div class="tc-slot tc-slot-ill" data-slot="TC-ILL">図・写真の枠（準備中）</div>
+        <div class="tc-slot tc-slot-text" data-slot="TC-TEXT">説明文の枠（準備中）</div>
+      </div>
+      <a class="stage-list-link" href="ten-check.html">いい歯の10チェックの、くわしい説明を見る<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
-    <div style="text-align:center;">
-      <a class="stage-list-link" href="inlay-crown.html">1本の歯の治し方を見る（インレー・クラウン治療）<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
+
     <p class="tb-cite">出典：Tanaka T, et al. J Gerontol A Biol Sci Med Sci 2018（柏市の高齢者約2,000人の追跡調査）・厚生労働省 資料／山本龍生ほか 日本歯科医療管理学会雑誌 2016;51(3):136-142（全国の医療の記録・40歳以上 約223万人）／Murata T, et al. J Health Econ Outcomes Res 2020;7(1)（健康保険の記録 約129万人）</p>
   </div>
 </section>
@@ -498,6 +517,7 @@
   <ul>
     <li><a href="#concept" data-t="concept">いい歯で、いい人生を</a></li>
     <li><a href="#teeth-body" data-t="teeth-body">歯と、からだのつながり</a></li>
+    <li><a href="#ten-check" data-t="ten-check">いい歯の10チェック</a></li>
     <li><a href="#treat-one" data-t="treat-one">1本の歯を治す</a></li>
     <li><a href="#treat-replace" data-t="treat-replace">失った歯を補う</a></li>
     <li><a href="#treat-whole" data-t="treat-whole">お口全体を整える</a></li>
