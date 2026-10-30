@@ -306,6 +306,41 @@ html.sm-open{overflow:hidden;}
 .sm-panel .sm-item.sm-site{padding:10px 12px;margin-bottom:6px;}
 .sm-top{background:var(--soft);}
 .sm-t small{display:block;}
+
+/* 親ページ・トップと同じ部品をスライドに（2026-10-30 院長指示） */
+.nb{display:inline-block;max-width:100%;}
+.w-ic{width:22px;height:24px;vertical-align:-6px;margin-right:6px;}
+.sl-combo{display:grid;grid-template-columns:1fr;gap:8px;margin:18px 0 6px;}
+.sc-title{font-size:13px;font-weight:800;color:var(--ink-soft);text-align:center;}
+.sc-marks{display:flex;flex-direction:column;gap:2px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;}
+.sc-h{font-size:11.5px;font-weight:800;color:var(--ink-soft);}
+.sc-row{display:flex;align-items:center;gap:3px;}
+.sc-row i{font-style:normal;font-size:11px;color:var(--muted);width:2.6em;}
+.sc-row svg{width:20px;height:20px;}
+.sc-card{position:relative;display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px 10px 8px;color:var(--sage);min-width:0;}
+.sc-k{position:absolute;top:5px;right:10px;font-size:11px;font-weight:800;color:var(--muted);}
+.sc-card .c3-m{display:flex;align-items:center;gap:6px;}
+.sc-card .cb-ic{width:24px;height:24px;flex:0 0 24px;}
+.sc-card .cb-l{font-size:13.5px;font-weight:800;color:var(--ink);line-height:1.35;}
+.sc-card .cb-l small{display:block;font-size:11px;font-weight:700;color:var(--muted);}
+.sc-card .c3-hk{position:absolute;top:-1px;left:-1px;background:var(--sage);color:#fff;font-size:10.5px;font-weight:800;padding:1px 9px;border-radius:10px 0 8px 0;}
+.sc-card .c3-tags{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:3px;}
+.sc-card .c3-tags i{font-style:normal;font-size:10.5px;font-weight:700;color:var(--ink-soft);background:var(--soft);border-radius:999px;padding:1px 7px;white-space:nowrap;}
+.sc-note{font-size:12px;color:var(--muted);text-align:center;margin:0;}
+@media (min-width:760px){.sl-combo{grid-template-columns:auto repeat(3,minmax(0,1fr));align-items:stretch;}.sc-title,.sc-note{grid-column:1 / -1;}}
+@media (min-width:1240px){
+  .polaroid,.stage.rev .polaroid{width:min(78%,19vh)!important;}
+  .sl-combo{margin:clamp(6px,1vh,12px) 0 2px;gap:10px;}
+  .sc-title{display:none;}
+  .sc-card{padding-top:clamp(22px,2.6vh,28px);}
+  .sc-card .cb-l{font-size:clamp(13.5px,1.6vh,15.5px);white-space:nowrap;}
+  .sc-card .c3-tags i{font-size:clamp(10.5px,1.2vh,12px);}
+  .sc-row svg{width:clamp(18px,2.2vh,22px);height:clamp(18px,2.2vh,22px);}
+  #story{position:relative;}
+  .sl-nav{position:absolute;top:clamp(46px,6vh,64px);left:clamp(24px,2.5vw,48px);right:clamp(96px,6vw,120px);margin:0!important;pointer-events:none;}
+  .sl-nav a{pointer-events:auto;font-size:15px!important;padding:6px 16px!important;}
+  .sc-note{margin-top:-2px;}
+}
 </style>
 </head>
 <body>
@@ -359,7 +394,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="stage">
       <div class="polaroid"><img src="ic-metal-1.jpg" alt="銀色の詰めものを入れた奥歯のイラスト" loading="lazy"><span class="tape t1"></span></div>
       <div class="kraft">
-        <div class="when">今</div>
+        <div class="when"><svg class="w-ic" viewBox="2 14 56 60" aria-hidden="true"><g transform="translate(0.0 0.0) scale(1)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="3.00" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#AEB8BD"/></g></svg>今</div>
         <h3>銀色の詰めものを入れる</h3>
         <ul><li>保険の範囲で、費用を抑えて治せる</li><li>金属は丈夫で、薄くても割れにくい</li></ul>
       </div>
@@ -370,8 +405,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="stage rev">
       <div class="polaroid"><img src="ic-metal-2.jpg" alt="詰めものの下でむし歯が再発した奥歯のイラスト" loading="lazy"><span class="tape t3"></span></div>
       <div class="kraft"><span class="pin" style="left:50%;margin-left:-15px;"><svg width="30" height="38"><use href="#pin-blue"/></svg></span>
-        <div class="when">再発</div>
-        <h3>詰めものの下で、むし歯が再発</h3>
+        <div class="when"><svg class="w-ic" viewBox="2 14 56 60" aria-hidden="true"><g transform="translate(0.0 0.0) scale(1)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="3.00" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#AEB8BD"/><circle cx="35" cy="34" r="4.5" fill="#8A6A4E"/></g></svg>再発</div>
+        <h3><span class="nb">詰めものの下で、</span><span class="nb">むし歯が再発</span></h3>
         <ul><li>作り直しが多くなる時期</li><li>金属の下は、外からもレントゲンでも見えにくい</li></ul>
         <a class="more" href="#k1">解説1　なぜ5〜7年？ →</a>
       </div>
@@ -382,8 +417,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="stage">
       <div class="polaroid"><img src="ic-metal-3.jpg" alt="金属の被せものに変わった奥歯のイラスト" loading="lazy"><span class="tape t1"></span></div>
       <div class="kraft">
-        <div class="when">作り直し</div>
-        <h3>前より大きく削って、被せものに</h3>
+        <div class="when"><svg class="w-ic" viewBox="2 14 56 60" aria-hidden="true"><g transform="translate(0.0 0.0) scale(1)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="3.00" stroke-linejoin="round"/><path d="M9 30c8-9 34-9 42 0" fill="none" stroke="#AEB8BD" stroke-width="7" stroke-linecap="round"/></g></svg>作り直し</div>
+        <h3><span class="nb">前より大きく削って、</span><span class="nb">被せものに</span></h3>
         <ul><li>詰めもの → 被せもの → 神経の治療、と一段ずつ大きくなる</li><li>残る歯が、少しずつ減っていく</li></ul>
         <a class="more" href="#k2">解説2　なぜ大きくなる？ →</a>
       </div>
@@ -394,7 +429,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="stage rev">
       <div class="polaroid"><img src="ic-metal-4.jpg" alt="金属の土台が入った根が割れ、歯ぐきが腫れた奥歯のイラスト" loading="lazy"><span class="tape t3"></span></div>
       <div class="kraft"><span class="pin" style="left:38%;"><svg width="30" height="38"><use href="#pin-red"/></svg></span>
-        <div class="when">その先</div>
+        <div class="when"><svg class="w-ic" viewBox="2 14 56 60" aria-hidden="true"><g transform="translate(0.0 0.0) scale(1)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="3.00" stroke-linejoin="round" stroke-dasharray="4 4"/><path d="M9 30c8-9 34-9 42 0" fill="none" stroke="#AEB8BD" stroke-width="7" stroke-linecap="round"/><path d="M30 36v26" stroke="#A05A6B" stroke-width="3" stroke-linecap="round"/></g></svg>その先</div>
         <h3>抜歯になることがある</h3>
         <ul><li>神経の治療のあと、金属の土台が入った歯は、根が割れることがある</li><li>根が割れると、歯ぐきが腫れて、急に抜歯になることがある</li></ul>
         <a class="more" href="#k3">解説3　歯が割れるのは？ →</a>
@@ -402,7 +437,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     </div>
 
     <p class="b-sum"><span>費用を抑えて、いまの1本を治す素材。</span><br><span>作り直しには、あまり向いていない。</span></p>
-    <div class="sl-cost"><span class="c"><b>通院</b>30分 × 2回</span><span class="c"><b>インレー</b>約3,000〜6,000円</span><span class="c"><b>クラウン</b>約7,000〜11,000円</span><span class="c"><b>保証</b>保険の決まりによる</span><span class="c-n">保険3割負担のおおよその幅</span><a href="#cost">費用と通院の回数へ ↓</a></div>
+    <div class="sl-combo"><p class="sc-title">この素材の、選び方の組み合わせ</p><div class="sc-marks"><span class="sc-h">最初の時間と費用</span><span class="sc-row"><i>時間</i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#fff" stroke="#4E6478" stroke-width="2.2"/><path d="M12 6.5v5.5l3.5 2.5" fill="none" stroke="#4E6478" stroke-width="2" stroke-linecap="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#fff" stroke="#4E6478" stroke-width="2.2"/><path d="M12 6.5v5.5l3.5 2.5" fill="none" stroke="#4E6478" stroke-width="2" stroke-linecap="round"/></svg></span><span class="sc-row"><i>費用</i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#fff" stroke="#4E6478" stroke-width="2.2"/><text x="12" y="16.5" text-anchor="middle" font-size="12" font-weight="800" fill="#4E6478">¥</text></svg></span></div><div class="sc-card hk"><b class="c3-hk">保険適用</b><span class="sc-k">素材</span><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><rect x="10.5" y="7.5" width="7" height="4" rx="1" fill="#AEB8BD" stroke="none"/></svg><span class="cb-l">合金<small>金属</small></span></span><span class="c3-tags"><i>#発見しにくい</i><i>#劣化</i><i>#腐食</i></span></div><div class="sc-card hk"><b class="c3-hk">保険適用</b><span class="sc-k">治し方</span><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c3-6 7-8 11-8s8 2 11 8c-3 6-7 8-11 8s-8-2-11-8Z"/><circle cx="14" cy="14" r="3.5"/></svg><span class="cb-l">従来の方法</span></span><span class="c3-tags"><i>#肉眼で治療</i><i>#1回の治療が短め</i></span></div><div class="sc-card hk"><b class="c3-hk">保険適用</b><span class="sc-k">時間</span><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><circle cx="9" cy="16" r="1.2" fill="currentColor"/><circle cx="14" cy="16" r="1.2" fill="currentColor"/><circle cx="19" cy="16" r="1.2" fill="currentColor"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/></svg><span class="cb-l">毎月、少しずつ</span></span><span class="c3-tags"><i>#1回の負担が軽い</i></span></div></div><div class="sl-cost"><span class="c"><b>通院</b>30分 × 2回</span><span class="c"><b>インレー</b>約3,000〜6,000円</span><span class="c"><b>クラウン</b>約7,000〜11,000円</span><span class="c"><b>保証</b>保険の決まりによる</span><span class="c-n">保険3割負担のおおよその幅</span><a href="#cost">費用と通院の回数へ ↓</a></div>
     <p class="b-foot">気になったところは、下の解説でくわしく ↓<br><a href="#cost" style="color:var(--ink-soft)">費用と通院の回数を見る</a></p>
     <nav class="sl-nav" aria-label="前後の素材"><a class="pv" href="inlay-crown.html"><i>‹</i>素材の一覧へ</a><span class="sl-sp"></span><a class="nx" href="inlay-crown-cadcam.html">CAD/CAMで治すと<i>›</i></a></nav>
   </div>

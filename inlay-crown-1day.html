@@ -306,6 +306,41 @@ html.sm-open{overflow:hidden;}
 .sm-panel .sm-item.sm-site{padding:10px 12px;margin-bottom:6px;}
 .sm-top{background:var(--soft);}
 .sm-t small{display:block;}
+
+/* 親ページ・トップと同じ部品をスライドに（2026-10-30 院長指示） */
+.nb{display:inline-block;max-width:100%;}
+.w-ic{width:22px;height:24px;vertical-align:-6px;margin-right:6px;}
+.sl-combo{display:grid;grid-template-columns:1fr;gap:8px;margin:18px 0 6px;}
+.sc-title{font-size:13px;font-weight:800;color:var(--ink-soft);text-align:center;}
+.sc-marks{display:flex;flex-direction:column;gap:2px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;}
+.sc-h{font-size:11.5px;font-weight:800;color:var(--ink-soft);}
+.sc-row{display:flex;align-items:center;gap:3px;}
+.sc-row i{font-style:normal;font-size:11px;color:var(--muted);width:2.6em;}
+.sc-row svg{width:20px;height:20px;}
+.sc-card{position:relative;display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px 10px 8px;color:var(--sage);min-width:0;}
+.sc-k{position:absolute;top:5px;right:10px;font-size:11px;font-weight:800;color:var(--muted);}
+.sc-card .c3-m{display:flex;align-items:center;gap:6px;}
+.sc-card .cb-ic{width:24px;height:24px;flex:0 0 24px;}
+.sc-card .cb-l{font-size:13.5px;font-weight:800;color:var(--ink);line-height:1.35;}
+.sc-card .cb-l small{display:block;font-size:11px;font-weight:700;color:var(--muted);}
+.sc-card .c3-hk{position:absolute;top:-1px;left:-1px;background:var(--sage);color:#fff;font-size:10.5px;font-weight:800;padding:1px 9px;border-radius:10px 0 8px 0;}
+.sc-card .c3-tags{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:3px;}
+.sc-card .c3-tags i{font-style:normal;font-size:10.5px;font-weight:700;color:var(--ink-soft);background:var(--soft);border-radius:999px;padding:1px 7px;white-space:nowrap;}
+.sc-note{font-size:12px;color:var(--muted);text-align:center;margin:0;}
+@media (min-width:760px){.sl-combo{grid-template-columns:auto repeat(3,minmax(0,1fr));align-items:stretch;}.sc-title,.sc-note{grid-column:1 / -1;}}
+@media (min-width:1240px){
+  .polaroid,.stage.rev .polaroid{width:min(78%,19vh)!important;}
+  .sl-combo{margin:clamp(6px,1vh,12px) 0 2px;gap:10px;}
+  .sc-title{display:none;}
+  .sc-card{padding-top:clamp(22px,2.6vh,28px);}
+  .sc-card .cb-l{font-size:clamp(13.5px,1.6vh,15.5px);white-space:nowrap;}
+  .sc-card .c3-tags i{font-size:clamp(10.5px,1.2vh,12px);}
+  .sc-row svg{width:clamp(18px,2.2vh,22px);height:clamp(18px,2.2vh,22px);}
+  #story{position:relative;}
+  .sl-nav{position:absolute;top:clamp(46px,6vh,64px);left:clamp(24px,2.5vw,48px);right:clamp(96px,6vw,120px);margin:0!important;pointer-events:none;}
+  .sl-nav a{pointer-events:auto;font-size:15px!important;padding:6px 16px!important;}
+  .sc-note{margin-top:-2px;}
+}
 </style>
 </head>
 <body>
@@ -359,8 +394,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="stage">
       <div class="polaroid"><img src="ic-1day-1.jpg" alt="むし歯のある歯が並んだイラスト" loading="lazy"><span class="tape t1"></span></div>
       <div class="kraft">
-        <div class="when">今</div>
-        <h3>治したい歯が何本もある。でも、期限がある</h3>
+        <div class="when"><svg class="w-ic" viewBox="2 14 56 60" aria-hidden="true"><g transform="translate(0.0 0.0) scale(1)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#A8692A" stroke-width="3.00" stroke-linejoin="round"/><circle cx="34" cy="27" r="4.5" fill="#8A6A4E"/></g></svg>今</div>
+        <h3><span class="nb">治したい歯が何本もある。</span><span class="nb">でも、</span><span class="nb">期限がある</span></h3>
         <ul><li>結婚式などの行事、引っ越し、一時帰国、矯正を始める前など</li><li>保険の治療では、1か月に2〜3本ずつ進めるのが当院の進め方</li></ul>
         <a class="more" href="#k1">解説1　保険だとどのくらい？ →</a>
       </div>
@@ -371,8 +406,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="stage rev">
       <div class="polaroid"><img src="ic-1day-2.jpg" alt="並んだ歯がすべて白く治ったイラスト" loading="lazy"><span class="tape t3"></span></div>
       <div class="kraft"><span class="pin" style="left:50%;margin-left:-15px;"><svg width="30" height="38"><use href="#pin-blue"/></svg></span>
-        <div class="when">当日</div>
-        <h3>院内で削り出して、まとめて入れる</h3>
+        <div class="when"><svg class="w-ic" viewBox="2 14 56 60" aria-hidden="true"><g transform="translate(0.0 0.0) scale(1)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#A8692A" stroke-width="3.00" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.5"/></g></svg>当日</div>
+        <h3><span class="nb">院内で削り出して、</span><span class="nb">まとめて入れる</span></h3>
         <ul><li>5〜7本ほどを、1日でまとめて治すこともできる</li><li>型取りから入れるまで、その日のうちに</li></ul>
         <a class="more" href="#k2">解説2　どんな方に向いている？ →</a>
       </div>
@@ -383,8 +418,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="stage">
       <div class="polaroid"><img src="ic-1day-3.jpg" alt="丸をつけたカレンダーと歯のキャラクターのイラスト" loading="lazy"><span class="tape t1"></span></div>
       <div class="kraft">
-        <div class="when">間に合う</div>
-        <h3>治療を終えて、予定の日を迎えられる</h3>
+        <div class="when"><svg class="w-ic" viewBox="2 14 56 60" aria-hidden="true"><g transform="translate(0.0 0.0) scale(1)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#A8692A" stroke-width="3.00" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.5"/></g></svg>間に合う</div>
+        <h3><span class="nb">治療を終えて、</span><span class="nb">予定の日を迎えられる</span></h3>
         <ul><li>治療の通院に追われずに済む</li><li>矯正も、すぐに始められる</li></ul>
       </div>
     </div>
@@ -394,7 +429,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     <div class="stage rev">
       <div class="polaroid"><img src="ic-1day-4.jpg" alt="白い被せものが欠けて作り直す奥歯のイラスト" loading="lazy"><span class="tape t3"></span></div>
       <div class="kraft"><span class="pin" style="left:38%;"><svg width="30" height="38"><use href="#pin-red"/></svg></span>
-        <div class="when">その先</div>
+        <div class="when"><svg class="w-ic" viewBox="2 14 56 60" aria-hidden="true"><g transform="translate(0.0 0.0) scale(1)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#A8692A" stroke-width="3.00" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.5"/><path d="M40 16l-3 6 4 1-3 6" fill="none" stroke="#A8692A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg>その先</div>
         <h3>CAD/CAMと同じ歩み方</h3>
         <ul><li>素材はCAD/CAMと同じ系統。欠けたり外れたりしたら作り直す</li><li>15年保証の対象外のため、作り直しは通常の料金</li></ul>
         <a class="more" href="#k3">解説3　素材と保証は？ →</a>
@@ -402,7 +437,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o
     </div>
 
     <p class="b-sum"><span>素材の良さより、「時間」を優先する選び方。</span><br><span>期限があるときの、心強い選択肢。</span></p>
-    <div class="sl-cost"><span class="c"><b>通院</b>1日</span><span class="c"><b>インレー</b>55,000〜60,000円</span><span class="c"><b>クラウン</b>85,000〜90,000円</span><span class="c"><b>保証</b>15年保証の対象外</span><span class="c-n">税込の総額</span><a href="#cost">費用と通院の回数へ ↓</a></div>
+    <div class="sl-combo"><p class="sc-title">この素材の、選び方の組み合わせ</p><div class="sc-marks"><span class="sc-h">最初の時間と費用</span><span class="sc-row"><i>時間</i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#fff" stroke="#A8692A" stroke-width="2.2"/><path d="M12 6.5v5.5l3.5 2.5" fill="none" stroke="#A8692A" stroke-width="2" stroke-linecap="round"/></svg></span><span class="sc-row"><i>費用</i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#fff" stroke="#A8692A" stroke-width="2.2"/><text x="12" y="16.5" text-anchor="middle" font-size="12" font-weight="800" fill="#A8692A">¥</text></svg><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#fff" stroke="#A8692A" stroke-width="2.2"/><text x="12" y="16.5" text-anchor="middle" font-size="12" font-weight="800" fill="#A8692A">¥</text></svg></span></div><div class="sc-card"><span class="sc-k">素材</span><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l9 5v10l-9 5-9-5V9z"/><path d="M5 9l9 5 9-5M14 14v10"/></svg><span class="cb-l">ブロックレジン<small>CAD/CAM</small></span></span><span class="c3-tags"><i>#白い</i><i>#欠けても直しやすい</i></span></div><div class="sc-card"><span class="sc-k">治し方</span><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="20" height="12" rx="2"/><path d="M8 12V7h12v5M10 18h8"/></svg><span class="cb-l">院内で削り出す</span></span><span class="c3-tags"><i>#型取りから入れるまで当日</i></span></div><div class="sc-card"><span class="sc-k">時間</span><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><text x="14" y="21.5" text-anchor="middle" font-size="9" font-weight="800" fill="currentColor" stroke="none">1</text></svg><span class="cb-l">1日で、まとめて</span></span><span class="c3-tags"><i>#複数本の治療に最適</i><i>#期限が決まっている</i></span></div><p class="sc-note">自由診療なので、素材・治し方・時間は、ほかの組み合わせにも変えられます。</p></div><div class="sl-cost"><span class="c"><b>通院</b>1日</span><span class="c"><b>インレー</b>55,000〜60,000円</span><span class="c"><b>クラウン</b>85,000〜90,000円</span><span class="c"><b>保証</b>15年保証の対象外</span><span class="c-n">税込の総額</span><a href="#cost">費用と通院の回数へ ↓</a></div>
     <p class="b-foot">気になったところは、下の解説でくわしく ↓<br><a href="#cost" style="color:var(--ink-soft)">費用と通院の回数を見る</a></p>
     <nav class="sl-nav" aria-label="前後の素材"><a class="pv" href="inlay-crown-cadcam.html"><i>‹</i>CAD/CAMで治すと</a><span class="sl-sp"></span><a class="nx" href="inlay-crown-ceramic.html">セラミック（奥歯）で治すと<i>›</i></a></nav>
   </div>
