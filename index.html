@@ -129,6 +129,60 @@
   .tb-flow li + li::before{content:"↓";position:absolute;left:25px;top:-14px;font-size:13px;color:var(--sage);font-weight:800;}
   .tb-caution{font-size:12.5px;color:var(--muted);margin:10px 0 0;line-height:1.7;}
   .tb-cite{font-size:11px;color:var(--muted);line-height:1.7;margin:16px 0 0;border-top:1px solid var(--line);padding-top:8px;}
+
+  /* ===== トップの組み直し（2026-10-30）===== */
+  .concept{padding:64px 0 44px;background:linear-gradient(180deg,#fff 0%,var(--soft) 100%);}
+  .concept-ill{width:200px;height:auto;display:block;margin:0 auto 10px;}
+  .concept h1{font-size:30px;letter-spacing:.1em;margin-bottom:14px;}
+  .concept .lead{margin:0 auto 4px;max-width:560px;}
+  .concept-what{font-size:13px;color:var(--muted);margin:14px 0 0;}
+  .section[id]{scroll-margin-top:12px;}
+  @media (min-width:1000px){
+    .wrap{max-width:900px;}
+    .concept h1{font-size:40px;}
+    .concept-ill{width:240px;}
+    .lead{font-size:16.5px;}
+    h2.title{font-size:24px;}
+    .hc-title{font-size:17px;}
+    .hc-desc{font-size:14px;}
+  }
+  #treat-one .hub,#treat-replace .hub{grid-template-columns:1fr;}
+  @media (min-width:1000px){#treat-one .hub,#treat-replace .hub{grid-template-columns:repeat(3,1fr);}#treat-one .hub-card,#treat-replace .hub-card{flex-direction:column;align-items:flex-start;}#treat-one .hc-arrow,#treat-replace .hc-arrow{align-self:flex-end;}}
+  /* 左の目次・右上のメニュー（子ページと同じ部品） */
+  .pc-toc{display:none;}
+@media (min-width:1240px){
+  .pc-toc{display:block;position:fixed;top:110px;left:max(12px, calc(50% - 450px - 210px));width:156px;z-index:20;font-size:13px;}
+  .pt-h{font-weight:800;color:var(--sage);letter-spacing:.08em;font-size:12px;margin-bottom:10px;}
+  .pc-toc ul{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);}
+  .pc-toc ul ul{border-left:none;padding-left:12px;}
+  .pc-toc li a{display:block;padding:5px 0 5px 14px;margin-left:-2px;border-left:2px solid transparent;color:var(--ink-soft);text-decoration:none;line-height:1.5;}
+  .pc-toc ul ul li a{font-size:12.5px;padding:3px 0 3px 10px;}
+  .pc-toc li a:hover{color:var(--sage);}
+  .pc-toc li a.on{color:var(--sage);font-weight:800;border-left-color:var(--sage);}
+  .pt-home{display:block;margin-top:16px;font-size:12.5px;font-weight:700;color:var(--sage);text-decoration:none;}
+}
+  .sm-btn{position:fixed;top:12px;right:12px;z-index:50;width:56px;height:56px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.94);color:var(--sage);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(46,58,63,.16);cursor:pointer;padding:0;}
+  .sm-btn:focus-visible,.sm-close:focus-visible,.sm-panel a:focus-visible{outline:3px solid var(--sage-2);outline-offset:2px;}
+  .sm-veil{position:fixed;inset:0;background:rgba(46,58,63,.35);z-index:60;}
+  .sm-panel{position:fixed;top:0;right:0;bottom:0;width:min(360px,88vw);background:#fff;z-index:70;overflow-y:auto;padding:18px 16px 28px;box-shadow:-6px 0 18px rgba(46,58,63,.18);}
+  .sm-panel[hidden],.sm-veil[hidden]{display:none;}
+  html.sm-open{overflow:hidden;}
+  .sm-head{display:flex;align-items:center;justify-content:space-between;font-weight:800;font-size:16px;}
+  .sm-close{width:40px;height:40px;border:none;background:var(--soft);border-radius:50%;font-size:22px;line-height:1;color:var(--ink);cursor:pointer;}
+  .sm-lead{font-size:12.5px;color:var(--muted);margin:6px 0 14px;line-height:1.7;}
+  .sm-item{display:flex;align-items:center;gap:12px;padding:12px 12px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;text-decoration:none;color:var(--ink);}
+  .sm-item.soon{color:var(--muted);background:#FAFAFA;}
+  .sm-item.cur{background:var(--soft);border-color:var(--sage-2);}
+  .sm-dot{flex:0 0 14px;height:14px;border-radius:50%;}
+  .sm-t{flex:1;display:flex;flex-direction:column;line-height:1.5;}
+  .sm-t b{font-size:14.5px;}
+  .sm-t small{font-size:12px;color:var(--ink-soft);}
+  .sm-item i{font-style:normal;color:var(--sage);font-weight:800;}
+  .sm-item em{font-style:normal;font-size:10.5px;color:var(--sage);font-weight:800;white-space:nowrap;}
+  .sm-home{display:block;margin-top:14px;font-size:13.5px;font-weight:700;text-decoration:none;}
+  .sm-g{font-size:12px;font-weight:800;color:var(--sage);letter-spacing:.08em;margin:14px 2px 6px;}
+  .sm-item{padding:10px 12px;margin-bottom:6px;}
+  .nb{display:inline-block;}
 </style>
 </head>
 <body>
@@ -182,19 +236,194 @@
   </symbol>
 </svg>
 
-<header class="hero">
+<button class="sm-btn" type="button" aria-label="ページの案内を開く" aria-expanded="false" aria-controls="sm-panel"><svg viewBox="0 0 100 100" width="34" height="34" aria-hidden="true"><path d="M24 14c-9 0-15 10-15 26 0 20 6 50 17 50 7 0 8-17 24-17s17 17 24 17c11 0 17-30 17-50 0-16-6-26-15-26-9 0-12 6-26 6S33 14 24 14Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M33 33H67M33 44H67M33 55H67" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></button>
+<div class="sm-veil" hidden></div>
+<nav class="sm-panel" id="sm-panel" aria-label="ページの案内" hidden>
+  <div class="sm-head"><span>ページの案内</span><button class="sm-close" type="button" aria-label="閉じる">×</button></div>
+  <p class="sm-lead">見たいところへ移れます。</p>
+  <div class="sm-g">このページ</div>
+  <a class="sm-item" href="#concept"><span class="sm-t"><b>いい歯で、いい人生を。</b></span><i>↓</i></a>
+  <a class="sm-item" href="#teeth-body"><span class="sm-t"><b>歯と、からだのつながり</b></span><i>↓</i></a>
+  <a class="sm-item" href="#ages"><span class="sm-t"><b>いまの年代で、大切にしたいこと</b></span><i>↓</i></a>
+  <div class="sm-g">1本の歯を治す</div>
+  <a class="sm-item" href="resin.html"><span class="sm-t"><b>レジン修復</b></span><i>→</i></a>
+  <a class="sm-item" href="inlay-crown.html"><span class="sm-t"><b>インレー・クラウン治療</b></span><i>→</i></a>
+  <a class="sm-item" href="root-canal.html"><span class="sm-t"><b>根管治療</b></span><i>→</i></a>
+  <div class="sm-g">失った歯を補う</div>
+  <a class="sm-item" href="bridge.html"><span class="sm-t"><b>ブリッジ治療</b></span><i>→</i></a>
+  <a class="sm-item" href="denture.html"><span class="sm-t"><b>入れ歯（義歯）治療</b></span><i>→</i></a>
+  <a class="sm-item" href="implant.html"><span class="sm-t"><b>インプラント治療</b></span><i>→</i></a>
+  <div class="sm-g">お口全体を整える</div>
+  <a class="sm-item" href="aesthetic.html"><span class="sm-t"><b>審美治療</b></span><i>→</i></a>
+  <a class="sm-item" href="ortho.html"><span class="sm-t"><b>矯正治療</b></span><i>→</i></a>
+  <div class="sm-g">費用のこと</div>
+  <a class="sm-item" href="cost-over-time.html"><span class="sm-t"><b>費用を、時間軸で考える</b></span><i>→</i></a>
+  <a class="sm-item" href="medical-tax.html"><span class="sm-t"><b>医療費控除のこと</b></span><i>→</i></a>
+</nav>
+
+<!-- ライフのコンセプト（2026-10-30） -->
+<header class="hero concept" id="concept">
   <div class="wrap reveal">
+    <svg class="concept-ill" viewBox="0 0 240 170" role="img" aria-label="笑顔の歯と、そこから伸びる若葉のイラスト">
+      <circle cx="120" cy="92" r="70" fill="#EEF3F1"/>
+      <path d="M120 36c-6-16-2-27 10-32 3 13-1 24-10 32Z" fill="#6E9C8E"/>
+      <path d="M120 36c4-14 15-19 27-15-5 12-15 17-27 15Z" fill="#4F7A6C"/>
+      <path d="M120 38v10" stroke="#4F7A6C" stroke-width="3" stroke-linecap="round"/>
+      <path d="M92 50c-14 0-22 12-22 30 0 22 7 52 19 52 8 0 9-19 31-19s23 19 31 19c12 0 19-30 19-52 0-18-8-30-22-30-10 0-15 6-28 6S102 50 92 50Z" fill="#fff" stroke="#4F7A6C" stroke-width="4" stroke-linejoin="round"/>
+      <circle cx="105" cy="80" r="4" fill="#2E3A3F"/><circle cx="135" cy="80" r="4" fill="#2E3A3F"/>
+      <path d="M108 95c7 7 17 7 24 0" fill="none" stroke="#2E3A3F" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="96" cy="92" r="5" fill="#E8B4B8" opacity=".7"/><circle cx="144" cy="92" r="5" fill="#E8B4B8" opacity=".7"/>
+    </svg>
     <p class="eyebrow">LIFE DENTAL CLINIC</p>
-    <h1>治療と費用のご案内</h1>
-    <p class="lead">
-      当院で受けられる治療の内容と、おおよその費用をまとめています。
-      気になるところから、どうぞごゆっくりご覧ください。
-    </p>
+    <h1><span class="nb">いい歯で、</span><span class="nb">いい人生を。</span></h1>
+    <p class="lead">歯は、食べる・話す・笑うを支えています。</p>
+    <p class="lead">私たちは、いまの1本を治すだけでなく、これから先も自分の歯でかめることを大切にしています。</p>
+    <p class="concept-what">このページでは、治療の選び方とおおよその費用をまとめました。</p>
   </div>
 </header>
 
+<!-- 歯と、からだのつながり（2026-10-30） -->
+<section class="section soft" id="teeth-body">
+  <div class="wrap reveal">
+    <p class="eyebrow">歯と、からだのつながり</p>
+    <h2 class="title">歯が多く残っている人ほど、医療費が少ない傾向があります</h2>
+    <p class="lead">1本の歯の治し方が、この先のからだの健康にもつながっていきます。</p>
+
+    <ol class="tb-flow">
+      <li>
+        <span class="tb-no">1</span>
+        <span class="tb-t">作り直すたびに、歯は小さくなります</span>
+        <span class="tb-d">詰めもの・被せものを作り直すたびに、歯は少しずつ削られます。くり返すと、詰めもの → 被せもの → 神経の治療と進み、抜歯になることがあります。</span>
+      </li>
+      <li>
+        <span class="tb-no">2</span>
+        <span class="tb-t">歯が減ると、かむ力が衰えやすくなります</span>
+        <span class="tb-d">かむ・飲みこむ・話す力が衰えることを「オーラルフレイル」といいます。千葉県柏市の調査では、オーラルフレイルの方は、介護が必要になる割合が約2.4倍でした。</span>
+      </li>
+      <li>
+        <span class="tb-no">3</span>
+        <span class="tb-t">歯が少ない人ほど、医療費が多い傾向があります</span>
+        <span class="tb-d">全国の医療の記録を調べた研究では、歯が20本以上ある人のほうが、歯科以外の医療費が少ない傾向がありました。かみ合わせの支えがいちばん少ない人たちは、いちばん多い人たちの約2.2倍でした。</span>
+      </li>
+    </ol>
+    <p class="tb-caution">これらは「関係がある」ことを示す調査です。歯を治せば医療費が必ず減る、という意味ではありません。</p>
+
+    <div class="note">
+      <p><b>だからこそ、1本の歯の治し方から考えます。</b>作り直しの少ない治し方を選ぶことは、歯を残すことにつながります。素材ごとの違いは、インレー・クラウン治療のページでご覧いただけます。</p>
+    </div>
+    <div style="text-align:center;">
+      <a class="stage-list-link" href="inlay-crown.html">1本の歯の治し方を見る（インレー・クラウン治療）<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <p class="tb-cite">出典：Tanaka T, et al. J Gerontol A Biol Sci Med Sci 2018（柏市の高齢者約2,000人の追跡調査）・厚生労働省 資料／山本龍生ほか 日本歯科医療管理学会雑誌 2016;51(3):136-142（全国の医療の記録・40歳以上 約223万人）／Murata T, et al. J Health Econ Outcomes Res 2020;7(1)（健康保険の記録 約129万人）</p>
+  </div>
+</section>
+
+<section class="section" id="treat-one">
+  <div class="wrap reveal">
+    <p class="eyebrow">1本の歯を治す</p>
+    <h2 class="title">1本の歯を、できるだけ残して治します</h2>
+    <p class="lead">むし歯の大きさや、歯の根の状態で、治し方が変わります。</p>
+    <div class="hub">
+      <a class="hub-card" href="resin.html">
+        <svg class="ic"><use href="#i-tooth"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">レジン修復</span>
+          <span class="hc-desc">むし歯を削って、白いプラスチックで自然に詰める</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+      </a>
+      <a class="hub-card" href="inlay-crown.html">
+        <svg class="ic"><use href="#i-crown"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">インレー・クラウン治療</span>
+          <span class="hc-desc">削ったところを、詰め物・被せ物で補う</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+      </a>
+      <a class="hub-card" href="root-canal.html">
+        <svg class="ic"><use href="#i-root"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">根管治療</span>
+          <span class="hc-desc">痛みの出た歯の根を治して、歯を残す</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="section soft" id="treat-replace">
+  <div class="wrap reveal">
+    <p class="eyebrow">失った歯を補う</p>
+    <h2 class="title">失った歯を補う方法は、3つあります</h2>
+    <p class="lead">かむ力を取り戻す方法です。まわりの歯への負担と、手入れのしかたがそれぞれ違います。</p>
+    <div class="hub">
+      <a class="hub-card" href="bridge.html">
+        <svg class="ic"><use href="#i-bridge"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">ブリッジ治療</span>
+          <span class="hc-desc">失った歯を、両隣の歯で支えて補う</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+      </a>
+      <a class="hub-card" href="denture.html">
+        <svg class="ic"><use href="#i-denture"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">入れ歯（義歯）治療</span>
+          <span class="hc-desc">取り外しできる形で、噛む力を取り戻す</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+      </a>
+      <a class="hub-card" href="implant.html">
+        <svg class="ic"><use href="#i-implant"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">インプラント治療</span>
+          <span class="hc-desc">あごの骨に土台を入れ、噛み心地を取り戻す</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="section" id="treat-whole">
+  <div class="wrap reveal">
+    <p class="eyebrow">お口全体を整える</p>
+    <h2 class="title">見た目とかみ合わせを、全体から整えます</h2>
+    <p class="lead">1本ずつではなく、お口全体の設計図から考える治療です。</p>
+    <div class="hub">
+      <a class="hub-card" href="aesthetic.html">
+        <svg class="ic"><use href="#i-sparkle"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">審美治療</span>
+          <span class="hc-desc">白さや形を、自然に美しく整える</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+      </a>
+      <a class="hub-card" href="ortho.html">
+        <svg class="ic"><use href="#i-align"/></svg>
+        <span class="hc-body">
+          <span class="hc-title">矯正治療</span>
+          <span class="hc-desc">歯並びとかみ合わせを、時間をかけて整える</span>
+        </span>
+        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+    <div class="note">
+      <p>
+        費用は隠さず、おおよその目安をそれぞれのページに載せています。
+        どの治療を選ばれても、定期的なメインテナンス（お口の健康を保つための通院）は、ご一緒に続けていきます。
+        気になることは、どうぞお気軽にお尋ねください。
+      </p>
+    </div>
+    <div style="text-align:center;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+      <a class="stage-list-link" href="approach.html#goal">15年後のことを、先に考える<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a>
+      <a class="stage-list-link" href="cost-over-time.html">費用を、時間軸で考える<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a>
+      <a class="stage-list-link" href="medical-tax.html">医療費控除のこと<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
 <!-- 年代別のご案内（5カード） -->
-<section class="section soft" style="border-top:none;">
+<section class="section soft" id="ages">
   <div class="wrap reveal">
     <p class="eyebrow">年代別のご案内</p>
     <h2 class="title">いまの年代で、大切にしたいこと</h2>
@@ -251,141 +480,8 @@
   </div>
 </section>
 
-<!-- 歯と、からだのつながり（2026-10-30） -->
-<section class="section" id="teeth-body">
-  <div class="wrap reveal">
-    <p class="eyebrow">歯と、からだのつながり</p>
-    <h2 class="title">歯が多く残っている人ほど、医療費が少ない傾向があります</h2>
-    <p class="lead">1本の歯の治し方が、この先のからだの健康にもつながっていきます。</p>
-
-    <ol class="tb-flow">
-      <li>
-        <span class="tb-no">1</span>
-        <span class="tb-t">作り直すたびに、歯は小さくなります</span>
-        <span class="tb-d">詰めもの・被せものを作り直すたびに、歯は少しずつ削られます。くり返すと、詰めもの → 被せもの → 神経の治療と進み、抜歯になることがあります。</span>
-      </li>
-      <li>
-        <span class="tb-no">2</span>
-        <span class="tb-t">歯が減ると、かむ力が衰えやすくなります</span>
-        <span class="tb-d">かむ・飲みこむ・話す力が衰えることを「オーラルフレイル」といいます。千葉県柏市の調査では、オーラルフレイルの方は、介護が必要になる割合が約2.4倍でした。</span>
-      </li>
-      <li>
-        <span class="tb-no">3</span>
-        <span class="tb-t">歯が少ない人ほど、医療費が多い傾向があります</span>
-        <span class="tb-d">全国の医療の記録を調べた研究では、歯が20本以上ある人のほうが、歯科以外の医療費が少ない傾向がありました。かみ合わせの支えがいちばん少ない人たちは、いちばん多い人たちの約2.2倍でした。</span>
-      </li>
-    </ol>
-    <p class="tb-caution">これらは「関係がある」ことを示す調査です。歯を治せば医療費が必ず減る、という意味ではありません。</p>
-
-    <div class="note">
-      <p><b>だからこそ、1本の歯の治し方から考えます。</b>作り直しの少ない治し方を選ぶことは、歯を残すことにつながります。素材ごとの違いは、インレー・クラウン治療のページでご覧いただけます。</p>
-    </div>
-    <div style="text-align:center;">
-      <a class="stage-list-link" href="inlay-crown.html">1本の歯の治し方を見る（インレー・クラウン治療）<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-    <p class="tb-cite">出典：Tanaka T, et al. J Gerontol A Biol Sci Med Sci 2018（柏市の高齢者約2,000人の追跡調査）・厚生労働省 資料／山本龍生ほか 日本歯科医療管理学会雑誌 2016;51(3):136-142（全国の医療の記録・40歳以上 約223万人）／Murata T, et al. J Health Econ Outcomes Res 2020;7(1)（健康保険の記録 約129万人）</p>
-  </div>
-</section>
-
-<!-- 治療のご案内（ハブ） -->
-<section class="section">
-  <div class="wrap reveal">
-    <p class="eyebrow">治療のご案内</p>
-    <h2 class="title">受けられる治療</h2>
-    <p class="lead">それぞれの治療について、内容とおおよその費用をご覧いただけます。</p>
-
-    <div class="hub">
-      <a class="hub-card" href="resin.html">
-        <svg class="ic"><use href="#i-tooth"/></svg>
-        <span class="hc-body">
-          <span class="hc-title">レジン修復</span>
-          <span class="hc-desc">むし歯を削って、白いプラスチックで自然に詰める</span>
-        </span>
-        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
-      </a>
-
-      <a class="hub-card" href="inlay-crown.html">
-        <svg class="ic"><use href="#i-crown"/></svg>
-        <span class="hc-body">
-          <span class="hc-title">インレー・クラウン治療</span>
-          <span class="hc-desc">削ったところを、詰め物・被せ物で補う</span>
-        </span>
-        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
-      </a>
-
-      <a class="hub-card" href="root-canal.html">
-        <svg class="ic"><use href="#i-root"/></svg>
-        <span class="hc-body">
-          <span class="hc-title">根管治療</span>
-          <span class="hc-desc">痛みの出た歯の根を治して、歯を残す</span>
-        </span>
-        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
-      </a>
-
-      <a class="hub-card" href="bridge.html">
-        <svg class="ic"><use href="#i-bridge"/></svg>
-        <span class="hc-body">
-          <span class="hc-title">ブリッジ治療</span>
-          <span class="hc-desc">失った歯を、両隣の歯で支えて補う</span>
-        </span>
-        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
-      </a>
-
-      <a class="hub-card" href="denture.html">
-        <svg class="ic"><use href="#i-denture"/></svg>
-        <span class="hc-body">
-          <span class="hc-title">入れ歯（義歯）治療</span>
-          <span class="hc-desc">取り外しできる形で、噛む力を取り戻す</span>
-        </span>
-        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
-      </a>
-
-      <a class="hub-card" href="implant.html">
-        <svg class="ic"><use href="#i-implant"/></svg>
-        <span class="hc-body">
-          <span class="hc-title">インプラント治療</span>
-          <span class="hc-desc">あごの骨に土台を入れ、噛み心地を取り戻す</span>
-        </span>
-        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
-      </a>
-
-      <a class="hub-card" href="ortho.html">
-        <svg class="ic"><use href="#i-align"/></svg>
-        <span class="hc-body">
-          <span class="hc-title">矯正治療</span>
-          <span class="hc-desc">歯並びとかみ合わせを、時間をかけて整える</span>
-        </span>
-        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
-      </a>
-
-      <a class="hub-card" href="aesthetic.html">
-        <svg class="ic"><use href="#i-sparkle"/></svg>
-        <span class="hc-body">
-          <span class="hc-title">審美治療</span>
-          <span class="hc-desc">白さや形を、自然に美しく整える</span>
-        </span>
-        <svg class="hc-arrow"><use href="#i-arrow"/></svg>
-      </a>
-    </div>
-
-    <div class="note">
-      <p>
-        費用は隠さず、おおよその目安をそれぞれのページに載せています。
-        どの治療を選ばれても、定期的なメインテナンス（お口の健康を保つための通院）は、ご一緒に続けていきます。
-        気になることは、どうぞお気軽にお尋ねください。
-      </p>
-    </div>
-
-    <div style="text-align:center;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
-      <a class="stage-list-link" href="approach.html#goal">15年後のことを、先に考える<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a>
-      <a class="stage-list-link" href="cost-over-time.html">費用を、時間軸で考える<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a>
-      <a class="stage-list-link" href="medical-tax.html">医療費控除のこと<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-</section>
-
 <!-- このご案内のQRコード -->
-<section class="section soft">
+<section class="section" id="qr">
   <div class="wrap reveal" style="text-align:center;">
     <p class="eyebrow">QRコード</p>
     <h2 class="title">スマホで、いつでも見返せます</h2>
@@ -396,6 +492,19 @@
     </div>
   </div>
 </section>
+
+<nav class="pc-toc" aria-label="このページの目次">
+  <div class="pt-h">このページの目次</div>
+  <ul>
+    <li><a href="#concept" data-t="concept">いい歯で、いい人生を</a></li>
+    <li><a href="#teeth-body" data-t="teeth-body">歯と、からだのつながり</a></li>
+    <li><a href="#treat-one" data-t="treat-one">1本の歯を治す</a></li>
+    <li><a href="#treat-replace" data-t="treat-replace">失った歯を補う</a></li>
+    <li><a href="#treat-whole" data-t="treat-whole">お口全体を整える</a></li>
+    <li><a href="#ages" data-t="ages">年代で大切にしたいこと</a></li>
+    <li><a href="#qr" data-t="qr">スマホで見返す</a></li>
+  </ul>
+</nav>
 
 <footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
   <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
@@ -419,5 +528,16 @@
   })();
 </script>
 
+<script>
+(function(){var b=document.querySelector('.sm-btn'),p=document.getElementById('sm-panel'),v=document.querySelector('.sm-veil'),c=p.querySelector('.sm-close');
+function o(x){p.hidden=!x;v.hidden=!x;b.setAttribute('aria-expanded',x);document.documentElement.classList.toggle('sm-open',x);if(x)c.focus();else b.focus();}
+b.addEventListener('click',function(){o(p.hidden);});c.addEventListener('click',function(){o(false);});v.addEventListener('click',function(){o(false);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o(false);});})();
+</script>
+<script>
+(function(){if(!('IntersectionObserver' in window))return;var ls=document.querySelectorAll('.pc-toc a[data-t]'),m={};ls.forEach(function(a){m[a.dataset.t]=a;});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ls.forEach(function(a){a.classList.remove('on');});var a=m[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-40% 0px -55% 0px'});
+Object.keys(m).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});})();
+</script>
 </body>
 </html>
