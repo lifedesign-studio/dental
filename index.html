@@ -283,6 +283,18 @@
     .tb-fact:first-child .tb-t .nb{display:inline;}
     .tb-fact:first-child .tb-ill{height:calc(clamp(100px,13vh,128px) + 30px)!important;}
   }
+
+  /* 10チェックの帯：説明文は見出しの下に1行で（2026-10-30 院長指示） */
+  @media (min-width:1240px){
+    .tc-frame{grid-template-columns:1fr auto auto!important;row-gap:2px;}
+    .tc-frame .eyebrow{grid-column:1!important;grid-row:1!important;}
+    .tc-frame .tc-h{grid-column:1!important;grid-row:2!important;}
+    .tc-frame .tc-lead{grid-column:1 / -1!important;grid-row:3!important;margin:6px 0 0!important;max-width:none!important;}
+    .tc-frame .tc-lead .nb{display:inline;}
+    .tc-frame .tc-slots{grid-column:2!important;grid-row:1 / span 2!important;}
+    .tc-frame .stage-list-link{grid-column:3!important;grid-row:1 / span 2!important;}
+    .tc-frame .tc-slots{grid-template-columns:150px 160px!important;}
+  }
 </style>
 </head>
 <body>
