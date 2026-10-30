@@ -200,6 +200,55 @@
 
   .tb-ill{width:100%;max-width:300px;height:auto;display:block;margin:2px auto 4px;}
   @media (min-width:1000px){.tb-facts{grid-template-columns:repeat(3,1fr);}}
+
+  /* ===== 1画面で「1本の歯を治す」まで（1240px以上・2026-10-30） ===== */
+  .sm-panel .sm-item.sm-site{padding:10px 12px;margin-bottom:6px;}
+  .sm-top{background:var(--soft);}
+  .sm-t small{display:block;}
+  @media (min-width:1240px){
+    .pc-toc{display:none!important;}
+    .wrap{max-width:1560px;padding:0 48px;}
+    #ages .hub{grid-template-columns:repeat(3,1fr);}
+    #treat-replace .hub-card{flex-direction:row!important;align-items:center!important;}#treat-replace .hc-arrow{align-self:center!important;}
+    #concept{padding:clamp(12px,2vh,26px) 0 clamp(6px,1vh,12px);text-align:left;}
+    #concept .wrap{display:grid;grid-template-columns:auto 1fr auto;column-gap:28px;align-items:center;}
+    #concept .concept-ill{grid-row:1 / span 3;width:clamp(96px,13vh,140px);margin:0;}
+    #concept .eyebrow{grid-column:2;grid-row:1;margin:0;align-self:end;}
+    #concept h1{grid-column:2;grid-row:2 / span 2;margin:0;align-self:start;font-size:clamp(30px,4.6vh,46px);}
+    #concept .lead{grid-column:3;max-width:640px;margin:0;font-size:clamp(15px,2vh,19px);line-height:1.7;}
+    #concept p.lead:nth-of-type(2){grid-row:1;}
+    #concept p.lead:nth-of-type(3){grid-row:2;}
+    #concept p.lead:nth-of-type(4){grid-row:3;}
+    #concept .concept-what{display:none;}
+    #teeth-body{padding:clamp(10px,1.6vh,20px) 0 clamp(10px,1.6vh,18px);}
+    #teeth-body .eyebrow{margin:0 0 2px;}
+    #teeth-body h2.title{font-size:clamp(22px,3vh,30px);margin:0 0 2px;}
+    #teeth-body .lead{font-size:clamp(14px,1.8vh,17px);margin:0;}
+    .tb-facts{margin-top:clamp(8px,1.2vh,14px);gap:14px;}
+    .tb-fact{padding:clamp(8px,1.2vh,14px) 18px;gap:2px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center;}
+    .tb-fact .tb-big,.tb-fact .tb-ill{grid-row:1 / span 2;}
+    .tb-ill{width:clamp(150px,20vh,200px);margin:0;}
+    .tb-big{font-size:clamp(26px,3.6vh,36px);}
+    .tb-t{font-size:clamp(14.5px,1.85vh,17px);}
+    .tb-d{font-size:clamp(12.5px,1.55vh,14px);line-height:1.6;}
+    .tb-caution{margin-top:4px;font-size:12px;}
+    .tb-bridge{display:none;}
+    .tc-frame{margin-top:clamp(8px,1.2vh,12px);padding:clamp(8px,1.2vh,14px) 22px;display:grid;grid-template-columns:auto 1fr auto auto;column-gap:22px;align-items:center;text-align:left;}
+    .tc-frame .eyebrow{grid-column:1;grid-row:1;margin:0;}
+    .tc-frame .tc-h{grid-column:1;grid-row:2;margin:0;font-size:clamp(17px,2.3vh,22px);}
+    .tc-frame .tc-lead{grid-column:2;grid-row:1 / span 2;margin:0;font-size:clamp(13px,1.6vh,15px);}
+    .tc-frame .tc-slots{grid-column:3;grid-row:1 / span 2;margin:0;grid-template-columns:120px 160px;}
+    .tc-frame .tc-slot{min-height:54px;font-size:11.5px;}
+    .tc-frame .stage-list-link{grid-column:4;grid-row:1 / span 2;margin:0;}
+    .tb-cite{margin-top:6px;padding-top:4px;font-size:10.5px;line-height:1.5;}
+    #treat-one{padding:clamp(10px,1.6vh,20px) 0 clamp(14px,2vh,24px);}
+    #treat-one .eyebrow{margin:0 0 2px;}
+    #treat-one h2.title{font-size:clamp(22px,3vh,30px);margin:0 0 2px;display:inline-block;margin-right:16px;}
+    #treat-one .lead{display:inline;font-size:clamp(14px,1.8vh,17px);}
+    #treat-one .hub{margin-top:clamp(8px,1.2vh,14px);}
+    #treat-one .hub-card{flex-direction:row!important;align-items:center!important;padding:clamp(10px,1.4vh,16px) 18px;}
+    #treat-one .hc-arrow{align-self:center!important;}
+  }
 </style>
 </head>
 <body>
@@ -253,30 +302,29 @@
   </symbol>
 </svg>
 
-<button class="sm-btn" type="button" aria-label="ページの案内を開く" aria-expanded="false" aria-controls="sm-panel"><svg viewBox="0 0 100 100" width="34" height="34" aria-hidden="true"><path d="M24 14c-9 0-15 10-15 26 0 20 6 50 17 50 7 0 8-17 24-17s17 17 24 17c11 0 17-30 17-50 0-16-6-26-15-26-9 0-12 6-26 6S33 14 24 14Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M33 33H67M33 44H67M33 55H67" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></button>
+<button class="sm-btn" type="button" aria-label="ページの一覧を開く" aria-expanded="false" aria-controls="sm-panel"><svg viewBox="0 0 100 100" width="34" height="34" aria-hidden="true"><path d="M24 14c-9 0-15 10-15 26 0 20 6 50 17 50 7 0 8-17 24-17s17 17 24 17c11 0 17-30 17-50 0-16-6-26-15-26-9 0-12 6-26 6S33 14 24 14Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M33 33H67M33 44H67M33 55H67" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></button>
 <div class="sm-veil" hidden></div>
-<nav class="sm-panel" id="sm-panel" aria-label="ページの案内" hidden>
-  <div class="sm-head"><span>ページの案内</span><button class="sm-close" type="button" aria-label="閉じる">×</button></div>
-  <p class="sm-lead">見たいところへ移れます。</p>
-  <div class="sm-g">このページ</div>
-  <a class="sm-item" href="#concept"><span class="sm-t"><b>いい歯で、いい人生を。</b></span><i>↓</i></a>
-  <a class="sm-item" href="#teeth-body"><span class="sm-t"><b>歯と、からだのつながり</b></span><i>↓</i></a>
-  <a class="sm-item" href="ten-check.html"><span class="sm-t"><b>いい歯の10チェック</b></span><i>→</i></a>
-  <a class="sm-item" href="#ages"><span class="sm-t"><b>いまの年代で、大切にしたいこと</b></span><i>↓</i></a>
+<nav class="sm-panel" id="sm-panel" aria-label="ページの一覧" hidden>
+  <div class="sm-head"><span>ページの一覧</span><button class="sm-close" type="button" aria-label="閉じる">×</button></div>
+  <p class="sm-lead">見たいページへ移れます。</p>
+  <div class="sm-g">サイトのページ</div>
+  <a class="sm-item sm-site sm-top" href="index.html"><span class="sm-t"><b>トップページ</b><small>いい歯で、いい人生を。</small></span><i>→</i></a>
   <div class="sm-g">1本の歯を治す</div>
-  <a class="sm-item" href="resin.html"><span class="sm-t"><b>レジン修復</b></span><i>→</i></a>
-  <a class="sm-item" href="inlay-crown.html"><span class="sm-t"><b>インレー・クラウン治療</b></span><i>→</i></a>
-  <a class="sm-item" href="root-canal.html"><span class="sm-t"><b>根管治療</b></span><i>→</i></a>
+  <a class="sm-item sm-site" href="resin.html"><span class="sm-t"><b>レジン修復</b></span><i>→</i></a>
+  <a class="sm-item sm-site" href="inlay-crown.html"><span class="sm-t"><b>インレー・クラウン治療</b></span><i>→</i></a>
+  <a class="sm-item sm-site" href="root-canal.html"><span class="sm-t"><b>根管治療</b></span><i>→</i></a>
   <div class="sm-g">失った歯を補う</div>
-  <a class="sm-item" href="bridge.html"><span class="sm-t"><b>ブリッジ治療</b></span><i>→</i></a>
-  <a class="sm-item" href="denture.html"><span class="sm-t"><b>入れ歯（義歯）治療</b></span><i>→</i></a>
-  <a class="sm-item" href="implant.html"><span class="sm-t"><b>インプラント治療</b></span><i>→</i></a>
+  <a class="sm-item sm-site" href="bridge.html"><span class="sm-t"><b>ブリッジ治療</b></span><i>→</i></a>
+  <a class="sm-item sm-site" href="denture.html"><span class="sm-t"><b>入れ歯（義歯）治療</b></span><i>→</i></a>
+  <a class="sm-item sm-site" href="implant.html"><span class="sm-t"><b>インプラント治療</b></span><i>→</i></a>
   <div class="sm-g">お口全体を整える</div>
-  <a class="sm-item" href="aesthetic.html"><span class="sm-t"><b>審美治療</b></span><i>→</i></a>
-  <a class="sm-item" href="ortho.html"><span class="sm-t"><b>矯正治療</b></span><i>→</i></a>
-  <div class="sm-g">費用のこと</div>
-  <a class="sm-item" href="cost-over-time.html"><span class="sm-t"><b>費用を、時間軸で考える</b></span><i>→</i></a>
-  <a class="sm-item" href="medical-tax.html"><span class="sm-t"><b>医療費控除のこと</b></span><i>→</i></a>
+  <a class="sm-item sm-site" href="aesthetic.html"><span class="sm-t"><b>審美治療</b></span><i>→</i></a>
+  <a class="sm-item sm-site" href="ortho.html"><span class="sm-t"><b>矯正治療</b></span><i>→</i></a>
+  <div class="sm-g">読みもの・費用</div>
+  <a class="sm-item sm-site" href="ten-check.html"><span class="sm-t"><b>いい歯の10チェック</b></span><i>→</i></a>
+  <a class="sm-item sm-site" href="life-stage.html"><span class="sm-t"><b>年代で大切にしたいこと</b></span><i>→</i></a>
+  <a class="sm-item sm-site" href="cost-over-time.html"><span class="sm-t"><b>費用を、時間軸で考える</b></span><i>→</i></a>
+  <a class="sm-item sm-site" href="medical-tax.html"><span class="sm-t"><b>医療費控除のこと</b></span><i>→</i></a>
 </nav>
 
 <!-- ライフのコンセプト（2026-10-30） -->
@@ -532,19 +580,6 @@
   </div>
 </section>
 
-<nav class="pc-toc" aria-label="このページの目次">
-  <div class="pt-h">このページの目次</div>
-  <ul>
-    <li><a href="#concept" data-t="concept">いい歯で、いい人生を</a></li>
-    <li><a href="#teeth-body" data-t="teeth-body">歯と、からだのつながり</a></li>
-    <li><a href="#ten-check" data-t="ten-check">いい歯の10チェック</a></li>
-    <li><a href="#treat-one" data-t="treat-one">1本の歯を治す</a></li>
-    <li><a href="#treat-replace" data-t="treat-replace">失った歯を補う</a></li>
-    <li><a href="#treat-whole" data-t="treat-whole">お口全体を整える</a></li>
-    <li><a href="#ages" data-t="ages">年代で大切にしたいこと</a></li>
-    <li><a href="#qr" data-t="qr">スマホで見返す</a></li>
-  </ul>
-</nav>
 
 <footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
   <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
@@ -573,11 +608,6 @@
 function o(x){p.hidden=!x;v.hidden=!x;b.setAttribute('aria-expanded',x);document.documentElement.classList.toggle('sm-open',x);if(x)c.focus();else b.focus();}
 b.addEventListener('click',function(){o(p.hidden);});c.addEventListener('click',function(){o(false);});v.addEventListener('click',function(){o(false);});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden)o(false);});})();
-</script>
-<script>
-(function(){if(!('IntersectionObserver' in window))return;var ls=document.querySelectorAll('.pc-toc a[data-t]'),m={};ls.forEach(function(a){m[a.dataset.t]=a;});
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ls.forEach(function(a){a.classList.remove('on');});var a=m[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-40% 0px -55% 0px'});
-Object.keys(m).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});})();
 </script>
 </body>
 </html>
