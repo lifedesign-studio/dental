@@ -823,6 +823,50 @@ html.sm-open{overflow:hidden;}
   .ov-special .ov-img{display:none;}
   .ov-for{margin:0 0 2px;}
 }
+
+/* ===== 選び方の考え方（#why）2026-10-30 ===== */
+.why{background:#fff;padding:22px 16px 26px;border-bottom:1px solid var(--line);}
+.why-in{max-width:1780px;margin:0 auto;}
+.why-top{text-align:center;margin-bottom:14px;}
+.why h1{font-size:28px;line-height:1.35;margin:2px 0 6px;}
+.why-lead{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.7;}
+.why-lead b{color:var(--ink);}
+.why-body{display:grid;grid-template-columns:1fr;gap:16px;}
+.why-fig{margin:0;background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:14px 14px 10px;}
+.why-h{font-size:17px;font-weight:800;line-height:1.5;margin:0 0 6px;text-align:center;}
+.why-chart{width:100%;height:auto;display:block;}
+.why-note{font-size:12px;color:var(--muted);margin:4px 0 0;text-align:center;}
+.why-ph{font-size:15px;font-weight:800;margin:0 0 8px;}
+.pick{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-left:7px solid var(--mc);border-radius:12px;padding:12px 16px;margin-bottom:10px;}
+.pk-if{font-size:13.5px;font-weight:800;color:var(--mc);}
+.pk-to{font-size:17px;font-weight:700;line-height:1.5;}
+.pk-to b{color:var(--mc);}
+.pk-why{font-size:13px;color:var(--ink-soft);}
+.why-body-link{font-size:13.5px;color:var(--ink-soft);margin:6px 0 0;line-height:1.7;}
+.why-body-link a{color:var(--sage);font-weight:700;}
+.why-next{display:block;text-align:center;margin-top:14px;font-size:14px;font-weight:800;color:var(--sage);text-decoration:none;}
+.ov h2.ov-h2{font-size:24px;line-height:1.35;margin:2px 0 6px;}
+@media (min-width:1240px){
+  .why{min-height:100vh;display:flex;align-items:center;padding:clamp(14px,2vh,28px) 40px;}
+  .why-in{width:100%;}
+  .why-top{display:flex;align-items:flex-end;justify-content:space-between;text-align:left;gap:32px;margin:0 84px clamp(10px,2vh,24px) 0;}
+  .why h1{font-size:clamp(32px,4.4vh,46px);margin:0;}
+  .why-top .ov-kick{font-size:15px;}
+  .why-lead{font-size:clamp(16px,2vh,20px);}
+  .why-body{grid-template-columns:1.25fr 1fr;gap:clamp(18px,2vw,40px);align-items:center;}
+  .why-fig{padding:clamp(10px,1.6vh,20px) 24px clamp(8px,1.2vh,14px);}
+  .why-h{font-size:clamp(19px,2.6vh,26px);}
+  .why-chart{max-height:58vh;}
+  .why-note{font-size:13.5px;}
+  .why-ph{font-size:clamp(17px,2.2vh,22px);margin-bottom:clamp(8px,1.4vh,14px);}
+  .pick{padding:clamp(10px,1.6vh,18px) 22px;margin-bottom:clamp(8px,1.4vh,14px);}
+  .pk-if{font-size:clamp(15px,1.9vh,18px);}
+  .pk-to{font-size:clamp(19px,2.5vh,25px);}
+  .pk-why{font-size:clamp(14px,1.7vh,16.5px);}
+  .why-body-link{font-size:clamp(14px,1.7vh,16px);}
+  .why-next{font-size:16px;margin-top:clamp(10px,1.6vh,18px);}
+  .ov h2.ov-h2{font-size:clamp(28px,3.8vh,40px);margin:0;}
+}
 </style>
 </head>
 <body>
@@ -870,17 +914,72 @@ html.sm-open{overflow:hidden;}
   <p class="sm-lead">気になる素材の「この先」を、見くらべてみてください。</p>
   <a class="sm-item" href="inlay-crown-metal.html"><span class="sm-dot" style="background:#4E6478"></span><span class="sm-t"><b>金属（保険）で治すと</b><small>費用を抑えて、いまの1本を治す</small></span><i>→</i></a><a class="sm-item" href="inlay-crown-cadcam.html"><span class="sm-dot" style="background:#4F7A6C"></span><span class="sm-t"><b>CAD/CAM（保険）で治すと</b><small>保険で、歯の根を守る（当院のおすすめ）</small></span><i>→</i></a><a class="sm-item" href="inlay-crown-1day.html"><span class="sm-dot" style="background:#A8692A"></span><span class="sm-t"><b>1dayで治すと</b><small>期限までに、1日でまとめて治す</small></span><i>→</i></a><a class="sm-item" href="inlay-crown-ceramic.html"><span class="sm-dot" style="background:#465C92"></span><span class="sm-t"><b>セラミック（奥歯）で治すと</b><small>作り直しを減らして、長く使う</small></span><i>→</i></a><a class="sm-item" href="inlay-crown-front.html"><span class="sm-dot" style="background:#A05A6B"></span><span class="sm-t"><b>セラミック（前歯）で治すと</b><small>前歯の見た目に、自信を持つ</small></span><i>→</i></a>
 </nav>
+<!-- ================= 0. 選び方の考え方（#why）2026-10-30 ================= -->
+<section class="why" id="why">
+  <div class="why-in">
+    <div class="why-top">
+      <div><div class="ov-kick">インレー・クラウン治療</div>
+      <h1>1本ずつ、選んでください。</h1></div>
+      <p class="why-lead"><b>奥歯は、食事をかむ力の中心です。</b>だからこそ、奥歯の素材は慎重に選びましょう。</p>
+    </div>
+    <div class="why-body">
+      <figure class="why-fig">
+        <div class="why-h">手間と費用をかけるほど、歯は長持ちしやすくなります</div>
+        <svg class="why-chart" viewBox="0 0 640 430" role="img" aria-labelledby="whyc-t">
+  <title id="whyc-t">最初にかける手間と費用が多いほど、作り直しまでが長くなりやすいことを示すイメージ図。金属とCAD/CAMは左下、セラミックは右上、1dayはCAD/CAMと同じ高さで右にある。</title>
+  <defs><linearGradient id="whyband" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4E6478" stop-opacity=".10"/><stop offset="1" stop-color="#465C92" stop-opacity=".22"/></linearGradient>
+  <marker id="whyar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#54636A"/></marker></defs>
+  <path d="M96 352 L590 92 L590 40 L96 300 Z" fill="url(#whyband)"/>
+  <text x="430" y="118" transform="rotate(-27.8 430 118)" text-anchor="middle" font-size="17" font-weight="800" fill="#465C92">かけるほど、長持ちしやすい</text>
+  <line x1="80" y1="370" x2="610" y2="370" stroke="#54636A" stroke-width="2" marker-end="url(#whyar)"/>
+  <line x1="80" y1="370" x2="80" y2="26" stroke="#54636A" stroke-width="2" marker-end="url(#whyar)"/>
+  <text x="608" y="396" text-anchor="end" font-size="15" font-weight="700" fill="#2E3A3F">最初にかける、手間と費用</text>
+  <text x="66" y="40" text-anchor="end" font-size="15" font-weight="700" fill="#2E3A3F" transform="rotate(-90 66 40)">長持ち（作り直しまでの長さ）</text>
+  <path d="M100 404 h140" stroke="#4F7A6C" stroke-width="5" stroke-linecap="round"/><text x="170" y="424" text-anchor="middle" font-size="13.5" font-weight="800" fill="#4F7A6C">保険が使える範囲</text>
+  <path d="M320 404 h270" stroke="#465C92" stroke-width="5" stroke-linecap="round" opacity=".85"/><text x="455" y="424" text-anchor="middle" font-size="13.5" font-weight="800" fill="#465C92">自費</text>
+  <line x1="216" y1="292" x2="366" y2="292" stroke="#A8692A" stroke-width="2" stroke-dasharray="5 5"/>
+  <text x="290" y="283" text-anchor="middle" font-size="12" fill="#A8692A" font-weight="700">素材はCAD/CAMと同じ系統</text>
+  <circle cx="140" cy="318" r="13" fill="#4E6478"/><text x="140" y="346" text-anchor="middle" font-size="15" font-weight="800" fill="#4E6478">金属</text>
+  <circle cx="200" cy="292" r="13" fill="#4F7A6C"/><text x="200" y="262" text-anchor="middle" font-size="15" font-weight="800" fill="#4F7A6C">CAD/CAM</text>
+  <circle cx="380" cy="292" r="13" fill="#A8692A"/><text x="380" y="322" text-anchor="middle" font-size="15" font-weight="800" fill="#A8692A">1day</text><text x="380" y="340" text-anchor="middle" font-size="12" fill="#A8692A">時間を優先</text>
+  <circle cx="530" cy="112" r="15" fill="#465C92"/><text x="530" y="150" text-anchor="middle" font-size="16" font-weight="800" fill="#465C92">セラミック</text>
+</svg>
+        <p class="why-note">イメージ図です。実際の年数は、歯の場所やお口の状態で変わります。</p>
+      </figure>
+      <div class="why-pick">
+        <p class="why-ph">何を大切にするかで、合う素材が変わります</p>
+        <a class="pick" href="inlay-crown-cadcam.html" style="--mc:#4F7A6C">
+          <span class="pk-if">いまの費用を、抑えたいなら</span>
+          <span class="pk-to">保険の範囲で治します。<b>まずは白いCAD/CAM</b></span>
+          <span class="pk-why">欠けても、歯を傷めずに直しやすい素材です</span>
+        </a>
+        <a class="pick" href="inlay-crown-ceramic.html" style="--mc:#465C92">
+          <span class="pk-if">これから先の作り直しを、減らしたいなら</span>
+          <span class="pk-to">自費の<b>セラミック</b>で治します</span>
+          <span class="pk-why">最初に時間と費用をかけて、精密に仕上げます</span>
+        </a>
+        <a class="pick" href="inlay-crown-1day.html" style="--mc:#A8692A">
+          <span class="pk-if">期限までに、まとめて治したいなら</span>
+          <span class="pk-to">自費の<b>1day</b>で、1日で治します</span>
+          <span class="pk-why">素材より、時間を優先する選び方です</span>
+        </a>
+        <p class="why-body-link">歯を残すことは、からだの健康にもつながります。<a href="index.html#teeth-body">歯と、からだのつながり →</a></p>
+      </div>
+    </div>
+    <a class="why-next" href="#summary">4つの素材と、それぞれの「この先」へ ↓</a>
+  </div>
+</section>
+
 <!-- ================= 0. 1枚の絵（#summary）2026-10-29 ================= -->
 <section class="ov" id="summary">
   <div class="ov-in">
     <div class="ov-top">
       <div class="ov-ttl">
-        <div class="ov-kick">インレー・クラウン治療</div>
-        <h1>1本ずつ、選んでください。</h1>
-        <p class="ov-what">むし歯を治す4つの素材と、それぞれの「この先」を1枚にまとめました。</p>
+        <div class="ov-kick">4つの素材を、ならべて見る</div>
+        <h2 class="ov-h2">4つの素材と、それぞれの「この先」</h2>
+        <p class="ov-what">気になる素材のストーリーを開くと、費用・通院の回数・くわしい解説が見られます。</p>
       </div>
       <div class="ov-msg">
-        <p><b>奥歯は、食事をかむ力の中心です。</b>だからこそ、奥歯の素材は慎重に選びましょう。</p>
         <p>ご希望によって、合う素材と治し方が変わります。</p>
       </div>
     </div>
