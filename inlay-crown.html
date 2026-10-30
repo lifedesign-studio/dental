@@ -793,6 +793,36 @@ html.sm-open{overflow:hidden;}
 .ov-wish span{display:block;}
 .ov-wish{font-size:16.5px;line-height:1.55;}
 @media (min-width:1240px){.ov-wish{font-size:clamp(17px,2.15vh,22px);white-space:nowrap;}}
+
+/* 全体を俯瞰する帯と軸（2026-10-30） */
+.ov-zones{display:none;}
+.ov-axis{display:flex;flex-direction:column;gap:6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 12px;font-size:14px;font-weight:700;line-height:1.5;}
+.ax-bar{display:block;height:8px;border-radius:999px;background:linear-gradient(90deg,#4E6478,#4F7A6C,#465C92);position:relative;}
+.ax-bar::after{content:"";position:absolute;right:-6px;top:50%;margin-top:-8px;border:8px solid transparent;border-left:10px solid #465C92;border-right:0;}
+.ax-b{color:#465C92;}
+.ov-for{font-size:12.5px;color:var(--ink-soft);font-weight:700;margin:-2px 0 4px;}
+@media (min-width:1240px){
+  .ov-grid{grid-template-columns:1fr 1fr 1fr 1fr;}
+  .ov-special{margin-left:clamp(10px,1.2vw,22px);}
+  .ov-special::before{content:"";position:absolute;left:calc(-1 * clamp(12px,1.4vw,26px));top:-46px;bottom:0;border-left:2px dashed var(--line);}
+  .ov-zones{display:grid;grid-template-columns:2fr 1fr 1fr;column-gap:clamp(12px,1.2vw,22px);margin-bottom:6px;}
+  .ov-zones .z-time{margin-left:clamp(10px,1.2vw,22px);}
+  .z{font-weight:800;font-size:clamp(15px,1.9vh,19px);text-align:center;padding:5px 0 7px;border-bottom:3px solid;letter-spacing:.06em;}
+  .z-ins{color:#4F7A6C;border-color:#4F7A6C;}
+  .z-self{color:#465C92;border-color:#465C92;}
+  .z-time{color:#A8692A;border-color:#A8692A;}
+  .ov-axis{flex-direction:row;align-items:center;gap:16px;background:none;border:none;padding:0;margin:4px 0 clamp(10px,1.4vh,16px);width:calc(75% - clamp(6px,.6vw,11px));font-size:clamp(14.5px,1.8vh,18px);}
+  .ax-bar{flex:1;}
+  .ov-img{width:clamp(64px,9.5vh,110px);height:clamp(64px,9.5vh,110px);}
+  .ov-for{font-size:clamp(13px,1.6vh,15px);}
+}
+
+@media (min-width:1240px){
+  .ov-img{width:clamp(60px,8vh,96px);height:clamp(60px,8vh,96px);margin:2px auto 0;}
+  .ov-top{margin-bottom:clamp(6px,1.2vh,16px);}
+  .ov-special .ov-img{display:none;}
+  .ov-for{margin:0 0 2px;}
+}
 </style>
 </head>
 <body>
@@ -854,9 +884,13 @@ html.sm-open{overflow:hidden;}
         <p>ご希望によって、合う素材と治し方が変わります。</p>
       </div>
     </div>
+    <div class="ov-zones" aria-hidden="true">
+      <div class="z z-ins">保険が使える範囲</div><div class="z z-self">自費</div><div class="z z-time">時間を優先する、別の選び方</div>
+    </div>
+    <div class="ov-axis"><span class="ax-a">手間と費用を、かけるほど</span><span class="ax-bar" aria-hidden="true"></span><span class="ax-b">作り直しが減り、歯が残りやすくなります</span></div>
     <div class="ov-grid">
       <article class="ov-col" style="--mc:#4E6478">
-        <div class="ov-wish"><span>作り直しが増えても、</span><span>いまの負担を軽くしたい</span></div>
+        <div class="ov-wish"><span>むし歯が再発しやすくても、</span><span>いまの負担を軽くしたい</span></div>
         <div class="ov-mat"><span class="ov-tag">保険</span>金属</div>
         <img class="ov-img" src="ic-metal-1.jpg" alt="" loading="eager">
         <div class="ov-blk"><div class="ov-h">通う回数と時間</div><div class="ov-visit">30分 × 2回</div></div>
@@ -865,7 +899,7 @@ html.sm-open{overflow:hidden;}
         <div class="ov-links"><a class="ov-go" href="inlay-crown-metal.html">金属のストーリー →</a></div>
       </article>
       <article class="ov-col" style="--mc:#4F7A6C">
-        <div class="ov-wish"><span>費用を抑えて、白く治したい。</span><span>欠けたら、直しながら使う</span></div>
+        <div class="ov-wish"><span>保険の範囲で、白く治したい。</span><span>欠けても、歯を傷めずに直しやすい</span></div>
         <div class="ov-mat"><span class="ov-tag">保険</span>CAD/CAM</div><div class="ov-star">保険で治すなら、当院のおすすめ</div>
         <img class="ov-img" src="ic-cadcam-1.jpg" alt="" loading="eager">
         <div class="ov-blk"><div class="ov-h">通う回数と時間</div><div class="ov-visit">30分 × 2回</div></div>
@@ -873,23 +907,23 @@ html.sm-open{overflow:hidden;}
         <div class="ov-wr"><span>保証</span>保険の決まりによる</div>
         <div class="ov-links"><a class="ov-go" href="inlay-crown-cadcam.html">CAD/CAMのストーリー →</a></div>
       </article>
-      <article class="ov-col" style="--mc:#A8692A">
-        <div class="ov-wish"><span>15年保証がなくても、</span><span>1日でまとめて治したい</span></div>
-        <div class="ov-mat"><span class="ov-tag">自費</span>1day</div>
-        <img class="ov-img" src="ic-1day-1.jpg" alt="" loading="eager">
-        <div class="ov-blk"><div class="ov-h">通う回数と時間</div><div class="ov-visit">1日（1本なら90〜120分）</div></div>
-        <div class="ov-blk"><div class="ov-h">この先のストーリー</div><ol class="ov-st"><li><b>今</b><span>期限までに治したい</span></li><li><b>当日</b><span>院内で削り出して入れる</span></li><li><b>予定の日</b><span>治療を終えて迎えられる</span></li><li><b>その先</b><span>CAD/CAMと同じように使う</span></li></ol></div>
-        <div class="ov-wr"><span>保証</span>15年保証の対象外</div>
-        <div class="ov-links"><a class="ov-go" href="inlay-crown-1day.html">1dayのストーリー →</a></div>
-      </article>
       <article class="ov-col" style="--mc:#465C92">
-        <div class="ov-wish"><span>作り直しを減らして、長く使いたい。</span><span>最初の費用と、通う回数はかかる</span></div>
+        <div class="ov-wish"><span>作り直しを減らして、長く使いたい。</span><span>時間をかけて、精密に仕上げる</span></div>
         <div class="ov-mat"><span class="ov-tag">自費</span>セラミック</div>
         <img class="ov-img" src="ic-ceramic-1.jpg" alt="" loading="eager">
         <div class="ov-blk"><div class="ov-h">通う回数と時間</div><div class="ov-visit">60分 × 2回（インレー）／3回（クラウン）</div></div>
         <div class="ov-blk"><div class="ov-h">この先のストーリー</div><ol class="ov-st"><li><b>今</b><span>拡大して、ぴったり合わせて治す</span></li><li><b>5年、10年</b><span>変わらずに使い続ける</span></li><li><b>もしものとき</b><span>15年保証の決まりで直す</span></li><li><b>その先</b><span>自分の歯を残していく</span></li></ol></div>
         <div class="ov-wr"><span>保証</span>15年保証</div>
         <div class="ov-links"><a class="ov-go" href="inlay-crown-ceramic.html">奥歯のストーリー →</a><a class="ov-go" href="inlay-crown-front.html">前歯のストーリー →</a></div>
+      </article>
+      <article class="ov-col ov-special" style="--mc:#A8692A">
+        <div class="ov-wish"><span>負担より、時間を優先したい。</span><span>何本もの歯を、1日で集中して治す</span></div><div class="ov-for">お忙しい方・期限がある方・3本以上治したい方に</div>
+        <div class="ov-mat"><span class="ov-tag">自費</span>1day</div>
+        <img class="ov-img" src="ic-1day-1.jpg" alt="" loading="eager">
+        <div class="ov-blk"><div class="ov-h">通う回数と時間</div><div class="ov-visit">1日（1本なら90〜120分）</div></div>
+        <div class="ov-blk"><div class="ov-h">この先のストーリー</div><ol class="ov-st"><li><b>今</b><span>期限までに治したい</span></li><li><b>当日</b><span>院内で削り出して入れる</span></li><li><b>予定の日</b><span>治療を終えて迎えられる</span></li><li><b>その先</b><span>CAD/CAMと同じように使う</span></li></ol></div>
+        <div class="ov-wr"><span>保証</span>15年保証の対象外</div>
+        <div class="ov-links"><a class="ov-go" href="inlay-crown-1day.html">1dayのストーリー →</a></div>
       </article>
     </div>
     <div class="ov-bot">
@@ -1025,10 +1059,10 @@ html.sm-open{overflow:hidden;}
         <thead>
           <tr class="wish-row">
             <th style="text-align:left;">こんな方に</th>
-            <th>作り直しが増えても、<br>いまの負担を軽くしたい</th>
-            <th>費用を抑えて、白く治したい。<br>欠けたら、直しながら使う</th>
-            <th>15年保証がなくても、<br>1日でまとめて治したい<small>1本から数本まで</small></th>
-            <th>作り直しを減らして、長く使いたい。<br>最初の費用と、通う回数はかかる</th>
+            <th>むし歯が再発しやすくても、<br>いまの負担を軽くしたい</th>
+            <th>保険の範囲で、白く治したい。<br>欠けても、歯を傷めずに直しやすい</th>
+            <th>負担より、時間を優先したい。<br>何本もの歯を、1日で集中して治す<small>1本から数本まで</small></th>
+            <th>作り直しを減らして、長く使いたい。<br>時間をかけて、精密に仕上げる</th>
           </tr>
           <tr class="mat-row">
             <th style="text-align:left;">素材</th>
