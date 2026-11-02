@@ -295,6 +295,55 @@
     .tc-frame .stage-list-link{grid-column:3!important;grid-row:1 / span 2!important;}
     .tc-frame .tc-slots{grid-template-columns:150px 160px!important;}
   }
+
+/* トップのアイキャッチ（#concept・2026-11-02） */
+#concept.tp-hero{background:linear-gradient(180deg,#fff 0%,var(--soft) 100%);padding:84px 20px 34px;border-bottom:1px solid var(--line);}
+.tp-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:28px;}
+.tp-left{text-align:center;}
+.tp-ill{width:180px;height:auto;display:block;margin:0 auto 6px;}
+.tp-kick{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--sage);margin:0;}
+#concept .tp-copy{font-size:34px;line-height:1.35;letter-spacing:.06em;margin:6px 0 14px;color:var(--ink);}
+.tp-lead{font-size:17.5px;font-weight:800;color:var(--sage);margin:0 0 10px;line-height:1.6;}
+.tp-text{font-size:14.5px;color:var(--ink-soft);line-height:1.95;margin:0;}
+.tp-right{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 16px 16px;}
+.tp-rh{font-size:20px;font-weight:800;text-align:center;margin:0 0 12px;color:var(--ink);letter-spacing:.06em;}
+.tp-step{display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;background:var(--soft);text-decoration:none;color:var(--ink);margin-bottom:8px;}
+.tp-no{width:26px;height:26px;border-radius:50%;background:var(--sage);color:#fff;font-weight:800;font-size:13.5px;display:flex;align-items:center;justify-content:center;}
+.tp-ic{width:52px;height:52px;}
+.tp-t b{font-size:15.5px;line-height:1.5;}
+.tp-step i{font-style:normal;color:var(--sage);font-weight:800;}
+.tp-note{font-size:13px;color:var(--muted);text-align:center;margin:10px 0 0;}
+@media (min-width:760px){
+  .tp-in{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center;}
+  .tp-left{text-align:left;}
+  .tp-ill{margin:0 0 8px;}
+  #concept .tp-copy{font-size:44px;}
+  .tp-right{padding:24px 22px 18px;}
+}
+@media (min-width:1240px){
+  #concept.tp-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(20px,3vh,40px) 40px;}
+  .tp-in{width:100%;max-width:1440px;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:72px;}
+  .tp-left{display:grid;grid-template-columns:auto minmax(0,1fr);gap:36px;align-items:center;}
+  .tp-ill{width:clamp(150px,26vh,250px);margin:0;}
+  #concept .tp-copy{font-size:clamp(48px,7vh,72px);}
+  .tp-lead{font-size:clamp(19px,2.6vh,25px);}
+  .tp-text{font-size:clamp(15.5px,2vh,19px);}
+  .tp-rh{font-size:clamp(22px,3vh,30px);margin-bottom:clamp(10px,1.8vh,20px);}
+  .tp-step{padding:clamp(10px,1.6vh,18px) 18px;gap:16px;margin-bottom:clamp(8px,1.2vh,12px);}
+  .tp-ic{width:clamp(52px,8vh,76px);height:clamp(52px,8vh,76px);}
+  .tp-t b{font-size:clamp(16px,2.2vh,21px);}
+  .tp-note{font-size:clamp(13px,1.6vh,15.5px);}
+}
+
+.tp-ic3{width:72px!important;height:40px!important;}
+#concept .tp-copy .nb{white-space:nowrap;}
+@media (min-width:1240px){
+  .tp-in{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)!important;gap:56px!important;}
+  #concept .tp-copy{font-size:clamp(44px,6.2vh,64px);letter-spacing:.04em;}
+  .tp-ic3{width:clamp(80px,12vh,110px)!important;height:clamp(44px,6.6vh,60px)!important;}
+}
+
+@media (max-width:759px){.tp-step{gap:9px;padding:10px;}.tp-ic{width:40px;height:40px;}.tp-ic3{width:54px!important;height:30px!important;}.tp-t b{font-size:15px;}}
 </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -377,9 +426,10 @@
 </nav>
 
 <!-- ライフのコンセプト（2026-10-30） -->
-<header class="hero concept" id="concept">
-  <div class="wrap reveal">
-    <svg class="concept-ill" viewBox="0 0 240 170" role="img" aria-label="笑顔の歯と、そこから伸びる若葉のイラスト">
+<header class="tp-hero" id="concept">
+  <div class="tp-in">
+    <div class="tp-left">
+      <svg class="tp-ill" viewBox="0 0 240 170" role="img" aria-label="笑顔の歯と、そこから伸びる若葉のイラスト">
       <circle cx="120" cy="92" r="70" fill="#EEF3F1"/>
       <path d="M120 36c-6-16-2-27 10-32 3 13-1 24-10 32Z" fill="#6E9C8E"/>
       <path d="M120 36c4-14 15-19 27-15-5 12-15 17-27 15Z" fill="#4F7A6C"/>
@@ -389,12 +439,20 @@
       <path d="M108 95c7 7 17 7 24 0" fill="none" stroke="#2E3A3F" stroke-width="3.5" stroke-linecap="round"/>
       <circle cx="96" cy="92" r="5" fill="#E8B4B8" opacity=".7"/><circle cx="144" cy="92" r="5" fill="#E8B4B8" opacity=".7"/>
     </svg>
-    <p class="eyebrow">LIFE DENTAL CLINIC</p>
-    <h1><span class="nb">いい歯で、</span><span class="nb">いい人生を。</span></h1>
-    <p class="lead"><span class="nb">歯は、</span><span class="nb">食べる・話す・笑うを支えています。</span></p>
-    <p class="lead"><span class="nb">私たちは、</span><span class="nb">目の前の1本だけを見て治療を決めません。</span></p>
-    <p class="lead"><span class="nb">これから先の長い暮らしを見すえて、</span><span class="nb">より良い生活につながる治療をご提案します。</span></p>
-    <p class="concept-what"><span class="nb">このページでは、</span><span class="nb">治療の選び方とおおよその費用をまとめました。</span></p>
+      <div>
+        <p class="tp-kick">LIFE DENTAL CLINIC</p>
+        <h1 class="tp-copy"><span class="nb">いい歯で、</span><span class="nb">いい人生を。</span></h1>
+        <p class="tp-lead"><span class="nb">歯は、</span><span class="nb">食べる・話す・笑うを</span><span class="nb">支えています。</span></p>
+        <p class="tp-text"><span class="nb">私たちは、</span><span class="nb">目の前の1本だけを見て</span><span class="nb">治療を決めません。</span><br><span class="nb">これから先の長い暮らしを見すえて、</span><span class="nb">より良い生活につながる治療を</span><span class="nb">ご提案します。</span></p>
+      </div>
+    </div>
+    <nav class="tp-right" aria-label="このページの進み方">
+      <p class="tp-rh"><span class="nb">知る、</span><span class="nb">確かめる、</span><span class="nb">選ぶ。</span></p>
+      <a class="tp-step" href="#teeth-body"><span class="tp-no">1</span><svg class="tp-ic" viewBox="0 0 80 80" aria-hidden="true"><g transform="translate(4 6)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="3" stroke-linejoin="round"/></g><path d="M60 50c-4-4-10-1-8 4 1 3 8 8 8 8s7-5 8-8c2-5-4-8-8-4Z" fill="#E8B4B8" stroke="#A05A6B" stroke-width="1.6"/></svg><span class="tp-t"><b><span class="nb">歯と、</span><span class="nb">からだのつながりを知る</span></b></span><i>↓</i></a>
+      <a class="tp-step" href="#ten-check"><span class="tp-no">2</span><svg class="tp-ic" viewBox="0 0 80 80" aria-hidden="true"><rect x="16" y="12" width="48" height="60" rx="6" fill="#fff" stroke="#4F7A6C" stroke-width="3"/><rect x="30" y="7" width="20" height="10" rx="3" fill="#EEF3F1" stroke="#4F7A6C" stroke-width="2.5"/><g stroke="#4F7A6C" stroke-width="3" stroke-linecap="round" fill="none"><path d="m24 31 4 4 7-8M40 31h16M24 47l4 4 7-8M40 47h16"/><path d="M40 61h16" stroke="#9FB3AC"/></g><circle cx="29" cy="61" r="4" fill="none" stroke="#9FB3AC" stroke-width="2.5"/></svg><span class="tp-t"><b><span class="nb">いまのお口を、</span><span class="nb">10の項目で確かめる</span></b></span><i>↓</i></a>
+      <a class="tp-step" href="#treat-one"><span class="tp-no">3</span><svg class="tp-ic tp-ic3" viewBox="0 18 80 44" aria-hidden="true"><g transform="translate(2 22) scale(.42)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="7" stroke-linejoin="round"/><rect x="21" y="20" width="18" height="10" rx="2.5" fill="#AEB8BD"/></g><g transform="translate(27 22) scale(.42)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="7" stroke-linejoin="round"/><rect x="21" y="20" width="18" height="10" rx="2.5" fill="#E3ECE8"/></g><g transform="translate(52 22) scale(.42)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#8E7016" stroke-width="7" stroke-linejoin="round"/><rect x="21" y="20" width="18" height="10" rx="2.5" fill="#F3E6BE"/></g></svg><span class="tp-t"><b><span class="nb">1本ずつ、</span><span class="nb">治し方を選ぶ</span></b></span><i>↓</i></a>
+      <p class="tp-note">すぐに決めなくてかまいません。気になるところから、ご覧ください。</p>
+    </nav>
   </div>
 </header>
 
