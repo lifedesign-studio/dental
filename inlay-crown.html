@@ -1049,6 +1049,47 @@ html.sm-open{overflow:hidden;}
 .pick>span{grid-column:2;}
 .pk-ic{grid-column:1;grid-row:1 / span 3;width:44px;height:48px;}
 @media (min-width:1240px){.pk-ic{width:clamp(34px,4.2vh,44px);height:clamp(38px,4.7vh,50px);}.pick-row .pick{column-gap:8px;padding-left:12px!important;padding-right:12px!important;}}
+
+/* アイキャッチ（#hero・2026-11-02） */
+.ih{background:var(--soft);padding:84px 20px 30px;border-bottom:1px solid var(--line);}
+.ih-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:26px;}
+.ih-left{position:relative;}
+.ih-copy{font-size:34px;line-height:1.35;margin:6px 0 16px;color:var(--ink);letter-spacing:.04em;}
+.ih-lead{font-size:18px;font-weight:800;color:var(--sage);margin:0 0 12px;line-height:1.6;}
+.ih-text{font-size:15px;color:var(--ink-soft);line-height:1.95;margin:0;}
+.ih-leaf{width:38px;height:38px;fill:none;stroke:var(--sage-2);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-top:18px;}
+.ih-right{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 20px;}
+.ih-h{font-size:22px;line-height:1.45;margin:0 0 4px;color:var(--ink);}
+.ih-sub{font-size:14px;color:var(--muted);margin:0 0 14px;}
+.ih-item{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid var(--line);}
+.ih-no{width:28px;height:28px;border-radius:50%;background:var(--sage);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+.ih-t{display:block;font-size:16.5px;line-height:1.55;color:var(--ink);margin-bottom:6px;}
+.ih-item p{font-size:14px;line-height:1.85;color:var(--ink-soft);margin:0 0 6px;}
+.ih-item p.ih-quiet{color:var(--muted);font-size:13.5px;margin-top:8px;}
+.ih-link{display:inline-block;font-size:14px;font-weight:700;color:var(--sage);text-decoration:none;border-bottom:1px solid var(--sage-2);}
+.ih-end{font-size:13.5px;color:var(--muted);margin:10px 0 0;padding-top:12px;border-top:1px solid var(--line);}
+.ih-next{display:block;width:max-content;max-width:100%;margin:22px auto 0;font-size:14px;font-weight:700;color:var(--sage);text-decoration:none;}
+.why-title{font-size:24px;line-height:1.4;margin:2px 0 6px;}
+@media (min-width:760px){
+  .ih{padding:84px 32px 34px;}
+  .ih-in{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:center;}
+  .ih-copy{font-size:44px;}
+  .ih-right{padding:26px 28px;}
+}
+@media (min-width:1240px){
+  .ih{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(20px,3vh,40px) 40px;}
+  .ih-in{width:100%;gap:64px;}
+  .ih-copy{font-size:clamp(48px,7vh,72px);}
+  .ih-lead{font-size:clamp(20px,2.7vh,26px);}
+  .ih-text{font-size:clamp(16px,2.1vh,20px);}
+  .ih-h{font-size:clamp(24px,3.2vh,32px);}
+  .ih-sub{font-size:clamp(14px,1.8vh,17px);}
+  .ih-t{font-size:clamp(17px,2.3vh,22px);}
+  .ih-item p{font-size:clamp(14px,1.85vh,17px);}
+  .ih-item p.ih-quiet,.ih-end{font-size:clamp(13.5px,1.7vh,16px);}
+  .ih-right{padding:clamp(20px,3vh,34px) 34px;}
+  .why-title{font-size:clamp(28px,3.8vh,40px);margin:0;}
+}
 </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -1118,12 +1159,48 @@ html.sm-open{overflow:hidden;}
   <a class="sm-item sm-site" href="cost-over-time.html"><span class="sm-t"><b>費用を、時間軸で考える</b></span><i>→</i></a>
   <a class="sm-item sm-site" href="medical-tax.html"><span class="sm-t"><b>医療費控除のこと</b></span><i>→</i></a>
 </nav>
+<!-- ================= 0. アイキャッチ（#hero）2026-11-02 ================= -->
+<section class="ih" id="hero">
+  <div class="ih-in">
+    <div class="ih-left">
+      <div class="ov-kick">インレー・クラウン治療</div>
+      <h1 class="ih-copy"><span class="nb">いい歯で、</span><span class="nb">いい人生を。</span></h1>
+      <p class="ih-lead"><span class="nb">歯は、</span><span class="nb">食べる・話す・笑うを</span><span class="nb">支えています。</span></p>
+      <p class="ih-text"><span class="nb">私たちは、</span><span class="nb">目の前の1本だけを見て</span><span class="nb">治療を決めません。</span><br><span class="nb">これから先の長い暮らしを見すえて、</span><span class="nb">より良い生活につながる治療を</span><span class="nb">ご提案します。</span></p>
+      <svg class="ih-leaf" aria-hidden="true"><use href="#ic-leaf"/></svg>
+    </div>
+    <div class="ih-right">
+      <h2 class="ih-h"><span class="nb">1本単位で、</span><span class="nb">素材や治療法を選べます</span></h2>
+      <p class="ih-sub">同じお口の中でも、歯ごとに治し方を変えられます。</p>
+      <div class="ih-item">
+        <span class="ih-no">1</span>
+        <div>
+          <b class="ih-t"><span class="nb">いまは保険で治して、</span><span class="nb">作り直すときに選び直せます</span></b>
+          <p>保険の詰めもの・被せものは、いずれ作り直すことを前提にした治療です。作り直すときに、あらためて保険か自由診療かを選べます。</p>
+          <p>いまは費用を抑えて、将来、長く持たせる治療や見た目を整える治療を選ぶこともできます。</p>
+          <p class="ih-quiet">ただ、作り直すたびに、歯は少しずつ削られます。そのときの歯の状態によっては、選べる治療がかぎられることもあります。</p>
+        </div>
+      </div>
+      <div class="ih-item">
+        <span class="ih-no">2</span>
+        <div>
+          <b class="ih-t"><span class="nb">自由診療なら、</span><span class="nb">素材・治し方・時間を、</span><span class="nb">好きな組み合わせで選べます</span></b>
+          <p>素材だけでなく、精密に治すか、1日でまとめて治すかも選べます。</p>
+          <a class="ih-link" href="#combo">組み合わせを見る ↓</a>
+        </div>
+      </div>
+      <p class="ih-end">すぐに決めなくてかまいません。1本ずつ、そのときのご事情に合わせて選んでください。</p>
+    </div>
+  </div>
+  <a class="ih-next" href="#why">素材ごとの「この先」を見くらべる ↓</a>
+</section>
+
 <!-- ================= 0. 選び方の考え方（#why）2026-10-30 ================= -->
 <section class="why" id="why">
   <div class="why-in">
     <div class="why-top">
       <div><div class="ov-kick">インレー・クラウン治療</div>
-      <h1><span class="nb">1本単位で、</span><span class="nb">素材や治療法を選べます</span></h1></div>
+      <h2 class="why-title"><span class="nb">素材ごとの「この先」を、</span><span class="nb">見くらべる</span></h2></div>
       <p class="why-lead"><b>奥歯は、食事をかむ力の中心です。</b>だからこそ、奥歯の素材は慎重に選びましょう。</p>
     </div>
     <div class="why-body">
@@ -1196,7 +1273,7 @@ html.sm-open{overflow:hidden;}
 <text x="457" y="428" text-anchor="middle" font-size="13" font-weight="800" fill="#8E7016">↓ 作り直しが減り、歯が弱くなりにくい</text>
 </svg>
         </figure>
-        <figure class="why-fig why-combo">
+        <figure class="why-fig why-combo" id="combo">
           <div class="why-h"><span class="nb">自由診療なら、</span><span class="nb">素材・治し方・時間を、</span><span class="nb">好きな組み合わせで選べます</span></div>
           <div class="c3"><div class="c3-row r-mat"><div class="c3-k"><b>素材</b><span><span class="nb">経年劣化のしやすさと、</span><span class="nb">むし歯が再発したときの</span><span class="nb">見つけやすさが変わります</span></span></div><div class="c3-opts"><div class="c3-o hk"><b class="c3-hk">保険適用</b><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><rect x="10.5" y="7.5" width="7" height="4" rx="1" fill="#AEB8BD" stroke="none"/></svg><span class="cb-l">合金<small>金属</small></span></span><span class="c3-tags"><i>#発見しにくい</i><i>#劣化</i><i>#腐食</i></span></div><div class="c3-o hk"><b class="c3-hk">保険適用</b><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l9 5v10l-9 5-9-5V9z"/><path d="M5 9l9 5 9-5M14 14v10"/></svg><span class="cb-l">ブロックレジン<small>CAD/CAM</small></span></span><span class="c3-tags"><i>#白い</i><i>#欠けても直しやすい</i></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><path d="M22 2v4M20 4h4" stroke-width="1.6"/></svg><span class="cb-l">セラミック</span></span><span class="c3-tags"><i>#見た目が自然</i><i>#劣化しにくい</i></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><rect x="10.5" y="7.5" width="7" height="4" rx="1" fill="#C9A23A" stroke="none"/></svg><span class="cb-l">ゴールド</span></span><span class="c3-tags"><i>#さびにくい</i></span></div></div></div><div class="c3-row r-how"><div class="c3-k"><b>治し方</b><span><span class="nb">治療の時間、</span><span class="nb">精度、</span><span class="nb">むし歯の再発しやすさが変わります</span></span></div><div class="c3-opts"><div class="c3-o hk"><b class="c3-hk">保険適用</b><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c3-6 7-8 11-8s8 2 11 8c-3 6-7 8-11 8s-8-2-11-8Z"/><circle cx="14" cy="14" r="3.5"/></svg><span class="cb-l">従来の方法</span></span><span class="c3-tags"><i>#肉眼で治療</i><i>#1回の治療が短め</i></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4l6 3-4 8-6-3z"/><path d="M12 15l2 4M6 24h16M17 24c3-2 4-6 2-10"/><circle cx="17" cy="13" r="1.5"/></svg><span class="cb-l">精密な治療</span></span><span class="c3-tags"><i>#マイクロスコープ</i><i>#シリコン印象</i><i>#CT</i></span></div></div></div><div class="c3-row r-time"><div class="c3-k"><b>時間</b><span><span class="nb">治す歯が多いとき、</span><span class="nb">治療全体の期間が変わります</span></span></div><div class="c3-opts"><div class="c3-o hk"><b class="c3-hk">保険適用</b><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><circle cx="9" cy="16" r="1.2" fill="currentColor"/><circle cx="14" cy="16" r="1.2" fill="currentColor"/><circle cx="19" cy="16" r="1.2" fill="currentColor"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/></svg><span class="cb-l">毎月、少しずつ</span></span><span class="c3-tags"><i>#1回の負担が軽い</i></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><text x="14" y="21.5" text-anchor="middle" font-size="9" font-weight="800" fill="currentColor" stroke="none">1</text></svg><span class="cb-l">1日で、まとめて</span></span><span class="c3-tags"><i>#複数本の治療に最適</i><i>#期限が決まっている</i></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><path d="M10 17l3 3 5-6"/></svg><span class="cb-l">予定に、合わせて</span></span><span class="c3-tags"><i>#仮歯で納得できるまで</i><i>#計画的に好きなタイミングで</i></span></div></div></div></div>
         </figure>
