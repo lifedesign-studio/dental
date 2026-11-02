@@ -1090,6 +1090,41 @@ html.sm-open{overflow:hidden;}
   .ih-right{padding:clamp(20px,3vh,34px) 34px;}
   .why-title{font-size:clamp(28px,3.8vh,40px);margin:0;}
 }
+
+/* アイキャッチ右のカードを絵で（2026-11-02 改） */
+.ih-h{margin-bottom:16px;}
+.ih-panels{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;}
+.ih-p{margin:0;background:var(--soft);border-radius:12px;padding:14px 12px 12px;text-align:center;}
+.ih-fig{width:100%;max-width:300px;height:auto;display:block;margin:0 auto 8px;}
+.ih-p figcaption{font-size:15px;font-weight:800;color:var(--ink);line-height:1.5;}
+.ih-p figcaption small{display:block;font-size:12.5px;font-weight:500;color:var(--muted);margin-top:4px;}
+.ih-combo{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);}
+.ih-chips{display:flex;gap:8px;}
+.ih-chip{display:flex;align-items:center;gap:5px;font-size:13.5px;font-weight:800;color:var(--sage);background:var(--card);border-radius:99px;padding:5px 11px 5px 8px;}
+.ih-chip svg{width:18px;height:18px;fill:none;stroke:var(--sage);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.ih-cb{font-size:14.5px;font-weight:800;text-align:center;}
+.ih-cb i{font-style:normal;color:var(--sage);}
+@media (min-width:760px){.ih-panels{grid-template-columns:1fr 1fr;}}
+@media (min-width:1240px){
+  .ih-p{padding:clamp(14px,2.4vh,26px) 16px;}
+  .ih-fig{max-width:none;}
+  .ih-p figcaption{font-size:clamp(15px,2.1vh,20px);}
+  .ih-p figcaption small{font-size:clamp(12.5px,1.6vh,15px);}
+  .ih-chip{font-size:clamp(13.5px,1.7vh,16px);}
+  .ih-cb{font-size:clamp(14.5px,1.9vh,18px);}
+  .ih-combo{margin-top:clamp(12px,2vh,22px);}
+}
+
+@media (min-width:760px){.ih-fig{height:110px;width:100%;max-width:none;}}
+@media (min-width:1240px){.ih-in{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);}.ih-fig{height:clamp(96px,17vh,170px);}}
+
+/* 絵を大きく：PCでは絵と言葉を横並びで縦に2段（2026-11-02） */
+@media (min-width:760px){
+  .ih-panels{grid-template-columns:minmax(0,1fr);}
+  .ih-p{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:center;gap:18px;text-align:left;padding:16px 20px;}
+  .ih-fig{height:auto;margin:0;}
+}
+@media (min-width:1240px){.ih-fig{height:auto;max-height:22vh;}.ih-p{padding:clamp(12px,2vh,24px) 24px;}}
 </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -1171,25 +1206,24 @@ html.sm-open{overflow:hidden;}
     </div>
     <div class="ih-right">
       <h2 class="ih-h"><span class="nb">1本単位で、</span><span class="nb">素材や治療法を選べます</span></h2>
-      <p class="ih-sub">同じお口の中でも、歯ごとに治し方を変えられます。</p>
-      <div class="ih-item">
-        <span class="ih-no">1</span>
-        <div>
-          <b class="ih-t"><span class="nb">いまは保険で治して、</span><span class="nb">作り直すときに選び直せます</span></b>
-          <p>保険の詰めもの・被せものは、いずれ作り直すことを前提にした治療です。作り直すときに、あらためて保険か自由診療かを選べます。</p>
-          <p>いまは費用を抑えて、将来、長く持たせる治療や見た目を整える治療を選ぶこともできます。</p>
-          <p class="ih-quiet">ただ、作り直すたびに、歯は少しずつ削られます。そのときの歯の状態によっては、選べる治療がかぎられることもあります。</p>
-        </div>
+      <div class="ih-panels">
+        <figure class="ih-p">
+          <svg class="ih-fig" viewBox="0 10 272 72" role="img" aria-label="となり合う4本の歯に、それぞれ違う素材の詰めものが入っている絵"><title>歯ごとに、違う素材を選べるイメージ</title><g transform="translate(8 0) scale(1)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="3.00" stroke-linejoin="round"/><rect x="21" y="20" width="18" height="10" rx="2.5" fill="#AEB8BD" stroke="#8E9AA1" stroke-width="1.5"/></g><g transform="translate(74 0) scale(1)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="3.00" stroke-linejoin="round"/><rect x="21" y="20" width="18" height="10" rx="2.5" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.5"/></g><g transform="translate(140 0) scale(1)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#B4561F" stroke-width="3.00" stroke-linejoin="round"/><rect x="21" y="20" width="18" height="10" rx="2.5" fill="#F9E6DA" stroke="#DE8E5E" stroke-width="1.5"/></g><g transform="translate(206 0) scale(1)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#8E7016" stroke-width="3.00" stroke-linejoin="round"/><rect x="21" y="20" width="18" height="10" rx="2.5" fill="#F3E6BE" stroke="#C4A54E" stroke-width="1.5"/></g></svg>
+          <figcaption><span class="nb">歯ごとに、</span><span class="nb">ちがう素材を選べます</span></figcaption>
+        </figure>
+        <figure class="ih-p">
+          <svg class="ih-fig" viewBox="0 0 272 92" role="img" aria-label="いまの歯と、作り直すときの少し小さくなった歯。作り直すときに、もう一度選べる。"><title>作り直すときに、もう一度選べるイメージ</title><text x="38" y="12" text-anchor="middle" font-size="13" font-weight="800" fill="#54636A">いま</text><g transform="translate(8 4) scale(1)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="3.00" stroke-linejoin="round"/><rect x="21" y="20" width="18" height="10" rx="2.5" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.5"/></g><path d="M80 50h66" stroke="#9FB3AC" stroke-width="2.5" stroke-dasharray="3 5" stroke-linecap="round"/><path d="M146 44l10 6-10 6z" fill="#9FB3AC"/><text x="196" y="12" text-anchor="middle" font-size="13" font-weight="800" fill="#54636A">作り直すとき</text><g transform="translate(172 16) scale(0.8)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="3.75" stroke-linejoin="round"/><path d="M9 30c8-9 34-9 42 0" fill="none" stroke="#BFD3CB" stroke-width="7" stroke-linecap="round"/></g><g font-size="12" font-weight="800"><circle cx="248" cy="36" r="14" fill="#fff" stroke="#4F7A6C" stroke-width="2"/><text x="248" y="41.5" text-anchor="middle" font-size="16" fill="#4F7A6C">?</text></g></svg>
+          <figcaption><span class="nb">作り直すときに、</span><span class="nb">もう一度選べます</span><small>そのときの歯の状態で、選べる治療は変わります</small></figcaption>
+        </figure>
       </div>
-      <div class="ih-item">
-        <span class="ih-no">2</span>
-        <div>
-          <b class="ih-t"><span class="nb">自由診療なら、</span><span class="nb">素材・治し方・時間を、</span><span class="nb">好きな組み合わせで選べます</span></b>
-          <p>素材だけでなく、精密に治すか、1日でまとめて治すかも選べます。</p>
-          <a class="ih-link" href="#combo">組み合わせを見る ↓</a>
-        </div>
-      </div>
-      <p class="ih-end">すぐに決めなくてかまいません。1本ずつ、そのときのご事情に合わせて選んでください。</p>
+      <a class="ih-combo" href="#combo">
+        <span class="ih-chips">
+          <span class="ih-chip"><svg aria-hidden="true"><use href="#ic-material"/></svg>素材</span>
+          <span class="ih-chip"><svg aria-hidden="true"><use href="#ic-scope"/></svg>治し方</span>
+          <span class="ih-chip"><svg aria-hidden="true"><use href="#ic-calendar"/></svg>時間</span>
+        </span>
+        <span class="ih-cb"><span class="nb">自由診療なら、</span><span class="nb">好きな組み合わせで選べます</span> <i>↓</i></span>
+      </a>
     </div>
   </div>
   <a class="ih-next" href="#why">素材ごとの「この先」を見くらべる ↓</a>
