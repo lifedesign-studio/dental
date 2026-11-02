@@ -1286,6 +1286,38 @@ html.sm-open{overflow:hidden;}
 .cmb-c4 .c4-x{display:grid;grid-template-columns:var(--kw) minmax(0,1fr);gap:8px;padding:6px 0;}
 .cmb-c4 .c4-x span{justify-self:center;margin:0;}
 @media (min-width:1240px){.cmb-c4{--kw:6.2rem;}.cmb-c4 .c4-x{gap:14px;padding:clamp(6px,1.4vh,14px) 0;}}
+
+/* 見出しの枠（説明つき・×）と札を組み合わせる（2026-11-02 院長指示） */
+.cmb-in{max-width:1240px!important;}
+.c5-rows{display:grid;gap:26px;}
+.c5-row{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:center;}
+.c5-k{position:relative;background:#fff;border:2px solid var(--sage-2);border-radius:16px;padding:12px 14px;text-align:center;}
+.c5-k b{display:block;font-size:19px;color:var(--ink);margin-bottom:2px;}
+.c5-k>span{font-size:13px;color:var(--ink-soft);line-height:1.65;}
+.c5-x{position:absolute;left:50%;bottom:-23px;transform:translateX(-50%);z-index:2;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--sage);color:#fff;font-style:normal;font-size:24px;font-weight:800;line-height:1;box-shadow:0 0 0 4px var(--soft);}
+.c5-cs{justify-content:center;}
+.c5-row:not(:last-child) .c5-cs{padding-bottom:6px;}
+@media (min-width:760px){
+  .c5-row{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:22px;}
+  .c5-cs{justify-content:flex-start;}
+  .c5-row:not(:last-child) .c5-cs{padding-bottom:0;}
+  .c5-rows{gap:18px;}
+}
+@media (min-width:1240px){
+  .c5-rows{gap:clamp(16px,2.4vh,24px);}
+  .c5-row{grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:34px;}
+  .c5-k{padding:clamp(10px,1.8vh,20px) 20px;}
+  .c5-k b{font-size:clamp(20px,2.8vh,28px);}
+  .c5-k>span{font-size:clamp(13px,1.75vh,17px);}
+  .c5-x{width:clamp(36px,4.8vh,46px);height:clamp(36px,4.8vh,46px);font-size:clamp(24px,3.2vh,32px);bottom:calc(-1 * clamp(26px,3.6vh,35px));}
+  .c5-cs .c4-c{font-size:clamp(15px,2.1vh,21px);padding:clamp(6px,1vh,11px) clamp(16px,1.4vw,24px);}
+}
+
+@media (max-width:759px){
+  .c5-x{display:none;}
+  .c5-rows{gap:10px;}
+  .c5-row:not(:last-child)::after{content:"×";justify-self:center;display:flex;align-items:center;justify-content:center;width:36px;height:36px;margin-top:6px;border-radius:50%;background:var(--sage);color:#fff;font-size:24px;font-weight:800;line-height:1;}
+}
 </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -1396,7 +1428,7 @@ html.sm-open{overflow:hidden;}
     <div class="ov-kick">インレー・クラウン治療</div>
     <h2 class="cmb-title"><span class="nb">自由診療なら、</span><span class="nb">素材・治し方・時間を、</span><span class="nb">好きな組み合わせで選べます</span></h2>
     <div class="why-fig c4 cmb-c4">
-      <div class="c4-rows"><div class="c4-row"><b class="c4-k">素材</b><div class="c4-cs"><span class="c4-c hk">合金（金属）</span><span class="c4-c hk">ブロックレジン</span><span class="c4-c">セラミック</span><span class="c4-c">ゴールド</span></div></div><div class="c4-x" aria-hidden="true"><span>×</span></div><div class="c4-row"><b class="c4-k">治し方</b><div class="c4-cs"><span class="c4-c hk">従来の方法</span><span class="c4-c">精密な治療</span></div></div><div class="c4-x" aria-hidden="true"><span>×</span></div><div class="c4-row"><b class="c4-k">時間</b><div class="c4-cs"><span class="c4-c hk">毎月、少しずつ</span><span class="c4-c">1日で、まとめて</span><span class="c4-c">予定に、合わせて</span></div></div></div>
+      <div class="c5-rows"><div class="c5-row"><div class="c5-k"><b>素材</b><span><span class="nb">経年劣化のしやすさと、</span><span class="nb">むし歯が再発したときの</span><span class="nb">見つけやすさが変わります</span></span><i class="c5-x" aria-hidden="true">×</i></div><div class="c4-cs c5-cs"><span class="c4-c hk">合金（金属）</span><span class="c4-c hk">ブロックレジン</span><span class="c4-c">セラミック</span><span class="c4-c">ゴールド</span></div></div><div class="c5-row"><div class="c5-k"><b>治し方</b><span><span class="nb">治療の時間、</span><span class="nb">精度、</span><span class="nb">むし歯の再発しやすさが変わります</span></span><i class="c5-x" aria-hidden="true">×</i></div><div class="c4-cs c5-cs"><span class="c4-c hk">従来の方法</span><span class="c4-c">精密な治療</span></div></div><div class="c5-row"><div class="c5-k"><b>時間</b><span><span class="nb">治す歯が多いとき、</span><span class="nb">治療全体の期間が変わります</span></span></div><div class="c4-cs c5-cs"><span class="c4-c hk">毎月、少しずつ</span><span class="c4-c">1日で、まとめて</span><span class="c4-c">予定に、合わせて</span></div></div></div>
       <div class="c4-sum">
         <p class="c4-hk"><span class="c4-mark"></span><span><b>保険で選べるのは</b>、合金かブロックレジン × 従来の方法 × 毎月、少しずつ、の組み合わせです。</span></p>
         <p class="c4-free"><span class="c4-mark free"></span><span><b>自由診療では</b>、このすべての中から、選んで組み合わせられます。</span></p>
