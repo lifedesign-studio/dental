@@ -1167,6 +1167,36 @@ html.sm-open{overflow:hidden;}
   .c4{justify-content:center;}
   .c4 .why-h{margin-bottom:clamp(4px,1vh,10px);}
 }
+
+/* 選び方のカードを図の中の説明に統合（2026-11-02 院長指示） */
+.wx-list{display:grid;gap:8px;}
+.wx{background:#fff;border-left:4px solid var(--mc);border-radius:8px;padding:9px 12px 10px;}
+.wx-h{display:flex;align-items:center;gap:6px;}
+.wx-h b{color:var(--mc);font-size:15px;}
+.wx-h small{font-size:11px;font-weight:800;color:#fff;background:var(--mc);border-radius:99px;padding:0 7px;}
+.wx-want{margin:2px 0 2px;font-size:14px;font-weight:800;color:var(--ink);line-height:1.5;}
+.wx-d{margin:0;font-size:13px;line-height:1.65;color:var(--ink-soft);}
+.wx-two{display:flex;flex-wrap:wrap;gap:6px 14px;}
+.wx-go{display:inline-block;margin-top:5px;font-size:13px;font-weight:800;color:var(--mc);text-decoration:none;border-bottom:1px solid var(--mc);}
+.wx-go i{font-style:normal;}
+@media (min-width:1240px){
+  .why-tw{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)!important;align-items:stretch!important;}
+  .why-tw .wx-list{gap:clamp(6px,1vh,10px);align-content:space-between;}
+  .wx{padding:clamp(6px,1vh,10px) 14px;}
+  .wx-h b{font-size:clamp(15px,1.9vh,18px);}
+  .wx-want{font-size:clamp(14px,1.75vh,17px);}
+  .wx-want .nb{display:inline;}
+  .wx-d{font-size:clamp(12px,1.45vh,14px);line-height:1.6;}
+  .wx-go{font-size:clamp(12.5px,1.5vh,14.5px);margin-top:3px;}
+  .why-trade{max-height:62vh!important;}
+}
+
+@media (min-width:1240px){
+  .why-figs{grid-template-columns:minmax(0,2.3fr) minmax(0,1fr)!important;}
+  .why-tw{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)!important;align-items:center!important;}
+  .c4-c{padding:clamp(2px,.4vh,5px) 9px;}
+  .c4-row{grid-template-columns:3.2em minmax(0,1fr);}
+}
 </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -1348,10 +1378,28 @@ html.sm-open{overflow:hidden;}
 <text x="220" y="428" text-anchor="middle" font-size="13" font-weight="800" fill="#8E7016">↓ かけるほど</text>
 <text x="457" y="428" text-anchor="middle" font-size="13" font-weight="800" fill="#8E7016">↓ 作り直しが減り、歯が弱くなりにくい</text>
 </svg>
-          <div class="why-ex">
-            <p style="--mc:#4F7A6C"><b><span class="nb">金属・CAD/CAM</span><small>保険</small></b><span>最初の時間と費用は少なくてすみます。作り直すたびに歯が少しずつ削られ、被せもの、神経の治療へと進みやすくなります。</span></p>
-            <p style="--mc:#B4561F"><b><span class="nb">1day</span><small>自費</small></b><span>時間を短くする選び方です。1日で、まとめて治せます。素材はCAD/CAMと同じ系統で、その後の進み方も近くなります。</span></p>
-            <p style="--mc:#8E7016"><b><span class="nb">セラミック</span><small>自費</small></b><span>最初に時間と費用をかけて、精密に仕上げます。作り直しが少なく、歯が弱くなりにくい選び方です。</span></p>
+          <div class="wx-list">
+            <div class="wx" style="--mc:#4E6478">
+              <div class="wx-h"><b>金属</b><small>保険</small></div>
+              <p class="wx-want"><span class="nb">いまの負担を、</span><span class="nb">軽くしたいなら</span></p>
+              <p class="wx-d">最初の時間と費用は少なくてすみます。作り直すたびに歯が削られ、被せもの、神経の治療へと進みやすくなります。</p>
+              <a class="wx-go" href="inlay-crown-metal.html">この先のストーリーへ <i>→</i></a>
+            </div><div class="wx" style="--mc:#4F7A6C">
+              <div class="wx-h"><b>CAD/CAM</b><small>保険</small></div>
+              <p class="wx-want"><span class="nb">保険の範囲で、</span><span class="nb">白く治したいなら</span></p>
+              <p class="wx-d">白い素材です。欠けても、歯を傷めずに直しやすく、ゆるやかに進みます。</p>
+              <a class="wx-go" href="inlay-crown-cadcam.html">この先のストーリーへ <i>→</i></a>
+            </div><div class="wx" style="--mc:#B4561F">
+              <div class="wx-h"><b>1day</b><small>自費</small></div>
+              <p class="wx-want"><span class="nb">期限までに、</span><span class="nb">まとめて治したいなら</span></p>
+              <p class="wx-d">1日で、まとめて治せます。素材はCAD/CAMと同じ系統で、その後の進み方も近くなります。</p>
+              <a class="wx-go" href="inlay-crown-1day.html">この先のストーリーへ <i>→</i></a>
+            </div><div class="wx" style="--mc:#8E7016">
+              <div class="wx-h"><b>セラミック</b><small>自費</small></div>
+              <p class="wx-want"><span class="nb">作り直しを、</span><span class="nb">減らしたいなら</span></p>
+              <p class="wx-d">時間をかけて、精密に仕上げます。作り直しが少なく、歯が弱くなりにくい選び方です。</p>
+              <div class="wx-two"><a class="wx-go" href="inlay-crown-ceramic.html">奥歯のストーリーへ <i>→</i></a><a class="wx-go" href="inlay-crown-front.html" style="--mc:#A05A6B">前歯のストーリーへ <i>→</i></a></div>
+            </div>
           </div>
           </div>
         </figure>
@@ -1371,42 +1419,7 @@ html.sm-open{overflow:hidden;}
         <a class="ws-end" href="index.html#teeth-body"><span class="nb">歯が多く残っている人ほど、</span><span class="nb">介護が必要になりにくく、</span><span class="nb">医療費も少ない傾向があります</span><small>歯と、からだのつながり →</small></a>
       </div>
       <p class="why-note">イメージ図です。実際の経過は、歯の場所やお口の状態、メインテナンスで一人ひとり変わります。歯の数と介護・医療費は、関係を示す調査で、治せば必ず減るという意味ではありません。</p>
-      <div class="why-pick">
-        <p class="why-ph">何を大切にするかで、合う素材が変わります</p>
-        <div class="pick-row">
-        <a class="pick" href="inlay-crown-metal.html" style="--mc:#4E6478">
-          <svg class="pk-ic" viewBox="2 14 56 60" aria-hidden="true"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="3.2" stroke-linejoin="round"/><path d="M14 30c5-7 27-7 32 0v4c-5-4-27-4-32 0z" fill="#AEB8BD" stroke="#8E9AA1" stroke-width="1.2"/></svg>
-          <span class="pk-if"><span class="nb">いまの負担を、</span><span class="nb">軽くしたいなら</span></span>
-          <span class="pk-to"><b>金属</b>で治します</span>
-          <span class="pk-why">丈夫で、薄くても割れにくい</span>
-        </a>
-        <a class="pick" href="inlay-crown-cadcam.html" style="--mc:#4F7A6C">
-          <svg class="pk-ic" viewBox="2 14 56 60" aria-hidden="true"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="3.2" stroke-linejoin="round"/><path d="M14 30c5-7 27-7 32 0v4c-5-4-27-4-32 0z" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.2"/></svg>
-          <span class="pk-if"><span class="nb">保険の範囲で、</span><span class="nb">白く治したいなら</span></span>
-          <span class="pk-to"><b>白いCAD/CAM</b>で治します</span>
-          <span class="pk-why">欠けても、歯を傷めずに直しやすい</span>
-        </a>
-        <a class="pick" href="inlay-crown-1day.html" style="--mc:#B4561F">
-          <svg class="pk-ic" viewBox="2 14 56 60" aria-hidden="true"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#B4561F" stroke-width="3.2" stroke-linejoin="round"/><path d="M14 30c5-7 27-7 32 0v4c-5-4-27-4-32 0z" fill="#F9E6DA" stroke="#DE8E5E" stroke-width="1.2"/></svg>
-          <span class="pk-if"><span class="nb">期限までに、</span><span class="nb">まとめて治したいなら</span></span>
-          <span class="pk-to"><b>1day</b>で、1日で治します</span>
-          <span class="pk-why">素材より、時間を優先する選び方</span>
-        </a>
-        <a class="pick" href="inlay-crown-ceramic.html" style="--mc:#8E7016">
-          <svg class="pk-ic" viewBox="2 14 56 60" aria-hidden="true"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#8E7016" stroke-width="3.2" stroke-linejoin="round"/><path d="M14 30c5-7 27-7 32 0v4c-5-4-27-4-32 0z" fill="#F3E6BE" stroke="#C4A54E" stroke-width="1.2"/></svg>
-          <span class="pk-if"><span class="nb">作り直しを、</span><span class="nb">減らしたいなら</span></span>
-          <span class="pk-to"><b>セラミック</b>で治します</span>
-          <span class="pk-why">時間をかけて、精密に仕上げます</span>
-        </a>
-        <a class="pick" href="inlay-crown-front.html" style="--mc:#A05A6B">
-          <svg class="pk-ic" viewBox="2 4 56 68" aria-hidden="true"><path d="M16 10h28c4 0 6 3 6 7v15c0 7-5 11-10 13l-4 19c-1 5-7 5-8 0l-4-19c-5-2-10-6-10-13V17c0-4 2-7 6-7z" fill="#fff" stroke="#A05A6B" stroke-width="3.2" stroke-linejoin="round"/><path d="M14 13h32c2 0 3 2 3 4v12c-10 4-28 4-38 0V17c0-2 1-4 3-4z" fill="#F3DCE2" stroke="#D9AAB6" stroke-width="1.2"/></svg>
-          <span class="pk-if"><span class="nb">前歯の見た目を、</span><span class="nb">整えたいなら</span></span>
-          <span class="pk-to"><span class="nb">前歯を<b>セラミック</b>で</span><span class="nb">治します</span></span>
-          <span class="pk-why">仮歯で確かめて、仕上げます</span>
-        </a>
-        </div>
-        
-      </div>
+      
     </div>
     <a class="why-next" href="#material">素材の写真と、「なるべく削りたくない」ときへ ↓</a>
   </div>
