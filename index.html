@@ -344,6 +344,20 @@
 }
 
 @media (max-width:759px){.tp-step{gap:9px;padding:10px;}.tp-ic{width:40px;height:40px;}.tp-ic3{width:54px!important;height:30px!important;}.tp-t b{font-size:15px;}}
+
+/* トップのアイキャッチを1列に（2026-11-02 院長指示：右のカードなし） */
+.tp-in{grid-template-columns:minmax(0,1fr)!important;max-width:960px!important;}
+.tp-left{text-align:center!important;}
+.tp-ill{margin:0 auto 10px!important;}
+.tp-next{display:block;width:44px;height:44px;margin:26px auto 0;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--sage);font-weight:800;font-size:20px;line-height:42px;text-align:center;text-decoration:none;}
+@media (min-width:1240px){
+  .tp-left{display:block!important;}
+  .tp-ill{width:clamp(170px,27vh,260px)!important;margin-bottom:clamp(10px,2vh,24px)!important;}
+  #concept .tp-copy{font-size:clamp(52px,8vh,84px);margin:clamp(6px,1vh,12px) 0 clamp(14px,2.4vh,26px);}
+  .tp-lead{font-size:clamp(20px,2.9vh,28px)!important;}
+  .tp-text{font-size:clamp(16px,2.2vh,21px)!important;}
+  .tp-next{margin-top:clamp(20px,4vh,44px);}
+}
 </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -446,14 +460,8 @@
         <p class="tp-text"><span class="nb">私たちは、</span><span class="nb">目の前の1本だけを見て</span><span class="nb">治療を決めません。</span><br><span class="nb">これから先の長い暮らしを見すえて、</span><span class="nb">より良い生活につながる治療を</span><span class="nb">ご提案します。</span></p>
       </div>
     </div>
-    <nav class="tp-right" aria-label="このページの進み方">
-      <p class="tp-rh"><span class="nb">知る、</span><span class="nb">確かめる、</span><span class="nb">選ぶ。</span></p>
-      <a class="tp-step" href="#teeth-body"><span class="tp-no">1</span><svg class="tp-ic" viewBox="0 0 80 80" aria-hidden="true"><g transform="translate(4 6)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="3" stroke-linejoin="round"/></g><path d="M60 50c-4-4-10-1-8 4 1 3 8 8 8 8s7-5 8-8c2-5-4-8-8-4Z" fill="#E8B4B8" stroke="#A05A6B" stroke-width="1.6"/></svg><span class="tp-t"><b><span class="nb">歯と、</span><span class="nb">からだのつながりを知る</span></b></span><i>↓</i></a>
-      <a class="tp-step" href="#ten-check"><span class="tp-no">2</span><svg class="tp-ic" viewBox="0 0 80 80" aria-hidden="true"><rect x="16" y="12" width="48" height="60" rx="6" fill="#fff" stroke="#4F7A6C" stroke-width="3"/><rect x="30" y="7" width="20" height="10" rx="3" fill="#EEF3F1" stroke="#4F7A6C" stroke-width="2.5"/><g stroke="#4F7A6C" stroke-width="3" stroke-linecap="round" fill="none"><path d="m24 31 4 4 7-8M40 31h16M24 47l4 4 7-8M40 47h16"/><path d="M40 61h16" stroke="#9FB3AC"/></g><circle cx="29" cy="61" r="4" fill="none" stroke="#9FB3AC" stroke-width="2.5"/></svg><span class="tp-t"><b><span class="nb">いまのお口を、</span><span class="nb">10の項目で確かめる</span></b></span><i>↓</i></a>
-      <a class="tp-step" href="#treat-one"><span class="tp-no">3</span><svg class="tp-ic tp-ic3" viewBox="0 18 80 44" aria-hidden="true"><g transform="translate(2 22) scale(.42)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="7" stroke-linejoin="round"/><rect x="21" y="20" width="18" height="10" rx="2.5" fill="#AEB8BD"/></g><g transform="translate(27 22) scale(.42)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="7" stroke-linejoin="round"/><rect x="21" y="20" width="18" height="10" rx="2.5" fill="#E3ECE8"/></g><g transform="translate(52 22) scale(.42)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#8E7016" stroke-width="7" stroke-linejoin="round"/><rect x="21" y="20" width="18" height="10" rx="2.5" fill="#F3E6BE"/></g></svg><span class="tp-t"><b><span class="nb">1本ずつ、</span><span class="nb">治し方を選ぶ</span></b></span><i>↓</i></a>
-      <p class="tp-note">すぐに決めなくてかまいません。気になるところから、ご覧ください。</p>
-    </nav>
   </div>
+  <a class="tp-next" href="#teeth-body" aria-label="次へ">↓</a>
 </header>
 
 <!-- 歯と、からだのつながり → いい歯の10チェックへ（2026-10-30） -->
