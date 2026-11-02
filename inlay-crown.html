@@ -1197,6 +1197,32 @@ html.sm-open{overflow:hidden;}
   .c4-c{padding:clamp(2px,.4vh,5px) 9px;}
   .c4-row{grid-template-columns:3.2em minmax(0,1fr);}
 }
+
+/* 自由診療の組み合わせを独立した節に／見くらべる節は1列（2026-11-02 院長指示） */
+.cmb{background:#fff;padding:30px 16px 26px;border-bottom:1px solid var(--line);}
+.cmb-in{max-width:1500px;margin:0 auto;}
+.cmb-title{font-size:23px;line-height:1.45;margin:4px 0 14px;}
+.cmb-sum{margin-top:14px;}
+.why-figs{grid-template-columns:minmax(0,1fr)!important;}
+@media (min-width:760px){.cmb{padding:36px 32px 30px;}}
+@media (min-width:1240px){
+  .cmb{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(20px,3vh,40px) 40px;}
+  .cmb-in{width:100%;}
+  .cmb-title{font-size:clamp(28px,3.8vh,40px);margin:0 0 clamp(12px,2.2vh,24px);}
+  .cmb-box{padding:clamp(14px,2.4vh,28px) 28px!important;}
+  .cmb-box .c3{gap:clamp(12px,2.4vh,26px)!important;}
+  .cmb-box .c3-k b{font-size:clamp(18px,2.4vh,24px);}
+  .cmb-box .c3-k>span{font-size:clamp(13px,1.7vh,16px)!important;}
+  .cmb-box .c3-o .cb-l{font-size:clamp(14px,1.9vh,18px);}
+  .cmb-box .c3-tags i{font-size:clamp(11px,1.45vh,13.5px);}
+  .cmb-sum{display:flex;gap:40px;justify-content:center;margin-top:clamp(12px,2.2vh,22px);}
+  .cmb-sum p{font-size:clamp(13.5px,1.8vh,17px)!important;}
+  .why-tw{grid-template-columns:minmax(0,1.9fr) minmax(0,1fr)!important;}
+  .why-trade{max-height:64vh!important;}
+}
+
+.cmb-sum .c4-mark{border:none;background:var(--sage);}
+.cmb-sum .c4-mark.free{border:1px solid #D9C88E;background:#FBF6E6;}
 </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -1298,6 +1324,22 @@ html.sm-open{overflow:hidden;}
       </a>
     </div>
   </div>
+  <a class="ih-next" href="#combo">素材・治し方・時間の組み合わせへ ↓</a>
+</section>
+
+<!-- ================= 0b. 自由診療の組み合わせ（#combo）2026-11-02 ================= -->
+<section class="cmb" id="combo">
+  <div class="cmb-in">
+    <div class="ov-kick">インレー・クラウン治療</div>
+    <h2 class="cmb-title"><span class="nb">自由診療なら、</span><span class="nb">素材・治し方・時間を、</span><span class="nb">好きな組み合わせで選べます</span></h2>
+    <div class="why-fig why-combo cmb-box">
+      <div class="c3"><div class="c3-row r-mat"><div class="c3-k"><b>素材</b><span><span class="nb">経年劣化のしやすさと、</span><span class="nb">むし歯が再発したときの</span><span class="nb">見つけやすさが変わります</span></span></div><div class="c3-opts"><div class="c3-o hk"><b class="c3-hk">保険適用</b><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><rect x="10.5" y="7.5" width="7" height="4" rx="1" fill="#AEB8BD" stroke="none"/></svg><span class="cb-l">合金<small>金属</small></span></span><span class="c3-tags"><i>#発見しにくい</i><i>#劣化</i><i>#腐食</i></span></div><div class="c3-o hk"><b class="c3-hk">保険適用</b><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l9 5v10l-9 5-9-5V9z"/><path d="M5 9l9 5 9-5M14 14v10"/></svg><span class="cb-l">ブロックレジン<small>CAD/CAM</small></span></span><span class="c3-tags"><i>#白い</i><i>#欠けても直しやすい</i></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><path d="M22 2v4M20 4h4" stroke-width="1.6"/></svg><span class="cb-l">セラミック</span></span><span class="c3-tags"><i>#見た目が自然</i><i>#劣化しにくい</i></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><rect x="10.5" y="7.5" width="7" height="4" rx="1" fill="#C9A23A" stroke="none"/></svg><span class="cb-l">ゴールド</span></span><span class="c3-tags"><i>#さびにくい</i></span></div></div></div><div class="c3-row r-how"><div class="c3-k"><b>治し方</b><span><span class="nb">治療の時間、</span><span class="nb">精度、</span><span class="nb">むし歯の再発しやすさが変わります</span></span></div><div class="c3-opts"><div class="c3-o hk"><b class="c3-hk">保険適用</b><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c3-6 7-8 11-8s8 2 11 8c-3 6-7 8-11 8s-8-2-11-8Z"/><circle cx="14" cy="14" r="3.5"/></svg><span class="cb-l">従来の方法</span></span><span class="c3-tags"><i>#肉眼で治療</i><i>#1回の治療が短め</i></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4l6 3-4 8-6-3z"/><path d="M12 15l2 4M6 24h16M17 24c3-2 4-6 2-10"/><circle cx="17" cy="13" r="1.5"/></svg><span class="cb-l">精密な治療</span></span><span class="c3-tags"><i>#マイクロスコープ</i><i>#シリコン印象</i><i>#CT</i></span></div></div></div><div class="c3-row r-time"><div class="c3-k"><b>時間</b><span><span class="nb">治す歯が多いとき、</span><span class="nb">治療全体の期間が変わります</span></span></div><div class="c3-opts"><div class="c3-o hk"><b class="c3-hk">保険適用</b><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><circle cx="9" cy="16" r="1.2" fill="currentColor"/><circle cx="14" cy="16" r="1.2" fill="currentColor"/><circle cx="19" cy="16" r="1.2" fill="currentColor"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/></svg><span class="cb-l">毎月、少しずつ</span></span><span class="c3-tags"><i>#1回の負担が軽い</i></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><text x="14" y="21.5" text-anchor="middle" font-size="9" font-weight="800" fill="currentColor" stroke="none">1</text></svg><span class="cb-l">1日で、まとめて</span></span><span class="c3-tags"><i>#複数本の治療に最適</i><i>#期限が決まっている</i></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><path d="M10 17l3 3 5-6"/></svg><span class="cb-l">予定に、合わせて</span></span><span class="c3-tags"><i>#仮歯で納得できるまで</i><i>#計画的に好きなタイミングで</i></span></div></div></div></div>
+    </div>
+    <div class="c4-sum cmb-sum">
+      <p class="c4-hk"><span class="c4-mark"></span><span><b>保険で選べるのは</b>、「保険適用」の札がついたものの組み合わせです。</span></p>
+      <p class="c4-free"><span class="c4-mark free"></span><span><b>自由診療では</b>、このすべての中から、選んで組み合わせられます。</span></p>
+    </div>
+  </div>
   <a class="ih-next" href="#why">素材ごとの「この先」を見くらべる ↓</a>
 </section>
 
@@ -1313,70 +1355,70 @@ html.sm-open{overflow:hidden;}
       <div class="why-figs">
         <figure class="why-fig">
           <div class="why-h"><span class="nb">手間と費用をかけるほど、</span><span class="nb">歯は長持ちしやすくなります</span></div>
-          <div class="why-tw"><svg class="why-chart why-trade" viewBox="0 0 620 432" role="img" aria-labelledby="whya-t">
+          <div class="why-tw"><svg class="why-chart why-trade" viewBox="0 0 820 432" role="img" aria-labelledby="whya-t">
 <title id="whya-t">最初にかける手間と費用と、その後20年のあいだの作り直しを比べたイメージ図。金属とCAD/CAMは最初の手間と費用が少ないかわりに、作り直しのたびに歯が弱くなりやすい。1dayは時間を短くするかわりに費用がかかり、その後はCAD/CAMと同じように進む。セラミックは最初に時間と費用をかけるかわりに、作り直しが少なく、歯がそのまま保たれやすい。</title>
 <rect x="156" y="8" width="128" height="30" rx="15" fill="#fff" stroke="#D8E0DD"/>
 <text x="220" y="28" text-anchor="middle" font-size="14" font-weight="800" fill="#2E3A3F">最初の時間と費用</text>
-<rect x="300" y="8" width="314" height="30" rx="15" fill="#fff" stroke="#D8E0DD"/>
-<text x="457" y="28" text-anchor="middle" font-size="14" font-weight="800" fill="#2E3A3F">その後20年のあいだの、作り直し</text>
-<rect x="4" y="44" width="612" height="88" rx="14" fill="#fff" opacity=".7"/>
+<rect x="302.5" y="8" width="510.2" height="30" rx="15" fill="#fff" stroke="#D8E0DD"/>
+<text x="557.6" y="28" text-anchor="middle" font-size="14" font-weight="800" fill="#2E3A3F">その後20年のあいだの、作り直し</text>
+<rect x="4" y="44" width="812" height="88" rx="14" fill="#fff" opacity=".7"/>
 <g><rect x="14" y="71" width="93" height="34" rx="9" fill="#4E6478"/><rect x="23" y="78" width="32" height="20" rx="10" fill="#fff" opacity=".92"/><text x="39" y="92.5" text-anchor="middle" font-size="11.5" font-weight="800" fill="#4E6478">保険</text><text x="62" y="94" font-size="16" font-weight="800" fill="#fff">金属</text></g>
 <circle cx="178" cy="73" r="11" fill="#fff" stroke="#4E6478" stroke-width="2.5"/><path d="M178 67v6l4 3" fill="none" stroke="#4E6478" stroke-width="2" stroke-linecap="round"/><circle cx="204" cy="73" r="11" fill="#fff" stroke="#4E6478" stroke-width="2.5"/><path d="M204 67v6l4 3" fill="none" stroke="#4E6478" stroke-width="2" stroke-linecap="round"/>
 <circle cx="178" cy="103" r="11" fill="#fff" stroke="#4E6478" stroke-width="2.5"/><text x="178" y="107.5" text-anchor="middle" font-size="12" font-weight="800" fill="#4E6478">¥</text>
 <path d="M262 88h18" stroke="#9FB3AC" stroke-width="2.5"/><path d="M278 83l8 5-8 5z" fill="#9FB3AC"/>
-<g transform="translate(296.0 36.0) scale(1.0)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="3.00" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#AEB8BD"/></g>
-<text x="326" y="126" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">詰めもの</text>
-<path d="M356 79l8 5-8 5z" fill="#9FB3AC"/>
-<g transform="translate(372.2 45.2) scale(0.86)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="3.49" stroke-linejoin="round"/><path d="M9 30c8-9 34-9 42 0" fill="none" stroke="#AEB8BD" stroke-width="7" stroke-linecap="round"/></g>
-<text x="398" y="126" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">被せもの</text>
-<path d="M428 79l8 5-8 5z" fill="#9FB3AC"/>
-<g transform="translate(448.4 54.5) scale(0.72)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="4.17" stroke-linejoin="round"/><path d="M9 30c8-9 34-9 42 0" fill="none" stroke="#AEB8BD" stroke-width="7" stroke-linecap="round"/><path d="M30 36v26" stroke="#A05A6B" stroke-width="3" stroke-linecap="round"/></g>
-<text x="470" y="126" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">神経の治療</text>
-<path d="M500 79l8 5-8 5z" fill="#9FB3AC"/>
-<g transform="translate(525.2 65.0) scale(0.56)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="5.36" stroke-linejoin="round" stroke-dasharray="4 4"/><path d="M9 30c8-9 34-9 42 0" fill="none" stroke="#AEB8BD" stroke-width="7" stroke-linecap="round"/><path d="M30 36v26" stroke="#A05A6B" stroke-width="3" stroke-linecap="round"/></g>
-<text x="542" y="126" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">抜歯に近づく</text>
-<rect x="4" y="136" width="612" height="88" rx="14" fill="#fff" opacity=".7"/>
+<g transform="translate(296 36.0) scale(1.0)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="3.00" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#AEB8BD"/></g>
+<text x="344.8" y="126" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">詰めもの</text>
+<path d="M393.5 79l8 5-8 5z" fill="#9FB3AC"/>
+<g transform="translate(419.8 45.2) scale(0.86)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="3.49" stroke-linejoin="round"/><path d="M9 30c8-9 34-9 42 0" fill="none" stroke="#AEB8BD" stroke-width="7" stroke-linecap="round"/></g>
+<text x="461.8" y="126" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">被せもの</text>
+<path d="M510.5 79l8 5-8 5z" fill="#9FB3AC"/>
+<g transform="translate(543.6 54.5) scale(0.72)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="4.17" stroke-linejoin="round"/><path d="M9 30c8-9 34-9 42 0" fill="none" stroke="#AEB8BD" stroke-width="7" stroke-linecap="round"/><path d="M30 36v26" stroke="#A05A6B" stroke-width="3" stroke-linecap="round"/></g>
+<text x="578.8" y="126" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">神経の治療</text>
+<path d="M627.5 79l8 5-8 5z" fill="#9FB3AC"/>
+<g transform="translate(668.5 65.0) scale(0.56)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4E6478" stroke-width="5.36" stroke-linejoin="round" stroke-dasharray="4 4"/><path d="M9 30c8-9 34-9 42 0" fill="none" stroke="#AEB8BD" stroke-width="7" stroke-linecap="round"/><path d="M30 36v26" stroke="#A05A6B" stroke-width="3" stroke-linecap="round"/></g>
+<text x="695.8" y="126" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">抜歯に近づく</text>
+<rect x="4" y="136" width="812" height="88" rx="14" fill="#fff" opacity=".7"/>
 <g><rect x="14" y="163" width="131" height="34" rx="9" fill="#4F7A6C"/><rect x="23" y="170" width="32" height="20" rx="10" fill="#fff" opacity=".92"/><text x="39" y="184.5" text-anchor="middle" font-size="11.5" font-weight="800" fill="#4F7A6C">保険</text><text x="62" y="186" font-size="16" font-weight="800" fill="#fff">CAD/CAM</text></g>
 <circle cx="178" cy="165" r="11" fill="#fff" stroke="#4F7A6C" stroke-width="2.5"/><path d="M178 159v6l4 3" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linecap="round"/><circle cx="204" cy="165" r="11" fill="#fff" stroke="#4F7A6C" stroke-width="2.5"/><path d="M204 159v6l4 3" fill="none" stroke="#4F7A6C" stroke-width="2" stroke-linecap="round"/>
 <circle cx="178" cy="195" r="11" fill="#fff" stroke="#4F7A6C" stroke-width="2.5"/><text x="178" y="199.5" text-anchor="middle" font-size="12" font-weight="800" fill="#4F7A6C">¥</text>
 <path d="M262 180h18" stroke="#9FB3AC" stroke-width="2.5"/><path d="M278 175l8 5-8 5z" fill="#9FB3AC"/>
-<g transform="translate(296.0 128.0) scale(1.0)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="3.00" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.5"/></g>
-<text x="326" y="218" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">詰めもの</text>
-<path d="M356 171l8 5-8 5z" fill="#9FB3AC"/>
-<g transform="translate(369.5 131.3) scale(0.95)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="3.16" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.5"/><path d="M40 16l-3 6 4 1-3 6" fill="none" stroke="#B4561F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
-<text x="398" y="218" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">欠けたら直す</text>
-<path d="M428 171l8 5-8 5z" fill="#9FB3AC"/>
-<g transform="translate(444.8 138.6) scale(0.84)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="3.57" stroke-linejoin="round"/><path d="M9 30c8-9 34-9 42 0" fill="none" stroke="#BFD3CB" stroke-width="7" stroke-linecap="round"/></g>
-<text x="470" y="218" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">被せもの</text>
-<text x="516" y="176" font-size="12.5" font-weight="800" fill="#4F7A6C">ゆるやかに</text>
-<text x="516" y="193" font-size="12.5" font-weight="800" fill="#4F7A6C">進みます</text>
-<rect x="4" y="228" width="612" height="88" rx="14" fill="#fff" opacity=".7"/>
+<g transform="translate(296 128.0) scale(1.0)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="3.00" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.5"/></g>
+<text x="344.8" y="218" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">詰めもの</text>
+<path d="M393.5 171l8 5-8 5z" fill="#9FB3AC"/>
+<g transform="translate(415.4 131.3) scale(0.95)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="3.16" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.5"/><path d="M40 16l-3 6 4 1-3 6" fill="none" stroke="#B4561F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="461.8" y="218" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">欠けたら直す</text>
+<path d="M510.5 171l8 5-8 5z" fill="#9FB3AC"/>
+<g transform="translate(537.8 138.6) scale(0.84)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#4F7A6C" stroke-width="3.57" stroke-linejoin="round"/><path d="M9 30c8-9 34-9 42 0" fill="none" stroke="#BFD3CB" stroke-width="7" stroke-linecap="round"/></g>
+<text x="578.8" y="218" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">被せもの</text>
+<text x="653.5" y="176" font-size="12.5" font-weight="800" fill="#4F7A6C">ゆるやかに</text>
+<text x="653.5" y="193" font-size="12.5" font-weight="800" fill="#4F7A6C">進みます</text>
+<rect x="4" y="228" width="812" height="88" rx="14" fill="#fff" opacity=".7"/>
 <g><rect x="14" y="255" width="101" height="34" rx="9" fill="#B4561F"/><rect x="23" y="262" width="32" height="20" rx="10" fill="#fff" opacity=".92"/><text x="39" y="276.5" text-anchor="middle" font-size="11.5" font-weight="800" fill="#B4561F">自費</text><text x="62" y="278" font-size="16" font-weight="800" fill="#fff">1day</text></g>
 <circle cx="178" cy="257" r="11" fill="#fff" stroke="#B4561F" stroke-width="2.5"/><path d="M178 251v6l4 3" fill="none" stroke="#B4561F" stroke-width="2" stroke-linecap="round"/>
 <circle cx="178" cy="287" r="11" fill="#fff" stroke="#B4561F" stroke-width="2.5"/><text x="178" y="291.5" text-anchor="middle" font-size="12" font-weight="800" fill="#B4561F">¥</text><circle cx="204" cy="287" r="11" fill="#fff" stroke="#B4561F" stroke-width="2.5"/><text x="204" y="291.5" text-anchor="middle" font-size="12" font-weight="800" fill="#B4561F">¥</text>
 <path d="M262 272h18" stroke="#9FB3AC" stroke-width="2.5"/><path d="M278 267l8 5-8 5z" fill="#9FB3AC"/>
-<g transform="translate(296.0 220.0) scale(1.0)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#B4561F" stroke-width="3.00" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.5"/></g>
-<text x="326" y="310" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">詰めもの</text>
-<path d="M356 263l8 5-8 5z" fill="#9FB3AC"/>
-<g transform="translate(369.5 223.3) scale(0.95)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#B4561F" stroke-width="3.16" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.5"/><path d="M40 16l-3 6 4 1-3 6" fill="none" stroke="#B4561F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
-<text x="398" y="310" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">欠けたら直す</text>
-<path d="M428 263l8 5-8 5z" fill="#9FB3AC"/>
-<g transform="translate(444.8 230.6) scale(0.84)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#B4561F" stroke-width="3.57" stroke-linejoin="round"/><path d="M9 30c8-9 34-9 42 0" fill="none" stroke="#BFD3CB" stroke-width="7" stroke-linecap="round"/></g>
-<text x="470" y="310" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">被せもの</text>
-<text x="516" y="268" font-size="12.5" font-weight="800" fill="#B4561F">ゆるやかに</text>
-<text x="516" y="285" font-size="12.5" font-weight="800" fill="#B4561F">進みます</text>
-<rect x="4" y="320" width="612" height="88" rx="14" fill="#fff" opacity=".7"/>
+<g transform="translate(296 220.0) scale(1.0)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#B4561F" stroke-width="3.00" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.5"/></g>
+<text x="344.8" y="310" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">詰めもの</text>
+<path d="M393.5 263l8 5-8 5z" fill="#9FB3AC"/>
+<g transform="translate(415.4 223.3) scale(0.95)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#B4561F" stroke-width="3.16" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#E3ECE8" stroke="#6E9C8E" stroke-width="1.5"/><path d="M40 16l-3 6 4 1-3 6" fill="none" stroke="#B4561F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="461.8" y="310" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">欠けたら直す</text>
+<path d="M510.5 263l8 5-8 5z" fill="#9FB3AC"/>
+<g transform="translate(537.8 230.6) scale(0.84)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#B4561F" stroke-width="3.57" stroke-linejoin="round"/><path d="M9 30c8-9 34-9 42 0" fill="none" stroke="#BFD3CB" stroke-width="7" stroke-linecap="round"/></g>
+<text x="578.8" y="310" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">被せもの</text>
+<text x="653.5" y="268" font-size="12.5" font-weight="800" fill="#B4561F">ゆるやかに</text>
+<text x="653.5" y="285" font-size="12.5" font-weight="800" fill="#B4561F">進みます</text>
+<rect x="4" y="320" width="812" height="88" rx="14" fill="#fff" opacity=".7"/>
 <g><rect x="14" y="347" width="142" height="34" rx="9" fill="#8E7016"/><rect x="23" y="354" width="32" height="20" rx="10" fill="#fff" opacity=".92"/><text x="39" y="368.5" text-anchor="middle" font-size="11.5" font-weight="800" fill="#8E7016">自費</text><text x="62" y="370" font-size="16" font-weight="800" fill="#fff">セラミック</text></g>
 <circle cx="178" cy="349" r="11" fill="#fff" stroke="#8E7016" stroke-width="2.5"/><path d="M178 343v6l4 3" fill="none" stroke="#8E7016" stroke-width="2" stroke-linecap="round"/><circle cx="204" cy="349" r="11" fill="#fff" stroke="#8E7016" stroke-width="2.5"/><path d="M204 343v6l4 3" fill="none" stroke="#8E7016" stroke-width="2" stroke-linecap="round"/><circle cx="230" cy="349" r="11" fill="#fff" stroke="#8E7016" stroke-width="2.5"/><path d="M230 343v6l4 3" fill="none" stroke="#8E7016" stroke-width="2" stroke-linecap="round"/>
 <circle cx="178" cy="379" r="11" fill="#fff" stroke="#8E7016" stroke-width="2.5"/><text x="178" y="383.5" text-anchor="middle" font-size="12" font-weight="800" fill="#8E7016">¥</text><circle cx="204" cy="379" r="11" fill="#fff" stroke="#8E7016" stroke-width="2.5"/><text x="204" y="383.5" text-anchor="middle" font-size="12" font-weight="800" fill="#8E7016">¥</text><circle cx="230" cy="379" r="11" fill="#fff" stroke="#8E7016" stroke-width="2.5"/><text x="230" y="383.5" text-anchor="middle" font-size="12" font-weight="800" fill="#8E7016">¥</text>
 <path d="M262 364h18" stroke="#9FB3AC" stroke-width="2.5"/><path d="M278 359l8 5-8 5z" fill="#9FB3AC"/>
-<g transform="translate(296.0 312.0) scale(1.0)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#8E7016" stroke-width="3.00" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#F3E6BE" stroke="#8E7016" stroke-width="1.5"/></g>
-<text x="326" y="402" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">精密に仕上げる</text>
-<path d="M360 368H590" stroke="#8E7016" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/>
-<path d="M588 362l10 6-10 6z" fill="#8E7016"/>
-<text x="478" y="352" text-anchor="middle" font-size="15" font-weight="800" fill="#8E7016">作り直しが少なく、</text><text x="478" y="390" text-anchor="middle" font-size="15" font-weight="800" fill="#8E7016">そのまま保ちやすい</text>
+<g transform="translate(296 312.0) scale(1.0)"><path d="M18 18c-8 0-12 7-12 18 0 14 4 34 11 34 5 0 6-12 13-12s8 12 13 12c7 0 11-20 11-34 0-11-4-18-12-18-6 0-8 4-12 4s-6-4-12-4Z" fill="#fff" stroke="#8E7016" stroke-width="3.00" stroke-linejoin="round"/><rect x="22" y="21" width="16" height="9" rx="2" fill="#F3E6BE" stroke="#8E7016" stroke-width="1.5"/></g>
+<text x="344.8" y="402" text-anchor="middle" font-size="11.5" font-weight="700" fill="#54636A">精密に仕上げる</text>
+<path d="M400 368H773.8" stroke="#8E7016" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/>
+<path d="M770.5 362l10 6-10 6z" fill="#8E7016"/>
+<text x="591.8" y="352" text-anchor="middle" font-size="15" font-weight="800" fill="#8E7016">作り直しが少なく、</text><text x="591.8" y="390" text-anchor="middle" font-size="15" font-weight="800" fill="#8E7016">そのまま保ちやすい</text>
 <text x="220" y="428" text-anchor="middle" font-size="13" font-weight="800" fill="#8E7016">↓ かけるほど</text>
-<text x="457" y="428" text-anchor="middle" font-size="13" font-weight="800" fill="#8E7016">↓ 作り直しが減り、歯が弱くなりにくい</text>
+<text x="557.6" y="428" text-anchor="middle" font-size="13" font-weight="800" fill="#8E7016">↓ 作り直しが減り、歯が弱くなりにくい</text>
 </svg>
           <div class="wx-list">
             <div class="wx" style="--mc:#4E6478">
@@ -1403,14 +1445,7 @@ html.sm-open{overflow:hidden;}
           </div>
           </div>
         </figure>
-        <figure class="why-fig why-combo c4" id="combo">
-          <div class="why-h"><span class="nb">自由診療なら、</span><span class="nb">素材・治し方・時間を、</span><span class="nb">好きな組み合わせで</span><span class="nb">選べます</span></div>
-          <div class="c4-rows"><div class="c4-row"><b class="c4-k">素材</b><div class="c4-cs"><span class="c4-c hk">合金（金属）</span><span class="c4-c hk">ブロックレジン</span><span class="c4-c">セラミック</span><span class="c4-c">ゴールド</span></div></div><div class="c4-row"><b class="c4-k">治し方</b><div class="c4-cs"><span class="c4-c hk">従来の方法</span><span class="c4-c">精密な治療</span></div></div><div class="c4-row"><b class="c4-k">時間</b><div class="c4-cs"><span class="c4-c hk">毎月、少しずつ</span><span class="c4-c">1日で、まとめて</span><span class="c4-c">予定に、合わせて</span></div></div></div>
-          <div class="c4-sum">
-            <p class="c4-hk"><span class="c4-mark"></span><span><b>保険で選べるのは</b>、合金かブロックレジン × 従来の方法 × 毎月、少しずつ、の組み合わせです。</span></p>
-            <p class="c4-free"><span class="c4-mark free"></span><span><b>自由診療では</b>、このすべての中から、選んで組み合わせられます。</span></p>
-          </div>
-        </figure>
+
       </div>
       <div class="why-story" aria-label="この先のつながり">
         <span class="ws-step" style="--mc:#8E7016">作り直しが少ない</span><i>→</i>
