@@ -1259,6 +1259,33 @@ html.sm-open{overflow:hidden;}
 .cmb-box .c3-o{justify-content:center;align-items:center;text-align:center;padding:12px 8px!important;}
 .cmb-box .c3-m{justify-content:center;}
 @media (min-width:1240px){.cmb-box .c3-o{padding:clamp(14px,2.4vh,26px) 10px!important;}.cmb-box .c3-o .cb-l{font-size:clamp(15px,2.1vh,20px);}}
+
+/* 組み合わせを以前の札の形に戻し、×を足す（2026-11-02 院長指示） */
+.cmb-in{max-width:980px;}
+.cmb .cmb-title{text-align:center;}
+.cmb .ov-kick{text-align:center;}
+.cmb-c4{padding:18px 16px!important;}
+.cmb-c4 .c4-rows{gap:0;margin-top:0;}
+.c4-x{display:flex;padding:6px 0 6px 3.6em;}
+.c4-x span{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--sage);color:#fff;font-size:19px;font-weight:800;line-height:1;margin-left:4px;}
+@media (min-width:1240px){
+  .cmb-c4{padding:clamp(20px,3.6vh,40px) 44px!important;}
+  .cmb-c4 .c4-row{grid-template-columns:4.2em minmax(0,1fr);gap:14px;align-items:center;}
+  .cmb-c4 .c4-k{font-size:clamp(17px,2.4vh,24px);padding-top:0;}
+  .cmb-c4 .c4-cs{gap:10px;}
+  .cmb-c4 .c4-c{font-size:clamp(15px,2.1vh,21px);padding:clamp(5px,.9vh,10px) clamp(14px,1.4vw,22px);}
+  .c4-x{padding:clamp(6px,1.4vh,14px) 0 clamp(6px,1.4vh,14px) calc(4.2em + 14px);}
+  .c4-x span{width:clamp(30px,4.4vh,42px);height:clamp(30px,4.4vh,42px);font-size:clamp(20px,3vh,28px);margin-left:0;}
+  .cmb-c4 .c4-sum{margin-top:clamp(16px,3vh,32px);}
+  .cmb-c4 .c4-sum p{font-size:clamp(13.5px,1.9vh,18px);}
+}
+
+.cmb-c4{--kw:4.4em;}
+.cmb-c4 .c4-row{grid-template-columns:var(--kw) minmax(0,1fr)!important;}
+.cmb-c4 .c4-k{white-space:nowrap;text-align:center;}
+.cmb-c4 .c4-x{display:grid;grid-template-columns:var(--kw) minmax(0,1fr);gap:8px;padding:6px 0;}
+.cmb-c4 .c4-x span{justify-self:center;margin:0;}
+@media (min-width:1240px){.cmb-c4{--kw:6.2rem;}.cmb-c4 .c4-x{gap:14px;padding:clamp(6px,1.4vh,14px) 0;}}
 </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -1368,12 +1395,12 @@ html.sm-open{overflow:hidden;}
   <div class="cmb-in">
     <div class="ov-kick">インレー・クラウン治療</div>
     <h2 class="cmb-title"><span class="nb">自由診療なら、</span><span class="nb">素材・治し方・時間を、</span><span class="nb">好きな組み合わせで選べます</span></h2>
-    <div class="why-fig why-combo cmb-box">
-      <div class="c3"><div class="c3-row r-mat"><div class="c3-k"><b>素材</b><span><span class="nb">経年劣化のしやすさと、</span><span class="nb">むし歯が再発したときの</span><span class="nb">見つけやすさが変わります</span></span></div><div class="c3-opts"><div class="c3-o hk"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><rect x="10.5" y="7.5" width="7" height="4" rx="1" fill="#AEB8BD" stroke="none"/></svg><span class="cb-l">合金<small>金属</small></span></span></div><div class="c3-o hk"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l9 5v10l-9 5-9-5V9z"/><path d="M5 9l9 5 9-5M14 14v10"/></svg><span class="cb-l">ブロックレジン<small>CAD/CAM</small></span></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><path d="M22 2v4M20 4h4" stroke-width="1.6"/></svg><span class="cb-l">セラミック</span></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 0-5 3-5 7 0 6 2 13 5 13 2 0 2-5 5-5s3 5 5 5c3 0 5-7 5-13 0-4-2-7-5-7-2 0-3 1-5 1s-3-1-5-1Z"/><rect x="10.5" y="7.5" width="7" height="4" rx="1" fill="#C9A23A" stroke="none"/></svg><span class="cb-l">ゴールド</span></span></div></div></div><div class="c3-x" aria-hidden="true"><span>×</span></div><div class="c3-row r-how"><div class="c3-k"><b>治し方</b><span><span class="nb">治療の時間、</span><span class="nb">精度、</span><span class="nb">むし歯の再発しやすさが変わります</span></span></div><div class="c3-opts"><div class="c3-o hk"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c3-6 7-8 11-8s8 2 11 8c-3 6-7 8-11 8s-8-2-11-8Z"/><circle cx="14" cy="14" r="3.5"/></svg><span class="cb-l">従来の方法</span></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4l6 3-4 8-6-3z"/><path d="M12 15l2 4M6 24h16M17 24c3-2 4-6 2-10"/><circle cx="17" cy="13" r="1.5"/></svg><span class="cb-l">精密な治療</span></span></div></div></div><div class="c3-x" aria-hidden="true"><span>×</span></div><div class="c3-row r-time"><div class="c3-k"><b>時間</b><span><span class="nb">治す歯が多いとき、</span><span class="nb">治療全体の期間が変わります</span></span></div><div class="c3-opts"><div class="c3-o hk"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><circle cx="9" cy="16" r="1.2" fill="currentColor"/><circle cx="14" cy="16" r="1.2" fill="currentColor"/><circle cx="19" cy="16" r="1.2" fill="currentColor"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/></svg><span class="cb-l">毎月、少しずつ</span></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><text x="14" y="21.5" text-anchor="middle" font-size="9" font-weight="800" fill="currentColor" stroke="none">1</text></svg><span class="cb-l">1日で、まとめて</span></span></div><div class="c3-o"><span class="c3-m"><svg class="cb-ic" viewBox="0 0 28 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9 3v5M19 3v5"/><path d="M10 17l3 3 5-6"/></svg><span class="cb-l">予定に、合わせて</span></span></div></div></div></div>
-    </div>
-    <div class="c4-sum cmb-sum">
-      <p class="c4-hk"><span class="c4-mark"></span><span><b>緑のカードは、保険で選べるもの</b>です。保険では、この中から組み合わせます。</span></p>
-      <p class="c4-free"><span class="c4-mark free"></span><span><b>自由診療では</b>、緑のカードも含めて、すべての中から組み合わせられます。</span></p>
+    <div class="why-fig c4 cmb-c4">
+      <div class="c4-rows"><div class="c4-row"><b class="c4-k">素材</b><div class="c4-cs"><span class="c4-c hk">合金（金属）</span><span class="c4-c hk">ブロックレジン</span><span class="c4-c">セラミック</span><span class="c4-c">ゴールド</span></div></div><div class="c4-x" aria-hidden="true"><span>×</span></div><div class="c4-row"><b class="c4-k">治し方</b><div class="c4-cs"><span class="c4-c hk">従来の方法</span><span class="c4-c">精密な治療</span></div></div><div class="c4-x" aria-hidden="true"><span>×</span></div><div class="c4-row"><b class="c4-k">時間</b><div class="c4-cs"><span class="c4-c hk">毎月、少しずつ</span><span class="c4-c">1日で、まとめて</span><span class="c4-c">予定に、合わせて</span></div></div></div>
+      <div class="c4-sum">
+        <p class="c4-hk"><span class="c4-mark"></span><span><b>保険で選べるのは</b>、合金かブロックレジン × 従来の方法 × 毎月、少しずつ、の組み合わせです。</span></p>
+        <p class="c4-free"><span class="c4-mark free"></span><span><b>自由診療では</b>、このすべての中から、選んで組み合わせられます。</span></p>
+      </div>
     </div>
   </div>
   <a class="ih-next" href="#why">素材ごとの「この先」を見くらべる ↓</a>
