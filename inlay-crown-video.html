@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>インレー・クラウンのご案内（動画）｜ライフデンタルクリニック</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+:root{
+  --paper:#FFFFFF;
+  --soft:#F4F7F5;
+  --card:#EEF3F1;
+  --ink:#2E3A3F;
+  --ink-soft:#54636A;
+  --muted:#6E7B80;
+  --sage:#4F7A6C;
+  --sage-2:#6E9C8E;
+  --line:#D8E0DD;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic","YuGothic","Noto Sans JP","Noto Sans CJK JP",sans-serif;
+  --maxwide:1080px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--gothic);line-height:1.8;font-size:16px;letter-spacing:.01em;-webkit-font-smoothing:antialiased;}
+.section{padding:48px 16px 56px;}
+.section.soft{background:var(--soft);}
+.wrap-wide{max-width:var(--maxwide);margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.24em;color:var(--sage);font-weight:600;margin:0 0 10px;}
+h1.title{font-size:26px;line-height:1.5;margin:0 0 12px;font-weight:600;letter-spacing:.04em;}
+.lead{color:var(--ink-soft);margin:0 0 24px;}
+.nb{display:inline-block;max-width:100%;}
+.player{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.player video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#F4F1EA;}
+.now{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-soft);}
+.now b{color:var(--ink);font-weight:600;}
+.chapters{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px;}
+.chapters button{width:100%;display:flex;align-items:center;gap:14px;text-align:left;font:inherit;color:inherit;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;}
+.chapters button:hover{border-color:var(--sage-2);}
+.chapters button[aria-current="true"]{border-color:var(--sage);background:var(--card);}
+.chapters img{width:120px;height:auto;border-radius:8px;flex:none;}
+.ch-no{font-size:12px;letter-spacing:.16em;color:var(--sage);font-weight:600;}
+.ch-t{font-size:15px;font-weight:600;line-height:1.5;}
+.ch-d{font-size:13px;color:var(--muted);}
+.note{font-size:13px;color:var(--muted);margin-top:22px;}
+.back{display:inline-block;margin-top:18px;color:var(--sage);font-weight:600;text-decoration:none;}
+.fl{font-size:14px;font-weight:600;color:var(--ink);letter-spacing:.06em;}
+.ft{font-size:12px;color:var(--muted);margin-top:4px;letter-spacing:.08em;}
+@media (min-width:760px){
+  .section{padding:64px 22px 72px;}
+  h1.title{font-size:32px;}
+  .chapters{grid-template-columns:repeat(3,1fr);}
+  .chapters button{flex-direction:column;align-items:stretch;}
+  .chapters img{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<main class="section soft">
+  <div class="wrap-wide">
+    <p class="eyebrow">INLAY &amp; CROWN · MOVIE</p>
+    <h1 class="title"><span class="nb">インレー・クラウンの、</span><span class="nb">ご案内（動画）</span></h1>
+    <p class="lead"><span class="nb">3本の動画を、</span><span class="nb">続けて再生します。</span><span class="nb">気になるところで止めて、</span><span class="nb">いつでもご相談ください。</span></p>
+
+    <div class="player">
+      <video id="v" controls playsinline preload="metadata" poster="video-01-concept.jpg" src="video-01-concept.mp4"></video>
+      <div class="now"><span>いま再生中：<b id="nowTitle">ライフの考え</b></span><span id="nowNo">1 / 3</span></div>
+    </div>
+
+    <ul class="chapters" id="chapters">
+      <li><button type="button" data-i="0" aria-current="true"><img src="video-01-concept.jpg" alt=""><span><span class="ch-no">01</span><br><span class="ch-t">ライフの考え</span><br><span class="ch-d">約26秒</span></span></button></li>
+      <li><button type="button" data-i="1"><img src="video-02-inlay-crown.jpg" alt=""><span><span class="ch-no">02</span><br><span class="ch-t">インレー・クラウンの入口</span><br><span class="ch-d">素材・精度・時間で、歯の持ちが変わる｜約54秒</span></span></button></li>
+      <li><button type="button" data-i="2"><img src="video-03a-metal-inlay.jpg" alt=""><span><span class="ch-no">03</span><br><span class="ch-t">金属のインレーを、作り直すとき</span><br><span class="ch-d">約73秒</span></span></button></li>
+    </ul>
+
+    <p class="note">動画の背景の写真と、歯のイラストは、イメージです。数字は、関係を示す調査をもとにしたもので、歯を治せば必ずそうなる、という意味ではありません。</p>
+    <a class="back" href="inlay-crown.html">インレー・クラウン治療のページへ →</a>
+  </div>
+</main>
+
+<footer style="background:#fff;border-top:1px solid var(--line);padding:36px 22px 40px;text-align:center;">
+  <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 13px;display:block;">
+  <div class="fl">ライフデンタルクリニック</div>
+  <div class="ft">いい歯で、いい人生を。</div>
+</footer>
+
+<script>
+(function(){
+  var list = [
+    {src:"video-01-concept.mp4", poster:"video-01-concept.jpg", t:"ライフの考え"},
+    {src:"video-02-inlay-crown.mp4", poster:"video-02-inlay-crown.jpg", t:"インレー・クラウンの入口"},
+    {src:"video-03a-metal-inlay.mp4", poster:"video-03a-metal-inlay.jpg", t:"金属のインレーを、作り直すとき"}
+  ];
+  var v = document.getElementById("v"), cur = 0;
+  var btns = document.querySelectorAll("#chapters button");
+  function load(i, play){
+    cur = i; v.src = list[i].src; v.poster = list[i].poster;
+    document.getElementById("nowTitle").textContent = list[i].t;
+    document.getElementById("nowNo").textContent = (i+1) + " / " + list.length;
+    btns.forEach(function(b){ b.setAttribute("aria-current", b.dataset.i == i ? "true" : "false"); });
+    if (play) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+  }
+  btns.forEach(function(b){ b.addEventListener("click", function(){ load(+b.dataset.i, true); }); });
+  v.addEventListener("ended", function(){ if (cur < list.length - 1) load(cur + 1, true); });
+})();
+</script>
+</body>
+</html>
