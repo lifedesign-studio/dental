@@ -305,7 +305,7 @@ h1{font-size:24pt;}
 
 </style>
 <style>
-/* ===== 入力・印刷画面（2026-10-22） ===== */
+/* ===== 入力・印刷画面（2026-10-22／11-10 3つの欄それぞれに日付と印） ===== */
 :root{--mark:#1E221B;--red:#E9897A;--grn:#8FC79A;}
 body{padding:0 0 40px;}
 *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
@@ -320,6 +320,9 @@ body{padding:0 0 40px;}
 .tool .btn.pr{background:#fff;color:#30332C;}
 .tool .btn.cl{background:none;color:#fff;border:1px solid rgba(255,255,255,.6);}
 .tool .sp{flex:1;}
+.tool .dates{display:flex;align-items:center;gap:6px 10px;font-size:13px;flex-wrap:wrap;}
+.tool .dates label{display:flex;align-items:center;gap:5px;}
+.tool .dates input[type=date]{width:136px;}
 .tool .tg{display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;}
 .tip{background:#EEF1E2;color:#30332C;font-family:var(--sans);font-size:12.5px;line-height:1.7;padding:8px 16px;}
 .tip b{color:#6B7B43;}
@@ -350,7 +353,6 @@ body{padding:0 0 40px;}
 .closing{align-items:center;}
 @media screen{
   .bx[data-col].act i,.tile[data-tooth],.note[data-note],.ochk label{cursor:pointer;}
-  .bx[data-col]:not(.act) i{opacity:.35;}
   .bx.act i{border-color:#6B7B43;border-width:1.6px;}
   .bx.act i:hover,.tile[data-tooth]:hover,.note[data-note]:hover{outline:2px solid #889A5A;outline-offset:1px;}
   .dt.act{color:#6B7B43;font-weight:700;}
@@ -360,7 +362,7 @@ body{padding:0 0 40px;}
 }
 /* 説明（モニター用・印刷しない） */
 .panel{display:none;}
-body.show-ex .panel{display:block;position:sticky;top:76px;align-self:flex-start;width:380px;max-height:calc(100vh - 96px);overflow:auto;background:#fff;border-radius:16px;box-shadow:0 6px 30px rgba(0,0,0,.14);padding:22px 22px 24px;font-family:var(--sans);color:#30332C;}
+body.show-ex .panel{display:block;position:sticky;top:116px;align-self:flex-start;width:380px;max-height:calc(100vh - 136px);overflow:auto;background:#fff;border-radius:16px;box-shadow:0 6px 30px rgba(0,0,0,.14);padding:22px 22px 24px;font-family:var(--sans);color:#30332C;}
 .panel .pno{font-family:var(--latin);font-size:28px;font-weight:600;color:#889A5A;line-height:1;}
 .panel .pcat{display:inline-block;font-size:12px;color:#6B7B43;border:1px solid #889A5A;border-radius:999px;padding:0 10px;margin-left:8px;vertical-align:4px;}
 .panel .pit{font-family:var(--serif);font-weight:600;font-size:16px;margin:10px 0 4px;}
@@ -391,17 +393,18 @@ body.show-ex .panel{display:block;position:sticky;top:76px;align-self:flex-start
 <div class="tool" role="toolbar" aria-label="記入">
   <label class="f">カルテ番号<input id="inKarte" type="text" inputmode="numeric" autocomplete="off" spellcheck="false"></label>
   <label class="f">患者番号<input id="inPid" type="text" inputmode="numeric" autocomplete="off" spellcheck="false"></label>
-  <label class="f">記入日<input id="inDate" type="date" autocomplete="off"></label>
   <label class="f">担当<input id="inStaff" class="w2" type="text" autocomplete="off" spellcheck="false"></label>
-  <span class="f" style="font-size:13px;display:flex;align-items:center;gap:6px;">今回の欄
-    <span class="seg" id="segCol"><button type="button" data-col="0" class="on">1つ目</button><button type="button" data-col="1">2つ目</button><button type="button" data-col="2">3つ目</button></span></span>
+  <span class="f dates">日付
+    <label>1つ目<input id="inDate0" type="date" autocomplete="off"></label>
+    <label>2つ目<input id="inDate1" type="date" autocomplete="off"></label>
+    <label>3つ目<input id="inDate2" type="date" autocomplete="off"></label></span>
   <label class="tg"><input id="tgEx" type="checkbox" checked>説明を表示</label>
   <span class="sp"></span>
   <a class="home" href="index.html">トップへ</a>
   <button type="button" class="btn cl" id="btnClear">すべて消す</button>
   <button type="button" class="btn pr" id="btnPrint">印刷する</button>
 </div>
-<div class="tip">表の□を押すと <b>✓ → ◎ → 空欄</b>。裏の歯を押すと <b>赤 → 緑 → ✕ → なし</b>。点線の枠を押すと言葉を選べます。項目の文を押すと、説明が出ます（印刷はされません）。
+<div class="tip">表の□は3つの欄とも押せます。押すと <b>✓ → ◎ → 空欄</b>。再評価のときは、前回のスキャンを見ながら1つ目の日付と印を入れ直し、2つ目に今回の日付と印を入れると、並べて比べられます。裏の歯を押すと <b>赤 → 緑 → ✕ → なし</b>。点線の枠を押すと言葉を選べます。項目の文を押すと、説明が出ます（印刷はされません）。
 入力は保存されません。画面を閉じるか更新すると消えます。印刷は <b>A4・余白なし・倍率100%・背景のグラフィックをオン</b> で。</div>
 <div class="wrapall">
 <div class="sheets">
@@ -502,25 +505,27 @@ var EX = [{"no": "01", "cat": "奥歯", "item": "左右の奥歯で、しっか�
 var NOTE_WORDS = ['クラウン','インレー','レジン','根の消毒','抜歯'];
 var TILE_STATES = ['', 'st-red', 'st-grn', 'st-x'];
 var S;
-function blank(){ return {karte:'', pid:'', date:'', staff:'', col:0, marks:new Array(10).fill(0), opts:[false,false,false,false], teeth:new Array(32).fill(0), notes:new Array(32).fill('')}; }
+function blank(){ return {karte:'', pid:'', staff:'', dates:['','',''], marks:[0,1,2].map(function(){return new Array(10).fill(0);}), opts:[false,false,false,false], teeth:new Array(32).fill(0), notes:new Array(32).fill('')}; }
 var $ = function(q,r){return (r||document).querySelector(q);};
 var $$ = function(q,r){return Array.prototype.slice.call((r||document).querySelectorAll(q));};
 
 function fmtDate(v){ if(!v) return ''; var p=v.split('-'); return p.length===3 ? (+p[0])+'/'+(+p[1])+'/'+(+p[2]) : v; }
 function today(){ var d=new Date(); var m=('0'+(d.getMonth()+1)).slice(-2), dd=('0'+d.getDate()).slice(-2); return d.getFullYear()+'-'+m+'-'+dd; }
 
+// 裏の記入日＝入っている日付のうち、いちばん新しい日
+function latestDate(){ return S.dates.filter(function(d){return d;}).sort().pop() || ''; }
 function render(){
   $$('[data-bind="karte"]').forEach(function(e){e.textContent=S.karte;});
   $$('[data-bind="pid"]').forEach(function(e){e.textContent=S.pid;});
   $$('[data-bind="staff"]').forEach(function(e){e.textContent=S.staff;});
-  $$('[data-bind="date"]').forEach(function(e){e.textContent=fmtDate(S.date);});
-  $$('[data-date]').forEach(function(e){ e.textContent = (+e.getAttribute('data-date')===S.col) ? fmtDate(S.date) : ''; });
-  $$('.dt[data-col]').forEach(function(e){ e.classList.toggle('act', +e.getAttribute('data-col')===S.col); });
-  $$('.bx[data-col]').forEach(function(e){ e.classList.toggle('act', +e.getAttribute('data-col')===S.col); });
+  $$('[data-bind="date"]').forEach(function(e){e.textContent=fmtDate(latestDate());});
+  $$('[data-date]').forEach(function(e){ e.textContent = fmtDate(S.dates[+e.getAttribute('data-date')]); });
+  $$('.dt[data-col]').forEach(function(e){ e.classList.toggle('act', !!S.dates[+e.getAttribute('data-col')]); });
+  $$('.bx[data-col]').forEach(function(e){ e.classList.add('act'); });
   $$('i[data-item]').forEach(function(e){
     var it=+e.getAttribute('data-item'), c=+e.getAttribute('data-col');
     e.classList.remove('mk-ok','mk-re');
-    if(c===S.col){ if(S.marks[it]===1) e.classList.add('mk-ok'); if(S.marks[it]===2) e.classList.add('mk-re'); }
+    if(S.marks[c][it]===1) e.classList.add('mk-ok'); if(S.marks[c][it]===2) e.classList.add('mk-re');
   });
   $$('label[data-opt]').forEach(function(e){ e.classList.toggle('on', S.opts[+e.getAttribute('data-opt')]); });
   $$('[data-tooth]').forEach(function(e){ var i=+e.getAttribute('data-tooth'); TILE_STATES.forEach(function(c){ if(c) e.classList.remove(c); }); if(S.teeth[i]) e.classList.add(TILE_STATES[S.teeth[i]]); });
@@ -528,14 +533,13 @@ function render(){
   var sum={'クラウン':0,'インレー':0,'レジン':0,'抜歯':0};
   S.notes.forEach(function(w){ if(w in sum) sum[w]++; });
   $$('[data-sum]').forEach(function(e){ var k=e.getAttribute('data-sum'); e.textContent = sum[k] ? sum[k] : ''; });
-  $$('#segCol button').forEach(function(b){ b.classList.toggle('on', +b.getAttribute('data-col')===S.col); });
 }
 
 function reset(){
   S = blank();
-  S.date = today();
+  S.dates[0] = today();
   ['inKarte','inPid','inStaff'].forEach(function(id){ $('#'+id).value=''; });
-  $('#inDate').value = S.date;
+  [0,1,2].forEach(function(c){ $('#inDate'+c).value = S.dates[c]; });
   $('#optOther').value = '';
   $$('.row.sel').forEach(function(r){r.classList.remove('sel');});
   $('#panel').innerHTML = '<p class="pempty">表の項目の文を押すと、ここに説明が出ます。<br>コンサルルームのモニターで、患者さんと一緒にご覧ください。</p>';
@@ -547,13 +551,11 @@ function reset(){
 $('#inKarte').addEventListener('input', function(){ S.karte=this.value.trim(); render(); });
 $('#inPid').addEventListener('input', function(){ S.pid=this.value.trim(); render(); });
 $('#inStaff').addEventListener('input', function(){ S.staff=this.value.trim(); render(); });
-$('#inDate').addEventListener('input', function(){ S.date=this.value; render(); });
-$$('#segCol button').forEach(function(b){ b.addEventListener('click', function(){ S.col=+b.getAttribute('data-col'); render(); }); });
+[0,1,2].forEach(function(c){ $('#inDate'+c).addEventListener('input', function(){ S.dates[c]=this.value; render(); }); });
 
 // 表の印：✓ → ◎ → 空欄
 $$('i[data-item]').forEach(function(e){ e.addEventListener('click', function(){
-  if(+e.getAttribute('data-col')!==S.col) return;
-  var it=+e.getAttribute('data-item'); S.marks[it]=(S.marks[it]+1)%3; render();
+  var it=+e.getAttribute('data-item'), c=+e.getAttribute('data-col'); S.marks[c][it]=(S.marks[c][it]+1)%3; render();
 }); });
 // 見た目の伸びしろ
 $$('label[data-opt]').forEach(function(l){ l.addEventListener('click', function(ev){
@@ -605,6 +607,7 @@ document.body.classList.toggle('show-ex', $('#tgEx').checked);
 // 印刷・消去
 $('#btnPrint').addEventListener('click', function(){
   if(!S.karte || !S.pid){ alert('カルテ番号と患者番号を入れてから印刷してください。'); return; }
+  for(var c=0;c<3;c++){ if(!S.dates[c] && S.marks[c].some(function(m){return m;})){ alert((c+1)+'つ目の欄に印がありますが、日付が入っていません。日付を入れてから印刷してください。'); return; } }
   closeMenu(); window.print();
 });
 $('#btnClear').addEventListener('click', function(){ if(confirm('入力をすべて消しますか？')) reset(); });
