@@ -59,6 +59,7 @@ Cowork はこのファイルの内容に従って、ページの**構築・追�
 | インレー・クラウン：セラミック（前歯）で治すと（ストーリー子ページ） | `inlay-crown-front.html` |
 | 医療費控除のこと | `medical-tax.html` |
 | いい歯の10チェック（くわしい説明・紙のQRの行き先） | `ten-check.html` |
+| いい歯の10チェック 記入・印刷画面（院内用・保存なし・トップの10チェックの枠からリンク） | `ten-check-sheet.html` |
 | インレー・クラウンのご案内（動画・3本を続けて再生） | `inlay-crown-video.html` |
 
 - `approach.html`／`oral-health.html`／`insurance.html`／`cost-over-time.html`／年代別5ページ／`life-stage.html` は治療ページではなく、**通い方・読み物系のページ**。命名規則（英小文字スラッグ）は治療ページと共通。

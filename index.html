@@ -85,6 +85,8 @@
     transition:background .2s ease;
   }
   .stage-list-link:hover{background:var(--card);}
+  .tc-links{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:16px;}
+  .tc-links .stage-list-link{margin-top:0;}
   .stage-list-link svg{width:16px;height:16px;color:var(--sage-2);}
 
   /* feature card (別セクション・保険治療) */
@@ -239,7 +241,8 @@
     .tc-frame .tc-lead{grid-column:2;grid-row:1 / span 2;margin:0;font-size:clamp(13px,1.6vh,15px);}
     .tc-frame .tc-slots{grid-column:3;grid-row:1 / span 2;margin:0;grid-template-columns:120px 160px;}
     .tc-frame .tc-slot{min-height:54px;font-size:11.5px;}
-    .tc-frame .stage-list-link{grid-column:4;grid-row:1 / span 2;margin:0;}
+    .tc-frame .tc-links{grid-column:4;grid-row:1 / span 2;margin:0;gap:6px;}
+    .tc-frame .tc-links .stage-list-link{padding:6px 16px;}
     .tb-cite{margin-top:6px;padding-top:4px;font-size:10.5px;line-height:1.5;}
     #treat-one{padding:clamp(10px,1.6vh,20px) 0 clamp(14px,2vh,24px);}
     #treat-one .eyebrow{margin:0 0 2px;}
@@ -292,7 +295,7 @@
     .tc-frame .tc-lead{grid-column:1 / -1!important;grid-row:3!important;margin:6px 0 0!important;max-width:none!important;}
     .tc-frame .tc-lead .nb{display:inline;}
     .tc-frame .tc-slots{grid-column:2!important;grid-row:1 / span 2!important;}
-    .tc-frame .stage-list-link{grid-column:3!important;grid-row:1 / span 2!important;}
+    .tc-frame .tc-links{grid-column:3!important;grid-row:1 / span 2!important;}
     .tc-frame .tc-slots{grid-template-columns:150px 160px!important;}
   }
 
@@ -513,7 +516,10 @@
         <div class="tc-slot tc-slot-ill" data-slot="TC-ILL">図・写真の枠（準備中）</div>
         <div class="tc-slot tc-slot-text" data-slot="TC-TEXT">説明文の枠（準備中）</div>
       </div>
+      <div class="tc-links">
       <a class="stage-list-link" href="ten-check.html">いい歯の10チェックの、くわしい説明を見る<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="stage-list-link" href="ten-check-sheet.html">画面で記入して、印刷する（院内用）<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
     </div>
 
     <p class="tb-cite">出典：Tanaka T, et al. J Gerontol A Biol Sci Med Sci 2018（柏市の高齢者約2,000人の追跡調査）・厚生労働省 資料／山本龍生ほか 日本歯科医療管理学会雑誌 2016;51(3):136-142（全国の医療の記録・40歳以上 約223万人）／Murata T, et al. J Health Econ Outcomes Res 2020;7(1)（健康保険の記録 約129万人）</p>
