@@ -361,6 +361,22 @@
   .tp-text{font-size:clamp(16px,2.2vh,21px)!important;}
   .tp-next{margin-top:clamp(20px,4vh,44px);}
 }
+  /* ===== 2026-11-10 いい歯の10チェックの枠：紙（表）の画像と、紙の考え方3行 ===== */
+  .tc-slots{align-items:center;justify-items:center;}
+  .tc-fig{margin:0;line-height:0;}
+  .tc-fig img{display:block;width:min(230px,62vw);height:auto;border:1px solid var(--line);border-radius:8px;box-shadow:0 6px 18px rgba(46,58,63,.10);background:#fff;}
+  .tc-points{list-style:none;margin:0;padding:0;text-align:left;display:grid;gap:8px;}
+  .tc-points li{position:relative;padding-left:18px;font-size:15px;font-weight:700;color:var(--ink);line-height:1.6;}
+  .tc-points li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--sage-2);}
+  @media (min-width:760px){.tc-slots{grid-template-columns:auto auto;justify-content:center;column-gap:28px;}.tc-fig img{width:200px;}.tc-points li{font-size:16px;}}
+  @media (min-width:1240px){
+    .tc-frame .tc-slots{grid-template-columns:auto auto!important;column-gap:18px;}
+    .tc-fig img{width:auto;height:clamp(104px,14vh,150px);border-radius:6px;}
+    .tc-points{gap:clamp(2px,.6vh,6px);}
+    .tc-frame .eyebrow{align-self:end;}
+    .tc-frame .tc-h{align-self:start;margin-top:4px;}
+    .tc-points li{font-size:clamp(13px,1.6vh,15px);}
+  }
 </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -507,14 +523,18 @@
 
     <p class="tb-bridge"><span class="nb">歯を失う前に、</span><span class="nb">まず、</span><span class="nb">いまのお口の状態を知ることから始めます。</span></p>
 
-    <!-- いい歯の10チェックへの説明（フレーム・中身は準備中） -->
+    <!-- いい歯の10チェックへの説明（2026-11-10 紙の画像と、紙の考え方3行を入れた） -->
     <div class="tc-frame" id="ten-check">
       <p class="eyebrow">いい歯の10チェック</p>
       <h3 class="tc-h"><span class="nb">いまのお口を、</span><span class="nb">10の項目で確かめます</span></h3>
       <p class="tc-lead"><span class="nb">初めての検査のあとに、</span><span class="nb">お口の状態を10の項目でお伝えする紙です。</span><span class="nb">「かむのに使える歯が、</span><span class="nb">20本以上ある」も、</span><span class="nb">10の項目のひとつです。</span></p>
       <div class="tc-slots">
-        <div class="tc-slot tc-slot-ill" data-slot="TC-ILL">図・写真の枠（準備中）</div>
-        <div class="tc-slot tc-slot-text" data-slot="TC-TEXT">説明文の枠（準備中）</div>
+        <div class="tc-fig" data-slot="TC-ILL"><img src="ten-check-front.jpg" alt="いい歯の10チェックの紙（表）。10の項目が上から順に並び、項目ごとに印をつける欄があります" width="640" height="905" loading="lazy"></div>
+        <ul class="tc-points" data-slot="TC-TEXT">
+          <li><span class="nb">上の3つが整っていると、</span><span class="nb">安心です。</span></li>
+          <li><span class="nb">印の数ではなく、</span><span class="nb">上からの順番で見ます。</span></li>
+          <li><span class="nb">どう進めるかは、</span><span class="nb">1つずつ一緒に決めます。</span></li>
+        </ul>
       </div>
       <div class="tc-links">
       <a class="stage-list-link" href="ten-check.html">いい歯の10チェックの、くわしい説明を見る<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
