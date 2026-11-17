@@ -93,7 +93,7 @@ h1,h2{text-wrap:balance;line-height:1.3}
 /* check */
 #check{overflow-y:auto;word-break:keep-all;overflow-wrap:anywhere}
 #check h1{font-weight:900;font-size:24px}
-.unit{background:var(--panel);border:2px solid var(--line);border-radius:22px;overflow:hidden;flex:none;position:sticky;top:0;z-index:2;box-shadow:0 0 0 16px var(--bg)}
+.unit{background:var(--panel);border:2px solid var(--line);border-radius:22px;overflow:hidden;flex:none}
 .unit svg{display:block;width:100%;height:auto}
 #uBack{transition:transform .9s ease;transform-box:view-box;transform-origin:150px 130px}
 .tally{font-weight:900;font-size:18px}
@@ -110,6 +110,58 @@ h1,h2{text-wrap:balance;line-height:1.3}
 .item.ok .tick svg{opacity:1}
 .art{flex:none;width:76px;height:76px;background:var(--bg);border-radius:14px;padding:4px}
 .allok{background:var(--accent);color:var(--accent-ink);border-radius:18px;padding:12px 16px;font-weight:900;font-size:20px;text-align:center}
+
+/* check: one item at a time, with a moving picture */
+.cap{background:var(--panel);border:2px solid var(--line);border-radius:22px;padding:12px 16px 14px;display:flex;flex-direction:column;gap:8px;flex:none}
+.cap .name{font-weight:900;font-size:22px;line-height:1.3}
+.cap .real{font-size:13px;color:var(--muted);font-weight:700;margin-left:8px}
+.cap .say{font-size:16px}
+.cap .row{display:flex;gap:10px}
+.cap .row .big{flex:1;font-size:19px;padding:10px 12px}
+#cDone.ok{background:var(--ink);color:var(--panel);box-shadow:0 4px 0 #0F1D21}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;list-style:none;padding:0;flex:none}
+.tile{position:relative;display:block;width:100%;aspect-ratio:1;background:var(--panel);border:2px solid var(--line);border-radius:16px;padding:6px}
+.tile svg.art{width:100%;height:100%;background:none;padding:0}
+.tile.sel{border-color:var(--accent);box-shadow:0 4px 0 var(--accent)}
+.tile .badge{position:absolute;right:-5px;top:-5px;width:26px;height:26px;border-radius:50%;background:var(--ink);display:none;place-items:center}
+.tile .badge svg{width:16px;height:16px}
+.tile.ok .badge{display:grid}
+#uStand,#uBeam,#uArm,#uTreat,#uFace{display:none}
+.a-sit #uStand,.a-lamp #uBeam,.a-hand #uArm,.a-hand #uTreat,.a-face #uFace{display:inline}
+.a-face #uUnit,.a-hand #uStaffR{display:none}
+.a-recline #uBack{animation:recl 4s ease-in-out infinite}
+.a-lamp #uBack,.a-hand #uBack{transform:rotate(-52deg)}
+@keyframes recl{0%,15%{transform:rotate(0)}60%,100%{transform:rotate(-52deg)}}
+.a-sit #uStand{animation:sitWalk 3.6s ease-in-out infinite}
+@keyframes sitWalk{0%,10%{transform:translateX(0);opacity:1}48%{transform:translateX(80px);opacity:1}56%,100%{transform:translateX(80px);opacity:0}}
+.a-sit #uBody,.a-sit #uSit{animation:sitIn 3.6s linear infinite}
+@keyframes sitIn{0%,50%{opacity:0}58%,100%{opacity:1}}
+.a-lamp #uBeam{animation:beam 3s ease-in-out infinite}
+@keyframes beam{0%,20%{opacity:0}45%,100%{opacity:.6}}
+#uArm{transform-box:view-box;transform-origin:137px 102px;animation:armUp 4.4s ease-in-out infinite}
+@keyframes armUp{0%,38%{transform:rotate(112deg)}50%,100%{transform:rotate(0)}}
+#uTreatTool{animation:toolBack 4.4s ease-in-out infinite}
+@keyframes toolBack{0%,46%{transform:translate(0,0)}58%,100%{transform:translate(22px,-22px)}}
+#uBuzz{animation:buzz 4.4s linear infinite}
+@keyframes buzz{0%,8%,16%,24%,32%,40%{opacity:1}4%,12%,20%,28%,36%{opacity:.2}46%,100%{opacity:0}}
+#fIn{animation:toolIn 3.8s ease-out infinite}
+@keyframes toolIn{0%{transform:translate(120px,-120px)}30%,100%{transform:translate(0,0)}}
+.fxAfter{animation:fxShow 3.8s linear infinite}
+@keyframes fxShow{0%,30%{opacity:0}36%,100%{opacity:1}}
+.flow{stroke-dasharray:7 9;animation:flow .45s linear infinite}
+@keyframes flow{from{stroke-dashoffset:32}to{stroke-dashoffset:0}}
+.fdrop{animation:fdrop .9s ease-in infinite}
+@keyframes fdrop{0%{transform:translate(0,0);opacity:1}100%{transform:translate(var(--dx,0px),var(--dy,34px));opacity:0}}
+.jit{animation:jit .1s linear infinite alternate}
+@keyframes jit{to{transform:translate(1.2px,.6px)}}
+.wob{transform-box:fill-box;transform-origin:20% 85%;animation:wob 1.4s ease-in-out infinite}
+@keyframes wob{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(6deg)}}
+.glowp{animation:glowp 1.1s ease-in-out infinite alternate}
+@keyframes glowp{from{opacity:.35}to{opacity:.95}}
+@media (prefers-reduced-motion:reduce){
+  #uBack,#uStand,#uBody,#uSit,#uBeam,#uArm,#uTreatTool,#uBuzz,#fIn,.fxAfter,.flow,.fdrop,.jit,.wob,.glowp{animation:none!important}
+  .a-recline #uBack{transform:rotate(-52deg)}.a-sit #uStand{display:none}
+}
 
 /* brush, shiage, narabi */
 #brush{word-break:keep-all;overflow-wrap:anywhere}
@@ -292,56 +344,91 @@ h1,h2{text-wrap:balance;line-height:1.3}
 <main class="view" id="check">
   <div class="top"><button class="chip" data-go="home">もどる</button><span class="tally" id="tally" style="margin-left:auto"></span></div>
   <h1>はいしゃさんで たしかめよう</h1>
-  <p class="lead">せんせいや えいせいしさんと いっしょに、ひとつずつ たしかめて、まるを おそう。</p>
   <div class="unit">
-    <svg viewBox="0 0 360 200" role="img" aria-label="しんりょうの いすと せんせい">
-      <rect width="360" height="200" fill="#F3F6F1"/>
-      <path d="M0 180H360" stroke="#C6D6D0" stroke-width="3"/>
-      <!-- lamp -->
-      <path d="M262 0V22L206 34" fill="none" stroke="#8FA3AD" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path id="uBeam" d="M184 42H212L196 104H120Z" fill="#F6D36B" opacity=".45"/>
-      <ellipse cx="198" cy="38" rx="19" ry="9" fill="#FBFAF5" stroke="#8FA3AD" stroke-width="4"/>
-      <!-- chair -->
-      <ellipse cx="182" cy="180" rx="48" ry="7" fill="#8FA3AD"/>
-      <rect x="168" y="136" width="28" height="44" rx="6" fill="#8FA3AD"/>
-      <rect x="140" y="124" width="82" height="16" rx="8" fill="#7FB8A4"/>
-      <rect x="212" y="126" width="46" height="12" rx="6" fill="#7FB8A4" transform="rotate(14 212 132)"/>
-      <!-- seated child: legs stay, body leans with the backrest -->
-      <g id="uSit">
-        <rect x="158" y="112" width="60" height="13" rx="6.5" fill="#35566B"/>
-        <rect x="208" y="114" width="34" height="12" rx="6" fill="#35566B" transform="rotate(16 208 120)"/>
-      </g>
-      <g id="uBack">
-        <rect x="136" y="58" width="15" height="76" rx="7.5" fill="#7FB8A4"/>
-        <rect x="134" y="44" width="19" height="22" rx="8" fill="#6BA590"/>
-        <g id="uBody">
-          <rect x="152" y="80" width="24" height="46" rx="11" fill="#E9A23B"/>
-          <circle cx="165" cy="65" r="15" fill="#F6D9BF"/>
-          <path d="M150 62q4-16 18-13 11 2 12 12-12-8-30 1z" fill="#4A3423"/>
-          <circle cx="171" cy="66" r="2" fill="#22393F"/><path d="M168 72q4 3 7 0" fill="none" stroke="#22393F" stroke-width="2" stroke-linecap="round"/>
+    <svg id="usvg" class="a-sit" viewBox="0 0 360 200" role="img" aria-label="たしかめる ことの え">
+      <defs>
+        <g id="uStaffBody">
+          <rect x="286" y="140" width="10" height="40" rx="5" fill="#22393F"/><rect x="301" y="140" width="10" height="40" rx="5" fill="#22393F"/>
+          <rect x="280" y="84" width="38" height="64" rx="14" fill="#5FA7B5"/>
+          <circle cx="299" cy="66" r="16" fill="#F6D9BF"/>
+          <path d="M283 64q2-18 17-17 15 1 15 17-16-9-32 0z" fill="#3B2A1E"/>
+          <circle cx="293" cy="68" r="2" fill="#22393F"/><circle cx="304" cy="68" r="2" fill="#22393F"/>
+          <path d="M294 75q5 4 9 0" fill="none" stroke="#22393F" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <clipPath id="fMouth"><ellipse cx="150" cy="132" rx="64" ry="50"/></clipPath>
+        <radialGradient id="blue2"><stop offset="0" stop-color="#4FA3FF" stop-opacity=".9"/><stop offset="1" stop-color="#4FA3FF" stop-opacity="0"/></radialGradient>
+      </defs>
+      <!-- the chair, from the side -->
+      <g id="uUnit">
+        <rect width="360" height="200" fill="#F3F6F1"/>
+        <path d="M0 180H360" stroke="#C6D6D0" stroke-width="3"/>
+        <g id="uTreat">
+          <use href="#uStaffBody" x="-122"/>
+          <path d="M166 100L150 62" stroke="#5FA7B5" stroke-width="10" stroke-linecap="round"/>
+          <g id="uTreatTool"><path d="M152 60L125 76" stroke="#8FA3AD" stroke-width="5" stroke-linecap="round"/>
+            <path id="uBuzz" d="M132 62l-6-9M124 66l-10-7M138 70l8-10" fill="none" stroke="#E9A23B" stroke-width="4" stroke-linecap="round"/></g>
+        </g>
+        <path d="M262 0V22L206 34" fill="none" stroke="#8FA3AD" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path id="uBeam" d="M184 42H212L128 98L92 64Z" fill="#F6D36B"/>
+        <ellipse cx="198" cy="38" rx="19" ry="9" fill="#FBFAF5" stroke="#8FA3AD" stroke-width="4"/>
+        <ellipse cx="182" cy="180" rx="48" ry="7" fill="#8FA3AD"/>
+        <rect x="168" y="136" width="28" height="44" rx="6" fill="#8FA3AD"/>
+        <rect x="140" y="124" width="82" height="16" rx="8" fill="#7FB8A4"/>
+        <rect x="212" y="126" width="46" height="12" rx="6" fill="#7FB8A4" transform="rotate(14 212 132)"/>
+        <g id="uSit">
+          <rect x="158" y="112" width="60" height="13" rx="6.5" fill="#35566B"/>
+          <rect x="208" y="114" width="34" height="12" rx="6" fill="#35566B" transform="rotate(16 208 120)"/>
+        </g>
+        <g id="uBack">
+          <rect x="136" y="58" width="15" height="76" rx="7.5" fill="#7FB8A4"/>
+          <rect x="134" y="44" width="19" height="22" rx="8" fill="#6BA590"/>
+          <g id="uBody">
+            <rect x="152" y="80" width="24" height="46" rx="11" fill="#E9A23B"/>
+            <circle cx="165" cy="65" r="15" fill="#F6D9BF"/>
+            <path d="M150 62q4-16 18-13 11 2 12 12-12-8-30 1z" fill="#4A3423"/>
+            <circle cx="171" cy="66" r="2" fill="#22393F"/><path d="M168 72q4 3 7 0" fill="none" stroke="#22393F" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </g>
+        <g id="uArm"><path d="M137 102V62" stroke="#E9A23B" stroke-width="10" stroke-linecap="round"/><circle cx="137" cy="52" r="10" fill="#F6D9BF" stroke="#C9A98C" stroke-width="2"/></g>
+        <g id="uStand">
+          <rect x="58" y="150" width="9" height="30" rx="4.5" fill="#35566B"/><rect x="71" y="150" width="9" height="30" rx="4.5" fill="#35566B"/>
+          <rect x="56" y="112" width="26" height="44" rx="11" fill="#E9A23B"/>
+          <circle cx="69" cy="97" r="15" fill="#F6D9BF"/>
+          <path d="M54 94q4-16 18-13 11 2 12 12-12-8-30 1z" fill="#4A3423"/>
+          <circle cx="75" cy="98" r="2" fill="#22393F"/><path d="M72 104q4 3 7 0" fill="none" stroke="#22393F" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <g id="uStaffR">
+          <use href="#uStaffBody"/>
+          <path d="M282 100L262 118" stroke="#5FA7B5" stroke-width="10" stroke-linecap="round"/>
         </g>
       </g>
-      <!-- child standing, before sitting -->
-      <g id="uStand">
-        <rect x="58" y="150" width="9" height="30" rx="4.5" fill="#35566B"/><rect x="71" y="150" width="9" height="30" rx="4.5" fill="#35566B"/>
-        <rect x="56" y="112" width="26" height="44" rx="11" fill="#E9A23B"/>
-        <circle cx="69" cy="97" r="15" fill="#F6D9BF"/>
-        <path d="M54 94q4-16 18-13 11 2 12 12-12-8-30 1z" fill="#4A3423"/>
-        <circle cx="75" cy="98" r="2" fill="#22393F"/><path d="M72 104q4 3 7 0" fill="none" stroke="#22393F" stroke-width="2" stroke-linecap="round"/>
-      </g>
-      <!-- staff -->
-      <g>
-        <rect x="286" y="140" width="10" height="40" rx="5" fill="#22393F"/><rect x="301" y="140" width="10" height="40" rx="5" fill="#22393F"/>
-        <rect x="280" y="84" width="38" height="64" rx="14" fill="#5FA7B5"/>
-        <path d="M282 100L262 118" stroke="#5FA7B5" stroke-width="10" stroke-linecap="round"/>
-        <circle cx="299" cy="66" r="16" fill="#F6D9BF"/>
-        <path d="M283 64q2-18 17-17 15 1 15 17-16-9-32 0z" fill="#3B2A1E"/>
-        <circle cx="293" cy="68" r="2" fill="#22393F"/><circle cx="304" cy="68" r="2" fill="#22393F"/>
-        <path d="M294 75q5 4 9 0" fill="none" stroke="#22393F" stroke-width="2" stroke-linecap="round"/>
+      <!-- the mouth, close up -->
+      <g id="uFace">
+        <rect width="360" height="200" fill="#F3F6F1"/>
+        <circle cx="150" cy="92" r="132" fill="#F6D9BF"/>
+        <path d="M18 60Q40-40 150-36Q260-40 282 60Q220-6 150-2Q80-6 18 60Z" fill="#4A3423"/>
+        <path d="M84 46q13-11 26 0M190 46q13-11 26 0" fill="none" stroke="#22393F" stroke-width="5" stroke-linecap="round"/>
+        <path d="M143 68q7 6 14 0" fill="none" stroke="#C9A98C" stroke-width="4" stroke-linecap="round"/>
+        <ellipse cx="150" cy="132" rx="64" ry="50" fill="#B4475A"/>
+        <g clip-path="url(#fMouth)">
+          <ellipse cx="150" cy="172" rx="42" ry="20" fill="#E8808F"/>
+          <g fill="#FFFEF8" stroke="#D9D4C3" stroke-width="2">
+            <rect x="92" y="80" width="21" height="30" rx="6"/><rect x="116" y="80" width="21" height="32" rx="6"/><rect x="139.5" y="80" width="21" height="33" rx="6"/><rect x="163" y="80" width="21" height="32" rx="6"/><rect x="187" y="80" width="21" height="30" rx="6"/>
+            <rect x="104" y="166" width="20" height="24" rx="6"/><rect x="176" y="166" width="20" height="24" rx="6"/>
+          </g>
+        </g>
+        <g class="fxAfter"><circle id="fGlow" class="glowp" cx="150" cy="112" r="46" fill="url(#blue2)"/></g>
+        <g id="fPos"><g id="fIn"><g id="fTool"></g></g></g>
+        <g class="fxAfter" id="fFx"></g>
       </g>
     </svg>
   </div>
-  <ul class="items" id="items"></ul>
+  <div class="cap">
+    <div><span class="name" id="cName"></span><span class="real" id="cReal"></span></div>
+    <p class="say" id="cSay"></p>
+    <div class="row"><button class="big quiet" id="cDone" aria-pressed="false">できた</button><button class="big" id="cNext">つぎへ</button></div>
+  </div>
+  <ul class="tiles" id="tiles"></ul>
   <div class="allok" id="allok" hidden>ぜんぶ たしかめたね</div>
   <button class="big quiet" id="resetCheck">さいしょから やりなおす</button>
 </main>
@@ -770,23 +857,31 @@ const CHECK=[
 let checked={};
 try{checked=JSON.parse(localStorage.getItem("haisha-check")||"{}")||{};}catch(e){}
 const saveCheck=()=>{try{localStorage.setItem("haisha-check",JSON.stringify(checked));}catch(e){}};
-function paintCheck(){
-  $("items").innerHTML=CHECK.map(c=>'<li class="item'+(checked[c.id]?" ok":"")+'">'
-    +'<svg class="art" viewBox="0 0 72 72" aria-hidden="true">'+c.art+"</svg>"
-    +'<span class="txt"><b>'+c.name+(c.real?"<span>（"+c.real+"）</span>":"")+"</b><small>"+c.sub+"</small></span>"
-    +'<button class="tick" data-tick="'+c.id+'" aria-pressed="'+!!checked[c.id]+'" aria-label="'+c.name+' を たしかめた"><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5L19 7" fill="none" stroke="#FBFAF5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></li>').join("");
-  const n=CHECK.filter(c=>checked[c.id]).length;
+const TOOLS={"mirror": {"tip": [26, 52], "at": [150, 118], "t": "<g class=\"wob\"><path d=\"M64 6L35 43\" stroke=\"#8FA3AD\" stroke-width=\"6\" stroke-linecap=\"round\"/><circle cx=\"26\" cy=\"52\" r=\"14\" fill=\"#D6F0F5\" stroke=\"#8FA3AD\" stroke-width=\"4\"/><path d=\"M18 49q4-7 11-6\" stroke=\"#fff\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/></g>", "fx": ""}, "air": {"tip": [30, 44], "at": [176, 84], "t": "<path d=\"M64 6L44 30\" stroke=\"#8FA3AD\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M44 30L30 44\" stroke=\"#5E7378\" stroke-width=\"5\" stroke-linecap=\"round\"/><circle cx=\"58\" cy=\"10\" r=\"3\" fill=\"#4FA3FF\"/><circle cx=\"51\" cy=\"18\" r=\"3\" fill=\"#7FB8A4\"/>", "fx": "<g fill=\"none\" stroke=\"#3F8FA0\" stroke-width=\"5\" stroke-linecap=\"round\"><path class=\"flow\" d=\"M172 90L150 116\"/><path class=\"flow\" d=\"M168 86L132 110\"/><path class=\"flow\" d=\"M178 94L166 128\"/></g><text x=\"262\" y=\"168\" font-size=\"26\" font-weight=\"900\" fill=\"#5E7378\" font-family=\"inherit\">シュー</text>"}, "water": {"tip": [30, 44], "at": [176, 84], "t": "<path d=\"M64 6L44 30\" stroke=\"#8FA3AD\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M44 30L30 44\" stroke=\"#5E7378\" stroke-width=\"5\" stroke-linecap=\"round\"/><circle cx=\"58\" cy=\"10\" r=\"3\" fill=\"#4FA3FF\"/><circle cx=\"51\" cy=\"18\" r=\"3\" fill=\"#7FB8A4\"/>", "fx": "<circle class=\"fdrop\" cx=\"170\" cy=\"92\" r=\"5\" fill=\"#6FB4D6\" style=\"--dx:-22px;--dy:30px;animation-delay:0.00s\"/><circle class=\"fdrop\" cx=\"166\" cy=\"90\" r=\"4\" fill=\"#6FB4D6\" style=\"--dx:-34px;--dy:26px;animation-delay:0.18s\"/><circle class=\"fdrop\" cx=\"172\" cy=\"96\" r=\"4\" fill=\"#6FB4D6\" style=\"--dx:-10px;--dy:36px;animation-delay:0.36s\"/><circle class=\"fdrop\" cx=\"168\" cy=\"94\" r=\"5\" fill=\"#6FB4D6\" style=\"--dx:-26px;--dy:34px;animation-delay:0.54s\"/><circle class=\"fdrop\" cx=\"171\" cy=\"92\" r=\"4\" fill=\"#6FB4D6\" style=\"--dx:-16px;--dy:30px;animation-delay:0.72s\"/>"}, "suction": {"tip": [32, 45], "at": [186, 150], "t": "<path d=\"M64 6L36 40\" stroke=\"#8FA3AD\" stroke-width=\"17\" stroke-linecap=\"round\"/><path d=\"M64 6L36 40\" stroke=\"#F4F6F2\" stroke-width=\"12\" stroke-linecap=\"round\"/><ellipse cx=\"32\" cy=\"45\" rx=\"11\" ry=\"7\" fill=\"#fff\" stroke=\"#5E7378\" stroke-width=\"3\" transform=\"rotate(-40 32 45)\"/>", "fx": "<circle class=\"fdrop\" cx=\"126\" cy=\"160\" r=\"6\" fill=\"#6FB4D6\" style=\"--dx:52px;--dy:-10px;animation-delay:0.00s\"/><circle class=\"fdrop\" cx=\"146\" cy=\"170\" r=\"5\" fill=\"#6FB4D6\" style=\"--dx:34px;--dy:-18px;animation-delay:0.18s\"/><circle class=\"fdrop\" cx=\"112\" cy=\"150\" r=\"5\" fill=\"#6FB4D6\" style=\"--dx:66px;--dy:0px;animation-delay:0.36s\"/><circle class=\"fdrop\" cx=\"160\" cy=\"176\" r=\"5\" fill=\"#6FB4D6\" style=\"--dx:22px;--dy:-24px;animation-delay:0.54s\"/>"}, "drill": {"tip": [24, 51], "at": [150, 110], "t": "<g class=\"jit\"><path d=\"M66 8L38 34\" stroke=\"#8FA3AD\" stroke-width=\"10\" stroke-linecap=\"round\"/><path d=\"M38 34L26 38\" stroke=\"#8FA3AD\" stroke-width=\"8\" stroke-linecap=\"round\"/><rect x=\"16\" y=\"30\" width=\"16\" height=\"13\" rx=\"5\" fill=\"#5E7378\"/><path d=\"M24 43v8\" stroke=\"#22393F\" stroke-width=\"3\" stroke-linecap=\"round\"/></g>", "fx": "<circle class=\"fdrop\" cx=\"150\" cy=\"116\" r=\"4\" fill=\"#6FB4D6\" style=\"--dx:-26px;--dy:30px;animation-delay:0.00s\"/><circle class=\"fdrop\" cx=\"150\" cy=\"116\" r=\"5\" fill=\"#6FB4D6\" style=\"--dx:-10px;--dy:38px;animation-delay:0.18s\"/><circle class=\"fdrop\" cx=\"150\" cy=\"116\" r=\"4\" fill=\"#6FB4D6\" style=\"--dx:8px;--dy:38px;animation-delay:0.36s\"/><circle class=\"fdrop\" cx=\"150\" cy=\"116\" r=\"5\" fill=\"#6FB4D6\" style=\"--dx:24px;--dy:30px;animation-delay:0.54s\"/><circle class=\"fdrop\" cx=\"150\" cy=\"116\" r=\"4\" fill=\"#6FB4D6\" style=\"--dx:0px;--dy:42px;animation-delay:0.72s\"/>"}, "polish": {"tip": [24, 53], "at": [150, 108], "t": "<g class=\"jit\"><path d=\"M66 8L38 34\" stroke=\"#8FA3AD\" stroke-width=\"10\" stroke-linecap=\"round\"/><path d=\"M38 34L26 38\" stroke=\"#8FA3AD\" stroke-width=\"8\" stroke-linecap=\"round\"/><rect x=\"16\" y=\"30\" width=\"16\" height=\"13\" rx=\"5\" fill=\"#5E7378\"/><path d=\"M18 53l3-10h6l3 10z\" fill=\"#7FB8A4\"/></g>", "fx": "<g fill=\"#E9A23B\"><path class=\"twinkle\" d=\"M112 100l4 9 9 4-9 4-4 9-4-9-9-4 9-4z\"/><path class=\"twinkle\" style=\"animation-delay:.4s\" d=\"M192 96l4 9 9 4-9 4-4 9-4-9-9-4 9-4z\"/><path class=\"twinkle\" style=\"animation-delay:.8s\" d=\"M150 132l3 7 7 3-7 3-3 7-3-7-7-3 7-3z\"/></g>"}, "light": {"tip": [25, 45], "at": [172, 92], "t": "<path d=\"M66 8L38 34\" stroke=\"#22393F\" stroke-width=\"11\" stroke-linecap=\"round\"/><path d=\"M38 34L27 43\" stroke=\"#22393F\" stroke-width=\"7\" stroke-linecap=\"round\"/><circle cx=\"25\" cy=\"45\" r=\"7\" fill=\"#4FA3FF\" stroke=\"#22393F\" stroke-width=\"2\"/>", "fx": ""}};
+const TICK='<svg viewBox="0 0 24 24"><path d="M5 12.5l5 5L19 7" fill="none" stroke="#FBFAF5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+let cSel=0;
+function paintCheck(restart){
+  const c=CHECK[cSel],t=TOOLS[c.id],u=$("usvg");
+  if(t){
+    $("fTool").innerHTML=t.t;$("fFx").innerHTML=t.fx;
+    $("fPos").setAttribute("transform","translate("+t.at[0]+","+t.at[1]+") scale(1.7) translate("+(-t.tip[0])+","+(-t.tip[1])+")");
+    show($("fGlow"),c.id==="light");
+  }
+  const cls=t?"a-face":"a-"+c.id;
+  if(restart||u.getAttribute("class")!==cls){u.setAttribute("class","");void u.getBoundingClientRect();u.setAttribute("class",cls);}
+  $("cName").textContent=c.name;$("cReal").textContent=c.real?"（"+c.real+"）":"";$("cSay").textContent=c.sub;
+  const ok=!!checked[c.id];
+  $("cDone").classList.toggle("ok",ok);$("cDone").setAttribute("aria-pressed",String(ok));$("cDone").textContent=ok?"できた ✓":"できた";
+  $("tiles").innerHTML=CHECK.map((x,k)=>'<li><button class="tile'+(k===cSel?" sel":"")+(checked[x.id]?" ok":"")+'" data-tile="'+k+'" aria-label="'+x.name+'">'
+    +'<svg class="art" viewBox="0 0 72 72" aria-hidden="true">'+x.art+'</svg><span class="badge">'+TICK+"</span></button></li>").join("");
+  const n=CHECK.filter(x=>checked[x.id]).length;
   $("tally").textContent=n+" / "+CHECK.length;
   $("allok").hidden=n<CHECK.length;
-  show($("uStand"),!checked.sit);show($("uBody"),!!checked.sit);show($("uSit"),!!checked.sit);
-  $("uBack").style.transform=checked.recline?"rotate(-52deg)":"none";
-  show($("uBeam"),!!checked.lamp);
 }
-$("items").addEventListener("click",e=>{
-  const t=e.target.closest("[data-tick]");
-  if(t){audio();const id=t.dataset.tick;checked[id]=!checked[id];if(checked[id])ding();saveCheck();paintCheck();}
-});
-$("resetCheck").addEventListener("click",()=>{checked={};saveCheck();paintCheck();});
+$("tiles").addEventListener("click",e=>{const b=e.target.closest("[data-tile]");if(!b)return;cSel=+b.dataset.tile;paintCheck(true);});
+$("cDone").addEventListener("click",()=>{audio();const id=CHECK[cSel].id;checked[id]=!checked[id];if(checked[id])ding();saveCheck();paintCheck();});
+$("cNext").addEventListener("click",()=>{cSel=(cSel+1)%CHECK.length;paintCheck(true);});
+$("resetCheck").addEventListener("click",()=>{checked={};cSel=0;saveCheck();paintCheck(true);});
 
 /* ---------- shared pointer helper ---------- */
 function ptOf(el,e,w,h){
@@ -903,7 +998,7 @@ function go(v,keep){
   document.querySelectorAll(".view").forEach(el=>el.classList.toggle("on",el.id===v));
   if(v==="play"){buildSteps();enter(keep!=null?keep:0);}
   if(v==="parents")$("optSleep").checked=opts.sleep;
-  if(v==="check")paintCheck();
+  if(v==="check"){const f=CHECK.findIndex(x=>!checked[x.id]);cSel=f<0?0:f;paintCheck(true);}
   if(v==="brush")brushEnter(0);
   if(v==="shiage")paintMap();
   if(v==="narabi"){narabiEnter(0);paintNchk();}
