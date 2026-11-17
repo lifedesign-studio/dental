@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>はいしゃさん たんけん</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* layout: one calm screen. picture on top, one short sentence and one big button below. */
+  --bg:#E4EEEA; --panel:#FBFAF5; --ink:#22393F; --muted:#5E7378;
+  --accent:#E9A23B; --accent-ink:#35260A; --line:#C6D6D0;
+  --gum:#EE9AA2; --tooth:#FFFEF8; --hippo:#B7B2D4; --hippo-d:#8E88B5;
+  --font:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-weight:500;line-height:1.7;
+  word-break:auto-phrase;line-break:strict;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.view{display:none;height:100%;max-width:560px;margin:0 auto;padding:16px 18px}
+.view.on{display:flex;flex-direction:column;gap:14px}
+h1,h2{text-wrap:balance;line-height:1.3}
+
+/* home */
+#home,#play{word-break:keep-all;overflow-wrap:anywhere}
+#home{overflow-y:auto}
+.brand{display:flex;align-items:center;gap:14px;padding-top:10px}
+.brand svg{width:64px;height:64px;flex:none}
+.brand h1{font-weight:900;font-size:30px;letter-spacing:.02em}
+.lead{font-size:17px;color:var(--muted)}
+.stages{display:flex;flex-direction:column;gap:10px;list-style:none;padding:0}
+.stage{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--panel);
+  border:2px solid var(--line);border-radius:18px;padding:14px 16px}
+.stage b{font-weight:900;font-size:20px;display:block}
+.stage small{color:var(--muted);font-size:14px}
+.stage .no{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  font-weight:900;font-size:20px;background:var(--bg)}
+.stage.play{border-color:var(--accent);box-shadow:0 4px 0 var(--accent)}
+.stage.play .no{background:var(--accent);color:var(--accent-ink)}
+.stage.soon{opacity:.62;cursor:default}
+.tag{margin-left:auto;flex:none;font-size:13px;font-weight:700;padding:3px 10px;border-radius:99px;background:var(--bg)}
+.stage.play .tag{background:var(--accent);color:var(--accent-ink)}
+.textlink{align-self:flex-start;font-weight:700;text-decoration:underline;text-underline-offset:4px;padding:8px 0}
+
+/* play */
+.top{display:flex;align-items:center;gap:10px}
+.chip{background:var(--panel);border:2px solid var(--line);border-radius:99px;padding:6px 14px;font-weight:700;font-size:15px}
+.dots{display:flex;gap:6px;margin:0 auto}
+.dots i{width:12px;height:12px;border-radius:50%;background:var(--line)}
+.dots i.done{background:var(--ink)}
+.dots i.now{background:var(--accent);outline:3px solid var(--panel)}
+.scene{flex:1;min-height:0;background:var(--panel);border:2px solid var(--line);border-radius:22px;overflow:hidden}
+.scene svg{display:block;width:100%;height:100%;touch-action:none;user-select:none;-webkit-user-select:none}
+.talk{background:var(--panel);border:2px solid var(--line);border-radius:22px;padding:14px 18px 16px;display:flex;flex-direction:column;gap:8px}
+.talk .name{font-weight:900;font-size:24px;line-height:1.3}
+.talk .real{font-size:13px;color:var(--muted);font-weight:700;margin-left:8px}
+.talk .say{font-size:18px}
+.talk .hint{font-size:16px;font-weight:700;color:var(--muted)}
+.bar{height:10px;border-radius:99px;background:var(--bg);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px}
+.big{align-self:stretch;background:var(--accent);color:var(--accent-ink);font-weight:900;font-size:21px;
+  border-radius:16px;padding:12px 18px;box-shadow:0 4px 0 #B97A1E}
+.big:active{transform:translateY(3px);box-shadow:0 1px 0 #B97A1E}
+.big.quiet{background:var(--panel);border:2px solid var(--line);box-shadow:none;color:var(--ink)}
+[hidden]{display:none!important}
+
+/* finish */
+#fin{flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px;text-align:center}
+#fin h2{font-weight:900;font-size:32px}
+#fin p{font-size:18px}
+.learned{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;list-style:none;padding:0}
+.learned li{background:var(--panel);border:2px solid var(--line);border-radius:99px;padding:4px 14px;font-weight:700;font-size:15px}
+
+/* parents */
+#parents{overflow-y:auto}
+#parents h1{font-weight:900;font-size:24px}
+#parents h2{font-weight:900;font-size:18px;margin-top:6px}
+#parents p,#parents li{font-size:16px}
+#parents ul{padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.card{background:var(--panel);border:2px solid var(--line);border-radius:18px;padding:14px 18px;display:flex;flex-direction:column;gap:8px}
+.check{display:flex;gap:12px;align-items:flex-start;font-weight:700}
+.check input{width:24px;height:24px;flex:none;margin-top:3px;accent-color:var(--ink)}
+.note{font-size:14px;color:var(--muted)}
+
+/* check */
+#check{overflow-y:auto;word-break:keep-all;overflow-wrap:anywhere}
+#check h1{font-weight:900;font-size:24px}
+.unit{background:var(--panel);border:2px solid var(--line);border-radius:22px;overflow:hidden;flex:none;position:sticky;top:0;z-index:2;box-shadow:0 0 0 16px var(--bg)}
+.unit svg{display:block;width:100%;height:auto}
+#uBack{transition:transform .9s ease;transform-box:view-box;transform-origin:150px 130px}
+.tally{font-weight:900;font-size:18px}
+.items{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.item{display:flex;align-items:center;gap:12px;background:var(--panel);border:2px solid var(--line);border-radius:18px;padding:10px 12px}
+.item.ok{border-color:var(--ink)}
+.item .txt{flex:1;min-width:0}
+.item b{display:block;font-weight:900;font-size:18px;line-height:1.35}
+.item b span{font-size:12px;color:var(--muted);font-weight:700;margin-left:6px}
+.item small{display:block;font-size:14px;color:var(--muted);line-height:1.5}
+.tick{flex:none;width:48px;height:48px;border-radius:50%;border:3px solid var(--line);background:var(--bg);display:grid;place-items:center}
+.tick svg{width:26px;height:26px;opacity:0}
+.item.ok .tick{background:var(--ink);border-color:var(--ink)}
+.item.ok .tick svg{opacity:1}
+.art{flex:none;width:76px;height:76px;background:var(--bg);border-radius:14px;padding:4px}
+.allok{background:var(--accent);color:var(--accent-ink);border-radius:18px;padding:12px 16px;font-weight:900;font-size:20px;text-align:center}
+
+/* brush, shiage, narabi */
+#brush{word-break:keep-all;overflow-wrap:anywhere}
+#shiage,#narabi{overflow-y:auto}
+#shiage h1,#narabi h1{font-weight:900;font-size:24px}
+#shiage h2,#narabi h2{font-weight:900;font-size:18px}
+#shiage p,#shiage li,#narabi .card p,#narabi .card li{font-size:16px}
+#shiage ul{padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.kid{word-break:keep-all;overflow-wrap:anywhere}
+.scene.fixed{flex:none;aspect-ratio:360/260}
+.talk.flat{flex:none}
+.map{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:8px}
+.map button{border:2px solid var(--line);background:var(--bg);padding:16px 4px;font-weight:700;font-size:14px;line-height:1.4;border-radius:12px}
+.map button:nth-child(1){border-top-left-radius:48px}.map button:nth-child(3){border-top-right-radius:48px}
+.map button:nth-child(4){border-bottom-left-radius:48px}.map button:nth-child(6){border-bottom-right-radius:48px}
+.map button.ok{background:var(--ink);border-color:var(--ink);color:var(--panel)}
+.tbl{overflow-x:auto}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px;font-variant-numeric:tabular-nums}
+.tbl th,.tbl td{border-bottom:2px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.tbl th{font-weight:900;font-size:13px;color:var(--muted)}
+.note a{color:inherit}
+.fig{background:var(--bg);border-radius:14px}
+.fig svg{display:block;width:100%;height:auto}
+.result{background:var(--bg);border-radius:14px;padding:12px 14px;font-weight:700}
+.item.plain{padding:12px 14px}
+.item.plain b{font-size:16px;font-weight:700}
+
+/* svg motion */
+.germ{animation:wig 1.1s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.germ:nth-of-type(2){animation-delay:.3s}.germ:nth-of-type(3){animation-delay:.6s}
+@keyframes wig{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg) translateY(-2px)}}
+.ring{animation:pulse 1.4s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.25);opacity:0}}
+.drop{animation:fall .6s ease-in forwards;transform-box:fill-box}
+@keyframes fall{to{transform:translateY(46px);opacity:0}}
+.twinkle{animation:tw 1.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes tw{0%,100%{transform:scale(.6);opacity:.5}50%{transform:scale(1.1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.germ,.ring,.twinkle{animation:none}}
+</style>
+</head>
+<body>
+
+<!-- ===== home ===== -->
+<main class="view" id="home">
+  <div class="brand">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 22C12 8 24 6 32 11c8-5 20-3 18 11-1 9-4 13-5 22-1 8-6 9-7 1l-2-10c-1-4-7-4-8 0l-2 10c-1 8-6 7-7-1-1-9-4-13-5-22z" fill="#FFFEF8" stroke="#22393F" stroke-width="3" stroke-linejoin="round"/><circle cx="26" cy="24" r="2.5" fill="#22393F"/><circle cx="38" cy="24" r="2.5" fill="#22393F"/><path d="M27 30q5 4 10 0" fill="none" stroke="#22393F" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <h1>はいしゃさん<br>たんけん</h1>
+  </div>
+  <p class="lead">きょうは きみが はいしゃさん。どうぐと じゅんばんを、さきに みて みよう。</p>
+  <ul class="stages">
+    <li><button class="stage play" data-go="play"><span class="no">1</span><span><b>むしばを なおす</b><small>どうぐ 8つと、なおす じゅんばん</small></span><span class="tag">あそぶ</span></button></li>
+    <li><button class="stage play" data-go="check"><span class="no">2</span><span><b>はいしゃさんで たしかめよう</b><small>いすに すわって、どうぐを いっしょに チェック</small></span><span class="tag">ひらく</span></button></li>
+    <li><button class="stage play" data-go="brush"><span class="no">3</span><span><b>はみがき れんしゅう</b><small>あかい みがきのこしを おとそう</small></span><span class="tag">あそぶ</span></button></li>
+    <li><button class="stage play" data-go="shiage"><span class="no">4</span><span><b>しあげみがき</b><small>おうちの方へ</small></span><span class="tag">ひらく</span></button></li>
+    <li><button class="stage play" data-go="narabi"><span class="no">5</span><span><b>はならびの おはなし</b><small>おくちの れんしゅうと、そだちの チェック</small></span><span class="tag">ひらく</span></button></li>
+  </ul>
+  <button class="textlink" data-go="parents">おうちの方へ（使い方と声かけ）</button>
+  <a class="textlink" href="index.html" style="color:inherit">ライフデンタルクリニックの トップページへ</a>
+  <footer style="border-top:2px solid var(--line);padding:24px 0 16px;text-align:center;margin-top:auto">
+    <img src="life-logo.png" alt="ライフデンタルクリニック" style="width:112px;height:auto;margin:0 auto 10px;display:block" onerror="this.style.display='none'">
+    <div style="font-size:14px;letter-spacing:.08em">ライフデンタルクリニック</div>
+    <div style="font-size:12.5px;color:var(--muted);letter-spacing:.1em;margin-top:4px">いい歯で、いい人生を。</div>
+  </footer>
+</main>
+
+<!-- ===== play ===== -->
+<main class="view" id="play">
+  <div class="top">
+    <button class="chip" data-go="home">もどる</button>
+    <div class="dots" id="dots" aria-hidden="true"></div>
+    <button class="chip" id="snd" aria-pressed="true">おと あり</button>
+  </div>
+
+  <div class="scene" id="sceneBox">
+    <svg id="svg" viewBox="0 0 360 320" role="img" aria-label="かばさんの おくち">
+      <defs>
+        <radialGradient id="blue"><stop offset="0" stop-color="#4FA3FF" stop-opacity=".85"/><stop offset="1" stop-color="#4FA3FF" stop-opacity="0"/></radialGradient>
+      </defs>
+
+      <!-- whole mouth -->
+      <g id="mouthScene">
+        <circle cx="72" cy="28" r="18" fill="#B7B2D4"/><circle cx="288" cy="28" r="18" fill="#B7B2D4"/>
+        <ellipse cx="180" cy="205" rx="166" ry="118" fill="#B7B2D4"/>
+        <ellipse cx="180" cy="80" rx="142" ry="68" fill="#B7B2D4"/>
+        <circle cx="125" cy="44" r="16" fill="#fff"/><circle cx="235" cy="44" r="16" fill="#fff"/>
+        <circle cx="127" cy="47" r="7" fill="#22393F"/><circle cx="233" cy="47" r="7" fill="#22393F"/>
+        <ellipse cx="160" cy="80" rx="6" ry="4" fill="#8E88B5"/><ellipse cx="200" cy="80" rx="6" ry="4" fill="#8E88B5"/>
+        <ellipse cx="180" cy="205" rx="150" ry="105" fill="#B4475A"/>
+        <ellipse cx="180" cy="252" rx="84" ry="42" fill="#E8808F"/>
+        <g fill="#FFFEF8" stroke="#D9D4C3" stroke-width="2">
+          <rect x="72" y="116" width="32" height="34" rx="9"/><rect x="109" y="116" width="32" height="34" rx="9"/>
+          <rect x="146" y="116" width="32" height="34" rx="9"/><rect x="183" y="116" width="32" height="34" rx="9"/>
+          <rect x="220" y="116" width="32" height="34" rx="9"/><rect x="257" y="116" width="32" height="34" rx="9"/>
+          <rect x="85" y="262" width="34" height="30" rx="9"/><rect x="124" y="262" width="34" height="30" rx="9"/>
+          <rect x="163" y="262" width="34" height="30" rx="9"/><rect x="202" y="262" width="34" height="30" rx="9"/>
+          <rect x="241" y="262" width="34" height="30" rx="9"/>
+        </g>
+        <ellipse cx="219" cy="274" rx="6" ry="4" fill="#8A5A2B"/>
+        <g id="mGerms">
+          <circle cx="219" cy="277" r="24" fill="none" stroke="#E9A23B" stroke-width="5"/>
+          <g class="germ"><circle cx="210" cy="270" r="7" fill="#7A5BA8"/><circle cx="208" cy="269" r="1.6" fill="#fff"/><circle cx="212" cy="269" r="1.6" fill="#fff"/></g>
+          <g class="germ"><circle cx="228" cy="280" r="7" fill="#7A5BA8"/><circle cx="226" cy="279" r="1.6" fill="#fff"/><circle cx="230" cy="279" r="1.6" fill="#fff"/></g>
+        </g>
+        <g id="hand">
+          <path d="M338 230 L326 96" stroke="#B7B2D4" stroke-width="30" stroke-linecap="round"/>
+          <circle cx="325" cy="78" r="26" fill="#B7B2D4" stroke="#8E88B5" stroke-width="3"/>
+          <circle cx="311" cy="62" r="5" fill="#8E88B5"/><circle cx="325" cy="57" r="5" fill="#8E88B5"/><circle cx="339" cy="62" r="5" fill="#8E88B5"/>
+        </g>
+      </g>
+
+      <!-- one tooth, close up -->
+      <g id="toothScene">
+        <rect x="0" y="0" width="360" height="320" fill="#F7E3E4"/>
+        <path d="M0 232 Q180 200 360 232 V320 H0Z" fill="#EE9AA2"/>
+        <rect x="-40" y="80" width="100" height="170" rx="30" fill="#FFFEF8" stroke="#D9D4C3" stroke-width="3"/>
+        <rect x="300" y="80" width="100" height="170" rx="30" fill="#FFFEF8" stroke="#D9D4C3" stroke-width="3"/>
+        <path d="M96 112 Q92 58 140 62 Q180 82 220 62 Q268 58 264 112 L256 236 Q180 252 104 236Z" fill="#FFFEF8" stroke="#D9D4C3" stroke-width="3" stroke-linejoin="round"/>
+        <ellipse cx="180" cy="134" rx="36" ry="25" fill="#EADFC6" stroke="#CBBE9E" stroke-width="2"/>
+        <ellipse id="brown" cx="180" cy="134" rx="36" ry="25" fill="#7B4B22"/>
+        <ellipse id="fill" cx="180" cy="134" rx="37" ry="26" fill="#FFFEF8" stroke="#E4DFCF" stroke-width="2"/>
+        <ellipse id="dull" cx="180" cy="134" rx="37" ry="26" fill="#CFC8B4"/>
+        <g id="germs">
+          <g class="germ"><circle cx="160" cy="128" r="10" fill="#7A5BA8"/><circle cx="157" cy="126" r="2.2" fill="#fff"/><circle cx="163" cy="126" r="2.2" fill="#fff"/></g>
+          <g class="germ"><circle cx="184" cy="142" r="10" fill="#7A5BA8"/><circle cx="181" cy="140" r="2.2" fill="#fff"/><circle cx="187" cy="140" r="2.2" fill="#fff"/></g>
+          <g class="germ"><circle cx="203" cy="124" r="10" fill="#7A5BA8"/><circle cx="200" cy="122" r="2.2" fill="#fff"/><circle cx="206" cy="122" r="2.2" fill="#fff"/></g>
+        </g>
+        <g id="blobs" fill="#9FD3EE" stroke="#6FB4D6" stroke-width="2">
+          <ellipse cx="112" cy="232" rx="22" ry="12"/><ellipse cx="182" cy="246" rx="24" ry="12"/><ellipse cx="250" cy="230" rx="22" ry="12"/>
+        </g>
+        <g id="fx"></g>
+        <circle id="glow" cx="180" cy="134" r="95" fill="url(#blue)"/>
+        <text id="count" x="180" y="60" text-anchor="middle" font-size="44" font-weight="900" fill="#22393F" font-family="inherit"></text>
+        <text id="zzz" x="62" y="52" text-anchor="middle" font-size="20" font-weight="900" fill="#5E7378" font-family="inherit">すやすや</text>
+        <g id="balloon">
+          <circle id="balloonC" cx="180" cy="134" r="70" fill="#FBE3B0" fill-opacity=".9" stroke="#E9A23B" stroke-width="4"/>
+          <text id="balloonT" x="180" y="144" text-anchor="middle" font-size="28" font-weight="900" fill="#35260A" font-family="inherit">すって</text>
+        </g>
+        <g id="sparkle" fill="#E9A23B">
+          <path class="twinkle" d="M100 70l5 12 12 5-12 5-5 12-5-12-12-5 12-5z"/>
+          <path class="twinkle" style="animation-delay:.4s" d="M262 46l5 12 12 5-12 5-5 12-5-12-12-5 12-5z"/>
+          <path class="twinkle" style="animation-delay:.8s" d="M286 170l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/>
+        </g>
+      </g>
+
+      <circle id="ring" class="ring" r="46" fill="none" stroke="#E9A23B" stroke-width="5"/>
+
+      <!-- tools: the working tip sits at 0,0 -->
+      <g id="tool">
+        <g data-tool="mirror"><path d="M14-16 L96-116" stroke="#8FA3AD" stroke-width="10" stroke-linecap="round"/><circle r="22" fill="#D6F0F5" stroke="#8FA3AD" stroke-width="5"/><path d="M-10-8q8-8 16-6" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+        <g data-tool="air"><path d="M4-6 L96-116" stroke="#8FA3AD" stroke-width="12" stroke-linecap="round"/><path d="M0 0 L10-12" stroke="#5E7378" stroke-width="6" stroke-linecap="round"/></g>
+        <g data-tool="suction"><path d="M6-8 L96-116" stroke="#F4F6F2" stroke-width="20" stroke-linecap="round"/><path d="M6-8 L96-116" stroke="#C6D6D0" stroke-width="20" stroke-linecap="round" stroke-dasharray="2 14"/><ellipse rx="13" ry="9" fill="#fff" stroke="#5E7378" stroke-width="3" transform="rotate(-40)"/></g>
+        <g data-tool="drill"><path d="M10-22 L96-116" stroke="#8FA3AD" stroke-width="14" stroke-linecap="round"/><rect x="-12" y="-30" width="26" height="20" rx="8" fill="#8FA3AD"/><path d="M1-10 V0" stroke="#5E7378" stroke-width="4" stroke-linecap="round"/></g>
+        <g data-tool="paste"><path d="M6-8 L96-116" stroke="#8FA3AD" stroke-width="9" stroke-linecap="round"/><circle r="9" fill="#FFFEF8" stroke="#D9D4C3" stroke-width="2"/></g>
+        <g data-tool="polish"><path d="M8-22 L96-116" stroke="#8FA3AD" stroke-width="14" stroke-linecap="round"/><rect x="-11" y="-28" width="25" height="17" rx="7" fill="#8FA3AD"/><path d="M-8 0 L-5-11 H7 L10 0Z" fill="#7FB8A4"/></g>
+        <g data-tool="light"><path d="M10-18 L96-116" stroke="#22393F" stroke-width="16" stroke-linecap="round"/><circle cy="-6" r="11" fill="#4FA3FF" stroke="#22393F" stroke-width="3"/></g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="talk" id="talk">
+    <div><span class="name" id="tName"></span><span class="real" id="tReal"></span></div>
+    <p class="say" id="tSay" aria-live="polite"></p>
+    <p class="hint" id="tHint"></p>
+    <div class="bar" id="bar"><i id="barI"></i></div>
+    <button class="big quiet" id="actBtn" hidden></button>
+    <button class="big" id="nextBtn" hidden>つぎへ</button>
+  </div>
+
+  <div id="fin" hidden>
+    <h2>ぜんぶ できたね</h2>
+    <p>はいしゃさんでも、おなじ じゅんばんで すすむよ。<br>つぎは きみが おくちを あける ばん。</p>
+    <ul class="learned" id="learned"></ul>
+    <button class="big" data-go="check">はいしゃさんで たしかめよう</button>
+    <button class="big quiet" id="again">もういちど</button>
+    <button class="big quiet" data-go="home">さいしょの がめんへ</button>
+  </div>
+</main>
+
+<!-- ===== check ===== -->
+<main class="view" id="check">
+  <div class="top"><button class="chip" data-go="home">もどる</button><span class="tally" id="tally" style="margin-left:auto"></span></div>
+  <h1>はいしゃさんで たしかめよう</h1>
+  <p class="lead">せんせいや えいせいしさんと いっしょに、ひとつずつ たしかめて、まるを おそう。</p>
+  <div class="unit">
+    <svg viewBox="0 0 360 200" role="img" aria-label="しんりょうの いすと せんせい">
+      <rect width="360" height="200" fill="#F3F6F1"/>
+      <path d="M0 180H360" stroke="#C6D6D0" stroke-width="3"/>
+      <!-- lamp -->
+      <path d="M262 0V22L206 34" fill="none" stroke="#8FA3AD" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path id="uBeam" d="M184 42H212L196 104H120Z" fill="#F6D36B" opacity=".45"/>
+      <ellipse cx="198" cy="38" rx="19" ry="9" fill="#FBFAF5" stroke="#8FA3AD" stroke-width="4"/>
+      <!-- chair -->
+      <ellipse cx="182" cy="180" rx="48" ry="7" fill="#8FA3AD"/>
+      <rect x="168" y="136" width="28" height="44" rx="6" fill="#8FA3AD"/>
+      <rect x="140" y="124" width="82" height="16" rx="8" fill="#7FB8A4"/>
+      <rect x="212" y="126" width="46" height="12" rx="6" fill="#7FB8A4" transform="rotate(14 212 132)"/>
+      <!-- seated child: legs stay, body leans with the backrest -->
+      <g id="uSit">
+        <rect x="158" y="112" width="60" height="13" rx="6.5" fill="#35566B"/>
+        <rect x="208" y="114" width="34" height="12" rx="6" fill="#35566B" transform="rotate(16 208 120)"/>
+      </g>
+      <g id="uBack">
+        <rect x="136" y="58" width="15" height="76" rx="7.5" fill="#7FB8A4"/>
+        <rect x="134" y="44" width="19" height="22" rx="8" fill="#6BA590"/>
+        <g id="uBody">
+          <rect x="152" y="80" width="24" height="46" rx="11" fill="#E9A23B"/>
+          <circle cx="165" cy="65" r="15" fill="#F6D9BF"/>
+          <path d="M150 62q4-16 18-13 11 2 12 12-12-8-30 1z" fill="#4A3423"/>
+          <circle cx="171" cy="66" r="2" fill="#22393F"/><path d="M168 72q4 3 7 0" fill="none" stroke="#22393F" stroke-width="2" stroke-linecap="round"/>
+        </g>
+      </g>
+      <!-- child standing, before sitting -->
+      <g id="uStand">
+        <rect x="58" y="150" width="9" height="30" rx="4.5" fill="#35566B"/><rect x="71" y="150" width="9" height="30" rx="4.5" fill="#35566B"/>
+        <rect x="56" y="112" width="26" height="44" rx="11" fill="#E9A23B"/>
+        <circle cx="69" cy="97" r="15" fill="#F6D9BF"/>
+        <path d="M54 94q4-16 18-13 11 2 12 12-12-8-30 1z" fill="#4A3423"/>
+        <circle cx="75" cy="98" r="2" fill="#22393F"/><path d="M72 104q4 3 7 0" fill="none" stroke="#22393F" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <!-- staff -->
+      <g>
+        <rect x="286" y="140" width="10" height="40" rx="5" fill="#22393F"/><rect x="301" y="140" width="10" height="40" rx="5" fill="#22393F"/>
+        <rect x="280" y="84" width="38" height="64" rx="14" fill="#5FA7B5"/>
+        <path d="M282 100L262 118" stroke="#5FA7B5" stroke-width="10" stroke-linecap="round"/>
+        <circle cx="299" cy="66" r="16" fill="#F6D9BF"/>
+        <path d="M283 64q2-18 17-17 15 1 15 17-16-9-32 0z" fill="#3B2A1E"/>
+        <circle cx="293" cy="68" r="2" fill="#22393F"/><circle cx="304" cy="68" r="2" fill="#22393F"/>
+        <path d="M294 75q5 4 9 0" fill="none" stroke="#22393F" stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </div>
+  <ul class="items" id="items"></ul>
+  <div class="allok" id="allok" hidden>ぜんぶ たしかめたね</div>
+  <button class="big quiet" id="resetCheck">さいしょから やりなおす</button>
+</main>
+
+<!-- ===== brush ===== -->
+<main class="view" id="brush">
+  <div class="top"><button class="chip" data-go="home">もどる</button><div class="dots" id="bDots" aria-hidden="true"></div><button class="chip" id="bSnd" aria-pressed="true">おと あり</button></div>
+  <div class="scene" id="bBox">
+    <svg id="bsvg" viewBox="0 0 360 320" role="img" aria-label="はの おおきな え">
+      <g id="bArt"></g><g id="bSpots"></g>
+      <g id="bTool"><g id="bToolIn">
+        <path d="M14-10L96-104" stroke="#5FA7B5" stroke-width="10" stroke-linecap="round"/>
+        <rect x="-24" y="-14" width="48" height="14" rx="6" fill="#5FA7B5"/>
+        <path d="M-18 0v13M-12 0v13M-6 0v13M0 0v13M6 0v13M12 0v13M18 0v13" stroke="#9FD3EE" stroke-width="4" stroke-linecap="round"/>
+      </g></g>
+    </svg>
+  </div>
+  <div class="talk" id="bTalk">
+    <div><span class="name" id="bName"></span></div>
+    <p class="say" id="bSay" aria-live="polite"></p>
+    <p class="hint" id="bHint"></p>
+    <div class="bar"><i id="bBar"></i></div>
+    <button class="big" id="bNext" hidden>つぎへ</button>
+  </div>
+  <div id="bFin" hidden style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px;text-align:center">
+    <h2 style="font-weight:900;font-size:32px">ぜんぶ みがけたね</h2>
+    <p style="font-size:18px">じぶんで みがいた あとは、<br>おうちの ひとに しあげみがきを して もらおう。</p>
+    <button class="big" data-go="shiage">しあげみがきの ページへ</button>
+    <button class="big quiet" id="bAgain">もういちど</button>
+    <button class="big quiet" data-go="home">さいしょの がめんへ</button>
+  </div>
+</main>
+
+<!-- ===== shiage ===== -->
+<main class="view" id="shiage">
+  <div class="top"><button class="chip" data-go="home">もどる</button></div>
+  <h1>しあげみがき</h1>
+  <p class="lead">おうちの方へ。お子さんが自分でみがいたあとの、仕上げの手順です。</p>
+  <div class="card">
+    <h2>今夜みがいたところ</h2>
+    <p>みがき終えたところを押してください。6か所で一周です。</p>
+    <div class="map" id="map"></div>
+    <p class="result" id="mapMsg"></p>
+  </div>
+  <div class="card">
+    <h2>姿勢</h2>
+    <div class="fig"><svg viewBox="0 0 240 110" role="img" aria-label="ひざの上にお子さんの頭をのせた姿勢">
+      <rect x="62" y="84" width="92" height="18" rx="9" fill="#35566B"/>
+      <rect x="44" y="40" width="38" height="62" rx="16" fill="#5FA7B5"/>
+      <circle cx="63" cy="24" r="16" fill="#F6D9BF"/><path d="M47 22q2-18 17-17 15 1 15 17-16-9-32 0z" fill="#3B2A1E"/>
+      <rect x="136" y="66" width="74" height="20" rx="10" fill="#E9A23B"/>
+      <rect x="204" y="70" width="30" height="12" rx="6" fill="#35566B"/>
+      <circle cx="124" cy="72" r="14" fill="#F6D9BF"/><path d="M111 76q-4-16 10-19 9-1 14 5-14 0-24 14z" fill="#4A3423"/>
+      <path d="M76 54L112 62" stroke="#5FA7B5" stroke-width="9" stroke-linecap="round"/>
+      <path d="M112 62l14 6" stroke="#22393F" stroke-width="3" stroke-linecap="round"/>
+    </svg></div>
+    <ul>
+      <li>ひざの上にお子さんの頭をのせ、上からお口の中をのぞきます。</li>
+      <li>奥歯まで見える明るい場所で行います。</li>
+      <li>あいている手の指で、くちびるやほおをそっとよけます。</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>持ち方と力</h2>
+    <ul>
+      <li>歯ブラシは、えんぴつを持つように軽く持ちます。</li>
+      <li>毛先が広がらないくらいの、軽い力で当てます。</li>
+      <li>大きく動かさず、1〜2本ずつ、小きざみに動かします。</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>みがき残しやすいところ</h2>
+    <ul>
+      <li>奥歯のかむ面のみぞ。</li>
+      <li>歯と歯ぐきの境目。</li>
+      <li>歯と歯の間。ここは歯ブラシが届かないので、フロスを通します。</li>
+      <li>生えかけの奥歯。背が低いので、歯ブラシを横から入れます。</li>
+      <li>上の前歯。上くちびるの裏のすじに歯ブラシが当たると痛がるので、指でよけてからみがきます。</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>歯みがき剤の量</h2>
+    <div class="tbl"><table>
+      <tr><th>年齢</th><th>量</th><th>フッ素の濃度</th></tr>
+      <tr><td>歯が生えてから2歳</td><td>米粒くらい（1〜2mm）</td><td>900〜1000ppm</td></tr>
+      <tr><td>3〜5歳</td><td>グリーンピースくらい（5mm）</td><td>900〜1000ppm</td></tr>
+      <tr><td>6歳から</td><td>歯ブラシ全体（1.5〜2cm）</td><td>1400〜1500ppm</td></tr>
+    </table></div>
+    <ul>
+      <li>寝る前を含めて、1日2回みがきます。</li>
+      <li>みがいたあとのうがいは、少ない水で1回にします。</li>
+    </ul>
+    <p class="note">出典：<a href="https://www.kokuhoken.or.jp/jsdh/news/2023/news_230106.pdf">4学会合同「フッ化物配合歯磨剤の推奨される利用方法」（2023年）</a></p>
+  </div>
+  <div class="card">
+    <h2>いつまで続けるか</h2>
+    <p>目安は、小学校の中学年ごろまでです。そのあとも、ときどきお口の中を見てあげてください。</p>
+  </div>
+  <div class="card">
+    <h2>声かけ</h2>
+    <ul>
+      <li>「10かぞえたら おしまい」と、終わりを先に伝えます。</li>
+      <li>いやがる日は、短く切り上げてかまいません。</li>
+      <li>終わったら「お口を大きく開けられたね」と、できたことを言葉にします。</li>
+    </ul>
+  </div>
+  <p class="note">これは試作版です。内容は院長の確認前です。</p>
+</main>
+
+<!-- ===== narabi ===== -->
+<main class="view" id="narabi">
+  <div class="top"><button class="chip" data-go="home">もどる</button></div>
+  <h1 class="kid">はならびの おはなし</h1>
+  <p class="lead kid">はが きれいに ならぶには、したと くちびると、はなの いきが だいじ。3つ れんしゅう して みよう。</p>
+  <div class="scene fixed">
+    <svg id="nsvg" viewBox="0 0 360 260" role="img" aria-label="おくちの れんしゅう">
+      <g id="nPalate">
+        <rect width="360" height="260" fill="#B4475A"/>
+        <path d="M40 0H320V40Q320 190 180 190Q40 190 40 40Z" fill="#EE9AA2"/>
+        <path d="M180 60V170" stroke="#E08A93" stroke-width="4" stroke-linecap="round"/>
+        <g fill="#FFFEF8" stroke="#D9D4C3" stroke-width="2">
+          <rect x="52" y="-6" width="46" height="46" rx="12"/><rect x="102" y="-10" width="38" height="46" rx="12"/>
+          <rect x="143" y="-12" width="36" height="46" rx="12"/><rect x="181" y="-12" width="36" height="46" rx="12"/>
+          <rect x="220" y="-10" width="38" height="46" rx="12"/><rect x="262" y="-6" width="46" height="46" rx="12"/>
+        </g>
+        <ellipse id="nTongue" cx="180" cy="262" rx="92" ry="58" fill="#E8808F" stroke="#D56A7B" stroke-width="3"/>
+        <circle id="nSpot" cx="180" cy="62" r="15" fill="#F6D36B" stroke="#E9A23B" stroke-width="4"/>
+      </g>
+      <g id="nFace">
+        <rect width="360" height="260" fill="#F3F6F1"/>
+        <circle cx="180" cy="130" r="108" fill="#F6D9BF"/>
+        <path d="M76 110q6-92 104-90 98-2 104 90-50-56-104-50-54-6-104 50z" fill="#4A3423"/>
+        <circle cx="142" cy="118" r="8" fill="#22393F"/><circle cx="218" cy="118" r="8" fill="#22393F"/>
+        <path d="M172 150q8 8 16 0" fill="none" stroke="#C9A98C" stroke-width="4" stroke-linecap="round"/>
+        <ellipse id="nOpen" cx="180" cy="192" rx="30" ry="22" fill="#B4475A"/>
+        <path id="nShut" d="M152 188q28 20 56 0" fill="none" stroke="#22393F" stroke-width="5" stroke-linecap="round"/>
+        <g id="nBal"><circle id="nBalC" cx="312" cy="60" r="34" fill="#FBE3B0" stroke="#E9A23B" stroke-width="4"/>
+          <text id="nBalT" x="312" y="67" text-anchor="middle" font-size="18" font-weight="900" fill="#35260A" font-family="inherit">すって</text></g>
+      </g>
+      <circle id="nRing" class="ring" r="40" fill="none" stroke="#E9A23B" stroke-width="5"/>
+    </svg>
+  </div>
+  <div class="talk flat kid">
+    <div><span class="name" id="nName"></span></div>
+    <p class="say" id="nSay" aria-live="polite"></p>
+    <p class="hint" id="nHint"></p>
+    <button class="big" id="nNext" hidden>つぎへ</button>
+  </div>
+
+  <h2 style="margin-top:8px">おうちの方へ</h2>
+  <div class="card">
+    <p>歯並びは、歯とあごの大きさのほか、舌の位置、くちびるの力、呼吸のしかた、指しゃぶりなどのくせの影響も受けます。</p>
+    <p>ふだんの様子で、あてはまるものを押してください。</p>
+    <ul class="items" id="nItems" style="padding:0"></ul>
+    <p class="result" id="nMsg"></p>
+    <p class="note">このチェックは、診断ではありません。来院のときにお話をうかがうための目安です。</p>
+  </div>
+  <p class="note">これは試作版です。内容は院長の確認前です。</p>
+</main>
+
+<!-- ===== parents ===== -->
+<main class="view" id="parents">
+  <div class="top"><button class="chip" data-go="home">もどる</button></div>
+  <h1>おうちの方へ</h1>
+  <div class="card">
+    <h2>これは何ですか</h2>
+    <p>むし歯の治療で使う道具と、治療の順番を、お子さんが歯医者さん役になって先に体験するものです。5分ほどで終わります。</p>
+    <p>何をされるか分からないことが、こわさのもとになります。道具の名前と音、順番を先に知っておくと、当日の見通しが立ちます。</p>
+  </div>
+  <div class="card">
+    <h2>使い方</h2>
+    <ul>
+      <li>来院の前日か当日に、となりで一緒に進めてください。</li>
+      <li>音を出すと、当日に聞こえる音に近い音が鳴ります。小さめの音から始めてください。</li>
+      <li>終わったら「歯医者さんでも、同じ順番でやるんだね」と、ひとこと添えてください。</li>
+      <li>いやがったら、途中でやめてかまいません。</li>
+      <li>「はいしゃさんで たしかめよう」は、診療室でスタッフと一緒に使います。全部に丸がつかなくてもかまいません。</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>声かけ</h2>
+    <ul>
+      <li>「痛くないよ」「チクッとするよ」と、痛みの話はしません。代わりに「お鼻でゆっくり息をしよう」と伝えます。</li>
+      <li>「いい子にしないと歯医者さんで注射だよ」のように、歯医者さんをおどしに使わないでください。</li>
+      <li>「手をあげたら止まる」の約束は、当日も同じように守ります。</li>
+      <li>「お口を大きく開けられたね」と、できたことをそのまま言葉にしてください。</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>設定</h2>
+    <label class="check" for="optSleep"><input type="checkbox" id="optSleep" checked><span>「歯をねむらせるお薬（麻酔）」の場面を入れる</span></label>
+    <p class="note">麻酔を使わない治療の予定のときは、外してください。</p>
+  </div>
+  <p class="note">これは試作版です。言葉、絵、順番は、これから調整します。</p>
+</main>
+
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id);
+const T={x:180,y:134};           // the cavity, in the close-up
+const STEPS=[
+ {o:0,id:"promise",scene:"mouth",mode:"button",name:"さいしょの やくそく",real:"",
+  say:"とまって ほしい ときは、てを あげてね。せんせいは すぐ とまるよ。",hint:"ボタンを おして、れんしゅう しよう",
+  btn:"てを あげる",done:"とまったよ。いつでも てを あげて いいからね。"},
+ {o:1,id:"mirror",scene:"mouth",mode:"find",tool:"mirror",target:{x:219,y:277},r:30,name:"ちいさな かがみ",real:"ミラー",
+  say:"おくの はも よく みえる かがみだよ。むしばを さがそう。",hint:"かがみを うごかして、はを みて まわろう",
+  done:"みつけた。ここに むしばきんが いるね。"},
+ {o:2,id:"air",scene:"tooth",mode:"tap",n:3,tool:"air",target:T,r:75,name:"かぜと みず",real:"スリーウェイシリンジ",
+  say:"シュッと かぜや みずが でるよ。はを あらおう。",hint:"はを 3かい タッチ",
+  done:"きれいに あらえたね。みずが たまったよ。"},
+ {o:3,id:"suction",scene:"tooth",mode:"collect",tool:"suction",name:"すいとる ストロー",real:"バキューム",
+  say:"おくちの みずを、ズズーと すって くれるよ。",hint:"みずたまりを ぜんぶ タッチ",
+  done:"すっきり。おくちが かるく なったね。"},
+ {o:4,id:"sleep",scene:"tooth",mode:"breath",dur:10500,name:"はを ねむらせる おくすり",real:"麻酔",
+  say:"はの そばに おくすりを いれると、はが すやすや ねむるよ。",hint:"おはなで ゆっくり いきを しよう",
+  done:"はが ねむったよ。じょうずに いきが できたね。"},
+ {o:5,id:"drill",scene:"tooth",mode:"hold",dur:4400,tool:"drill",target:T,r:70,name:"ウィーンの シャワー",real:"ハンドピース",
+  say:"みずの シャワーを だしながら、むしばきんを おいだすよ。たかい おとと、ひくい おとが あるよ。",hint:"むしばを ながく おして、きんを おいだそう",
+  done:"むしばきんが いなく なったよ。"},
+ {o:6,id:"paste",scene:"tooth",mode:"tap",n:3,tool:"paste",target:T,r:70,name:"しろい ねんど",real:"白い樹脂の詰めもの",
+  say:"あいた ところを、はと おなじ いろの ねんどで うめるよ。",hint:"あなを 3かい タッチ",
+  done:"ぴったり うまったね。"},
+ {o:7,id:"light",scene:"tooth",mode:"hold",dur:3000,tool:"light",target:T,r:80,name:"あおい ひかり",real:"光照射器",
+  say:"ひかりを あてると、ねんどが カチカチに かたまるよ。",hint:"はを おした まま、3 かぞえよう",
+  done:"かたまった。さいごに みがこう。"},
+ {o:8,id:"polish",scene:"tooth",mode:"rub",tool:"polish",target:T,r:85,name:"くるくる みがき",real:"研磨",
+  say:"くるくる まわる どうぐで みがくよ。つるつる ぴかぴかに なるよ。",hint:"はの うえを、ゆびで ごしごし なぞろう",
+  done:"つるつる ぴかぴか。これで おしまい。"}
+];
+const BLOBS=[{x:112,y:232},{x:182,y:246},{x:250,y:230}];
+
+let opts={sleep:true,sound:true};
+try{const s=JSON.parse(localStorage.getItem("haisha-opts")||"null");if(s)opts=Object.assign(opts,s);}catch(e){}
+const saveOpts=()=>{try{localStorage.setItem("haisha-opts",JSON.stringify(opts));}catch(e){}};
+
+let steps=[], st={i:0,done:false,count:0,prog:0,gone:[false,false,false],fin:false};
+let moved=0, ptr={x:290,y:70}, pressed=false, holding=false, view="home";
+const cur=()=>steps[st.i];
+const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
+const show=(el,on)=>{el.style.display=on?"":"none";};
+
+/* ---------- sound ---------- */
+let ac=null,noiseBuf=null,drillNodes=null;
+function audio(){
+  if(!opts.sound)return null;
+  try{
+    if(!ac)ac=new (window.AudioContext||window.webkitAudioContext)();
+    if(ac.state==="suspended")ac.resume();
+    if(!noiseBuf){noiseBuf=ac.createBuffer(1,ac.sampleRate,ac.sampleRate);const d=noiseBuf.getChannelData(0);for(let k=0;k<d.length;k++)d[k]=Math.random()*2-1;}
+    return ac;
+  }catch(e){return null;}
+}
+function tone(f,dur,vol,type,delay){
+  const a=audio();if(!a)return;
+  try{const o=a.createOscillator(),g=a.createGain(),t=a.currentTime+(delay||0);
+    o.type=type||"sine";o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.02);
+    g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g).connect(a.destination);o.start(t);o.stop(t+dur+.05);}catch(e){}
+}
+function hiss(kind,freq,dur,vol){
+  const a=audio();if(!a)return;
+  try{const s=a.createBufferSource(),f=a.createBiquadFilter(),g=a.createGain(),t=a.currentTime;
+    s.buffer=noiseBuf;s.loop=true;f.type=kind;f.frequency.value=freq;
+    g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+    s.connect(f).connect(g).connect(a.destination);s.start(t);s.stop(t+dur+.05);}catch(e){}
+}
+const MOTOR={turbine:[2300,3500,.018,.03],five:[1150,1800,.022,.02],polish:[230,500,.035,.01]};
+let motorKind=null;
+function motor(kind){
+  if(kind===motorKind)return;
+  if(drillNodes){try{drillNodes.forEach(n=>n.stop());}catch(e){}drillNodes=null;}
+  motorKind=kind;if(!kind)return;
+  const a=audio();if(!a)return;
+  try{const m=MOTOR[kind],o=a.createOscillator(),g=a.createGain(),s=a.createBufferSource(),f=a.createBiquadFilter(),g2=a.createGain();
+    o.type="sawtooth";o.frequency.value=m[0];g.gain.value=m[2];o.connect(g).connect(a.destination);
+    s.buffer=noiseBuf;s.loop=true;f.type="highpass";f.frequency.value=m[1];g2.gain.value=m[3];s.connect(f).connect(g2).connect(a.destination);
+    o.start();s.start();drillNodes=[o,s];}catch(e){}
+}
+function drill(on){motor(on?"turbine":null);}
+const ding=()=>{tone(660,.25,.08,"sine",0);tone(880,.35,.08,"sine",.12);};
+
+/* ---------- drawing ---------- */
+function paint(){
+  const s=cur(),o=s.o,d=st.done;
+  show($("mouthScene"),s.scene==="mouth");show($("toothScene"),s.scene==="tooth");
+  show($("hand"),o===0&&d);show($("mGerms"),o===1&&d);
+  $("brown").style.opacity=o<5?1:(o===5&&!d?1-st.prog:0);
+  [...$("germs").children].forEach((g,k)=>show(g,o<5||(o===5&&!d&&st.prog<(k+1)/3)));
+  $("fill").style.opacity=o<6?0:(o===6&&!d?st.count/3:1);
+  [...$("blobs").children].forEach((b,k)=>show(b,(o===2&&d)||(o===3&&!st.gone[k])));
+  show($("zzz"),opts.sleep&&((o===4&&d)||o>4));
+  show($("balloon"),o===4&&!d);
+  if(o===4&&!d){const ph=(st.prog*3)%1,sc=.55+.45*Math.sin(ph*Math.PI);
+    $("balloonC").setAttribute("r",(70*sc).toFixed(1));$("balloonT").textContent=ph<.5?"すって":"はいて";}
+  show($("glow"),o===7&&holding);
+  const ct=$("count");
+  if(o===5&&!d&&holding){ct.setAttribute("font-size",24);ct.textContent=st.prog<.5?"たかい おと":"ひくい おと";}
+  else{ct.setAttribute("font-size",44);ct.textContent=(o===7&&!d&&st.prog>0)?Math.min(3,Math.floor(st.prog*3)+1):"";}
+  show($("sparkle"),o===8&&d);
+  $("dull").style.opacity=o===6&&!d?.6*st.count/3:(o===6||o===7)?.6:(o===8&&!d?.6*(1-st.prog):0);
+  const ringOn=!d&&(s.mode==="tap"||s.mode==="hold"||s.mode==="rub");
+  show($("ring"),ringOn);if(ringOn){$("ring").setAttribute("cx",s.target.x);$("ring").setAttribute("cy",s.target.y);}
+  [...$("tool").children].forEach(g=>show(g,g.dataset.tool===s.tool));
+  $("tool").setAttribute("transform","translate("+ptr.x.toFixed(1)+","+ptr.y.toFixed(1)+")");
+  let p=0;
+  if(s.mode==="tap")p=st.count/s.n;else if(s.mode==="collect")p=st.gone.filter(Boolean).length/3;
+  else if(s.mode==="hold"||s.mode==="breath"||s.mode==="rub")p=st.prog;
+  if(d)p=1;
+  $("barI").style.width=Math.round(Math.min(1,p)*100)+"%";
+}
+function panel(){
+  const s=cur(),d=st.done;
+  $("tName").textContent=s.name;$("tReal").textContent=s.real?"（"+s.real+"）":"";
+  $("tSay").textContent=d?s.done:s.say;
+  $("tHint").textContent=s.hint;$("tHint").hidden=d;
+  $("bar").hidden=s.mode==="button"||s.mode==="find";
+  $("actBtn").hidden=!(s.mode==="button"&&!d);$("actBtn").textContent=s.btn||"";
+  $("nextBtn").hidden=!d;$("nextBtn").textContent=st.i===steps.length-1?"おしまい":"つぎへ";
+  $("dots").innerHTML=steps.map((x,k)=>'<i class="'+(k<st.i?"done":k===st.i?"now":"")+'"></i>').join("");
+}
+function drops(color){
+  const fx=$("fx");
+  for(let k=0;k<6;k++){
+    const c=document.createElementNS("http://www.w3.org/2000/svg","circle");
+    c.setAttribute("cx",T.x-40+Math.random()*80);c.setAttribute("cy",T.y-20+Math.random()*30);
+    c.setAttribute("r",4+Math.random()*3);c.setAttribute("fill",color);c.setAttribute("class","drop");
+    fx.appendChild(c);setTimeout(()=>c.remove(),650);
+  }
+}
+
+/* ---------- flow ---------- */
+function buildSteps(){steps=STEPS.filter(s=>s.id!=="sleep"||opts.sleep);}
+function enter(i){
+  st={i:Math.max(0,Math.min(i,steps.length-1)),done:false,count:0,prog:0,gone:[false,false,false],fin:false};
+  ptr={x:290,y:70};pressed=false;holding=false;drill(false);
+  $("sceneBox").hidden=false;$("talk").hidden=false;$("fin").hidden=true;
+  panel();paint();
+}
+function complete(){
+  if(st.done)return;
+  st.done=true;holding=false;drill(false);ding();panel();paint();
+}
+function finish(){
+  st.fin=true;
+  $("sceneBox").hidden=true;$("talk").hidden=true;$("fin").hidden=false;
+  $("learned").innerHTML=steps.filter(s=>s.o>0).map(s=>"<li>"+s.name+"</li>").join("");
+  tone(523,.3,.08,"sine",0);tone(659,.3,.08,"sine",.15);tone(784,.5,.08,"sine",.3);
+}
+function act(kind){
+  const s=cur();if(st.done||st.fin)return;
+  if(s.mode==="find"){if(dist(ptr,s.target)<s.r)complete();}
+  else if(s.mode==="tap"&&kind==="down"){
+    if(dist(ptr,s.target)<s.r){
+      st.count++;
+      if(s.id==="air"){hiss("highpass",2500,.3,.07);drops("#9FD3EE");}else tone(420,.12,.06,"triangle");
+      if(st.count>=s.n)complete();else paint();
+    }
+  }
+  else if(s.mode==="rub"){
+    if(pressed&&dist(ptr,s.target)<s.r){motor("polish");st.prog+=moved/650;if(st.prog>=1)complete();else paint();}
+    else motor(null);
+  }
+  else if(s.mode==="collect"){
+    let hit=false;
+    BLOBS.forEach((b,k)=>{if(!st.gone[k]&&dist(ptr,b)<32){st.gone[k]=true;hit=true;}});
+    if(hit){hiss("lowpass",500,.45,.12);if(st.gone.every(Boolean))complete();else paint();}
+  }
+}
+let last=0;
+function tick(t){
+  const dt=Math.min(50,t-last);last=t;
+  if(view==="play"&&!st.fin&&!st.done){
+    const s=cur();
+    if(s.mode==="hold"){
+      const was=holding;
+      holding=pressed&&dist(ptr,s.target)<s.r;
+      if(holding){
+        const before=st.prog;st.prog+=dt/s.dur;
+        if(s.id==="drill"){motor(st.prog<.5?"turbine":"five");if(Math.random()<.3)drops("#BFE3F3");}
+        if(s.id==="light"&&Math.floor(before*3)!==Math.floor(st.prog*3)||(!was&&s.id==="light"))tone(880,.12,.05);
+      }else drill(false);
+      if(st.prog>=1)complete();else paint();
+    }else if(s.mode==="breath"){
+      st.prog+=dt/s.dur;if(st.prog>=1)complete();else paint();
+    }
+  }
+  if(view==="narabi"&&!nb.done&&NSTEPS[nb.i].mode==="breath"){
+    nb.prog+=dt/NSTEPS[nb.i].dur;if(nb.prog>=1){nb.done=true;ding();}narabiPaint();
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ---------- input ---------- */
+const svg=$("svg");
+function at(e){
+  const m=svg.getScreenCTM();if(!m)return ptr;
+  const p=new DOMPoint(e.clientX,e.clientY).matrixTransform(m.inverse());
+  return {x:Math.max(0,Math.min(360,p.x)),y:Math.max(0,Math.min(320,p.y))};
+}
+svg.addEventListener("pointerdown",e=>{e.preventDefault();audio();pressed=true;moved=0;ptr=at(e);try{svg.setPointerCapture(e.pointerId);}catch(_){}act("down");paint();});
+svg.addEventListener("pointermove",e=>{const q=at(e);moved=dist(q,ptr);ptr=q;act("move");if(!st.fin)paint();});
+const up=()=>{pressed=false;holding=false;drill(false);if(!st.fin)paint();};
+svg.addEventListener("pointerup",up);svg.addEventListener("pointercancel",up);
+
+$("actBtn").addEventListener("click",()=>{audio();complete();});
+$("nextBtn").addEventListener("click",()=>{audio();if(st.i>=steps.length-1)finish();else enter(st.i+1);});
+$("again").addEventListener("click",()=>{audio();enter(0);});
+function sndLabel(){["snd","bSnd"].forEach(id=>{$(id).textContent=opts.sound?"おと あり":"おと なし";$(id).setAttribute("aria-pressed",String(opts.sound));});}
+$("snd").addEventListener("click",()=>{opts.sound=!opts.sound;if(!opts.sound)drill(false);saveOpts();sndLabel();if(opts.sound)tone(660,.15,.06);});
+$("optSleep").addEventListener("change",e=>{opts.sleep=e.target.checked;saveOpts();});
+
+/* ---------- check list ---------- */
+const CHECK=[
+ {"id": "sit", "name": "いすに ひとりで すわる", "real": "", "sub": "おおきな いすに、じぶんで すわって みよう", "art": "<rect x=\"18\" y=\"40\" width=\"34\" height=\"8\" rx=\"4\" fill=\"#7FB8A4\"/><rect x=\"30\" y=\"48\" width=\"10\" height=\"14\" fill=\"#8FA3AD\"/><ellipse cx=\"35\" cy=\"63\" rx=\"18\" ry=\"4\" fill=\"#8FA3AD\"/><rect x=\"14\" y=\"12\" width=\"8\" height=\"36\" rx=\"4\" fill=\"#7FB8A4\"/>"},
+ {"id": "recline", "name": "いすが ゆっくり たおれる", "real": "", "sub": "ねる ときみたいに、うしろへ たおれるよ", "art": "<rect x=\"18\" y=\"40\" width=\"34\" height=\"8\" rx=\"4\" fill=\"#7FB8A4\"/><rect x=\"30\" y=\"48\" width=\"10\" height=\"14\" fill=\"#8FA3AD\"/><ellipse cx=\"35\" cy=\"63\" rx=\"18\" ry=\"4\" fill=\"#8FA3AD\"/><rect x=\"14\" y=\"12\" width=\"8\" height=\"36\" rx=\"4\" fill=\"#7FB8A4\" transform=\"rotate(-52 18 44)\"/>"},
+ {"id": "lamp", "name": "おくちを てらす ライト", "real": "", "sub": "まぶしい ときは、めを とじて いいよ", "art": "<path d=\"M24 33L12 64H54L48 33Z\" fill=\"#F6D36B\" opacity=\".6\"/><path d=\"M62 4v12L46 21\" stroke=\"#8FA3AD\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><ellipse cx=\"36\" cy=\"26\" rx=\"17\" ry=\"8\" fill=\"#FBFAF5\" stroke=\"#8FA3AD\" stroke-width=\"4\"/>"},
+ {"id": "hand", "name": "てを あげたら とまる", "real": "", "sub": "いちど いっしょに れんしゅう しよう", "art": "<g fill=\"#F6D9BF\" stroke=\"#C9A98C\" stroke-width=\"2\"><rect x=\"22\" y=\"12\" width=\"7\" height=\"28\" rx=\"3.5\"/><rect x=\"30\" y=\"8\" width=\"7\" height=\"30\" rx=\"3.5\"/><rect x=\"38\" y=\"10\" width=\"7\" height=\"30\" rx=\"3.5\"/><rect x=\"46\" y=\"16\" width=\"7\" height=\"26\" rx=\"3.5\"/><rect x=\"10\" y=\"32\" width=\"7\" height=\"22\" rx=\"3.5\" transform=\"rotate(-35 13 43)\"/><rect x=\"20\" y=\"32\" width=\"34\" height=\"32\" rx=\"12\"/></g>"},
+ {"id": "mirror", "name": "ちいさな かがみ", "real": "ミラー", "sub": "はに そっと あてて もらおう", "art": "<path d=\"M64 6L35 43\" stroke=\"#8FA3AD\" stroke-width=\"6\" stroke-linecap=\"round\"/><circle cx=\"26\" cy=\"52\" r=\"14\" fill=\"#D6F0F5\" stroke=\"#8FA3AD\" stroke-width=\"4\"/><path d=\"M18 49q4-7 11-6\" stroke=\"#fff\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/>"},
+ {"id": "air", "name": "かぜが でる", "real": "スリーウェイ", "sub": "てに シュッと かぜを もらおう", "art": "<path d=\"M64 6L44 30\" stroke=\"#8FA3AD\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M44 30L30 44\" stroke=\"#5E7378\" stroke-width=\"5\" stroke-linecap=\"round\"/><circle cx=\"58\" cy=\"10\" r=\"3\" fill=\"#4FA3FF\"/><circle cx=\"51\" cy=\"18\" r=\"3\" fill=\"#7FB8A4\"/><path d=\"M25 46l-13 3M26 51l-10 9M30 54l-4 12\" stroke=\"#8FA3AD\" stroke-width=\"3\" stroke-linecap=\"round\" fill=\"none\"/>"},
+ {"id": "water", "name": "みずで あらう", "real": "スリーウェイ", "sub": "おくちに みずを いれて もらおう", "art": "<path d=\"M64 6L44 30\" stroke=\"#8FA3AD\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M44 30L30 44\" stroke=\"#5E7378\" stroke-width=\"5\" stroke-linecap=\"round\"/><circle cx=\"58\" cy=\"10\" r=\"3\" fill=\"#4FA3FF\"/><circle cx=\"51\" cy=\"18\" r=\"3\" fill=\"#7FB8A4\"/><g fill=\"#6FB4D6\"><circle cx=\"24\" cy=\"50\" r=\"3.5\"/><circle cx=\"16\" cy=\"55\" r=\"3\"/><circle cx=\"25\" cy=\"60\" r=\"3\"/><circle cx=\"12\" cy=\"64\" r=\"2.5\"/><circle cx=\"19\" cy=\"66\" r=\"2\"/></g>"},
+ {"id": "suction", "name": "すいとる ストロー", "real": "バキューム", "sub": "みずを ズズーと すって もらおう", "art": "<path d=\"M64 6L36 40\" stroke=\"#8FA3AD\" stroke-width=\"17\" stroke-linecap=\"round\"/><path d=\"M64 6L36 40\" stroke=\"#F4F6F2\" stroke-width=\"12\" stroke-linecap=\"round\"/><ellipse cx=\"32\" cy=\"45\" rx=\"11\" ry=\"7\" fill=\"#fff\" stroke=\"#5E7378\" stroke-width=\"3\" transform=\"rotate(-40 32 45)\"/><g fill=\"#6FB4D6\"><circle cx=\"20\" cy=\"57\" r=\"3.5\"/><circle cx=\"12\" cy=\"62\" r=\"3\"/><circle cx=\"24\" cy=\"66\" r=\"2.5\"/></g>"},
+ {"id": "drill", "name": "ウィーンの シャワー", "real": "ハンドピース", "sub": "さきから、みずの シャワーが でるよ", "art": "<path d=\"M66 8L38 34\" stroke=\"#8FA3AD\" stroke-width=\"10\" stroke-linecap=\"round\"/><path d=\"M38 34L26 38\" stroke=\"#8FA3AD\" stroke-width=\"8\" stroke-linecap=\"round\"/><rect x=\"16\" y=\"30\" width=\"16\" height=\"13\" rx=\"5\" fill=\"#5E7378\"/><path d=\"M24 43v7\" stroke=\"#22393F\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M20 50L10 62M24 52v14M28 50l10 12\" stroke=\"#9FD3EE\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><g fill=\"#6FB4D6\"><circle cx=\"9\" cy=\"66\" r=\"2.5\"/><circle cx=\"17\" cy=\"60\" r=\"2.5\"/><circle cx=\"24\" cy=\"68\" r=\"2.5\"/><circle cx=\"31\" cy=\"60\" r=\"2.5\"/><circle cx=\"40\" cy=\"66\" r=\"2.5\"/></g>"},
+ {"id": "polish", "name": "くるくる みがき", "real": "研磨", "sub": "つめに あてて もらうと、くすぐったいよ", "art": "<path d=\"M66 8L38 34\" stroke=\"#8FA3AD\" stroke-width=\"10\" stroke-linecap=\"round\"/><path d=\"M38 34L26 38\" stroke=\"#8FA3AD\" stroke-width=\"8\" stroke-linecap=\"round\"/><rect x=\"16\" y=\"30\" width=\"16\" height=\"13\" rx=\"5\" fill=\"#5E7378\"/><path d=\"M18 53l3-10h6l3 10z\" fill=\"#7FB8A4\"/><g fill=\"#E9A23B\"><path d=\"M9 56l2 5 5 2-5 2-2 5-2-5-5-2 5-2z\"/><path d=\"M40 52l2 4 4 2-4 2-2 4-2-4-4-2 4-2z\"/></g>"},
+ {"id": "light", "name": "あおい ひかり", "real": "光照射器", "sub": "あおい ひかりが つくよ", "art": "<path d=\"M26 46l-18 6 8 14 16-12z\" fill=\"#4FA3FF\" opacity=\".35\"/><path d=\"M66 8L38 34\" stroke=\"#22393F\" stroke-width=\"11\" stroke-linecap=\"round\"/><path d=\"M38 34L27 43\" stroke=\"#22393F\" stroke-width=\"7\" stroke-linecap=\"round\"/><circle cx=\"25\" cy=\"45\" r=\"7\" fill=\"#4FA3FF\" stroke=\"#22393F\" stroke-width=\"2\"/>"}
+];
+let checked={};
+try{checked=JSON.parse(localStorage.getItem("haisha-check")||"{}")||{};}catch(e){}
+const saveCheck=()=>{try{localStorage.setItem("haisha-check",JSON.stringify(checked));}catch(e){}};
+function paintCheck(){
+  $("items").innerHTML=CHECK.map(c=>'<li class="item'+(checked[c.id]?" ok":"")+'">'
+    +'<svg class="art" viewBox="0 0 72 72" aria-hidden="true">'+c.art+"</svg>"
+    +'<span class="txt"><b>'+c.name+(c.real?"<span>（"+c.real+"）</span>":"")+"</b><small>"+c.sub+"</small></span>"
+    +'<button class="tick" data-tick="'+c.id+'" aria-pressed="'+!!checked[c.id]+'" aria-label="'+c.name+' を たしかめた"><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5L19 7" fill="none" stroke="#FBFAF5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></li>').join("");
+  const n=CHECK.filter(c=>checked[c.id]).length;
+  $("tally").textContent=n+" / "+CHECK.length;
+  $("allok").hidden=n<CHECK.length;
+  show($("uStand"),!checked.sit);show($("uBody"),!!checked.sit);show($("uSit"),!!checked.sit);
+  $("uBack").style.transform=checked.recline?"rotate(-52deg)":"none";
+  show($("uBeam"),!!checked.lamp);
+}
+$("items").addEventListener("click",e=>{
+  const t=e.target.closest("[data-tick]");
+  if(t){audio();const id=t.dataset.tick;checked[id]=!checked[id];if(checked[id])ding();saveCheck();paintCheck();}
+});
+$("resetCheck").addEventListener("click",()=>{checked={};saveCheck();paintCheck();});
+
+/* ---------- shared pointer helper ---------- */
+function ptOf(el,e,w,h){
+  const m=el.getScreenCTM();if(!m)return {x:0,y:0};
+  const p=new DOMPoint(e.clientX,e.clientY).matrixTransform(m.inverse());
+  return {x:Math.max(0,Math.min(w,p.x)),y:Math.max(0,Math.min(h,p.y))};
+}
+
+/* ---------- brushing practice ---------- */
+const TOOTH='fill="#FFFEF8" stroke="#D9D4C3" stroke-width="3"';
+const ZONES=[
+ {name:"おくばの みぞ",say:"おくばの うえは、みぞが ふかいよ。よごれが かくれやすい ところ。",
+  hint:"ブラシを こまかく うごかして、あかい よごれを おとそう",done:"みぞが きれいに なったね。",
+  draw:'<rect width="360" height="320" fill="#F7E3E4"/><rect x="66" y="46" width="228" height="228" rx="74" '+TOOTH+'/><path d="M108 160H252M180 88V232" stroke="#E4DFCF" stroke-width="12" stroke-linecap="round"/>',
+  spots:[[118,160],[149,160],[180,160],[211,160],[242,160],[180,100],[180,130],[180,190],[180,220]]},
+ {name:"はと はぐきの さかいめ",say:"はと はぐきの さかいめに、よごれが たまるよ。",
+  hint:"けさきを さかいめに あてて、こまかく うごかそう",done:"さかいめも つるつる。",
+  draw:'<rect width="360" height="320" fill="#B4475A"/><g '+TOOTH+'><rect x="30" y="80" width="96" height="200" rx="30"/><rect x="132" y="80" width="96" height="200" rx="30"/><rect x="234" y="80" width="96" height="200" rx="30"/></g><path d="M0 0H360V122Q333 122 330 127Q282 88 234 127Q231 134 228 127Q180 88 132 127Q129 134 126 127Q78 88 30 127Q15 122 0 122Z" fill="#EE9AA2"/>',
+  spots:[[48,124],[78,112],[108,124],[150,124],[180,112],[210,124],[252,124],[282,112],[312,124]]},
+ {name:"まえばの うらがわ",say:"うらがわは、みがきわすれやすいよ。ブラシを たてに して みがこう。",vert:true,
+  hint:"ブラシを たてに うごかして、あかい よごれを おとそう",done:"うらがわも ぴかぴか。",
+  draw:'<rect width="360" height="320" fill="#B4475A"/><g fill="#F7F4EA" stroke="#D9D4C3" stroke-width="3"><rect x="31" y="50" width="70" height="200" rx="24"/><rect x="107" y="50" width="70" height="200" rx="24"/><rect x="183" y="50" width="70" height="200" rx="24"/><rect x="259" y="50" width="70" height="200" rx="24"/></g><path d="M0 320H360V214Q294 190 256 214Q218 190 180 214Q142 190 104 214Q66 190 0 214Z" fill="#EE9AA2"/>',
+  spots:[[104,110],[104,160],[180,110],[180,160],[256,110],[256,160],[66,196],[142,196],[218,196],[294,196]]}
+];
+let bz={i:0,done:false,fin:false,spots:[]},bptr={x:290,y:70},bdown=false,bLast=0;
+const bsvg=$("bsvg");
+function brushPaint(){
+  const z=ZONES[bz.i];
+  $("bSpots").innerHTML=bz.spots.map(s=>s.a>0?'<circle cx="'+s.x+'" cy="'+s.y+'" r="14" fill="#D9588A" opacity="'+(.2+.65*s.a).toFixed(2)+'"/>':"").join("");
+  $("bTool").setAttribute("transform","translate("+bptr.x.toFixed(1)+","+bptr.y.toFixed(1)+")");
+  $("bToolIn").setAttribute("transform",z.vert?"rotate(-90)":"");
+  $("bName").textContent=z.name;$("bSay").textContent=bz.done?z.done:z.say;
+  $("bHint").textContent=z.hint;$("bHint").hidden=bz.done;
+  const left=bz.spots.reduce((t,s)=>t+Math.max(0,s.a),0)/bz.spots.length;
+  $("bBar").style.width=Math.round((1-left)*100)+"%";
+  $("bNext").hidden=!bz.done;$("bNext").textContent=bz.i===ZONES.length-1?"おしまい":"つぎへ";
+  $("bDots").innerHTML=ZONES.map((x,k)=>'<i class="'+(k<bz.i?"done":k===bz.i?"now":"")+'"></i>').join("");
+}
+function brushEnter(i){
+  bz={i:i,done:false,fin:false,spots:ZONES[i].spots.map(p=>({x:p[0],y:p[1],a:1}))};
+  bptr={x:290,y:70};bdown=false;$("bArt").innerHTML=ZONES[i].draw;
+  $("bBox").hidden=false;$("bTalk").hidden=false;$("bFin").hidden=true;brushPaint();
+}
+bsvg.addEventListener("pointerdown",e=>{e.preventDefault();audio();bdown=true;bptr=ptOf(bsvg,e,360,320);try{bsvg.setPointerCapture(e.pointerId);}catch(_){}brushPaint();});
+bsvg.addEventListener("pointermove",e=>{
+  const q=ptOf(bsvg,e,360,320),m=dist(q,bptr);bptr=q;
+  if(bdown&&!bz.done&&!bz.fin){
+    let hit=false;
+    bz.spots.forEach(s=>{if(s.a>0&&dist(s,q)<32){s.a-=m/90;hit=true;}});
+    if(hit){const t=performance.now();if(t-bLast>140){bLast=t;hiss("bandpass",1800,.12,.035);}
+      if(bz.spots.every(s=>s.a<=0)){bz.done=true;ding();}}
+  }
+  if(!bz.fin)brushPaint();
+});
+const bUp=()=>{bdown=false;};bsvg.addEventListener("pointerup",bUp);bsvg.addEventListener("pointercancel",bUp);
+$("bNext").addEventListener("click",()=>{audio();
+  if(bz.i<ZONES.length-1)brushEnter(bz.i+1);
+  else{bz.fin=true;$("bBox").hidden=true;$("bTalk").hidden=true;$("bFin").hidden=false;tone(523,.3,.08,"sine",0);tone(659,.3,.08,"sine",.15);tone(784,.5,.08,"sine",.3);}});
+$("bAgain").addEventListener("click",()=>{audio();brushEnter(0);});
+$("bSnd").addEventListener("click",()=>{opts.sound=!opts.sound;saveOpts();sndLabel();});
+
+/* ---------- shiage: tonight's map ---------- */
+const MAP=["上の奥歯<br>（右）","上の前歯","上の奥歯<br>（左）","下の奥歯<br>（右）","下の前歯","下の奥歯<br>（左）"];
+let mapDone=[false,false,false,false,false,false];
+function paintMap(){
+  $("map").innerHTML=MAP.map((t,k)=>'<button data-map="'+k+'" aria-pressed="'+mapDone[k]+'" class="'+(mapDone[k]?"ok":"")+'">'+t+"</button>").join("");
+  const n=mapDone.filter(Boolean).length;
+  $("mapMsg").textContent=n===6?"一周できました。歯と歯の間にフロスを通せたら、今夜はおしまいです。":"6か所のうち "+n+"か所";
+}
+$("map").addEventListener("click",e=>{const b=e.target.closest("[data-map]");if(!b)return;const k=+b.dataset.map;mapDone[k]=!mapDone[k];paintMap();});
+
+/* ---------- narabi: practice and parent check ---------- */
+const NSTEPS=[
+ {view:"palate",mode:"tap",t:{x:180,y:62},name:"したの おうち",say:"したの さきには、おうちが あるよ。うえの まえばの すぐ うしろ。",hint:"きいろい まるを タッチ",done:"したが おうちに ついたね。"},
+ {view:"face",mode:"tap",t:{x:180,y:192},name:"くちを とじる",say:"したを おうちに つけた まま、くちびるを そっと とじよう。",hint:"おくちを タッチ",done:"じょうずに とじられたね。"},
+ {view:"face",mode:"breath",dur:10500,name:"はなで いきを する",say:"くちは とじた まま。おはなで ゆっくり いきを しよう。",hint:"ふうせんに あわせて、3かい",done:"できたね。テレビを みる ときも、おもいだして みよう。"}
+];
+let nb={i:0,done:false,prog:0};
+const nsvg=$("nsvg");
+function narabiPaint(){
+  const s=NSTEPS[nb.i],d=nb.done;
+  show($("nPalate"),s.view==="palate");show($("nFace"),s.view==="face");
+  $("nTongue").setAttribute("cy",d?178:262);$("nTongue").setAttribute("ry",d?128:58);$("nTongue").setAttribute("rx",d?62:92);
+  show($("nSpot"),!d);
+  const shut=nb.i===2||(nb.i===1&&d);
+  show($("nOpen"),!shut);show($("nShut"),shut);
+  show($("nBal"),nb.i===2&&!d);
+  if(nb.i===2&&!d){const ph=(nb.prog*3)%1;$("nBalC").setAttribute("r",(18+20*Math.sin(ph*Math.PI)).toFixed(1));$("nBalT").textContent=ph<.5?"すって":"はいて";}
+  const ring=!d&&s.mode==="tap";show($("nRing"),ring);
+  if(ring){$("nRing").setAttribute("cx",s.t.x);$("nRing").setAttribute("cy",s.t.y);}
+  $("nName").textContent=s.name;$("nSay").textContent=d?s.done:s.say;$("nHint").textContent=s.hint;$("nHint").hidden=d;
+  $("nNext").hidden=!d;$("nNext").textContent=nb.i===NSTEPS.length-1?"もういちど":"つぎへ";
+}
+function narabiEnter(i){nb={i:i,done:false,prog:0};narabiPaint();}
+nsvg.addEventListener("pointerdown",e=>{
+  audio();const s=NSTEPS[nb.i];if(nb.done||s.mode!=="tap")return;
+  if(dist(ptOf(nsvg,e,360,260),s.t)<60){nb.done=true;ding();narabiPaint();}
+});
+$("nNext").addEventListener("click",()=>{audio();narabiEnter(nb.i<NSTEPS.length-1?nb.i+1:0);});
+const NCHK=["お口が ぽかんと開いていることが多い","鼻ではなく、口で息をしていることが多い","指しゃぶり、つめかみ、くちびるをかむくせがある","食べるときに、くちゃくちゃと音がする","かたいものをあまりかまない、片側だけでかむ","ほおづえをつく、うつぶせで寝ることが多い","前歯のかみ合わせや、歯のでこぼこが気になる"];
+let nChecked=NCHK.map(()=>false);
+function paintNchk(){
+  $("nItems").innerHTML=NCHK.map((t,k)=>'<li class="item plain'+(nChecked[k]?" ok":"")+'"><span class="txt"><b>'+t+'</b></span>'
+    +'<button class="tick" data-n="'+k+'" aria-pressed="'+nChecked[k]+'" aria-label="'+t+'"><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5L19 7" fill="none" stroke="#FBFAF5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></li>').join("");
+  const n=nChecked.filter(Boolean).length;
+  $("nMsg").textContent=n===0?"あてはまる項目がなければ、定期的な来院のなかで、お口の育ちを一緒に見ていきます。":"あてはまる "+n+"項目は、次の来院のときにお伝えください。お口の育ちを一緒に確認します。";
+}
+$("nItems").addEventListener("click",e=>{const b=e.target.closest("[data-n]");if(!b)return;const k=+b.dataset.n;nChecked[k]=!nChecked[k];paintNchk();});
+
+/* ---------- views ---------- */
+function go(v,keep){
+  if(!["home","play","check","brush","shiage","narabi","parents"].includes(v))v="home";
+  view=v;drill(false);
+  document.querySelectorAll(".view").forEach(el=>el.classList.toggle("on",el.id===v));
+  if(v==="play"){buildSteps();enter(keep!=null?keep:0);}
+  if(v==="parents")$("optSleep").checked=opts.sleep;
+  if(v==="check")paintCheck();
+  if(v==="brush")brushEnter(0);
+  if(v==="shiage")paintMap();
+  if(v==="narabi"){narabiEnter(0);paintNchk();}
+  if(location.hash.slice(1)!==v){try{location.hash=v;}catch(e){}}
+}
+document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>{audio();go(b.dataset.go);}));
+window.addEventListener("hashchange",()=>{const v=location.hash.slice(1)||"home";if(v!==view)go(v);});
+
+function start(data){
+  sndLabel();
+  const v=location.hash.slice(1)||"home";
+  go(v,v==="play"&&data&&typeof data.i==="number"?data.i:null);
+  requestAnimationFrame(tick);
+}
+const hot=window.claude&&window.claude.hot;
+if(hot&&hot.snapshot)hot.snapshot(()=>({i:st.i}));
+if(hot&&hot.ready)hot.ready(start);else start((hot&&hot.data)||{});
+})();
+</script>
+</body>
+</html>
